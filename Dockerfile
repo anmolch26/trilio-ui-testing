@@ -11,17 +11,14 @@ COPY . .
 RUN npm run build
 
 # Production image
-FROM public.ecr.aws/docker/library/node:20-alpine AS runner
+FROM public.ecr.aws/docker/library/nginx:latest AS runner
 
-WORKDIR /app
+COPY --from=builder /app/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
-# Copy built files from builder
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/node_modules ./node_modules
+RUN rm -rf /usr/share/nginx/html/*
 
-# Expose the port Vite uses
-EXPOSE 8080
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Command to start the application
-CMD ["npm", "run", "preview"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
