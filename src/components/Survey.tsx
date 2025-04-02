@@ -491,7 +491,7 @@ const Survey: React.FC = () => {
           
           <div className="text-center mt-6">
             <a 
-              href="https://forms.google.com/channel-iq-survey" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeuqUj0GWRsY6zAM-B1TjDA64Ws-gcYcSGkb1kcZ6uri5EEhA/viewform" 
               className="text-channeliq-blue hover:underline text-sm flex items-center justify-center gap-1"
               target="_blank" 
               rel="noopener noreferrer"
