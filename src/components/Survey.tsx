@@ -116,6 +116,7 @@ const Survey: React.FC = () => {
         time_consuming_tasks: formData.timeTasks,
         extract_insights: parseInt(formData.insightsEase),
         desired_features: formData.desiredFeatures,
+        functionalities: formData.desiredFeatures,
         // Sending placeholder values for required fields that aren't in the form
         company_name: "Not specified",
         website: "Not specified",
