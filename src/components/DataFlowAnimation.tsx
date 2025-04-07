@@ -1,13 +1,23 @@
-
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
+
+// Import logo assets
+import amazonLogo from '../assets/amazonLogo.png';
+import amazonDarkLogo from '../assets/amazonDarkLogo.png';
+import shopifyLogo from '../assets/shopifyBagLogo.png';
+import googleLogo from '../assets/Ga4BarLogo.png';
+import metaLogo from '../assets/metaAdsLogo.png';
+import klaviyoLogo from '../assets/klaviyoLogo.png';
 
 const DataFlowAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     if (!containerRef.current) return;
+    
+    // Check for dark mode
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     // Setup scene
     const scene = new THREE.Scene();
@@ -38,11 +48,11 @@ const DataFlowAnimation: React.FC = () => {
     
     // Create platform logos (source platforms)
     const platforms = [
-      { name: 'Amazon', position: new THREE.Vector3(-5, 2, 0), color: 0xff9900, texture: 'amazon-logo.png' },
-      { name: 'Shopify', position: new THREE.Vector3(-5, 0, 0), color: 0x7ab55c, texture: 'shopify-logo.png' },
-      { name: 'Google Ads', position: new THREE.Vector3(-5, -2, 0), color: 0x4285f4, texture: 'google-ads-logo.png' },
-      { name: 'Meta Ads', position: new THREE.Vector3(-4, 3, 0), color: 0x3b5998, texture: 'meta-ads-logo.png' },
-      { name: 'Klaviyo', position: new THREE.Vector3(-4, -3, 0), color: 0x00c1b2, texture: 'klaviyo-logo.png' }
+      { name: 'Amazon', position: new THREE.Vector3(-6, 3, 0), color: 0xff9900, texture: isDarkMode ? amazonDarkLogo : amazonLogo },
+      { name: 'Shopify', position: new THREE.Vector3(-6, 1, 0), color: 0x7ab55c, texture: shopifyLogo },
+      { name: 'Google Ads', position: new THREE.Vector3(-6, -1, 0), color: 0x4285f4, texture: googleLogo },
+      { name: 'Meta Ads', position: new THREE.Vector3(-5, 4, 0), color: 0x3b5998, texture: metaLogo },
+      { name: 'Klaviyo', position: new THREE.Vector3(-5, -3, 0), color: 0x00c1b2, texture: klaviyoLogo }
     ];
     
     // Create central hub with Channel IQ logo
@@ -171,16 +181,32 @@ const DataFlowAnimation: React.FC = () => {
     const textureLoader = new THREE.TextureLoader();
     
     platforms.forEach(platform => {
-      // Create platform logo (using circle as placeholder, will be replaced with logos)
-      const iconGeometry = new THREE.CircleGeometry(0.5, 32);
+      // Create platform logo using the actual logo texture
+      const iconGeometry = new THREE.PlaneGeometry(1.5, 1.5);
+      const iconTexture = textureLoader.load(platform.texture, (texture) => {
+        // Enable high-quality texture filtering
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        texture.needsUpdate = true;
+      });
+      
       const iconMaterial = new THREE.MeshBasicMaterial({ 
-        color: platform.color,
+        map: iconTexture,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.9,
+        depthWrite: false,
+        depthTest: true,
+        side: THREE.DoubleSide
       });
       
       const icon = new THREE.Mesh(iconGeometry, iconMaterial);
       icon.position.copy(platform.position);
+      icon.scale.set(1.1, 1.1, 1.1);
+      
+      // Add a slight rotation to face the camera better
+      icon.rotation.y = Math.PI * 0.1;
+      
       scene.add(icon);
       platformMeshes.push(icon);
       
@@ -236,42 +262,122 @@ const DataFlowAnimation: React.FC = () => {
     
     // Create output metrics/features as rectangular displays
     const metrics = [
-      { name: 'AI Teammate', position: new THREE.Vector3(4, 2, 0), color: 0x4CC9F0 },
-      { name: 'Command Center', position: new THREE.Vector3(4, 0, 0), color: 0x4CC9F0 },
-      { name: 'Business Scorecards', position: new THREE.Vector3(4, -2, 0), color: 0x4CC9F0 }
+      { name: 'AI powered recommendations', position: new THREE.Vector3(6.5, 3.5, 0.1), color: 0x4CC9F0 },
+      { name: 'Omnichannel unified analytics', position: new THREE.Vector3(6.5, 1.0, 0.1), color: 0x4CC9F0 },
+      { name: 'Business health metric', position: new THREE.Vector3(6.5, -1.5, 0.1), color: 0x4CC9F0 },
+      { name: 'Self service reports', position: new THREE.Vector3(6.5, -4.0, 0.1), color: 0x4CC9F0 }
     ];
     
     const metricMeshes: THREE.Mesh[] = [];
     const metricLines: THREE.Line[] = [];
     
-    // Create metrics displays as rectangles
+    // Create metrics displays as rectangles with text
     metrics.forEach(metric => {
-      const metricGeometry = new THREE.PlaneGeometry(2.0, 0.8); // Wider rectangles
-      const metricMaterial = new THREE.MeshPhongMaterial({
-        color: metric.color,
-        emissive: metric.color,
-        emissiveIntensity: 0.2,
+      // Create text canvas
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = 2048;
+      canvas.height = 768;
+      
+      if (context) {
+        // Clear background
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Add stronger gradient background
+        const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, 'rgba(76, 201, 240, 1)');
+        gradient.addColorStop(0.3, 'rgba(76, 201, 240, 0.95)');
+        gradient.addColorStop(0.7, 'rgba(76, 201, 240, 0.9)');
+        gradient.addColorStop(1, 'rgba(76, 201, 240, 0.8)');
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Add glowing border with multiple strokes
+        context.strokeStyle = 'rgba(76, 201, 240, 1)';
+        context.lineWidth = 20;
+        context.strokeRect(0, 0, canvas.width, canvas.height);
+        
+        // Add inner glow
+        context.strokeStyle = 'rgba(255, 255, 255, 1)';
+        context.lineWidth = 12;
+        context.strokeRect(15, 15, canvas.width - 30, canvas.height - 30);
+        
+        // Add text with better visibility
+        context.font = 'bold 160px Arial';
+        context.fillStyle = '#ffffff';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        
+        // Add stronger text shadow
+        context.shadowColor = 'rgba(0, 0, 0, 1)';
+        context.shadowBlur = 40;
+        context.shadowOffsetX = 10;
+        context.shadowOffsetY = 10;
+        
+        // Split text into lines if needed
+        const words = metric.name.split(' ');
+        let lines = [];
+        let currentLine = words[0];
+        
+        for (let i = 1; i < words.length; i++) {
+          const testLine = currentLine + ' ' + words[i];
+          const metrics = context.measureText(testLine);
+          if (metrics.width < canvas.width - 1500) {
+            currentLine = testLine;
+          } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+          }
+        }
+        lines.push(currentLine);
+        
+        // Calculate total text height
+        const lineHeight = 220;
+        const totalTextHeight = lines.length * lineHeight;
+        
+        // Calculate starting Y position to center all lines
+        const startY = (canvas.height - totalTextHeight) / 2 + lineHeight / 2;
+        
+        // Draw text lines with perfect centering
+        lines.forEach((line, index) => {
+          const y = startY + (index * lineHeight);
+          
+          // Draw text outline for better readability
+          context.strokeStyle = 'rgba(0, 0, 0, 1)';
+          context.lineWidth = 15;
+          context.strokeText(line, canvas.width / 2, y);
+          
+          // Draw main text
+          context.fillText(line, canvas.width / 2, y);
+        });
+      }
+      
+      const metricGeometry = new THREE.PlaneGeometry(5.0, 2.0);
+      const metricTexture = new THREE.CanvasTexture(canvas);
+      const metricMaterial = new THREE.MeshBasicMaterial({
+        map: metricTexture,
         transparent: true,
-        opacity: 0.9,
+        opacity: 1.0,
         side: THREE.DoubleSide
       });
       
       const metricMesh = new THREE.Mesh(metricGeometry, metricMaterial);
       metricMesh.position.copy(metric.position);
-      metricMesh.visible = false; // Initially hidden
+      metricMesh.visible = false;
       scene.add(metricMesh);
       metricMeshes.push(metricMesh);
       
-      // Create connecting lines from hub to metrics
+      // Create connecting lines from hub to metrics with better visibility
       const points = [];
-      points.push(new THREE.Vector3(hub.position.x, hub.position.y, hub.position.z));
-      points.push(new THREE.Vector3(metric.position.x, metric.position.y, metric.position.z));
+      points.push(new THREE.Vector3(hub.position.x, hub.position.y, hub.position.z - 0.1));
+      points.push(new THREE.Vector3(metric.position.x, metric.position.y, metric.position.z - 0.1));
       
       const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
       const lineMaterial = new THREE.LineBasicMaterial({ 
         color: metric.color,
         transparent: true,
-        opacity: 0.4
+        opacity: 0.9,
+        linewidth: 6
       });
       
       const line = new THREE.Line(lineGeometry, lineMaterial);
@@ -313,18 +419,23 @@ const DataFlowAnimation: React.FC = () => {
       });
     };
     
-    // Show metrics after a delay
+    // Show metrics with enhanced animation
     setTimeout(() => {
       metricMeshes.forEach((metric, index) => {
         setTimeout(() => {
           metric.visible = true;
-          // Add some animation for appearing
+          // Enhanced animation
           metric.scale.set(0, 0, 0);
+          metric.position.z = -2; // Start further behind
           new TWEEN.Tween(metric.scale)
-            .to({ x: 1, y: 1, z: 1 }, 500)
+            .to({ x: 1, y: 1, z: 1 }, 1200)
             .easing(TWEEN.Easing.Elastic.Out)
             .start();
-        }, index * 300);
+          new TWEEN.Tween(metric.position)
+            .to({ z: 0 }, 1200)
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .start();
+        }, index * 1000); // Increased delay between boxes
       });
     }, 3000);
     
