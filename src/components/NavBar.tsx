@@ -1,34 +1,70 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Toggle } from './ui/toggle';
 import { useTheme } from '../hooks/useTheme';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scroll event to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash navigation when URL changes
+  useEffect(() => {
+    if (location.hash) {
+      // Delay to ensure page is fully loaded and components are rendered
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Features', href: '#features' },
-    { name: 'Why Channel IQ', href: '#why-channeliq' },
-    { name: 'Join Waitlist', href: '#waitlist' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/#features' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Pricing', href: '/#pricing' },
   ];
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  const isHomePage = location.pathname === '/';
+
+  // Handle nav link click for smooth scrolling
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (isHomePage && href.startsWith('/#')) {
+      e.preventDefault();
+      const sectionId = href.split('#')[1];
+      const section = document.getElementById(sectionId);
+      
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else if (!isHomePage && href.startsWith('/#')) {
+      e.preventDefault();
+      navigate('/', { state: { scrollToSection: href.split('#')[1] } });
+    }
   };
 
   return (
@@ -43,9 +79,9 @@ const NavBar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <span className="text-2xl font-semibold text-channeliq-blue">Channel <span className="text-channeliq-indigo">IQ</span></span>
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
@@ -56,17 +92,28 @@ const NavBar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   className="font-medium text-foreground/80 hover:text-channeliq-blue transition-colors interactive-element"
+                  onClick={(e) => handleNavLinkClick(e, link.href)}
                 >
                   {link.name}
                 </a>
               ))}
               
-              <a 
-                href="#waitlist" 
-                className="btn-primary text-sm py-2 px-4 interactive-element"
-              >
-                Join Waitlist
-              </a>
+              {isHomePage ? (
+                <a 
+                  href="#waitlist" 
+                  className="btn-primary text-sm py-2 px-4 interactive-element"
+                  onClick={(e) => handleNavLinkClick(e, '/#waitlist')}
+                >
+                  Join Waitlist
+                </a>
+              ) : (
+                <Link 
+                  to="/" 
+                  className="btn-primary text-sm py-2 px-4 interactive-element"
+                >
+                  Back to Home
+                </Link>
+              )}
             </div>
           </div>
           
@@ -111,19 +158,35 @@ const NavBar: React.FC = () => {
               key={link.name}
               href={link.href}
               className="interactive-element block px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:text-channeliq-blue hover:bg-muted"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                handleNavLinkClick(e, link.href);
+                setIsMobileMenuOpen(false);
+              }}
             >
               {link.name}
             </a>
           ))}
           <div className="px-3 py-3">
-            <a 
-              href="#waitlist" 
-              className="interactive-element block w-full text-center btn-primary text-sm"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Join Waitlist
-            </a>
+            {isHomePage ? (
+              <a 
+                href="#waitlist" 
+                className="interactive-element block w-full text-center btn-primary text-sm"
+                onClick={(e) => {
+                  handleNavLinkClick(e, '/#waitlist');
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Join Waitlist
+              </a>
+            ) : (
+              <Link 
+                to="/" 
+                className="interactive-element block w-full text-center btn-primary text-sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Back to Home
+              </Link>
+            )}
           </div>
         </div>
       </div>

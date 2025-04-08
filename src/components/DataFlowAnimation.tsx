@@ -8,7 +8,7 @@ import amazonDarkLogo from '../assets/amazonDarkLogo.png';
 import shopifyLogo from '../assets/shopifyBagLogo.png';
 import googleLogo from '../assets/Ga4BarLogo.png';
 import metaLogo from '../assets/metaAdsLogo.png';
-import klaviyoLogo from '../assets/klaviyoLogo.png';
+import klaviyoLogo from '../assets/klaviyoLogo.png';  
 
 const DataFlowAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
