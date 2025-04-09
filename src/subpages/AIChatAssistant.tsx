@@ -43,7 +43,7 @@ const AIChatAssistant: React.FC = () => {
               </div>
               
             {/* Image Section - Right Side */}
-            <div className="md:w-1/2 h-[500px]">
+            <div className="md:w-1/2 h-[400px]">
               <img 
                 src={aichatassistant}
                 alt="AIChatAssistant"

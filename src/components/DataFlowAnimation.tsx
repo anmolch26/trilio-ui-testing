@@ -48,11 +48,11 @@ const DataFlowAnimation: React.FC = () => {
     
     // Create platform logos (source platforms)
     const platforms = [
-      { name: 'Amazon', position: new THREE.Vector3(-6, 3, 0), color: 0xff9900, texture: isDarkMode ? amazonDarkLogo : amazonLogo },
-      { name: 'Shopify', position: new THREE.Vector3(-6, 1, 0), color: 0x7ab55c, texture: shopifyLogo },
-      { name: 'Google Ads', position: new THREE.Vector3(-6, -1, 0), color: 0x4285f4, texture: googleLogo },
-      { name: 'Meta Ads', position: new THREE.Vector3(-5, 4, 0), color: 0x3b5998, texture: metaLogo },
-      { name: 'Klaviyo', position: new THREE.Vector3(-5, -3, 0), color: 0x00c1b2, texture: klaviyoLogo }
+      { name: 'Amazon', position: new THREE.Vector3(-6, 2, 0), color: 0xff9900, texture: isDarkMode ? amazonDarkLogo : amazonLogo },
+      { name: 'Shopify', position: new THREE.Vector3(-6, 0, 0), color: 0x7ab55c, texture: shopifyLogo },
+      { name: 'Google Ads', position: new THREE.Vector3(-6, -2, 0), color: 0x4285f4, texture: googleLogo },
+      { name: 'Meta Ads', position: new THREE.Vector3(-5, 3.75, 0), color: 0x3b5998, texture: metaLogo },
+      { name: 'Klaviyo', position: new THREE.Vector3(-5, -4, 0), color: 0x00c1b2, texture: klaviyoLogo }
     ];
     
     // Create central hub with Channel IQ logo
@@ -182,12 +182,12 @@ const DataFlowAnimation: React.FC = () => {
     
     platforms.forEach(platform => {
       // Create platform logo using the actual logo texture
-      const iconGeometry = new THREE.PlaneGeometry(1.5, 1.5);
+      const iconGeometry = new THREE.PlaneGeometry(2.0, 2.0); // Standardize geometry size
       const iconTexture = textureLoader.load(platform.texture, (texture) => {
         // Enable high-quality texture filtering
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        texture.minFilter = THREE.LinearMipMapLinearFilter;
+        texture.magFilter = THREE.LinearMipMapLinearFilter;
+        texture.anisotropy = renderer.capabilities.getMaxAnisotropy(); // Maximize anisotropy
         texture.needsUpdate = true;
       });
       
@@ -202,7 +202,7 @@ const DataFlowAnimation: React.FC = () => {
       
       const icon = new THREE.Mesh(iconGeometry, iconMaterial);
       icon.position.copy(platform.position);
-      icon.scale.set(1.1, 1.1, 1.1);
+      icon.scale.set(1.0, 1.0, 1.0); // Standardize scale for all logos
       
       // Add a slight rotation to face the camera better
       icon.rotation.y = Math.PI * 0.1;
@@ -262,10 +262,10 @@ const DataFlowAnimation: React.FC = () => {
     
     // Create output metrics/features as rectangular displays
     const metrics = [
-      { name: 'AI powered recommendations', position: new THREE.Vector3(6.5, 3.5, 0.1), color: 0x4CC9F0 },
-      { name: 'Omnichannel unified analytics', position: new THREE.Vector3(6.5, 1.0, 0.1), color: 0x4CC9F0 },
-      { name: 'Business health metric', position: new THREE.Vector3(6.5, -1.5, 0.1), color: 0x4CC9F0 },
-      { name: 'Self service reports', position: new THREE.Vector3(6.5, -4.0, 0.1), color: 0x4CC9F0 }
+      { name: 'AI powered recommendations', position: new THREE.Vector3(5.0, 4, 0.1), color: 0x4CC9F0 },
+      { name: 'Omnichannel unified analytics', position: new THREE.Vector3(5.5, 1.5, 0.1), color: 0x4CC9F0 },
+      { name: 'Business health metric', position: new THREE.Vector3(5.5, -1.5, 0.1), color: 0x4CC9F0 },
+      { name: 'Self service reports', position: new THREE.Vector3(5.0, -4.5, 0.1), color: 0x4CC9F0 }
     ];
     
     const metricMeshes: THREE.Mesh[] = [];
@@ -276,43 +276,24 @@ const DataFlowAnimation: React.FC = () => {
       // Create text canvas
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
-      canvas.width = 2048;
-      canvas.height = 768;
+      canvas.width = 8192; // High resolution
+      canvas.height = 4096; // High resolution
       
       if (context) {
         // Clear background
         context.clearRect(0, 0, canvas.width, canvas.height);
         
-        // Add stronger gradient background
-        const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-        gradient.addColorStop(0, 'rgba(76, 201, 240, 1)');
-        gradient.addColorStop(0.3, 'rgba(76, 201, 240, 0.95)');
-        gradient.addColorStop(0.7, 'rgba(76, 201, 240, 0.9)');
-        gradient.addColorStop(1, 'rgba(76, 201, 240, 0.8)');
-        context.fillStyle = gradient;
-        context.fillRect(0, 0, canvas.width, canvas.height);
-        
-        // Add glowing border with multiple strokes
-        context.strokeStyle = 'rgba(76, 201, 240, 1)';
-        context.lineWidth = 20;
-        context.strokeRect(0, 0, canvas.width, canvas.height);
-        
-        // Add inner glow
-        context.strokeStyle = 'rgba(255, 255, 255, 1)';
-        context.lineWidth = 12;
-        context.strokeRect(15, 15, canvas.width - 30, canvas.height - 30);
-        
         // Add text with better visibility
-        context.font = 'bold 160px Arial';
-        context.fillStyle = '#ffffff';
+        context.font = '600 980px "Arial", sans-serif'; // Increased font size for better visibility
+        context.fillStyle = '#ffffff'; // Ensure text color is visible
         context.textAlign = 'center';
         context.textBaseline = 'middle';
         
         // Add stronger text shadow
         context.shadowColor = 'rgba(0, 0, 0, 1)';
-        context.shadowBlur = 40;
-        context.shadowOffsetX = 10;
-        context.shadowOffsetY = 10;
+        context.shadowBlur = 80; // Strong shadow blur
+        context.shadowOffsetX = 20; // Shadow offset
+        context.shadowOffsetY = 20; // Shadow offset
         
         // Split text into lines if needed
         const words = metric.name.split(' ');
@@ -322,7 +303,7 @@ const DataFlowAnimation: React.FC = () => {
         for (let i = 1; i < words.length; i++) {
           const testLine = currentLine + ' ' + words[i];
           const metrics = context.measureText(testLine);
-          if (metrics.width < canvas.width - 1500) {
+          if (metrics.width < canvas.width) { // No extra padding
             currentLine = testLine;
           } else {
             lines.push(currentLine);
@@ -332,7 +313,7 @@ const DataFlowAnimation: React.FC = () => {
         lines.push(currentLine);
         
         // Calculate total text height
-        const lineHeight = 220;
+        const lineHeight = 880; // Adjust for high resolution
         const totalTextHeight = lines.length * lineHeight;
         
         // Calculate starting Y position to center all lines
@@ -344,7 +325,7 @@ const DataFlowAnimation: React.FC = () => {
           
           // Draw text outline for better readability
           context.strokeStyle = 'rgba(0, 0, 0, 1)';
-          context.lineWidth = 15;
+          context.lineWidth = 30; // Line width for outline
           context.strokeText(line, canvas.width / 2, y);
           
           // Draw main text
@@ -596,7 +577,7 @@ const DataFlowAnimation: React.FC = () => {
   return (
     <div 
       ref={containerRef} 
-      className="absolute inset-0 rounded-xl overflow-hidden"
+      className="absolute inset-0 rounded-xl overflow-hidden z-50"
       aria-label="Interactive visualization of Channel IQ's data flow"
     />
   );
