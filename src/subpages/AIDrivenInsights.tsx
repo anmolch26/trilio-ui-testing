@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { CheckCircle2 } from 'lucide-react';
-import aiDrivenInsights from '../assets/features/AI-DrivenInsights&Recommendations.jpg';
+import aiDrivenInsights from '../assets/features/AI-DrivenInsights&Recommendations.png';
 
 const AIDrivenInsights: React.FC = () => {
   const { theme } = useTheme();

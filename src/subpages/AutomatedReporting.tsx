@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { CheckCircle2 } from 'lucide-react';
-import automatedReporting from '../assets/features/AutomatedReporting&Custom Dashboards.jpg';
+import automatedReporting from '../assets/features/AutomatedReporting&Custom Dashboards.png';
 
 const AutomatedReporting: React.FC = () => {
   const { theme } = useTheme();

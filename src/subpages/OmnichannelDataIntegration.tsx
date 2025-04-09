@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { CheckCircle2 } from 'lucide-react';
-import omnichannelDataIntegration from '../assets/features/omnichannelDataIntegartion.jpg';
+import omnichannelDataIntegration from '../assets/features/omnichannelDataIntegartion.png';
 
 const OmnichannelDataIntegration: React.FC = () => {
   const { theme } = useTheme();
