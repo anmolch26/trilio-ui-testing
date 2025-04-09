@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
 import Hero from '../components/Hero';
@@ -8,11 +7,13 @@ import WaitlistForm from '../components/WaitlistForm';
 import Survey from '../components/Survey';
 import Footer from '../components/Footer';
 import { Play } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const productVideoRef = useRef<HTMLVideoElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Create intersection observer to trigger animations
@@ -40,6 +41,20 @@ const Index = () => {
       }
     };
   }, []);
+
+  // Handle scrolling to section from location state
+  useEffect(() => {
+    // Check if we have a section to scroll to in the location state
+    if (location.state && location.state.scrollToSection) {
+      const sectionId = location.state.scrollToSection;
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300); // Add delay to ensure components are fully rendered
+    }
+  }, [location]);
 
   const handleProductVideoHover = () => {
     if (productVideoRef.current) {
