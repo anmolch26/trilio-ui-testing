@@ -14,11 +14,11 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Direct imports instead of lazy loading
-import ProductsDropdown from "./navbar/ProductsDropdown";
-import SolutionsDropdown from "./navbar/SolutionsDropdown";
-import WhoWeHelpDropdown from "./navbar/WhoWeHelpDropdown";
-import ResourcesDropdown from "./navbar/ResourcesDropdown";
-import AboutDropdown from "./navbar/AboutDropdown";
+import ProductsDropdown from "./navbar-components/ProductsDropdown";
+import SolutionsDropdown from "./navbar-components/SolutionsDropdown";
+import WhoWeHelpDropdown from "./navbar-components/WhoWeHelpDropdown";
+import ResourcesDropdown from "./navbar-components/ResourcesDropdown";
+import AboutDropdown from "./navbar-components/AboutDropdown";
 // import EraseBgLogo from "../assests/erasebg-transformed.png";
 
 const Navbar = () => {
