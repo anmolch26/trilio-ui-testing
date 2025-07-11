@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { cn } from "../lib/utils";
+import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
 import TrilioLogo from "./TrilioLogo";
 import {
@@ -10,8 +10,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "./ui/navigation-menu";
-import { Button } from "./ui/button";
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 
 // Direct imports instead of lazy loading
 import ProductsDropdown from "./navbar/ProductsDropdown";

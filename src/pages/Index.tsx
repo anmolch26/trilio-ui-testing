@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import OptimizedPurposeSection from "../components/OptimizedPurposeSection";
-import SpecsSection from "../components/SpecsSection";
-import DetailsSection from "../components/DetailsSection";
-import ImageShowcaseSection from "../components/ImageShowcaseSection";
-import Features from "../components/Features";
-import Testimonials from "../components/Testimonials";
-import Newsletter from "../components/Newsletter";
-import ValuesSection from "../components/ValuesSection";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import OptimizedPurposeSection from "@/components/OptimizedPurposeSection";
+import SpecsSection from "@/components/SpecsSection";
+import DetailsSection from "@/components/DetailsSection";
+import ImageShowcaseSection from "@/components/ImageShowcaseSection";
+import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
+import ValuesSection from "@/components/ValuesSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
