@@ -8,12 +8,7 @@ RUN npm install
 
 # Copy source code and build
 COPY . .
-# Debug: List the contents of src/components to see what files are copied
-RUN ls -la src/components/
-# Debug: Check if the Navbar file exists
-RUN ls -la src/components/Navbar*
-# Debug: Check the current directory structure
-RUN find src -name "*.tsx" | head -10
+
 RUN npm run build
 
 # Production image
