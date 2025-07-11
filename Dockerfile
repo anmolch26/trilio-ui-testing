@@ -8,6 +8,8 @@ RUN npm install
 
 # Copy source code and build
 COPY . .
+# Debug: List the contents of src/components to see what files are copied
+RUN ls -la src/components/
 RUN npm run build
 
 # Production image
