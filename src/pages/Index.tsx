@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar.tsx";
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import OptimizedPurposeSection from "@/components/OptimizedPurposeSection";
 import SpecsSection from "@/components/SpecsSection";

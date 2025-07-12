@@ -13,6 +13,9 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Debug: List files to see what was copied
+RUN ls -la src/components/ && echo "Checking for Navbar.tsx:" && ls -la src/components/Navbar* && echo "File exists check:" && test -f src/components/Navbar.tsx && echo "Navbar.tsx exists" || echo "Navbar.tsx does not exist"
+
 # Build the application
 RUN npm run build
 
