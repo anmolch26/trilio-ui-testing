@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar.tsx";
 import Footer from "@/components/Footer";
 import PageLayout from "@/components/theme/PageLayout";
 import { Button } from "@/components/ui/button";
