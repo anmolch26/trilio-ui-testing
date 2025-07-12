@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Navbar.tsx";
+import Navbar from "@/components/NavBar";
 import ContactFormComponent from "@/components/ContactFormComponent";
 import Footer from "@/components/Footer";
 import PageLayout from "@/components/theme/PageLayout";

@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Navbar.tsx";
+import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
