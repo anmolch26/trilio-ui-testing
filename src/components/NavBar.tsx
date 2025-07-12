@@ -14,12 +14,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Direct imports instead of lazy loading
-import ProductsDropdown from "./navbar-components/ProductsDropdown";
-import SolutionsDropdown from "./navbar-components/SolutionsDropdown";
-import WhoWeHelpDropdown from "./navbar-components/WhoWeHelpDropdown";
-import ResourcesDropdown from "./navbar-components/ResourcesDropdown";
-import AboutDropdown from "./navbar-components/AboutDropdown";
-// import EraseBgLogo from "../assests/erasebg-transformed.png";
+import ProductsDropdown from "./navbar/ProductsDropdown";
+import SolutionsDropdown from "./navbar/SolutionsDropdown";
+import WhoWeHelpDropdown from "./navbar/WhoWeHelpDropdown";
+import ResourcesDropdown from "./navbar/ResourcesDropdown";
+import AboutDropdown from "./navbar/AboutDropdown";
+import EraseBgLogo from "../assests/erasebg-transformed.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -216,9 +216,9 @@ const Navbar = () => {
           aria-label="Trilio.ai"
         >
           {isHomepage && !isScrolled ? (
-            <TrilioLogo
-              isScrolled={isScrolled}
-              isOnWhiteBackground={shouldUseLightTheme}
+            <img
+              src={EraseBgLogo}
+              alt="Trilio.ai Logo"
               className="h-16 w-auto animate-fade-in"
             />
           ) : (
