@@ -279,7 +279,7 @@ const Navbar = () => {
                 className={getNavTriggerClasses()}
                 style={{ textDecoration: "none" }}
               >
-                Pricing
+                <span className="text-sm">Pricing</span>
               </Link>
             </NavigationMenuItem>
 
@@ -355,7 +355,7 @@ const Navbar = () => {
           <div className="mobile-section">
             <button
               onClick={() => toggleMobileSection("products")}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 Products
@@ -399,7 +399,7 @@ const Navbar = () => {
           <div className="mobile-section">
             <button
               onClick={() => toggleMobileSection("services")}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 Solutions
@@ -443,7 +443,7 @@ const Navbar = () => {
           <div className="mobile-section">
             <button
               onClick={() => toggleMobileSection("help")}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 Who We Help
@@ -487,7 +487,7 @@ const Navbar = () => {
           <div className="mobile-section">
             <button
               onClick={() => toggleMobileSection("resources")}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 Resources
@@ -530,7 +530,7 @@ const Navbar = () => {
                 setIsMenuOpen(false);
                 document.body.style.overflow = "";
               }}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 Pricing
@@ -542,7 +542,7 @@ const Navbar = () => {
           <div className="mobile-section">
             <button
               onClick={() => toggleMobileSection("about")}
-              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group"
+              className="mobile-trigger flex items-center justify-between w-full text-lg font-semibold py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group text-gray-900"
             >
               <span className="group-hover:text-teal-600 transition-colors duration-200">
                 About
@@ -601,17 +601,6 @@ const Navbar = () => {
 
           {/* Mobile CTA and Theme Toggle */}
           <div className="flex flex-col space-y-4 mt-8 pb-8">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">Theme</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="text-gray-700 hover:text-teal-600 hover:bg-teal-50 transition-all duration-200"
-              >
-                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </Button>
-            </div>
             <Link
               to="#"
               onClick={(e) => {

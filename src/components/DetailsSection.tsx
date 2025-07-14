@@ -8,6 +8,7 @@ const DetailsSection = () => {
     company: "",
     phoneNumber: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -17,22 +18,49 @@ const DetailsSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.fullName || !formData.email) {
+    if (!formData.fullName || !formData.email || !formData.company) {
       toast.error("Please fill in all required fields");
       return;
     }
 
-    toast.success("Demo request submitted successfully!");
-
-    setFormData({
-      fullName: "",
-      email: "",
-      company: "",
-      phoneNumber: "",
-    });
+    setLoading(true);
+    try {
+      const payload = {
+        full_name: formData.fullName,
+        email: formData.email,
+        company_name: formData.company,
+        phone_number: formData.phoneNumber || undefined,
+      };
+      const response = await fetch(
+        "https://staging.trilio.ai/api/auth/v1/create_waitlist",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to submit. Please try again later.");
+      }
+      toast.success("Demo request submitted successfully!");
+      setFormData({
+        fullName: "",
+        email: "",
+        company: "",
+        phoneNumber: "",
+      });
+    } catch (error: unknown) {
+      let message = "An error occurred. Please try again.";
+      if (error instanceof Error) {
+        message = error.message;
+      }
+      toast.error(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -188,8 +216,9 @@ const DetailsSection = () => {
                   <button
                     type="submit"
                     className="w-full px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                    disabled={loading}
                   >
-                    Get My Demo
+                    {loading ? "Submitting..." : "Get My Demo"}
                   </button>
                 </div>
               </form>

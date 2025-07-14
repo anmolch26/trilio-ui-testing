@@ -21,7 +21,7 @@ const LeadershipTeam = () => {
       title: " Co-founder & CRO ",
       bio: "Revenue growth leader and co-founder driving Trilio's commercial strategy. Om has led the product vision and execution from scratch. With a strong background in SaaS sales and GTM strategy, Om bridges product innovation with real-world customer needs driving both adoption and growth.",
       image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
-    }
+    },
   ];
 
   const stats = [
@@ -78,7 +78,9 @@ const LeadershipTeam = () => {
             {leaders.map((leader, index) => (
               <div
                 key={leader.name || index}
-                className={`flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl p-8 gap-10 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                className={`flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl p-8 gap-10 ${
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
               >
                 {/* Image */}
                 <div className="flex-shrink-0 w-full md:w-[380px] h-[340px] flex items-center justify-center">
@@ -96,9 +98,7 @@ const LeadershipTeam = () => {
                   <h3 className="text-2xl font-semibold text-blue-600 mb-4">
                     {leader.title}
                   </h3>
-                  <p className="text-lg text-gray-700">
-                    {leader.bio}
-                  </p>
+                  <p className="text-lg text-gray-700">{leader.bio}</p>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ const LeadershipTeam = () => {
       <section className="pt-0 pb-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 text-black">
               Mission & Values
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
