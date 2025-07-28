@@ -17,6 +17,8 @@ import Logo13 from "@/assests/Remove background project (13).png";
 import Icon11 from "@/assests/Remove background project (11).png";
 import Icon13 from "@/assests/Remove background project (13).png";
 import Icon10 from "@/assests/Remove background project (10).png";
+import Logo3 from "@/assests/Remove background project (3).png";
+import TikTokImage from "@/assests/tik-tok.png";
 
 const DataIntegrations = () => {
   const integrations = [
@@ -46,8 +48,8 @@ const DataIntegrations = () => {
     { name: "Walmart", description: "Pin Analytics, Traffic", logo: Logo12 },
     { name: "Amazon", description: "Payments, Subscriptions", logo: Logo13 },
     { name: "PayPal", description: "Transactions, Disputes", logo: "💰" },
-    { name: "WooCommerce", description: "Store Data, Analytics", logo: "🛒" },
-    { name: "BigCommerce", description: "Sales, Customer Data", logo: "🏢" },
+    { name: "WooCommerce", description: "Store Data, Analytics", logo: Logo3 },
+    { name: "TikTok", description: "Sales, Customer Data", logo: TikTokImage },
   ];
 
   const steps = [
@@ -128,20 +130,37 @@ const DataIntegrations = () => {
                 key={integration.name}
                 className="glass-card p-6 text-center hover-lift transition-all duration-300"
               >
-                <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                  {index < 9 ? (
-                    <img
-                      src={integration.logo}
-                      alt={integration.name + " logo"}
-                      className="h-16 w-16 object-contain"
-                    />
-                  ) : (
-                    <span className="text-4xl">{integration.logo}</span>
-                  )}
-                </div>
-                <h3 className="font-semibold mb-2 text-black">
-                  {integration.name}
-                </h3>
+                {integration.name === "TikTok" ? (
+                  <Link to="/solutions/data-integrations/TikTok">
+                    <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <img
+                        src={integration.logo}
+                        alt={integration.name + " logo"}
+                        className="h-16 w-16 object-contain"
+                      />
+                    </div>
+                    <h3 className="font-semibold mb-2 text-black">
+                      {integration.name}
+                    </h3>
+                  </Link>
+                ) : (
+                  <>
+                    <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      {integration.name === "WooCommerce" || index < 9 ? (
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      ) : (
+                        <span className="text-4xl">{integration.logo}</span>
+                      )}
+                    </div>
+                    <h3 className="font-semibold mb-2 text-black">
+                      {integration.name}
+                    </h3>
+                  </>
+                )}
                 <p className="text-sm text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {integration.description}
                 </p>

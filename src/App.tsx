@@ -34,6 +34,7 @@ import HelpCenter from "./pages/resources/HelpCenter";
 import DeveloperDocs from "./pages/resources/DeveloperDocs";
 import NewsletterSignup from "./pages/resources/NewsletterSignup";
 import Pricing from "./pages/Pricing";
+import TikTok from "./pages/solutions/TikTok";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +107,10 @@ const App = () => (
           <Route
             path="/solutions/api-developer-support"
             element={<APIDeveloperSupport />}
+          />
+          <Route
+            path="/solutions/data-integrations/TikTok"
+            element={<TikTok />}
           />
           {/* Careers section routes (kept for backward compatibility) */}
           <Route path="/careers/open-positions" element={<OpenPositions />} />
