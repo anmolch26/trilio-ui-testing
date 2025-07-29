@@ -143,6 +143,19 @@ const DataIntegrations = () => {
                       {integration.name}
                     </h3>
                   </Link>
+                ) : integration.name === "Amazon" ? (
+                  <Link to="/solutions/data-integrations/Amazon">
+                    <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <img
+                        src={integration.logo}
+                        alt={integration.name + " logo"}
+                        className="h-16 w-16 object-contain"
+                      />
+                    </div>
+                    <h3 className="font-semibold mb-2 text-black">
+                      {integration.name}
+                    </h3>
+                  </Link>
                 ) : (
                   <>
                     <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">

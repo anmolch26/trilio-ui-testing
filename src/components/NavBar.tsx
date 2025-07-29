@@ -50,6 +50,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = "";
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = !isMenuOpen ? "hidden" : "";
@@ -64,6 +70,7 @@ const Navbar = () => {
     setOpenMobileSection(openMobileSection === section ? null : section);
   };
 
+  // Import the same data from dropdown components to ensure consistency
   const products = [
     {
       title: "Trilio BI Reporting",
@@ -147,24 +154,19 @@ const Navbar = () => {
   ];
 
   const resources = [
-    { title: "Blog & Insights", href: "#blog" },
-    { title: "Case Studies", href: "#case-studies" },
-    { title: "Guides & Reports", href: "#guides" },
-    { title: "Help Center", href: "#help" },
-    { title: "Developer Docs", href: "#docs" },
-    { title: "Newsletter Signup", href: "#newsletter" },
+    { title: "Blog & Insights", href: "/resources/blog-insights" },
+    { title: "Case Studies", href: "/resources/case-studies" },
+    { title: "Guides & Reports", href: "/resources/guides-reports" },
+    { title: "Help Center", href: "/resources/help-center" },
+    { title: "Developer Docs", href: "/resources/developer-docs" },
+    { title: "Newsletter Signup", href: "/resources/newsletter-signup" },
   ];
 
   const about = [
     { title: "Leadership Team", href: "/about/leadership-team" },
     { title: "Trust Center", href: "/about/trust-center" },
-  ];
-
-  const careers = [
-    { title: "Open Positions", href: "/careers/open-positions" },
+    { title: "Careers", href: "/careers/open-positions" },
     { title: "Life at Trilio", href: "/careers/life-at-trilio" },
-    { title: "Interview Process", href: "/careers/interview-process" },
-    { title: "Internships & Programs", href: "/careers/internships-programs" },
   ];
 
   // Simplified and consistent styling logic
@@ -344,13 +346,26 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-white/95 backdrop-blur-md flex flex-col pt-16 px-6 lg:hidden transition-all duration-300 ease-in-out overflow-y-auto",
+          "fixed inset-0 z-50 bg-white flex flex-col h-screen pt-16 px-6 lg:hidden transition-all duration-300 ease-in-out overflow-y-auto",
           isMenuOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <nav className="flex flex-col space-y-4">
+        <nav className="flex flex-col space-y-4 mt-4 flex-1">
+          {/* Close Button */}
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                document.body.style.overflow = "";
+              }}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <X size={24} className="text-gray-600" />
+            </button>
+          </div>
           {/* Products */}
           <div className="mobile-section">
             <button
@@ -380,6 +395,10 @@ const Navbar = () => {
                   <Link
                     key={product.title}
                     to={product.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
                     className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group animate-fade-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
@@ -424,6 +443,10 @@ const Navbar = () => {
                   <Link
                     key={service.title}
                     to={service.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
                     className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group animate-fade-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
@@ -468,6 +491,10 @@ const Navbar = () => {
                   <Link
                     key={role.title}
                     to={role.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
                     className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group animate-fade-in"
                     style={{ animationDelay: `${index * 30}ms` }}
                   >
@@ -509,14 +536,18 @@ const Navbar = () => {
             >
               <div className="ml-4 mt-2 space-y-2">
                 {resources.map((resource, index) => (
-                  <a
+                  <Link
                     key={resource.title}
-                    href={resource.href}
+                    to={resource.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
                     className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group font-semibold text-sm text-gray-900 hover:text-teal-600 animate-fade-in"
                     style={{ animationDelay: `${index * 30}ms` }}
                   >
                     {resource.title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -563,44 +594,26 @@ const Navbar = () => {
               )}
             >
               <div className="ml-4 mt-2 space-y-2">
-                <div className="mb-3">
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-3">
-                    About Us
-                  </h4>
-                  {about.map((item, index) => (
-                    <a
-                      key={item.title}
-                      href={item.href}
-                      className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group font-semibold text-sm text-gray-900 hover:text-teal-600 animate-fade-in"
-                      style={{ animationDelay: `${index * 30}ms` }}
-                    >
-                      {item.title}
-                    </a>
-                  ))}
-                </div>
-                <div className="border-t pt-2">
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-3">
-                    Careers
-                  </h4>
-                  {careers.map((career, index) => (
-                    <a
-                      key={career.title}
-                      href={career.href}
-                      className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group font-semibold text-sm text-gray-900 hover:text-teal-600 animate-fade-in"
-                      style={{
-                        animationDelay: `${(about.length + index) * 30}ms`,
-                      }}
-                    >
-                      {career.title}
-                    </a>
-                  ))}
-                </div>
+                {about.map((item, index) => (
+                  <Link
+                    key={item.title}
+                    to={item.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
+                    className="mobile-item block p-3 rounded-lg hover:bg-gradient-to-r hover:from-teal-50 hover:to-teal-100 transition-all duration-200 group font-semibold text-sm text-gray-900 hover:text-teal-600 animate-fade-in"
+                    style={{ animationDelay: `${index * 30}ms` }}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Mobile CTA and Theme Toggle */}
-          <div className="flex flex-col space-y-4 mt-8 pb-8">
+          <div className="flex flex-col space-y-4 mt-8 pb-8 mb-4">
             <Link
               to="#"
               onClick={(e) => {

@@ -35,6 +35,7 @@ import DeveloperDocs from "./pages/resources/DeveloperDocs";
 import NewsletterSignup from "./pages/resources/NewsletterSignup";
 import Pricing from "./pages/Pricing";
 import TikTok from "./pages/solutions/TikTok";
+import Amazon from "./pages/solutions/Amazon";
 
 const queryClient = new QueryClient();
 
@@ -111,6 +112,10 @@ const App = () => (
           <Route
             path="/solutions/data-integrations/TikTok"
             element={<TikTok />}
+          />
+          <Route
+            path="/solutions/data-integrations/Amazon"
+            element={<Amazon />}
           />
           {/* Careers section routes (kept for backward compatibility) */}
           <Route path="/careers/open-positions" element={<OpenPositions />} />
