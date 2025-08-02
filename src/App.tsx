@@ -36,6 +36,9 @@ import NewsletterSignup from "./pages/resources/NewsletterSignup";
 import Pricing from "./pages/Pricing";
 import TikTok from "./pages/solutions/TikTok";
 import Amazon from "./pages/solutions/Amazon";
+import Shopify from "./pages/solutions/Shopify";
+import GoogleAds from "./pages/solutions/GoogleAds";
+import AmazonAds from "./pages/solutions/AmazonAds";
 
 const queryClient = new QueryClient();
 
@@ -117,8 +120,20 @@ const App = () => (
             path="/solutions/data-integrations/Amazon"
             element={<Amazon />}
           />
-          {/* Careers section routes (kept for backward compatibility) */}
-          <Route path="/careers/open-positions" element={<OpenPositions />} />
+          <Route
+            path="/solutions/data-integrations/Shopify"
+            element={<Shopify />}
+          />
+                    <Route
+            path="/solutions/data-integrations/GoogleAds"
+            element={<GoogleAds />}
+          />
+          <Route
+            path="/solutions/data-integrations/AmazonAds"
+            element={<AmazonAds />}
+          />
+        {/* Careers section routes (kept for backward compatibility) */}
+        <Route path="/careers/open-positions" element={<OpenPositions />} />
           <Route path="/careers/life-at-trilio" element={<LifeAtTrilio />} />
           <Route
             path="/careers/interview-process"

@@ -4,16 +4,40 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 import ThemeButton from "./theme/ThemeButton";
-import Icon1 from "@/assests/Remove background project (5).png";
-import Icon2 from "@/assests/Remove background project (6).png";
-import Icon3 from "@/assests/Remove background project (7).png";
-import Icon4 from "@/assests/Remove background project (8).png";
+import Icon1 from "@/assests/Remove background project (3).png";
+import Icon2 from "@/assests/Remove background project (5).png";
+import Icon3 from "@/assests/Remove background project (6).png";
+import Icon4 from "@/assests/Remove background project (7).png";
+import Icon5 from "@/assests/Remove background project (8).png";
+import Icon6 from "@/assests/Remove background project (9).png";
+import Icon7 from "@/assests/Remove background project (10).png";
+import Icon8 from "@/assests/Remove background project (11).png";
+import Icon9 from "@/assests/Remove background project (12).png";
+import Icon10 from "@/assests/Remove background project (13).png";
+import AIAssistantInterface from "./AIAssistantInterface";
+import OrbitingCarousel from "./OrbitingCarousel";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [lottieData, setLottieData] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Updated images for the orbiting carousel (removed ChatGPT image)
+  const carouselImages = [
+    { id: 1, src: Icon1, alt: "Analytics Dashboard" },
+    { id: 2, src: Icon2, alt: "Ecommerce Insights" },
+    { id: 3, src: Icon3, alt: "Ad Performance" },
+    { id: 4, src: Icon4, alt: "Data Visualization" },
+    { id: 5, src: Icon5, alt: "Sales Analytics" },
+    { id: 6, src: Icon6, alt: "Customer Insights" },
+    { id: 7, src: Icon7, alt: "Revenue Tracking" },
+    { id: 8, src: Icon8, alt: "Marketing ROI" },
+    { id: 9, src: Icon9, alt: "Inventory Management" },
+    { id: 10, src: Icon10, alt: "Demand Forecasting" },
+    { id: 11, src: Icon1, alt: "Product Performance" },
+    { id: 12, src: Icon2, alt: "Growth Analytics" },
+  ];
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -181,34 +205,23 @@ const Hero = () => {
             ) : (
               <>
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100/40 to-gray-200/40 rounded-2xl sm:rounded-3xl -z-10 shadow-xl blur-sm"></div>
-                <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/80">
-                  <div className="bg-gradient-to-r from-gray-600 to-gray-700 h-12 flex items-center px-4 space-x-2">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="flex-1 text-center">
-                      <span className="text-white text-sm font-medium">
-                        Trilio Analytics Dashboard
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-0 bg-white relative">
-                    {/* Removed animated logo icons */}
-                    <img
-                      src="/lovable-uploads/64071d5d-3b4d-4c4f-b5d1-697a4dcad6e2.png"
-                      alt="Ecommerce Analytics Dashboard"
-                      className="w-full h-auto"
-                      ref={imageRef}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                </div>
+                <AIAssistantInterface />
               </>
             )}
           </div>
+        </div>
+
+        {/* Orbiting Carousel Section */}
+        <div
+          className="mt-8 opacity-0 animate-fade-in"
+          style={{ animationDelay: "1.1s" }}
+        >
+          <OrbitingCarousel
+            images={carouselImages}
+            title="Connect All Your Commerce Data"
+            description="Trilio integrates with 20+ platforms"
+            buttonText="See All Integrations"
+          />
         </div>
       </div>
 
