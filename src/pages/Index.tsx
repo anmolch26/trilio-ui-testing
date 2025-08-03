@@ -60,7 +60,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      New Gradient Background
       <div className="gradient-background">
         <AnimatedParticles showAnimation={true} />
         <div className="light-beam"></div>
