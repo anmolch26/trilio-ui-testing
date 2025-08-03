@@ -120,12 +120,20 @@
     height: 100vh;
     background: radial-gradient(
       ellipse at center,
-      #1a3a4a 0%,
-      #0d1f2a 40%,
-      #051015 100%
+      #1e40af 0%,
+      #1e3a8a 40%,
+      #1e293b 100%
     );
     overflow: hidden;
     z-index: -1;
+  }
+
+  /* Animated particles canvas */
+  .particles-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Main diagonal light beam */
@@ -138,17 +146,18 @@
     background: conic-gradient(
       from 135deg at 50% 50%,
       transparent 0deg,
-      rgba(0, 255, 204, 0.1) 10deg,
-      rgba(0, 255, 204, 0.4) 20deg,
-      rgba(0, 255, 204, 0.8) 25deg,
-      rgba(0, 255, 204, 0.9) 30deg,
-      rgba(0, 255, 204, 0.8) 35deg,
-      rgba(0, 255, 204, 0.4) 45deg,
-      rgba(0, 255, 204, 0.1) 55deg,
+      rgba(96, 165, 250, 0.1) 10deg,
+      rgba(96, 165, 250, 0.4) 20deg,
+      rgba(96, 165, 250, 0.8) 25deg,
+      rgba(96, 165, 250, 0.9) 30deg,
+      rgba(96, 165, 250, 0.8) 35deg,
+      rgba(96, 165, 250, 0.4) 45deg,
+      rgba(96, 165, 250, 0.1) 55deg,
       transparent 65deg
     );
     transform: rotate(-30deg);
     filter: blur(60px);
+    z-index: 2;
   }
 
   /* Secondary light effect */
@@ -161,13 +170,14 @@
     background: linear-gradient(
       135deg,
       transparent 0%,
-      rgba(0, 255, 204, 0.3) 30%,
-      rgba(0, 255, 204, 0.6) 50%,
-      rgba(0, 255, 204, 0.3) 70%,
+      rgba(96, 165, 250, 0.3) 30%,
+      rgba(96, 165, 250, 0.6) 50%,
+      rgba(96, 165, 250, 0.3) 70%,
       transparent 100%
     );
     transform: rotate(-25deg) translateX(20%);
     filter: blur(40px);
+    z-index: 2;
   }
 
   /* Sharp light streak */
@@ -180,15 +190,16 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(0, 255, 204, 0.6) 20%,
-      rgba(0, 255, 204, 1) 50%,
-      rgba(0, 255, 204, 0.6) 80%,
+      rgba(96, 165, 250, 0.6) 20%,
+      rgba(96, 165, 250, 1) 50%,
+      rgba(96, 165, 250, 0.6) 80%,
       transparent 100%
     );
     transform: rotate(-25deg);
     filter: blur(8px);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5), 0 0 40px rgba(0, 255, 204, 0.3),
-      0 0 80px rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.5),
+      0 0 40px rgba(96, 165, 250, 0.3), 0 0 80px rgba(96, 165, 250, 0.1);
+    z-index: 2;
   }
 
   /* Ambient glow */
@@ -200,12 +211,13 @@
     height: 50%;
     background: radial-gradient(
       ellipse at center,
-      rgba(0, 255, 204, 0.2) 0%,
-      rgba(0, 255, 204, 0.1) 30%,
+      rgba(96, 165, 250, 0.2) 0%,
+      rgba(96, 165, 250, 0.1) 30%,
       transparent 70%
     );
     transform: rotate(-20deg);
     filter: blur(100px);
+    z-index: 2;
   }
 
   /* Smooth scrolling */

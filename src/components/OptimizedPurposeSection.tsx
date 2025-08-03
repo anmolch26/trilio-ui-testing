@@ -61,7 +61,7 @@ const OptimizedPurposeSection = () => {
   });
 
   return (
-    <section ref={sectionRef} className="w-full py-16" id="purpose">
+    <section ref={sectionRef} className="w-full pb-16" id="purpose">
       <div className="container px-6 lg:px-8 mx-auto">
         {/* Section Header */}
         <div className="mb-16 text-center">

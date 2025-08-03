@@ -14,13 +14,14 @@ const LeadershipTeam = () => {
       name: "Nirjar Sanghavi",
       title: "Co-founder & CEO  ",
       bio: "Visionary leader with 20+ years of deep expertise in eCommerce analytics and business intelligence at companies like Samsung, Groupon, eBay, PayPal, and Chase. Nirjar founded Trilio with the mission to democratize data-driven decision making for online merchants. With background  in Ecommerce, Data Science, Analytics, Nirjar brings a rare mix of technical depth and business acumen to Trilio.",
-      image: "/lovable-uploads/a629bbe0-8e90-4b25-a313-21449a7292cd.jpg",
+      image:
+        "https://assets.channeliq.ai/invictus-landing/Leadership/Nirjar.png",
     },
     {
       name: "Om Rathod",
       title: " Co-founder & CRO ",
       bio: "Revenue growth leader and co-founder driving Trilio's commercial strategy. Om has led the product vision and execution from scratch. With a strong background in SaaS sales and GTM strategy, Om bridges product innovation with real-world customer needs driving both adoption and growth.",
-      image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
+      image: "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
     },
   ];
 
@@ -85,7 +86,11 @@ const LeadershipTeam = () => {
                 {/* Image */}
                 <div className="flex-shrink-0 w-full md:w-[380px] h-[340px] flex items-center justify-center">
                   <img
-                    src={index === 0 ? NirjarProfilePic : OmProfilePic}
+                    src={
+                      index === 0
+                        ? "https://assets.channeliq.ai/invictus-landing/Leadership/Nirjar.png"
+                        : "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
+                    }
                     alt={leader.name}
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
