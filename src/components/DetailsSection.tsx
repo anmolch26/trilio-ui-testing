@@ -72,7 +72,7 @@ const DetailsSection = () => {
             <div
               className="relative h-48 sm:h-64 p-6 sm:p-8 flex items-end"
               style={{
-                backgroundImage: "url('/background-section1.png')",
+                background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -150,7 +150,7 @@ const DetailsSection = () => {
             <div
               className="relative h-48 sm:h-64 p-6 sm:p-8 flex flex-col items-start"
               style={{
-                backgroundImage: "url('/background-section1.png')",
+                background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

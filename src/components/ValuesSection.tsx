@@ -7,7 +7,7 @@ const ValuesSection = () => {
           <div
             className="bg-no-repeat bg-cover bg-center p-4 sm:p-5 min-h-[250px] sm:min-h-[350px] flex flex-col justify-between"
             style={{
-              backgroundImage: "url('/background-section3.png')",
+              background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
             }}
           >
             <div

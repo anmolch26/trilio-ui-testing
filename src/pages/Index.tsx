@@ -69,7 +69,7 @@ const Index = () => {
         <div className="ambient-glow"></div>
       </div>
 
-      <Navbar />
+      <Navbar largeLogo={true} />
       <main className="space-y-0 relative z-10 pt-16">
         <Hero />
         <OptimizedPurposeSection />

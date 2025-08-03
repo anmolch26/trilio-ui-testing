@@ -21,7 +21,11 @@ import ResourcesDropdown from "./navbar/ResourcesDropdown";
 import AboutDropdown from "./navbar/AboutDropdown";
 import EraseBgLogo from "../assests/erasebg-transformed.png";
 
-const Navbar = () => {
+interface NavbarProps {
+  largeLogo?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -221,12 +225,13 @@ const Navbar = () => {
             <img
               src={EraseBgLogo}
               alt="Trilio.ai Logo"
-              className="h-16 w-auto animate-fade-in"
+              className={largeLogo ? "h-18 sm:h-20 w-auto animate-fade-in" : "h-16 w-auto animate-fade-in"}
             />
           ) : (
             <TrilioLogo
               isScrolled={isScrolled}
               isOnWhiteBackground={shouldUseLightTheme}
+              largeLogo={largeLogo}
               className="animate-fade-in"
             />
           )}

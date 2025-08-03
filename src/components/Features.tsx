@@ -181,7 +181,7 @@ const Features = () => {
     <section
       id="features"
       ref={sectionRef}
-      className="pt-8 pb-0 mb-0 relative overflow-hidden bg-white/0"
+      className="pb-0 mb-0 relative overflow-hidden bg-white/0"
     >
       {/* Subtle ambient light effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
@@ -189,7 +189,7 @@ const Features = () => {
 
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 mb-6 opacity-0 fade-in-element">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#C4FEF9] border border-teal-500/20 text-teal-700 mb-6 opacity-0 fade-in-element">
             <span className="text-sm font-medium">Features</span>
           </div>
 

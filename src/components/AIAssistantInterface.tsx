@@ -95,10 +95,9 @@ const AIAssistantInterface = () => {
             <input
               type="text"
               placeholder={currentText}
-              className="w-full bg-transparent backdrop-blur-sm border border-gray-200/10 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-200/10"
+              className="w-full bg-transparent backdrop-blur-sm border border-gray-200/10 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-200/10 transition-all duration-300 hover:border-blue-400/30 focus:border-blue-400/50"
               style={{
-                boxShadow:
-                  "0 0 20px rgba(148, 163, 184, 0.1), 0 0 40px rgba(148, 163, 184, 0.05)",
+                boxShadow: "0 0 20px rgba(96, 132, 255, 0.1), 0 0 40px rgba(96, 132, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
               }}
             />
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
