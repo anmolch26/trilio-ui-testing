@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-import TrilioVideo from "@/assests/Trilio.mp4";
 import { Play, Volume2, VolumeX } from "lucide-react";
+
+const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.ai_+Your+AI-Powered+eCommerce+Intelligence+Engine-8_4_2025%2C+2_18%E2%80%AFAM.mp4";
 
 const ImageShowcaseSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
