@@ -60,9 +60,9 @@ const AnimatedParticles: React.FC<AnimatedParticlesProps> = ({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Set blend mode and background
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "#0a1428";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // ctx.globalCompositeOperation = "source-over";
+      // ctx.fillStyle = "#0a1428";
+      // ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particlesRef.current.forEach((particle) => {
         // Update particle position
