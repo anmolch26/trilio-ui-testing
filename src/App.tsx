@@ -40,6 +40,7 @@ import Shopify from "./pages/solutions/Shopify";
 import GoogleAds from "./pages/solutions/GoogleAds";
 import AmazonAds from "./pages/solutions/AmazonAds";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -131,6 +132,31 @@ const App = () => (
           <Route
             path="/solutions/data-integrations/AmazonAds"
             element={<AmazonAds />}
+          />
+          {/* Integration Documentation Routes */}
+          <Route
+            path="/resources/developer-docs/shopify"
+            element={<DeveloperDocs />}
+          />
+          <Route
+            path="/resources/developer-docs/klaviyo"
+            element={<DeveloperDocs />}
+          />
+          <Route
+            path="/resources/developer-docs/amazon"
+            element={<DeveloperDocs />}
+          />
+          <Route
+            path="/resources/developer-docs/google-analytics"
+            element={<DeveloperDocs />}
+          />
+          <Route
+            path="/resources/developer-docs/google-ads"
+            element={<DeveloperDocs />}
+          />
+          <Route
+            path="/resources/developer-docs/amazon-ads"
+            element={<DeveloperDocs />}
           />
         {/* Careers section routes (kept for backward compatibility) */}
         <Route path="/careers/open-positions" element={<OpenPositions />} />

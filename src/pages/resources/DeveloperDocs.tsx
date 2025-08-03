@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import {
@@ -21,10 +22,53 @@ import {
   Webhook,
   Github,
   MessageCircle,
+  Database,
+  ShoppingCart,
+  Mail,
+  BarChart3,
+  ChevronDown,
+  CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 
 const DeveloperDocs = () => {
   const [activeSection, setActiveSection] = useState("getting-started");
+  const [showIntegrationsDropdown, setShowIntegrationsDropdown] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowIntegrationsDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Handle URL-based navigation
+  useEffect(() => {
+    const path = location.pathname;
+    if (path.includes('/shopify')) {
+      setActiveSection('shopify');
+    } else if (path.includes('/klaviyo')) {
+      setActiveSection('klaviyo');
+    } else if (path.includes('/amazon')) {
+      setActiveSection('amazon');
+    } else if (path.includes('/google-analytics')) {
+      setActiveSection('google-analytics');
+    } else if (path.includes('/google-ads')) {
+      setActiveSection('google-ads');
+    } else if (path.includes('/amazon-ads')) {
+      setActiveSection('amazon-ads');
+    }
+  }, [location.pathname]);
 
   const sidebarSections = [
     {
@@ -43,6 +87,12 @@ const DeveloperDocs = () => {
       icon: <Code className="h-4 w-4" />,
     },
     {
+      id: "integrations",
+      title: "Integrations",
+      icon: <Database className="h-4 w-4" />,
+      hasDropdown: true,
+    },
+    {
       id: "webhooks",
       title: "Webhooks",
       icon: <Webhook className="h-4 w-4" />,
@@ -58,6 +108,46 @@ const DeveloperDocs = () => {
       icon: <Github className="h-4 w-4" />,
     },
   ];
+
+  const integrations = [
+    {
+      id: "shopify",
+      name: "Shopify",
+      icon: <ShoppingCart className="h-4 w-4" />
+    },
+    {
+      id: "klaviyo",
+      name: "Klaviyo",
+      icon: <Mail className="h-4 w-4" />
+    },
+    {
+      id: "amazon",
+      name: "Amazon",
+      icon: <ShoppingCart className="h-4 w-4" />
+    },
+    {
+      id: "google-analytics",
+      name: "Google Analytics",
+      icon: <BarChart3 className="h-4 w-4" />
+    },
+    {
+      id: "google-ads",
+      name: "Google Ads",
+      icon: <BarChart3 className="h-4 w-4" />
+    },
+    {
+      id: "amazon-ads",
+      name: "Amazon Ads",
+      icon: <BarChart3 className="h-4 w-4" />
+    }
+  ];
+
+  const handleIntegrationClick = (integrationId: string) => {
+    setActiveSection(integrationId);
+    setShowIntegrationsDropdown(false);
+    // Update URL to reflect the selected integration
+    navigate(`/resources/developer-docs/${integrationId}`);
+  };
 
   const codeExamples = {
     curl: `curl -X GET "https://api.trilio.ai/v1/metrics" \\
@@ -131,18 +221,52 @@ metrics = client.metrics.get(
                 <CardContent className="p-0">
                   <nav className="space-y-1">
                     {sidebarSections.map((section) => (
-                      <button
-                        key={section.id}
-                        onClick={() => setActiveSection(section.id)}
-                        className={`w-full flex items-center px-4 py-3 text-left transition-all duration-200 ${
-                          activeSection === section.id
-                            ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
-                            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                        }`}
-                      >
-                        {section.icon}
-                        <span className="ml-3">{section.title}</span>
-                      </button>
+                      <div key={section.id}>
+                        {section.hasDropdown ? (
+                          <div className="relative" ref={dropdownRef}>
+                            <button
+                              onClick={() => setShowIntegrationsDropdown(!showIntegrationsDropdown)}
+                              className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-200 ${
+                                activeSection === section.id
+                                  ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                              }`}
+                            >
+                              <div className="flex items-center">
+                                {section.icon}
+                                <span className="ml-3">{section.title}</span>
+                              </div>
+                              <ChevronDown className={`h-4 w-4 transition-transform ${showIntegrationsDropdown ? 'rotate-180' : ''}`} />
+                            </button>
+                            {showIntegrationsDropdown && (
+                              <div className="absolute left-0 right-0 top-full bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                                {integrations.map((integration) => (
+                                  <button
+                                    key={integration.id}
+                                    onClick={() => handleIntegrationClick(integration.id)}
+                                    className="w-full flex items-center px-6 py-3 text-left text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                                  >
+                                    {integration.icon}
+                                    <span className="ml-3">{integration.name}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <button
+                            onClick={() => setActiveSection(section.id)}
+                            className={`w-full flex items-center px-4 py-3 text-left transition-all duration-200 ${
+                              activeSection === section.id
+                                ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                            }`}
+                          >
+                            {section.icon}
+                            <span className="ml-3">{section.title}</span>
+                          </button>
+                        )}
+                      </div>
                     ))}
                   </nav>
                 </CardContent>
@@ -442,6 +566,678 @@ metrics = client.metrics.get(
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+            )}
+
+            {activeSection === "shopify" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Shopify Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Connect your Shopify store to Trilio for comprehensive e-commerce analytics and insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up API communication with your Shopify store
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">Store URL</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">https://your-store.myshopify.com</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("https://your-store.myshopify.com")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold mb-2">Access Token</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">Private app access token</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("Private app access token")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required Admin API Scopes</CardTitle>
+                    <CardDescription>
+                      Configure these permissions in your Shopify app
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        "read_products", "read_product_listings", "read_orders", "read_customers",
+                        "read_inventory", "read_analytics", "read_reports", "read_marketing_events",
+                        "read_fulfillments", "read_shipping", "read_discounts", "read_price_rules",
+                        "read_gift_cards", "read_shop_data", "read_checkouts", "read_abandoned_checkouts", "read_content"
+                      ].map((scope) => (
+                        <div key={scope} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <code className="text-sm bg-gray-100 px-2 py-1 rounded">{scope}</code>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Shopify store
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Log in to Shopify Admin", desc: "Access your Shopify admin dashboard" },
+                        { step: 2, title: "Navigate to Apps", desc: "Go to Settings → Apps and sales channels → Develop apps" },
+                        { step: 3, title: "Enable Custom Apps", desc: "Enable custom apps if not already enabled" },
+                        { step: 4, title: "Create App", desc: "Click \"Create an app\" to start the setup process" },
+                        { step: 5, title: "Configure API Access", desc: "Configure Admin API access with all required scopes listed above" },
+                        { step: 6, title: "Install App", desc: "Install the app in your store" },
+                        { step: 7, title: "Copy Access Token", desc: "Copy the Admin API access token for use in Trilio" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• Ensure all required scopes are enabled for full functionality</li>
+                        <li>• Keep your access token secure and never share it publicly</li>
+                        <li>• The app requires read-only access to your store data</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "klaviyo" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Klaviyo Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Connect your Klaviyo account to Trilio for advanced email marketing analytics and customer insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up API communication with your Klaviyo account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">API Key</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">Klaviyo Private API Key</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("Klaviyo Private API Key")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required API Key Permissions</CardTitle>
+                    <CardDescription>
+                      Ensure your API key has these read-only permissions
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        "Read Lists and Segments", "Read Profiles", "Read Metrics and Events",
+                        "Read Campaigns", "Read Flows", "Read Templates", "Read Account information"
+                      ].map((permission) => (
+                        <div key={permission} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">{permission}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Klaviyo account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Sign in to Klaviyo", desc: "Access your Klaviyo account dashboard" },
+                        { step: 2, title: "Navigate to API Keys", desc: "Go to Account → Settings → API Keys" },
+                        { step: 3, title: "Create Private API Key", desc: "Click \"Create Private API Key\" to generate a new key" },
+                        { step: 4, title: "Name the Key", desc: "Name the key (e.g., \"Trilio Integration\") for easy identification" },
+                        { step: 5, title: "Select Access Level", desc: "Select \"Read-Only Access\" for data retrieval" },
+                        { step: 6, title: "Copy API Key", desc: "Copy the generated API key for use in Trilio" },
+                        { step: 7, title: "Connect to Trilio", desc: "Go to trilio.ai and sign in to your account" },
+                        { step: 8, title: "Add Integration", desc: "Navigate to Integrations → Klaviyo and paste your API key" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• The API key provides read-only access to your Klaviyo data</li>
+                        <li>• Keep your API key secure and never share it publicly</li>
+                        <li>• You can revoke access at any time from your Klaviyo settings</li>
+                        <li>• The integration will sync your email marketing data for analysis</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "amazon" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Amazon Seller Central Integration (SP-API)</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Authorize our developer account to access your seller data via the Selling Partner API.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up API communication with your Amazon Seller Central account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">Developer Account ID</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">amzn1.sp.solution.5267be4c-5872-46f1-95ab-e6c67bece302</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("amzn1.sp.solution.5267be4c-5872-46f1-95ab-e6c67bece302")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required API Permissions</CardTitle>
+                    <CardDescription>
+                      Grant access to these APIs for comprehensive data integration
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        "Orders API", "Reports API", "Catalog Items API", "Inventory API",
+                        "Finances API", "Fulfillment Inbound API", "Fulfillment Outbound API",
+                        "Merchant Fulfillment API", "Notifications API", "Product Fees API",
+                        "Product Pricing API", "Sales API", "Sellers API", "Services API",
+                        "Shipment Invoicing API", "Shipping API"
+                      ].map((api) => (
+                        <div key={api} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">{api}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Amazon Seller Central account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Sign up at Trilio", desc: "Go to https://staging.trilio.ai/login and create an account" },
+                        { step: 2, title: "Navigate to Integrations", desc: "Go to Profile section and click on Integrations" },
+                        { step: 3, title: "Select Amazon", desc: "Click on Amazon integration to start the setup process" },
+                        { step: 4, title: "Redirect to Amazon", desc: "You will be redirected to Amazon's Seller Central login page" },
+                        { step: 5, title: "Login to Amazon", desc: "Log in using your Amazon seller credentials" },
+                        { step: 6, title: "Authorize Access", desc: "Authorize access for our developer account with all required permissions" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• This integration uses Amazon's Selling Partner API (SP-API)</li>
+                        <li>• You must have an active Amazon Seller Central account</li>
+                        <li>• All data access is read-only for analytics purposes</li>
+                        <li>• You can revoke access at any time from your Amazon Seller Central settings</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "google-analytics" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Google Analytics 4 (GA4) Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Connect your Google Analytics 4 property to Trilio for comprehensive web analytics and user behavior insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up access to your Google Analytics 4 property
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">GA4 Property ID</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">e.g. 123456789</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("123456789")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold mb-2">Grant Access To</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">trilio-ga4@trilio-462507.iam.gserviceaccount.com</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("trilio-ga4@trilio-462507.iam.gserviceaccount.com")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required Permissions</CardTitle>
+                    <CardDescription>
+                      Grant these permissions for comprehensive read-only access
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle className="h-4 w-4 text-green-600" />
+                        <span className="text-sm font-medium">Viewer</span>
+                        <span className="text-sm text-gray-600">- Read-only access to all reports and configuration data</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Google Analytics 4 property
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Log in to Google Analytics", desc: "Go to https://analytics.google.com and sign in" },
+                        { step: 2, title: "Access Admin Settings", desc: "Click the 'Admin' gear icon in the bottom left corner" },
+                        { step: 3, title: "Select Property", desc: "Under the 'Property' column, select your GA4 property" },
+                        { step: 4, title: "Manage Access", desc: "Click 'Property Access Management'" },
+                        { step: 5, title: "Add User", desc: "Click the '+' button to add a new user" },
+                        { step: 6, title: "Enter Service Account", desc: "Enter: trilio-ga4@trilio-462507.iam.gserviceaccount.com" },
+                        { step: 7, title: "Assign Role", desc: "Assign 'Viewer' role for comprehensive read-only access" },
+                        { step: 8, title: "Save Changes", desc: "Click 'Save' to complete the setup" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• This integration requires a Google Analytics 4 (GA4) property</li>
+                        <li>• Universal Analytics (UA) properties are not supported</li>
+                        <li>• The service account has read-only access to your analytics data</li>
+                        <li>• You can revoke access at any time from your Google Analytics settings</li>
+                        <li>• Data will be synced for comprehensive web analytics insights</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "google-ads" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Google Ads Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Connect your Google Ads account to Trilio for comprehensive advertising analytics and campaign performance insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up access to your Google Ads account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">Customer ID</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">e.g. 123-456-7890</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("123-456-7890")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold mb-2">Grant Access To</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">Our Google Ads Manager account: 219-056-5758</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("219-056-5758")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required Permission Level</CardTitle>
+                    <CardDescription>
+                      Grant access to these data types for comprehensive analytics
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        "Campaign performance data", "Ad group and keyword data", "Audience insights",
+                        "Conversion tracking data", "Account structure and settings", "Extensions and assets data",
+                        "Shopping campaigns data", "Video campaigns data", "Display campaigns data"
+                      ].map((dataType) => (
+                        <div key={dataType} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">{dataType}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Google Ads account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Log in to Google Ads", desc: "Go to https://ads.google.com and sign in to your account" },
+                        { step: 2, title: "Access Tools & Settings", desc: "Click on Tools & Settings (wrench icon) in the top menu" },
+                        { step: 3, title: "Navigate to Access", desc: "Under 'Setup', click 'Access and security'" },
+                        { step: 4, title: "Invite Users", desc: "Click the '+' button to invite new users" },
+                        { step: 5, title: "Enter Manager Account", desc: "Enter manager account ID: 219-056-5758" },
+                        { step: 6, title: "Select Access Level", desc: "Select 'Read Only' access level for data retrieval" },
+                        { step: 7, title: "Save Invitation", desc: "Save the invitation to complete the setup" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• This integration provides read-only access to your Google Ads data</li>
+                        <li>• You must have admin access to your Google Ads account</li>
+                        <li>• The manager account will have access to all campaigns and data</li>
+                        <li>• You can revoke access at any time from your Google Ads settings</li>
+                        <li>• Data will be synced for comprehensive advertising analytics</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "amazon-ads" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Amazon Ads Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Grant access to our Amazon Ads app for comprehensive advertising analytics and campaign performance insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up access to your Amazon Ads account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">Client ID</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">amzn1.application-oa2-client.aa03631e19f94334932b94d22185515c</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("amzn1.application-oa2-client.aa03631e19f94334932b94d22185515c")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required Scopes</CardTitle>
+                    <CardDescription>
+                      Grant access to these scopes for comprehensive advertising data
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        "advertising::campaign_management_read", "advertising::reporting",
+                        "advertising::display_read", "advertising::dsp_reports",
+                        "advertising::audiences_read", "advertising::stores_read",
+                        "advertising::brand_metrics", "advertising::attribution"
+                      ].map((scope) => (
+                        <div key={scope} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <code className="text-sm bg-gray-100 px-2 py-1 rounded">{scope}</code>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Amazon Ads account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Sign up at Trilio", desc: "Go to https://staging.trilio.ai/login and create an account" },
+                        { step: 2, title: "Navigate to Integrations", desc: "Go to Profile section and click on Integrations" },
+                        { step: 3, title: "Select Amazon Ads", desc: "Click on Amazon Ads integration to start the setup process" },
+                        { step: 4, title: "Redirect to Amazon Ads", desc: "You will be redirected to Amazon Ads login page" },
+                        { step: 5, title: "Login to Amazon", desc: "Log in using your Amazon account credentials" },
+                        { step: 6, title: "Grant Access", desc: "Grant access to our Ads app with all required scopes" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• This integration provides read-only access to your Amazon Ads data</li>
+                        <li>• You must have an active Amazon Ads account</li>
+                        <li>• All data access is for analytics and reporting purposes only</li>
+                        <li>• You can revoke access at any time from your Amazon Ads settings</li>
+                        <li>• Data will be synced for comprehensive advertising analytics</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
