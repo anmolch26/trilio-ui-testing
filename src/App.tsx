@@ -28,6 +28,7 @@ import LifeAtTrilio from "./pages/careers/LifeAtTrilio";
 import InterviewProcess from "./pages/careers/InterviewProcess";
 import InternshipsPrograms from "./pages/careers/InternshipsPrograms";
 import BlogInsights from "./pages/resources/BlogInsights";
+import Blog1 from "./pages/Blog1";
 import CaseStudies from "./pages/resources/CaseStudies";
 import GuidesReports from "./pages/resources/GuidesReports";
 import HelpCenter from "./pages/resources/HelpCenter";
@@ -124,7 +125,7 @@ const App = () => (
             path="/solutions/data-integrations/Shopify"
             element={<Shopify />}
           />
-                    <Route
+          <Route
             path="/solutions/data-integrations/GoogleAds"
             element={<GoogleAds />}
           />
@@ -132,8 +133,8 @@ const App = () => (
             path="/solutions/data-integrations/AmazonAds"
             element={<AmazonAds />}
           />
-        {/* Careers section routes (kept for backward compatibility) */}
-        <Route path="/careers/open-positions" element={<OpenPositions />} />
+          {/* Careers section routes (kept for backward compatibility) */}
+          <Route path="/careers/open-positions" element={<OpenPositions />} />
           <Route path="/careers/life-at-trilio" element={<LifeAtTrilio />} />
           <Route
             path="/careers/interview-process"
@@ -145,6 +146,7 @@ const App = () => (
           />
           {/* Resources section routes */}
           <Route path="/resources/blog-insights" element={<BlogInsights />} />
+          <Route path="/resources/blog-insights/Blog1" element={<Blog1 />} />
           <Route path="/resources/case-studies" element={<CaseStudies />} />
           <Route path="/resources/guides-reports" element={<GuidesReports />} />
           <Route path="/resources/help-center" element={<HelpCenter />} />

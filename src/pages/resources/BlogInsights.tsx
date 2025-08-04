@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import PageLayout from "@/components/theme/PageLayout";
@@ -16,9 +17,15 @@ import { Search, Calendar, Clock, User } from "lucide-react";
 const BlogInsights = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleReadMore = () => {
+    navigate("/resources/blog-insights/Blog1");
+  };
 
   const categories = [
     "All",
+    "Analytics",
     "Product",
     "E-commerce",
     "Marketing",
@@ -29,13 +36,13 @@ const BlogInsights = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "The Future of AI in E-commerce Analytics",
+      title: "The Ultimate Guide to Ecommerce Analytics Platforms in 2025",
       summary:
-        "How artificial intelligence is transforming the way businesses understand customer behavior and predict market trends.",
-      category: "AI",
-      author: "Sarah Chen",
+        "Transform your scattered data into profitable insights with the power of unified analytics. Complete guide to choosing the best ecommerce analytics platform in 2025.",
+      category: "Analytics",
+      author: "Trilio Team",
       date: "Dec 10, 2024",
-      readTime: "5 min",
+      readTime: "15 min",
       image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
       featured: true,
     },
@@ -180,7 +187,7 @@ const BlogInsights = () => {
                         {filteredPosts.find((post) => post.featured)?.readTime}
                       </span>
                     </div>
-                    <Button>Read More</Button>
+                    <Button onClick={handleReadMore}>Read More</Button>
                   </div>
                 </div>
               </Card>
