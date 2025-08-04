@@ -6,12 +6,14 @@ interface TrilioLogoProps {
   className?: string;
   isScrolled?: boolean;
   isOnWhiteBackground?: boolean;
+  largeLogo?: boolean;
 }
 
 const TrilioLogo: React.FC<TrilioLogoProps> = ({
   className,
   isScrolled,
-  isOnWhiteBackground = false
+  isOnWhiteBackground = false,
+  largeLogo = false
 }) => {
   return (
     <div className={cn("flex items-center transition-all duration-500 cursor-pointer group", isScrolled ? "scale-90" : "scale-100", className)}>
@@ -21,7 +23,9 @@ const TrilioLogo: React.FC<TrilioLogoProps> = ({
         alt="Trilio.ai Logo"
         className={cn(
           "transition-all duration-500 group-hover:scale-110", 
-          isScrolled ? "h-16" : "h-20",
+          largeLogo 
+            ? (isScrolled ? "h-16 sm:h-18" : "h-20 sm:h-22")
+            : (isScrolled ? "h-16" : "h-20"),
           isOnWhiteBackground ? "filter-none" : "filter brightness-0 invert"
         )}
         style={{

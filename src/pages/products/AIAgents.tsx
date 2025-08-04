@@ -14,7 +14,7 @@ const AIAgents = () => {
     description: "Ask questions, automate complex tasks, and get AI-powered recommendations—no dashboards needed.",
     primaryButtonText: "Chat with AI Agent",
     secondaryButtonText: "Enable AI Agents",
-    heroImage: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
+    heroImage: "https://assets.channeliq.ai/trilio-landing/products/wingman.png",
     heroImageAlt: "AI chat interface with intelligent responses",
     gradientColors: "bg-gradient-to-br from-orange-500/20 to-purple-600/20"
   };

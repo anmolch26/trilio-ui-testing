@@ -21,7 +21,11 @@ import ResourcesDropdown from "./navbar/ResourcesDropdown";
 import AboutDropdown from "./navbar/AboutDropdown";
 import EraseBgLogo from "../assests/erasebg-transformed.png";
 
-const Navbar = () => {
+interface NavbarProps {
+  largeLogo?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -189,7 +193,7 @@ const Navbar = () => {
 
   const getMobileButtonClasses = () => {
     const baseClasses =
-      "lg:hidden p-2 focus:outline-none rounded-lg transition-colors duration-200";
+      "md:hidden p-2 sm:p-3 focus:outline-none rounded-lg transition-colors duration-200";
 
     if (shouldUseLightTheme) {
       return `${baseClasses} text-gray-800 hover:bg-gray-100`;
@@ -207,11 +211,11 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-1 sm:py-1.5 md:py-2 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 lg:py-5 transition-all duration-300",
         getNavbarBackground()
       )}
     >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <Link
           to="/"
           className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105"
@@ -221,20 +225,21 @@ const Navbar = () => {
             <img
               src={EraseBgLogo}
               alt="Trilio.ai Logo"
-              className="h-16 w-auto animate-fade-in"
+              className={largeLogo ? "h-16 sm:h-18 md:h-20 lg:h-22 w-auto animate-fade-in" : "h-14 sm:h-16 md:h-18 lg:h-20 w-auto animate-fade-in"}
             />
           ) : (
             <TrilioLogo
               isScrolled={isScrolled}
               isOnWhiteBackground={shouldUseLightTheme}
+              largeLogo={largeLogo}
               className="animate-fade-in"
             />
           )}
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="space-x-1">
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList className="space-x-1 md:space-x-2 lg:space-x-3">
             <NavigationMenuItem>
               <NavigationMenuTrigger className={getNavTriggerClasses()}>
                 Products
@@ -346,7 +351,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-white flex flex-col h-screen pt-16 px-6 lg:hidden transition-all duration-300 ease-in-out overflow-y-auto",
+          "fixed inset-0 z-50 bg-white flex flex-col h-screen pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:hidden transition-all duration-300 ease-in-out overflow-y-auto",
           isMenuOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-full pointer-events-none"

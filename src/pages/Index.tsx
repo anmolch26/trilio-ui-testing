@@ -60,7 +60,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* New Gradient Background */}
       <div className="gradient-background">
         <AnimatedParticles showAnimation={true} />
         <div className="light-beam"></div>
@@ -69,7 +68,7 @@ const Index = () => {
         <div className="ambient-glow"></div>
       </div>
 
-      <Navbar />
+      <Navbar largeLogo={true} />
       <main className="space-y-0 relative z-10 pt-16">
         <Hero />
         <OptimizedPurposeSection />

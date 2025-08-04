@@ -14,7 +14,7 @@ const BIReporting = () => {
     description: "Unify Amazon, Shopify, Walmart & more in one exportable report—powered by AI, no coding required.",
     primaryButtonText: "See Live Demo",
     secondaryButtonText: "Start Free Trial",
-    heroImage: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
+    heroImage: "https://assets.channeliq.ai/trilio-landing/products/BiReport.png",
     heroImageAlt: "Multi-tab Excel export with dashboard and SKU breakdown",
     gradientColors: "bg-gradient-to-br from-orange-500/20 to-purple-600/20"
   };

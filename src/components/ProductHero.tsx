@@ -69,7 +69,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
             </div>
           </div>
           <div className="relative opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <div className="glass-card p-6 hover-lift">
+            <div className="hover-lift">
               <img 
                 src={heroImage}
                 alt={heroImageAlt}

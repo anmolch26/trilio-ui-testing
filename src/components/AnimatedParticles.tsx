@@ -40,13 +40,13 @@ const AnimatedParticles: React.FC<AnimatedParticlesProps> = ({
     // Initialize particles
     const initParticles = () => {
       particlesRef.current = [];
-      for (let i = 0; i < 36; i++) {
+      for (let i = 0; i < 86; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * (11 - 5) + 5,
-          speedX: (Math.random() - 0.5) * 0.4,
-          speedY: Math.random() * 0.4,
+          size: Math.random() * (3 - 0.5) + 0.5, // Smaller size range: 0.5-3
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
           opacity: Math.random() * 0.7,
           pulse: Math.random() * Math.PI * 2,
           pulseSpeed: 0.02 + Math.random() * 0.02,
@@ -59,8 +59,10 @@ const AnimatedParticles: React.FC<AnimatedParticlesProps> = ({
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Set blend mode
-      ctx.globalCompositeOperation = "overlay";
+      // Set blend mode and background
+      // ctx.globalCompositeOperation = "source-over";
+      // ctx.fillStyle = "#0a1428";
+      // ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particlesRef.current.forEach((particle) => {
         // Update particle position
@@ -96,10 +98,18 @@ const AnimatedParticles: React.FC<AnimatedParticlesProps> = ({
           Math.min(0.7, distanceFromCenter * 0.7)
         );
 
-        // Draw particle
+        // Draw particle as simple glowing dot
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, pulseSize, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(6, 45, 113, ${edgeOpacity})`;
+        
+        // Simple white/light blue glow
+        ctx.fillStyle = `rgba(255, 255, 255, ${edgeOpacity * 0.8})`;
+        ctx.fill();
+        
+        // Add subtle glow ring
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, pulseSize * 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(96, 132, 255, ${edgeOpacity * 0.3})`;
         ctx.fill();
       });
 
@@ -118,7 +128,18 @@ const AnimatedParticles: React.FC<AnimatedParticlesProps> = ({
 
   if (!showAnimation) return null;
 
-  return <canvas ref={canvasRef} className="particles-canvas" />;
+  return (
+    <canvas 
+      ref={canvasRef} 
+      className="particles-canvas" 
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 1
+      }}
+    />
+  );
 };
 
 export default AnimatedParticles;
