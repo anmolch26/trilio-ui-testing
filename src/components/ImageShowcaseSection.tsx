@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
 import { useAnalytics } from "../hooks/useAnalytics";
 
-const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.ai_+Your+AI-Powered+eCommerce+Intelligence+Engine-8_4_2025%2C+2_18%E2%80%AFAM.mp4";
+const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.mp4";
 
 const ImageShowcaseSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -124,10 +124,10 @@ const ImageShowcaseSection = () => {
                 ref={videoRef}
                 src={TrilioVideo}
                 className="w-full h-auto"
-                loop
                 playsInline
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
                 onClick={handleVideoClick}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
