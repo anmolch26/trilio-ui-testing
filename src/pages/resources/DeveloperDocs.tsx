@@ -77,6 +77,12 @@ const DeveloperDocs = () => {
       icon: <Book className="h-4 w-4" />,
     },
     {
+      id: "integrations",
+      title: "Integrations",
+      icon: <Database className="h-4 w-4" />,
+      hasDropdown: true,
+    },
+    {
       id: "authentication",
       title: "Authentication",
       icon: <Key className="h-4 w-4" />,
@@ -85,12 +91,6 @@ const DeveloperDocs = () => {
       id: "api-reference",
       title: "API Reference",
       icon: <Code className="h-4 w-4" />,
-    },
-    {
-      id: "integrations",
-      title: "Integrations",
-      icon: <Database className="h-4 w-4" />,
-      hasDropdown: true,
     },
     {
       id: "webhooks",
