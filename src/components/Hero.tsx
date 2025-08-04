@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 import ThemeButton from "./theme/ThemeButton";
+import { useAnalytics } from "../hooks/useAnalytics";
 import Icon1 from "@/assests/Remove background project (3).png";
 import Icon2 from "@/assests/Remove background project (5).png";
 import Icon3 from "@/assests/Remove background project (6).png";
@@ -22,6 +23,7 @@ const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [lottieData, setLottieData] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const { trackButtonClick } = useAnalytics();
 
   // Updated images for the orbiting carousel (removed ChatGPT image)
   const carouselImages = [
@@ -115,6 +117,7 @@ const Hero = () => {
         top: showcaseElement.offsetTop - offset,
         behavior: "smooth",
       });
+      trackButtonClick('see_trilio_action', { page_section: 'hero' });
     }
   };
 

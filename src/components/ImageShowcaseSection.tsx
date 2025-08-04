@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
+import { useAnalytics } from "../hooks/useAnalytics";
 
 const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.ai_+Your+AI-Powered+eCommerce+Intelligence+Engine-8_4_2025%2C+2_18%E2%80%AFAM.mp4";
 
@@ -11,11 +12,13 @@ const ImageShowcaseSection = () => {
   const [showControls, setShowControls] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { trackVideoInteraction } = useAnalytics();
 
   const handlePlayClick = () => {
     if (videoRef.current) {
       videoRef.current.play();
       setIsPlaying(true);
+      trackVideoInteraction('play', 'Trilio Demo Video');
     }
   };
 
@@ -24,9 +27,11 @@ const ImageShowcaseSection = () => {
       if (isPlaying) {
         videoRef.current.pause();
         setIsPlaying(false);
+        trackVideoInteraction('pause', 'Trilio Demo Video');
       } else {
         videoRef.current.play();
         setIsPlaying(true);
+        trackVideoInteraction('play', 'Trilio Demo Video');
       }
     }
   };
@@ -35,6 +40,7 @@ const ImageShowcaseSection = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
+      trackVideoInteraction(isMuted ? 'unmute' : 'mute', 'Trilio Demo Video');
     }
   };
 
