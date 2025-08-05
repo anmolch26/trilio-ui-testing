@@ -72,7 +72,8 @@ const DetailsSection = () => {
             <div
               className="relative h-48 sm:h-64 p-6 sm:p-8 flex items-end"
               style={{
-                background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
+                background:
+                  "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -92,7 +93,7 @@ const DetailsSection = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
                     1
                   </div>
                   <div className="flex-1">
@@ -109,7 +110,7 @@ const DetailsSection = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
                     2
                   </div>
                   <div className="flex-1">
@@ -126,7 +127,7 @@ const DetailsSection = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
                     3
                   </div>
                   <div className="flex-1">
@@ -150,7 +151,8 @@ const DetailsSection = () => {
             <div
               className="relative h-48 sm:h-64 p-6 sm:p-8 flex flex-col items-start"
               style={{
-                background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
+                background:
+                  "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

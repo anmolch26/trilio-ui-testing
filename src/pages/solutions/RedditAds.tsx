@@ -2,32 +2,37 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import GoogleAdsInfographic from "@/assests/Google-Ads-Competitor-Analysis-Guide-blog-image.svg";
-import GoogleAdsHeroImage from "@/assests/google-ads-marketing.jpg";
-import GoogleAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_43_08 PM.png";
-import GoogleAdsROIImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_55_37 PM.png";
-import GoogleAdsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_04_47 PM.png";
+import RedditAdsInfographic from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.png";
+import RedditAdsHeroImage from "@/assests/reddit-1-min.jpg";
+import RedditAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_21_53 AM.png";
+import RedditAdsROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.png";
+import RedditAdsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.png";
+import RedditAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.png";
+import RedditAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.png";
+import RedditAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.png";
+import RedditAdsInsightsBlogImage from "@/assests/Insights_Blog_Reddit-01.svg";
+import RedditAdsAIExpertiseNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 05_13_08 AM.png";
 
-const GoogleAds = () => (
-  <PageLayout backgroundClass="bg-[#4285F4]">
+const RedditAds = () => (
+  <PageLayout backgroundClass="bg-[#FF4500]">
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#4285F4]"
+      className="pt-24 !bg-[#FF4500]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-black">
-            GOOGLE ADS ANALYTICS & OPTIMIZATION PLATFORM
+            REDDIT ADS ANALYTICS & OPTIMIZATION PLATFORM
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            AI-POWERED GOOGLE ADS MARKETING SOLUTIONS
+            AI-POWERED REDDIT ADS MARKETING SOLUTIONS
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            Transform your Google Ads campaigns with AI-driven insights,
-            automated bid optimization, and data-driven strategies that maximize
-            your advertising ROI.
+            Transform your Reddit Ads campaigns with AI-driven insights,
+            automated targeting optimization, and data-driven strategies that
+            maximize your advertising ROI on Reddit's unique community platform.
           </p>
           <ThemeButton
             variant="primary"
@@ -38,11 +43,11 @@ const GoogleAds = () => (
             Get in Touch
           </ThemeButton>
         </div>
-        {/* Right: Google Ads Hero Image */}
+        {/* Right: Reddit Ads Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src={GoogleAdsHeroImage}
-            alt="AI-Powered Google Ads Marketing Solutions"
+            src={RedditAdsHeroImage}
+            alt="AI-Powered Reddit Ads Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -54,20 +59,20 @@ const GoogleAds = () => (
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Data to Disruption: Google Ads Success Stories
+          From Data to Disruption: Reddit Ads Success Stories
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          At Trilio, we empower brands to turn Google Ads' vast advertising
-          ecosystem into measurable business results. Our platform unifies your
+          At Trilio, we empower brands to turn Reddit's unique community
+          platform into measurable business results. Our platform unifies your
           campaign data, surfaces actionable insights, and helps you optimize
-          every advertising strategy and keyword targeting.
+          every advertising strategy and community targeting.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src={GoogleAdsInfographic}
-              alt="Google Ads Data to Business Results"
+              src={RedditAdsSuccessStoriesImage}
+              alt="Reddit Ads Success Stories and Data Disruption"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -76,13 +81,13 @@ const GoogleAds = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Bid Optimization Strategies for Campaign Growth
+                  Community Targeting Optimization for Engagement Growth
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Turning Google Ads Trends into Tangible Business Success
+                  Turning Reddit Ads Trends into Tangible Business Success
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
@@ -94,7 +99,7 @@ const GoogleAds = () => (
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Turning Google Ads Challenges into Brand Wins
+                  Turning Reddit Ads Challenges into Brand Wins
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
@@ -104,14 +109,14 @@ const GoogleAds = () => (
       </div>
     </section>
 
-    {/* Google Ads Partner Section */}
+    {/* Reddit Ads Partner Section */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Left: Analytics Dashboard Image */}
+        {/* Left: AI-Driven Expertise Image */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsAnalyticsImage}
-            alt="AI-Powered Google Ads Analytics Dashboard"
+            src={RedditAdsAIExpertiseNewImage}
+            alt="AI-Powered Reddit Ads Advertising Expertise"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -119,22 +124,23 @@ const GoogleAds = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unlock the Power of Google Ads Advertising with AI-Driven Expertise
+            Unlock the Power of Reddit Ads Advertising with AI-Driven Expertise
           </h2>
           <p className="text-lg text-gray-700 mb-6">
             As an innovative AI-powered marketing platform, Trilio.ai joins a
-            select group of agencies with exclusive access to Google's advanced
+            select group of agencies with exclusive access to Reddit's advanced
             advertising tools and platform support. Our comprehensive AI-driven
-            approach integrates PPC optimization, campaign management, and
-            performance analytics to deliver seamless Google Ads campaigns.
+            approach integrates community targeting, interest-based
+            optimization, and performance analytics to deliver seamless Reddit
+            Ads campaigns.
           </p>
           <p className="text-lg text-gray-700">
-            From setting up your Google Ads account to managing AI-optimized
+            From setting up your Reddit Ads account to managing AI-optimized
             paid media and intelligent campaign strategies, we provide a
             comprehensive, data-driven approach that delivers immediate results
             and long-term growth. Trilio.ai's unique combination of AI
-            technology and exclusive Google access positions us as a leader in
-            the Google Ads advertising space.
+            technology and exclusive Reddit access positions us as a leader in
+            the Reddit Ads advertising space.
           </p>
         </div>
       </div>
@@ -146,13 +152,13 @@ const GoogleAds = () => (
         {/* Left: Text Content */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Boosting Google Ads ROI with Creative & Advertising
+            Boosting Reddit Ads ROI with Creative & Advertising
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             As an innovative AI-powered marketing platform, Trilio delivers
             quick-turn performance analysis, iterate creative, and drive ROI
             through scalable advertising campaigns that lead to brand lift and
-            conversions.
+            conversions on Reddit's community platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -173,11 +179,11 @@ const GoogleAds = () => (
             </ThemeButton>
           </div>
         </div>
-        {/* Right: Google Ads ROI Infographic */}
+        {/* Right: Reddit Ads ROI Boost Infographic */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsROIImage}
-            alt="Google Ads ROI Growth & Advertising Performance"
+            src={RedditAdsROIBoostImage}
+            alt="Boosting Reddit Ads ROI with Creative & Advertising"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -191,8 +197,8 @@ const GoogleAds = () => (
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsInsightsImage}
-            alt="AI-Powered Google Ads Marketing Analytics Dashboard"
+            src={RedditAdsInsightsBlogImage}
+            alt="Data-Driven Reddit Ads Marketing Insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -204,16 +210,16 @@ const GoogleAds = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Google Ads Marketing Insights
+            Data-Driven Reddit Ads Marketing Insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Transform your Google Ads marketing with AI-powered analytics that
+            Transform your Reddit Ads marketing with AI-powered analytics that
             reveal the true impact of every campaign. Our advanced platform
-            tracks clicks, conversion rates, and ROI across all your Google Ads
-            activities, helping you identify high-performing keywords and
-            optimize your ad spend. Get real-time insights into customer
-            behavior, search trends, and competitor analysis to stay ahead of
-            the curve.
+            tracks clicks, conversion rates, and ROI across all your Reddit Ads
+            activities, helping you identify high-performing communities and
+            optimize your ad spend. Get real-time insights into community
+            behavior, trending topics, and competitor analysis to stay ahead of
+            the curve on Reddit's platform.
           </p>
           <ThemeButton
             variant="outline"
@@ -228,7 +234,7 @@ const GoogleAds = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#4ED7F1] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section className="bg-[#f09047] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -269,7 +275,7 @@ const GoogleAds = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#4284f3] rounded-2xl p-8">
+          <div className="bg-[#fe4500] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -316,15 +322,15 @@ const GoogleAds = () => (
 
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Monthly E-Commerce Revenue
+                  Monthly Marketing Budget
                 </label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black">
                   <option>-SELECT-</option>
-                  <option>$0 - $10K</option>
-                  <option>$10K - $50K</option>
+                  <option>$0 - $5K</option>
+                  <option>$5K - $20K</option>
+                  <option>$20K - $50K</option>
                   <option>$50K - $100K</option>
-                  <option>$100K - $500K</option>
-                  <option>$500K+</option>
+                  <option>$100K+</option>
                 </select>
               </div>
 
@@ -354,4 +360,4 @@ const GoogleAds = () => (
   </PageLayout>
 );
 
-export default GoogleAds;
+export default RedditAds;

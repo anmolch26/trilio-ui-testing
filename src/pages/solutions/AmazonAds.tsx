@@ -3,10 +3,13 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import AmazonAdsInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import AmazonAdsHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
+import AmazonAdsHeroImage from "@/assests/amazon-ppc.jpg";
 import AmazonAdsAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
 import AmazonAdsROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
 import AmazonAdsInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
+import AmazonAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.png";
+import AmazonAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.png";
+import AmazonAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.png";
 
 const AmazonAds = () => (
   <PageLayout backgroundClass="bg-[#FF9900]">
@@ -66,8 +69,8 @@ const AmazonAds = () => (
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src={AmazonAdsInfographic}
-              alt="Amazon Ads Data to Business Results"
+              src={AmazonAdsSuccessStoriesImage}
+              alt="Amazon Ads Success Stories and Data Disruption"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -107,11 +110,11 @@ const AmazonAds = () => (
     {/* Amazon Ads Partner Section */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Left: Analytics Dashboard Image */}
+        {/* Left: AI-Driven Expertise Image */}
         <div className="flex-1 flex justify-center">
           <img
-            src={AmazonAdsAnalyticsImage}
-            alt="AI-Powered Amazon Ads Analytics Dashboard"
+            src={AmazonAdsAIExpertiseImage}
+            alt="AI-Powered Amazon Ads Advertising Expertise"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -173,11 +176,11 @@ const AmazonAds = () => (
             </ThemeButton>
           </div>
         </div>
-        {/* Right: Amazon Ads ROI Infographic */}
+        {/* Right: Amazon Ads ROI Boost Infographic */}
         <div className="flex-1 flex justify-center">
           <img
-            src={AmazonAdsROIImage}
-            alt="Amazon Ads ROI Growth & Advertising Performance"
+            src={AmazonAdsROIBoostImage}
+            alt="Boosting Amazon Ads ROI with Creative & Advertising"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
