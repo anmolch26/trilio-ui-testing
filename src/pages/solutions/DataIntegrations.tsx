@@ -218,6 +218,84 @@ const DataIntegrations = () => {
                         {integration.name}
                       </h3>
                     </Link>
+                  ) : integration.name === "Meta Ads" ? (
+                    <Link to="/solutions/data-integrations/Meta">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
+                  ) : integration.name === "WooCommerce" ? (
+                    <Link to="/solutions/data-integrations/WooCommerce">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
+                  ) : integration.name === "Reddit Ads" ? (
+                    <Link to="/solutions/data-integrations/RedditAds">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
+                  ) : integration.name === "GA4" ? (
+                    <Link to="/solutions/data-integrations/GA4">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
+                  ) : integration.name === "Walmart" ? (
+                    <Link to="/solutions/data-integrations/Walmart">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
+                  ) : integration.name === "Mailchimp" ? (
+                    <Link to="/solutions/data-integrations/MailChimp">
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                        <img
+                          src={integration.logo}
+                          alt={integration.name + " logo"}
+                          className="h-16 w-16 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2 text-black">
+                        {integration.name}
+                      </h3>
+                    </Link>
                   ) : (
                     <>
                       <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">

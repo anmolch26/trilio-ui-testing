@@ -2,32 +2,37 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import GoogleAdsInfographic from "@/assests/Google-Ads-Competitor-Analysis-Guide-blog-image.svg";
-import GoogleAdsHeroImage from "@/assests/google-ads-marketing.jpg";
-import GoogleAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_43_08 PM.png";
-import GoogleAdsROIImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_55_37 PM.png";
-import GoogleAdsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_04_47 PM.png";
+import GA4Infographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
+import GA4HeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
+import GA4AnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
+import GA4ROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
+import GA4InsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
+import GA4HeroNewImage from "@/assests/ga4 (1).jpg";
+import GA4AnalyticsNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 02_56_57 AM.png";
+import GA4DataOptimizationImage from "@/assests/Ga4(1).jpg";
+import GA4ROINewImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_12_48 AM.png";
+import GA4MarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_17_37 AM.png";
 
-const GoogleAds = () => (
-  <PageLayout backgroundClass="bg-[#4285F4]">
+const GA4 = () => (
+  <PageLayout backgroundClass="bg-[#f06a03]">
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#4285F4]"
+      className="pt-24 !bg-[#f06a03]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-black">
-            GOOGLE ADS ANALYTICS & OPTIMIZATION PLATFORM
+            GOOGLE ANALYTICS 4 & DATA PLATFORM
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            AI-POWERED GOOGLE ADS MARKETING SOLUTIONS
+            AI-POWERED GA4 ANALYTICS SOLUTIONS
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            Transform your Google Ads campaigns with AI-driven insights,
-            automated bid optimization, and data-driven strategies that maximize
-            your advertising ROI.
+            Transform your Google Analytics 4 data with AI-driven insights,
+            automated reporting, and data-driven strategies that scale your
+            business intelligence and marketing performance.
           </p>
           <ThemeButton
             variant="primary"
@@ -38,11 +43,11 @@ const GoogleAds = () => (
             Get in Touch
           </ThemeButton>
         </div>
-        {/* Right: Google Ads Hero Image */}
+        {/* Right: GA4 Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src={GoogleAdsHeroImage}
-            alt="AI-Powered Google Ads Marketing Solutions"
+            src={GA4HeroNewImage}
+            alt="AI-Powered GA4 Analytics Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -54,21 +59,22 @@ const GoogleAds = () => (
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Data to Disruption: Google Ads Success Stories
+          AI-Driven GA4 Analytics & Performance Insights
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          At Trilio, we empower brands to turn Google Ads' vast advertising
-          ecosystem into measurable business results. Our platform unifies your
-          campaign data, surfaces actionable insights, and helps you optimize
-          every advertising strategy and keyword targeting.
+          Our AI-powered platform transforms Google Analytics 4 data into
+          actionable intelligence. We automate reporting, provide real-time
+          performance analytics, and deliver predictive insights that drive
+          measurable growth for your business intelligence.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src={GoogleAdsInfographic}
-              alt="Google Ads Data to Business Results"
-              className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
+              src={GA4AnalyticsNewImage}
+              alt="GA4 Data to Business Results"
+              className="rounded-2xl max-w-[300px] md:max-w-[400px] lg:max-w-[450px]"
+              style={{ maxHeight: "350px" }}
             />
           </div>
           {/* Right: List */}
@@ -76,13 +82,13 @@ const GoogleAds = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Bid Optimization Strategies for Campaign Growth
+                  Advanced Analytics Strategies for Growth
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Turning Google Ads Trends into Tangible Business Success
+                  Turning GA4 Data into Business Success
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
@@ -94,7 +100,7 @@ const GoogleAds = () => (
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Turning Google Ads Challenges into Brand Wins
+                  Turning Analytics Challenges into Wins
                 </span>
                 <span className="text-3xl text-[#7c3aed] font-bold">+</span>
               </div>
@@ -104,14 +110,14 @@ const GoogleAds = () => (
       </div>
     </section>
 
-    {/* Google Ads Partner Section */}
+    {/* GA4 Partner Section */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsAnalyticsImage}
-            alt="AI-Powered Google Ads Analytics Dashboard"
+            src={GA4DataOptimizationImage}
+            alt="AI-Powered GA4 Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -119,40 +125,38 @@ const GoogleAds = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unlock the Power of Google Ads Advertising with AI-Driven Expertise
+            AI-Powered GA4 Analytics & Data Optimization
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            As an innovative AI-powered marketing platform, Trilio.ai joins a
-            select group of agencies with exclusive access to Google's advanced
-            advertising tools and platform support. Our comprehensive AI-driven
-            approach integrates PPC optimization, campaign management, and
-            performance analytics to deliver seamless Google Ads campaigns.
+            Our AI platform transforms Google Analytics 4 with intelligent
+            automation. We provide real-time data processing, automated
+            reporting, and predictive analytics that maximize your GA4 ROI while
+            reducing manual workload across all your digital properties.
           </p>
           <p className="text-lg text-gray-700">
-            From setting up your Google Ads account to managing AI-optimized
-            paid media and intelligent campaign strategies, we provide a
-            comprehensive, data-driven approach that delivers immediate results
-            and long-term growth. Trilio.ai's unique combination of AI
-            technology and exclusive Google access positions us as a leader in
-            the Google Ads advertising space.
+            From automated data collection to intelligent insights generation
+            and performance forecasting, our data-driven approach delivers
+            measurable results. Our AI continuously learns from your analytics
+            data to optimize strategies and scale your business intelligence
+            efficiently.
           </p>
         </div>
       </div>
     </section>
 
-    {/* Boosting Social ROI Section */}
+    {/* Boosting Analytics ROI Section */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text Content */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Boosting Google Ads ROI with Creative & Advertising
+            Boosting GA4 ROI with Advanced Analytics
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            As an innovative AI-powered marketing platform, Trilio delivers
-            quick-turn performance analysis, iterate creative, and drive ROI
-            through scalable advertising campaigns that lead to brand lift and
-            conversions.
+            As an officially certified Google Analytics partner, Trilio delivers
+            quick-turn performance analysis, iterate data strategies, and drive
+            ROI through scalable analytics solutions that lead to improved
+            insights and data-driven decision making.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -161,7 +165,7 @@ const GoogleAds = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE PERFORMANCE CREATIVE
+              EXPLORE ANALYTICS STRATEGIES
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -169,17 +173,17 @@ const GoogleAds = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE ADVERTISING STRATEGIES
+              EXPLORE DATA OPTIMIZATION
             </ThemeButton>
           </div>
         </div>
-        {/* Right: Google Ads ROI Infographic */}
+        {/* Right: GA4 ROI Infographic */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsROIImage}
-            alt="Google Ads ROI Growth & Advertising Performance"
-            className="max-w-full h-auto rounded-2xl shadow-2xl"
-            style={{ maxHeight: "500px" }}
+            src={GA4ROINewImage}
+            alt="GA4 ROI Growth & Analytics Performance"
+            className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-2xl shadow-2xl"
+            style={{ maxHeight: "350px" }}
           />
         </div>
       </div>
@@ -191,10 +195,10 @@ const GoogleAds = () => (
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src={GoogleAdsInsightsImage}
-            alt="AI-Powered Google Ads Marketing Analytics Dashboard"
-            className="max-w-full h-auto rounded-2xl shadow-2xl"
-            style={{ maxHeight: "500px" }}
+            src={GA4MarketingInsightsImage}
+            alt="AI-Powered GA4 Marketing Analytics Dashboard"
+            className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-2xl shadow-2xl"
+            style={{ maxHeight: "350px" }}
           />
         </div>
 
@@ -204,16 +208,16 @@ const GoogleAds = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Google Ads Marketing Insights
+            Data-Driven GA4 Marketing Insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Transform your Google Ads marketing with AI-powered analytics that
-            reveal the true impact of every campaign. Our advanced platform
-            tracks clicks, conversion rates, and ROI across all your Google Ads
-            activities, helping you identify high-performing keywords and
-            optimize your ad spend. Get real-time insights into customer
-            behavior, search trends, and competitor analysis to stay ahead of
-            the curve.
+            Transform your GA4 analytics with AI-powered insights that reveal
+            the true impact of every campaign and user interaction. Our advanced
+            platform tracks conversions, user behavior, and ROI across all your
+            digital properties, helping you identify high-performing channels
+            and optimize your marketing spend. Get real-time insights into
+            customer journeys, conversion funnels, and attribution analysis to
+            stay ahead of the curve.
           </p>
           <ThemeButton
             variant="outline"
@@ -228,7 +232,10 @@ const GoogleAds = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#4ED7F1] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section
+      className="!bg-[#fea600] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl"
+      style={{ backgroundColor: "#fea600" }}
+    >
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -269,7 +276,7 @@ const GoogleAds = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#4284f3] rounded-2xl p-8">
+          <div className="bg-[#f06a03] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -354,4 +361,4 @@ const GoogleAds = () => (
   </PageLayout>
 );
 
-export default GoogleAds;
+export default GA4;

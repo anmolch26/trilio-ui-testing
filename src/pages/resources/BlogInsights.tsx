@@ -20,7 +20,7 @@ const BlogInsights = () => {
   const navigate = useNavigate();
 
   const handleReadMore = () => {
-    navigate("/resources/blog-insights/Blog1");
+    navigate("/resources/blog-insights/blog");
   };
 
   const categories = [
@@ -36,59 +36,136 @@ const BlogInsights = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "The Ultimate Guide to Ecommerce Analytics Platforms in 2025",
+      title: "What is an Ecommerce Analytics Platform?",
       summary:
-        "Transform your scattered data into profitable insights with the power of unified analytics. Complete guide to choosing the best ecommerce analytics platform in 2025.",
-      category: "Analytics",
-      author: "Trilio Team",
-      date: "Dec 10, 2024",
-      readTime: "15 min",
-      image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
+        "An ecommerce analytics platform goes far beyond basic website analytics. While traditional tools like Google Analytics tell you what happened, modern ecommerce analytics platforms reveal the why, when, and what's next.",
+      category: "E-commerce",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "8 min",
+      image: "/src/assests/EcommerceAnalytics.jpg",
       featured: true,
     },
     {
       id: 2,
-      title: "Building Better Dashboards: A Data Visualization Guide",
+      title: "Top 10 Features Every Ecommerce Analytics Platform Must Have",
       summary:
-        "Best practices for creating dashboards that actually drive business decisions and improve team productivity.",
-      category: "Product",
-      author: "Mike Rodriguez",
-      date: "Dec 8, 2024",
-      readTime: "7 min",
-      image: "/lovable-uploads/3d1cb2ff-526f-4de5-b7ff-85618d692167.png",
+        "Your platform should seamlessly connect with all your business tools. Trilio.ai integrates with 12+ platforms including Shopify, Amazon, Google Ads, Facebook, TikTok, and Klaviyo without requiring technical expertise.",
+      category: "E-commerce",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "12 min",
+      image: "/src/assests/Features.png",
     },
     {
       id: 3,
-      title: "Performance Marketing Metrics That Actually Matter",
+      title: "Comparing Leading Platforms: Trilio vs Competitors",
       summary:
-        "Cut through the noise and focus on the KPIs that drive real business growth in 2024.",
-      category: "Marketing",
-      author: "Jessica Park",
-      date: "Dec 5, 2024",
-      readTime: "6 min",
-      image: "/lovable-uploads/41f6f133-b265-45dc-a051-e55b3b3ca5bd.png",
+        "Trilio.ai positions itself as 'Your AI Wingman for Ecommerce Growth' with several key differentiators including 100K+ metrics analyzed in real-time and AI-powered conversational queries.",
+      category: "Product",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "15 min",
+      image: "/src/assests/WhatsApp Image 2025-08-05 at 17.52.32.jpeg",
     },
     {
       id: 4,
-      title: "Leading Remote Teams in the Commerce Space",
+      title: "Implementation Guide: Getting Started in 30 Days",
       summary:
-        "Insights from Trilio's leadership team on building culture and driving results in a distributed workforce.",
+        "A comprehensive 30-day implementation plan covering foundation setup, advanced configuration, optimization insights, and scaling strategies for ecommerce analytics platforms.",
       category: "Leadership",
-      author: "David Kim",
-      date: "Dec 3, 2024",
-      readTime: "8 min",
-      image: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "20 min",
+      image: "/src/assests/Project-Implementation.jpg",
     },
     {
       id: 5,
-      title: "E-commerce Trends Shaping 2025",
+      title: "Future Trends: AI-Powered Analytics in 2025",
       summary:
-        "From social commerce to AI personalization, here's what's coming next in online retail.",
-      category: "E-commerce",
-      author: "Lisa Wang",
-      date: "Nov 28, 2024",
+        "By 2025, AI will move from assistive to autonomous, meaning platforms will automatically detect opportunities, generate insights without prompting, and optimize campaigns in real-time.",
+      category: "AI",
+      author: "Om Rathod",
+      date: "August 5, 2025",
       readTime: "10 min",
-      image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
+      image: "/src/assests/AIpowered.jpg",
+    },
+    {
+      id: 6,
+      title: "Measuring Success: KPIs That Matter",
+      summary:
+        "A comprehensive guide to measuring success with actionable KPIs including revenue intelligence metrics, operational efficiency, and marketing performance with specific targets and measurement methods.",
+      category: "Analytics",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "12 min",
+      image: "/src/assests/kpis.png",
+    },
+    {
+      id: 7,
+      title: "Common Implementation Challenges and Solutions",
+      summary:
+        "Practical guide addressing key implementation challenges including data integration complexity, team adoption resistance, data accuracy concerns, and information overload with proven solutions.",
+      category: "Leadership",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "8 min",
+      image: "/src/assests/challenges.jpg",
+    },
+    {
+      id: 8,
+      title: "Industry-Specific Considerations",
+      summary:
+        "Comprehensive guide covering industry-specific analytics considerations for Fashion & Apparel, Health & Beauty, Electronics & Tech, and Food & Beverage sectors with tailored insights.",
+      category: "Marketing",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "10 min",
+      image: "/src/assests/WhatsApp Image 2025-08-05 at 18.29.51.jpeg",
+    },
+    {
+      id: 9,
+      title: "Cost-Benefit Analysis: Platform Investment ROI",
+      summary:
+        "Comprehensive ROI analysis with three investment tiers, detailed cost-benefit calculations, and real-world example showing 10,456% annual return for mid-size retailers.",
+      category: "Analytics",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "15 min",
+      image: "/src/assests/Return-on-investment-ROI.webp",
+    },
+    {
+      id: 10,
+      title: "Security and Compliance Considerations",
+      summary:
+        "Essential guide covering GDPR and CCPA compliance requirements, security best practices including data encryption, access controls, and monitoring procedures for analytics platforms.",
+      category: "Leadership",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "12 min",
+      image: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
+    },
+    {
+      id: 11,
+      title: "Next-Generation Features to Watch",
+      summary:
+        "Forward-looking guide covering emerging analytics technologies including augmented analytics, embedded capabilities, collaborative workflows, edge processing, and quantum-enhanced computing.",
+      category: "AI",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "8 min",
+      image: "/lovable-uploads/c3d810f5-fda3-4321-a497-5f5483a0ece2.png",
+    },
+    {
+      id: 12,
+      title: "Conclusion: Your Path to Analytics Excellence",
+      summary:
+        "Comprehensive conclusion highlighting 400-1200% ROI potential, key success factors, competitive advantages, and Trilio.ai's complete analytics solution for growing ecommerce brands.",
+      category: "Leadership",
+      author: "Om Rathod",
+      date: "August 5, 2025",
+      readTime: "10 min",
+      image: "/src/assests/conclusion.jpg",
     },
   ];
 
@@ -116,159 +193,114 @@ const BlogInsights = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
-          <div className="lg:w-2/3">
-            {/* Search and Filters */}
-            <div className="mb-8">
-              <div className="relative mb-6">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={
-                      selectedCategory === category ? "default" : "outline"
-                    }
-                    size="sm"
-                    onClick={() => setSelectedCategory(category)}
-                    className={`transition-all duration-200${
-                      selectedCategory !== category ? " text-black" : ""
-                    }`}
-                  >
-                    {category}
-                  </Button>
-                ))}
+      <div className="pt-12 pb-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar - Categories */}
+            <div className="lg:w-1/4">
+              <div className="sticky top-24">
+                <h2 className="text-xl font-bold text-gray-900 mb-6">
+                  Categories
+                </h2>
+                <div className="space-y-3">
+                  {categories
+                    .filter((cat) => cat !== "All")
+                    .map((category) => (
+                      <button
+                        key={category}
+                        onClick={() =>
+                          setSelectedCategory(
+                            selectedCategory === category ? "All" : category
+                          )
+                        }
+                        className={`flex items-center w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 ${
+                          selectedCategory === category
+                            ? "bg-teal-50 text-teal-700 border border-teal-200"
+                            : "text-gray-700 hover:bg-gray-50"
+                        }`}
+                      >
+                        <div
+                          className={`w-4 h-4 border-2 rounded mr-3 ${
+                            selectedCategory === category
+                              ? "border-teal-500 bg-teal-500"
+                              : "border-gray-300"
+                          }`}
+                        >
+                          {selectedCategory === category && (
+                            <div className="w-2 h-2 bg-white rounded-sm m-0.5"></div>
+                          )}
+                        </div>
+                        {category}
+                      </button>
+                    ))}
+                </div>
               </div>
             </div>
 
-            {/* Featured Post */}
-            {filteredPosts.find((post) => post.featured) && (
-              <Card className="mb-8 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="md:flex">
-                  <div className="md:w-1/2">
-                    <img
-                      src={filteredPosts.find((post) => post.featured)?.image}
-                      alt={filteredPosts.find((post) => post.featured)?.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:w-1/2 p-6">
-                    <Badge className="mb-3">
-                      {filteredPosts.find((post) => post.featured)?.category}
-                    </Badge>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                      {filteredPosts.find((post) => post.featured)?.title}
-                    </h2>
-                    <p className="text-gray-600 mb-4">
-                      {filteredPosts.find((post) => post.featured)?.summary}
-                    </p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <User className="h-4 w-4 mr-2" />
-                      <span className="mr-4">
-                        {filteredPosts.find((post) => post.featured)?.author}
-                      </span>
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span className="mr-4">
-                        {filteredPosts.find((post) => post.featured)?.date}
-                      </span>
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span>
-                        {filteredPosts.find((post) => post.featured)?.readTime}
-                      </span>
-                    </div>
-                    <Button onClick={handleReadMore}>Read More</Button>
-                  </div>
+            {/* Main Content Area */}
+            <div className="lg:w-3/4">
+              {/* Search Bar */}
+              <div className="mb-8">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  />
                 </div>
-              </Card>
-            )}
+              </div>
 
-            {/* Blog Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {filteredPosts
-                .filter((post) => !post.featured)
-                .map((post) => (
+              {/* Blog Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredPosts.map((post) => (
                   <Card
                     key={post.id}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200"
                   >
                     <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-48 object-cover"
                     />
-                    <CardHeader>
+                    <CardHeader className="pb-3">
                       <div className="flex items-center justify-between mb-2">
-                        <Badge variant="secondary">{post.category}</Badge>
+                        <Badge
+                          variant="secondary"
+                          className="bg-teal-100 text-teal-700 border-teal-200"
+                        >
+                          {post.category}
+                        </Badge>
                         <span className="text-xs text-gray-500">
-                          {post.readTime}
+                          {post.date}
                         </span>
                       </div>
-                      <CardTitle className="text-lg hover:text-purple-600 transition-colors duration-200">
+                      <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
                         {post.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="mb-4">
-                        {post.summary}
-                      </CardDescription>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <User className="h-4 w-4 mr-2" />
-                        <span className="mr-4">{post.author}</span>
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span>{post.date}</span>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-sm text-gray-500">
+                          <span>by {post.author}</span>
+                        </div>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() =>
+                            navigate(`/resources/blog-insights/blog/${post.id}`)
+                          }
+                          className="text-teal-600 border-teal-200 hover:bg-teal-50"
+                        >
+                          Read More
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:w-1/3">
-            <div className="sticky top-24">
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle>Categories</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {categories
-                      .filter((cat) => cat !== "All")
-                      .map((category) => (
-                        <button
-                          key={category}
-                          onClick={() => setSelectedCategory(category)}
-                          className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-                        >
-                          {category}
-                        </button>
-                      ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Subscribe to Updates</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Get the latest insights delivered to your inbox.
-                  </p>
-                  <Button className="w-full">Subscribe</Button>
-                </CardContent>
-              </Card>
+              </div>
             </div>
           </div>
         </div>

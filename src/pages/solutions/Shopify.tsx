@@ -3,10 +3,10 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ShopifyInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import ShopifyHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
+import ShopifyHeroImage from "@/assests/converted_image.png";
 import ShopifyAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import ShopifyROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import ShopifyInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
+import ShopifyROIImage from "@/assests/0f5926d96c6f5d50716bf6d106679a5c.jpg";
+import ShopifyInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_08_09 PM.png";
 import ShopifyAnalyticsDashboard from "@/assests/ChatGPT Image Jul 29, 2025, 03_38_36 PM.png";
 import ShopifyCampaignOptimization from "@/assests/ChatGPT Image Jul 29, 2025, 03_48_33 PM.png";
 

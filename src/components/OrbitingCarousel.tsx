@@ -62,14 +62,15 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
         <div className="relative w-[1200px] h-[1000px] flex items-center justify-center">
           {images.map((image, index) => {
             const angle = (index * 180) / images.length; // Changed to use total images count
-            const delay = (index * -96) / images.length; // Much larger delay for more spacing
+            const totalDuration = 36; // Total animation duration in seconds
+            const equalDelay = (index * -totalDuration) / images.length; // Equal delay between each icon
 
             return (
               <div
                 key={image.id}
                 className="absolute w-32 h-32 overflow-hidden animate-semi-orbit"
                 style={{
-                  animationDelay: `${delay}s`,
+                  animationDelay: `${equalDelay}s`,
                   animationDuration: "36s",
                   animationIterationCount: "infinite",
                   animationTimingFunction: "linear",
@@ -91,9 +92,17 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
         @keyframes semi-orbit {
           0% {
             transform: rotate(180deg) translateX(500px) rotate(-180deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
           }
           100% {
             transform: rotate(360deg) translateX(500px) rotate(-360deg);
+            opacity: 0;
           }
         }
         

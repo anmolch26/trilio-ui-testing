@@ -211,7 +211,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 lg:py-5 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 pb-0.5 sm:pb-1 md:pb-2 lg:pb-3 transition-all duration-300",
         getNavbarBackground()
       )}
     >
@@ -225,7 +225,11 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
             <img
               src={EraseBgLogo}
               alt="Trilio.ai Logo"
-              className={largeLogo ? "h-16 sm:h-18 md:h-20 lg:h-22 w-auto animate-fade-in" : "h-14 sm:h-16 md:h-18 lg:h-20 w-auto animate-fade-in"}
+              className={
+                largeLogo
+                  ? "h-16 sm:h-18 md:h-20 lg:h-22 w-auto animate-fade-in"
+                  : "h-14 sm:h-16 md:h-18 lg:h-20 w-auto animate-fade-in"
+              }
             />
           ) : (
             <TrilioLogo

@@ -91,7 +91,7 @@ const OptimizedPurposeSection = () => {
                   >
                     <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white">
                       <span className="text-sm font-medium">
-                        {idx === 0 && "12+ Integrations"}
+                        {idx === 0 && "20+ Integrations"}
                         {idx === 1 && "100K+ Metrics"}
                         {idx === 2 && "Real-time Analytics"}
                         {idx === 3 && "CAC & Product Insights"}

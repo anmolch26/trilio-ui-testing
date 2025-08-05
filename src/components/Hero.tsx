@@ -26,17 +26,15 @@ const Hero = () => {
   // Updated images for the orbiting carousel (removed ChatGPT image)
   const carouselImages = [
     { id: 1, src: Icon1, alt: "Analytics Dashboard" },
-    { id: 2, src: Icon2, alt: "Ecommerce Insights" },
+    { id: 2, src: Icon4, alt: "Data Visualization" },
     { id: 3, src: Icon3, alt: "Ad Performance" },
-    { id: 4, src: Icon4, alt: "Data Visualization" },
+    { id: 4, src: Icon2, alt: "Ecommerce Insights" },
     { id: 5, src: Icon5, alt: "Sales Analytics" },
     { id: 6, src: Icon6, alt: "Customer Insights" },
     { id: 7, src: Icon7, alt: "Revenue Tracking" },
     { id: 8, src: Icon8, alt: "Marketing ROI" },
     { id: 9, src: Icon9, alt: "Inventory Management" },
     { id: 10, src: Icon10, alt: "Demand Forecasting" },
-    { id: 11, src: Icon1, alt: "Product Performance" },
-    { id: 12, src: Icon2, alt: "Growth Analytics" },
   ];
 
   useEffect(() => {

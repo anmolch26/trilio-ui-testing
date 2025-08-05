@@ -28,7 +28,18 @@ import LifeAtTrilio from "./pages/careers/LifeAtTrilio";
 import InterviewProcess from "./pages/careers/InterviewProcess";
 import InternshipsPrograms from "./pages/careers/InternshipsPrograms";
 import BlogInsights from "./pages/resources/BlogInsights";
-import Blog1 from "./pages/Blog1";
+import Blog1 from "./pages/resources/Blog1";
+import Blog2 from "./pages/resources/Blog2";
+import Blog3 from "./pages/resources/Blog3";
+import Blog4 from "./pages/resources/Blog4";
+import Blog5 from "./pages/resources/Blog5";
+import Blog6 from "./pages/resources/Blog6";
+import Blog7 from "./pages/resources/Blog7";
+import Blog8 from "./pages/resources/Blog8";
+import Blog9 from "./pages/resources/Blog9";
+import Blog10 from "./pages/resources/Blog10";
+import Blog11 from "./pages/resources/Blog11";
+import Blog12 from "./pages/resources/Blog12";
 import CaseStudies from "./pages/resources/CaseStudies";
 import GuidesReports from "./pages/resources/GuidesReports";
 import HelpCenter from "./pages/resources/HelpCenter";
@@ -40,7 +51,13 @@ import Amazon from "./pages/solutions/Amazon";
 import Shopify from "./pages/solutions/Shopify";
 import GoogleAds from "./pages/solutions/GoogleAds";
 import AmazonAds from "./pages/solutions/AmazonAds";
-
+import Meta from "./pages/solutions/Meta";
+import WooCommerce from "./pages/solutions/WooCommerce";
+import RedditAds from "./pages/solutions/RedditAds";
+import GA4 from "./pages/solutions/Ga4";
+import Walmart from "./pages/solutions/Walmart";
+import MailChimp from "./pages/solutions/MailChimp";
+import Blog from "./pages/Blog";
 
 const queryClient = new QueryClient();
 
@@ -134,6 +151,24 @@ const App = () => (
             path="/solutions/data-integrations/AmazonAds"
             element={<AmazonAds />}
           />
+          <Route path="/solutions/data-integrations/Meta" element={<Meta />} />
+          <Route
+            path="/solutions/data-integrations/WooCommerce"
+            element={<WooCommerce />}
+          />
+          <Route
+            path="/solutions/data-integrations/RedditAds"
+            element={<RedditAds />}
+          />
+          <Route path="/solutions/data-integrations/GA4" element={<GA4 />} />
+          <Route
+            path="/solutions/data-integrations/Walmart"
+            element={<Walmart />}
+          />
+          <Route
+            path="/solutions/data-integrations/MailChimp"
+            element={<MailChimp />}
+          />
           {/* Integration Documentation Routes */}
           <Route
             path="/resources/developer-docs/shopify"
@@ -159,8 +194,8 @@ const App = () => (
             path="/resources/developer-docs/amazon-ads"
             element={<DeveloperDocs />}
           />
-        {/* Careers section routes (kept for backward compatibility) */}
-        <Route path="/careers/open-positions" element={<OpenPositions />} />
+          {/* Careers section routes (kept for backward compatibility) */}
+          <Route path="/careers/open-positions" element={<OpenPositions />} />
 
           <Route path="/careers/life-at-trilio" element={<LifeAtTrilio />} />
           <Route
@@ -173,7 +208,24 @@ const App = () => (
           />
           {/* Resources section routes */}
           <Route path="/resources/blog-insights" element={<BlogInsights />} />
-          <Route path="/resources/blog-insights/Blog1" element={<Blog1 />} />
+          {/* Explicit blog routes */}
+          <Route path="/resources/blog-insights/blog/1" element={<Blog1 />} />
+          <Route path="/resources/blog-insights/blog/2" element={<Blog2 />} />
+          <Route path="/resources/blog-insights/blog/3" element={<Blog3 />} />
+          <Route path="/resources/blog-insights/blog/4" element={<Blog4 />} />
+          <Route path="/resources/blog-insights/blog/5" element={<Blog5 />} />
+          <Route path="/resources/blog-insights/blog/6" element={<Blog6 />} />
+          <Route path="/resources/blog-insights/blog/7" element={<Blog7 />} />
+          <Route path="/resources/blog-insights/blog/8" element={<Blog8 />} />
+          <Route path="/resources/blog-insights/blog/9" element={<Blog9 />} />
+          <Route path="/resources/blog-insights/blog/10" element={<Blog10 />} />
+          <Route path="/resources/blog-insights/blog/11" element={<Blog11 />} />
+          <Route path="/resources/blog-insights/blog/12" element={<Blog12 />} />
+          {/* Keep dynamic route as fallback */}
+          <Route
+            path="/resources/blog-insights/blog/:blogId"
+            element={<Blog />}
+          />
           <Route path="/resources/case-studies" element={<CaseStudies />} />
           <Route path="/resources/guides-reports" element={<GuidesReports />} />
           <Route path="/resources/help-center" element={<HelpCenter />} />
@@ -190,7 +242,10 @@ const App = () => (
           <Route path="/about" element={<Index />} />
           <Route path="/contact" element={<Index />} />
           <Route path="/careers" element={<Index />} />
-          <Route path="/blog" element={<Index />} />
+          <Route
+            path="/resources/blog-insights/blog/:blogId"
+            element={<Blog />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
