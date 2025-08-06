@@ -55,9 +55,9 @@ const Blog2 = () => {
 
               <div className="mb-8">
                 <img
-                  src="/src/assests/Features.png"
+                  src="https://assets.channeliq.ai/trilio-landing/Blogs/TopFeatures.png"
                   alt="Ecommerce Analytics Platform Features"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full rounded-lg shadow-lg"
                 />
               </div>
 
@@ -355,8 +355,7 @@ const Blog2 = () => {
                   href="/"
                   className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
                 >
-                  <span className="mr-2">🚀</span>
-                  Explore Trilio Landing Page
+                  Trilio Landing Page
                   <span className="ml-2">→</span>
                 </a>
               </div>
