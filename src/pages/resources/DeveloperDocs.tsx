@@ -67,6 +67,8 @@ const DeveloperDocs = () => {
       setActiveSection('google-ads');
     } else if (path.includes('/amazon-ads')) {
       setActiveSection('amazon-ads');
+    } else if (path.includes('/meta-ads')) {
+      setActiveSection('meta-ads');
     }
   }, [location.pathname]);
 
@@ -77,6 +79,12 @@ const DeveloperDocs = () => {
       icon: <Book className="h-4 w-4" />,
     },
     {
+      id: "integrations",
+      title: "Integrations",
+      icon: <Database className="h-4 w-4" />,
+      hasDropdown: true,
+    },
+    {
       id: "authentication",
       title: "Authentication",
       icon: <Key className="h-4 w-4" />,
@@ -85,12 +93,6 @@ const DeveloperDocs = () => {
       id: "api-reference",
       title: "API Reference",
       icon: <Code className="h-4 w-4" />,
-    },
-    {
-      id: "integrations",
-      title: "Integrations",
-      icon: <Database className="h-4 w-4" />,
-      hasDropdown: true,
     },
     {
       id: "webhooks",
@@ -138,6 +140,11 @@ const DeveloperDocs = () => {
     {
       id: "amazon-ads",
       name: "Amazon Ads",
+      icon: <BarChart3 className="h-4 w-4" />
+    },
+    {
+      id: "meta-ads",
+      name: "Meta Ads",
       icon: <BarChart3 className="h-4 w-4" />
     }
   ];
@@ -1234,6 +1241,135 @@ metrics = client.metrics.get(
                         <li>• All data access is for analytics and reporting purposes only</li>
                         <li>• You can revoke access at any time from your Amazon Ads settings</li>
                         <li>• Data will be synced for comprehensive advertising analytics</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === "meta-ads" && (
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Meta Ads Integration</h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    Connect your Meta Ads account to Trilio for comprehensive Facebook and Instagram advertising analytics and campaign performance insights.
+                  </p>
+                </div>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      Required Credentials
+                    </CardTitle>
+                    <CardDescription>
+                      Set up access to your Meta Ads account via Business Manager
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-2">Trilio Partner Business ID</h4>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                          <div className="flex items-center justify-between">
+                            <code className="text-sm">606203958945233</code>
+                            <Button size="sm" variant="ghost" onClick={() => copyToClipboard("606203958945233")}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Required Asset Permissions</CardTitle>
+                    <CardDescription>
+                      Grant access to these assets for comprehensive advertising data
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="border rounded-lg p-4">
+                        <h4 className="font-semibold mb-2">Facebook Pages (if active)</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="text-sm">Select page(s)</span>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="text-sm">Assign permissions: Ads, Insights, Revenue</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="border rounded-lg p-4">
+                        <h4 className="font-semibold mb-2">Ad Accounts</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="text-sm">Assign permissions: View Performance</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="border rounded-lg p-4">
+                        <h4 className="font-semibold mb-2">Instagram Accounts</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="text-sm">Assign permissions: Ads, Insights</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Setup Process</CardTitle>
+                    <CardDescription>
+                      Follow these steps to connect your Meta Ads account
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {[
+                        { step: 1, title: "Go to Business Settings", desc: "Navigate to your Business Settings → Partners → Add Partner" },
+                        { step: 2, title: "Add Partner", desc: "Click on \"Give a partner access to your assets\"" },
+                        { step: 3, title: "Enter Partner ID", desc: "Use Trilio Partner Business ID: 606203958945233" },
+                        { step: 4, title: "Select Asset Types", desc: "Select Facebook Pages, Ad Accounts, and Instagram accounts" },
+                        { step: 5, title: "Assign Permissions", desc: "For each asset type, assign the required permissions as listed above" },
+                        { step: 6, title: "Complete Setup", desc: "Click on \"Assign assets\" and you are all set!" }
+                      ].map((item) => (
+                        <div key={item.step} className="flex items-start space-x-3">
+                          <Badge className="mt-1">{item.step}</Badge>
+                          <div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900">Important Notes</h4>
+                      <ul className="text-sm text-blue-800 mt-2 space-y-1">
+                        <li>• This integration provides read-only access to your Meta Ads data</li>
+                        <li>• You must have admin access to your Business Manager account</li>
+                        <li>• All data access is for analytics and reporting purposes only</li>
+                        <li>• You can revoke access at any time from your Business Manager settings</li>
+                        <li>• Data will be synced for comprehensive Facebook and Instagram advertising analytics</li>
                       </ul>
                     </div>
                   </div>

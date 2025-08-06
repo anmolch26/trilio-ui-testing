@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Play, Volume2, VolumeX, SkipBack, SkipForward } from "lucide-react";
+import { useAnalytics } from "../hooks/useAnalytics";
 
-const TrilioVideo =
-  "https://assets.channeliq.ai/trilio-landing/Trilio.ai_+Your+AI-Powered+eCommerce+Intelligence+Engine-8_4_2025%2C+2_18%E2%80%AFAM.mp4";
-
+const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.mp4";
 const ImageShowcaseSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -15,11 +14,13 @@ const ImageShowcaseSection = () => {
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { trackVideoInteraction } = useAnalytics();
 
   const handlePlayClick = () => {
     if (videoRef.current) {
       videoRef.current.play();
       setIsPlaying(true);
+      trackVideoInteraction('play', 'Trilio Demo Video');
     }
   };
 
@@ -28,9 +29,11 @@ const ImageShowcaseSection = () => {
       if (isPlaying) {
         videoRef.current.pause();
         setIsPlaying(false);
+        trackVideoInteraction('pause', 'Trilio Demo Video');
       } else {
         videoRef.current.play();
         setIsPlaying(true);
+        trackVideoInteraction('play', 'Trilio Demo Video');
       }
     }
   };
@@ -39,6 +42,7 @@ const ImageShowcaseSection = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
+      trackVideoInteraction(isMuted ? 'unmute' : 'mute', 'Trilio Demo Video');
     }
   };
 
@@ -230,10 +234,10 @@ const ImageShowcaseSection = () => {
                 ref={videoRef}
                 src={TrilioVideo}
                 className="w-full h-auto"
-                loop
                 playsInline
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
                 onClick={handleVideoClick}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
