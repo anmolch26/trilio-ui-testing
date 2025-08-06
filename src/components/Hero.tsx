@@ -170,7 +170,7 @@ const Hero = () => {
             >
               <ThemeButton
                 variant="primary"
-                href="/contact-form"
+                href="https://staging.trilio.ai/register"
                 showArrow={true}
                 className="w-full sm:w-auto text-center"
               >
@@ -219,7 +219,7 @@ const Hero = () => {
         >
           <OrbitingCarousel
             images={carouselImages}
-            title="Connect All Your Commerce Data"
+            title="Data Universe"
             description="Trilio integrates with 20+ platforms"
             buttonText="See All Integrations"
           />

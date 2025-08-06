@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Search, Calendar, Clock, User } from "lucide-react";
+import { Search, Calendar, Clock, User, Check } from "lucide-react";
 
 const BlogInsights = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
@@ -24,7 +24,6 @@ const BlogInsights = () => {
   };
 
   const categories = [
-    "All",
     "Analytics",
     "Product",
     "E-commerce",
@@ -32,6 +31,26 @@ const BlogInsights = () => {
     "Leadership",
     "AI",
   ];
+
+  // Handle category selection
+  const handleCategoryToggle = (category: string) => {
+    setSelectedCategories((prev) => {
+      if (prev.includes(category)) {
+        return prev.filter((cat) => cat !== category);
+      } else {
+        return [...prev, category];
+      }
+    });
+  };
+
+  // Handle select all
+  const handleSelectAll = () => {
+    if (selectedCategories.length === categories.length) {
+      setSelectedCategories([]);
+    } else {
+      setSelectedCategories([...categories]);
+    }
+  };
 
   const blogPosts = [
     {
@@ -43,7 +62,8 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "8 min",
-      image: "/src/assests/EcommerceAnalytics.jpg",
+      image:
+        "https://assets.channeliq.ai/trilio-landing/Blogs/EcommerceAnalutics.png",
       featured: true,
     },
     {
@@ -55,7 +75,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "12 min",
-      image: "/src/assests/Features.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/TopFeatures.png",
     },
     {
       id: 3,
@@ -66,7 +86,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "15 min",
-      image: "/src/assests/WhatsApp Image 2025-08-05 at 17.52.32.jpeg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Comparing.png",
     },
     {
       id: 4,
@@ -77,7 +97,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "20 min",
-      image: "/src/assests/Project-Implementation.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Guide.png",
     },
     {
       id: 5,
@@ -88,7 +108,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "10 min",
-      image: "/src/assests/AIpowered.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/AiTrends.png",
     },
     {
       id: 6,
@@ -99,7 +119,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "12 min",
-      image: "/src/assests/kpis.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/kpi.png",
     },
     {
       id: 7,
@@ -110,7 +130,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "8 min",
-      image: "/src/assests/challenges.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Challenges.png",
     },
     {
       id: 8,
@@ -121,7 +141,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "10 min",
-      image: "/src/assests/WhatsApp Image 2025-08-05 at 18.29.51.jpeg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Industry.png",
     },
     {
       id: 9,
@@ -132,7 +152,7 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "15 min",
-      image: "/src/assests/Return-on-investment-ROI.webp",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/ROI.png",
     },
     {
       id: 10,
@@ -165,13 +185,14 @@ const BlogInsights = () => {
       author: "Om Rathod",
       date: "August 5, 2025",
       readTime: "10 min",
-      image: "/src/assests/conclusion.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Conclusion.png",
     },
   ];
 
   const filteredPosts = blogPosts.filter((post) => {
     const matchesCategory =
-      selectedCategory === "All" || post.category === selectedCategory;
+      selectedCategories.length === 0 ||
+      selectedCategories.some((category) => post.category === category);
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.summary.toLowerCase().includes(searchQuery.toLowerCase());
@@ -203,36 +224,51 @@ const BlogInsights = () => {
                   Categories
                 </h2>
                 <div className="space-y-3">
-                  {categories
-                    .filter((cat) => cat !== "All")
-                    .map((category) => (
-                      <button
-                        key={category}
-                        onClick={() =>
-                          setSelectedCategory(
-                            selectedCategory === category ? "All" : category
-                          )
-                        }
-                        className={`flex items-center w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 ${
-                          selectedCategory === category
-                            ? "bg-teal-50 text-teal-700 border border-teal-200"
-                            : "text-gray-700 hover:bg-gray-50"
+                  <button
+                    onClick={handleSelectAll}
+                    className={`flex items-center w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 ${
+                      selectedCategories.length === categories.length
+                        ? "bg-teal-50 text-teal-700 border border-teal-200"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`}
+                  >
+                    <div
+                      className={`w-4 h-4 border-2 rounded mr-3 flex items-center justify-center ${
+                        selectedCategories.length === categories.length
+                          ? "border-teal-500 bg-teal-500"
+                          : "border-gray-300"
+                      }`}
+                    >
+                      {selectedCategories.length === categories.length && (
+                        <Check className="w-3 h-3 text-white" />
+                      )}
+                    </div>
+                    Select All
+                  </button>
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryToggle(category)}
+                      className={`flex items-center w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 ${
+                        selectedCategories.includes(category)
+                          ? "bg-teal-50 text-teal-700 border border-teal-200"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                    >
+                      <div
+                        className={`w-4 h-4 border-2 rounded mr-3 flex items-center justify-center ${
+                          selectedCategories.includes(category)
+                            ? "border-teal-500 bg-teal-500"
+                            : "border-gray-300"
                         }`}
                       >
-                        <div
-                          className={`w-4 h-4 border-2 rounded mr-3 ${
-                            selectedCategory === category
-                              ? "border-teal-500 bg-teal-500"
-                              : "border-gray-300"
-                          }`}
-                        >
-                          {selectedCategory === category && (
-                            <div className="w-2 h-2 bg-white rounded-sm m-0.5"></div>
-                          )}
-                        </div>
-                        {category}
-                      </button>
-                    ))}
+                        {selectedCategories.includes(category) && (
+                          <Check className="w-3 h-3 text-white" />
+                        )}
+                      </div>
+                      {category}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
@@ -248,7 +284,7 @@ const BlogInsights = () => {
                     placeholder="Search..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-black"
                   />
                 </div>
               </div>

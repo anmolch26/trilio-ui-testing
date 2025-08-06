@@ -44,108 +44,467 @@ const Blog12 = () => {
             <div
               className="text-lg text-gray-900 leading-relaxed space-y-6"
               style={{ fontFamily: "Antarctica, Arial, sans-serif" }}
-              dangerouslySetInnerHTML={{
-                __html: `
-                  <div className="mb-6">
-                    <div className="flex items-center text-sm text-gray-600 mb-4">
-                      <span className="font-medium">by Om Rathod</span>
-                      <span className="mx-2">•</span>
-                      <span>August 12, 2025</span>
+            >
+              <div className="mb-6">
+                <div className="flex items-center text-sm text-gray-600 mb-4">
+                  <span className="font-medium">by Om Rathod</span>
+                  <span className="mx-2">•</span>
+                  <span>August 12, 2025</span>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/Blogs/Conclusion.png"
+                  alt="Analytics Excellence"
+                  className="w-full rounded-lg shadow-lg"
+                />
+              </div>
+
+              <p className="text-xl text-gray-700 mb-8">
+                As we conclude this comprehensive guide to eCommerce analytics,
+                it's clear that the landscape has evolved far beyond simple
+                reporting. The businesses that will thrive in 2025 and beyond
+                are those that can transform scattered data into unified,
+                actionable intelligence across all their platforms.
+              </p>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>The Analytics Revolution: What We've Learned</strong>
+              </h2>
+
+              <p className="mb-6">
+                Throughout this series, we've explored the critical components
+                that make modern eCommerce analytics successful. From unified
+                data integration to AI-powered insights, the key differentiator
+                isn't just having data—it's having the right data, at the right
+                time, with the right context.
+              </p>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <strong>Key Success Factors:</strong>
+              </h3>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Unified Data Architecture:</strong> Breaking down
+                    silos between Shopify, Amazon, Google Ads, and 20+ platforms
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Real-Time Intelligence:</strong> Sub-second insights
+                    that enable immediate action
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>AI-Powered Optimization:</strong> Autonomous systems
+                    that continuously improve performance
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Security & Compliance:</strong> Enterprise-grade
+                    protection for sensitive business data
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Conversational Interfaces:</strong> Natural language
+                    queries for faster insight generation
+                  </span>
+                </li>
+              </ul>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>ROI Metrics That Matter</strong>
+              </h2>
+
+              <p className="mb-6">
+                The investment in advanced analytics isn't just about
+                technology—it's about measurable business outcomes. Here's what
+                successful implementations achieve:
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-bold text-blue-900 mb-3">
+                    Revenue Impact
+                  </h3>
+                  <ul className="space-y-2 text-blue-800">
+                    <li>• 40-60% increase in customer lifetime value</li>
+                    <li>• 25-35% improvement in conversion rates</li>
+                    <li>• 30-50% reduction in customer acquisition costs</li>
+                    <li>• 20-40% increase in average order value</li>
+                  </ul>
+                </div>
+                <div className="bg-green-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-bold text-green-900 mb-3">
+                    Operational Efficiency
+                  </h3>
+                  <ul className="space-y-2 text-green-800">
+                    <li>• 70-90% reduction in manual reporting time</li>
+                    <li>• 50-80% faster decision-making cycles</li>
+                    <li>• 30-60% improvement in inventory turnover</li>
+                    <li>• 40-70% reduction in marketing waste</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>Implementation Roadmap: Your Path Forward</strong>
+              </h2>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <strong>Phase 1: Foundation (Weeks 1-4)</strong>
+              </h3>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Audit current data sources and identify gaps</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Establish data governance and security protocols</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    Set up core platform integrations (Shopify, Amazon, Google
+                    Ads)
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    Define key performance indicators and success metrics
+                  </span>
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <strong>Phase 2: Optimization (Weeks 5-12)</strong>
+              </h3>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Implement AI-powered insights and recommendations</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Set up automated alerts and anomaly detection</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    Train teams on conversational analytics interfaces
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Establish cross-platform attribution modeling</span>
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <strong>Phase 3: Scale (Months 4-6)</strong>
+              </h3>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Expand to additional platforms and data sources</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Implement predictive analytics and forecasting</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    Develop custom dashboards for different stakeholders
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>Establish continuous optimization processes</span>
+                </li>
+              </ul>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>Common Pitfalls to Avoid</strong>
+              </h2>
+
+              <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+                <h3 className="text-lg font-bold text-red-900 mb-3">
+                  Critical Mistakes
+                </h3>
+                <ul className="space-y-2 text-red-800">
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">✗</span>
+                    <span>
+                      <strong>Data Silos:</strong> Keeping platforms separate
+                      instead of unified
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">✗</span>
+                    <span>
+                      <strong>Reactive Approach:</strong> Waiting for problems
+                      instead of predicting them
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">✗</span>
+                    <span>
+                      <strong>Manual Processes:</strong> Relying on spreadsheets
+                      and manual reporting
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">✗</span>
+                    <span>
+                      <strong>Poor Attribution:</strong> Not understanding true
+                      customer journey costs
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">✗</span>
+                    <span>
+                      <strong>Security Neglect:</strong> Failing to prioritize
+                      data protection and compliance
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>The Competitive Advantage Formula</strong>
+              </h2>
+
+              <p className="mb-6">
+                In today's hyper-competitive eCommerce landscape, the winners
+                are those who can make data-driven decisions faster and more
+                accurately than their competitors. The formula for success is
+                clear:
+              </p>
+
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Success = (Unified Data + AI Insights + Real-Time Action) ×
+                  Security
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                      Unified Data
                     </div>
+                    <p className="text-sm text-gray-600">
+                      All platforms, one view
+                    </p>
                   </div>
-                  
-                  <div className="mb-8">
-                    <img 
-                      src="/src/assests/conclusion.jpg" 
-                      alt="Analytics Excellence" 
-                      className="w-full h-64 object-cover rounded-lg shadow-lg"
-                    />
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-purple-600 mb-2">
+                      AI Insights
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Predictive intelligence
+                    </p>
                   </div>
-                  
-                  <p>The ecommerce analytics landscape in 2025 isn't just about collecting data—it's about transforming that data into competitive advantage. <strong>Businesses that implement comprehensive analytics platforms see 400-1200% ROI</strong> through improved decision-making, optimized marketing spend, and enhanced customer experiences.</p>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-600 mb-2">
+                      Real-Time Action
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Instant optimization
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-                  <h2>Key takeaways for success:</h2>
-                  <ol className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-teal-600 mr-2">1.</span>
-                      <span><strong>Choose platforms with unified data integration</strong> across all your business tools</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-teal-600 mr-2">2.</span>
-                      <span><strong>Prioritize real-time insights over historical reporting</strong></span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-teal-600 mr-2">3.</span>
-                      <span><strong>Invest in AI-powered analytics</strong> that provide autonomous optimization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-teal-600 mr-2">4.</span>
-                      <span><strong>Focus on attribution accuracy</strong> to understand true customer journeys</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-teal-600 mr-2">5.</span>
-                      <span><strong>Implement conversational interfaces</strong> for faster insight generation</span>
-                    </li>
-                  </ol>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>Why Trilio.ai is Your Strategic Partner</strong>
+              </h2>
 
-                  <h2>The competitive advantage goes to businesses that can:</h2>
+              <p className="mb-6">
+                At Trilio, we've built our platform around the exact challenges
+                and opportunities we've discussed throughout this series. Our
+                comprehensive solution addresses every aspect of modern
+                eCommerce analytics:
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    Core Capabilities
+                  </h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>See opportunities before competitors</strong> through predictive analytics</span>
+                      <span>Unified data integration across 20+ platforms</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>React instantly to market changes</strong> with real-time data</span>
+                      <span>AI-powered insights and recommendations</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>Optimize continuously</strong> through AI-powered recommendations</span>
+                      <span>Real-time ROAS tracking and optimization</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>Scale efficiently</strong> with automated insights and alerts</span>
+                      <span>Conversational analytics interface</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-600 mr-2">✓</span>
+                      <span>Enterprise-grade security and compliance</span>
                     </li>
                   </ul>
-
-                  <p>The question isn't whether you need an advanced ecommerce analytics platform—it's which one will best position your business for the $6.4 trillion opportunity ahead.</p>
-
-                  <hr className="my-8 border-gray-300" />
-
-                  <h2>Ready to Transform Your Ecommerce Analytics?</h2>
-                  <p><strong>Trilio.ai</strong> offers everything covered in this guide: unified data integration, AI-powered insights, real-time ROAS tracking, and conversational analytics—all in a platform designed for growing ecommerce brands.</p>
-
-                  <h3><strong>Start your journey today:</strong></h3>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    Business Impact
+                  </h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>Free trial</strong> for businesses under $1M GMV</span>
+                      <span>60-second insight generation</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>60-second insights</strong> generation</span>
+                      <span>Automated optimization recommendations</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>12+ platform integrations</strong> included</span>
+                      <span>Predictive analytics and forecasting</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>AI-powered optimization</strong> recommendations</span>
+                      <span>Cross-platform attribution modeling</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-teal-600 mr-2">✓</span>
-                      <span><strong>Real-time dashboard</strong> updates</span>
+                      <span>Scalable architecture for growth</span>
                     </li>
                   </ul>
+                </div>
+              </div>
 
-                  <div className="bg-teal-50 border border-teal-200 rounded-lg p-6 mt-6">
-                    <h3 className="text-xl font-bold text-teal-800 mb-4">Start Your Free Trilio.ai Trial Today →</h3>
-                    <p className="text-teal-700 italic">Join 1,000+ brands already using Trilio.ai to dominate their ecommerce analytics and drive unprecedented growth.</p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <strong>Your Next Steps: From Insight to Action</strong>
+              </h2>
+
+              <div className="bg-gradient-to-r from-teal-50 to-blue-50 border-l-4 border-teal-400 p-6 mb-8">
+                <h3 className="text-lg font-bold text-teal-900 mb-3">
+                  Ready to Transform Your Analytics?
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-teal-600 mb-2">
+                      Free Trial
+                    </div>
+                    <p className="text-sm text-teal-700">
+                      For businesses under $1M GMV
+                    </p>
                   </div>
-                `,
-              }}
-            />
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600 mb-2">
+                      60-Second Setup
+                    </div>
+                    <p className="text-sm text-blue-700">
+                      Get insights in under a minute
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600 mb-2">
+                      20+ Integrations
+                    </div>
+                    <p className="text-sm text-green-700">
+                      Connect all your platforms
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <strong>Immediate Actions You Can Take:</strong>
+              </h3>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Start your free trial</strong> and see results in 60
+                    seconds
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Schedule a personalized demo</strong> to see Trilio
+                    in action
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Download our implementation guide</strong> for
+                    step-by-step setup
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-teal-600 mr-2">✓</span>
+                  <span>
+                    <strong>Join our community</strong> of 1,000+ successful
+                    eCommerce brands
+                  </span>
+                </li>
+              </ul>
+
+              <div className="bg-teal-50 border border-teal-200 rounded-lg p-6 mt-8">
+                <h3 className="text-xl font-bold text-teal-800 mb-4">
+                  <strong>Start Your Analytics Transformation Today →</strong>
+                </h3>
+                <p className="text-teal-700 mb-4">
+                  Join the 1,000+ brands already using Trilio.ai to dominate
+                  their eCommerce analytics and drive unprecedented growth. The
+                  future belongs to those who can harness the power of unified,
+                  intelligent data.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button
+                    className="bg-teal-600 hover:bg-teal-700 text-white"
+                    onClick={() =>
+                      window.open(
+                        "https://staging.trilio.ai/register",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Start Free Trial
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-teal-600 text-teal-600 hover:bg-teal-50"
+                    onClick={() => navigate("/contact-form")}
+                  >
+                    Schedule Demo
+                  </Button>
+                </div>
+              </div>
+
+              <p className="text-lg text-gray-700 mb-8 mt-8">
+                The journey to analytics excellence isn't about having the most
+                data—it's about having the right insights at the right time.
+                With Trilio.ai, you're not just implementing a platform; you're
+                building a competitive advantage that will drive your business
+                forward for years to come.
+              </p>
+            </div>
           </article>
 
           {/* Navigation */}
@@ -153,7 +512,7 @@ const Blog12 = () => {
             <Button
               variant="outline"
               onClick={goToPrevious}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-black"
             >
               <ChevronLeft className="h-4 w-4" />
               Previous: Next-Generation Features to Watch
@@ -161,7 +520,7 @@ const Blog12 = () => {
             <Button
               variant="outline"
               onClick={goToNext}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-black"
             >
               Next: What is an Ecommerce Analytics Platform?
               <ChevronRight className="h-4 w-4" />

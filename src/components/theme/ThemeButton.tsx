@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -23,27 +22,32 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
   onClick,
   className,
   showArrow = false,
-  disabled = false
+  disabled = false,
 }) => {
-  const baseClasses = "font-semibold transition-all duration-300 flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-teal-500/20 animated-border";
-  
+  const baseClasses =
+    "font-semibold transition-all duration-300 flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-teal-500/20 animated-border";
+
   const variantClasses = {
-    primary: "relative overflow-hidden bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105",
-    secondary: "relative overflow-hidden border-2 border-teal-300/60 bg-white/80 backdrop-blur-sm text-teal-700 hover:border-teal-400 hover:text-teal-800 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 hover:bg-white",
-    outline: "relative overflow-hidden border-2 border-teal-300/60 bg-transparent text-teal-600 hover:bg-teal-50 hover:border-teal-400 hover:text-teal-700 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105"
+    primary:
+      "relative overflow-hidden bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105",
+    secondary:
+      "relative overflow-hidden border-2 border-teal-300/60 bg-white/80 backdrop-blur-sm text-teal-700 hover:border-teal-400 hover:text-teal-800 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 hover:bg-white",
+    outline:
+      "relative overflow-hidden border-2 border-teal-300/60 bg-transparent text-teal-600 hover:bg-teal-50 hover:border-teal-400 hover:text-teal-700 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105",
   };
 
   const sizeClasses = {
     sm: "px-5 py-2.5 text-sm rounded-lg min-h-[40px]",
     md: "px-7 py-3.5 text-base rounded-full min-h-[48px]",
-    lg: "px-9 py-4 text-lg rounded-full min-h-[56px]"
+    lg: "px-9 py-4 text-lg rounded-full min-h-[56px]",
   };
 
   const buttonClasses = cn(
     baseClasses,
     variantClasses[variant],
     sizeClasses[size],
-    disabled && "opacity-50 cursor-not-allowed transform-none hover:transform-none",
+    disabled &&
+      "opacity-50 cursor-not-allowed transform-none hover:transform-none",
     className
   );
 
@@ -67,7 +71,11 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
 
   if (href && !disabled) {
     return (
-      <Link to={href} className={buttonClasses} style={{ textDecoration: 'none' }}>
+      <Link
+        to={href}
+        className={buttonClasses}
+        style={{ textDecoration: "none" }}
+      >
         {content}
       </Link>
     );
