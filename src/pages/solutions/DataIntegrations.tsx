@@ -1,5 +1,5 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
@@ -14,44 +14,114 @@ import Logo10 from "@/assests/Remove background project (10).png";
 import Logo11 from "@/assests/Remove background project (11).png";
 import Logo12 from "@/assests/Remove background project (12).png";
 import Logo13 from "@/assests/Remove background project (13).png";
-import Icon11 from "@/assests/Remove background project (11).png";
-import Icon13 from "@/assests/Remove background project (13).png";
-import Icon10 from "@/assests/Remove background project (10).png";
 import Logo3 from "@/assests/Remove background project (3).png";
-import TikTokImage from "@/assests/tik-tok.png";
-import AIIcon from "@/assests/ChatGPT Image Aug 2, 2025, 03_49_51 AM.png";
-import BarChartIcon from "@/assests/ChatGPT Image Aug 2, 2025, 04_03_52 AM.png";
-import AmazonLogo from "@/assests/vecteezy_3d-illustration-of-amazon-logo_18779928.png";
-import TrilioLogo from "@/assests/erasebg-transformed (1) (2) (2).png";
-import NewAIIcon from "@/assests/ChatGPT Image Aug 3, 2025, 03_54_30 AM.png";
+import TikTokImage from "@/assests/TikTokImage.png";
 
 const DataIntegrations = () => {
   const integrations = [
-    { name: "TikTok", description: "Sales, Customer Data", logo: TikTokImage },
-    { name: "Shopify", description: "Video Performance, CPM", logo: Logo11 },
-    { name: "Amazon", description: "Payments, Subscriptions", logo: Logo13 },
-    { name: "Walmart", description: "Pin Analytics, Traffic", logo: Logo12 },
-    { name: "WooCommerce", description: "Store Data, Analytics", logo: Logo3 },
+    {
+      name: "TikTok",
+      description: "Sales, Customer Data",
+      logo: TikTokImage,
+      path: "/solutions/tiktok",
+      categories: ["Most Popular", "Advertising"],
+    },
+    {
+      name: "Shopify",
+      description: "Storefront, Orders, Customers",
+      logo: Logo11,
+      path: "/solutions/shopify",
+      categories: ["Most Popular", "Ecommerce"],
+    },
+    {
+      name: "Amazon",
+      description: "Marketplace, Orders, Fees",
+      logo: Logo13,
+      path: "/solutions/amazon",
+      categories: ["Most Popular", "Ecommerce"],
+    },
+    {
+      name: "Walmart",
+      description: "Orders, Catalog, Fees",
+      logo: Logo12,
+      path: "/solutions/walmart",
+      categories: ["Ecommerce"],
+    },
+    {
+      name: "WooCommerce",
+      description: "Store Data, Analytics",
+      logo: Logo3,
+      path: "/solutions/woocommerce",
+      categories: ["Ecommerce"],
+    },
     {
       name: "Google Ads",
-      description: "Marketplace Sales, Fees",
+      description: "Campaigns, Spend, Conversions",
       logo: Logo10,
+      path: "/solutions/google-ads",
+      categories: ["Most Popular", "Advertising"],
     },
     {
       name: "Amazon Ads",
-      description: "Orders, Products, Customers",
+      description: "Sponsored Ads, Conversions",
       logo: Logo5,
+      path: "/solutions/amazon-ads",
+      categories: ["Advertising"],
     },
     {
       name: "Reddit Ads",
-      description: "Sales, Inventory, Reviews",
+      description: "Campaigns, CPC, Conversions",
       logo: Logo6,
+      path: "/solutions/reddit-ads",
+      categories: ["Advertising"],
     },
-    { name: "Meta Ads", description: "Ad Spend, ROAS, Reach", logo: Logo7 },
-    { name: "Mailchimp", description: "Campaigns, Keywords, CPC", logo: Logo8 },
-    { name: "GA4", description: "Email Metrics, Segments", logo: Logo9 },
-    { name: "Best Buy", description: "Transactions, Disputes", logo: "💰" },
+    {
+      name: "Meta Ads",
+      description: "Ad Spend, ROAS, Reach",
+      logo: Logo7,
+      path: "/solutions/meta",
+      categories: ["Advertising"],
+    },
+    {
+      name: "Mailchimp",
+      description: "Campaigns, Audiences",
+      logo: Logo8,
+      path: "/solutions/mailchimp",
+      categories: ["Email / Marketing Automation"],
+    },
+    {
+      name: "GA4",
+      description: "Web Analytics, Conversions",
+      logo: Logo9,
+      path: "/solutions/ga4",
+      categories: ["Analytics"],
+    },
+    {
+      name: "Best Buy",
+      description: "Transactions, Disputes",
+      logo: "💰",
+      categories: ["Payments", "Other"],
+    },
   ];
+
+  const categories = [
+    "All",
+    "Most Popular",
+    "Advertising",
+    "Analytics",
+    "Business Intelligence",
+    "Customer Support",
+    "Ecommerce",
+    "Email / Marketing Automation",
+    "Fulfilment / 3PL",
+    "Loyalty / Reviews / Referrals",
+    "Operations",
+    "Other",
+    "Payments",
+  ];
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const steps = [
     {
@@ -88,238 +158,117 @@ const DataIntegrations = () => {
   return (
     <>
       <PageLayout backgroundClass="bg-white">
-        {/* Hero Section */}
-        <ThemeSection background="gradient" padding="xl" className="pt-24">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="pulse-chip mx-auto mb-6">
-              <span>Data Integrations</span>
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
-              Connect All Your
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                {" "}
-                Commerce Data
-              </span>{" "}
-              in Minutes
+        {/* Hero Section (clean) */}
+        <ThemeSection background="gradient" padding="sm" className="pt-24 pb-4">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl lg:text-6xl leading-[1.3] pb-2 overflow-visible font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
+              Integrations
             </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+              Connect All Your Commerce Data in Minutes
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl">
               Trilio integrates with 20+ platforms including Amazon, Shopify,
               Meta, Google Ads, Klaviyo, and more.
             </p>
-            <div className="p-8 max-w-3xl mx-auto">
-              <div className="relative h-32 flex items-center justify-center">
-                {/* 3D Orbital Container */}
-                <div className="orbital-container">
-                  {/* Orbiting Icons */}
-                  <div className="orbital-icon orbital-icon-1">
-                    <img
-                      src={AmazonLogo}
-                      alt="Amazon Logo"
-                      className="w-12 h-12"
-                    />
-                  </div>
-                  <div className="orbital-icon orbital-icon-2">
-                    <img src={NewAIIcon} alt="AI Icon" className="w-20 h-20" />
-                  </div>
-                  <div className="orbital-icon orbital-icon-3">
-                    <img
-                      src={BarChartIcon}
-                      alt="Analytics Icon"
-                      className="w-12 h-12"
-                    />
-                  </div>
-                  <div className="orbital-icon orbital-icon-4">
-                    <img
-                      src={TrilioLogo}
-                      alt="Trilio Logo"
-                      className="w-12 h-12"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </ThemeSection>
 
-        {/* Integration Grid */}
-        <ThemeSection background="white" padding="xl">
+        {/* Search + Categories + Grid */}
+        <ThemeSection background="white" padding="sm" className="pt-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="section-title text-center mb-12 text-black">
-              Supported Integrations
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {integrations.map((integration, index) => (
-                <div
-                  key={integration.name}
-                  className="glass-card p-6 text-center hover-lift transition-all duration-300"
-                >
-                  {integration.name === "TikTok" ? (
-                    <Link to="/solutions/data-integrations/TikTok">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Amazon" ? (
-                    <Link to="/solutions/data-integrations/Amazon">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Shopify" ? (
-                    <Link to="/solutions/data-integrations/Shopify">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Google Ads" ? (
-                    <Link to="/solutions/data-integrations/GoogleAds">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Amazon Ads" ? (
-                    <Link to="/solutions/data-integrations/AmazonAds">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Meta Ads" ? (
-                    <Link to="/solutions/data-integrations/Meta">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "WooCommerce" ? (
-                    <Link to="/solutions/data-integrations/WooCommerce">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Reddit Ads" ? (
-                    <Link to="/solutions/data-integrations/RedditAds">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "GA4" ? (
-                    <Link to="/solutions/data-integrations/GA4">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Walmart" ? (
-                    <Link to="/solutions/data-integrations/Walmart">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : integration.name === "Mailchimp" ? (
-                    <Link to="/solutions/data-integrations/MailChimp">
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        <img
-                          src={integration.logo}
-                          alt={integration.name + " logo"}
-                          className="h-16 w-16 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </Link>
-                  ) : (
-                    <>
-                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        {typeof integration.logo === "string" &&
-                        integration.logo.startsWith("💰") ? (
-                          <span className="text-4xl">{integration.logo}</span>
-                        ) : (
-                          <img
-                            src={integration.logo}
-                            alt={integration.name + " logo"}
-                            className="h-16 w-16 object-contain"
-                          />
-                        )}
-                      </div>
-                      <h3 className="font-semibold mb-2 text-black">
-                        {integration.name}
-                      </h3>
-                    </>
-                  )}
-                  <p className="text-sm text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {integration.description}
-                  </p>
+            {/* Search Bar */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Search integrations"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-28 py-3 border border-gray-200 rounded-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500"
+                />
+                {/* Removed inline clear (X) button for a cleaner input */}
+              </div>
+              <button
+                onClick={() => setSearchTerm("")}
+                className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50"
+              >
+                Clear
+              </button>
+            </div>
+
+            <div className="flex gap-8">
+              {/* Categories Sidebar */}
+              <aside className="w-64 hidden md:block">
+                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+                  Categories
+                </h3>
+                <div className="space-y-1">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+                        selectedCategory === cat
+                          ? "bg-gray-100 text-gray-900"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
                 </div>
-              ))}
+              </aside>
+
+              {/* Integrations Grid */}
+              <div className="flex-1">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                  {integrations
+                    .filter((i) =>
+                      selectedCategory === "All"
+                        ? true
+                        : i.categories?.includes(selectedCategory)
+                    )
+                    .filter((i) =>
+                      i.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map((integration) => {
+                      const CardInner = (
+                        <div className="group p-6 text-center rounded-xl border border-gray-200 bg-white transition-all duration-200 ease-out hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 hover:scale-[1.01]">
+                          <div className="mb-4 flex justify-center transition-transform duration-200 ease-out group-hover:scale-110">
+                            {typeof integration.logo === "string" &&
+                            integration.logo.startsWith("💰") ? (
+                              <span className="text-4xl">
+                                {integration.logo}
+                              </span>
+                            ) : (
+                              <img
+                                src={integration.logo}
+                                alt={integration.name + " logo"}
+                                className="h-12 w-12 object-contain drop-shadow-sm"
+                              />
+                            )}
+                          </div>
+                          <h3 className="font-medium text-gray-900 transition-colors duration-200 group-hover:text-gray-950">
+                            {integration.name}
+                          </h3>
+                          {/* Cleaner design: omit description */}
+                        </div>
+                      );
+
+                      return (
+                        <div key={integration.name}>
+                          {integration.path ? (
+                            <Link to={integration.path}>{CardInner}</Link>
+                          ) : (
+                            CardInner
+                          )}
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
             </div>
           </div>
         </ThemeSection>
@@ -327,11 +276,11 @@ const DataIntegrations = () => {
         {/* How It Works */}
         <ThemeSection background="gray" padding="xl">
           <div className="max-w-6xl mx-auto">
-            <h2 className="section-title text-center mb-12 text-black">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
               How Integration Works
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {steps.map((step, index) => (
+            <div className="grid md:grid-cols-3 gap-6">
+              {steps.map((step) => (
                 <ThemeCard
                   key={step.title}
                   icon={step.icon}
@@ -347,7 +296,7 @@ const DataIntegrations = () => {
         {/* Advanced Integration Support */}
         <ThemeSection background="white" padding="lg">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="section-title mb-8 text-black">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Advanced Integration Support
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -377,7 +326,7 @@ const DataIntegrations = () => {
               variant="primary"
               size="lg"
               href="/contact-form"
-              showArrow={true}
+              showArrow
             >
               See All Integrations
             </ThemeButton>

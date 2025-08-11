@@ -158,8 +158,7 @@ const Hero = () => {
               }}
               className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-white/90 font-normal text-base sm:text-lg text-left"
             >
-              Turn every click, visit, and ad dollar into profitable
-              insights—instantly.
+            Single source for holistic ecommerce metrics, insights, and actions.
             </p>
 
             <div

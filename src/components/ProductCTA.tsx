@@ -28,7 +28,7 @@ const ProductCTA: React.FC<ProductCTAProps> = ({
           variant="secondary"
           href="/contact-form"
           showArrow={true}
-          className="bg-white text-teal-600 hover:bg-gray-100 border-white hover:border-gray-100"
+          className="bg-white text-black hover:bg-gray-100 border-white hover:border-gray-100 hover:text-black"
         >
           {buttonText}
         </ThemeButton>

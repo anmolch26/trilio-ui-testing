@@ -12,6 +12,8 @@ interface ThemeButtonProps {
   className?: string;
   showArrow?: boolean;
   disabled?: boolean;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
 }
 
 const ThemeButton: React.FC<ThemeButtonProps> = ({
@@ -23,6 +25,8 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
   className,
   showArrow = false,
   disabled = false,
+  target,
+  rel,
 }) => {
   const baseClasses =
     "font-semibold transition-all duration-300 flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-teal-500/20 animated-border";
@@ -31,7 +35,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
     primary:
       "relative overflow-hidden bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105",
     secondary:
-      "relative overflow-hidden border-2 border-teal-300/60 bg-white/80 backdrop-blur-sm text-teal-700 hover:border-teal-400 hover:text-teal-800 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 hover:bg-white",
+      "relative overflow-hidden border-2 border-teal-300/60 bg-white/80 backdrop-blur-sm text-teal-700 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 hover:bg-white",
     outline:
       "relative overflow-hidden border-2 border-teal-300/60 bg-transparent text-teal-600 hover:bg-teal-50 hover:border-teal-400 hover:text-teal-700 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105",
   };
@@ -70,6 +74,20 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
   );
 
   if (href && !disabled) {
+    const isExternal = /^(https?:)?\/\//i.test(href);
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target={target || "_blank"}
+          rel={rel || "noopener noreferrer"}
+          className={buttonClasses}
+          style={{ textDecoration: "none" }}
+        >
+          {content}
+        </a>
+      );
+    }
     return (
       <Link
         to={href}

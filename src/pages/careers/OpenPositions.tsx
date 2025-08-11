@@ -446,8 +446,8 @@ const OpenPositions = () => {
                 <div className="flex items-start gap-6">
                   <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
                     <img
-                      src="/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg"
-                      alt="Sarah Kim"
+                      src="https://assets.channeliq.ai/invictus-landing/Leadership/Harika.png"
+                      alt="Harika"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -461,9 +461,7 @@ const OpenPositions = () => {
                     </blockquote>
                     <div>
                       <p className="font-semibold text-gray-900"></p>
-                      <p className="text-sm text-gray-600">
-                        Head of Talent & People
-                      </p>
+                      <p className="text-sm text-gray-600">Harika Hr Manager</p>
                     </div>
                   </div>
                 </div>

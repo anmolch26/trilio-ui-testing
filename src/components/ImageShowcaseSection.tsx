@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Play, Volume2, VolumeX, SkipBack, SkipForward } from "lucide-react";
+import { Play, Volume2, VolumeX } from "lucide-react";
+import SkipBackIcon from "@/assests/SkipBack.png";
+import SkipForwardIcon from "@/assests/SkipForward.png";
+import SkipBack1 from "@/assests/SkipBack1.png";
 import { useAnalytics } from "../hooks/useAnalytics";
 
 const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.mp4";
@@ -16,11 +19,44 @@ const ImageShowcaseSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { trackVideoInteraction } = useAnalytics();
 
+  // Reusable, precise 10s skip button using provided image
+  const SkipButton: React.FC<{
+    direction: "back" | "forward";
+    onClick: () => void;
+  }> = ({ direction, onClick }) => (
+    <button
+      onClick={onClick}
+      className="relative bg-transparent hover:bg-transparent rounded-full w-12 h-12 flex items-center justify-center transition-transform duration-300 hover:scale-110 overflow-visible"
+      title={
+        direction === "back"
+          ? "Skip 10 seconds backward"
+          : "Skip 10 seconds forward"
+      }
+      aria-label={
+        direction === "back"
+          ? "Skip back 10 seconds"
+          : "Skip forward 10 seconds"
+      }
+    >
+      <img
+        src={direction === "back" ? SkipBack1 : SkipForwardIcon}
+        alt={
+          direction === "back"
+            ? "Skip back 10 seconds"
+            : "Skip forward 10 seconds"
+        }
+        className={`${
+          direction === "back" ? "w-9 h-9" : "w-12 h-12"
+        } object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]`}
+      />
+    </button>
+  );
+
   const handlePlayClick = () => {
     if (videoRef.current) {
       videoRef.current.play();
       setIsPlaying(true);
-      trackVideoInteraction('play', 'Trilio Demo Video');
+      trackVideoInteraction("play", "Trilio Demo Video");
     }
   };
 
@@ -29,11 +65,11 @@ const ImageShowcaseSection = () => {
       if (isPlaying) {
         videoRef.current.pause();
         setIsPlaying(false);
-        trackVideoInteraction('pause', 'Trilio Demo Video');
+        trackVideoInteraction("pause", "Trilio Demo Video");
       } else {
         videoRef.current.play();
         setIsPlaying(true);
-        trackVideoInteraction('play', 'Trilio Demo Video');
+        trackVideoInteraction("play", "Trilio Demo Video");
       }
     }
   };
@@ -42,7 +78,7 @@ const ImageShowcaseSection = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
-      trackVideoInteraction(isMuted ? 'unmute' : 'mute', 'Trilio Demo Video');
+      trackVideoInteraction(isMuted ? "unmute" : "mute", "Trilio Demo Video");
     }
   };
 
@@ -250,26 +286,17 @@ const ImageShowcaseSection = () => {
               {!isPlaying && showControls && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
                   <div className="flex items-center space-x-8 pointer-events-auto">
-                    <button
-                      onClick={handleSkipBackward}
-                      className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-                      title="Skip 10 seconds backward"
-                    >
-                      <SkipBack className="w-6 h-6" />
-                    </button>
+                    <SkipButton direction="back" onClick={handleSkipBackward} />
                     <button
                       onClick={handlePlayClick}
                       className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
                     >
                       <Play className="w-8 h-8 ml-1" fill="currentColor" />
                     </button>
-                    <button
+                    <SkipButton
+                      direction="forward"
                       onClick={handleSkipForward}
-                      className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-                      title="Skip 10 seconds forward"
-                    >
-                      <SkipForward className="w-6 h-6" />
-                    </button>
+                    />
                   </div>
                 </div>
               )}
@@ -278,13 +305,7 @@ const ImageShowcaseSection = () => {
               {isPlaying && showControls && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex items-center space-x-8 pointer-events-auto">
-                    <button
-                      onClick={handleSkipBackward}
-                      className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-                      title="Skip 10 seconds backward"
-                    >
-                      <SkipBack className="w-6 h-6" />
-                    </button>
+                    <SkipButton direction="back" onClick={handleSkipBackward} />
                     <button
                       onClick={handleVideoClick}
                       className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
@@ -299,13 +320,10 @@ const ImageShowcaseSection = () => {
                         <Play className="w-6 h-6 ml-1" fill="currentColor" />
                       )}
                     </button>
-                    <button
+                    <SkipButton
+                      direction="forward"
                       onClick={handleSkipForward}
-                      className="bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-                      title="Skip 10 seconds forward"
-                    >
-                      <SkipForward className="w-6 h-6" />
-                    </button>
+                    />
                   </div>
                 </div>
               )}

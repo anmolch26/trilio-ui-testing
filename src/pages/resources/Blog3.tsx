@@ -55,7 +55,7 @@ const Blog3 = () => {
 
               <div className="mb-8">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/Blogs/Comparing.png"
+                  src="/src/assests/WhatsApp Image 2025-08-05 at 17.52.32.jpeg"
                   alt="Platform Comparison Illustration"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />

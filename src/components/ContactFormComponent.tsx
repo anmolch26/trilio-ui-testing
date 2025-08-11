@@ -25,11 +25,7 @@ const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   company: z.string().min(2, "Company name must be at least 2 characters"),
-  website: z
-    .string()
-    .url("Please enter a valid URL")
-    .optional()
-    .or(z.literal("")),
+  website: z.string().trim().optional().or(z.literal("")),
   monthlyRevenue: z.string().optional(),
 });
 
@@ -181,7 +177,7 @@ const ContactFormComponent = () => {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    type="url"
+                    type="text"
                     placeholder="https://yourcompany.com"
                     className="border-gray-300 focus:border-pulse-500 focus:ring-pulse-500"
                     {...field}

@@ -1,14 +1,31 @@
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import WingmanBg from "@/assests/ChatGPT Image Aug 11, 2025, 07_34_35 PM.png";
+import Wingman from "@/assests/resized_image.png";
+import SkuBg from "@/assests/Screenshot 2025-08-11 at 5.53.01 PM.png";
+import WingmanAi from "@/assests/WingmanAI.png";
+import Sku from "@/assests/SKUCard.png";
+import Sku1 from "@/assests/SkuCard1.png";
+import WingmanImage from "@/assests/WingmanImage.png";
+
 
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   index: number;
+  backgroundImage?: string;
+  reverse?: boolean;
 }
 
-const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
+const FeatureCard = ({
+  icon,
+  title,
+  description,
+  index,
+  backgroundImage,
+  reverse = false,
+}: FeatureCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -78,71 +95,137 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
     <div
       ref={cardRef}
       className={cn(
-        "group relative bg-white rounded-2xl p-8 text-center opacity-0",
-        "shadow-elegant hover:shadow-elegant-hover transition-all duration-500",
-        "hover:-translate-y-3 hover:scale-[1.02] border border-gray-100 cursor-pointer overflow-hidden",
-        hoverColors[index % hoverColors.length],
-        shadowColors[index % shadowColors.length]
+        "group relative opacity-0 overflow-visible",
+        backgroundImage
+          ? "rounded-none min-h-[22rem] md:min-h-[26rem]"
+          : cn(
+              "rounded-2xl bg-white p-8 text-center border border-gray-100",
+              "shadow-elegant hover:shadow-elegant-hover transition-all duration-500",
+              "hover:-translate-y-3 hover:scale-[1.02] cursor-pointer",
+              hoverColors[index % hoverColors.length],
+              shadowColors[index % shadowColors.length]
+            )
       )}
-      style={{
-        animationDelay: `${0.15 * index}s`,
-      }}
+      style={{ animationDelay: `${0.15 * index}s` }}
     >
-      {/* Gradient overlay on hover */}
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-effects-none",
-          index % 6 === 0 && "from-teal-50/50 to-blue-50/30",
-          index % 6 === 1 && "from-purple-50/50 to-pink-50/30",
-          index % 6 === 2 && "from-orange-50/50 to-red-50/30",
-          index % 6 === 3 && "from-green-50/50 to-teal-50/30",
-          index % 6 === 4 && "from-blue-50/50 to-purple-50/30",
-          index % 6 === 5 && "from-pink-50/50 to-orange-50/30"
-        )}
-      ></div>
-
-      {/* Animated background glow */}
-      <div
-        className={cn(
-          "absolute -inset-1 bg-gradient-to-r rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500",
-          gradientClasses[index % gradientClasses.length]
-        )}
-      ></div>
-
-      <div className="relative z-10">
-        <div
-          className={cn(
-            "w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6",
-            "group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg",
-            iconBgColors[index % iconBgColors.length],
-            shadowColors[index % shadowColors.length]
-          )}
-        >
-          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:bg-gradient-to-br transition-all duration-300">
-            <div className="text-teal-600 group-hover:scale-110 transition-transform duration-300">
-              {icon}
+      {/* Optional background image */}
+      {backgroundImage && (
+        <div className="relative w-full min-h-[22rem] md:min-h-[26rem]">
+          <div
+            className={cn(
+              "flex flex-col w-full md:flex-row items-stretch min-h-[22rem] md:min-h-[26rem]",
+              reverse && "md:flex-row-reverse"
+            )}
+          >
+            {/* Image half */}
+            <div
+              className={cn(
+                "md:w-1/2 w-full flex-1 min-h-[12rem] bg-center bg-cover shadow-2xl ring-1 ring-black/5 relative overflow-hidden",
+                reverse ? "rounded-2xl" : "rounded-2xl"
+              )}
+              style={{
+                backgroundImage: `url(${backgroundImage})`,
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+                maskImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+              }}
+            />
+            {/* Content half */}
+            <div
+              className={cn(
+                "md:w-1/2 w-full flex-1 p-6 md:p-8 bg-transparent flex flex-col justify-center min-h-[12rem]",
+                reverse ? "rounded-2xl" : "rounded-2xl"
+              )}
+            >
+              <h3
+                className="text-3xl md:text-4xl font-bold text-white mb-4 text-left"
+                style={{
+                  fontFamily:
+                    "DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+                }}
+              >
+                {title}
+              </h3>
+              <div
+                className="text-white/90 leading-relaxed text-left"
+                style={{
+                  fontFamily:
+                    "DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                {description}
+              </div>
             </div>
           </div>
         </div>
-
-        <h3 className="text-xl font-semibold mb-4 text-gray-900 transition-colors duration-300">
-          {title}
-        </h3>
-
-        <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
-          {description}
-        </p>
-      </div>
-
-      {/* Shine effect on hover */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[#a2fce9]/[0.51]">
+      )}
+      {/* Gradient overlay on default cards */}
+      {!backgroundImage && (
         <div
           className={cn(
-            "absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent",
-            "translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000 skew-x-12"
+            "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-effects-none",
+            index % 6 === 0 && "from-teal-50/50 to-blue-50/30",
+            index % 6 === 1 && "from-purple-50/50 to-pink-50/30",
+            index % 6 === 2 && "from-orange-50/50 to-red-50/30",
+            index % 6 === 3 && "from-green-50/50 to-teal-50/30",
+            index % 6 === 4 && "from-blue-50/50 to-purple-50/30",
+            index % 6 === 5 && "from-pink-50/50 to-orange-50/30"
           )}
         ></div>
-      </div>
+      )}
+
+      {/* Animated background glow (disabled for image card) */}
+      {!backgroundImage && (
+        <div
+          className={cn(
+            "absolute -inset-1 bg-gradient-to-r rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500",
+            gradientClasses[index % gradientClasses.length]
+          )}
+        ></div>
+      )}
+
+      {!backgroundImage && (
+        <div className="relative z-10 p-8 text-center bg-transparent">
+          <div
+            className={cn(
+              "w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6",
+              backgroundImage
+                ? "transition-all duration-500 shadow-lg"
+                : "group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg",
+              iconBgColors[index % iconBgColors.length],
+              shadowColors[index % shadowColors.length]
+            )}
+          >
+            <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br transition-all duration-300 backdrop-blur">
+              <div className="text-teal-600 group-hover:scale-110 transition-transform duration-300">
+                {icon}
+              </div>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 transition-colors duration-300">
+            {title}
+          </h3>
+
+          <p className="text-gray-700 group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
+            {description}
+          </p>
+        </div>
+      )}
+
+      {/* Shine effect on default cards */}
+      {!backgroundImage && (
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[#a2fce9]/[0.51]">
+          <div
+            className={cn(
+              "absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent",
+              "translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000 skew-x-12"
+            )}
+          ></div>
+        </div>
+      )}
     </div>
   );
 };
@@ -266,26 +349,7 @@ const Features = () => {
             description="Trilio proactively surfaces insights across your all channels Shopify, Amazon, Google Ads, Klaviyo and 20+ platforms. Ex. declining ROAS, stock-out risks, or conversion drops so you can take immediate action. You’ll also get event-triggered alerts powered by AI & ML."
             index={2}
           />
-          <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 1 0 7.75" />
-              </svg>
-            }
-            title="Conversational AI Wingman"
-            description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
-            index={3}
-          />
+          {/* Wingman card moved below grid */}
           <FeatureCard
             icon={
               <svg
@@ -305,25 +369,26 @@ const Features = () => {
             description="Set annual, monthly, or SKU-level revenue targets and let Trilio auto-forecast your performance. Compare actual vs. target across timeframes and identify where you’re missing your growth goals."
             index={4}
           />
+          {/* Removed SKU card from grid; we'll render it below as full-width */}
+        </div>
+
+        {/* Full-width Wingman and SKU cards below the grid */}
+        <div className="max-w-7xl mx-auto mt-8 space-y-12">
           <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
-            }
+            icon={null}
+            title="Conversational AI Wingman"
+            description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
+            index={6}
+            backgroundImage={WingmanImage}
+            reverse={false}
+          />
+          <FeatureCard
+            icon={null}
             title="SKU-Level Drill-Down"
             description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis."
-            index={5}
+            index={7}
+            backgroundImage={Sku1}
+            reverse
           />
         </div>
       </div>
