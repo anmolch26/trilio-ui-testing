@@ -55,9 +55,9 @@ const Blog4 = () => {
 
               <div className="mb-8">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/Blogs/Guide.png"
+                  src="/src/assests/Project-Implementation.jpg"
                   alt="Implementation Guide"
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
               </div>
 

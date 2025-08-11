@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Performance hints for auth app -->
+    <link rel="preconnect" href="https://staging.trilio.ai" crossorigin />
+    <link rel="dns-prefetch" href="//staging.trilio.ai" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trilio.ai - Ecommerce Intelligence, Powered by AI</title>
@@ -21,7 +24,7 @@
       property="og:title"
       content="Trilio.ai - Your AI Teammate for Ecommerce Growth"
     />
-    <meta 
+    <meta
       property="og:description"
       content="Turn every click, visit, and ad dollar into profitable insights—instantly. Unified ecommerce analytics powered by AI."
     />
@@ -49,14 +52,19 @@
     />
 
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCE1YN2CNY"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HCE1YN2CNY"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HCE1YN2CNY', {
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HCE1YN2CNY", {
         page_title: document.title,
-        page_location: window.location.href
+        page_location: window.location.href,
       });
     </script>
 

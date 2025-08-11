@@ -34,7 +34,7 @@ const Blog1 = () => {
                   <img
                     src="https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
                     alt="Om Rathod"
-                    className="w-20 h-20 rounded-full object-cover mt-8"
+                    className="w-44 h-44 rounded-full object-cover mt-8"
                   />
                 </div>
               </div>

@@ -60,6 +60,16 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
     document.body.style.overflow = "";
   }, [location.pathname]);
 
+  // Ensure we are at the top when navigating to the homepage (e.g., via logo click)
+  useEffect(() => {
+    if (location.pathname === "/") {
+      // Wait for route render and then scroll to top
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 0);
+    }
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = !isMenuOpen ? "hidden" : "";
@@ -218,6 +228,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
       <div className="container flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <Link
           to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105"
           aria-label="Trilio.ai"
         >
@@ -355,15 +366,15 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-white flex flex-col h-screen pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:hidden transition-all duration-300 ease-in-out overflow-y-auto",
+          "fixed inset-0 z-50 bg-white flex flex-col h-screen pt-2 sm:pt-3 md:pt-4 px-4 sm:px-6 md:hidden transition-all duration-300 ease-in-out overflow-y-auto",
           isMenuOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <nav className="flex flex-col space-y-4 mt-4 flex-1">
+        <nav className="flex flex-col space-y-4 mt-0 flex-1">
           {/* Close Button */}
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-1">
             <button
               onClick={() => {
                 setIsMenuOpen(false);

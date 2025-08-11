@@ -282,7 +282,7 @@
   }
 
   .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-teal-500 text-gray-800 hover:text-teal-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
+    @apply bg-transparent border border-gray-300 hover:border-teal-500 text-gray-800 hover:text-gray-800 font-medium py-3 px-6 rounded-full transition-all duration-300;
   }
 
   .nav-link {
