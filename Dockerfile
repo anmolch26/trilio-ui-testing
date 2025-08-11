@@ -1,5 +1,5 @@
 # Multi-stage build for React/Vite application
-FROM node:18-alpine AS builder
+FROM public.ecr.aws/docker/library/node:18-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine AS production
+FROM public.ecr.aws/docker/library/nginx:alpine AS production
 
 # Copy built assets from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
