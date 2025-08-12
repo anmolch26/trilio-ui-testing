@@ -287,7 +287,7 @@ export const blogData: Record<number, BlogPost> = {
             href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Explore Trilio 
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -5740,7 +5740,8 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 13, 2025",
     category: "E-commerce",
     readTime: "15 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics.png",
     content: (
       <div
         className="text-lg text-gray-900 leading-relaxed space-y-6"
@@ -6201,7 +6202,8 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 14, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics(1).png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics(1).png",
     content: (
       <div
         className="text-lg text-gray-900 leading-relaxed space-y-6"
@@ -6547,7 +6549,8 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 15, 2025",
     category: "E-commerce",
     readTime: "15 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyMetrics.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyMetrics.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -6929,7 +6932,8 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 16, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/multi-channelData.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/multi-channelData.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7161,7 +7165,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 17, 2025",
     category: "Analytics",
     readTime: "10 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/CustomReport.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CustomReport.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7434,7 +7439,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 18, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopify.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopify.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7738,7 +7744,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 19, 2025",
     category: "Analytics",
     readTime: "8 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/TroubleshootingShopify_1200x630.jpg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/TroubleshootingShopify_1200x630.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8084,7 +8091,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 22, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyBrands.jpg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyBrands.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8446,7 +8454,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 25, 2025",
     category: "Analytics",
     readTime: "15 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopifyAnalytics.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopifyAnalytics.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8820,7 +8829,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 28, 2025",
     category: "Analytics",
     readTime: "10 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROIoptimization.jpg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ROIoptimization.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9138,7 +9148,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 1, 2025",
     category: "Analytics",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/FutureProofing.jpg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/FutureProofing.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9465,7 +9476,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 5, 2025",
     category: "Analytics",
     readTime: "8 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/SuccessFramework.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/SuccessFramework.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9818,7 +9830,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 10, 2025",
     category: "Analytics",
     readTime: "6 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/MasteringShopify.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/MasteringShopify.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 p-6 mb-8">
@@ -10119,7 +10132,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 15, 2025",
     category: "Analytics",
     readTime: "5 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/TransformShopify.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/TransformShopify.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 p-6 mb-8">
@@ -10360,7 +10374,8 @@ utm_term: keyword (for search campaigns)`}
     date: "August 8, 2025",
     category: "Analytics",
     readTime: "18 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROASGuide.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ROASGuide.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -10514,7 +10529,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 25, 2025",
     category: "Analytics",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/multichannelmarketingROAS.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/multichannelmarketingROAS.jpeg",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -10784,7 +10800,8 @@ utm_term: keyword (for search campaigns)`}
     date: "September 30, 2025",
     category: "Analytics",
     readTime: "15 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROASfail.jpg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ROASfail.jpg",
     content: (
       <div>
         <div className="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-400 p-6 mb-8">
@@ -11204,7 +11221,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 5, 2025",
     category: "Analytics",
     readTime: "20 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/EssentialFeaturesROAS.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/EssentialFeaturesROAS.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -11771,7 +11789,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 10, 2025",
     category: "Analytics",
     readTime: "25 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROASTrackingTools.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ROASTrackingTools.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -12582,7 +12601,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 15, 2025",
     category: "Analytics",
     readTime: "16 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/RealTimeData.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/RealTimeData.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -13121,7 +13141,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 20, 2025",
     category: "Analytics",
     readTime: "18 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/AttributionModel.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/AttributionModel.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -13697,7 +13718,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 25, 2025",
     category: "Analytics",
     readTime: "20 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/Strategy.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/Strategy.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -14581,7 +14603,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 30, 2025",
     category: "Analytics",
     readTime: "22 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/RoiOptimization.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/RoiOptimization.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -15390,7 +15413,8 @@ utm_term: keyword (for search campaigns)`}
     date: "November 5, 2025",
     category: "Analytics",
     readTime: "18 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/DataPrivacy.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/DataPrivacy.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 mb-8">
@@ -16222,7 +16246,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 15, 2025",
     category: "Analytics",
     readTime: "12 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/MeasuringRoas.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/MeasuringRoas.png",
     content: (
       <div>
         <p className="text-xl text-gray-900 mb-4">
@@ -16543,7 +16568,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 20, 2025",
     category: "Analytics",
     readTime: "10 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/CommonPitfall.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CommonPitfall.png",
     content: (
       <div>
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
@@ -16720,7 +16746,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 21, 2025",
     category: "Analytics",
     readTime: "8 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/FutureROAS.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/FutureROAS.png",
     content: (
       <div>
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
@@ -16909,7 +16936,8 @@ utm_term: keyword (for search campaigns)`}
     date: "October 22, 2025",
     category: "Analytics",
     readTime: "6 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ConclusionROAS.png",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ConclusionROAS.png",
     content: (
       <div>
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
@@ -16978,6 +17006,147 @@ utm_term: keyword (for search campaigns)`}
           If you’d like help evaluating options, our team at Trilio can share
           best practices and examples from similar brands.
         </p>
+      </div>
+    ),
+  },
+  41: {
+    id: 41,
+    title: "Customer Acquisition Cost Calculator: Free Tool + Complete Guide",
+    slug: "customer-acquisition-cost-calculator-free-tool-complete-guide",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 25, 2025",
+    category: "Analytics",
+    readTime: "7 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CACGuide.png",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>
+            Customer Acquisition Cost Calculator: Free Tool + Complete Guide
+          </strong>
+        </h1>
+
+        <p className="italic text-black mb-4">
+          Calculate your true CAC and discover 10 proven strategies to reduce
+          acquisition costs by 30%.
+        </p>
+
+        <p className="text-lg leading-relaxed mb-6 text-black">
+          <strong>
+            Customer Acquisition Cost (CAC) is the metric that determines
+            whether your business grows profitably or burns through cash
+          </strong>
+          . Yet <strong>73% of businesses underestimate their true CAC</strong>{" "}
+          by overlooking hidden costs, leading to unsustainable growth
+          strategies and funding crises.
+        </p>
+
+        <p className="text-black mb-6">
+          With{" "}
+          <strong>
+            customer acquisition costs rising 60% across all industries
+          </strong>{" "}
+          over the past five years, understanding and optimizing your CAC has
+          never been more critical for survival and growth.
+        </p>
+
+        <p className="text-black mb-6">
+          This comprehensive guide provides not only a free, interactive CAC
+          calculator but also the complete framework for reducing your
+          acquisition costs while improving customer quality.
+          <strong>
+            {" "}
+            Businesses that master CAC optimization see 25–40% improvement in
+            marketing efficiency within 90 days.
+          </strong>
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>What Is Customer Acquisition Cost (CAC)?</strong>
+        </h2>
+        <p className="text-black mb-6">
+          CAC is the total cost required to acquire a new customer across
+          marketing, sales, and operations over a given period. It includes ad
+          spend, software, team costs, creative, agencies, discounts used to
+          convert, and any one‑time onboarding expenses.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>Quick CAC Formula</strong>
+        </h2>
+        <p className="text-black mb-2">
+          CAC = (Total Sales & Marketing Costs) / (Number of New Customers)
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Include people costs, tools, agencies, creative production, and
+            discounts.
+          </li>
+          <li>Exclude retention‑only costs; CAC is strictly acquisition.</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>Use Our Free CAC Calculator</strong>
+        </h2>
+        <p className="text-black mb-6">
+          Enter your ad spend, team costs, software, and new customers to
+          instantly calculate blended CAC. Pair it with LTV to understand
+          payback period and profitability by channel.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>10 Proven Ways to Reduce CAC</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Improve first‑purchase conversion with optimized PDPs and faster
+            checkout.
+          </li>
+          <li>Target higher‑intent audiences and exclude poor‑fit segments.</li>
+          <li>
+            Shift budget toward top‑performing channels using
+            contribution‑margin ROAS.
+          </li>
+          <li>Automate creative testing and stop underperforming ads fast.</li>
+          <li>
+            Capture and nurture demand with email/SMS sequences to lower paid
+            reliance.
+          </li>
+          <li>
+            Leverage referrals, influencers, and affiliates for efficient
+            acquisition.
+          </li>
+          <li>
+            Use server‑side tracking and identity resolution to fix data loss.
+          </li>
+          <li>Personalize landing pages by audience and product affinity.</li>
+          <li>Increase AOV with bundles and upsells to improve CAC payback.</li>
+          <li>
+            Standardize weekly experimentation with clear success thresholds.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>How Trilio Helps</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Unified CAC and LTV across Shopify, Amazon, Meta, Google, and email.
+          </li>
+          <li>
+            Contribution‑margin and new‑customer ROAS for smarter budget shifts.
+          </li>
+          <li>
+            AI insights to detect CAC spikes and recommend corrective actions.
+          </li>
+          <li>
+            Automated exports for finance and marketing with CAC payback
+            tracking.
+          </li>
+        </ul>
       </div>
     ),
   },

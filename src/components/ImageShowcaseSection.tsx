@@ -5,7 +5,7 @@ import SkipForwardIcon from "@/assests/SkipForward.png";
 import SkipBack1 from "@/assests/SkipBack1.png";
 import { useAnalytics } from "../hooks/useAnalytics";
 
-const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/Trilio.ai_ Intelligence.mp4";
+const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/TRILIO.mp4";
 const ImageShowcaseSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);

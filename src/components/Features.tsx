@@ -7,7 +7,7 @@ import WingmanAi from "@/assests/WingmanAI.png";
 import Sku from "@/assests/SKUCard.png";
 import Sku1 from "@/assests/SkuCard1.png";
 import WingmanImage from "@/assests/WingmanImage.png";
-
+import DashboardBg from "@/assests/BusinessDashboard.png";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -16,6 +16,8 @@ interface FeatureCardProps {
   index: number;
   backgroundImage?: string;
   reverse?: boolean;
+  descriptionClassName?: string;
+  titleClassName?: string;
 }
 
 const FeatureCard = ({
@@ -25,6 +27,8 @@ const FeatureCard = ({
   index,
   backgroundImage,
   reverse = false,
+  descriptionClassName,
+  titleClassName,
 }: FeatureCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -95,18 +99,20 @@ const FeatureCard = ({
     <div
       ref={cardRef}
       className={cn(
-        "group relative opacity-0 overflow-visible",
+        "relative opacity-0 overflow-visible",
         backgroundImage
           ? "rounded-none min-h-[22rem] md:min-h-[26rem]"
-          : cn(
-              "rounded-2xl bg-white p-8 text-center border border-gray-100",
-              "shadow-elegant hover:shadow-elegant-hover transition-all duration-500",
-              "hover:-translate-y-3 hover:scale-[1.02] cursor-pointer",
-              hoverColors[index % hoverColors.length],
-              shadowColors[index % shadowColors.length]
-            )
+          : cn("rounded-lg bg-white/5 p-4 md:p-5 text-center shadow-none")
       )}
-      style={{ animationDelay: `${0.15 * index}s` }}
+      style={{
+        animationDelay: `${0.15 * index}s`,
+        ...(backgroundImage
+          ? {}
+          : {
+              background:
+                "linear-gradient(270deg, #2B4780 0%, #284175 20%, #20315B 40%, #1C2541 60%, #191E37 80%, #181D35 100%)",
+            }),
+      }}
     >
       {/* Optional background image */}
       {backgroundImage && (
@@ -161,71 +167,38 @@ const FeatureCard = ({
           </div>
         </div>
       )}
-      {/* Gradient overlay on default cards */}
-      {!backgroundImage && (
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-effects-none",
-            index % 6 === 0 && "from-teal-50/50 to-blue-50/30",
-            index % 6 === 1 && "from-purple-50/50 to-pink-50/30",
-            index % 6 === 2 && "from-orange-50/50 to-red-50/30",
-            index % 6 === 3 && "from-green-50/50 to-teal-50/30",
-            index % 6 === 4 && "from-blue-50/50 to-purple-50/30",
-            index % 6 === 5 && "from-pink-50/50 to-orange-50/30"
-          )}
-        ></div>
-      )}
-
-      {/* Animated background glow (disabled for image card) */}
-      {!backgroundImage && (
-        <div
-          className={cn(
-            "absolute -inset-1 bg-gradient-to-r rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500",
-            gradientClasses[index % gradientClasses.length]
-          )}
-        ></div>
-      )}
+      {/* No overlays or glow for default cards */}
 
       {!backgroundImage && (
-        <div className="relative z-10 p-8 text-center bg-transparent">
+        <div className="relative z-10 p-4 text-center bg-transparent">
           <div
             className={cn(
-              "w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6",
-              backgroundImage
-                ? "transition-all duration-500 shadow-lg"
-                : "group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg",
-              iconBgColors[index % iconBgColors.length],
-              shadowColors[index % shadowColors.length]
+              "w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 bg-gray-100"
             )}
           >
-            <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br transition-all duration-300 backdrop-blur">
-              <div className="text-teal-600 group-hover:scale-110 transition-transform duration-300">
-                {icon}
-              </div>
+            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
+              <div className="text-teal-600">{icon}</div>
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-4 text-gray-900 transition-colors duration-300">
+          <h3
+            className={`text-sm font-semibold mb-1.5 ${
+              titleClassName ?? "text-gray-900"
+            }`}
+          >
             {title}
           </h3>
 
-          <p className="text-gray-700 group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
+          <p
+            className={`${
+              descriptionClassName ?? "text-gray-700"
+            } leading-relaxed text-xs md:text-sm`}
+          >
             {description}
           </p>
         </div>
       )}
-
-      {/* Shine effect on default cards */}
-      {!backgroundImage && (
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[#a2fce9]/[0.51]">
-          <div
-            className={cn(
-              "absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent",
-              "translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000 skew-x-12"
-            )}
-          ></div>
-        </div>
-      )}
+      {/* No shine effect */}
     </div>
   );
 };
@@ -289,28 +262,38 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* Grid moved below full-width sections */}
+
+        {/* Full-width Wingman, Unified Dashboard and SKU cards */}
+        <div className="max-w-7xl mx-auto mt-8 space-y-16">
           <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14,2 14,8 20,8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-            }
+            icon={null}
+            title="Conversational AI Wingman"
+            description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
+            index={3}
+            backgroundImage={WingmanImage}
+            reverse={false}
+          />
+          <FeatureCard
+            icon={null}
             title="Unified Business Dashboard (Omnichannel Visibility)"
             description="Get a single view of your entire business across D2C sites and marketplaces. Track sales, ad performance, inventory, and customer behavior in one place—no more jumping between platforms."
-            index={0}
+            index={4}
+            backgroundImage={DashboardBg}
+            reverse
           />
+          <FeatureCard
+            icon={null}
+            title="SKU-Level Drill-Down"
+            description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis."
+            index={5}
+            backgroundImage={Sku1}
+            reverse={false}
+          />
+        </div>
+
+        {/* Three feature cards moved below the SKU section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mt-12">
           <FeatureCard
             icon={
               <svg
@@ -329,7 +312,9 @@ const Features = () => {
             }
             title="Customizable Dashboards & Reports"
             description="Easily create drag-and-drop dashboards or use ready-to-go templates for Sales, CAC, ROAS, LTV, Inventory Turnover, and more. Filter by channel, product, geography, or campaign. Export reports or schedule them via Slack and Email."
-            index={1}
+            index={6}
+            descriptionClassName="text-white"
+            titleClassName="text-white"
           />
           <FeatureCard
             icon={
@@ -347,9 +332,10 @@ const Features = () => {
             }
             title="AI-Powered Insights & Smart Alerts"
             description="Trilio proactively surfaces insights across your all channels Shopify, Amazon, Google Ads, Klaviyo and 20+ platforms. Ex. declining ROAS, stock-out risks, or conversion drops so you can take immediate action. You’ll also get event-triggered alerts powered by AI & ML."
-            index={2}
+            index={7}
+            descriptionClassName="text-white"
+            titleClassName="text-white"
           />
-          {/* Wingman card moved below grid */}
           <FeatureCard
             icon={
               <svg
@@ -367,28 +353,9 @@ const Features = () => {
             }
             title="Revenue & Forecast Planner"
             description="Set annual, monthly, or SKU-level revenue targets and let Trilio auto-forecast your performance. Compare actual vs. target across timeframes and identify where you’re missing your growth goals."
-            index={4}
-          />
-          {/* Removed SKU card from grid; we'll render it below as full-width */}
-        </div>
-
-        {/* Full-width Wingman and SKU cards below the grid */}
-        <div className="max-w-7xl mx-auto mt-8 space-y-12">
-          <FeatureCard
-            icon={null}
-            title="Conversational AI Wingman"
-            description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
-            index={6}
-            backgroundImage={WingmanImage}
-            reverse={false}
-          />
-          <FeatureCard
-            icon={null}
-            title="SKU-Level Drill-Down"
-            description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis."
-            index={7}
-            backgroundImage={Sku1}
-            reverse
+            index={8}
+            descriptionClassName="text-white"
+            titleClassName="text-white"
           />
         </div>
       </div>
