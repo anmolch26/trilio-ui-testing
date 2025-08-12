@@ -229,7 +229,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105"
+          className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105 -ml-4 sm:-ml-6 md:-ml-8 lg:-ml-12 xl:-ml-14"
           aria-label="Trilio.ai"
         >
           {isHomepage && !isScrolled ? (
