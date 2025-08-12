@@ -115,7 +115,7 @@ const Hero = () => {
         top: showcaseElement.offsetTop - offset,
         behavior: "smooth",
       });
-      trackButtonClick('see_trilio_action', { page_section: 'hero' });
+      trackButtonClick("see_trilio_action", { page_section: "hero" });
     }
   };
 
@@ -158,7 +158,8 @@ const Hero = () => {
               }}
               className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-white/90 font-normal text-base sm:text-lg text-left"
             >
-            Single source for holistic ecommerce metrics, insights, and actions.
+              Single source for holistic ecommerce metrics, insights, and
+              actions.
             </p>
 
             <div
@@ -169,11 +170,11 @@ const Hero = () => {
             >
               <ThemeButton
                 variant="primary"
-                href="https://staging.trilio.ai/register"
+                href="/who-we-help/waitlist"
                 showArrow={true}
                 className="w-full sm:w-auto text-center"
               >
-                Try for free
+                Join waitlist
               </ThemeButton>
 
               <ThemeButton

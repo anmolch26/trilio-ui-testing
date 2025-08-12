@@ -18,6 +18,7 @@ import OperationsManagers from "./pages/who-we-help/OperationsManagers";
 import DataAnalysts from "./pages/who-we-help/DataAnalysts";
 import AgenciesConsultants from "./pages/who-we-help/AgenciesConsultants";
 import TechPartners from "./pages/who-we-help/TechPartners";
+import WaitlistForm from "./pages/who-we-help/WaitlistForm";
 import LeadershipTeam from "./pages/about/LeadershipTeam";
 import Careers from "./pages/about/Careers";
 import TrustCenter from "./pages/about/TrustCenter";
@@ -94,6 +95,7 @@ const App = () => (
               path="/who-we-help/tech-partners"
               element={<TechPartners />}
             />
+            <Route path="/who-we-help/waitlist" element={<WaitlistForm />} />
             {/* About section routes */}
             <Route path="/about/leadership-team" element={<LeadershipTeam />} />
             <Route path="/about/careers" element={<Careers />} />
