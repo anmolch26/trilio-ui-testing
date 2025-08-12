@@ -1,13 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import WingmanBg from "@/assests/ChatGPT Image Aug 11, 2025, 07_34_35 PM.png";
-import Wingman from "@/assests/resized_image.png";
-import SkuBg from "@/assests/Screenshot 2025-08-11 at 5.53.01 PM.png";
-import WingmanAi from "@/assests/WingmanAI.png";
-import Sku from "@/assests/SKUCard.png";
-import Sku1 from "@/assests/SkuCard1.png";
-import WingmanImage from "@/assests/WingmanImage.png";
-import DashboardBg from "@/assests/BusinessDashboard.png";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -271,15 +263,15 @@ const Features = () => {
             title="Conversational AI Wingman"
             description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
             index={3}
-            backgroundImage={WingmanImage}
+            backgroundImage="https://assets.channeliq.ai/trilio-landing/products/WingmanImage.png"
             reverse={false}
           />
           <FeatureCard
             icon={null}
-            title="Unified Business Dashboard (Omnichannel Visibility)"
+            title="Unified Business Dashboard Omnichannel Visibility"
             description="Get a single view of your entire business across D2C sites and marketplaces. Track sales, ad performance, inventory, and customer behavior in one place—no more jumping between platforms."
             index={4}
-            backgroundImage={DashboardBg}
+            backgroundImage="https://assets.channeliq.ai/trilio-landing/products/BusinessDashboard.png"
             reverse
           />
           <FeatureCard
@@ -287,7 +279,7 @@ const Features = () => {
             title="SKU-Level Drill-Down"
             description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis."
             index={5}
-            backgroundImage={Sku1}
+            backgroundImage="https://assets.channeliq.ai/trilio-landing/products/SkuCard1.png"
             reverse={false}
           />
         </div>
