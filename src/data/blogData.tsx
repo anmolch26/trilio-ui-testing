@@ -5740,7 +5740,7 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 13, 2025",
     category: "E-commerce",
     readTime: "15 min",
-    featuredImage: "/src/assests/ShopifyAnalytics.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics.png",
     content: (
       <div
         className="text-lg text-gray-900 leading-relaxed space-y-6"
@@ -6201,7 +6201,7 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 14, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "/src/assests/ShopifyAnalytics(1).png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyAnalytics(1).png",
     content: (
       <div
         className="text-lg text-gray-900 leading-relaxed space-y-6"
@@ -6547,7 +6547,7 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 15, 2025",
     category: "E-commerce",
     readTime: "15 min",
-    featuredImage: "/src/assests/ShopifyMetrics.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyMetrics.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -6929,7 +6929,7 @@ export const blogData: Record<number, BlogPost> = {
     date: "August 16, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "/src/assests/multi-channelData.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/multi-channelData.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7161,7 +7161,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 17, 2025",
     category: "Analytics",
     readTime: "10 min",
-    featuredImage: "/src/assests/CustomReport.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/CustomReport.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7434,7 +7434,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 18, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "/src/assests/AdvancedShopify.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopify.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -7738,7 +7738,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 19, 2025",
     category: "Analytics",
     readTime: "8 min",
-    featuredImage: "/src/assests/TroubleshootingShopify_1200x630.jpg",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/TroubleshootingShopify_1200x630.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8084,7 +8084,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 22, 2025",
     category: "E-commerce",
     readTime: "12 min",
-    featuredImage: "/src/assests/ShopifyBrands.jpg",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ShopifyBrands.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8446,7 +8446,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 25, 2025",
     category: "Analytics",
     readTime: "15 min",
-    featuredImage: "/src/assests/AdvancedShopifyAnalytics.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/AdvancedShopifyAnalytics.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -8820,7 +8820,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 28, 2025",
     category: "Analytics",
     readTime: "10 min",
-    featuredImage: "/src/assests/ROIoptimization.jpg",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROIoptimization.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9138,7 +9138,7 @@ utm_term: keyword (for search campaigns)`}
     date: "September 1, 2025",
     category: "Analytics",
     readTime: "12 min",
-    featuredImage: "/src/assests/FutureProofing.jpg",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/FutureProofing.jpg",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9465,7 +9465,7 @@ utm_term: keyword (for search campaigns)`}
     date: "September 5, 2025",
     category: "Analytics",
     readTime: "8 min",
-    featuredImage: "/src/assests/SuccessFramework.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/SuccessFramework.png",
     content: (
       <div>
         <p className="text-lg leading-relaxed mb-6 text-black">
@@ -9818,7 +9818,7 @@ utm_term: keyword (for search campaigns)`}
     date: "September 10, 2025",
     category: "Analytics",
     readTime: "6 min",
-    featuredImage: "/src/assests/MasteringShopify.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/MasteringShopify.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 p-6 mb-8">
@@ -10119,7 +10119,7 @@ utm_term: keyword (for search campaigns)`}
     date: "September 15, 2025",
     category: "Analytics",
     readTime: "5 min",
-    featuredImage: "/src/assests/TransformShopify.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/TransformShopify.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 p-6 mb-8">
@@ -10360,7 +10360,7 @@ utm_term: keyword (for search campaigns)`}
     date: "August 8, 2025",
     category: "Analytics",
     readTime: "18 min",
-    featuredImage: "/src/assests/ROASGuide.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/ROASGuide.png",
     content: (
       <div>
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-400 p-6 mb-8">
