@@ -5,16 +5,6 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
-import Logo5 from "@/assests/Remove background project (5).png";
-import Logo6 from "@/assests/Remove background project (6).png";
-import Logo7 from "@/assests/Remove background project (7).png";
-import Logo8 from "@/assests/Remove background project (8).png";
-import Logo9 from "@/assests/Remove background project (9).png";
-import Logo10 from "@/assests/Remove background project (10).png";
-import Logo11 from "@/assests/Remove background project (11).png";
-import Logo12 from "@/assests/Remove background project (12).png";
-import Logo13 from "@/assests/Remove background project (13).png";
-import Logo3 from "@/assests/Remove background project (3).png";
 import TikTokImage from "@/assests/TikTokImage.png";
 
 const DataIntegrations = () => {
@@ -29,77 +19,78 @@ const DataIntegrations = () => {
     {
       name: "Shopify",
       description: "Storefront, Orders, Customers",
-      logo: Logo11,
+      logo: "https://assets.channeliq.ai/sidebar/shopify-bag-logo.png",
       path: "/solutions/shopify",
       categories: ["Most Popular", "Ecommerce"],
     },
     {
       name: "Amazon",
       description: "Marketplace, Orders, Fees",
-      logo: Logo13,
+      logo: "https://assets.channeliq.ai/sidebar/amazon-logo.png",
       path: "/solutions/amazon",
       categories: ["Most Popular", "Ecommerce"],
     },
     {
       name: "Walmart",
       description: "Orders, Catalog, Fees",
-      logo: Logo12,
+      logo: "https://assets.channeliq.ai/sidebar/walmart-sidebar-logo.png",
       path: "/solutions/walmart",
       categories: ["Ecommerce"],
     },
     {
       name: "WooCommerce",
       description: "Store Data, Analytics",
-      logo: Logo3,
+      logo: "https://assets.channeliq.ai/sidebar/woocommerce-sidebar.png",
       path: "/solutions/woocommerce",
       categories: ["Ecommerce"],
     },
     {
       name: "Google Ads",
       description: "Campaigns, Spend, Conversions",
-      logo: Logo10,
+      logo: "https://assets.channeliq.ai/sidebar/google-ad-sidebar-logo.png",
       path: "/solutions/google-ads",
       categories: ["Most Popular", "Advertising"],
     },
     {
       name: "Amazon Ads",
       description: "Sponsored Ads, Conversions",
-      logo: Logo5,
+      logo: "https://assets.channeliq.ai/sidebar/amazon-ads-sidebar.png",
       path: "/solutions/amazon-ads",
       categories: ["Advertising"],
     },
     {
       name: "Reddit Ads",
       description: "Campaigns, CPC, Conversions",
-      logo: Logo6,
+      logo: "https://assets.channeliq.ai/sidebar/reddit-sidebar-logo.png",
       path: "/solutions/reddit-ads",
       categories: ["Advertising"],
     },
     {
       name: "Meta Ads",
       description: "Ad Spend, ROAS, Reach",
-      logo: Logo7,
+      logo: "https://assets.channeliq.ai/sidebar/meta-sidebar-logo.png",
       path: "/solutions/meta",
       categories: ["Advertising"],
     },
     {
       name: "Mailchimp",
       description: "Campaigns, Audiences",
-      logo: Logo8,
+      logo: "https://assets.channeliq.ai/sidebar/mailchimp-sidebar-logo.png",
       path: "/solutions/mailchimp",
       categories: ["Email / Marketing Automation"],
     },
     {
       name: "GA4",
       description: "Web Analytics, Conversions",
-      logo: Logo9,
+      logo: "https://assets.channeliq.ai/sidebar/ga4-bar-logo.png",
       path: "/solutions/ga4",
       categories: ["Analytics"],
     },
     {
       name: "Best Buy",
       description: "Transactions, Disputes",
-      logo: "💰",
+      logo: "https://assets.channeliq.ai/sidebar/bestbuy-sidebar-logo.png",
+      path: "/solutions/bestbuy",
       categories: ["Payments", "Other"],
     },
   ];
@@ -164,13 +155,26 @@ const DataIntegrations = () => {
             <h1 className="text-4xl lg:text-6xl leading-[1.3] pb-2 overflow-visible font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
               Integrations
             </h1>
-            <p className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
-              Connect All Your Commerce Data in Minutes
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl">
-              Trilio integrates with 20+ platforms including Amazon, Shopify,
-              Meta, Google Ads, Klaviyo, and more.
-            </p>
+            <div className="mt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="sm:mr-4">
+                <p className="text-2xl md:text-3xl font-semibold text-gray-900 mb-1">
+                  Connect All Your Commerce Data in Minutes
+                </p>
+                <p className="text-lg text-gray-600 max-w-3xl mb-0">
+                  Trilio integrates with 20+ platforms including Amazon,
+                  Shopify, Meta, Google Ads, Klaviyo, and more.
+                </p>
+              </div>
+              <ThemeButton
+                variant="primary"
+                size="sm"
+                href="/contact-form"
+                showArrow
+                className="flex-shrink-0"
+              >
+                Request Integration
+              </ThemeButton>
+            </div>
           </div>
         </ThemeSection>
 

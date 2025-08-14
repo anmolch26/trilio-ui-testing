@@ -225,7 +225,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
         getNavbarBackground()
       )}
     >
-      <div className="container flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="container relative flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -253,7 +253,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:z-40">
           <NavigationMenuList className="space-x-1 md:space-x-2 lg:space-x-3">
             <NavigationMenuItem>
               <NavigationMenuTrigger className={getNavTriggerClasses()}>
@@ -318,7 +318,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
         </NavigationMenu>
 
         {/* CTA Buttons */}
-        <div className="hidden lg:flex items-center space-x-3">
+        <div className="hidden lg:flex items-center space-x-3 ml-auto -mr-4 sm:-mr-6 md:-mr-8 lg:-mr-12 xl:-mr-14">
           <a
             href="https://staging.trilio.ai/login"
             target="_blank"

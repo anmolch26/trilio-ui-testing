@@ -1,4 +1,5 @@
 import React from "react";
+import CACCalculator from "@/components/blog/CACCalculator";
 
 // Blog data structure
 export interface BlogPost {
@@ -17020,7 +17021,7 @@ utm_term: keyword (for search campaigns)`}
     category: "Analytics",
     readTime: "7 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/CACGuide.png",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CacGuide.png",
     content: (
       <div>
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
@@ -17147,6 +17148,5824 @@ utm_term: keyword (for search campaigns)`}
             tracking.
           </li>
         </ul>
+      </div>
+    ),
+  },
+  42: {
+    id: 42,
+    title: "What is Customer Acquisition Cost?",
+    slug: "what-is-customer-acquisition-cost",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 28, 2025",
+    category: "Analytics",
+    readTime: "6 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/WhatIsCAC.png",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>What is Customer Acquisition Cost?</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>The Complete CAC Definition</strong>
+        </h2>
+        <p className="text-lg leading-relaxed mb-6 text-black">
+          <strong>
+            Customer Acquisition Cost (CAC) = Total Sales & Marketing Costs ÷
+            Number of New Customers Acquired
+          </strong>
+        </p>
+        <p className="text-black mb-6">
+          But this simple formula only scratches the surface.
+          <strong>
+            {" "}
+            True CAC includes all costs associated with acquiring customers:
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Direct Marketing Costs
+        </h3>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>Advertising spend (Google, Facebook, TikTok, etc.)</li>
+          <li>Content creation and creative production</li>
+          <li>Marketing tools and software subscriptions</li>
+          <li>Email marketing platform costs</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">Sales Costs</h3>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>Sales team salaries and commissions</li>
+          <li>Sales tools and CRM subscriptions</li>
+          <li>Lead qualification and nurturing costs</li>
+          <li>Sales training and development</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Hidden Costs Often Overlooked
+        </h3>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>Portion of general overhead allocated to acquisition</li>
+          <li>Customer service costs for pre-purchase support</li>
+          <li>Website development and optimization</li>
+          <li>Analytics and tracking software</li>
+          <li>Agency fees and consultant costs</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>Why Most CAC Calculations Are Wrong</strong>
+        </h2>
+        <p className="text-black mb-3 font-semibold">
+          Common Mistakes in CAC Calculation:
+        </p>
+
+        <h4 className="text-lg font-semibold text-black mb-1">
+          1. Time Period Mismatch
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Using monthly costs with quarterly
+            customer counts
+          </li>
+          <li>
+            <strong>Impact:</strong> 200–300% CAC calculation errors
+          </li>
+          <li>
+            <strong>Solution:</strong> Always use matching time periods
+          </li>
+        </ul>
+
+        <h4 className="text-lg font-semibold text-black mb-1">
+          2. Incomplete Cost Inclusion
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Only counting ad spend, ignoring salaries
+            and tools
+          </li>
+          <li>
+            <strong>Impact:</strong> 40–60% underestimation of true CAC
+          </li>
+          <li>
+            <strong>Solution:</strong> Include all acquisition-related expenses
+          </li>
+        </ul>
+
+        <h4 className="text-lg font-semibold text-black mb-1">
+          3. Attribution Confusion
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Counting all customers vs. only new
+            acquisitions
+          </li>
+          <li>
+            <strong>Impact:</strong> Artificially low CAC calculations
+          </li>
+          <li>
+            <strong>Solution:</strong> Track new customers separately from
+            repeat purchases
+          </li>
+        </ul>
+
+        <h4 className="text-lg font-semibold text-black mb-1">
+          4. Blended vs. Paid CAC
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Problem:</strong> Mixing organic and paid customer costs
+          </li>
+          <li>
+            <strong>Impact:</strong> Unclear optimization opportunities
+          </li>
+          <li>
+            <strong>Solution:</strong> Calculate separate CACs for each channel
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  43: {
+    id: 43,
+    title: "Free Interactive CAC Calculator",
+    slug: "free-interactive-cac-calculator",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 28, 2025",
+    category: "Analytics",
+    readTime: "5 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CACcalculator.png",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Free Interactive CAC Calculator</strong>
+        </h1>
+        <div className="mb-8">
+          <CACCalculator />
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Basic CAC Calculator</strong>
+        </h2>
+        <p className="text-black mb-3">
+          <strong>
+            Enter your numbers to calculate your Customer Acquisition Cost:
+          </strong>
+        </p>
+        <pre className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-black mb-6 overflow-auto">
+          {`Total Marketing Spend: $______
+Total Sales Costs: $______
+Additional Acquisition Costs: $______
+Number of New Customers: ______
+
+Your CAC = $______`}
+        </pre>
+        <p className="text-black font-semibold mb-2">Example Calculation:</p>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>Marketing Spend: $15,000</li>
+          <li>Sales Costs: $8,000</li>
+          <li>Additional Costs: $2,000</li>
+          <li>New Customers: 125</li>
+        </ul>
+        <p className="text-black mb-6">
+          <strong>
+            CAC = ($15,000 + $8,000 + $2,000) ÷ 125 = $200 per customer
+          </strong>
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Advanced CAC Calculator with Channel Breakdown</strong>
+        </h2>
+        <p className="text-black mb-3">
+          <strong>Calculate CAC by channel for optimization insights:</strong>
+        </p>
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-[640px] w-full border border-gray-200 text-black">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="text-left p-2 border-b">Channel</th>
+                <th className="text-right p-2 border-b">Marketing Spend</th>
+                <th className="text-right p-2 border-b">Sales Costs</th>
+                <th className="text-right p-2 border-b">Other Costs</th>
+                <th className="text-right p-2 border-b">New Customers</th>
+                <th className="text-right p-2 border-b">CAC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 border-b">Google Ads</td>
+                <td className="p-2 border-b text-right">$8,000</td>
+                <td className="p-2 border-b text-right">$2,000</td>
+                <td className="p-2 border-b text-right">$500</td>
+                <td className="p-2 border-b text-right">50</td>
+                <td className="p-2 border-b text-right">$210</td>
+              </tr>
+              <tr>
+                <td className="p-2 border-b">Facebook</td>
+                <td className="p-2 border-b text-right">$6,000</td>
+                <td className="p-2 border-b text-right">$1,500</td>
+                <td className="p-2 border-b text-right">$300</td>
+                <td className="p-2 border-b text-right">45</td>
+                <td className="p-2 border-b text-right">$173</td>
+              </tr>
+              <tr>
+                <td className="p-2 border-b">Email</td>
+                <td className="p-2 border-b text-right">$500</td>
+                <td className="p-2 border-b text-right">$500</td>
+                <td className="p-2 border-b text-right">$100</td>
+                <td className="p-2 border-b text-right">15</td>
+                <td className="p-2 border-b text-right">$73</td>
+              </tr>
+              <tr>
+                <td className="p-2 border-b">Organic</td>
+                <td className="p-2 border-b text-right">$0</td>
+                <td className="p-2 border-b text-right">$1,000</td>
+                <td className="p-2 border-b text-right">$200</td>
+                <td className="p-2 border-b text-right">25</td>
+                <td className="p-2 border-b text-right">$48</td>
+              </tr>
+              <tr className="font-semibold">
+                <td className="p-2 border-b">Total</td>
+                <td className="p-2 border-b text-right">$14,500</td>
+                <td className="p-2 border-b text-right">$5,000</td>
+                <td className="p-2 border-b text-right">$1,100</td>
+                <td className="p-2 border-b text-right">135</td>
+                <td className="p-2 border-b text-right">$153</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>CAC Payback Period Calculator</strong>
+        </h2>
+        <p className="text-black mb-3">
+          <strong>
+            Determine how long it takes to recover acquisition costs:
+          </strong>
+        </p>
+        <pre className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-black mb-4 overflow-auto">
+          {`Customer Acquisition Cost: $______
+Average Order Value: $______
+Gross Margin %: ______%
+Purchase Frequency (annual): ______
+
+Payback Period = ______ months`}
+        </pre>
+        <p className="text-black font-semibold mb-2">Example:</p>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>CAC: $200</li>
+          <li>AOV: $85</li>
+          <li>Gross Margin: 60%</li>
+          <li>Purchase Frequency: 4x per year</li>
+        </ul>
+        <p className="text-black mb-2">
+          <strong>
+            Payback Period = $200 ÷ ($85 × 0.60 × 4/12) = 11.8 months
+          </strong>
+        </p>
+      </div>
+    ),
+  },
+  44: {
+    id: 44,
+    title: "Industry Benchmarks by Sector",
+    slug: "industry-benchmarks-by-sector",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 28, 2025",
+    category: "Analytics",
+    readTime: "6 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/IndustryBenchmarks.png",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Industry Benchmarks by Sector</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>CAC Benchmarks Across Industries</strong>
+        </h2>
+        <div className="overflow-x-auto mb-6 text-black">
+          <table className="min-w-[720px] w-full border border-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="text-left p-2 border-b">Industry</th>
+                <th className="text-right p-2 border-b">Average CAC</th>
+                <th className="text-right p-2 border-b">Good CAC</th>
+                <th className="text-right p-2 border-b">Excellent CAC</th>
+                <th className="text-right p-2 border-b">LTV:CAC Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["E-commerce", "$87", "$60", "$40", "3:1 - 5:1"],
+                ["SaaS", "$205", "$150", "$100", "5:1 - 8:1"],
+                ["Fashion", "$95", "$70", "$45", "3:1 - 4:1"],
+                ["Beauty", "$76", "$55", "$35", "4:1 - 6:1"],
+                ["Electronics", "$135", "$100", "$70", "2:1 - 4:1"],
+                ["Fitness", "$85", "$60", "$40", "3:1 - 5:1"],
+                ["Home & Garden", "$105", "$75", "$50", "3:1 - 4:1"],
+                ["Food & Beverage", "$65", "$45", "$30", "4:1 - 7:1"],
+              ].map((row, i) => (
+                <tr key={i}>
+                  <td className="p-2 border-b font-medium">{row[0]}</td>
+                  <td className="p-2 border-b text-right">{row[1]}</td>
+                  <td className="p-2 border-b text-right">{row[2]}</td>
+                  <td className="p-2 border-b text-right">{row[3]}</td>
+                  <td className="p-2 border-b text-right">{row[4]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How to Use These Benchmarks with Trilio</strong>
+        </h2>
+        <p className="text-black mb-4">
+          Benchmarks are only useful when mapped to your actual performance.
+          Trilio pulls data from Shopify, Amazon, ad platforms, email, and
+          finance to compute true, blended CAC and contribution margin by
+          channel, product, and cohort—then compares it against industry
+          benchmarks so you know where you are over‑ or under‑performing.
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Weekly <strong>benchmark report</strong> highlighting channels with
+            CAC above industry norms and suggested optimizations.
+          </li>
+          <li>
+            <strong>New‑customer CAC</strong> vs. blended CAC tracking to avoid
+            false positives from repeat buyers.
+          </li>
+          <li>
+            <strong>Contribution‑margin ROAS</strong> to move budget toward
+            efficient channels while maintaining payback targets.
+          </li>
+          <li>
+            <strong>AI insights</strong> surface anomalies (e.g., CAC spike on
+            Meta in CA market) and quantify expected savings if fixed.
+          </li>
+        </ul>
+
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-4 text-black mb-8">
+          <p className="font-semibold mb-2">Pro tip</p>
+          <p>
+            Pair CAC with <strong>LTV</strong> by cohort. Trilio’s LTV:CAC
+            dashboards show whether you are within target ratios by industry and
+            channel so you can scale confidently.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Channel-Specific CAC Benchmarks</strong>
+        </h2>
+        <div className="overflow-x-auto mb-6 text-black">
+          <table className="min-w-[720px] w-full border border-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="text-left p-2 border-b">Channel</th>
+                <th className="text-right p-2 border-b">Average CAC</th>
+                <th className="text-right p-2 border-b">Conversion Rate</th>
+                <th className="text-right p-2 border-b">Quality Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Google Search", "$112", "3.2%", "High"],
+                ["Facebook/Instagram", "$89", "2.1%", "Medium-High"],
+                ["TikTok", "$76", "1.8%", "Medium"],
+                ["Email Marketing", "$35", "4.8%", "Very High"],
+                ["Organic Search", "$28", "2.9%", "High"],
+                ["Referrals", "$42", "5.1%", "Very High"],
+                ["YouTube", "$95", "1.5%", "Medium"],
+                ["Amazon Ads", "$125", "2.8%", "High"],
+              ].map((row, i) => (
+                <tr key={i}>
+                  <td className="p-2 border-b font-medium">{row[0]}</td>
+                  <td className="p-2 border-b text-right">{row[1]}</td>
+                  <td className="p-2 border-b text-right">{row[2]}</td>
+                  <td className="p-2 border-b text-right">{row[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Geographic CAC Variations</strong>
+        </h2>
+        <p className="text-black mb-3">
+          <strong>CAC varies significantly by market:</strong>
+        </p>
+        <div className="overflow-x-auto mb-6 text-black">
+          <table className="min-w-[720px] w-full border border-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="text-left p-2 border-b">Region</th>
+                <th className="text-right p-2 border-b">CAC Multiplier</th>
+                <th className="text-right p-2 border-b">Competition Level</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["United States", "1.0x (baseline)", "Very High"],
+                ["Canada", "0.8x", "High"],
+                ["United Kingdom", "1.1x", "Very High"],
+                ["Germany", "0.9x", "High"],
+                ["Australia", "1.2x", "High"],
+                ["France", "0.85x", "Medium-High"],
+                ["Japan", "1.3x", "Very High"],
+                ["Emerging Markets", "0.4-0.7x", "Low-Medium"],
+              ].map((row, i) => (
+                <tr key={i}>
+                  <td className="p-2 border-b font-medium">{row[0]}</td>
+                  <td className="p-2 border-b text-right">{row[1]}</td>
+                  <td className="p-2 border-b text-right">{row[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ),
+  },
+  45: {
+    id: 45,
+    title: "Hidden Costs Often Overlooked",
+    slug: "hidden-costs-often-overlooked",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 28, 2025",
+    category: "Analytics",
+    readTime: "7 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/HiddenCost.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Hidden Costs Often Overlooked</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>The True Cost of Customer Acquisition</strong>
+        </h2>
+        <p className="text-black mb-4">
+          <strong>
+            Most businesses only count obvious costs, missing 40–60% of total
+            acquisition expenses.
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Marketing Technology Stack Costs
+        </h3>
+        <p className="text-black mb-2">
+          Essential tools and their typical costs:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>CRM Software:</strong> $50–200/month per user
+          </li>
+          <li>
+            <strong>Email Marketing:</strong> $100–500/month
+          </li>
+          <li>
+            <strong>Analytics Tools:</strong> $200–1,000/month
+          </li>
+          <li>
+            <strong>Social Media Management:</strong> $50–300/month
+          </li>
+          <li>
+            <strong>Marketing Automation:</strong> $200–2,000/month
+          </li>
+          <li>
+            <strong>A/B Testing Platforms:</strong> $100–500/month
+          </li>
+        </ul>
+        <p className="text-black mb-6">
+          <strong>Annual MarTech Stack:</strong> $15,000–$50,000+ for growing
+          businesses
+        </p>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Human Resource Costs
+        </h3>
+        <p className="text-black mb-2">
+          Personnel costs often represent 60–70% of true CAC:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Marketing Manager:</strong> $80K salary × 60% time = $48K
+          </li>
+          <li>
+            <strong>Paid Media Specialist:</strong> $65K salary × 90% time =
+            $58.5K
+          </li>
+          <li>
+            <strong>Content Creator:</strong> $55K salary × 40% time = $22K
+          </li>
+          <li>
+            <strong>Marketing Coordinator:</strong> $45K salary × 70% time =
+            $31.5K
+          </li>
+        </ul>
+        <p className="text-black mb-6">
+          <strong>Total Annual Personnel CAC Allocation:</strong> $160K
+        </p>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Infrastructure and Overhead
+        </h3>
+        <p className="text-black mb-2">
+          Operational costs supporting acquisition:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>Office space allocation: 15–20% of total rent</li>
+          <li>Utilities and equipment: proportional to team size</li>
+          <li>Legal and compliance: contract reviews, privacy compliance</li>
+          <li>Training and development: keeping skills current</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Pre‑Purchase Support Costs
+        </h3>
+        <p className="text-black mb-2">
+          Customer service expenses before conversion:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>Live chat support: 30–40% of conversations are pre‑purchase</li>
+          <li>Phone support: 25% of calls from prospects</li>
+          <li>Email support: product questions and guidance</li>
+          <li>Return/refund processing: impacts net customer value</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>Complete CAC Formula with Hidden Costs</strong>
+        </h2>
+        <pre className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-black mb-4 overflow-auto">{`True CAC = (Direct Ad Spend + Creative Production + Tool Subscriptions + 
+Personnel Costs + Infrastructure Allocation + Support Costs + 
+Agency Fees + Training Costs) ÷ New Customers Acquired`}</pre>
+
+        <p className="text-black font-semibold mb-2">Example Calculation:</p>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>Direct Ad Spend: $25,000</li>
+          <li>Creative Production: $3,000</li>
+          <li>Tool Subscriptions: $2,500</li>
+          <li>Personnel Costs: $15,000</li>
+          <li>Infrastructure: $2,000</li>
+          <li>Support Costs: $1,500</li>
+          <li>Agency Fees: $5,000</li>
+          <li>Training: $1,000</li>
+        </ul>
+        <p className="text-black mb-2">
+          <strong>Total Costs: $55,000</strong>
+        </p>
+        <p className="text-black mb-2">
+          <strong>New Customers: 200</strong>
+        </p>
+        <p className="text-black mb-6">
+          <strong>True CAC: $275 (vs. $125 if only counting ad spend)</strong>
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>How Trilio Uncovers Hidden CAC</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Unified data model that ingests payroll, subscriptions, and overhead
+            allocations to compute <strong>fully‑loaded CAC</strong> by channel
+            and cohort.
+          </li>
+          <li>
+            Automated cost allocation rules (e.g., split CSM time by
+            pre‑purchase vs. post‑purchase) with audit trails.
+          </li>
+          <li>
+            AI detects rising hidden costs (e.g., tool creep, agency overruns)
+            and suggests consolidation to reduce CAC by 10–20%.
+          </li>
+          <li>
+            Payback and LTV impact simulations so finance and marketing can
+            align on efficient growth.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  46: {
+    id: 46,
+    title: "CAC vs LTV Optimization",
+    slug: "cac-vs-ltv-optimization",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "October 28, 2025",
+    category: "Analytics",
+    readTime: "7 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CACvsLTV.png",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>CAC vs LTV Optimization</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>The Critical CAC:LTV Ratio</strong>
+        </h2>
+        <p className="text-black mb-4">
+          <strong>
+            Customer Lifetime Value (LTV) must exceed CAC for sustainable
+            growth.
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          LTV Calculation
+        </h3>
+        <pre className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-black mb-4 overflow-auto">{`LTV = (Average Order Value × Gross Margin %) × Purchase Frequency × Customer Lifespan`}</pre>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          Healthy CAC:LTV Ratios
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>SaaS:</strong> 1:5 to 1:8 (CAC should be 12–20% of LTV)
+          </li>
+          <li>
+            <strong>E‑commerce:</strong> 1:3 to 1:5 (CAC should be 20–33% of
+            LTV)
+          </li>
+          <li>
+            <strong>Subscription:</strong> 1:4 to 1:7 (CAC should be 14–25% of
+            LTV)
+          </li>
+          <li>
+            <strong>Marketplace:</strong> 1:6 to 1:10 (CAC should be 10–17% of
+            LTV)
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>LTV Optimization Strategies</strong>
+        </h2>
+        <h4 className="text-lg font-semibold text-black mb-1">
+          1. Increase Average Order Value
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>Product bundling: increase AOV by 25–40%</li>
+          <li>Upselling at checkout: add 15–30% to order value</li>
+          <li>Free shipping thresholds: encourage larger orders</li>
+          <li>Volume discounts: incentivize bulk purchases</li>
+        </ul>
+        <h4 className="text-lg font-semibold text-black mb-1">
+          2. Improve Customer Retention
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>Loyalty programs: increase repeat purchase rate by 20–30%</li>
+          <li>Email marketing sequences: boost retention by 15–25%</li>
+          <li>Subscription models: predictable recurring revenue</li>
+          <li>Customer service excellence: reduce churn by 10–20%</li>
+        </ul>
+        <h4 className="text-lg font-semibold text-black mb-1">
+          3. Optimize Customer Lifespan
+        </h4>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Onboarding optimization: improve first‑time experience</li>
+          <li>Product quality focus: reduce dissatisfaction churn</li>
+          <li>Community building: increase emotional connection</li>
+          <li>Continuous value delivery: prevent competitive switching</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>CAC Payback Period Optimization</strong>
+        </h2>
+        <p className="text-black mb-2">
+          Target payback periods by business model:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-3 text-black">
+          <li>
+            <strong>E‑commerce:</strong> 6–12 months
+          </li>
+          <li>
+            <strong>SaaS:</strong> 12–18 months
+          </li>
+          <li>
+            <strong>Subscription:</strong> 3–6 months
+          </li>
+          <li>
+            <strong>High‑ticket services:</strong> 18–24 months
+          </li>
+        </ul>
+        <p className="text-black mb-2">Strategies to Reduce Payback Period:</p>
+        <ol className="list-decimal pl-6 space-y-1 mb-6 text-black">
+          <li>Increase purchase frequency through retention programs</li>
+          <li>Raise prices while maintaining value proposition</li>
+          <li>Improve gross margins through cost optimization</li>
+          <li>Cross‑sell and upsell to increase customer value</li>
+        </ol>
+
+        <h2 className="text-2xl font-bold text-black mb-3">
+          <strong>How Trilio Aligns CAC and LTV</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            Unified dashboards for <strong>CAC, LTV, and Payback</strong> by
+            channel, cohort, and product—pulled from Shopify, Amazon, ads, and
+            subscriptions.
+          </li>
+          <li>
+            <strong>Cohort LTV forecasting</strong> using repeat‑purchase curves
+            and margin data to set channel‑level CAC caps.
+          </li>
+          <li>
+            <strong>Budget simulator</strong> shows how shifting spend impacts
+            CAC, LTV, and payback against your target ratios.
+          </li>
+          <li>
+            AI alerts when CAC:LTV drifts out of range for any channel or
+            geography with recommended corrective actions.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  47: {
+    id: 47,
+    title: "Reducing CAC: 10 Proven Strategies",
+    slug: "reducing-cac-10-proven-strategies",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 15, 2025",
+    category: "Marketing",
+    readTime: "12 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ReducingCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Reducing CAC: 10 Proven Strategies</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>1. Conversion Rate Optimization (CRO)</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 20-50% CAC reduction through better
+          conversion
+        </p>
+        <p className="text-black mb-3">
+          <strong>Implementation:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>A/B test landing pages</strong> with clear value
+            propositions
+          </li>
+          <li>
+            <strong>Optimize checkout flow</strong> to reduce abandonment
+          </li>
+          <li>
+            <strong>Improve page loading speed</strong> (1-second delay = 7%
+            conversion loss)
+          </li>
+          <li>
+            <strong>Mobile optimization</strong> for 60%+ mobile traffic
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Example Results:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Before: 2.1% conversion rate, $95 CAC</li>
+          <li>After: 3.2% conversion rate, $62 CAC</li>
+          <li>
+            <strong>Improvement:</strong> 35% CAC reduction
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>2. Referral Program Implementation</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 25-40% CAC reduction for referred customers
+        </p>
+        <p className="text-black mb-3">
+          <strong>Program Structure:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Reward both referrer and referee</strong> (double-sided
+            incentive)
+          </li>
+          <li>
+            <strong>Make sharing easy</strong> with built-in tools
+          </li>
+          <li>
+            <strong>Track and optimize</strong> referral performance
+          </li>
+          <li>
+            <strong>Create viral mechanics</strong> for exponential growth
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Successful Referral Examples:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Dropbox:</strong> "Give 500MB, get 500MB" = $233M growth
+          </li>
+          <li>
+            <strong>Uber:</strong> Free rides for both parties = rapid market
+            expansion
+          </li>
+          <li>
+            <strong>Tesla:</strong> $1,000 credit for successful referrals
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>3. Content Marketing and SEO</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 50-80% lower CAC than paid advertising
+        </p>
+        <p className="text-black mb-3">
+          <strong>Content Strategy:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Problem-solving content</strong> that attracts ideal
+            customers
+          </li>
+          <li>
+            <strong>SEO optimization</strong> for high-intent keywords
+          </li>
+          <li>
+            <strong>Video content</strong> for higher engagement
+          </li>
+          <li>
+            <strong>User-generated content</strong> for social proof
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Content Marketing ROI:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Organic traffic CAC:</strong> $15-30 typically
+          </li>
+          <li>
+            <strong>Paid traffic CAC:</strong> $50-150 typically
+          </li>
+          <li>
+            <strong>Long-term value:</strong> Content continues attracting
+            customers
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>4. Marketing Attribution Optimization</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 15-25% CAC improvement through better
+          allocation
+        </p>
+        <p className="text-black mb-3">
+          <strong>Attribution Benefits:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Identify highest-value channels</strong> for budget
+            reallocation
+          </li>
+          <li>
+            <strong>Optimize customer journey</strong> touchpoints
+          </li>
+          <li>
+            <strong>Eliminate wasteful spending</strong> on low-performing
+            campaigns
+          </li>
+          <li>
+            <strong>Improve multi-touch understanding</strong>
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Implementation:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Multi-touch attribution</strong> across all channels
+          </li>
+          <li>
+            <strong>Customer journey mapping</strong> to understand paths to
+            purchase
+          </li>
+          <li>
+            <strong>Channel performance analysis</strong> with accurate CAC per
+            channel
+          </li>
+          <li>
+            <strong>Budget reallocation</strong> based on true performance
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>5. Email Marketing Automation</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 70-90% lower CAC than paid advertising
+        </p>
+        <p className="text-black mb-3">
+          <strong>Email CAC Advantages:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Owned audience:</strong> No platform dependency
+          </li>
+          <li>
+            <strong>High engagement:</strong> 20-30% open rates typical
+          </li>
+          <li>
+            <strong>Personalization capability:</strong> Relevant messaging
+          </li>
+          <li>
+            <strong>Automation potential:</strong> Set-and-forget sequences
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Email Strategy:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Welcome series</strong> for new subscribers
+          </li>
+          <li>
+            <strong>Abandoned cart recovery</strong> (25% recovery rate average)
+          </li>
+          <li>
+            <strong>Win-back campaigns</strong> for inactive customers
+          </li>
+          <li>
+            <strong>Product recommendation</strong> based on behavior
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>6. Lookalike Audience Optimization</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 30-50% CAC improvement vs. broad targeting
+        </p>
+        <p className="text-black mb-3">
+          <strong>Lookalike Strategy:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Use highest-value customers</strong> as seed audience
+          </li>
+          <li>
+            <strong>Test different percentage ranges</strong> (1%, 2%, 5%, 10%)
+          </li>
+          <li>
+            <strong>Refresh audiences regularly</strong> with new customer data
+          </li>
+          <li>
+            <strong>Layer additional targeting</strong> for precision
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Platform-Specific Approaches:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Facebook:</strong> Value-based lookalikes using purchase
+            data
+          </li>
+          <li>
+            <strong>Google:</strong> Similar audiences based on website visitors
+          </li>
+          <li>
+            <strong>TikTok:</strong> Interest and behavior-based lookalikes
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>7. Conversion Funnel Optimization</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 25-40% CAC reduction through funnel
+          improvements
+        </p>
+        <p className="text-black mb-3">
+          <strong>Funnel Analysis:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Identify drop-off points</strong> in customer journey
+          </li>
+          <li>
+            <strong>A/B test each funnel stage</strong> independently
+          </li>
+          <li>
+            <strong>Reduce friction</strong> at critical conversion points
+          </li>
+          <li>
+            <strong>Optimize for mobile experience</strong>
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Common Funnel Issues:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Complicated signup process:</strong> Reduce form fields
+          </li>
+          <li>
+            <strong>Poor value communication:</strong> Clarify benefits
+          </li>
+          <li>
+            <strong>Trust concerns:</strong> Add testimonials and guarantees
+          </li>
+          <li>
+            <strong>Technical problems:</strong> Fix loading and functionality
+            issues
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>8. Retargeting Campaign Optimization</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> 60-80% lower CAC than cold audience campaigns
+        </p>
+        <p className="text-black mb-3">
+          <strong>Retargeting Strategy:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Segment audiences</strong> by engagement level
+          </li>
+          <li>
+            <strong>Dynamic product ads</strong> for e-commerce
+          </li>
+          <li>
+            <strong>Frequency capping</strong> to avoid ad fatigue
+          </li>
+          <li>
+            <strong>Cross-platform retargeting</strong> for maximum reach
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Retargeting Audiences:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Website visitors</strong> (past 30 days)
+          </li>
+          <li>
+            <strong>Video viewers</strong> (25%, 50%, 75%, 100%)
+          </li>
+          <li>
+            <strong>Engaged social media users</strong>
+          </li>
+          <li>
+            <strong>Email subscribers</strong> who haven't purchased
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>9. Partnership and Affiliate Marketing</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> Performance-based CAC control
+        </p>
+        <p className="text-black mb-3">
+          <strong>Partnership Benefits:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Pay only for results</strong> (performance-based)
+          </li>
+          <li>
+            <strong>Access new audiences</strong> through partner networks
+          </li>
+          <li>
+            <strong>Shared marketing costs</strong> with complementary
+            businesses
+          </li>
+          <li>
+            <strong>Credibility boost</strong> through association
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Partnership Types:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Affiliate programs:</strong> Commission-based customer
+            acquisition
+          </li>
+          <li>
+            <strong>Influencer partnerships:</strong> Access to engaged
+            audiences
+          </li>
+          <li>
+            <strong>Cross-promotions:</strong> Mutual customer sharing
+          </li>
+          <li>
+            <strong>Strategic alliances:</strong> Long-term collaboration
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>10. Customer Lifetime Value Enhancement</strong>
+        </h2>
+        <p className="text-lg font-semibold text-black mb-2">
+          <strong>Impact:</strong> Improve CAC:LTV ratio without reducing
+          acquisition costs
+        </p>
+        <p className="text-black mb-3">
+          <strong>LTV Enhancement:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-4 text-black">
+          <li>
+            <strong>Subscription model</strong> introduction where applicable
+          </li>
+          <li>
+            <strong>Loyalty program</strong> development
+          </li>
+          <li>
+            <strong>Cross-selling</strong> and <strong>upselling</strong>{" "}
+            strategies
+          </li>
+          <li>
+            <strong>Premium service</strong> tiers
+          </li>
+        </ul>
+        <p className="text-black mb-3">
+          <strong>Implementation:</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Analyze customer behavior</strong> to identify expansion
+            opportunities
+          </li>
+          <li>
+            <strong>Create value-added services</strong> that increase spending
+          </li>
+          <li>
+            <strong>Implement retention programs</strong> to extend customer
+            lifespan
+          </li>
+          <li>
+            <strong>Optimize pricing strategy</strong> for maximum lifetime
+            value
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Reduces CAC End-to-End</strong>
+        </h2>
+        <p className="text-black mb-3">
+          Trilio connects your commerce, ads, and lifecycle data to expose the
+          exact levers that move CAC. Teams use Trilio to align channel budgets
+          to <strong>CAC, LTV, and Payback</strong> guardrails and to ship the
+          next best optimization with confidence.
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Unified acquisition view:</strong> Shopify/Amazon revenue,
+            Meta/Google/TikTok spend, and email engagement stitched by cohort.
+          </li>
+          <li>
+            <strong>True multi-touch attribution:</strong> First‑party events
+            mapped across channels so you can shift budget to the lowest CAC
+            paths without overcrediting last‑click.
+          </li>
+          <li>
+            <strong>Creative and audience insights:</strong> Break down CAC by
+            creative, audience, and placement to double down on high‑intent
+            segments.
+          </li>
+          <li>
+            <strong>Budget simulator:</strong> Model how moving 10‑20% of spend
+            between channels impacts CAC, MER, and payback before you ship it.
+          </li>
+          <li>
+            <strong>AI anomaly alerts:</strong> Instant flags when CAC or
+            conversion rate drifts, with recommended actions.
+          </li>
+          <li>
+            <strong>Referral and affiliate tracking:</strong> Measure CAC and
+            LTV for partner traffic to scale only what’s profitable.
+          </li>
+          <li>
+            <strong>Lifecycle impact:</strong> See how welcome, abandoned cart,
+            and win‑back flows (Klaviyo/Mailchimp) lower blended CAC by turning
+            paid clicks into conversions.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Key CAC KPIs to Track in Trilio</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Blended CAC</strong> and <strong>CAC by channel</strong>
+          </li>
+          <li>
+            <strong>CAC payback</strong> by cohort and channel
+          </li>
+          <li>
+            <strong>LTV:CAC ratio</strong> (guardrail targeting by 3‑, 6‑, and
+            12‑month LTV)
+          </li>
+          <li>
+            <strong>Conversion rates</strong> by funnel step (LP → ATC → IC →
+            Purchase)
+          </li>
+          <li>
+            <strong>AOV</strong> and <strong>gross margin</strong> impact
+          </li>
+          <li>
+            <strong>MER</strong> and <strong>ROAS vs CAC guardrails</strong>
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>14‑Day CAC Reduction Playbook with Trilio</strong>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h3 className="text-lg font-semibold text-black mb-2">Days 1‑3</h3>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Connect Shopify/Amazon, Meta/Google/TikTok, and Email</li>
+              <li>Baseline CAC, LTV, and payback by channel and cohort</li>
+              <li>Set guardrails (target CAC and LTV:CAC)</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h3 className="text-lg font-semibold text-black mb-2">Days 4‑6</h3>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>
+                Identify top 3 creative + audience combos with lowest CAC and
+                scale 15‑20%
+              </li>
+              <li>Pause bottom 10% spend by CAC</li>
+              <li>Fix top two funnel drop‑offs (e.g., PDP → Checkout)</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h3 className="text-lg font-semibold text-black mb-2">Days 7‑10</h3>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Launch segmented retargeting with frequency caps</li>
+              <li>Refresh welcome + abandoned cart flows</li>
+              <li>Test 1% vs 2% lookalikes seeded by highest LTV cohort</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h3 className="text-lg font-semibold text-black mb-2">
+              Days 11‑14
+            </h3>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Run budget simulator; reallocate 10‑15% to best CAC paths</li>
+              <li>Ship 2 CRO wins (speed + trust).</li>
+              <li>Lock guardrails and set AI alerts</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Mini Case Study (Illustrative)</strong>
+        </h2>
+        <p className="text-black mb-3">
+          A DTC skincare brand used Trilio for 30 days:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Blended CAC from $78 → $54 (‑31%)</li>
+          <li>LP conversion 2.4% → 3.3% (+38%)</li>
+          <li>AOV up 9% after bundle test</li>
+          <li>Payback improved from 7.5 to 5.6 months</li>
+        </ul>
+
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  48: {
+    id: 48,
+    title: "Tracking and Reporting Best Practices",
+    slug: "tracking-and-reporting-best-practices",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 16, 2025",
+    category: "Marketing",
+    readTime: "10 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/TrackingBestPractise.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Tracking and Reporting Best Practices</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Essential CAC Metrics to Monitor</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>1. Overall CAC Trends</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Monthly CAC calculation</strong> with consistent methodology
+          </li>
+          <li>
+            <strong>Year-over-year comparison</strong> to identify trends
+          </li>
+          <li>
+            <strong>Seasonal adjustment</strong> for cyclical businesses
+          </li>
+          <li>
+            <strong>Cohort-based analysis</strong> for temporal insights
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>2. Channel-Specific CAC</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Individual channel performance</strong> with accurate
+            attribution
+          </li>
+          <li>
+            <strong>Channel efficiency rankings</strong> for budget allocation
+          </li>
+          <li>
+            <strong>Cross-channel interaction</strong> analysis
+          </li>
+          <li>
+            <strong>Channel saturation</strong> monitoring
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>3. CAC by Customer Segment</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Geographic CAC</strong> variations
+          </li>
+          <li>
+            <strong>Demographic CAC</strong> differences
+          </li>
+          <li>
+            <strong>Device/platform CAC</strong> analysis
+          </li>
+          <li>
+            <strong>Customer value tier</strong> CAC
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>CAC Reporting Framework</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Executive Dashboard</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Overall CAC trend</strong> (monthly/quarterly)
+          </li>
+          <li>
+            <strong>CAC vs. target</strong> performance
+          </li>
+          <li>
+            <strong>Channel performance</strong> summary
+          </li>
+          <li>
+            <strong>Key insights</strong> and recommendations
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Marketing Team Dashboard</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Campaign-level CAC</strong> analysis
+          </li>
+          <li>
+            <strong>Creative performance</strong> impact on CAC
+          </li>
+          <li>
+            <strong>Audience segment</strong> CAC breakdown
+          </li>
+          <li>
+            <strong>Optimization opportunities</strong> identification
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Financial Dashboard</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>CAC payback period</strong> tracking
+          </li>
+          <li>
+            <strong>CAC:LTV ratio</strong> monitoring
+          </li>
+          <li>
+            <strong>Cash flow impact</strong> of CAC changes
+          </li>
+          <li>
+            <strong>Budget allocation</strong> recommendations
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>CAC Optimization Process</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Monthly CAC Review</strong>
+        </h3>
+        <ol className="list-decimal pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Calculate current CAC</strong> across all channels
+          </li>
+          <li>
+            <strong>Compare to historical performance</strong> and targets
+          </li>
+          <li>
+            <strong>Identify highest and lowest performing</strong> channels
+          </li>
+          <li>
+            <strong>Analyze changes</strong> from previous period
+          </li>
+          <li>
+            <strong>Plan optimization initiatives</strong> for next month
+          </li>
+        </ol>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Quarterly CAC Deep Dive</strong>
+        </h3>
+        <ol className="list-decimal pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Comprehensive funnel analysis</strong> with conversion rates
+          </li>
+          <li>
+            <strong>Customer lifetime value</strong> review and projection
+          </li>
+          <li>
+            <strong>Competitive landscape</strong> impact assessment
+          </li>
+          <li>
+            <strong>Technology stack</strong> efficiency evaluation
+          </li>
+          <li>
+            <strong>Strategic planning</strong> for next quarter
+          </li>
+        </ol>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Operationalizes This Framework</strong>
+        </h2>
+        <p className="text-black mb-3">
+          Trilio unifies data from your stores, ad platforms, analytics, and
+          lifecycle tools to deliver executive‑ready reporting and actionable
+          insights. No spreadsheets or manual stitching—just guardrails and
+          clear next steps.
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Executive Dashboard:</strong> Blended CAC trend, CAC vs
+            target, LTV:CAC, payback, MER, and pacing with narrative insights.
+          </li>
+          <li>
+            <strong>Performance Dashboard:</strong> CAC by channel, campaign,
+            audience, and creative; funnel CVRs (LP → ATC → IC → Purchase).
+          </li>
+          <li>
+            <strong>Finance Dashboard:</strong> CAC payback by cohort, gross
+            margin impact, cash flow, and scenario planning.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Data Sources in Trilio</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Commerce: Shopify, Amazon</li>
+          <li>Ads: Meta, Google, TikTok, Reddit, Amazon Ads</li>
+          <li>Web/Analytics: GA4</li>
+          <li>Email/Lifecycle: Klaviyo, Mailchimp</li>
+          <li>Custom: Webhooks and API ingestion</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Governance Cadence and Owners</strong>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Daily</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Monitor CAC drift alerts and tracking health</li>
+              <li>Pause underperforming spend per guardrails</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Weekly</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Review channel CAC and funnel conversion</li>
+              <li>Ship 1–2 optimizations (creative, bids, CRO)</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Monthly</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Reforecast spend with payback and LTV updates</li>
+              <li>Rebalance budget using the simulator</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Smart Alerts and SLA Guardrails</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>CAC spike:</strong> &gt;15% day‑over‑day or &gt;25%
+            week‑over‑week
+          </li>
+          <li>
+            <strong>ROAS drop vs guardrail:</strong> below target by &gt;10%
+          </li>
+          <li>
+            <strong>Tracking anomaly:</strong> session/revenue decoupling or
+            missing conversions
+          </li>
+          <li>
+            <strong>Creative fatigue:</strong> rising CPM/CPC with falling CVR
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Implementation Checklist</strong>
+        </h2>
+        <ol className="list-decimal pl-6 space-y-1 mb-6 text-black">
+          <li>Connect Shopify/Amazon, ad platforms, GA4, and email</li>
+          <li>Define CAC formula and guardrails by channel</li>
+          <li>Enable attribution and map UTMs/source‑medium rules</li>
+          <li>Set alert thresholds (CAC, CVR, ROAS, payback)</li>
+          <li>Publish dashboards and assign owners</li>
+          <li>Schedule Weekly/Monthly reviews and actions</li>
+          <li>Iterate quarterly with deep‑dive insights</li>
+        </ol>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>KPI Guardrails to Start With</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>E‑commerce payback: 6–12 months by channel</li>
+          <li>LTV:CAC minimum: 3.0 blended, 2.5 by channel</li>
+          <li>Landing page CVR: &gt;3% on top performers</li>
+          <li>Checkout completion: &gt;60% from initiated checkout</li>
+        </ul>
+
+        <div className="mt-6">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  49: {
+    id: 49,
+    title: "Advanced CAC Analysis Techniques",
+    slug: "advanced-cac-analysis-techniques",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 17, 2025",
+    category: "Marketing",
+    readTime: "9 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/AdvanceCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Advanced CAC Analysis Techniques</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Cohort-Based CAC Analysis</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Benefits of Cohort Analysis:</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Time-based performance</strong> understanding
+          </li>
+          <li>
+            <strong>Seasonal impact</strong> identification
+          </li>
+          <li>
+            <strong>Customer quality</strong> trends over time
+          </li>
+          <li>
+            <strong>Marketing evolution</strong> effectiveness
+          </li>
+        </ul>
+
+        <p className="text-black mb-2">
+          <strong>Implementation:</strong>
+        </p>
+        <div className="bg-gray-50 border border-gray-200 rounded-md p-4 mb-4">
+          <pre className="text-sm text-black whitespace-pre-wrap">
+            {`Month 1 Cohort: $85 CAC, 65% 12-month retention
+Month 2 Cohort: $92 CAC, 58% 12-month retention
+Month 3 Cohort: $78 CAC, 71% 12-month retention`}
+          </pre>
+        </div>
+
+        <h3 className="text-xl font-semibold text-black mb-2">Insights:</h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Month 3 shows improvement in both CAC and retention</li>
+          <li>Month 2 may indicate campaign quality issues</li>
+          <li>Use insights to optimize future campaigns</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Marginal CAC Analysis</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Understanding Incremental Costs:</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Baseline CAC:</strong> First $10K spend = $65 CAC
+          </li>
+          <li>
+            <strong>Scale CAC:</strong> Next $10K spend = $95 CAC
+          </li>
+          <li>
+            <strong>Saturation CAC:</strong> Additional $10K = $145 CAC
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Strategic Implications:</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Optimal spend levels</strong> identification
+          </li>
+          <li>
+            <strong>Diminishing returns</strong> recognition
+          </li>
+          <li>
+            <strong>Channel diversification</strong> necessity
+          </li>
+          <li>
+            <strong>Budget allocation</strong> optimization
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Predictive CAC Modeling</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Factors Affecting Future CAC:</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Competitive landscape</strong> changes
+          </li>
+          <li>
+            <strong>Platform algorithm</strong> updates
+          </li>
+          <li>
+            <strong>Seasonal demand</strong> fluctuations
+          </li>
+          <li>
+            <strong>Economic conditions</strong> impact
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Modeling Approaches:</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Historical trend</strong> extrapolation
+          </li>
+          <li>
+            <strong>Market factor</strong> integration
+          </li>
+          <li>
+            <strong>Scenario planning</strong> for different conditions
+          </li>
+          <li>
+            <strong>Machine learning</strong> for complex predictions
+          </li>
+        </ul>
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Powers Advanced CAC Analysis</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Cohort analysis:</strong> Build cohorts by first purchase
+            month, channel, campaign, or product and compare CAC, payback,
+            retention, and LTV curves side‑by‑side.
+          </li>
+          <li>
+            <strong>Marginal CAC:</strong> Visualize spend vs CAC curves to spot
+            saturation points and get simulator‑driven budget shift
+            recommendations to lower blended CAC.
+          </li>
+          <li>
+            <strong>Predictive modeling:</strong> Weekly CAC forecasts by
+            channel/campaign using historicals, seasonality, and exogenous
+            signals (promo calendar, market events) with scenario planning.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Required Connections</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Commerce: Shopify, Amazon</li>
+          <li>Ads: Meta, Google, TikTok, Reddit, Amazon Ads</li>
+          <li>Analytics: GA4</li>
+          <li>Email/Lifecycle: Klaviyo, Mailchimp</li>
+          <li>Optional: Cost of goods and margin inputs for true payback</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>21‑Day Analysis Plan with Trilio</strong>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Week 1</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Connect all sources and validate tracking</li>
+              <li>Baseline CAC, LTV, and payback by channel</li>
+              <li>Define cohort dimensions and targets</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Week 2</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Run cohort analysis; flag underperforming cohorts</li>
+              <li>Map spend vs CAC to find saturation thresholds</li>
+              <li>Ship quick wins (pause bottom 10% spend by CAC)</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">Week 3</h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Run CAC forecasts and best/worst‑case scenarios</li>
+              <li>Reallocate 10–20% budget via simulator</li>
+              <li>Set alerts and finalize guardrails</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Mini Case (Illustrative)</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            Blended CAC down 24% after reallocating from saturated channel
+          </li>
+          <li>
+            High‑LTV cohort scaled; payback improved from 7.2 → 5.8 months
+          </li>
+          <li>Forecast accuracy within 8% over 30 days</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Recommended Guardrails</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>LTV:CAC &gt; 3.0 blended; &gt; 2.5 by channel</li>
+          <li>Payback &le; 6–12 months depending on product margins</li>
+          <li>Daily CAC drift alert: &gt; 15%; Weekly: &gt; 25%</li>
+        </ul>
+
+        <div className="mt-6">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  50: {
+    id: 50,
+    title: "Common CAC Mistakes and How to Avoid Them",
+    slug: "common-cac-mistakes-and-how-to-avoid-them",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 18, 2025",
+    category: "Marketing",
+    readTime: "8 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/CommonMistakesCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Common CAC Mistakes and How to Avoid Them</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Calculation Errors</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>1. Time Period Inconsistency</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Monthly costs with quarterly customer
+            counts
+          </li>
+          <li>
+            <strong>Solution:</strong> Always match time periods exactly
+          </li>
+          <li>
+            <strong>Prevention:</strong> Create standardized reporting templates
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>2. Cost Allocation Errors</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Including customer service costs for
+            existing customers
+          </li>
+          <li>
+            <strong>Solution:</strong> Separate acquisition from retention costs
+          </li>
+          <li>
+            <strong>Prevention:</strong> Clear cost categorization guidelines
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>3. Attribution Mistakes</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Problem:</strong> Crediting all customers to paid channels
+          </li>
+          <li>
+            <strong>Solution:</strong> Implement proper attribution modeling
+          </li>
+          <li>
+            <strong>Prevention:</strong> Multi-touch attribution implementation
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Strategic Mistakes</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>1. Optimizing for CAC Instead of Profitability</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Lower CAC but lower customer quality
+          </li>
+          <li>
+            <strong>Solution:</strong> Optimize for CAC:LTV ratio
+          </li>
+          <li>
+            <strong>Prevention:</strong> Always consider lifetime value
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>2. Short-Term CAC Focus</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Ignoring long-term brand building
+          </li>
+          <li>
+            <strong>Solution:</strong> Balance direct response with brand
+            marketing
+          </li>
+          <li>
+            <strong>Prevention:</strong> Multi-timeframe optimization approach
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>3. Channel Oversimplification</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Problem:</strong> Viewing channels in isolation
+          </li>
+          <li>
+            <strong>Solution:</strong> Understand cross-channel interactions
+          </li>
+          <li>
+            <strong>Prevention:</strong> Comprehensive attribution modeling
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Operational Mistakes</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>1. Inconsistent Measurement</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Problem:</strong> Changing calculation methods
+          </li>
+          <li>
+            <strong>Solution:</strong> Establish standard operating procedures
+          </li>
+          <li>
+            <strong>Prevention:</strong> Regular methodology reviews
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>2. Delayed Action on Insights</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Problem:</strong> Identifying issues but not acting quickly
+          </li>
+          <li>
+            <strong>Solution:</strong> Real-time monitoring and alert systems
+          </li>
+          <li>
+            <strong>Prevention:</strong> Automated optimization rules
+          </li>
+        </ul>
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Helps You Avoid These CAC Mistakes</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-2 mb-6 text-black">
+          <li>
+            <strong>Time period consistency:</strong> Global reporting cadence
+            settings ensure costs, conversions, and customers align to the same
+            period (daily/weekly/monthly) across all dashboards.
+          </li>
+          <li>
+            <strong>Cost allocation hygiene:</strong> Split acquisition vs
+            retention with dedicated cost buckets. Map marketing, sales, and
+            partner fees to acquisition only; exclude support/retention costs
+            from CAC automatically.
+          </li>
+          <li>
+            <strong>Attribution accuracy:</strong> Multi‑touch attribution with
+            first‑party events, UTM normalization, and channel rules to prevent
+            over‑crediting paid when organic/retargeting drive the close.
+          </li>
+          <li>
+            <strong>Profitability focus:</strong> LTV:CAC, gross margin, and
+            payback guardrails displayed next to CAC so teams optimize for
+            profitable growth—not just cheaper acquisition.
+          </li>
+          <li>
+            <strong>Cross‑channel view:</strong> Unified CAC by channel,
+            campaign, audience, and creative, plus blended views to reveal
+            interactions and avoid siloed decisions.
+          </li>
+          <li>
+            <strong>Action velocity:</strong> AI alerts for CAC drift, tracking
+            anomalies, and creative fatigue—so insights translate into action
+            within hours, not weeks.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>SOP Templates (In Trilio)</strong>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">
+              Time Period
+            </h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Define monthly, weekly, or daily as the system cadence</li>
+              <li>Lock cohort windows (e.g., 30/60/90‑day)</li>
+              <li>Apply uniformly across dashboards</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">
+              Cost Mapping
+            </h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Acquisition: media, creative, sales commission, partners</li>
+              <li>Retention: CRM, CS, loyalty, retention programs</li>
+              <li>Exclude retention from CAC automatically</li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
+            <h4 className="text-lg font-semibold text-black mb-1">
+              Attribution
+            </h4>
+            <ul className="list-disc pl-6 space-y-1 text-black">
+              <li>Normalize UTMs and source/medium naming</li>
+              <li>Enable multi‑touch model with lookback windows</li>
+              <li>QA with channel share sanity checks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  51: {
+    id: 51,
+    title: "Industry-Specific CAC Considerations",
+    slug: "industry-specific-cac-considerations",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 19, 2025",
+    category: "Marketing",
+    readTime: "6 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/Industry-SpecificCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Industry-Specific CAC Considerations</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>E-commerce CAC Factors</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Unique Considerations</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Product margin</strong> impact on acceptable CAC
+          </li>
+          <li>
+            <strong>Seasonal fluctuations</strong> requiring adjusted targets
+          </li>
+          <li>
+            <strong>Shipping and returns</strong> affecting net customer value
+          </li>
+          <li>
+            <strong>Product category</strong> differences in acquisition costs
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Optimization Strategies</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Product bundling</strong> to increase AOV and improve CAC
+            ratios
+          </li>
+          <li>
+            <strong>Seasonal planning</strong> with adjusted CAC targets
+          </li>
+          <li>
+            <strong>Category-specific</strong> campaigns with tailored messaging
+          </li>
+          <li>
+            <strong>Returns policy</strong> optimization for customer confidence
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>SaaS CAC Factors</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Unique Considerations</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Longer sales cycles</strong> requiring extended attribution
+            windows
+          </li>
+          <li>
+            <strong>Free trial conversion</strong> rates affecting effective CAC
+          </li>
+          <li>
+            <strong>Churn rates</strong> impacting lifetime value calculations
+          </li>
+          <li>
+            <strong>Expansion revenue</strong> from existing customers
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Optimization Strategies</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Product-led growth</strong> to reduce sales-assisted
+            acquisition
+          </li>
+          <li>
+            <strong>Free trial optimization</strong> for higher conversion rates
+          </li>
+          <li>
+            <strong>Onboarding excellence</strong> to reduce early churn
+          </li>
+          <li>
+            <strong>Usage-based pricing</strong> to align cost with value
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Service Business CAC Factors</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Unique Considerations</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>High-touch sales</strong> process increasing acquisition
+            costs
+          </li>
+          <li>
+            <strong>Local market</strong> focus requiring geographic
+            optimization
+          </li>
+          <li>
+            <strong>Referral-heavy</strong> business models with lower paid CAC
+          </li>
+          <li>
+            <strong>Seasonal demand</strong> patterns affecting acquisition
+            strategy
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Optimization Strategies</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Referral program</strong> development for lower-cost
+            acquisition
+          </li>
+          <li>
+            <strong>Local SEO</strong> optimization for organic acquisition
+          </li>
+          <li>
+            <strong>Content marketing</strong> for thought leadership and trust
+          </li>
+          <li>
+            <strong>Partnership development</strong> for shared acquisition
+            costs
+          </li>
+        </ul>
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Operationalizes CAC by Industry</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Trilio for E-commerce</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            Unified connectors for Shopify, WooCommerce, Amazon, TikTok, Google
+            Ads, and GA4 to consolidate spend, traffic, and orders
+          </li>
+          <li>
+            Margin-aware CAC with COGS and discounts applied to calculate CAC to
+            gross-margin payback (not just revenue payback)
+          </li>
+          <li>
+            Returns and cancellations deduction so CAC reflects net new kept
+            customers, not shipped orders
+          </li>
+          <li>
+            Seasonality cohorts with dynamic targets that auto-adjust CAC
+            guardrails during high and low season
+          </li>
+          <li>
+            Category- and SKU-level CAC with product taxonomy mapping for
+            precise scale and cut decisions
+          </li>
+          <li>
+            Creative and audience analysis to find the cheapest path to high-LTV
+            cohorts
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Trilio for SaaS</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            Native integrations with HubSpot, Salesforce, Stripe, and Chargebee
+            to attribute CAC across paid, SDR, and AE activities
+          </li>
+          <li>
+            Funnel-aware CAC: trial - activation - PQL/SQL - opportunity - won,
+            with cost allocation by stage and role
+          </li>
+          <li>
+            Extended attribution windows aligned to sales cycles with
+            multi-touch models and channel de-duplication
+          </li>
+          <li>
+            Churn and expansion-aware unit economics: LTV, NRR, and expansion
+            CAC surfaced next to acquisition CAC
+          </li>
+          <li>
+            Usage and seat-based pricing modeling to align CAC targets to value
+            metrics and expected expansion
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Trilio for Services</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            Geo-focused CAC with city/zip heatmaps and local SEO/Maps data for
+            efficient territory planning
+          </li>
+          <li>
+            Referral-source tracking and partner attribution to quantify
+            low-cost acquisition channels
+          </li>
+          <li>
+            Call-tracking and form attribution stitched to CRM opportunities for
+            full-funnel CAC
+          </li>
+          <li>
+            Capacity-aware guardrails so campaigns scale only when service
+            bandwidth and SLAs are maintained
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Recommended Trilio Dashboards</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Industry CAC Overview: blended vs channel with payback</li>
+          <li>Channel Efficiency: CAC vs LTV and margin by source</li>
+          <li>Payback by Cohort: month and campaign cohorts</li>
+          <li>Creative and Audience Diagnostics (paid social/search)</li>
+          <li>Geo Performance (services) or Funnel Performance (SaaS)</li>
+          <li>Returns-adjusted CAC and AOV lift (e-commerce)</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Guardrails and Alerts in Trilio</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>LTV:CAC threshold alerts (blended and by channel)</li>
+          <li>
+            CAC drift alerts when daily or weekly CAC deviates beyond target
+          </li>
+          <li>Payback breach notifications by product line or plan</li>
+          <li>
+            Trial-to-paid conversion drops (SaaS) and RMA spikes (e-commerce)
+          </li>
+          <li>Geo CPL/CAC anomalies (services)</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Implementation Quick Start with Trilio</strong>
+        </h2>
+        <ol className="list-decimal pl-6 space-y-1 mb-6 text-black">
+          <li>Select industry template: E-commerce, SaaS, or Services</li>
+          <li>Connect data sources (ads, web analytics, CRM, billing)</li>
+          <li>Set margin, COGS, and return policies (if applicable)</li>
+          <li>Define attribution model and lookback windows</li>
+          <li>Import historical cohorts and activate alerts</li>
+        </ol>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Case Snapshots</strong>
+        </h2>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            E-commerce: returns-adjusted CAC down 18% and payback improved from
+            7.8 to 6.1 months after margin and RMA normalization
+          </li>
+          <li>
+            SaaS: trial-to-paid conversion up 7 points; blended payback improved
+            from 9.5 to 7.4 months with funnel-aware CAC
+          </li>
+          <li>
+            Services: CAC reduced 22% in top 3 cities by reallocating from
+            low-yield geos using Trilio heatmaps
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  52: {
+    id: 52,
+    title: "Technology Stack for CAC Optimization",
+    slug: "technology-stack-for-cac-optimization",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 20, 2025",
+    category: "Marketing",
+    readTime: "5 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/TechnologyStackCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Technology Stack for CAC Optimization</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Essential Tools for CAC Management</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>1. Attribution and Analytics Platforms</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Google Analytics 4:</strong> Free multi-channel attribution
+          </li>
+          <li>
+            <strong>Triple Whale:</strong> Shopify-focused attribution
+          </li>
+          <li>
+            <strong>Northbeam:</strong> Advanced multi-touch attribution
+          </li>
+          <li>
+            <strong>Trilio.ai:</strong> AI-powered unified analytics
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>2. Customer Data Platforms</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Segment:</strong> Customer data unification
+          </li>
+          <li>
+            <strong>Rudderstack:</strong> Privacy-focused CDP
+          </li>
+          <li>
+            <strong>Amplitude:</strong> Product analytics and cohorts
+          </li>
+          <li>
+            <strong>Mixpanel:</strong> Event-based customer tracking
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>3. Marketing Automation</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>HubSpot:</strong> Comprehensive marketing automation
+          </li>
+          <li>
+            <strong>Klaviyo:</strong> E-commerce focused email marketing
+          </li>
+          <li>
+            <strong>Marketo:</strong> Enterprise marketing automation
+          </li>
+          <li>
+            <strong>Pardot:</strong> B2B marketing automation
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>CAC Tracking Technology Requirements</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Core Capabilities</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>
+            <strong>Multi-channel integration</strong> for complete cost
+            tracking
+          </li>
+          <li>
+            <strong>Customer lifecycle tracking</strong> from awareness to
+            purchase
+          </li>
+          <li>
+            <strong>Real-time reporting</strong> for immediate optimization
+          </li>
+          <li>
+            <strong>Cohort analysis</strong> for temporal insights
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Advanced Features</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Predictive CAC modeling</strong> for planning
+          </li>
+          <li>
+            <strong>Automated alerting</strong> for performance changes
+          </li>
+          <li>
+            <strong>Custom attribution models</strong> for business-specific
+            needs
+          </li>
+          <li>
+            <strong>API access</strong> for custom integrations
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Trilio's Technology Integration Approach</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Unified Data Architecture</strong>
+        </h3>
+        <p className="mb-4 text-black">
+          Trilio eliminates the need for multiple point solutions by providing a
+          unified platform that integrates with your existing tech stack. Our
+          approach focuses on data consolidation rather than replacement,
+          ensuring you maintain your current workflows while gaining deeper
+          insights.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Trilio vs. Traditional Stack Comparison</strong>
+        </h2>
+
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full border border-gray-300">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-black">
+                  Feature
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-black">
+                  Traditional Stack
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-black">
+                  Trilio Platform
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  <strong>Setup Time</strong>
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  6-12 weeks
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  2-4 weeks
+                </td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  <strong>Data Sources</strong>
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Manual integration per tool
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Pre-built connectors
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  <strong>Attribution Models</strong>
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Limited to platform defaults
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Fully customizable
+                </td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  <strong>Real-time Updates</strong>
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Hourly/daily sync
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  Real-time streaming
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  <strong>Cost</strong>
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  $5K-15K/month for full stack
+                </td>
+                <td className="border border-gray-300 px-4 py-2 text-black">
+                  $2K-8K/month all-inclusive
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Success Metrics & ROI</strong>
+        </h2>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Immediate Benefits (0-30 days)</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>Single source of truth for all CAC data</li>
+          <li>Elimination of manual data compilation</li>
+          <li>Real-time visibility into campaign performance</li>
+          <li>Reduced time spent on reporting by 60-80%</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Strategic Benefits (30-90 days)</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+          <li>Data-driven campaign optimization decisions</li>
+          <li>
+            Improved attribution accuracy leading to better budget allocation
+          </li>
+          <li>Automated alerting preventing CAC drift</li>
+          <li>Enhanced team collaboration with shared dashboards</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold text-black mb-2">
+          <strong>Long-term Impact (90+ days)</strong>
+        </h3>
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>Sustained CAC reduction of 15-25%</li>
+          <li>Improved LTV:CAC ratios across all channels</li>
+          <li>Predictive modeling enabling proactive optimization</li>
+          <li>Scalable analytics infrastructure supporting growth</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Getting Started with Trilio</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-lg border border-teal-200 mb-6">
+          <h3 className="text-xl font-semibold text-black mb-3">
+            <strong>Free Implementation Assessment</strong>
+          </h3>
+          <p className="mb-4 text-black">
+            Our team will analyze your current tech stack and provide a
+            customized implementation plan, including:
+          </p>
+          <ul className="list-disc pl-6 space-y-1 mb-4 text-black">
+            <li>Current stack audit and gap analysis</li>
+            <li>Data integration roadmap</li>
+            <li>ROI projection based on your metrics</li>
+            <li>Implementation timeline and milestones</li>
+          </ul>
+        </div>
+
+        <div className="mt-6">
+          <a
+            href="/home"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  53: {
+    id: 53,
+    title: "Conclusion: Mastering Customer Acquisition Cost",
+    slug: "conclusion-mastering-customer-acquisition-cost",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 21, 2025",
+    category: "Marketing",
+    readTime: "4 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/ConclusionCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Conclusion: Mastering Customer Acquisition Cost</strong>
+        </h1>
+
+        <p className="mb-6 text-black">
+          <strong>
+            Customer Acquisition Cost is not just a metric—it's the foundation
+            of sustainable business growth.
+          </strong>{" "}
+          Businesses that master CAC optimization gain significant competitive
+          advantages through more efficient marketing, better customer
+          targeting, and improved profitability.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Key Takeaways for CAC Success:</strong>
+        </h2>
+
+        <ol className="list-decimal pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>Calculate true CAC</strong> including all hidden costs
+          </li>
+          <li>
+            <strong>Track CAC by channel</strong> for optimization insights
+          </li>
+          <li>
+            <strong>Balance CAC with LTV</strong> for sustainable growth
+          </li>
+          <li>
+            <strong>Optimize continuously</strong> based on performance data
+          </li>
+          <li>
+            <strong>Invest in technology</strong> for accurate measurement and
+            automation
+          </li>
+        </ol>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>
+            The businesses that thrive in 2025 will be those that:
+          </strong>
+        </h2>
+
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>See CAC trends before competitors</strong> through advanced
+            analytics
+          </li>
+          <li>
+            <strong>Optimize in real-time</strong> with automated systems
+          </li>
+          <li>
+            <strong>Balance acquisition with retention</strong> for maximum
+            profitability
+          </li>
+          <li>
+            <strong>Scale efficiently</strong> through data-driven decision
+            making
+          </li>
+        </ul>
+
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+          <p className="text-black">
+            <strong>Remember:</strong> The goal isn't the lowest possible
+            CAC—it's the most profitable customer acquisition strategy that
+            scales sustainably.
+          </p>
+        </div>
+
+        <p className="mb-6 text-black">
+          The investment in proper CAC tracking and optimization typically pays
+          for itself within 30-60 days through improved marketing efficiency and
+          better decision-making.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How Trilio Enables CAC Mastery</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          Trilio provides the comprehensive platform needed to implement these
+          CAC optimization principles effectively:
+        </p>
+
+        <ul className="list-disc pl-6 space-y-1 mb-6 text-black">
+          <li>
+            <strong>True CAC calculation</strong> with automatic cost allocation
+            and margin integration
+          </li>
+          <li>
+            <strong>Channel-specific tracking</strong> with unified data from
+            all marketing sources
+          </li>
+          <li>
+            <strong>LTV:CAC optimization</strong> through predictive modeling
+            and cohort analysis
+          </li>
+          <li>
+            <strong>Continuous optimization</strong> with real-time alerts and
+            automated recommendations
+          </li>
+          <li>
+            <strong>Technology investment</strong> that consolidates multiple
+            tools into one platform
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Next Steps for Your Business</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-teal-50 to-blue-50 rounded-lg border border-teal-200">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Immediate Actions (This Week)</strong>
+            </h3>
+            <ul className="list-disc pl-4 space-y-1 text-black">
+              <li>Audit your current CAC calculation methodology</li>
+              <li>Identify hidden costs not currently included</li>
+              <li>Set up basic channel-specific CAC tracking</li>
+              <li>Establish baseline LTV:CAC ratios</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Strategic Planning (This Month)</strong>
+            </h3>
+            <ul className="list-disc pl-4 space-y-1 text-black">
+              <li>Evaluate your current analytics stack</li>
+              <li>Plan for multi-touch attribution implementation</li>
+              <li>Design customer lifecycle tracking framework</li>
+              <li>Set CAC optimization goals and KPIs</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Ready to Master CAC?</strong>
+        </h2>
+
+        <p className="mb-6 text-black">
+          The journey to CAC mastery starts with understanding where you are
+          today and having a clear roadmap for where you want to be. Trilio
+          provides both the technology and expertise to accelerate your
+          progress.
+        </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+    ),
+  },
+  54: {
+    id: 54,
+    title: "Start Optimizing Your CAC Today",
+    slug: "start-optimizing-your-cac-today",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 22, 2025",
+    category: "Marketing",
+    readTime: "3 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/StartOptimizingCAC.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Start Optimizing Your CAC Today</strong>
+        </h1>
+
+        <p className="mb-6 text-black">
+          <strong>Trilio.ai</strong> provides comprehensive CAC tracking and
+          optimization tools designed specifically for growing businesses that
+          want to master their customer acquisition economics.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>What you get with Trilio.ai:</strong>
+        </h2>
+
+        <ul className="list-none space-y-3 mb-6">
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>Real-time CAC tracking</strong> across all channels
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>Multi-touch attribution</strong> for accurate channel
+              performance
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>AI-powered insights</strong> for optimization
+              opportunities
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>Customer lifetime value</strong> integration for
+              profitability focus
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>Automated alerts</strong> for performance changes
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 text-xl mr-3 mt-1">✓</span>
+            <span className="text-black">
+              <strong>Free CAC calculator tools</strong> and templates
+            </span>
+          </li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-lg border border-teal-200 mb-6">
+          <h2 className="text-2xl font-bold text-black mb-4">
+            <strong>Ready to reduce your CAC by 30%?</strong>
+          </h2>
+
+          <div className="text-center">
+            <a
+              href="/resources/blog-insights/free-interactive-cac-calculator"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Use Trilio's CAC Calculator Tool →
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Join 1,000+ businesses already using Trilio.ai to optimize their
+            customer acquisition costs and scale profitably.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Why Choose Trilio.ai for CAC Optimization?</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Proven Results</strong>
+            </h3>
+            <ul className="list-disc pl-4 space-y-1 text-black">
+              <li>Average 30% CAC reduction in first 90 days</li>
+              <li>25% improvement in LTV:CAC ratios</li>
+              <li>40% faster campaign optimization decisions</li>
+              <li>60% reduction in manual reporting time</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Easy Implementation</strong>
+            </h3>
+            <ul className="list-disc pl-4 space-y-1 text-black">
+              <li>Connect your data sources in under 30 minutes</li>
+              <li>Pre-built templates for your industry</li>
+              <li>No coding or technical expertise required</li>
+              <li>Full setup in 2-4 weeks, not months</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Get Started in 3 Simple Steps</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-teal-600 font-bold text-xl">1</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">
+              Try the Calculator
+            </h3>
+            <p className="text-sm text-gray-600">
+              Use our free CAC calculator to see your current metrics
+            </p>
+          </div>
+
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-blue-600 font-bold text-xl">2</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">Get Your Report</h3>
+            <p className="text-sm text-gray-600">
+              Receive a personalized optimization roadmap
+            </p>
+          </div>
+
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-purple-600 font-bold text-xl">3</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">Start Optimizing</h3>
+            <p className="text-sm text-gray-600">
+              Implement changes and track improvements
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Transform Your CAC?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Join thousands of businesses that have already optimized their
+            customer acquisition costs with Trilio.ai
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  55: {
+    id: 55,
+    title: "Marketing Attribution Software: The 2025 Complete Guide",
+    slug: "marketing-attribution-software-2025-complete-guide",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 23, 2025",
+    category: "Marketing",
+    readTime: "12 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/MarketingGuide.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>
+            Marketing Attribution Software: The 2025 Complete Guide
+          </strong>
+        </h1>
+
+        <p className="text-lg leading-relaxed mb-6 text-black italic">
+          <strong>
+            Stop losing 40% of your marketing budget to misattributed channels.
+            Master attribution for maximum ROI.
+          </strong>
+        </p>
+
+        <p className="text-lg leading-relaxed mb-6 text-black">
+          <strong>
+            Marketing attribution is the difference between profitable growth
+            and expensive guesswork
+          </strong>
+          . Yet{" "}
+          <strong>89% of marketers struggle with accurate attribution</strong>,
+          leading to misallocated budgets, underperforming campaigns, and missed
+          opportunities worth millions in potential revenue.
+        </p>
+
+        <p className="text-lg leading-relaxed mb-6 text-black">
+          With{" "}
+          <strong>
+            global marketing attribution software market reaching $5.17 billion
+            in 2025
+          </strong>{" "}
+          and growing at 15.5% CAGR, the businesses investing in advanced
+          attribution capabilities are pulling ahead of competitors still
+          relying on outdated last-click models.
+        </p>
+
+        <p className="text-lg leading-relaxed mb-6 text-black">
+          This comprehensive guide reveals everything you need to know about
+          marketing attribution software in 2025—from choosing the right
+          platform to implementing advanced multi-touch models that transform
+          your marketing from cost center to profit driver.
+        </p>
+
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border border-purple-200 mb-6">
+          <h2 className="text-2xl font-bold text-black mb-4">
+            <strong>Key Takeaways:</strong>
+          </h2>
+          <ul className="list-none space-y-3">
+            <li className="flex items-start">
+              <span className="text-purple-600 text-xl mr-3 mt-1">•</span>
+              <span className="text-black">
+                <strong>
+                  89% of marketers struggle with accurate attribution
+                </strong>{" "}
+                - costing businesses millions in misallocated budgets
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 text-xl mr-3 mt-1">•</span>
+              <span className="text-black">
+                <strong>
+                  Global attribution software market reaches $5.17 billion
+                </strong>{" "}
+                in 2025 with 15.5% CAGR growth
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 text-xl mr-3 mt-1">•</span>
+              <span className="text-black">
+                <strong>Multi-touch attribution models</strong> outperform
+                last-click by 40% in accuracy
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 text-xl mr-3 mt-1">•</span>
+              <span className="text-black">
+                <strong>AI-powered attribution platforms</strong> are
+                transforming marketing from cost center to profit driver
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>What is Marketing Attribution Software?</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          Marketing attribution software is a sophisticated analytics platform
+          that tracks and analyzes customer touchpoints across your entire
+          marketing ecosystem to determine which channels, campaigns, and
+          interactions actually drive conversions and revenue.
+        </p>
+
+        <p className="mb-4 text-black">
+          Unlike basic analytics tools that only show you what happened,
+          attribution software reveals the <strong>why</strong> behind customer
+          behavior—helping you understand the complete customer journey from
+          first touch to final purchase.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Why Marketing Attribution Matters in 2025</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          In today's complex, multi-channel marketing landscape, customers
+          interact with your brand across dozens of touchpoints before making a
+          purchase decision. Without proper attribution, you're essentially
+          flying blind—pouring money into campaigns that may or may not be
+          working.
+        </p>
+
+        <div className="bg-red-50 border border-red-200 p-6 rounded-lg mb-6">
+          <h3 className="text-xl font-bold text-red-800 mb-3">
+            <strong>The Attribution Crisis:</strong>
+          </h3>
+          <ul className="list-none space-y-2 text-red-700">
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠</span>
+              <span>
+                <strong>40% of marketing budgets</strong> are wasted on
+                misattributed channels
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠</span>
+              <span>
+                <strong>89% of marketers</strong> struggle with accurate
+                attribution
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠</span>
+              <span>
+                <strong>Last-click attribution</strong> overvalues bottom-funnel
+                channels by up to 60%
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠</span>
+              <span>
+                <strong>Cross-device tracking</strong> gaps create incomplete
+                customer journeys
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Types of Marketing Attribution Models</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>First-Touch Attribution</strong>
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Credits the first interaction that introduced the customer to your
+              brand
+            </p>
+            <div className="text-sm text-gray-500">
+              <strong>Best for:</strong> Brand awareness campaigns
+            </div>
+          </div>
+
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Last-Touch Attribution</strong>
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Credits only the final interaction before conversion
+            </p>
+            <div className="text-sm text-gray-500">
+              <strong>Best for:</strong> Direct response campaigns
+            </div>
+          </div>
+
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Linear Attribution</strong>
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Distributes credit equally across all touchpoints
+            </p>
+            <div className="text-sm text-gray-500">
+              <strong>Best for:</strong> Balanced view of all channels
+            </div>
+          </div>
+
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Time-Decay Attribution</strong>
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Gives more credit to interactions closer to conversion
+            </p>
+            <div className="text-sm text-gray-500">
+              <strong>Best for:</strong> Short sales cycles
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Advanced Attribution Models for 2025</strong>
+        </h2>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Multi-Touch Attribution (MTA)</strong>
+        </h3>
+        <p className="mb-4 text-black">
+          Multi-touch attribution analyzes the entire customer journey,
+          assigning fractional credit to each touchpoint based on its actual
+          contribution to the conversion. This model provides the most accurate
+          picture of channel performance.
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Machine Learning Attribution</strong>
+        </h3>
+        <p className="mb-4 text-black">
+          AI-powered attribution models use machine learning algorithms to
+          automatically identify patterns and assign credit based on historical
+          data and predictive analytics.
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Cross-Device Attribution</strong>
+        </h3>
+        <p className="mb-4 text-black">
+          Tracks customer interactions across multiple devices and platforms,
+          providing a complete view of the customer journey regardless of where
+          interactions occur.
+        </p>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Key Features of Modern Attribution Software</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Real-Time Data Integration</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• CRM system integration</li>
+              <li>• Marketing automation platforms</li>
+              <li>• Advertising platforms (Google, Facebook, etc.)</li>
+              <li>• E-commerce platforms</li>
+              <li>• Email marketing tools</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Advanced Analytics</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Customer journey mapping</li>
+              <li>• Conversion path analysis</li>
+              <li>• ROI calculation by channel</li>
+              <li>• Predictive modeling</li>
+              <li>• A/B testing integration</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Visualization & Reporting</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Interactive dashboards</li>
+              <li>• Custom report builder</li>
+              <li>• Automated reporting</li>
+              <li>• Data export capabilities</li>
+              <li>• White-label reporting</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>AI & Automation</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Automated attribution modeling</li>
+              <li>• Intelligent insights</li>
+              <li>• Predictive analytics</li>
+              <li>• Anomaly detection</li>
+              <li>• Smart recommendations</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>How to Choose the Right Attribution Software</strong>
+        </h2>
+
+        <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-6">
+          <h3 className="text-xl font-bold text-blue-800 mb-4">
+            <strong>Essential Evaluation Criteria:</strong>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Data Integration
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Number of supported platforms</li>
+                <li>• API capabilities</li>
+                <li>• Data accuracy</li>
+                <li>• Real-time processing</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Attribution Models
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Multi-touch support</li>
+                <li>• Custom model creation</li>
+                <li>• Model comparison tools</li>
+                <li>• Machine learning capabilities</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Reporting & Analytics
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Dashboard customization</li>
+                <li>• Export capabilities</li>
+                <li>• Automated reporting</li>
+                <li>• White-label options</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Support & Implementation
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Onboarding process</li>
+                <li>• Training resources</li>
+                <li>• Customer support quality</li>
+                <li>• Implementation timeline</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Implementation Best Practices</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-blue-600 font-bold text-xl">1</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">
+              <strong>Data Audit</strong>
+            </h3>
+            <p className="text-sm text-gray-600">
+              Clean and validate all data sources before integration
+            </p>
+          </div>
+
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-green-600 font-bold text-xl">2</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">
+              <strong>Start Simple</strong>
+            </h3>
+            <p className="text-sm text-gray-600">
+              Begin with basic attribution models and gradually advance
+            </p>
+          </div>
+
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-purple-600 font-bold text-xl">3</span>
+            </div>
+            <h3 className="font-semibold text-black mb-2">
+              <strong>Team Training</strong>
+            </h3>
+            <p className="text-sm text-gray-600">
+              Ensure all stakeholders understand attribution concepts
+            </p>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Common Attribution Challenges & Solutions</strong>
+        </h2>
+
+        <div className="space-y-4 mb-6">
+          <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <h3 className="font-semibold text-yellow-800 mb-2">
+              <strong>Challenge: Cross-Device Tracking</strong>
+            </h3>
+            <p className="text-yellow-700 mb-2">
+              Customers use multiple devices, making it difficult to track
+              complete journeys.
+            </p>
+            <p className="text-sm text-yellow-600">
+              <strong>Solution:</strong> Implement identity resolution and
+              cross-device tracking technologies.
+            </p>
+          </div>
+
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+            <h3 className="font-semibold text-red-800 mb-2">
+              <strong>Challenge: Data Privacy Regulations</strong>
+            </h3>
+            <p className="text-red-700 mb-2">
+              GDPR, CCPA, and other privacy laws limit tracking capabilities.
+            </p>
+            <p className="text-sm text-red-600">
+              <strong>Solution:</strong> Use privacy-compliant attribution
+              methods and first-party data strategies.
+            </p>
+          </div>
+
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <h3 className="font-semibold text-blue-800 mb-2">
+              <strong>Challenge: Attribution Window Complexity</strong>
+            </h3>
+            <p className="text-blue-700 mb-2">
+              Different products have different consideration periods.
+            </p>
+            <p className="text-sm text-blue-600">
+              <strong>Solution:</strong> Implement dynamic attribution windows
+              based on product category and customer behavior.
+            </p>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>The Future of Marketing Attribution</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          As we move further into 2025 and beyond, marketing attribution is
+          evolving rapidly with the integration of artificial intelligence,
+          machine learning, and advanced analytics capabilities.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>AI-Powered Attribution</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Predictive attribution modeling</li>
+              <li>• Automated insight generation</li>
+              <li>• Real-time optimization recommendations</li>
+              <li>• Anomaly detection and alerting</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-black mb-3">
+              <strong>Privacy-First Attribution</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Zero-party data strategies</li>
+              <li>• Privacy-compliant tracking</li>
+              <li>• Federated learning approaches</li>
+              <li>• Consent management integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Master Marketing Attribution?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Transform your marketing from guesswork to data-driven precision
+            with advanced attribution software
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Join thousands of marketers who have already transformed their
+            attribution capabilities and unlocked millions in additional revenue
+            with data-driven marketing decisions.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  56: {
+    id: 56,
+    title: "The Attribution Crisis in Modern Marketing",
+    slug: "attribution-crisis-modern-marketing",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 24, 2025",
+    category: "Marketing",
+    readTime: "8 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/AttributionCrisis.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>The Attribution Crisis in Modern Marketing</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Why Traditional Attribution Models Fail</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>The modern customer journey is complex:</strong>
+        </p>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-black mr-2">•</span>
+            <span>
+              <strong>Average of 36 touchpoints</strong> before B2B conversion
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-black mr-2">•</span>
+            <span>
+              <strong>12+ touchpoints</strong> for typical ecommerce purchase
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-black mr-2">•</span>
+            <span>
+              <strong>Cross-device interactions</strong> spanning multiple
+              sessions
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-black mr-2">•</span>
+            <span>
+              <strong>Offline-to-online</strong> and{" "}
+              <strong>online-to-offline</strong> conversions
+            </span>
+          </li>
+        </ul>
+
+        <p className="mb-4 text-black">
+          <strong>
+            Traditional last-click attribution assigns 100% credit to the final
+            touchpoint
+          </strong>
+          , ignoring the nurturing power of awareness and consideration
+          channels. This leads to:
+        </p>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>60-80% undervaluation</strong> of top-funnel marketing
+              efforts
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Over-investment</strong> in bottom-funnel channels that
+              appear to drive conversions
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Under-investment</strong> in brand building and awareness
+              campaigns
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Fragmented understanding</strong> of true customer journey
+              impact
+            </span>
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>The Hidden Cost of Poor Attribution</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>
+            Businesses with inadequate attribution typically experience:
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Budget Misallocation:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-orange-600 mr-2">•</span>
+            <span>
+              <strong>30-50% overspend</strong> on last-click channels (Google
+              Search, direct traffic)
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-orange-600 mr-2">•</span>
+            <span>
+              <strong>40-60% underspend</strong> on awareness channels
+              (Facebook, display, video)
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-orange-600 mr-2">•</span>
+            <span>
+              <strong>Missed opportunities</strong> worth 20-35% of total
+              marketing budget
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Strategic Mistakes:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Premature channel elimination</strong> based on last-click
+              data
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Scaling the wrong campaigns</strong> due to attribution
+              bias
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Poor budget planning</strong> without understanding true
+              channel contribution
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-red-600 mr-2">•</span>
+            <span>
+              <strong>Competitive disadvantage</strong> from slower optimization
+              cycles
+            </span>
+          </li>
+        </ul>
+
+        <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-6">
+          <h3 className="text-xl font-bold text-blue-800 mb-3">
+            <strong>Real Example:</strong>
+          </h3>
+          <p className="text-blue-700">
+            A $10M revenue ecommerce brand discovered through proper attribution
+            that their "underperforming" Facebook campaigns actually influenced
+            45% of Google Search conversions. Reallocating budget based on this
+            insight increased overall ROAS by 60%.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>2025 Attribution Challenges</strong>
+        </h2>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Privacy-First Era Complications:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-purple-600 mr-2">•</span>
+            <span>
+              <strong>iOS 14.5+ impact:</strong> 44% reduction in Facebook
+              attribution accuracy
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-purple-600 mr-2">•</span>
+            <span>
+              <strong>Cookie deprecation:</strong> Chrome eliminating
+              third-party cookies by 2025
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-purple-600 mr-2">•</span>
+            <span>
+              <strong>GDPR and CCPA compliance:</strong> Limited tracking
+              capabilities
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-purple-600 mr-2">•</span>
+            <span>
+              <strong>Walled garden platforms:</strong> Reduced cross-platform
+              visibility
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Multi-Channel Complexity:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">•</span>
+            <span>
+              <strong>Platform proliferation:</strong> Average business uses 8+
+              marketing channels
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">•</span>
+            <span>
+              <strong>Device fragmentation:</strong> Mobile, tablet, desktop,
+              connected TV interactions
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">•</span>
+            <span>
+              <strong>Online-offline integration:</strong> Store visits, phone
+              calls, events attribution
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">•</span>
+            <span>
+              <strong>B2B complexity:</strong> Multiple decision makers and
+              extended sales cycles
+            </span>
+          </li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200 mb-6">
+          <h2 className="text-2xl font-bold text-red-800 mb-4 text-center">
+            <strong>The Attribution Crisis Impact</strong>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="p-4">
+              <div className="text-3xl font-bold text-red-600 mb-2">60-80%</div>
+              <p className="text-red-700 font-semibold">
+                Undervaluation of top-funnel efforts
+              </p>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-orange-600 mb-2">
+                30-50%
+              </div>
+              <p className="text-orange-700 font-semibold">
+                Overspend on last-click channels
+              </p>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-red-600 mb-2">20-35%</div>
+              <p className="text-red-700 font-semibold">
+                Missed budget opportunities
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Solve the Attribution Crisis?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Transform your marketing from guesswork to data-driven precision
+            with advanced attribution solutions
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Join thousands of marketers who have already solved their
+            attribution challenges and unlocked millions in additional revenue
+            with data-driven marketing decisions.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  57: {
+    id: 57,
+    title: "Single-Touch vs Multi-Touch Attribution Models",
+    slug: "single-touch-vs-multi-touch-attribution-models",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 25, 2025",
+    category: "Marketing",
+    readTime: "10 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/Multi-touchAttribution.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Single-Touch vs Multi-Touch Attribution Models</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Single-Touch Attribution Models</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>
+            Single-touch models credit one touchpoint with the entire
+            conversion:
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>1. First-Touch Attribution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Key Characteristics:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Credit:</strong> 100% to first interaction
+              </li>
+              <li>
+                • <strong>Best for:</strong> Brand awareness campaign
+                measurement
+              </li>
+              <li>
+                • <strong>Limitation:</strong> Ignores nurturing and closing
+                touchpoints
+              </li>
+              <li>
+                • <strong>Use case:</strong> Understanding top-of-funnel
+                performance
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Example Results:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Display advertising appears highly valuable</li>
+              <li>• Search campaigns seem less important</li>
+              <li>• Email marketing gets minimal credit</li>
+              <li>• Social media shows strong performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>2. Last-Touch Attribution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Key Characteristics:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Credit:</strong> 100% to final interaction before
+                conversion
+              </li>
+              <li>
+                • <strong>Best for:</strong> Direct response campaign
+                optimization
+              </li>
+              <li>
+                • <strong>Limitation:</strong> Ignores awareness and
+                consideration influence
+              </li>
+              <li>
+                • <strong>Use case:</strong> Bottom-funnel performance
+                measurement
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Example Results:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Google Search dominates attribution reports</li>
+              <li>• Email campaigns appear highly effective</li>
+              <li>• Social media seems to underperform</li>
+              <li>• Display advertising looks wasteful</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Multi-Touch Attribution Models</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>
+            Multi-touch models distribute credit across multiple touchpoints:
+          </strong>
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>1. Linear Attribution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Key Characteristics:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Credit distribution:</strong> Equal credit to all
+                touchpoints
+              </li>
+              <li>
+                • <strong>Best for:</strong> Understanding full customer journey
+              </li>
+              <li>
+                • <strong>Limitation:</strong> May overvalue less impactful
+                interactions
+              </li>
+              <li>
+                • <strong>Use case:</strong> Balanced view of channel
+                contributions
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Example Distribution:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• First touchpoint (Facebook): 25%</li>
+              <li>• Middle touchpoint (Email): 25%</li>
+              <li>• Middle touchpoint (Display): 25%</li>
+              <li>• Last touchpoint (Search): 25%</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>2. Time-Decay Attribution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Key Characteristics:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Credit distribution:</strong> More credit to recent
+                interactions
+              </li>
+              <li>
+                • <strong>Best for:</strong> Short sales cycles with recent bias
+              </li>
+              <li>
+                • <strong>Limitation:</strong> May undervalue early awareness
+                efforts
+              </li>
+              <li>
+                • <strong>Use case:</strong> Performance marketing optimization
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Example Distribution:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• First touchpoint (Facebook): 10%</li>
+              <li>• Middle touchpoint (Email): 20%</li>
+              <li>• Middle touchpoint (Display): 30%</li>
+              <li>• Last touchpoint (Search): 40%</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>3. Position-Based (U-Shaped) Attribution</strong>
+        </h3>
+
+        <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg mb-6">
+          <ul className="space-y-2 text-sm text-black">
+            <li>
+              • <strong>Credit distribution:</strong> 40% first, 40% last, 20%
+              middle
+            </li>
+            <li>
+              • <strong>Best for:</strong> Balancing awareness and conversion
+              focus
+            </li>
+            <li>
+              • <strong>Limitation:</strong> May not reflect actual influence
+              patterns
+            </li>
+            <li>
+              • <strong>Use case:</strong> Mixed-objective campaign measurement
+            </li>
+          </ul>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>4. Data-Driven Attribution</strong>
+        </h3>
+
+        <div className="p-6 bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 rounded-lg mb-6">
+          <ul className="space-y-2 text-sm text-black">
+            <li>
+              • <strong>Credit distribution:</strong> AI-determined based on
+              actual conversion patterns
+            </li>
+            <li>
+              • <strong>Best for:</strong> Businesses with sufficient data
+              volume
+            </li>
+            <li>
+              • <strong>Limitation:</strong> Requires significant conversion
+              data
+            </li>
+            <li>
+              • <strong>Use case:</strong> Advanced optimization with machine
+              learning
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Choosing the Right Attribution Model</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>Consider these factors:</strong>
+        </p>
+
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                <th className="px-6 py-3 text-left text-sm font-semibold border-b border-gray-200">
+                  Business Factor
+                </th>
+                <th className="px-6 py-3 text-left text-sm font-semibold border-b border-gray-200">
+                  Recommended Model
+                </th>
+                <th className="px-6 py-3 text-left text-sm font-semibold border-b border-gray-200">
+                  Reasoning
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-black">
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>Short sales cycle (1-7 days)</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Time-decay or Last-touch
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Recent interactions more influential
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>Long sales cycle (30+ days)</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Linear or Data-driven
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Multiple touchpoints contribute
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>High conversion volume</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Data-driven
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Sufficient data for ML optimization
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>Brand-focused marketing</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  First-touch or Linear
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Values awareness building
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>Performance marketing</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Time-decay or Position-based
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Balances efficiency and growth
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-6 py-4 border-b border-gray-200 font-semibold">
+                  <strong>B2B with long cycles</strong>
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Linear or Custom
+                </td>
+                <td className="px-6 py-4 border-b border-gray-200">
+                  Multiple stakeholders and touchpoints
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg border border-indigo-200 mb-6">
+          <h3 className="text-xl font-bold text-indigo-800 mb-4">
+            <strong>Key Takeaways:</strong>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Single-Touch Models
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Simple to implement and understand</li>
+                <li>• Can mislead budget allocation decisions</li>
+                <li>• Best for specific, focused use cases</li>
+                <li>• May undervalue important touchpoints</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Multi-Touch Models
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• More accurate representation of reality</li>
+                <li>• Better for complex customer journeys</li>
+                <li>• Requires more sophisticated implementation</li>
+                <li>• Provides actionable insights for optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Choose Your Attribution Model?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Get expert guidance on selecting and implementing the right
+            attribution model for your business
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Make informed decisions about your attribution strategy with
+            data-driven insights and expert guidance.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  58: {
+    id: 58,
+    title: "Technology Requirements and Setup for Attribution Software",
+    slug: "technology-requirements-setup-attribution-software",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 26, 2025",
+    category: "Technology",
+    readTime: "12 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/TechnologyRequirements.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>
+            Technology Requirements and Setup for Attribution Software
+          </strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Core Technical Infrastructure</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>Essential Capabilities for Attribution Software:</strong>
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>1. Cross-Platform Data Integration</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Marketing Platforms:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Google Ads, Facebook, TikTok</li>
+              <li>• LinkedIn, Amazon, Pinterest</li>
+              <li>• Snapchat, Twitter, YouTube</li>
+              <li>• Programmatic display networks</li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Business Systems:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• CRM systems (Salesforce, HubSpot)</li>
+              <li>• Analytics platforms (GA4, Adobe)</li>
+              <li>• Email platforms (Klaviyo, Mailchimp)</li>
+              <li>• Ecommerce platforms (Shopify, WooCommerce)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>2. Identity Resolution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Matching Methods:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Deterministic:</strong> Email, phone, user ID
+              </li>
+              <li>
+                • <strong>Probabilistic:</strong> Device fingerprinting
+              </li>
+              <li>
+                • <strong>Behavioral:</strong> Pattern recognition
+              </li>
+              <li>
+                • <strong>Cross-device:</strong> Session linking
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Integration Points:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>• Mobile, tablet, desktop tracking</li>
+              <li>• Offline-to-online attribution</li>
+              <li>• In-store purchases integration</li>
+              <li>• Phone calls and events tracking</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>3. Real-Time Data Processing</strong>
+        </h3>
+
+        <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-lg mb-6">
+          <ul className="space-y-2 text-sm text-black">
+            <li>
+              • <strong>Streaming data ingestion</strong> from all connected
+              platforms
+            </li>
+            <li>
+              • <strong>Real-time attribution calculations</strong> for
+              immediate insights
+            </li>
+            <li>
+              • <strong>Live dashboard updates</strong> showing current
+              performance
+            </li>
+            <li>
+              • <strong>Instant alert systems</strong> for significant changes
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Implementation Architecture</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>Data Flow Requirements:</strong>
+        </p>
+
+        <div className="bg-gray-100 p-6 rounded-lg mb-6 font-mono text-sm">
+          <div className="text-center text-black">
+            <div className="mb-2">
+              Data Sources → Data Collection → Identity Resolution →
+            </div>
+            <div>
+              Attribution Modeling → Reporting & Analytics → Optimization
+              Actions
+            </div>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Technical Components:</strong>
+        </h3>
+
+        <div className="space-y-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>1. Data Collection Layer</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Server-side tracking</strong> for privacy compliance
+              </li>
+              <li>
+                • <strong>Client-side tracking</strong> where permitted
+              </li>
+              <li>
+                • <strong>API integrations</strong> for platform data
+              </li>
+              <li>
+                • <strong>Webhook configurations</strong> for real-time updates
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>2. Data Processing Layer</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>ETL pipelines</strong> for data transformation
+              </li>
+              <li>
+                • <strong>Data warehouse</strong> for historical storage
+              </li>
+              <li>
+                • <strong>Real-time processing</strong> for instant calculations
+              </li>
+              <li>
+                • <strong>Quality assurance</strong> for data accuracy
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>3. Attribution Engine</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Model configurations</strong> for different
+                attribution approaches
+              </li>
+              <li>
+                • <strong>Machine learning algorithms</strong> for data-driven
+                attribution
+              </li>
+              <li>
+                • <strong>Custom rule engines</strong> for business-specific
+                requirements
+              </li>
+              <li>
+                • <strong>Conversion path analysis</strong> for journey
+                understanding
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>4. Reporting Layer</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Dashboard interfaces</strong> for different user roles
+              </li>
+              <li>
+                • <strong>Custom report builders</strong> for specific needs
+              </li>
+              <li>
+                • <strong>API access</strong> for external integrations
+              </li>
+              <li>
+                • <strong>Export capabilities</strong> for further analysis
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Privacy and Compliance Setup</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-red-50 to-pink-50 border border-red-200 rounded-lg">
+            <h3 className="text-xl font-bold text-red-800 mb-3">
+              <strong>GDPR Requirements:</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-red-700">
+              <li>
+                • <strong>Consent management</strong> integration
+              </li>
+              <li>
+                • <strong>Data portability</strong> capabilities
+              </li>
+              <li>
+                • <strong>Right to deletion</strong> functionality
+              </li>
+              <li>
+                • <strong>Processing transparency</strong> documentation
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h3 className="text-xl font-bold text-blue-800 mb-3">
+              <strong>CCPA Requirements:</strong>
+            </h3>
+            <ul className="space-y-2 text-sm text-blue-700">
+              <li>
+                • <strong>Data access</strong> request handling
+              </li>
+              <li>
+                • <strong>Opt-out mechanisms</strong> for data sales
+              </li>
+              <li>
+                • <strong>Privacy policy</strong> integration
+              </li>
+              <li>
+                • <strong>Consumer rights</strong> management
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Technical Implementation:</strong>
+        </h3>
+
+        <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg mb-6">
+          <ul className="space-y-2 text-sm text-black">
+            <li>
+              • <strong>First-party data</strong> prioritization
+            </li>
+            <li>
+              • <strong>Server-side tracking</strong> for compliance
+            </li>
+            <li>
+              • <strong>Consent signal</strong> forwarding to platforms
+            </li>
+            <li>
+              • <strong>Data minimization</strong> practices
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg border border-yellow-200 mb-6">
+          <h3 className="text-xl font-bold text-yellow-800 mb-4">
+            <strong>Implementation Checklist:</strong>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Phase 1: Foundation
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Data source identification</li>
+                <li>• API key collection</li>
+                <li>• Infrastructure setup</li>
+                <li>• Basic tracking implementation</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Phase 2: Integration
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Platform connections</li>
+                <li>• Data validation</li>
+                <li>• Identity resolution setup</li>
+                <li>• Initial attribution modeling</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Phase 3: Optimization
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Advanced modeling</li>
+                <li>• Custom reporting</li>
+                <li>• Performance tuning</li>
+                <li>• Team training</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">Phase 4: Scale</h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Additional data sources</li>
+                <li>• Advanced analytics</li>
+                <li>• API integrations</li>
+                <li>• Continuous improvement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Set Up Your Attribution Infrastructure?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Get expert guidance on implementing the right technical foundation
+            for your attribution software
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Build a robust technical foundation for your attribution software
+            with expert guidance and proven implementation strategies.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  59: {
+    id: 59,
+    title: "Leading Attribution Platforms Review: 2025 Comparison",
+    slug: "leading-attribution-platforms-review-2025",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 27, 2025",
+    category: "Marketing",
+    readTime: "15 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/LeadingAttribution.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Leading Attribution Platforms Review: 2025 Comparison</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>1. Trilio.ai - AI-Powered Unified Attribution</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border border-purple-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> Growing ecommerce brands seeking
+            comprehensive attribution with AI insights
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>AI-powered attribution modeling</strong> with automatic
+              optimization
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Real-time multi-touch attribution</strong> across 12+
+              platforms
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Conversational analytics</strong> for instant attribution
+              queries
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Unified customer journey</strong> visualization
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Free tier available</strong> for businesses under $1M GMV
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>
+            • All standard attribution models (first-touch, last-touch, linear,
+            time-decay)
+          </li>
+          <li>
+            • AI-driven data-driven attribution with continuous optimization
+          </li>
+          <li>• Cross-device journey mapping with probabilistic matching</li>
+          <li>
+            • Offline conversion integration (phone calls, in-store purchases)
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Unique Features:</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Attribution wingman:</strong> Ask "Which channel
+                influenced my highest-value customers?"
+              </li>
+              <li>
+                • <strong>Predictive attribution:</strong> Forecast channel
+                performance impact
+              </li>
+            </ul>
+          </div>
+          <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Real-time budget recommendations</strong> based on
+                attribution insights
+              </li>
+              <li>
+                • <strong>Automated anomaly detection</strong> for attribution
+                accuracy
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$0-$699/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">24-48 hours</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">All + AI</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">15 min</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>2. Northbeam - Advanced Multi-Touch Focus</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg border border-indigo-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> Mid-market and enterprise brands needing
+            sophisticated attribution
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Advanced multi-touch attribution</strong> with custom
+              models
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Cross-platform compatibility</strong> beyond just
+              ecommerce
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Detailed customer journey mapping</strong> with touchpoint
+              analysis
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Enterprise-grade data processing</strong> for high volumes
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Comprehensive multi-touch attribution modeling</li>
+          <li>• Custom attribution rules and weighting</li>
+          <li>• Cross-device tracking with advanced matching</li>
+          <li>• B2B attribution for longer sales cycles</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Complex setup requiring technical expertise</li>
+          <li>• Higher learning curve for marketing teams</li>
+          <li>• Premium pricing without free tier options</li>
+          <li>• Limited AI-powered automation</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$300-$2,000/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">1-2 weeks</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">Advanced Multi-Touch</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">2-4 hours</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>3. Triple Whale - Shopify-Native Attribution</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> Shopify merchants wanting integrated
+            attribution
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Deep Shopify integration</strong> with native data access
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>User-friendly interface</strong> for non-technical users
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Strong attribution modeling</strong> for ecommerce
+              journeys
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Automated reporting</strong> with scheduled delivery
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Standard multi-touch attribution models</li>
+          <li>• Shopify-specific customer journey tracking</li>
+          <li>• Email and SMS attribution integration</li>
+          <li>• Cross-channel performance comparison</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Limited to Shopify ecosystem primarily</li>
+          <li>• Less advanced AI capabilities</li>
+          <li>• Higher pricing tiers for advanced features</li>
+          <li>• Limited B2B attribution support</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$50-$1,200/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">48-72 hours</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">Standard Models</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">30-60 min</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>4. HubSpot Attribution Reporting</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-orange-50 to-amber-50 p-4 rounded-lg border border-orange-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> B2B companies using HubSpot CRM ecosystem
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>CRM integration</strong> with sales data connection
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Lead attribution</strong> throughout entire sales funnel
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Marketing and sales alignment</strong> through unified
+              reporting
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Contact-based attribution</strong> for B2B complexity
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Multi-touch attribution across marketing channels</li>
+          <li>• Sales touchpoint integration (calls, meetings, emails)</li>
+          <li>• Lead source and influence tracking</li>
+          <li>• Revenue attribution to marketing activities</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Primarily B2B focused (less ecommerce optimization)</li>
+          <li>• Limited cross-platform attribution outside HubSpot</li>
+          <li>• Requires HubSpot ecosystem investment</li>
+          <li>• Complex setup for external platform integration</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-orange-600 to-amber-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$800-$3,200/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">1-2 weeks</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">Standard B2B</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">4-24 hours</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>5. Google Analytics 4 Enhanced Ecommerce</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> Businesses seeking free attribution with
+            Google ecosystem integration
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Free platform</strong> with comprehensive features
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Google Ads integration</strong> for campaign optimization
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Machine learning attribution</strong> with Google's data
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Cross-device tracking</strong> through Google accounts
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Data-driven attribution with Google's ML algorithms</li>
+          <li>• Cross-channel attribution within Google ecosystem</li>
+          <li>• Enhanced ecommerce tracking for online sales</li>
+          <li>• Goal and conversion attribution analysis</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Limited attribution outside Google ecosystem</li>
+          <li>• Complex setup for advanced attribution</li>
+          <li>• Data sampling for high-traffic websites</li>
+          <li>• Privacy limitations affecting accuracy</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">Free</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">3-5 days</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">Standard + ML</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">24-48 hours</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>6. Adobe Analytics with Attribution IQ</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg border border-red-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> Enterprise companies with complex
+            attribution needs
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Enterprise-grade capabilities</strong> for large
+              organizations
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Advanced segmentation</strong> with attribution analysis
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Custom attribution models</strong> with flexible rules
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Real-time attribution</strong> for immediate insights
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Advanced multi-touch attribution with custom models</li>
+          <li>• Algorithmic attribution using machine learning</li>
+          <li>• Cross-channel attribution across all marketing touchpoints</li>
+          <li>• Revenue and goal attribution with advanced analytics</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• High cost and complexity for smaller businesses</li>
+          <li>• Requires significant technical expertise</li>
+          <li>• Long implementation timelines</li>
+          <li>• Limited integration with newer marketing platforms</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-red-600 to-pink-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$4,800-$48,000+/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">4-8 weeks</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">All + Custom</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">Real-time to 2h</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>7. Ruler Analytics - Revenue Attribution Focus</strong>
+        </h2>
+
+        <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-4 rounded-lg border border-teal-200 mb-4">
+          <p className="text-black font-semibold">
+            <strong>Best for:</strong> B2B companies connecting marketing to
+            closed revenue
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Key Strengths:</strong>
+        </h3>
+
+        <ul className="list-none space-y-3 mb-6 text-black">
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Revenue-focused attribution</strong> connecting marketing
+              to sales
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Phone call tracking</strong> integration for complete
+              attribution
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>CRM connectivity</strong> for sales cycle attribution
+            </span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 text-xl mr-3 mt-1">✓</span>
+            <span>
+              <strong>Marketing qualified lead</strong> attribution analysis
+            </span>
+          </li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Attribution Capabilities:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Revenue attribution throughout entire sales cycle</li>
+          <li>• Multi-touch attribution for B2B customer journeys</li>
+          <li>• Offline conversion tracking (calls, meetings, demos)</li>
+          <li>• Marketing influence on sales outcomes</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Limitations:</strong>
+        </h3>
+
+        <ul className="list-none space-y-2 mb-6 text-black">
+          <li>• Primarily B2B focused with limited ecommerce features</li>
+          <li>• Complex setup for multichannel attribution</li>
+          <li>• Higher pricing for comprehensive features</li>
+          <li>• Limited social media attribution capabilities</li>
+        </ul>
+
+        <div className="bg-gradient-to-r from-teal-600 to-cyan-600 p-4 rounded-lg text-white mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold">$199-$999/month</div>
+              <div className="text-sm opacity-90">Pricing</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">1-2 weeks</div>
+              <div className="text-sm opacity-90">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">B2B Multi-Touch</div>
+              <div className="text-sm opacity-90">Attribution Models</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold">1-4 hours</div>
+              <div className="text-sm opacity-90">Data Updates</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg border border-yellow-200 mb-6">
+          <h3 className="text-xl font-bold text-yellow-800 mb-4">
+            <strong>Platform Selection Guide:</strong>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                For Ecommerce Brands:
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>
+                  • <strong>Trilio.ai:</strong> Best overall with AI
+                  capabilities
+                </li>
+                <li>
+                  • <strong>Triple Whale:</strong> Shopify-specific integration
+                </li>
+                <li>
+                  • <strong>Google Analytics:</strong> Free option for startups
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                For B2B Companies:
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>
+                  • <strong>HubSpot:</strong> CRM ecosystem integration
+                </li>
+                <li>
+                  • <strong>Ruler Analytics:</strong> Revenue-focused
+                  attribution
+                </li>
+                <li>
+                  • <strong>Northbeam:</strong> Advanced multi-touch modeling
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">For Enterprise:</h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>
+                  • <strong>Adobe Analytics:</strong> Enterprise-grade
+                  capabilities
+                </li>
+                <li>
+                  • <strong>Northbeam:</strong> Custom attribution models
+                </li>
+                <li>
+                  • <strong>Trilio.ai:</strong> AI-powered optimization
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">For Startups:</h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>
+                  • <strong>Trilio.ai:</strong> Free tier available
+                </li>
+                <li>
+                  • <strong>Google Analytics:</strong> No cost option
+                </li>
+                <li>
+                  • <strong>Triple Whale:</strong> Affordable Shopify option
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Choose Your Attribution Platform?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Get expert guidance on selecting the right attribution platform for
+            your business needs
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Make an informed decision about your attribution platform with
+            comprehensive comparisons and expert recommendations.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  60: {
+    id: 60,
+    title: "Data Privacy and Compliance in Attribution Software",
+    slug: "data-privacy-compliance-attribution-software",
+    author: "Om Rathod",
+    authorImage:
+      "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    date: "August 28, 2025",
+    category: "Privacy",
+    readTime: "14 min",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/DataPrivacyAttribution.jpeg",
+    content: (
+      <div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <strong>Data Privacy and Compliance in Attribution Software</strong>
+        </h1>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Privacy-First Attribution Strategies</strong>
+        </h2>
+
+        <p className="mb-4 text-black">
+          <strong>Challenges in Privacy-Focused Environment:</strong>
+        </p>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>iOS 14.5+ Impact:</strong>
+        </h3>
+
+        <div className="bg-red-50 border border-red-200 p-6 rounded-lg mb-6">
+          <ul className="list-none space-y-3 text-red-700">
+            <li className="flex items-start">
+              <span className="text-red-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>44% reduction</strong> in Facebook attribution accuracy
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Delayed conversion reporting</strong> up to 7 days
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Limited audience targeting</strong> affecting campaign
+                performance
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Reduced view-through conversion</strong> tracking
+                capabilities
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>Cookie Deprecation Effects:</strong>
+        </h3>
+
+        <div className="bg-orange-50 border border-orange-200 p-6 rounded-lg mb-6">
+          <ul className="list-none space-y-3 text-orange-700">
+            <li className="flex items-start">
+              <span className="text-orange-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Chrome cookie phase-out</strong> by 2025 affecting
+                cross-site tracking
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-orange-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Reduced remarketing</strong> audience sizes and accuracy
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-orange-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Attribution window limitations</strong> from privacy
+                restrictions
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-orange-600 text-xl mr-3 mt-1">⚠</span>
+              <span>
+                <strong>Cross-domain tracking</strong> challenges
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Compliant Attribution Solutions</strong>
+        </h2>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>1. First-Party Data Optimization</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Enhanced Data Collection:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Email capture</strong> at every meaningful touchpoint
+              </li>
+              <li>
+                • <strong>Progressive profiling</strong> through forms and
+                surveys
+              </li>
+              <li>
+                • <strong>Account creation incentives</strong> for deterministic
+                tracking
+              </li>
+              <li>
+                • <strong>Loyalty program integration</strong> for ongoing data
+                collection
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Implementation Strategies:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Value exchange</strong> for data sharing (discounts,
+                content, tools)
+              </li>
+              <li>
+                • <strong>Transparent privacy</strong> policies explaining data
+                usage
+              </li>
+              <li>
+                • <strong>Granular consent</strong> management for different
+                data types
+              </li>
+              <li>
+                • <strong>Easy opt-out</strong> mechanisms for user control
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>2. Server-Side Tracking Implementation</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Conversions API (Facebook/Meta):</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Direct server-to-server</strong> data transmission
+              </li>
+              <li>
+                • <strong>Bypass browser limitations</strong> from privacy
+                settings
+              </li>
+              <li>
+                • <strong>Enhanced attribution accuracy</strong> through
+                first-party data
+              </li>
+              <li>
+                • <strong>Reduced data loss</strong> from ad blockers and
+                privacy tools
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Enhanced Conversions (Google):</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>First-party customer data</strong> enhancement for
+                attribution
+              </li>
+              <li>
+                • <strong>Hashed customer information</strong> for privacy
+                protection
+              </li>
+              <li>
+                • <strong>Improved attribution accuracy</strong> without
+                third-party cookies
+              </li>
+              <li>
+                • <strong>GDPR and CCPA compliant</strong> data handling
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>3. Privacy-Compliant Identity Resolution</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Deterministic Matching:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Email-based identification</strong> across platforms
+              </li>
+              <li>
+                • <strong>Phone number matching</strong> where consented
+              </li>
+              <li>
+                • <strong>Customer ID consistency</strong> across touchpoints
+              </li>
+              <li>
+                • <strong>Account-based tracking</strong> for logged-in
+                experiences
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>Probabilistic Matching:</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Device fingerprinting</strong> within privacy
+                guidelines
+              </li>
+              <li>
+                • <strong>Behavioral pattern analysis</strong> for anonymous
+                users
+              </li>
+              <li>
+                • <strong>Statistical modeling</strong> for cross-device
+                attribution
+              </li>
+              <li>
+                • <strong>Privacy-preserving</strong> algorithms for identity
+                linking
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-black mb-4">
+          <strong>Compliance Framework Implementation</strong>
+        </h2>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>GDPR Compliance Requirements:</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>1. Lawful Basis Documentation</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Legitimate interest</strong> assessments for
+                attribution processing
+              </li>
+              <li>
+                • <strong>Consent management</strong> for non-essential
+                attribution data
+              </li>
+              <li>
+                • <strong>Data processing</strong> purpose documentation
+              </li>
+              <li>
+                • <strong>Retention period</strong> definitions for attribution
+                data
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>2. Individual Rights Support</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Data portability</strong> for attribution insights
+              </li>
+              <li>
+                • <strong>Right to deletion</strong> implementation across
+                attribution systems
+              </li>
+              <li>
+                • <strong>Access requests</strong> handling for attribution data
+              </li>
+              <li>
+                • <strong>Correction procedures</strong> for inaccurate
+                attribution
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-black mb-3">
+          <strong>CCPA Compliance Requirements:</strong>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>1. Consumer Rights Implementation</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Know categories</strong> of attribution data collected
+              </li>
+              <li>
+                • <strong>Know sources</strong> of attribution information
+              </li>
+              <li>
+                • <strong>Deletion requests</strong> for attribution data
+              </li>
+              <li>
+                • <strong>Opt-out mechanisms</strong> for attribution data sales
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg">
+            <h4 className="font-semibold text-black mb-3">
+              <strong>2. Business Process Updates</strong>
+            </h4>
+            <ul className="space-y-2 text-sm text-black">
+              <li>
+                • <strong>Privacy policy</strong> updates reflecting attribution
+                practices
+              </li>
+              <li>
+                • <strong>Consumer request</strong> handling procedures
+              </li>
+              <li>
+                • <strong>Vendor agreements</strong> ensuring compliance
+              </li>
+              <li>
+                • <strong>Regular audits</strong> of attribution data practices
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg border border-yellow-200 mb-6">
+          <h3 className="text-xl font-bold text-yellow-800 mb-4">
+            <strong>Privacy Compliance Checklist:</strong>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">Data Collection</h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Consent management system</li>
+                <li>• First-party data prioritization</li>
+                <li>• Data minimization practices</li>
+                <li>• Transparent data usage</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Technical Implementation
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Server-side tracking</li>
+                <li>• Privacy-preserving algorithms</li>
+                <li>• Secure data transmission</li>
+                <li>• Data encryption</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Compliance Monitoring
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Regular privacy audits</li>
+                <li>• Consent verification</li>
+                <li>• Data retention monitoring</li>
+                <li>• Incident response plans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg border border-red-200 mb-6">
+          <h3 className="text-xl font-bold text-red-800 mb-4">
+            <strong>Privacy Impact Assessment:</strong>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-black mb-2">Risk Assessment</h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Data sensitivity classification</li>
+                <li>• Processing purpose evaluation</li>
+                <li>• Third-party vendor assessment</li>
+                <li>• Cross-border transfer risks</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black mb-2">
+                Mitigation Strategies
+              </h4>
+              <ul className="text-sm space-y-1 text-black">
+                <li>• Privacy-by-design implementation</li>
+                <li>• Regular compliance training</li>
+                <li>• Incident response procedures</li>
+                <li>• Continuous monitoring systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            <strong>Ready to Implement Privacy-Compliant Attribution?</strong>
+          </h2>
+          <p className="text-center mb-6">
+            Get expert guidance on building privacy-first attribution systems
+            that comply with global regulations
+          </p>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-black italic">
+            Build trust with your customers while maintaining attribution
+            accuracy through privacy-compliant data practices.
+          </p>
+        </div>
       </div>
     ),
   },

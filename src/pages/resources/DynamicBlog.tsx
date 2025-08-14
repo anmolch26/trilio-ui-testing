@@ -87,6 +87,7 @@ const DynamicBlog = () => {
             <div className="mb-8">
               <img
                 src={blogPost.featuredImage}
+                fetchPriority="high"
                 alt={blogPost.title}
                 className="w-full rounded-lg shadow-lg"
               />
