@@ -1,0 +1,12 @@
+# robots.txt for https://trilio.ai
+
+User-agent: *
+Allow: /
+
+# If you have staging or preview paths, list them here to disallow
+# Disallow: /preview/
+
+Sitemap: https://trilio.ai/sitemap.xml
+Host: trilio.ai
+
+

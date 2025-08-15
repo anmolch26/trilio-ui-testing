@@ -277,7 +277,7 @@ const Features = () => {
           <FeatureCard
             icon={null}
             title="SKU-Level Drill-Down"
-            description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis."
+            description="Dive deep into product performance. Export detailed SKU data in Excel/PDF format for comprehensive analysis. Compare performance across different time periods, categories, and sales channels effortlessly. Transform raw SKU data into actionable insights that drive strategic business growth."
             index={5}
             backgroundImage="https://assets.channeliq.ai/trilio-landing/products/SkuCard1.png"
             reverse={false}
@@ -285,7 +285,7 @@ const Features = () => {
         </div>
 
         {/* Three feature cards moved below the SKU section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mt-20 md:mt-24">
           <FeatureCard
             icon={
               <svg

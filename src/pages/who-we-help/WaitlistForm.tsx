@@ -69,10 +69,10 @@ const WaitlistForm: React.FC = () => {
 
   return (
     <PageLayout>
-      <main className="pt-24 pb-16">
+      <main className="pt-16 pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
+            <div className="text-center mb-4">
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
                 Join the Waitlist
               </h1>
@@ -81,13 +81,13 @@ const WaitlistForm: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 text-black">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-black">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-6"
+                  className="space-y-4"
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <FormField
                       control={form.control}
                       name="firstName"
@@ -222,7 +222,7 @@ const WaitlistForm: React.FC = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                    className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-2.5 px-6 rounded-lg transition-colors"
                   >
                     Submit
                   </Button>

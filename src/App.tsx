@@ -43,6 +43,7 @@ import WooCommerce from "./pages/solutions/WooCommerce";
 import RedditAds from "./pages/solutions/RedditAds";
 import GA4 from "./pages/solutions/Ga4";
 import Walmart from "./pages/solutions/Walmart";
+import BestBuy from "./pages/solutions/BestBuy";
 import MailChimp from "./pages/solutions/MailChimp";
 import APIDeveloperSupport from "./pages/solutions/APIDeveloperSupport";
 import CustomDashboards from "./pages/solutions/CustomDashboards";
@@ -128,6 +129,7 @@ const App = () => (
             <Route path="/solutions/reddit-ads" element={<RedditAds />} />
             <Route path="/solutions/ga4" element={<GA4 />} />
             <Route path="/solutions/walmart" element={<Walmart />} />
+            <Route path="/solutions/bestbuy" element={<BestBuy />} />
             <Route path="/solutions/mailchimp" element={<MailChimp />} />
             {/* API Developer Support routes */}
             <Route
