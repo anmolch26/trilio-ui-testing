@@ -1475,7 +1475,7 @@ const blogPosts = [
 
       <div className="bg-teal-50 border border-teal-200 rounded-lg p-6 mt-6">
         <h3 className="text-xl font-bold text-teal-800 mb-4">Start Your Free Trilio.ai Trial Today →</h3>
-        <p className="text-teal-700 italic">Join 1,000+ brands already using Trilio.ai to dominate their ecommerce analytics and drive unprecedented growth.</p>
+        <p className="text-teal-700 italic">Join leading brands already using Trilio.ai to dominate their ecommerce analytics and drive unprecedented growth.</p>
       </div>
     `,
   },

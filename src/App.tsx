@@ -22,6 +22,7 @@ import WaitlistForm from "./pages/who-we-help/WaitlistForm";
 import LeadershipTeam from "./pages/about/LeadershipTeam";
 import Careers from "./pages/about/Careers";
 import TrustCenter from "./pages/about/TrustCenter";
+import Faqs from "./pages/about/Faqs";
 import OpenPositions from "./pages/careers/OpenPositions";
 import LifeAtTrilio from "./pages/careers/LifeAtTrilio";
 import InterviewProcess from "./pages/careers/InterviewProcess";
@@ -45,6 +46,8 @@ import GA4 from "./pages/solutions/Ga4";
 import Walmart from "./pages/solutions/Walmart";
 import BestBuy from "./pages/solutions/BestBuy";
 import MailChimp from "./pages/solutions/MailChimp";
+import Target from "./pages/solutions/Target";
+import Rakuten from "./pages/solutions/Rakuten";
 import APIDeveloperSupport from "./pages/solutions/APIDeveloperSupport";
 import CustomDashboards from "./pages/solutions/CustomDashboards";
 import DataIntegrations from "./pages/solutions/DataIntegrations";
@@ -101,6 +104,7 @@ const App = () => (
             <Route path="/about/leadership-team" element={<LeadershipTeam />} />
             <Route path="/about/careers" element={<Careers />} />
             <Route path="/about/trust-center" element={<TrustCenter />} />
+            <Route path="/about/faqs" element={<Faqs />} />
             {/* New about/careers routes for navigation consistency */}
             <Route
               path="/about/careers/open-positions"
@@ -130,6 +134,8 @@ const App = () => (
             <Route path="/solutions/ga4" element={<GA4 />} />
             <Route path="/solutions/walmart" element={<Walmart />} />
             <Route path="/solutions/bestbuy" element={<BestBuy />} />
+            <Route path="/solutions/target" element={<Target />} />
+            <Route path="/solutions/rakuten" element={<Rakuten />} />
             <Route path="/solutions/mailchimp" element={<MailChimp />} />
             {/* API Developer Support routes */}
             <Route

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Play, Volume2, VolumeX } from "lucide-react";
+import { Play, Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-react";
 import SkipBackIcon from "@/assests/SkipBack.png";
 import SkipForwardIcon from "@/assests/SkipForward.png";
 import SkipBack1 from "@/assests/SkipBack1.png";
@@ -12,8 +12,10 @@ const ImageShowcaseSection = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showControls, setShowControls] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const playerRef = useRef<HTMLDivElement>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -80,6 +82,46 @@ const ImageShowcaseSection = () => {
       setIsMuted(!isMuted);
       trackVideoInteraction(isMuted ? "unmute" : "mute", "Trilio Demo Video");
     }
+  };
+
+  const enterFullscreen = async () => {
+    const el: any = playerRef.current;
+    if (!el) return;
+    try {
+      if (el.requestFullscreen) {
+        await el.requestFullscreen();
+      } else if (el.webkitRequestFullscreen) {
+        await el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) {
+        await el.msRequestFullscreen();
+      }
+      setIsFullscreen(true);
+      trackVideoInteraction("enter_fullscreen", "Trilio Demo Video");
+    } catch (err) {
+      // ignore
+    }
+  };
+
+  const exitFullscreen = async () => {
+    const d: any = document as any;
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else if (d.webkitFullscreenElement) {
+        await d.webkitExitFullscreen();
+      } else if (d.msFullscreenElement) {
+        await d.msExitFullscreen();
+      }
+      setIsFullscreen(false);
+      trackVideoInteraction("exit_fullscreen", "Trilio Demo Video");
+    } catch (err) {
+      // ignore
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (isFullscreen) exitFullscreen();
+    else enterFullscreen();
   };
 
   const handleSkipBackward = () => {
@@ -213,6 +255,29 @@ const ImageShowcaseSection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleFsChange = () => {
+      const d: any = document as any;
+      const active = !!(
+        document.fullscreenElement ||
+        d.webkitFullscreenElement ||
+        d.msFullscreenElement
+      );
+      setIsFullscreen(active);
+    };
+    document.addEventListener("fullscreenchange", handleFsChange);
+    document.addEventListener("webkitfullscreenchange", handleFsChange as any);
+    document.addEventListener("msfullscreenchange", handleFsChange as any);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFsChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFsChange as any
+      );
+      document.removeEventListener("msfullscreenchange", handleFsChange as any);
+    };
+  }, []);
+
   // Pause video when section is not in viewport
   useEffect(() => {
     const handleScroll = () => {
@@ -265,7 +330,7 @@ const ImageShowcaseSection = () => {
 
         <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/80">
-            <div className="p-0 bg-white relative">
+            <div className="p-0 bg-white relative" ref={playerRef}>
               <video
                 ref={videoRef}
                 src={TrilioVideo}
@@ -351,6 +416,21 @@ const ImageShowcaseSection = () => {
                       <span className="text-sm font-medium">
                         {formatTime(currentTime)} / {formatTime(duration)}
                       </span>
+                    </div>
+                    <div className="flex items-center">
+                      <button
+                        onClick={toggleFullscreen}
+                        className="hover:bg-white/20 rounded-full p-1 transition-colors"
+                        title={
+                          isFullscreen ? "Exit full screen" : "Full screen"
+                        }
+                      >
+                        {isFullscreen ? (
+                          <Minimize2 className="w-5 h-5" />
+                        ) : (
+                          <Maximize2 className="w-5 h-5" />
+                        )}
+                      </button>
                     </div>
                   </div>
 

@@ -31,6 +31,20 @@ const DataIntegrations = () => {
       categories: ["Most Popular", "Ecommerce"],
     },
     {
+      name: "Rakuten",
+      description: "Marketplace, Orders, Media",
+      logo: "https://assets.channeliq.ai/sidebar/rakuten(1).png",
+      path: "/solutions/rakuten",
+      categories: ["Ecommerce", "Advertising"],
+    },
+    {
+      name: "Target",
+      description: "Retail Media, Orders, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/target.png",
+      path: "/solutions/target",
+      categories: ["Ecommerce", "Advertising"],
+    },
+    {
       name: "Walmart",
       description: "Orders, Catalog, Fees",
       logo: "https://assets.channeliq.ai/sidebar/walmart-sidebar-logo.png",

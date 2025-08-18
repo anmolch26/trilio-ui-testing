@@ -34,7 +34,7 @@ const Newsletter = () => {
             </div>
           </div>
           
-          <h2 className="text-5xl font-display font-bold mb-4 text-left">Join 1,000+ Brands on Trilio.ai</h2>
+          <h2 className="text-5xl font-display font-bold mb-4 text-left">Join leading Brands on Trilio.ai</h2>
           <p className="text-xl mb-10 text-left text-teal-100">
             Get product updates, case studies & industry reports delivered to your inbox
           </p>

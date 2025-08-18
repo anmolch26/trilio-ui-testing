@@ -7,6 +7,7 @@ const AboutDropdown = () => {
     { title: "Trust Center", href: "/about/trust-center" },
     { title: "Careers", href: "/careers/open-positions" },
     { title: "Life at Trilio", href: "/careers/life-at-trilio" },
+    { title: "FAQs", href: "/about/faqs" },
   ];
 
   return (

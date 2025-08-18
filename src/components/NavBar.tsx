@@ -181,6 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
     { title: "Trust Center", href: "/about/trust-center" },
     { title: "Careers", href: "/careers/open-positions" },
     { title: "Life at Trilio", href: "/careers/life-at-trilio" },
+    { title: "FAQs", href: "/about/faqs" },
   ];
 
   // Simplified and consistent styling logic
@@ -213,7 +214,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
 
   const getNavbarBackground = () => {
     if (isScrolled || !isHomepage) {
-      return "bg-white/60 backdrop-blur-md shadow-lg border-b border-gray-100/50";
+      return "bg-white/60 backdrop-blur-md shadow-lg";
     }
     return "bg-transparent";
   };
@@ -221,7 +222,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 pb-0.5 sm:pb-1 md:pb-2 lg:pb-3 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 pb-0 sm:pb-0.5 md:pb-0.5 lg:pb-0 transition-all duration-300",
         getNavbarBackground()
       )}
     >
