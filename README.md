@@ -67,3 +67,27 @@ Simply open [Lovable](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## Blog Content Generation Workflow
+
+This project supports generating large batches of blog posts that integrate with the dynamic slug-based blog pages under `/resources/blog-insights/:blogSlug`.
+
+Scripts:
+
+- Generate raw blog JSON files:
+  - `npm run blogs:generate` → writes `tmp/generated-blogs/*.json`
+- Validate structure and quality:
+  - `npm run blogs:validate`
+- Import into the app (compiles to TS and merges with core data):
+  - `npm run blogs:import`
+- Update sitemap and summary reports:
+  - `npm run blogs:sitemap`
+  - `npm run blogs:indexes`
+
+Steps:
+
+1. `npm run blogs:generate -- --count=200`
+2. `npm run blogs:validate`
+3. `npm run blogs:import`
+4. `npm run blogs:sitemap`
+5. Run the app and browse `/resources/blog-insights`.

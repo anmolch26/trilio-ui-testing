@@ -1,4 +1,5 @@
 import React from "react";
+import { generatedBlogData } from "./generated/generatedBlogData";
 import CACCalculator from "@/components/blog/CACCalculator";
 
 // Blog data structure
@@ -16,7 +17,8 @@ export interface BlogPost {
 }
 
 // Blog data - you can move this to an API or CMS later
-export const blogData: Record<number, BlogPost> = {
+// Core curated blog data (manually authored)
+export const coreBlogData: Record<number, BlogPost> = {
   1: {
     id: 1,
     title: "What is an Ecommerce Analytics Platform?",
@@ -1788,12 +1790,10 @@ export const blogData: Record<number, BlogPost> = {
 
         <div className="mt-8 text-center">
           <a
-            href="https://staging.trilio.ai/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Start Your Free Trial
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -2429,12 +2429,10 @@ export const blogData: Record<number, BlogPost> = {
 
         <div className="mt-8 text-center">
           <a
-            href="https://staging.trilio.ai/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Start Your Free Trial
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -3060,12 +3058,10 @@ export const blogData: Record<number, BlogPost> = {
 
         <div className="mt-8 text-center">
           <a
-            href="https://staging.trilio.ai/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Start Your Free Trial
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -3820,12 +3816,10 @@ export const blogData: Record<number, BlogPost> = {
 
         <div className="mt-8 text-center">
           <a
-            href="https://staging.trilio.ai/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Start Your Free Trial
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -4428,12 +4422,10 @@ export const blogData: Record<number, BlogPost> = {
 
         <div className="mt-8 text-center">
           <a
-            href="https://staging.trilio.ai/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
           >
-            Start Your Free Trial
+            Explore Trilio
             <span className="ml-2">→</span>
           </a>
         </div>
@@ -4461,6 +4453,15 @@ export const blogData: Record<number, BlogPost> = {
           cost-benefit calculations, and real-world example showing 10,456%
           annual return for mid-size retailers.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -4945,6 +4946,15 @@ export const blogData: Record<number, BlogPost> = {
           confidently scale your business while maintaining the highest
           standards of data protection.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -5297,6 +5307,15 @@ export const blogData: Record<number, BlogPost> = {
           that can adapt and evolve with these emerging technologies while
           maintaining the reliability and security that businesses depend on.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -5725,6 +5744,15 @@ export const blogData: Record<number, BlogPost> = {
           competitive advantage that will drive your business forward for years
           to come.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -6188,6 +6216,15 @@ export const blogData: Record<number, BlogPost> = {
           building a competitive advantage that will drive your business forward
           in 2025 and beyond.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -6534,6 +6571,15 @@ export const blogData: Record<number, BlogPost> = {
             incomplete data. In today's competitive eCommerce landscape, the
             cost of poor analytics far exceeds the investment in better tools.
           </p>
+        </div>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
         </div>
       </div>
     ),
@@ -16732,6 +16778,15 @@ utm_term: keyword (for search campaigns)`}
           tracking errors in the first month and unlock material budget
           efficiency within a quarter.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -16922,6 +16977,15 @@ utm_term: keyword (for search campaigns)`}
           and clearer investment signals—because decisions are grounded in
           unified, privacy‑ready data.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17005,6 +17069,15 @@ utm_term: keyword (for search campaigns)`}
           If you’d like help evaluating options, our team at Trilio can share
           best practices and examples from similar brands.
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17146,6 +17219,15 @@ utm_term: keyword (for search campaigns)`}
             tracking.
           </li>
         </ul>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17283,6 +17365,15 @@ utm_term: keyword (for search campaigns)`}
             <strong>Solution:</strong> Calculate separate CACs for each channel
           </li>
         </ul>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17427,6 +17518,15 @@ Payback Period = ______ months`}
             Payback Period = $200 ÷ ($85 × 0.60 × 4/12) = 11.8 months
           </strong>
         </p>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17593,6 +17693,15 @@ Payback Period = ______ months`}
             </tbody>
           </table>
         </div>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17757,6 +17866,15 @@ Agency Fees + Training Costs) ÷ New Customers Acquired`}</pre>
             align on efficient growth.
           </li>
         </ul>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -17895,6 +18013,15 @@ Agency Fees + Training Costs) ÷ New Customers Acquired`}</pre>
             geography with recommended corrective actions.
           </li>
         </ul>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -19513,6 +19640,15 @@ Month 3 Cohort: $78 CAC, 71% 12-month retention`}
             low-yield geos using Trilio heatmaps
           </li>
         </ul>
+        <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
       </div>
     ),
   },
@@ -20667,6 +20803,7 @@ Month 3 Cohort: $78 CAC, 71% 12-month retention`}
             with data-driven marketing decisions.
           </p>
         </div>
+        
       </div>
     ),
   },
@@ -25505,14 +25642,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai transforms your ecommerce data into
             actionable intelligence
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio BI Solutions →
-            </a>
-          </div>
+          <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -25821,14 +25959,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai transforms your ecommerce data into strategic
             intelligence
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio BI Solutions →
-            </a>
-          </div>
+          <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -26296,14 +26435,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai creates a robust BI infrastructure in weeks,
             not months
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio BI Infrastructure →
-            </a>
-          </div>
+          <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -26327,8 +26467,7 @@ if google_attribution_score > 0.9:
     date: "October 5, 2025",
     category: "Business Intelligence",
     readTime: "20 min",
-    featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/KeyBi.png",
+    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/KeyBi.png",
     content: (
       <div>
         <p className="text-black mb-6 leading-relaxed">
@@ -26894,14 +27033,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai transforms complex data into actionable
             intelligence
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio BI Metrics →
-            </a>
-          </div>
+           <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -27807,14 +27947,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai delivers real-time intelligence and automated
             decision-making
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio Real-Time Intelligence →
-            </a>
-          </div>
+          <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -28243,14 +28384,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai delivers cutting-edge business intelligence
             technologies
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-indigo-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio Advanced BI →
-            </a>
-          </div>
+         <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -28907,14 +29049,15 @@ if google_attribution_score > 0.9:
             Follow this phased plan to deliver fast wins in weeks and a durable
             BI capability in months.
           </p>
-          <div className="mt-6">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-indigo-600 hover:bg-gray-100 font-bold text-xl rounded-lg shadow-2xl transform transition-all duration-200 hover:scale-105 hover:shadow-3xl"
-            >
-              Explore Trilio Implementation Guide →
-            </a>
-          </div>
+          <div className="mt-8 text-center">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          >
+            Explore Trilio
+            <span className="ml-2">→</span>
+          </a>
+        </div>
         </div>
 
         <div className="text-center mb-6">
@@ -29132,6 +29275,12 @@ ROI = ($400K + $150K + $75K - $50K) / $50K × 100 = 1,150%`}
       </div>
     ),
   },
+};
+
+// Combined blog dataset = curated + generated
+export const blogData: Record<number, BlogPost> = {
+  ...coreBlogData,
+  ...generatedBlogData,
 };
 
 // Helper functions

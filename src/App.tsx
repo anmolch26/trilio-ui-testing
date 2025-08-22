@@ -42,16 +42,30 @@ import AmazonAds from "./pages/solutions/AmazonAds";
 import Meta from "./pages/solutions/Meta";
 import WooCommerce from "./pages/solutions/WooCommerce";
 import RedditAds from "./pages/solutions/RedditAds";
+import Tableau from "./pages/solutions/Tableau";
 import GA4 from "./pages/solutions/Ga4";
 import Walmart from "./pages/solutions/Walmart";
 import BestBuy from "./pages/solutions/BestBuy";
 import MailChimp from "./pages/solutions/MailChimp";
+import Klaviyo from "./pages/solutions/Klaviyo";
+import Stripe from "./pages/solutions/Stripe";
+import Square from "./pages/solutions/Square";
+import Zendesk from "./pages/solutions/Zendesk";
+import ShipStation from "./pages/solutions/ShipStation";
+import SmileIo from "./pages/solutions/Smile.io";
+import PowerBI from "./pages/solutions/PowerBI";
+import Akeneo from "./pages/solutions/Akeneo";
+import FreshDesk from "./pages/solutions/FreshDesk";
+import Easyship from "./pages/solutions/Easyship";
 import Target from "./pages/solutions/Target";
 import Rakuten from "./pages/solutions/Rakuten";
+import Ebay from "./pages/solutions/Ebay";
+import Etsy from "./pages/solutions/Etsy";
 import APIDeveloperSupport from "./pages/solutions/APIDeveloperSupport";
 import CustomDashboards from "./pages/solutions/CustomDashboards";
 import DataIntegrations from "./pages/solutions/DataIntegrations";
 import OnboardingTraining from "./pages/solutions/OnboardingTraining";
+import HomeDepot from "./pages/solutions/HomeDepot.tsx";
 import Blog from "./pages/Blog";
 import DynamicBlog from "./pages/resources/DynamicBlog";
 
@@ -131,12 +145,26 @@ const App = () => (
             <Route path="/solutions/meta" element={<Meta />} />
             <Route path="/solutions/woocommerce" element={<WooCommerce />} />
             <Route path="/solutions/reddit-ads" element={<RedditAds />} />
+            <Route path="/solutions/tableau" element={<Tableau />} />
             <Route path="/solutions/ga4" element={<GA4 />} />
             <Route path="/solutions/walmart" element={<Walmart />} />
             <Route path="/solutions/bestbuy" element={<BestBuy />} />
             <Route path="/solutions/target" element={<Target />} />
             <Route path="/solutions/rakuten" element={<Rakuten />} />
+            <Route path="/solutions/ebay" element={<Ebay />} />
+            <Route path="/solutions/etsy" element={<Etsy />} />
+            <Route path="/solutions/homedepot" element={<HomeDepot />} />
             <Route path="/solutions/mailchimp" element={<MailChimp />} />
+            <Route path="/solutions/klaviyo" element={<Klaviyo />} />
+            <Route path="/solutions/stripe" element={<Stripe />} />
+            <Route path="/solutions/square" element={<Square />} />
+            <Route path="/solutions/zendesk" element={<Zendesk />} />
+            <Route path="/solutions/shipstation" element={<ShipStation />} />
+            <Route path="/solutions/smile-io" element={<SmileIo />} />
+            <Route path="/solutions/powerbi" element={<PowerBI />} />
+            <Route path="/solutions/akeneo" element={<Akeneo />} />
+            <Route path="/solutions/freshdesk" element={<FreshDesk />} />
+            <Route path="/solutions/easyship" element={<Easyship />} />
             {/* API Developer Support routes */}
             <Route
               path="/solutions/api-developer-support"

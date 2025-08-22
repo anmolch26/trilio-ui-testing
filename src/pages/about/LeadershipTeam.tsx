@@ -21,7 +21,8 @@ const LeadershipTeam = () => {
       name: "Om Rathod",
       title: " Co-founder & CRO ",
       bio: "Revenue growth leader and co-founder driving Trilio's commercial strategy. Om has led the product vision and execution from scratch. With a strong background in SaaS sales and GTM strategy, Om bridges product innovation with real-world customer needs driving both adoption and growth.",
-      image: "https://assets.channeliq.ai/invictus-landing/Leadership/IMG_7723_PhotoGrid (1).png",
+      image:
+        "https://assets.channeliq.ai/invictus-landing/Leadership/IMG_7723_PhotoGrid (1).png",
     },
   ];
 
@@ -207,7 +208,7 @@ const LeadershipTeam = () => {
             We're always looking for talented individuals who share our passion
             for revolutionizing eCommerce analytics.
           </p>
-          <Link to="/about/careers">
+          <Link to="/about/careers/open-positions">
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold">
               View Open Roles
             </Button>

@@ -220,7 +220,7 @@ const Hero = () => {
           <OrbitingCarousel
             images={carouselImages}
             title="Data Universe"
-            description="Trilio integrates with 20+ platforms"
+            description="Trilio integrates with 40+ platforms"
             buttonText="See All Integrations"
           />
         </div>

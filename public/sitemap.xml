@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://trilio.ai/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://trilio.ai/pricing</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trilio.ai/contact</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- Add more canonical routes as needed -->
+  <url><loc>https://www.trilio.ai/resources/blog-insights/future-trends-in-ecommerce-business-intelligence</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/conclusion-transforming-your-business-with-intelligence</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/transform-your-business-intelligence-today</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/real-time-ecommerce-analytics-the-ultimate-guide-to-instant-business-intelligence-in-2025</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/what-is-real-time-ecommerce-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/the-business-impact-of-real-time-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/core-applications-of-real-time-ecommerce-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/essential-metrics-for-real-time-ecommerce-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/implementation-strategies-for-real-time-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/best-practices-for-real-time-analytics-success</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/common-challenges-and-solutions</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/future-trends-in-real-time-ecommerce-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/choosing-the-right-real-time-analytics-solution</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/measuring-success-and-roi</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/conclusion</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/shopify-profit-analytics-the-complete-guide-to-maximizing-store-profitability-in-2025</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/understanding-shopify-profit-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/core-components-of-shopify-profit-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/essential-metrics-for-shopify-profit-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/advanced-shopify-profit-analytics-strategies</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/tools-and-technologies-for-shopify-profit-analytics</loc></url>
+  <url><loc>https://www.trilio.ai/resources/blog-insights/implementation-best-practices</loc></url>
 </urlset>
-
-
