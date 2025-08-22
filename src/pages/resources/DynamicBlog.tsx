@@ -94,7 +94,9 @@ const DynamicBlog = () => {
             </div>
 
             {/* Blog Content - Only the unique content */}
-            <div className="prose prose-lg max-w-none">{blogPost.content}</div>
+            <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
+              {blogPost.content}
+            </div>
           </article>
 
           {/* Navigation */}

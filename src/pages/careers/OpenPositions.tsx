@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,9 @@ import {
 import InternshipsPrograms from "./InternshipsPrograms";
 
 const OpenPositions = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedLocation, setSelectedLocation] = useState("All");
 
@@ -289,9 +292,11 @@ const OpenPositions = () => {
                         <p className="text-gray-600">{job.description}</p>
                       </div>
                       <div className="flex-shrink-0">
-                        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105">
-                          Apply Now
-                        </Button>
+                        <a href="mailto:career@trilio.ai">
+                          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105">
+                            Apply Now
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -312,7 +317,7 @@ const OpenPositions = () => {
             We're always interested in connecting with talented individuals.
             Send us your resume and let's start a conversation.
           </p>
-          <a href="mailto:careers@trilio.ai">
+          <a href="mailto:career@trilio.ai">
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105">
               Drop Us Your Resume
             </Button>

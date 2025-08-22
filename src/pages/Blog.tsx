@@ -1560,7 +1560,7 @@ const Blog = () => {
 
             {/* Blog Content - Simple text format */}
             <div
-              className="text-lg text-gray-900 leading-relaxed space-y-6"
+              className="text-lg text-black leading-relaxed space-y-6"
               style={{ fontFamily: "Antarctica, Arial, sans-serif" }}
               dangerouslySetInnerHTML={{ __html: currentPost.content }}
             />

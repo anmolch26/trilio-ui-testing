@@ -9,13 +9,8 @@ import TikTokImage from "@/assests/TikTokImage.png";
 
 const DataIntegrations = () => {
   const integrations = [
-    {
-      name: "TikTok",
-      description: "Sales, Customer Data",
-      logo: TikTokImage,
-      path: "/solutions/tiktok",
-      categories: ["Most Popular", "Advertising"],
-    },
+   
+    
     {
       name: "Shopify",
       description: "Storefront, Orders, Customers",
@@ -31,20 +26,6 @@ const DataIntegrations = () => {
       categories: ["Most Popular", "Ecommerce"],
     },
     {
-      name: "Rakuten",
-      description: "Marketplace, Orders, Media",
-      logo: "https://assets.channeliq.ai/sidebar/rakuten(1).png",
-      path: "/solutions/rakuten",
-      categories: ["Ecommerce", "Advertising"],
-    },
-    {
-      name: "Target",
-      description: "Retail Media, Orders, Analytics",
-      logo: "https://assets.channeliq.ai/sidebar/target.png",
-      path: "/solutions/target",
-      categories: ["Ecommerce", "Advertising"],
-    },
-    {
       name: "Walmart",
       description: "Orders, Catalog, Fees",
       logo: "https://assets.channeliq.ai/sidebar/walmart-sidebar-logo.png",
@@ -52,18 +33,18 @@ const DataIntegrations = () => {
       categories: ["Ecommerce"],
     },
     {
-      name: "WooCommerce",
-      description: "Store Data, Analytics",
-      logo: "https://assets.channeliq.ai/sidebar/woocommerce-sidebar.png",
-      path: "/solutions/woocommerce",
+      name: "Best Buy",
+      description: "Transactions, Disputes",
+      logo: "https://assets.channeliq.ai/sidebar/bestbuy-sidebar-logo.png",
+      path: "/solutions/bestbuy",
       categories: ["Ecommerce"],
     },
     {
-      name: "Google Ads",
-      description: "Campaigns, Spend, Conversions",
-      logo: "https://assets.channeliq.ai/sidebar/google-ad-sidebar-logo.png",
-      path: "/solutions/google-ads",
-      categories: ["Most Popular", "Advertising"],
+      name: "Home Depot",
+      description: "Retail Media, Marketplace, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/home-depot-sidebar-logo.png",
+      path: "/solutions/homedepot",
+      categories: ["Ecommerce"],
     },
     {
       name: "Amazon Ads",
@@ -71,6 +52,13 @@ const DataIntegrations = () => {
       logo: "https://assets.channeliq.ai/sidebar/amazon-ads-sidebar.png",
       path: "/solutions/amazon-ads",
       categories: ["Advertising"],
+    },
+    {
+      name: "Google Ads",
+      description: "Campaigns, Spend, Conversions",
+      logo: "https://assets.channeliq.ai/sidebar/google-ad-sidebar-logo.png",
+      path: "/solutions/google-ads",
+      categories: ["Most Popular", "Advertising"],
     },
     {
       name: "Reddit Ads",
@@ -87,6 +75,13 @@ const DataIntegrations = () => {
       categories: ["Advertising"],
     },
     {
+      name: "Klaviyo",
+      description: "Email, SMS, Segments",
+      logo: "https://assets.channeliq.ai/sidebar/klaviyo-logo.png",
+      path: "/solutions/klaviyo",
+      categories: ["Email / Marketing Automation"],
+    },
+    {
       name: "Mailchimp",
       description: "Campaigns, Audiences",
       logo: "https://assets.channeliq.ai/sidebar/mailchimp-sidebar-logo.png",
@@ -101,28 +96,139 @@ const DataIntegrations = () => {
       categories: ["Analytics"],
     },
     {
-      name: "Best Buy",
-      description: "Transactions, Disputes",
-      logo: "https://assets.channeliq.ai/sidebar/bestbuy-sidebar-logo.png",
-      path: "/solutions/bestbuy",
-      categories: ["Payments", "Other"],
+      name: "TikTok",
+      description: "Sales, Customer Data",
+      logo: "https://assets.channeliq.ai/sidebar/tiktok-sidebar.png",
+      path: "/solutions/tiktok",
+      categories: ["Most Popular", "Ecommerce"],
     },
+    
+    {
+      name: "eBay",
+      description: "Marketplace, Retail Media, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/Ebay-Sidebar.png",
+      path: "/solutions/ebay",
+      categories: ["Ecommerce"],
+    },
+   
+    {
+      name: "WooCommerce",
+      description: "Store Data, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/woocommerce-sidebar.png",
+      path: "/solutions/woocommerce",
+      categories: ["Ecommerce"],
+    },
+   
+    {
+      name: "Etsy",
+      description: "Marketplace, Retail Media, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/Etsy-Sidebar.png",
+      path: "/solutions/etsy",
+      categories: ["Ecommerce"],
+    },
+    {
+      name: "Tableau",
+      description: "BI & Dashboards",
+      logo: "https://assets.channeliq.ai/sidebar/tableau-sidebar.png",
+      path: "/solutions/tableau",
+      categories: ["Business Intelligence"],
+    },
+    {
+      name: "Rakuten",
+      description: "Marketplace, Orders, Media",
+      logo: "https://assets.channeliq.ai/sidebar/rakuten(1).png",
+      path: "/solutions/rakuten",
+      categories: ["Other"],
+    },
+    {
+      name: "Target",
+      description: "Retail Media, Orders, Analytics",
+      logo: "https://assets.channeliq.ai/sidebar/target.png",
+      path: "/solutions/target",
+      categories: ["Advertising"],
+    },
+    {
+      name: "Stripe",
+      description: "Payments, Billing, Revenue",
+      logo: "https://assets.channeliq.ai/sidebar/Stripe-Sidebar.png",
+      path: "/solutions/stripe",
+      categories: ["Payments"],
+    },
+    {
+      name: "Square",
+      description: "POS, Payments, Invoicing",
+      logo: "https://assets.channeliq.ai/sidebar/Square-Sidebar.png",
+      path: "/solutions/square",
+      categories: ["Payments"],
+    },
+   
+    {
+      name: "Zendesk",
+      description: "Support, CX, Help Center",
+      logo: "https://assets.channeliq.ai/sidebar/Zendesk-Sidebar.png",
+      path: "/solutions/zendesk",
+      categories: ["Customer Support"],
+    },
+    {
+      name: "Freshdesk",
+      description: "Support, SLAs, Knowledge",
+      logo: "https://assets.channeliq.ai/sidebar/FreshDesk-Sidebar.png",
+      path: "/solutions/freshdesk",
+      categories: ["Customer Support"],
+    },
+    {
+      name: "ShipStation",
+      description: "Shipping, Labels, Tracking",
+      logo: "https://assets.channeliq.ai/sidebar/ShipStation-Sidebar.png",
+      path: "/solutions/shipstation",
+      categories: ["Fulfilment / 3PL"],
+    },
+    {
+      name: "Easyship",
+      description: "Rates, Duties/Taxes, Automation",
+      logo: "https://assets.channeliq.ai/sidebar/easyship-Sidebar.png",
+      path: "/solutions/easyship",
+      categories: ["Fulfilment / 3PL"],
+    },
+    {
+      name: "Smile.io",
+      description: "Loyalty, VIP Tiers, Referrals",
+      logo: "https://assets.channeliq.ai/sidebar/Smile-Sidebar.png",
+      path: "/solutions/smile-io",
+      categories: ["Loyalty / Reviews / Referrals"],
+    },
+    {
+      name: "Power BI",
+      description: "Dashboards, Reports, DAX",
+      logo: "https://assets.channeliq.ai/sidebar/PowerBI-Sidebar.png",
+      path: "/solutions/powerbi",
+      categories: ["Business Intelligence"],
+    },
+    {
+      name: "Akeneo",
+      description: "PIM, PX, Syndication",
+      logo: "https://assets.channeliq.ai/sidebar/Akeneo-Sidebar.png",
+      path: "/solutions/akeneo",
+      categories: ["Analytics", "Operations"],
+    },
+    
+    
   ];
 
   const categories = [
     "All",
     "Most Popular",
+    "Ecommerce",
     "Advertising",
     "Analytics",
     "Business Intelligence",
-    "Customer Support",
-    "Ecommerce",
+    "Payments",
     "Email / Marketing Automation",
+    "Customer Support",
     "Fulfilment / 3PL",
     "Loyalty / Reviews / Referrals",
     "Operations",
     "Other",
-    "Payments",
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -175,7 +281,7 @@ const DataIntegrations = () => {
                   Connect All Your Commerce Data in Minutes
                 </p>
                 <p className="text-lg text-gray-600 max-w-3xl mb-0">
-                  Trilio integrates with 20+ platforms including Amazon,
+                  Trilio integrates with 40+ platforms including Amazon,
                   Shopify, Meta, Google Ads, Klaviyo, and more.
                 </p>
               </div>

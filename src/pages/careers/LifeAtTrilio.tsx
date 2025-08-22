@@ -199,7 +199,29 @@ const LifeAtTrilio = () => {
               Our Team in Action
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/team-members/Abhishek+(2).jpg"
+                  alt="Abhishek"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/team-members/Anmol.JPG"
+                  alt="Anmol"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/team-members/Amey.jpg"
+                  alt="Amey"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {[1, 2, 3, 4, 5, 6, 7].map((i) => (
                 <div
                   key={i}
                   className="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300"
