@@ -1,7 +1,7 @@
 import React from "react";
 const SpecsSection = () => {
   return (
-    <section className="w-full py-6 sm:py-10 " id="capabilities">
+    <section className="w-full py-6 sm:py-10 mb-24 md:mb-32" id="capabilities">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Header with badge and line */}
         <div className="flex items-center gap-4 mb-8 sm:mb-16">
@@ -13,203 +13,116 @@ const SpecsSection = () => {
           <div className="flex-1 h-[1px] bg-gray-300"></div>
         </div>
 
-        {/* Grid of 4 capability cards with enhanced design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="group relative bg-white rounded-2xl p-8 text-center shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-gray-100 hover:border-orange-200/50 cursor-pointer overflow-hidden">
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-            {/* Animated background glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-pulse-100 to-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-orange-200/50">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-50 group-hover:to-purple-50 transition-all duration-300">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <path
-                      d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
-                      stroke="#FC4D0A"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                      className="group-hover:stroke-purple-600 transition-colors duration-300"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
-                Real-time ROAS & CAC
-              </h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
-                Monitor return on ad spend and customer acquisition costs across
-                all channels in real-time.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-white rounded-2xl p-8 text-center shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-gray-100 hover:border-purple-200/50 cursor-pointer overflow-hidden">
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-            {/* Animated background glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-pulse-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-purple-200/50">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-purple-50 group-hover:to-blue-50 transition-all duration-300">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <rect
-                      x="3"
-                      y="4"
-                      width="18"
-                      height="16"
-                      rx="2"
-                      stroke="#8B5CF6"
-                      strokeWidth="2"
-                      className="group-hover:stroke-blue-600 transition-colors duration-300"
-                    />
-                    <path
-                      d="M7 8h10M7 12h6"
-                      stroke="#8B5CF6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      className="group-hover:stroke-blue-600 transition-colors duration-300"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
-                Unified Dashboard
-              </h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
-                One dashboard to rule them all - Shopify, Amazon, Meta, Google,
-                Klaviyo and more.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-white rounded-2xl p-8 text-center shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-gray-100 hover:border-green-200/50 cursor-pointer overflow-hidden">
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-            {/* Animated background glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-pulse-100 to-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-green-200/50">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-green-50 group-hover:to-teal-50 transition-all duration-300">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <path
-                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                      stroke="#10B981"
-                      strokeWidth="2"
-                      className="group-hover:stroke-teal-600 transition-colors duration-300"
-                    />
-                    <polyline
-                      points="14,2 14,8 20,8"
-                      stroke="#10B981"
-                      strokeWidth="2"
-                      className="group-hover:stroke-teal-600 transition-colors duration-300"
-                    />
-                    <line
-                      x1="16"
-                      y1="13"
-                      x2="8"
-                      y2="13"
-                      stroke="#10B981"
-                      strokeWidth="2"
-                      className="group-hover:stroke-teal-600 transition-colors duration-300"
-                    />
-                    <line
-                      x1="16"
-                      y1="17"
-                      x2="8"
-                      y2="17"
-                      stroke="#10B981"
-                      strokeWidth="2"
-                      className="group-hover:stroke-teal-600 transition-colors duration-300"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-green-600 transition-colors duration-300">
-                Custom BI Reports
-              </h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
-                Build automated custom reports with drag-and-drop functionality
-                on any metric.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-white rounded-2xl p-8 text-center shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-gray-100 hover:border-blue-200/50 cursor-pointer overflow-hidden">
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-            {/* Animated background glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-pulse-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-200/50">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-50 group-hover:to-indigo-50 transition-all duration-300">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#3B82F6"
-                      strokeWidth="2"
-                      className="group-hover:stroke-indigo-600 transition-colors duration-300"
-                    />
-                    <polyline
-                      points="12,6 12,12 16,14"
-                      stroke="#3B82F6"
-                      strokeWidth="2"
-                      className="group-hover:stroke-indigo-600 transition-colors duration-300"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                60-Second Insights
-              </h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
-                Get actionable AI-powered insights and recommendations in under
-                60 seconds.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Main content with text mask image */}
+        <div className="max-w-7xl mx-auto space-y-48">
+          {/* First Section - Dashboard */}
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            {/* Dashboard Image */}
+            <div className="w-full max-w-4xl lg:flex-shrink-0 -ml-16">
+              <div className="relative">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/products/Dashboard13 (1).png"
+                  alt="Trilio Dashboard - Unified ecommerce analytics platform"
+                  className="w-full h-auto object-contain"
+                  style={{ minHeight: "400px", maxHeight: "600px" }}
+                />
+              </div>
+            </div>
+
+            {/* Dashboard Text content */}
+            <div className="text-left flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
+                Single Pane of Glass Command Center
+                {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  {" "}
+                  All Your Data
+                </span> */}
+              </h2>
+              <p className="text-base text-gray-300 leading-relaxed">
+                Consolidate all your ecommerce data from Amazon, Shopify, Google
+                Ads, Meta, and more into one unified dashboard. Get real-time
+                KPIs, cross-channel performance metrics, and actionable insights
+                without jumping between 15+ different platforms.
+              </p>
+            </div>
+          </div>
+
+          {/* Second Section - Conversational AI Wingman */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16">
+            {/* Wing Image */}
+            <div className="w-full max-w-3xl lg:flex-shrink-0">
+              <div className="relative">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/products/Insights2 (1).png"
+                  alt="Trilio Conversational AI Wingman - Ask questions and get instant answers"
+                  className="w-full h-auto object-contain"
+                  style={{ minHeight: "500px", maxHeight: "600px" }}
+                />
+              </div>
+            </div>
+
+            {/* Wingman Text content */}
+            <div className="text-left flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
+                AI-Driven Intelligence That Acts
+                {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  {" "}
+                  AI-Powered Insights and Actions
+                </span> */}
+              </h2>
+              <p className="text-base text-gray-300 leading-relaxed mb-4">
+                Move beyond static reports with AI that continuously analyzes
+                your data patterns and automatically surfaces critical insights.
+                Get predictive recommendations, anomaly detection, and suggested
+                actions that directly impact your revenue and ROAS.
+              </p>
+
+              {/* AI Wingman Features */}
+            </div>
+          </div>
+
+          {/* Third Section - Custom BI */}
+          <div
+            className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0 "
+            style={{ marginTop: "5rem",  marginBottom: "-4rem"}}
+          >
+            {/* Custom BI Image */}
+            <div className="w-full max-w-6xl lg:flex-shrink-0 -m-24 p-0">
+              <div className="relative">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/products/impact1 (1).png"
+                  alt="Trilio Custom BI - Create your own view with easy options"
+                  className="w-full h-auto object-contain"
+                  style={{ minHeight: "0px", maxHeight: "800px" }}
+                />
+              </div>
+            </div>
+
+            {/* Custom BI Text content */}
+            <div className="text-left flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
+                Promotion & Launch Impact Tracker
+                {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  {" "}
+                  Custom View
+                </span> */}
+              </h2>
+              <p className="text-base text-gray-300 leading-relaxed">
+                Never wonder 'did that campaign actually work?' again. Track
+                every promotion, product launch, and marketing campaign with
+                before/after analysis and automatic KPI impact measurement. Turn
+                every marketing initiative into a data-driven learning
+                opportunity.
+              </p>
+            </div>
+          </div>
+
+          {/* Fourth Section - SKU-Level Drill-Down */}
+        </div>
       </div>
+
+      {/* Spacer for gap between sections */}
+      <div className="h-32 md:h-38"></div>
     </section>
   );
 };

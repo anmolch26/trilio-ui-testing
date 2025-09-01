@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Target, Lightbulb, Users, Shield, Zap } from "lucide-react";
@@ -280,7 +280,7 @@ const LifeAtTrilio = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

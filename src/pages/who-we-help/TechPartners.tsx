@@ -12,6 +12,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LegacyFooter from "@/components/LegacyFooter";
 
 const TechPartners = () => {
   return (
@@ -258,7 +259,7 @@ const TechPartners = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

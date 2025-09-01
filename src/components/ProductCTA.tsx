@@ -5,6 +5,7 @@ interface ProductCTAProps {
   title: string;
   description: string;
   buttonText: string;
+  buttonLink?: string;
   gradientColors?: string;
 }
 
@@ -12,6 +13,7 @@ const ProductCTA: React.FC<ProductCTAProps> = ({
   title,
   description,
   buttonText,
+  buttonLink,
   gradientColors = "bg-gradient-to-br from-teal-500 to-teal-600",
 }) => {
   return (
@@ -26,7 +28,7 @@ const ProductCTA: React.FC<ProductCTAProps> = ({
         <p className="text-xl text-teal-100 mb-8">{description}</p>
         <ThemeButton
           variant="secondary"
-          href="/contact-form"
+          href={buttonLink || "/contact-form"}
           showArrow={true}
           className="bg-white text-black hover:bg-gray-100 border-white hover:border-gray-100 hover:text-black"
         >

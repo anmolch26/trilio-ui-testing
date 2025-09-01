@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Navbar from '@/components/NavBar';
-import Footer from '@/components/Footer';
+import LegacyFooter from "@/components/LegacyFooter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -191,7 +191,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

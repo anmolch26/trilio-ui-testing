@@ -20803,7 +20803,6 @@ Month 3 Cohort: $78 CAC, 71% 12-month retention`}
             with data-driven marketing decisions.
           </p>
         </div>
-        
       </div>
     ),
   },
@@ -25643,14 +25642,14 @@ if google_attribution_score > 0.9:
             actionable intelligence
           </p>
           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -25960,14 +25959,14 @@ if google_attribution_score > 0.9:
             intelligence
           </p>
           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -26436,14 +26435,14 @@ if google_attribution_score > 0.9:
             not months
           </p>
           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -27033,15 +27032,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai transforms complex data into actionable
             intelligence
           </p>
-           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -27948,14 +27947,14 @@ if google_attribution_score > 0.9:
             decision-making
           </p>
           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -28384,15 +28383,15 @@ if google_attribution_score > 0.9:
             Discover how Trilio.ai delivers cutting-edge business intelligence
             technologies
           </p>
-         <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+          <div className="mt-8 text-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">
@@ -29050,14 +29049,14 @@ if google_attribution_score > 0.9:
             BI capability in months.
           </p>
           <div className="mt-8 text-center">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          >
-            Explore Trilio
-            <span className="ml-2">→</span>
-          </a>
-        </div>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            >
+              Explore Trilio
+              <span className="ml-2">→</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center mb-6">

@@ -214,7 +214,7 @@ const Hero = () => {
 
         {/* Orbiting Carousel Section */}
         <div
-          className="mt-8 opacity-0 animate-fade-in"
+          className="mt-0 sm:mt-4 opacity-0 animate-fade-in"
           style={{ animationDelay: "1.1s" }}
         >
           <OrbitingCarousel

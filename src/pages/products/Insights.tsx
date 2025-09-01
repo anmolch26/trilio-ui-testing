@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
@@ -134,7 +134,7 @@ const Insights = () => {
           gradientColors="bg-gradient-to-br from-purple-500 to-blue-600"
         />
       </main>
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

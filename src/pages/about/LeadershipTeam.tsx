@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Globe, Calendar, Award, Plus } from "lucide-react";
@@ -216,7 +216,7 @@ const LeadershipTeam = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

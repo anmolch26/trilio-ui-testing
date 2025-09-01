@@ -1,8 +1,6 @@
 import React from "react";
 import type { BlogPost } from "../blogData";
 
-// This file is auto-generated. Do not edit manually.
-
 export const generatedBlogData: Record<number, BlogPost> = {
   78: {
     id: 78,
@@ -60,7 +58,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "April 5, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-80.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-80.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -106,7 +105,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "June 7, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-82.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-82.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -128,7 +128,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "July 9, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-83.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-83.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -219,7 +220,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 10, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-87.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-87.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -241,7 +243,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 10, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-88.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-88.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -263,7 +266,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 10, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-89.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-89.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -285,7 +289,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 10, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-90.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-90.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -307,7 +312,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 10, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-91.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-91.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -329,7 +335,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-92.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-92.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -375,7 +382,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-94.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-94.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -397,7 +405,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-95.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-95.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -419,7 +428,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-96.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-96.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -441,7 +451,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-97.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-97.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -486,7 +497,8 @@ export const generatedBlogData: Record<number, BlogPost> = {
     date: "August 21, 2025",
     category: "E-commerce",
     readTime: "2 min",
-    featuredImage: "https://assets.channeliq.ai/trilio-landing/Blogs/id-99.jpeg",
+    featuredImage:
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-99.jpeg",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -498,4 +510,4 @@ export const generatedBlogData: Record<number, BlogPost> = {
       </div>
     ),
   },
-};
+}

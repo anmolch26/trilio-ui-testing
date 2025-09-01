@@ -100,8 +100,8 @@ const OptimizedPurposeSection = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-teal-400/30 to-purple-500/30 z-10" />
-                  <div className="absolute inset-0 z-0 bg-transparent" />
+                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-teal-400/50 to-purple-500/50 z-10" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-br from-teal-400/20 to-purple-500/20" />
                   {/* Card content by index */}
                   {idx === 0 && (
                     <>

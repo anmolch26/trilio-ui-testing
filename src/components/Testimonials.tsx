@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 interface TestimonialProps {
   content: string;
   author: string;
@@ -47,14 +47,9 @@ const TestimonialCard = ({
   backgroundImage = "/background-section1.png",
 }: TestimonialProps) => {
   return (
-    <div
-      className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden"
-      style={{
-        backgroundImage: `url('${backgroundImage}')`,
-      }}
-    >
+    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 h-full flex flex-col justify-between text-white relative overflow-hidden border border-white/20">
       <div className="relative z-0">
-        <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
+        <p className="text-xl mb-8 font-medium leading-relaxed">{`"${content}"`}</p>
         <div>
           <h4 className="font-semibold text-xl">{author}</h4>
           <p className="text-white/80">{role}</p>
@@ -65,12 +60,41 @@ const TestimonialCard = ({
 };
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Add custom CSS for hiding scrollbars
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -500, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 500, behavior: "smooth" });
+    }
+  };
+
   return (
-    <section
-      className="pt-12 pb-2  relative"
-      id="testimonials"
-      ref={sectionRef}
-    >
+    <section className="pt-12 pb-2 relative" id="testimonials" ref={sectionRef}>
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
@@ -82,17 +106,70 @@ const Testimonials = () => {
           What brands say about Trilio
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              content={testimonial.content}
-              author={testimonial.author}
-              role={testimonial.role}
-              gradient={testimonial.gradient}
-              backgroundImage={testimonial.backgroundImage}
-            />
-          ))}
+        <div className="relative">
+          {/* Left Arrow */}
+          <button
+            onClick={scrollLeft}
+            className="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10 bg-black/20 backdrop-blur-sm border border-white/30 rounded-full p-3 hover:bg-black/40 hover:border-white/50 transition-all duration-300 group shadow-lg hidden md:block"
+            aria-label="Scroll left"
+          >
+            <svg
+              className="w-6 h-6 text-white group-hover:text-blue-400 transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={scrollRight}
+            className="absolute -right-16 top-1/2 transform -translate-y-1/2 z-10 bg-black/20 backdrop-blur-sm border border-white/30 rounded-full p-3 hover:bg-black/40 hover:border-white/50 transition-all duration-300 group shadow-lg hidden md:block"
+            aria-label="Scroll right"
+          >
+            <svg
+              className="w-6 h-6 text-white group-hover:text-blue-400 transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Horizontal Scrollable Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 pl-8 pr-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-full md:w-96 lg:w-[28rem]"
+              >
+                <TestimonialCard
+                  content={testimonial.content}
+                  author={testimonial.author}
+                  role={testimonial.role}
+                  gradient={testimonial.gradient}
+                  backgroundImage={testimonial.backgroundImage}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

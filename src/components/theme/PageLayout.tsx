@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -23,7 +24,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     <div className={`min-h-screen ${backgroundClass} ${className}`}>
       <Navbar />
       <main className="relative z-10 pt-16">{children}</main>
-      <Footer />
+      {location.pathname === "/" ? <Footer /> : <LegacyFooter />}
     </div>
   );
 };
