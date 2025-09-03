@@ -81,7 +81,7 @@ const DetailsSection = () => {
               }}
             >
               <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4 absolute top-6 left-6">
-                Start free trial
+                Join waitlist
               </div>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold">
                 How it works

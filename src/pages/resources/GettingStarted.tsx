@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
 
 const GettingStarted = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
@@ -17,7 +20,7 @@ const GettingStarted = () => {
               Your comprehensive guide to setting up and using Trilio's advanced
               analytics platform
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="bg-white px-6 py-3 rounded-full shadow-sm border">
                 <span className="text-sm font-medium text-gray-700">
                   ⏱️ 5 min setup
@@ -33,6 +36,18 @@ const GettingStarted = () => {
                   🚀 No coding required
                 </span>
               </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
+                onClick={() => {
+                  navigate("/who-we-help/waitlist");
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Join Waitlist
+              </button>
             </div>
           </div>
         </section>
