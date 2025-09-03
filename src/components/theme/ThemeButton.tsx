@@ -29,15 +29,15 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
   rel,
 }) => {
   const baseClasses =
-    "font-semibold transition-all duration-300 flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-teal-500/20 animated-border";
+    "font-semibold transition-all duration-300 flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-[#01b5af]/20 animated-border";
 
   const variantClasses = {
     primary:
-      "relative overflow-hidden bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105",
+      "relative overflow-hidden bg-gradient-to-r from-[#01b5af] to-[#019a94] hover:from-[#019a94] hover:to-[#018a84] text-white border-0 shadow-lg hover:shadow-xl hover:shadow-[#01b5af]/30 hover:scale-105",
     secondary:
-      "relative overflow-hidden border-2 border-teal-300/60 bg-white/80 backdrop-blur-sm text-teal-700 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 hover:bg-white",
+      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-white/80 backdrop-blur-sm text-[#047e7b] hover:border-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:scale-105 hover:bg-white",
     outline:
-      "relative overflow-hidden border-2 border-teal-300/60 bg-transparent text-teal-600 hover:bg-teal-50 hover:border-teal-400 hover:text-teal-700 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105",
+      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-transparent text-[#01b5af] hover:bg-[#01b5af]/10 hover:border-[#01b5af] hover:text-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:scale-105",
   };
 
   const sizeClasses = {
@@ -63,12 +63,12 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
       )}
       {variant === "primary" && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#01b5af] to-[#019a94] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700 skew-x-12"></div>
         </>
       )}
       {(variant === "secondary" || variant === "outline") && (
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-50 to-teal-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#01b5af]/10 to-[#01b5af]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       )}
     </>
   );

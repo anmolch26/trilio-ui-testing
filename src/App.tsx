@@ -31,6 +31,7 @@ import BlogInsights from "./pages/resources/BlogInsights";
 import CaseStudies from "./pages/resources/CaseStudies";
 import GuidesReports from "./pages/resources/GuidesReports";
 import HelpCenter from "./pages/resources/HelpCenter";
+import GettingStarted from "./pages/resources/GettingStarted";
 import DeveloperDocs from "./pages/resources/DeveloperDocs";
 import NewsletterSignup from "./pages/resources/NewsletterSignup";
 import Pricing from "./pages/Pricing";
@@ -232,6 +233,10 @@ const App = () => (
               element={<GuidesReports />}
             />
             <Route path="/resources/help-center" element={<HelpCenter />} />
+            <Route
+              path="/resources/getting-started"
+              element={<GettingStarted />}
+            />
             <Route
               path="/resources/developer-docs"
               element={<DeveloperDocs />}

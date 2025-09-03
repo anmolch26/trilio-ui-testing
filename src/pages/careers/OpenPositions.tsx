@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -495,7 +495,7 @@ const OpenPositions = () => {
       {/* Internships & Programs Section */}
       <InternshipsPrograms />
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

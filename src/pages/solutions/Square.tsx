@@ -14,15 +14,16 @@ const Square = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-white/80">
-            SQUARE POINT OF SALE & PAYMENTS
+            SQUARE INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            IN-STORE, ONLINE, AND INVOICING—ALL IN ONE
+            Bring POS and online sales into one truth
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            Connect Square POS, Payments, Invoices, and Online Checkout to
-            centralize sales, customers, and inventory. Power real-time revenue
-            insights across locations and channels.
+            Trilio connects to Square to stream transactions, orders, items,
+            refunds, tips, and inventory movements. We stitch data across
+            locations and channels so operations, finance, and marketing make
+            decisions from the same numbers.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,7 +31,7 @@ const Square = () => (
             href="/contact-form"
             className="bg-white text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-white/90 transition-colors"
           >
-            Get in Touch
+            Connect Square
           </ThemeButton>
         </div>
         {/* Right: Hero Image (placeholder) */}
@@ -45,16 +46,16 @@ const Square = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Counter to Commerce: Square Success Stories
+          What Trilio syncs from Square
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Unify in-store and online sales, track inventory in real-time, and
-          streamline operations with Square. Optimize staff performance, reduce
-          friction at checkout, and grow repeat revenue.
+          We backfill history and listen to webhooks in near real time. Your
+          POS, online, and invoicing events are modeled and joined with
+          customers and products for end‑to‑end analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
@@ -70,25 +71,25 @@ const Square = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  POS, Online Checkout, and Invoicing
+                  Transactions, Orders, Line Items, Refunds & Tips
                 </span>
                 <span className="text-3xl text-black font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Inventory, Catalog, and Modifiers
+                  Inventory Adjustments, Catalog, Variants & Modifiers
                 </span>
                 <span className="text-3xl text-black font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Customers, Loyalty, and Gift Cards
+                  Customers, Loyalty, Gift Cards & Discounts
                 </span>
                 <span className="text-3xl text-black font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Appointments, Teams, and Timecards
+                  Devices, Locations, Teams & Timecards
                 </span>
                 <span className="text-3xl text-black font-bold">+</span>
               </div>
@@ -98,14 +99,14 @@ const Square = () => (
       </div>
     </section>
 
-    {/* Square Platform Section */}
+    {/* How we use your Square data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
             src="/new-og-image.png"
-            alt="Square Platform"
+            alt="How Trilio models Square data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,34 +114,34 @@ const Square = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Sales, Staff, and Inventory Data
+            How Trilio uses your Square data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            Bring together transactions, orders, tips, refunds, and device
-            telemetry from Square. Standardize product catalogs and locations to
-            enable accurate multi-site reporting.
+            We normalize Square objects and stitch them to your ecommerce,
+            marketing and finance datasets. Product catalogs and locations are
+            standardized to enable accurate multi‑site and multi‑channel
+            reporting.
           </p>
           <p className="text-lg text-gray-700">
-            From terminals to virtual terminal, Square makes omnichannel easy.
-            We wire the data so finance, ops, and marketing share a single
-            source of truth.
+            From terminals to online checkout, we wire the data so finance, ops
+            and marketing share a single source of truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Faster Checkouts, Lower Costs, Happier Customers
+            Operational and revenue metrics out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Optimize checkout flow, monitor device health, and ensure inventory
-            accuracy. Reduce refunds and drive loyalty with unified customer
-            profiles and targeted offers.
+            Track conversion, average ticket, add‑on attach rate, tips, refunds,
+            device throughput, stockouts, shrinkage, and staff performance.
+            Attribute revenue by device, location, channel, and campaign.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -149,7 +150,7 @@ const Square = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE POS
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -157,7 +158,7 @@ const Square = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE INVOICING
+              CONNECT SQUARE
             </ThemeButton>
           </div>
         </div>
@@ -165,7 +166,7 @@ const Square = () => (
         <div className="flex-1 flex justify-center">
           <img
             src="/text-mask-image.jpg"
-            alt="Square ROI"
+            alt="Square metrics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -192,7 +193,7 @@ const Square = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Store & Channel Insights
+            Data‑driven store and channel insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Measure conversion, average ticket, and throughput alongside

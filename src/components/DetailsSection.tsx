@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const DetailsSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -86,22 +88,18 @@ const DetailsSection = () => {
               </h2>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 min-h-[400px] flex flex-col justify-center">
-              <h3 className="text-lg sm:text-xl font-display mb-6 sm:mb-8 text-gray-900 text-center">
-                Three simple steps to ecommerce intelligence
-              </h3>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
+            <div className="bg-white p-6 sm:p-8 min-h-[400px] flex flex-col">
+              <div className="space-y-5 flex-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-9 h-9 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                     1
                   </div>
                   <div className="flex-1">
-                    <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                      <span className="font-semibold text-base block mb-2 text-gray-900">
+                    <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                      <span className="font-semibold text-sm block mb-2 text-gray-900">
                         Connect Your Data
                       </span>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs text-gray-600">
                         Link Shopify, Amazon, ad platforms, Klaviyo, and more in
                         minutes
                       </p>
@@ -109,16 +107,16 @@ const DetailsSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-9 h-9 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                     2
                   </div>
                   <div className="flex-1">
-                    <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                      <span className="font-semibold text-base block mb-2 text-gray-900">
+                    <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                      <span className="font-semibold text-sm block mb-2 text-gray-900">
                         Generate AI Reports
                       </span>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs text-gray-600">
                         Our AI analyzes your data and creates custom insights
                         automatically
                       </p>
@@ -126,22 +124,35 @@ const DetailsSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold flex-shrink-0 mt-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-9 h-9 rounded-full bg-teal-500 flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                     3
                   </div>
                   <div className="flex-1">
-                    <div className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                      <span className="font-semibold text-base block mb-2 text-gray-900">
+                    <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                      <span className="font-semibold text-sm block mb-2 text-gray-900">
                         Optimize & Scale
                       </span>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs text-gray-600">
                         Act on actionable insights to improve ROAS and grow
                         revenue
                       </p>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <button
+                  className="inline-block px-6 py-3 text-white font-semibold rounded-xl shadow-lg cursor-pointer text-center"
+                  style={{ backgroundColor: "#06beb8" }}
+                  onClick={() => {
+                    navigate("/resources/getting-started");
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  Three simple steps to ecommerce intelligence
+                </button>
               </div>
             </div>
           </div>
@@ -157,7 +168,7 @@ const DetailsSection = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4">
+              <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4 absolute top-6 left-6">
                 Get your demo
               </div>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold mt-auto">
@@ -214,10 +225,11 @@ const DetailsSection = () => {
                   />
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-2 flex justify-center">
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                    className="inline-block px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-xl transition-colors duration-300"
+                    style={{ minWidth: "430px" }}
                     disabled={loading}
                   >
                     {loading ? "Submitting..." : "Get My Demo"}

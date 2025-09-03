@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
 import {
   TrendingUp,
   Target,
@@ -12,6 +11,7 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LegacyFooter from "@/components/LegacyFooter";
 
 const MarketingLeaders = () => {
   return (
@@ -217,7 +217,7 @@ const MarketingLeaders = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

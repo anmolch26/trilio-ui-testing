@@ -11,6 +11,7 @@ import Newsletter from "@/components/Newsletter";
 import ValuesSection from "@/components/ValuesSection";
 import Footer from "@/components/Footer";
 import AnimatedParticles from "@/components/AnimatedParticles";
+import SpaceBackgroundAnimation from "@/components/SpaceBackgroundAnimation";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
@@ -61,6 +62,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <div className="gradient-background">
+        <SpaceBackgroundAnimation />
         <AnimatedParticles showAnimation={true} />
         <div className="light-beam"></div>
         <div className="light-beam-2"></div>
@@ -71,15 +73,15 @@ const Index = () => {
       <Navbar largeLogo={true} />
       <main className="space-y-0 relative z-10 pt-16">
         <Hero />
-        <OptimizedPurposeSection />
         <SpecsSection />
+        <OptimizedPurposeSection />
         <DetailsSection />
         <ImageShowcaseSection />
         <Features />
         <Testimonials />
-        <Newsletter />
-        <ValuesSection />
+        
       </main>
+      <Newsletter />
       <Footer />
     </div>
   );

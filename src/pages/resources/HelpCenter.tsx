@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import {
   Card,
   CardContent,
@@ -29,6 +30,14 @@ import {
 
 const HelpCenter = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoryTitle: string) => {
+    if (categoryTitle === "Getting Started") {
+      navigate("/resources/getting-started");
+    }
+    // Add other category navigation logic here as needed
+  };
 
   const categories = [
     {
@@ -174,6 +183,7 @@ const HelpCenter = () => {
               <Card
                 key={index}
                 className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer group"
+                onClick={() => handleCategoryClick(category.title)}
               >
                 <CardHeader>
                   <div
@@ -296,7 +306,7 @@ const HelpCenter = () => {
         </section>
       </div>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

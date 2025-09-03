@@ -100,14 +100,14 @@ const OptimizedPurposeSection = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-teal-400/30 to-purple-500/30 z-10" />
-                  <div className="absolute inset-0 z-0 bg-transparent" />
+                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-teal-400/50 to-purple-500/50 z-10" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-br from-teal-400/20 to-purple-500/20" />
                   {/* Card content by index */}
                   {idx === 0 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-lg mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
+                        <div className="max-w-lg">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
                             We connect all your ecommerce data sources into one
                             unified view
                           </h3>
@@ -118,8 +118,8 @@ const OptimizedPurposeSection = () => {
                   {idx === 1 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-lg mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
+                        <div className="max-w-lg">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
                             We analyze over 100,000 metrics in real-time to
                             surface what matters
                           </h3>
@@ -130,8 +130,8 @@ const OptimizedPurposeSection = () => {
                   {idx === 2 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-lg mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
+                        <div className="max-w-lg">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
                             We provide instant insights that help you optimize
                             performance across all channels
                           </h3>
@@ -142,10 +142,10 @@ const OptimizedPurposeSection = () => {
                   {idx === 3 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-lg mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
-                            We show you what’s driving up your CAC, which
-                            products are underperforming, and where you're
+                        <div className="max-w-lg mt-8">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
+                            We show you what's driving up your CAC, which
+                            products are under performing, and where you're
                             losing money{" "}
                           </h3>
                         </div>
@@ -155,8 +155,8 @@ const OptimizedPurposeSection = () => {
                   {idx === 4 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-md mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
+                        <div className="max-w-md">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
                             We leverage advanced AI forecast your sales, ad
                             spend, and inventory needs using the data you
                             already have{" "}
@@ -168,8 +168,8 @@ const OptimizedPurposeSection = () => {
                   {idx === 5 && (
                     <>
                       <div className="relative z-10 p-4 sm:p-5 md:p-6 h-full flex flex-col items-center justify-center">
-                        <div className="max-w-lg mt-6">
-                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-left">
+                        <div className="max-w-lg mt-8">
+                          <h3 className="text-base sm:text-lg md:text-xl font-display text-white font-bold leading-tight mb-2 text-center">
                             Get automated alerts before stockouts or overstock
                             happen. Make better purchase decisions with clear
                             inventory signals

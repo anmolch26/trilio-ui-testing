@@ -14,15 +14,16 @@ const Stripe = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-black">
-            STRIPE PAYMENTS PLATFORM
+            STRIPE INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            AI-POWERED PAYMENTS, BILLING & SUBSCRIPTIONS
+            Turn Stripe events into revenue intelligence
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            Unify transactions, subscriptions, and payouts with Stripe. Connect
-            revenue data across channels to power real-time analytics, automated
-            reporting, and growth visibility.
+            Trilio securely connects to your Stripe account and continuously
+            syncs payment, invoice, subscription, dispute, and payout events. We
+            don’t replace Stripe—we make your Stripe data actionable across
+            marketing, product, and finance.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +31,14 @@ const Stripe = () => (
             href="/contact-form"
             className="bg-[#00D4FF] text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-[#00c0e6] transition-colors"
           >
-            Get in Touch
+            Connect Stripe
           </ThemeButton>
         </div>
         {/* Right: Hero Image (placeholder from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
             src="/hero-image.jpg"
-            alt="Stripe Payments, Billing & Subscriptions"
+            alt="Stripe + Trilio Integration"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +46,23 @@ const Stripe = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Payments to Profit: Stripe Success Stories
+          What Trilio syncs from Stripe
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Consolidate payment intents, invoices, disputes, and payouts. Track
-          authorization rates, churn, and LTV while tying revenue to campaigns
-          and products.
+          We ingest historical data and listen to webhooks in real time. Your
+          Stripe events are modeled and joined with orders, customers, and
+          channels so every dollar is traceable.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image (from public) */}
           <div className="flex-1 flex justify-center">
             <img
               src="/og-image-update.png"
-              alt="Stripe Revenue Analytics"
+              alt="Stripe data sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,25 +71,25 @@ const Stripe = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Checkout, Payment Links, Invoicing
+                  PaymentIntents, Charges, Refunds
                 </span>
                 <span className="text-3xl text-[#00D4FF] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Billing & Subscriptions with Proration
+                  Invoices, Subscriptions, Items & Status Changes
                 </span>
                 <span className="text-3xl text-[#00D4FF] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Connect, Payouts, and Marketplace Splits
+                  Payouts, Balance Transactions & Fees
                 </span>
                 <span className="text-3xl text-[#00D4FF] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Radar, Issuing, Tax, and Dispute Insights
+                  Disputes and Risk Signals (Radar)
                 </span>
                 <span className="text-3xl text-[#00D4FF] font-bold">+</span>
               </div>
@@ -98,14 +99,14 @@ const Stripe = () => (
       </div>
     </section>
 
-    {/* Stripe Platform Section */}
+    {/* How we use your Stripe data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
             src="/new-og-image.png"
-            alt="Stripe Platform Products"
+            alt="How Trilio models Stripe"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,34 +114,35 @@ const Stripe = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Revenue with the Stripe Stack
+            How Trilio uses your Stripe data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            Centralize payments, subscriptions, and marketplace payouts.
-            Harmonize metadata, customer IDs, and product catalogs to enable
-            granular revenue analytics and cohort tracking.
+            We normalize Stripe objects and join them with orders, products,
+            customers, and marketing channels. This enables granular cohort
+            analysis and revenue attribution without duplicating transaction
+            logic.
           </p>
           <p className="text-lg text-gray-700">
-            From SCA-ready checkout to recurring billing and smart retries, our
-            implementation accelerates time-to-value and reduces involuntary
-            churn while keeping finance reporting audit-ready.
+            Expect near real-time updates via webhooks, backfills for history,
+            and identity stitching that keeps finance and growth teams on the
+            same truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text Content */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Boost Payment Acceptance & Recurring Revenue
+            Metrics and dashboards out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Improve authorization rates, reduce chargebacks, and optimize
-            subscription health with dunning, smart retries, and flexible
-            pricing.
+            Instantly unlock MRR/ARR, churn, LTV, cohorts, failed-payment
+            recovery, authorization rate, refunds, payouts and fee reporting.
+            Tie revenue back to channels, campaigns and product mixes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -149,7 +151,7 @@ const Stripe = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE PAYMENTS
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -157,7 +159,7 @@ const Stripe = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE BILLING
+              CONNECT STRIPE
             </ThemeButton>
           </div>
         </div>
@@ -165,7 +167,7 @@ const Stripe = () => (
         <div className="flex-1 flex justify-center">
           <img
             src="/text-mask-image.jpg"
-            alt="Payments ROI"
+            alt="Stripe metrics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -180,7 +182,7 @@ const Stripe = () => (
         <div className="flex-1 flex justify-center">
           <img
             src="/og-image-update.png"
-            alt="Stripe Revenue Insights"
+            alt="Revenue insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -192,12 +194,12 @@ const Stripe = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Revenue & Finance Insights
+            Data-driven revenue and finance insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Tie payment events to orders, channels, and products. Analyze MRR,
-            churn, authorization rate, chargebacks, and refunds alongside
-            acquisition and retention to get a full-funnel view.
+            churn, authorization rate, chargebacks, refunds and LTV alongside
+            acquisition and retention to get a full‑funnel view.
           </p>
           <ThemeButton
             variant="outline"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import {
   TrendingUp,
   DollarSign,
@@ -212,7 +212,7 @@ const FoundersCEOs = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter/>
     </div>
   );
 };

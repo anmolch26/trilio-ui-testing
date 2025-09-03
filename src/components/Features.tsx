@@ -257,13 +257,13 @@ const Features = () => {
         {/* Grid moved below full-width sections */}
 
         {/* Full-width Wingman, Unified Dashboard and SKU cards */}
-        <div className="max-w-7xl mx-auto mt-8 space-y-16">
+        {/* <div className="max-w-7xl mx-auto mt-8 space-y-16">
           <FeatureCard
             icon={null}
             title="Conversational AI Wingman"
-            description="Ask questions like “What was my AOV on Shopify last month?” or “Which products are hurting my margin?” and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
+            description="Ask questions like 'What was my AOV on Shopify last month?' or 'Which products are hurting my margin?' and get instant answers in text, charts, or infographic reports. No SQL or Excel needed."
             index={3}
-            backgroundImage="https://assets.channeliq.ai/trilio-landing/products/WingmanImage.png"
+            backgroundImage="/src/assests/Wing.png"
             reverse={false}
           />
           <FeatureCard
@@ -271,7 +271,7 @@ const Features = () => {
             title="Unified Business Dashboard Omnichannel Visibility"
             description="Get a single view of your entire business across D2C sites and marketplaces. Track sales, ad performance, inventory, and customer behavior in one place—no more jumping between platforms."
             index={4}
-            backgroundImage="https://assets.channeliq.ai/trilio-landing/products/BusinessDashboard.png"
+            backgroundImage="/src/assests/TrilioDashboard.jpg"
             reverse
           />
           <FeatureCard
@@ -282,73 +282,157 @@ const Features = () => {
             backgroundImage="https://assets.channeliq.ai/trilio-landing/products/SkuCard1.png"
             reverse={false}
           />
-        </div>
+        </div> */}
 
-        {/* Three feature cards moved below the SKU section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mt-20 md:mt-24">
-          <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <rect width="18" height="11" x="3" y="11" rx="2" />
-                <circle cx="12" cy="5" r="2" />
-                <path d="M12 7v4" />
-              </svg>
-            }
-            title="Customizable Dashboards & Reports"
-            description="Easily create drag-and-drop dashboards or use ready-to-go templates for Sales, CAC, ROAS, LTV, Inventory Turnover, and more. Filter by channel, product, geography, or campaign. Export reports or schedule them via Slack and Email."
-            index={6}
-            descriptionClassName="text-white"
-            titleClassName="text-white"
-          />
-          <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
-              </svg>
-            }
-            title="AI-Powered Insights & Smart Alerts"
-            description="Trilio proactively surfaces insights across your all channels Shopify, Amazon, Google Ads, Klaviyo and 20+ platforms. Ex. declining ROAS, stock-out risks, or conversion drops so you can take immediate action. You’ll also get event-triggered alerts powered by AI & ML."
-            index={7}
-            descriptionClassName="text-white"
-            titleClassName="text-white"
-          />
-          <FeatureCard
-            icon={
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-              </svg>
-            }
-            title="Revenue & Forecast Planner"
-            description="Set annual, monthly, or SKU-level revenue targets and let Trilio auto-forecast your performance. Compare actual vs. target across timeframes and identify where you’re missing your growth goals."
-            index={8}
-            descriptionClassName="text-white"
-            titleClassName="text-white"
-          />
+        {/* Features & Values Section */}
+        <div className="max-w-7xl mx-auto mt-20 md:mt-24">
+          {/* Top Row - 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Customizable Dashboards */}
+            <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-8 h-8 text-white"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" />
+                    <circle cx="12" cy="5" r="2" />
+                    <path d="M12 7v4" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Customizable Dashboards & Reports
+                </h4>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Easily create drag-and-drop dashboards or use ready-to-go
+                  templates for Sales, CAC, ROAS, LTV, Inventory Turnover, and
+                  more. Filter by channel, product, geography, or campaign.
+                </p>
+              </div>
+            </div>
+
+            {/* Data-Driven Decisions */}
+            <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-8 h-8 text-white"
+                  >
+                    <path d="M9 12l2 2 4-4" />
+                    <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z" />
+                    <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z" />
+                    <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z" />
+                    <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Data-Driven Decisions
+                </h4>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Every insight is backed by real data from your business,
+                  ensuring recommendations you can trust and act upon.
+                </p>
+              </div>
+            </div>
+
+            {/* Multi-channel Analytics */}
+            <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-8 h-8 text-white"
+                  >
+                    <path d="M3 3v18h18" />
+                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Multi-channel Analytics
+                </h4>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Unify data from all your sales channels - Shopify, Amazon,
+                  Google Ads, Facebook, TikTok, and more. Get a complete view of
+                  your business performance across every touchpoint.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row - 2 Full Width Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* AI-Powered Insights */}
+            <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-8 h-8 text-white"
+                  >
+                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  AI-Powered Insights & Smart Alerts
+                </h4>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Trilio proactively surfaces insights across all channels. Get
+                  alerts for declining ROAS, stock-out risks, or conversion
+                  drops so you can take immediate action.
+                </p>
+              </div>
+            </div>
+
+            {/* Revenue & Forecast Planner */}
+            <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-8 h-8 text-white"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Revenue & Forecast Planner
+                </h4>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Set annual, monthly, or SKU-level revenue targets and let
+                  Trilio auto-forecast your performance. Compare actual vs
+                  target across timeframes.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

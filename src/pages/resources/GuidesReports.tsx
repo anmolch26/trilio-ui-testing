@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import {
   Card,
   CardContent,
@@ -290,7 +290,7 @@ const GuidesReports = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

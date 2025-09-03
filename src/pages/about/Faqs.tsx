@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import {
   Accordion,
   AccordionItem,
@@ -333,7 +333,7 @@ const Faqs = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

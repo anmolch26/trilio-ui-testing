@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Mail, CheckCircle, TrendingUp, Users, BookOpen, Calendar } from 'lucide-react';
+import LegacyFooter from '@/components/LegacyFooter';
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
@@ -300,7 +301,7 @@ const NewsletterSignup = () => {
         </div>
       </div>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import LegacyFooter from "@/components/LegacyFooter";
 import {
   Target,
   Zap,
@@ -219,7 +219,7 @@ const PerformanceMarketers = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter />
     </div>
   );
 };

@@ -16,6 +16,44 @@ const AIAssistantInterface = () => {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // Add custom CSS for glowing animation
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes glowPulse {
+        0%, 100% {
+          box-shadow: 0 0 25px rgba(96, 132, 255, 0.4), 0 0 50px rgba(96, 132, 255, 0.3), 0 0 75px rgba(96, 132, 255, 0.2), inset 0 0 10px rgba(96, 132, 255, 0.1), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 35px rgba(96, 132, 255, 0.5), 0 0 70px rgba(96, 132, 255, 0.4), 0 0 105px rgba(96, 132, 255, 0.3), inset 0 0 15px rgba(96, 132, 255, 0.15), inset 0 2px 0 rgba(255, 255, 255, 0.25);
+        }
+      }
+      
+      .glow-animation {
+        animation: glowPulse 3s ease-in-out infinite;
+      }
+      
+      .glow-animation:hover {
+        animation: none;
+        box-shadow: 0 0 40px rgba(96, 132, 255, 0.6), 0 0 80px rgba(96, 132, 255, 0.5), 0 0 120px rgba(96, 132, 255, 0.4), inset 0 0 20px rgba(96, 132, 255, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        border-color: rgba(96, 132, 255, 0.8);
+        transition: all 0.3s ease;
+      }
+      
+      .glow-animation:focus {
+        animation: none;
+        box-shadow: 0 0 50px rgba(96, 132, 255, 0.7), 0 0 100px rgba(96, 132, 255, 0.6), 0 0 150px rgba(96, 132, 255, 0.5), inset 0 0 25px rgba(96, 132, 255, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+        border-color: rgba(96, 132, 255, 1);
+        transition: all 0.3s ease;
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const sentences = [
     "Message Wingman...",
     "Ask about your sales data...",
@@ -91,14 +129,13 @@ const AIAssistantInterface = () => {
 
         {/* Message Input Area */}
         <div className="mt-auto">
-          <div className="relative">
+          <div className="relative group">
             <input
               type="text"
               placeholder={currentText}
-              className="w-full bg-transparent backdrop-blur-sm border border-gray-200/10 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-200/10 transition-all duration-300 hover:border-blue-400/30 focus:border-blue-400/50"
+              className="w-full bg-transparent backdrop-blur-sm rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none transition-all duration-500 focus:ring-2 focus:ring-blue-400/30 glow-animation"
               style={{
-                boxShadow:
-                  "0 0 20px rgba(96, 132, 255, 0.1), 0 0 40px rgba(96, 132, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                border: "2px solid rgba(96, 132, 255, 0.5)",
               }}
             />
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">

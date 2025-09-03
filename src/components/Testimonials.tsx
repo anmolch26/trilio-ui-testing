@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+
 interface TestimonialProps {
   content: string;
   author: string;
@@ -6,6 +7,7 @@ interface TestimonialProps {
   gradient: string;
   backgroundImage?: string;
 }
+
 const testimonials: TestimonialProps[] = [
   {
     content:
@@ -39,35 +41,346 @@ const testimonials: TestimonialProps[] = [
     gradient: "from-orange-600 via-red-500 to-purple-600",
     backgroundImage: "/background-section1.png",
   },
+  {
+    content:
+      "Trilio's inventory forecasting saved us from a major stockout crisis. The AI predictions are incredibly accurate and helped us optimize our supply chain like never before.",
+    author: "",
+    role: "Operations Director, RetailMax",
+    gradient: "from-emerald-700 via-teal-600 to-cyan-500",
+    backgroundImage: "/background-section3.png",
+  },
 ];
+
 const TestimonialCard = ({
   content,
   author,
   role,
+  gradient,
   backgroundImage = "/background-section1.png",
-}: TestimonialProps) => {
+  cardClass = "",
+  isActive = false,
+  position = "center",
+}: TestimonialProps & {
+  cardClass?: string;
+  isActive?: boolean;
+  position?: "left" | "center" | "right";
+}) => {
   return (
     <div
-      className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden"
+      className={`
+        ${
+          isActive
+            ? "active-card animate-card-glow"
+            : position === "left" || position === "right"
+            ? "side-card"
+            : "distant-card"
+        } 
+        rounded-[2rem] p-8 h-full flex flex-col justify-between text-white relative overflow-hidden border
+        transition-all duration-1000 ease-out transform-gpu
+        cursor-pointer group
+        ${cardClass}
+      `}
       style={{
-        backgroundImage: `url('${backgroundImage}')`,
+        background: isActive
+          ? `linear-gradient(135deg, ${gradient
+              .replace("from-", "rgba(59, 130, 246, 0.95), ")
+              .replace(" via-", "rgba(37, 99, 235, 0.95) 50%, ")
+              .replace(" to-", "rgba(29, 78, 216, 0.95)")})`
+          : undefined,
       }}
     >
-      <div className="relative z-0">
-        <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
-        <div>
-          <h4 className="font-semibold text-xl">{author}</h4>
-          <p className="text-white/80">{role}</p>
+      {/* Floating particles for active card */}
+      {isActive && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white/40 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: `${3 + Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      <div className="relative z-10 text-center transform transition-transform duration-700">
+        <div
+          className={`mb-8 transition-all duration-700 ${
+            isActive ? "animate-text-glow" : ""
+          }`}
+        >
+          <p className="text-xl font-medium leading-relaxed relative">
+            <span className="relative z-10">{`"${content}"`}</span>
+            {isActive && (
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-600/20 blur-lg animate-pulse" />
+            )}
+          </p>
+        </div>
+
+        <div className="space-y-1">
+          <h4 className="font-semibold text-xl tracking-wide">{author}</h4>
+          <p
+            className={`transition-colors duration-500 ${
+              isActive ? "text-white/90" : "text-white/70"
+            }`}
+          >
+            {role}
+          </p>
         </div>
       </div>
+
+      {/* Border glow for active card */}
+      {isActive && (
+        <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-blue-500/50 via-blue-400/50 to-blue-600/50 blur-sm animate-border-glow -z-10" />
+      )}
     </div>
   );
 };
+
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+  const [isHovered, setIsHovered] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const goToPrevious = useCallback(() => {
+    setDirection("left");
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+    setTimeout(() => setIsTransitioning(false), 15000);
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setDirection("right");
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+    setTimeout(() => setIsTransitioning(false), 15000);
+  }, []);
+
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (index === currentIndex) return;
+      setDirection(index > currentIndex ? "right" : "left");
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsTransitioning(false), 15000);
+    },
+    [currentIndex]
+  );
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) goToNext();
+    if (isRightSwipe) goToPrevious();
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") goToPrevious();
+      if (e.key === "ArrowRight") goToNext();
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [goToPrevious, goToNext]);
+
+  // Auto-advance carousel
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      goToNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, isHovered, goToNext]);
+
+  // Enhanced CSS animations
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-10px) rotate(90deg); }
+        50% { transform: translateY(-5px) rotate(180deg); }
+        75% { transform: translateY(-15px) rotate(270deg); }
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) skewX(-12deg); }
+        100% { transform: translateX(200%) skewX(-12deg); }
+      }
+
+      @keyframes cardGlow {
+        0%, 100% { 
+          box-shadow: 0 25px 50px -12px rgba(30, 64, 175, 0.5), 
+                      0 0 0 1px rgba(59, 130, 246, 0.2),
+                      inset 0 1px 0 rgba(59, 130, 246, 0.3); 
+        }
+        50% { 
+          box-shadow: 0 35px 70px -12px rgba(30, 64, 175, 0.7), 
+                      0 0 0 1px rgba(59, 130, 246, 0.3),
+                      inset 0 1px 0 rgba(59, 130, 246, 0.4),
+                      0 0 60px rgba(30, 64, 175, 0.4); 
+        }
+      }
+
+      @keyframes borderGlow {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.02); }
+      }
+
+      @keyframes textGlow {
+        0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+        50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(30, 64, 175, 0.4); }
+      }
+
+      @keyframes slideInRight {
+        0% { transform: translateX(100%) scale(0.8) rotateY(-30deg); opacity: 0; filter: blur(10px); z-index: 10; }
+        50% { transform: translateX(50%) scale(0.9) rotateY(-15deg); opacity: 0.5; filter: blur(5px); z-index: 50; }
+        100% { transform: translateX(0) scale(1) rotateY(0deg); opacity: 1; filter: blur(0); z-index: 100; }
+      }
+
+      @keyframes slideInLeft {
+        0% { transform: translateX(-100%) scale(0.8) rotateY(30deg); opacity: 0; filter: blur(10px); z-index: 10; }
+        50% { transform: translateX(-50%) scale(0.9) rotateY(15deg); opacity: 0.5; filter: blur(5px); z-index: 50; }
+        100% { transform: translateX(0) scale(1) rotateY(0deg); opacity: 1; filter: blur(0); z-index: 100; }
+      }
+
+      @keyframes slideOutRight {
+        0% { transform: translateX(0) scale(1) rotateY(0deg); opacity: 1; filter: blur(0); z-index: 100; }
+        50% { transform: translateX(50%) scale(0.9) rotateY(-15deg); opacity: 0.5; filter: blur(5px); z-index: 50; }
+        100% { transform: translateX(100%) scale(0.8) rotateY(-30deg); opacity: 0; filter: blur(10px); z-index: 10; }
+      }
+
+      @keyframes slideOutLeft {
+        0% { transform: translateX(0) scale(1) rotateY(0deg); opacity: 1; filter: blur(0); z-index: 100; }
+        50% { transform: translateX(-50%) scale(0.9) rotateY(15deg); opacity: 0.5; filter: blur(5px); z-index: 50; }
+        100% { transform: translateX(-100%) scale(0.8) rotateY(30deg); opacity: 0; filter: blur(10px); z-index: 10; }
+      }
+
+      .perspective-deep {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+      }
+      
+      .active-card {
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(59, 130, 246, 0.95) 30%, rgba(37, 99, 235, 0.95) 70%, rgba(29, 78, 216, 0.95) 100%);
+        backdrop-filter: blur(25px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        animation: slideInRight 1s ease-out;
+      }
+
+      .active-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #1e40af, #3b82f6, #2563eb, #1d4ed8, #1e40af);
+        border-radius: 2rem;
+        z-index: -2;
+        animation: borderGlow 0s ease-in-out infinite;
+        filter: blur(8px);
+      }
+
+      .active-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%);
+        backdrop-filter: blur(15px);
+        border-radius: 2rem;
+        z-index: -1;
+        opacity: 0.8;
+      }
+
+      .side-card {
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(59, 130, 246, 0.2) 50%, rgba(37, 99, 235, 0.1) 100%);
+        backdrop-filter: blur(15px) saturate(120%);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        box-shadow: 0 15px 35px -5px rgba(30, 64, 175, 0.3);
+      }
+
+      .distant-card {
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.15) 0%, rgba(59, 130, 246, 0.08) 50%, rgba(37, 99, 235, 0.02) 100%);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        box-shadow: 0 8px 25px -8px rgba(30, 64, 175, 0.2);
+      }
+
+      .animate-card-glow {
+        animation: cardGlow 4s ease-in-out infinite;
+      }
+
+      .animate-float {
+        animation: float linear infinite;
+      }
+
+      .animate-shimmer {
+        animation: shimmer 3s ease-in-out infinite;
+      }
+
+      .animate-border-glow {
+        animation: borderGlow 3s ease-in-out infinite;
+      }
+
+      .animate-text-glow {
+        animation: textGlow 3s ease-in-out infinite;
+      }
+
+
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  const getCardPosition = (index: number) => {
+    const diff = index - currentIndex;
+    if (diff === 0) return "center";
+    if (diff === -1 || diff === testimonials.length - 1) return "left";
+    if (diff === 1 || diff === -(testimonials.length - 1)) return "right";
+    return "hidden";
+  };
+
   return (
     <section
-      className="pt-12 pb-2  relative"
+      className="pt-16 pb-16 relative"
       id="testimonials"
       ref={sectionRef}
     >
@@ -82,20 +395,154 @@ const Testimonials = () => {
           What brands say about Trilio
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              content={testimonial.content}
-              author={testimonial.author}
-              role={testimonial.role}
-              gradient={testimonial.gradient}
-              backgroundImage={testimonial.backgroundImage}
-            />
-          ))}
+        {/* Carousel Container */}
+        <div
+          className="relative w-full max-w-7xl mx-auto h-96 flex items-center justify-center carousel-container"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Carousel Track with Enhanced 3D Perspective */}
+          <div className="relative w-[500px] h-[280px] perspective-deep overflow-visible">
+            {testimonials.map((testimonial, index) => {
+              const position = getCardPosition(index);
+              const isActive = index === currentIndex;
+              const isPrev = position === "left";
+              const isNext = position === "right";
+              const isVisible = position !== "hidden";
+
+              if (!isVisible) return null;
+
+              let transformStyle = "";
+              let zIndex = 0;
+              let opacity = 1;
+              let filter = "blur(0px)";
+
+              if (isActive) {
+                transformStyle =
+                  "translateX(0px) translateY(0px) translateZ(0px) scale(1) rotateY(0deg)";
+                zIndex = 100;
+                opacity = 1;
+                filter = "blur(0px)";
+              } else if (isPrev) {
+                transformStyle =
+                  "translateX(-280px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(25deg)";
+                zIndex = 20;
+                opacity = 0.85;
+                filter = "blur(3px)";
+              } else if (isNext) {
+                transformStyle =
+                  "translateX(280px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(-25deg)";
+                zIndex = 20;
+                opacity = 0.85;
+                filter = "blur(3px)";
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="absolute w-[480px] h-[260px] transition-all duration-[15000ms] transform-gpu cursor-pointer"
+                  style={{
+                    transform: transformStyle,
+                    zIndex: zIndex,
+                    opacity: opacity,
+                    filter: filter,
+                    transformStyle: "preserve-3d",
+                    transitionTimingFunction:
+                      "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                  }}
+                  onClick={() => !isActive && goToSlide(index)}
+                >
+                  <TestimonialCard
+                    content={testimonial.content}
+                    author={testimonial.author}
+                    role={testimonial.role}
+                    gradient={testimonial.gradient}
+                    backgroundImage={testimonial.backgroundImage}
+                    cardClass="w-full h-full"
+                    isActive={isActive}
+                    position={position}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 
+                     w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 
+                     backdrop-blur-lg border-2 border-white/30 
+                     rounded-full flex items-center justify-center
+                     transition-all duration-300
+                     group shadow-lg cursor-pointer"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              className="w-5 h-5 text-white transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={goToNext}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 
+                     w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 
+                     backdrop-blur-lg border-2 border-white/30 
+                     rounded-full flex items-center justify-center
+                     transition-all duration-300
+                     group shadow-lg cursor-pointer"
+            aria-label="Next testimonial"
+          >
+            <svg
+              className="w-5 h-5 text-white transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Premium Indicators */}
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex gap-3 z-50">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`
+                  transition-all duration-300 cursor-pointer
+                  ${
+                    index === currentIndex
+                      ? "w-3 h-3 bg-white rounded-full shadow-lg"
+                      : "w-2 h-2 bg-white/40 hover:bg-white/70 hover:scale-125 rounded-full"
+                  }
+                `}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default Testimonials;

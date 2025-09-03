@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
 import {
   Users,
   Shield,
@@ -12,6 +11,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LegacyFooter from "@/components/LegacyFooter";
 
 const AgenciesConsultants = () => {
   return (
@@ -257,7 +257,7 @@ const AgenciesConsultants = () => {
         </div>
       </section>
 
-      <Footer />
+      <LegacyFooter/>
     </div>
   );
 };

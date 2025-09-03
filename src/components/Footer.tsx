@@ -1,95 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import TrilioLogoFooter from "@/assests/Remove background project (4).png";
-import { useState } from "react";
-import XLogo from "@/assests/HD Twitter X New Logo PNG.jpeg";
-import YouTubeLogo from "@/assests/youtube.png";
-import LinkedInLogo from "@/assests/icons8-linkedin-50.png";
+import { Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
   return (
-    <footer className="w-full bg-white pb-0 border-t border-gray-200">
-      <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="w-full bg-black/50 backdrop-blur-sm text-white border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-5">
             <div className="flex items-center space-x-2 mb-4">
               <img
                 src={TrilioLogoFooter}
                 alt="Trilio Logo"
                 className="w-10 h-10 object-contain mr-2"
               />
-              <span className="text-xl font-semibold text-black">
-                Trilio.ai
-              </span>
+              <span className="text-2xl font-semibold">Trilio.ai</span>
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-white/70 mb-4">
               Ecommerce Intelligence, Powered by AI. Transform your data into
               profitable insights.
             </p>
-            <div className="space-y-2">
-              <p className="text-gray-600">
-                Email:{" "}
-                <a
-                  href="mailto:support@trilio.ai"
-                  className="text-pulse-500 hover:underline"
-                >
-                  support@trilio.ai
-                </a>
-              </p>
-              <div className="flex items-center space-x-3 mt-8">
-                <a
-                  href="https://www.linkedin.com/company/trilio-ai/about/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
-                >
-                  <img
-                    src="https://assets.channeliq.ai/sidebar/icons8-linkedin-50.png"
-                    alt="LinkedIn"
-                    className="w-6 h-6 object-contain"
-                    loading="lazy"
-                  />
-                </a>
-                <a
-                  href="https://x.com/trilioai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
-                >
-                  <img
-                    src="https://assets.channeliq.ai/sidebar/X.png"
-                    alt="X (Twitter)"
-                    className="w-6 h-6 object-contain"
-                    loading="lazy"
-                  />
-                </a>
-                <a
-                  href="https://www.youtube.com/@user-trilio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
-                >
-                  <img
-                    src="https://assets.channeliq.ai/sidebar/youtube.png"
-                    alt="YouTube"
-                    className="w-6 h-6 object-contain"
-                    loading="lazy"
-                  />
-                </a>
-              </div>
+            <p className="text-white/60">
+              We unify fragmented data across platforms into a trusted source of
+              truth and deliver actionable intelligence.
+            </p>
+            <div className="flex items-center space-x-4 mt-6">
+              <a
+                href="https://www.linkedin.com/company/trilio-ai/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+              >
+                <img
+                  src="https://assets.channeliq.ai/sidebar/icons8-linkedin-50.png"
+                  alt="LinkedIn"
+                  className="w-8 h-8 object-contain"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="https://x.com/trilioai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+              >
+                <img
+                  src="https://assets.channeliq.ai/sidebar/Twitter(X).png"
+                  alt="X (Twitter)"
+                  className="w-8 h-8 object-contain"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@user-trilio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+              >
+                <img
+                  src="https://assets.channeliq.ai/sidebar/youtube-logo-2431.png"
+                  alt="YouTube"
+                  className="w-8 h-8 object-contain"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4 text-black">Product</h4>
+          <div className="md:col-span-2">
+            <h4 className="font-semibold mb-3 text-white">Product</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/products/bi-reporting"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   BI Reporting
                 </Link>
@@ -97,7 +85,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products/insights"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   Insights
@@ -106,7 +94,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products/ai-agents"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   AI Agents
                 </Link>
@@ -114,7 +102,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Pricing
                 </Link>
@@ -123,13 +111,13 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div>
-            <h4 className="font-semibold mb-4 text-black">Company</h4>
+          <div className="md:col-span-2">
+            <h4 className="font-semibold mb-3 text-white">Company</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/careers/open-positions"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   Careers
@@ -138,7 +126,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/resources/blog-insights"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Blog
                 </Link>
@@ -146,44 +134,64 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact-form"
-                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Contact
                 </Link>
               </li>
+              <li>
+                <a
+                  href="#privacy"
+                  className="text-white/70 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowPrivacy(true);
+                  }}
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#terms"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  Terms of Use
+                </a>
+              </li>
             </ul>
+          </div>
+          {/* Contact & Newsletter (right of Company) */}
+          <div className="md:col-span-3">
+            <h4 className="font-semibold mb-3 text-white">Contact</h4>
+            <div className="flex items-center gap-2 text-white/90 mb-3">
+              <Mail size={18} />
+              <a href="mailto:support@trilio.ai" className="hover:text-white">
+                support@trilio.ai
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm mb-4 md:mb-0">
+        <div className="border-t border-white/10 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-white/60 text-sm mb-4 md:mb-0">
             © 2025 Trilio.ai. All rights reserved.
           </p>
-
-          <div className="flex items-center space-x-4 text-sm">
-            <a
-              href="#privacy"
-              className="text-gray-600 hover:text-pulse-500 transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowPrivacy(true);
-              }}
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#terms"
-              className="text-gray-600 hover:text-pulse-500 transition-colors"
-            >
-              Terms of Use
-            </a>
-          </div>
+          <a
+            href="#top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="flex items-center gap-2 text-white/70 hover:text-white text-sm"
+          >
+            <ArrowUp size={16} /> Back to Top
+          </a>
         </div>
       </div>
-      {/* Privacy Policy Modal */}
       {showPrivacy && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
           <div className="bg-white p-8 pr-8 rounded-lg shadow-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto relative">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
