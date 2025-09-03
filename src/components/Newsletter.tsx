@@ -8,7 +8,7 @@ const Newsletter = () => {
     if (!email) {
       toast({
         title: "Please enter your email address",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
@@ -18,37 +18,55 @@ const Newsletter = () => {
     setTimeout(() => {
       toast({
         title: "Thank you for subscribing!",
-        description: "You'll receive updates about Trilio.ai soon."
+        description: "You'll receive updates about Trilio.ai soon.",
       });
       setEmail("");
       setIsSubmitting(false);
     }, 1000);
   };
-  return <section id="newsletter" className="py-0">
+  return (
+    <section id="newsletter" className="py-8">
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
             <div className="pulse-chip">
-              
               <span>Newsletter</span>
             </div>
           </div>
-          
-          <h2 className="text-5xl font-display font-bold mb-4 text-left">Join leading Brands on Trilio.ai</h2>
+
+          <h2 className="text-5xl font-display font-bold mb-4 text-left">
+            Join leading Brands on Trilio.ai
+          </h2>
           <p className="text-xl mb-10 text-left text-teal-100">
-            Get product updates, case studies & industry reports delivered to your inbox
+            Get product updates, case studies & industry reports delivered to
+            your inbox
           </p>
-          
-          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-start md:items-center">
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col md:flex-row gap-4 items-start md:items-center"
+          >
             <div className="relative flex-grow">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email address" className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700" required />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address"
+                className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+                required
+              />
             </div>
-            <button type="submit" disabled={isSubmitting} className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4"
+            >
               {isSubmitting ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Newsletter;

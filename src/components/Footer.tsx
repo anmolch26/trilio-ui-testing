@@ -32,12 +32,12 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/trilio-ai/about/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl bg-white ring-1 ring-white/20 flex items-center justify-center hover:bg-white transition shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
               >
                 <img
                   src="https://assets.channeliq.ai/sidebar/icons8-linkedin-50.png"
                   alt="LinkedIn"
-                  className="w-7 h-7 object-contain"
+                  className="w-8 h-8 object-contain"
                   loading="lazy"
                 />
               </a>
@@ -45,12 +45,12 @@ const Footer = () => {
                 href="https://x.com/trilioai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl bg-white ring-1 ring-white/20 flex items-center justify-center hover:bg-white transition shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
               >
                 <img
-                  src="https://assets.channeliq.ai/sidebar/X.png"
+                  src="https://assets.channeliq.ai/sidebar/Twitter(X).png"
                   alt="X (Twitter)"
-                  className="w-6 h-6 object-contain"
+                  className="w-8 h-8 object-contain"
                   loading="lazy"
                 />
               </a>
@@ -58,12 +58,12 @@ const Footer = () => {
                 href="https://www.youtube.com/@user-trilio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl bg-white ring-1 ring-white/20 flex items-center justify-center hover:bg-white transition shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
               >
                 <img
-                  src="https://assets.channeliq.ai/sidebar/youtube.png"
+                  src="https://assets.channeliq.ai/sidebar/youtube-logo-2431.png"
                   alt="YouTube"
-                  className="w-6 h-6 object-contain"
+                  className="w-8 h-8 object-contain"
                   loading="lazy"
                 />
               </a>

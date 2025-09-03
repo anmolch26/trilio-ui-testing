@@ -172,7 +172,7 @@ const Hero = () => {
                 variant="primary"
                 href="/who-we-help/waitlist"
                 showArrow={true}
-                className="w-full sm:w-auto text-center"
+                className="w-full sm:w-auto text-center px-4 py-1.5 text-sm font-semibold"
               >
                 Join waitlist
               </ThemeButton>
@@ -181,7 +181,7 @@ const Hero = () => {
                 variant="secondary"
                 onClick={handleScrollToShowcase}
                 showArrow={true}
-                className="w-full sm:w-auto text-center"
+                className="w-full sm:w-auto text-center px-4 py-1.5 text-sm font-semibold"
               >
                 See trilio in action
               </ThemeButton>

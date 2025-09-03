@@ -30,9 +30,10 @@ const SpecsSection = () => {
             </div>
 
             {/* Dashboard Text content */}
-            <div className="text-left flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
-                Single Pane of Glass Command Center
+            <div className="text-center flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-White leading-tight">
+                <span style={{ color: "#05b8b2" }}>"Unified"</span> Business
+                View
                 {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
                   {" "}
                   All Your Data
@@ -62,9 +63,12 @@ const SpecsSection = () => {
             </div>
 
             {/* Wingman Text content */}
-            <div className="text-left flex-1">
+            <div className="text-center flex-1">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
-                AI-Driven Intelligence That Acts
+                <span style={{ color: "#05b8b2" }}>
+                  "AI-Driven Intelligence"
+                </span>
+                <h3></h3>that Acts<h3></h3>
                 {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
                   {" "}
                   AI-Powered Insights and Actions
@@ -84,13 +88,13 @@ const SpecsSection = () => {
           {/* Third Section - Custom BI */}
           <div
             className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0 "
-            style={{ marginTop: "5rem",  marginBottom: "-4rem"}}
+            style={{ marginTop: "5rem", marginBottom: "-4rem" }}
           >
             {/* Custom BI Image */}
             <div className="w-full max-w-6xl lg:flex-shrink-0 -m-24 p-0">
               <div className="relative">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/products/impact1 (1).png"
+                  src="https://assets.channeliq.ai/trilio-landing/products/Impact01.png"
                   alt="Trilio Custom BI - Create your own view with easy options"
                   className="w-full h-auto object-contain"
                   style={{ minHeight: "0px", maxHeight: "800px" }}
@@ -99,9 +103,9 @@ const SpecsSection = () => {
             </div>
 
             {/* Custom BI Text content */}
-            <div className="text-left flex-1">
+            <div className="text-center flex-1">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
-                Promotion & Launch Impact Tracker
+                Impact Events
                 {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
                   {" "}
                   Custom View
