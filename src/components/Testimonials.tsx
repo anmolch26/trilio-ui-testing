@@ -75,7 +75,7 @@ const TestimonialCard = ({
             ? "side-card"
             : "distant-card"
         } 
-        rounded-[2rem] p-8 h-full flex flex-col justify-between text-white relative overflow-hidden border
+        rounded-[2rem] p-4 sm:p-6 lg:p-8 h-full flex flex-col justify-between text-white relative overflow-hidden border
         transition-all duration-1000 ease-out transform-gpu
         cursor-pointer group
         ${cardClass}
@@ -109,11 +109,11 @@ const TestimonialCard = ({
 
       <div className="relative z-10 text-center transform transition-transform duration-700">
         <div
-          className={`mb-8 transition-all duration-700 ${
+          className={`mb-4 sm:mb-6 lg:mb-8 transition-all duration-700 ${
             isActive ? "animate-text-glow" : ""
           }`}
         >
-          <p className="text-xl font-medium leading-relaxed relative">
+          <p className="text-sm sm:text-base lg:text-xl font-medium leading-relaxed relative">
             <span className="relative z-10">{`"${content}"`}</span>
             {isActive && (
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-600/20 blur-lg animate-pulse" />
@@ -122,9 +122,11 @@ const TestimonialCard = ({
         </div>
 
         <div className="space-y-1">
-          <h4 className="font-semibold text-xl tracking-wide">{author}</h4>
+          <h4 className="font-semibold text-sm sm:text-base lg:text-xl tracking-wide">
+            {author}
+          </h4>
           <p
-            className={`transition-colors duration-500 ${
+            className={`text-xs sm:text-sm lg:text-base transition-colors duration-500 ${
               isActive ? "text-white/90" : "text-white/70"
             }`}
           >
@@ -361,6 +363,34 @@ const Testimonials = () => {
         animation: textGlow 3s ease-in-out infinite;
       }
 
+      /* Responsive positioning for side cards */
+      @media (max-width: 640px) {
+        .side-card-left {
+          transform: translateX(-120px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(25deg) !important;
+        }
+        .side-card-right {
+          transform: translateX(120px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(-25deg) !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 768px) {
+        .side-card-left {
+          transform: translateX(-220px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(25deg) !important;
+        }
+        .side-card-right {
+          transform: translateX(220px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(-25deg) !important;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .side-card-left {
+          transform: translateX(-250px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(25deg) !important;
+        }
+        .side-card-right {
+          transform: translateX(250px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(-25deg) !important;
+        }
+      }
+
 
     `;
     document.head.appendChild(style);
@@ -380,7 +410,7 @@ const Testimonials = () => {
 
   return (
     <section
-      className="pt-16 pb-16 relative"
+      className="pt-12 pb-12 sm:pt-16 sm:pb-16 relative px-4 sm:px-6 lg:px-8"
       id="testimonials"
       ref={sectionRef}
     >
@@ -391,13 +421,14 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-8 sm:mb-10 md:mb-12 text-left">
           What brands say about Trilio
         </h2>
 
         {/* Carousel Container */}
         <div
-          className="relative w-full max-w-7xl mx-auto h-96 flex items-center justify-center carousel-container"
+          className="relative w-full max-w-7xl mx-auto h-64 flex items-center justify-center carousel-container
+                     sm:h-80 md:h-96 lg:h-96 xl:h-96"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
@@ -405,7 +436,13 @@ const Testimonials = () => {
           onTouchEnd={handleTouchEnd}
         >
           {/* Carousel Track with Enhanced 3D Perspective */}
-          <div className="relative w-[500px] h-[280px] perspective-deep overflow-visible">
+          <div
+            className="relative w-[320px] h-[200px] perspective-deep overflow-visible
+                          sm:w-[400px] sm:h-[240px] 
+                          md:w-[450px] md:h-[260px] 
+                          lg:w-[500px] lg:h-[280px] 
+                          xl:w-[500px] xl:h-[280px]"
+          >
             {testimonials.map((testimonial, index) => {
               const position = getCardPosition(index);
               const isActive = index === currentIndex;
@@ -427,12 +464,14 @@ const Testimonials = () => {
                 opacity = 1;
                 filter = "blur(0px)";
               } else if (isPrev) {
+                // Responsive positioning for left card - will be overridden by CSS media queries
                 transformStyle =
                   "translateX(-280px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(25deg)";
                 zIndex = 20;
                 opacity = 0.85;
                 filter = "blur(3px)";
               } else if (isNext) {
+                // Responsive positioning for right card - will be overridden by CSS media queries
                 transformStyle =
                   "translateX(280px) translateY(10px) translateZ(-100px) scale(0.85) rotateY(-25deg)";
                 zIndex = 20;
@@ -443,7 +482,13 @@ const Testimonials = () => {
               return (
                 <div
                   key={index}
-                  className="absolute w-[480px] h-[260px] transition-all duration-[15000ms] transform-gpu cursor-pointer"
+                  className={`absolute w-[300px] h-[180px] transition-all duration-[15000ms] transform-gpu cursor-pointer
+                             sm:w-[380px] sm:h-[220px]
+                             md:w-[430px] md:h-[240px]
+                             lg:w-[480px] lg:h-[260px]
+                             xl:w-[480px] xl:h-[260px]
+                             ${isPrev ? "side-card-left" : ""}
+                             ${isNext ? "side-card-right" : ""}`}
                   style={{
                     transform: transformStyle,
                     zIndex: zIndex,
@@ -473,8 +518,8 @@ const Testimonials = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 
-                     w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 
+            className="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 z-50 
+                     w-6 h-6 sm:w-10 sm:h-10 bg-gradient-to-br from-white/20 to-white/10 
                      backdrop-blur-lg border-2 border-white/30 
                      rounded-full flex items-center justify-center
                      transition-all duration-300
@@ -482,7 +527,7 @@ const Testimonials = () => {
             aria-label="Previous testimonial"
           >
             <svg
-              className="w-5 h-5 text-white transition-colors duration-300"
+              className="w-3 h-3 sm:w-5 sm:h-5 text-white transition-colors duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -498,8 +543,8 @@ const Testimonials = () => {
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 
-                     w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 
+            className="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 z-50 
+                     w-6 h-6 sm:w-10 sm:h-10 bg-gradient-to-br from-white/20 to-white/10 
                      backdrop-blur-lg border-2 border-white/30 
                      rounded-full flex items-center justify-center
                      transition-all duration-300
@@ -507,7 +552,7 @@ const Testimonials = () => {
             aria-label="Next testimonial"
           >
             <svg
-              className="w-5 h-5 text-white transition-colors duration-300"
+              className="w-3 h-3 sm:w-5 sm:h-5 text-white transition-colors duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -522,7 +567,7 @@ const Testimonials = () => {
           </button>
 
           {/* Premium Indicators */}
-          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex gap-3 z-50">
+          <div className="absolute -bottom-16 sm:-bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3 z-50">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -531,8 +576,8 @@ const Testimonials = () => {
                   transition-all duration-300 cursor-pointer
                   ${
                     index === currentIndex
-                      ? "w-3 h-3 bg-white rounded-full shadow-lg"
-                      : "w-2 h-2 bg-white/40 hover:bg-white/70 hover:scale-125 rounded-full"
+                      ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full shadow-lg"
+                      : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/40 hover:bg-white/70 hover:scale-125 rounded-full"
                   }
                 `}
                 aria-label={`Go to testimonial ${index + 1}`}

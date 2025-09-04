@@ -18,7 +18,7 @@ const SpecsSection = () => {
           {/* First Section - Dashboard */}
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
             {/* Dashboard Image */}
-            <div className="w-full max-w-4xl lg:flex-shrink-0 -ml-16">
+            <div className="w-full max-w-4xl lg:flex-shrink-0 lg:-ml-16">
               <div className="relative">
                 <img
                   src="https://assets.channeliq.ai/trilio-landing/products/Dashboard13 (1).png"

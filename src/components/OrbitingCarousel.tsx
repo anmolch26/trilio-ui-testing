@@ -27,13 +27,13 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
   };
 
   return (
-    <div className="relative w-full h-[800px] flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-[400px] sm:h-[600px] lg:h-[800px] flex items-center justify-center overflow-hidden">
       {/* Central Content */}
       <div
         className="relative z-20 text-center"
-        style={{ marginTop: "-400px" }}
+        style={{ marginTop: "-200px" }}
       >
-        <div className="mb-4 h-[500px]">
+        <div className="mb-4 h-[200px] sm:h-[300px] lg:h-[500px]">
           <button
             className="text-white px-4 py-2 rounded-full text-sm font-medium transition-colors flex items-center space-x-2 mx-auto"
             style={{ backgroundColor: "#01b5af" }}
@@ -43,14 +43,16 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
           </button>
         </div>
 
-        <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
-        <p className="text-gray-300 text-lg mb-6 max-w-md mx-auto">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+          {title}
+        </h2>
+        <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 max-w-md mx-auto px-4">
           {description}
         </p>
 
         <button
           onClick={handleButtonClick}
-          className="text-white px-8 py-3 rounded-full text-lg font-medium transition-colors cursor-pointer hover:opacity-90 active:scale-95"
+          className="text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base lg:text-lg font-medium transition-colors cursor-pointer hover:opacity-90 active:scale-95"
           style={{ backgroundColor: "#01b5af" }}
         >
           {buttonText}
@@ -58,8 +60,8 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
       </div>
 
       {/* Orbiting Images */}
-      <div className="absolute h-[1300px] inset-0 flex items-center justify-center">
-        <div className="relative w-[1200px] h-[1000px] flex items-center justify-center">
+      <div className="absolute h-[600px] sm:h-[900px] lg:h-[1300px] inset-0 flex items-center justify-center">
+        <div className="relative w-[600px] h-[500px] sm:w-[900px] sm:h-[750px] lg:w-[1200px] lg:h-[1000px] flex items-center justify-center">
           {images.map((image, index) => {
             const angle = (index * 180) / images.length; // Changed to use total images count
             const totalDuration = 36; // Total animation duration in seconds
@@ -68,13 +70,13 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
             return (
               <div
                 key={image.id}
-                className="absolute w-32 h-32 overflow-hidden animate-semi-orbit"
+                className="absolute w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 overflow-hidden animate-semi-orbit"
                 style={{
                   animationDelay: `${equalDelay}s`,
                   animationDuration: "36s",
                   animationIterationCount: "infinite",
                   animationTimingFunction: "linear",
-                  transform: `rotate(${angle}deg) translateX(500px) rotate(-${angle}deg)`,
+                  transform: `rotate(${angle}deg) translateX(250px) rotate(-${angle}deg)`,
                 }}
               >
                 <img
@@ -91,7 +93,7 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
       <style>{`
         @keyframes semi-orbit {
           0% {
-            transform: rotate(180deg) translateX(500px) rotate(-180deg);
+            transform: rotate(180deg) translateX(250px) rotate(-180deg);
             opacity: 0;
           }
           10% {
@@ -101,8 +103,46 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
             opacity: 1;
           }
           100% {
-            transform: rotate(360deg) translateX(500px) rotate(-360deg);
+            transform: rotate(360deg) translateX(250px) rotate(-360deg);
             opacity: 0;
+          }
+        }
+        
+        @media (min-width: 640px) {
+          @keyframes semi-orbit {
+            0% {
+              transform: rotate(180deg) translateX(375px) rotate(-180deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
+            }
+            100% {
+              transform: rotate(360deg) translateX(375px) rotate(-360deg);
+              opacity: 0;
+            }
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          @keyframes semi-orbit {
+            0% {
+              transform: rotate(180deg) translateX(500px) rotate(-180deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
+            }
+            100% {
+              transform: rotate(360deg) translateX(500px) rotate(-360deg);
+              opacity: 0;
+            }
           }
         }
         

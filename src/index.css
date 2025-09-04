@@ -111,6 +111,14 @@
     overflow-x: hidden;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   /* Updated Gradient Background */
   .gradient-background {
     position: fixed;
