@@ -312,7 +312,7 @@
     box-shadow: 0 20px 40px rgba(0, 255, 204, 0.1);
   }
 
-  /* Animated teal background */
+  /* Static teal background - lighter shade permanent */
   .animated-teal-bg {
     background: linear-gradient(
       135deg,
@@ -323,11 +323,10 @@
       #07beb8 80%,
       #05a19e 100%
     );
-    animation: teal-gradient-shift 10s ease-in-out infinite;
   }
 
   .animate-teal-shift {
-    animation: teal-element-shift 8s ease-in-out infinite;
+    /* Animation removed - keeping static lighter gradient */
   }
 }
 

@@ -3,7 +3,8 @@ import { toast } from "@/components/ui/use-toast";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       toast({
@@ -12,17 +13,45 @@ const Newsletter = () => {
       });
       return;
     }
-    setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    setIsSubmitting(true);
+    try {
+      const payload = {
+        email: email,
+        type: "newsletter",
+      };
+
+      const response = await fetch(
+        "https://staging.trilio.ai/api/auth/v1/create_waitlist",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe. Please try again later.");
+      }
+
       toast({
         title: "Thank you for subscribing!",
         description: "You'll receive updates about Trilio.ai soon.",
       });
       setEmail("");
+    } catch (error) {
+      console.error("Newsletter subscription error:", error);
+      toast({
+        title: "Error",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   return (
     <section id="newsletter" className="py-8">
