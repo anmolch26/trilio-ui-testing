@@ -25,6 +25,7 @@ import { useToast } from "@/hooks/use-toast";
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Please enter a valid email address"),
   company: z.string().min(2, "Company name is required"),
   website: z.string().trim().optional().or(z.literal("")),
   phone: z.string().trim().optional().or(z.literal("")),
@@ -43,11 +44,13 @@ const gmvOptions = [
 
 const WaitlistForm: React.FC = () => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = React.useState(false);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
+      email: "",
       company: "",
       website: "",
       phone: "",
@@ -56,20 +59,54 @@ const WaitlistForm: React.FC = () => {
   });
 
   const onSubmit = async (values: FormData) => {
-    // For now, just show a success toast and log values
-    // Hook into your API here if needed
-    // eslint-disable-next-line no-console
-    console.log("Waitlist submission:", values);
-    toast({
-      title: "Submitted",
-      description: "Thanks! We'll reach out shortly.",
-    });
-    form.reset();
+    setIsLoading(true);
+    try {
+      const payload = {
+        full_name: `${values.firstName} ${values.lastName}`,
+        email: values.email,
+        company_name: values.company,
+        phone_number: values.phone || undefined,
+        website: values.website || undefined,
+        ecommerce_revenue: values.gmv || undefined,
+        type: "waitlist",
+      };
+
+      const response = await fetch(
+        "https://staging.trilio.ai/api/auth/v1/create_waitlist",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to submit. Please try again later.");
+      }
+
+      toast({
+        title: "Form Submitted!",
+        description: "Thanks! We'll reach out within 24 hours.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Waitlist submission error:", error);
+      toast({
+        title: "Error",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <PageLayout>
-      <main className="pt-16 pb-8">
+      <main className="pt-14 pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-4">
@@ -127,6 +164,27 @@ const WaitlistForm: React.FC = () => {
                       )}
                     />
                   </div>
+
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-700 font-medium">
+                          Email <span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="Enter email address"
+                            className="border-gray-300 focus:border-pulse-500 focus:ring-pulse-500"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
                   <FormField
                     control={form.control}
@@ -222,9 +280,10 @@ const WaitlistForm: React.FC = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-2.5 px-6 rounded-lg transition-colors"
+                    disabled={isLoading}
+                    className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-2.5 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit
+                    {isLoading ? "Submitting..." : "Submit"}
                   </Button>
                 </form>
               </Form>

@@ -71,8 +71,12 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                   href={secondaryButtonLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button-secondary flex items-center justify-center group w-full sm:w-auto text-center"
-                  style={{ textDecoration: "none" }}
+                  className="text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center group w-full sm:w-auto text-center"
+                  style={{
+                    textDecoration: "none",
+                    background: "linear-gradient(135deg, #07beb8, #3dccc7)",
+                    boxShadow: "0 4px 15px rgba(7, 190, 184, 0.3)",
+                  }}
                 >
                   {secondaryButtonText}
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -80,8 +84,12 @@ const ProductHero: React.FC<ProductHeroProps> = ({
               ) : (
                 <Link
                   to="/contact-form"
-                  className="button-secondary flex items-center justify-center group w-full sm:w-auto text-center"
-                  style={{ textDecoration: "none" }}
+                  className="text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center group w-full sm:w-auto text-center"
+                  style={{
+                    textDecoration: "none",
+                    background: "linear-gradient(135deg, #07beb8, #3dccc7)",
+                    boxShadow: "0 4px 15px rgba(7, 190, 184, 0.3)",
+                  }}
                 >
                   {secondaryButtonText}
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
