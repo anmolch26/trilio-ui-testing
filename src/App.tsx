@@ -213,6 +213,10 @@ const App = () => (
               path="/resources/developer-docs/meta-ads"
               element={<DeveloperDocs />}
             />
+            <Route
+              path="/resources/developer-docs/klaviyo"
+              element={<DeveloperDocs />}
+            />
             {/* Careers section routes (kept for backward compatibility) */}
             <Route path="/careers/open-positions" element={<OpenPositions />} />
 
