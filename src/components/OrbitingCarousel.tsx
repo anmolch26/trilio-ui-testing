@@ -52,7 +52,7 @@ const OrbitingCarousel: React.FC<OrbitingCarouselProps> = ({
 
         <button
           onClick={handleButtonClick}
-          className="text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base lg:text-lg font-medium transition-colors cursor-pointer hover:opacity-90 active:scale-95"
+          className="text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base font-medium transition-colors cursor-pointer hover:opacity-90 active:scale-95"
           style={{ backgroundColor: "#01b5af" }}
         >
           {buttonText}

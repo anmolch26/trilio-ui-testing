@@ -416,12 +416,16 @@ const Testimonials = () => {
     >
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
-          <div className="pulse-chip">
-            <span>Testimonials</span>
+        <div className="w-full flex justify-center">
+          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text- border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+            <span className="font-display tracking-wide">
+              Testimonials
+            </span>
           </div>
         </div>
+        </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-8 sm:mb-10 md:mb-12 text-left">
+        <h2 className="pt-8 text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-8 sm:mb-10 md:mb-12 text-center">
           What brands say about Trilio
         </h2>
 

@@ -237,11 +237,11 @@ const Features = () => {
 
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#C4FEF9] border border-teal-500/20 text-teal-700 mb-6 opacity-0 fade-in-element">
-            <span className="text-sm font-medium">Features</span>
+          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+            <span className="font-display tracking-wide">Features</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 fade-in-element leading-tight text-emerald-100 lg:text-6xl">
+          <h2 className="pt-8 text-4xl md:text-5xl font-bold mb-6 opacity-0 fade-in-element leading-tight text-emerald-100 lg:text-6xl">
             Everything You Need to <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
               Scale Your Business
@@ -291,15 +291,15 @@ const Features = () => {
             {/* Customizable Dashboards */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-full flex items-center justify-center mb-6 border border-teal-400/30 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-teal-300 drop-shadow-sm"
                   >
                     <rect width="18" height="11" x="3" y="11" rx="2" />
                     <circle cx="12" cy="5" r="2" />
@@ -320,15 +320,15 @@ const Features = () => {
             {/* Data-Driven Decisions */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-full flex items-center justify-center mb-6 border border-teal-400/30 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-teal-300 drop-shadow-sm"
                   >
                     <path d="M9 12l2 2 4-4" />
                     <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z" />
@@ -350,15 +350,15 @@ const Features = () => {
             {/* Multi-channel Analytics */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-full flex items-center justify-center mb-6 border border-teal-400/30 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-teal-300 drop-shadow-sm"
                   >
                     <path d="M3 3v18h18" />
                     <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
@@ -381,15 +381,15 @@ const Features = () => {
             {/* AI-Powered Insights */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-full flex items-center justify-center mb-6 border border-teal-400/30 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-teal-300 drop-shadow-sm"
                   >
                     <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
                   </svg>
@@ -408,15 +408,15 @@ const Features = () => {
             {/* Revenue & Forecast Planner */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-full flex items-center justify-center mb-6 border border-teal-400/30 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-teal-300 drop-shadow-sm"
                   >
                     <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
                     <path d="M13.73 21a2 2 0 0 1-3.46 0" />

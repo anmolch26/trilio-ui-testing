@@ -58,9 +58,11 @@ const Newsletter = () => {
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="pulse-chip">
-              <span>Newsletter</span>
-            </div>
+          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+            <span className="font-display tracking-wide">
+            Newsletter
+            </span>
+          </div>
           </div>
 
           <h2 className="text-5xl font-display font-bold mb-4 text-left">
@@ -81,14 +83,15 @@ const Newsletter = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
-                className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+                className="w-full px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 text-xs sm:text-sm lg:text-base"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4"
+              className="text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base font-medium transition-colors cursor-pointer hover:opacity-90 active:scale-95 md:ml-4"
+              style={{ backgroundColor: "#01b5af" }}
             >
               {isSubmitting ? "Subscribing..." : "Subscribe"}
             </button>
