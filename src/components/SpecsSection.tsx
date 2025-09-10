@@ -3,14 +3,13 @@ const SpecsSection = () => {
   return (
     <section className="w-full py-6 sm:py-10 mb-24 md:mb-32" id="capabilities">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-        {/* Header with badge and line */}
-        <div className="flex items-center gap-4 mb-8 sm:mb-16">
-          <div className="flex items-center gap-4">
-            <div className="pulse-chip">
-              <span>Core Capabilities</span>
-            </div>
+        {/* Header with centered badge */}
+        <div className="flex justify-center mb-8 sm:mb-16">
+          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+            <span className="font-display tracking-wide">
+              Core Capabilities
+            </span>
           </div>
-          <div className="flex-1 h-[1px] bg-gray-300"></div>
         </div>
 
         {/* Main content with text mask image */}
@@ -91,7 +90,7 @@ const SpecsSection = () => {
             style={{ marginTop: "5rem", marginBottom: "-4rem" }}
           >
             {/* Custom BI Image */}
-            <div className="w-full max-w-6xl lg:flex-shrink-0 -m-24 p-0">
+            <div className="w-full max-w-6xl lg:flex-shrink-0 -m-24 p-0 -ml-12">
               <div className="relative">
                 <img
                   src="https://assets.channeliq.ai/trilio-landing/products/Impact01.png"
@@ -103,7 +102,7 @@ const SpecsSection = () => {
             </div>
 
             {/* Custom BI Text content */}
-            <div className="text-center flex-1">
+            <div className="text-center flex-1 ">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-tight">
                 Impact Events
                 {/* <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">

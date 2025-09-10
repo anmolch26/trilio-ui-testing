@@ -131,14 +131,11 @@ const Hero = () => {
         >
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
             <div className="mb-3 sm:mb-6">
-              <div
-                className="pulse-chip inline-block opacity-0 animate-fade-in"
-                style={{
-                  animationDelay: "0.1s",
-                }}
-              >
-                <span>Ecommerce Intelligence</span>
-              </div>
+            <div className="inline-flex items-center px-5 py-1.5 rounded-full text-sm font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+              <span className="font-display tracking-wide">
+                Ecommerce Intelligence
+              </span>
+            </div>
             </div>
 
             <h1

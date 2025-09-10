@@ -229,7 +229,7 @@ const DetailsSection = () => {
                   <button
                     type="submit"
                     className="w-full sm:w-auto inline-block px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-xl transition-colors duration-300"
-                    style={{ minWidth: "280px" }}
+                    style={{ minWidth: "400px" }}
                     disabled={loading}
                   >
                     {loading ? "Submitting..." : "Get My Demo"}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import TrilioLogoFooter from "@/assests/Remove background project (4).png";
+import { ArrowUp } from "lucide-react";
 
 const LegacyFooter = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -147,6 +148,26 @@ const LegacyFooter = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <a
+                  href="#privacy"
+                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowPrivacy(true);
+                  }}
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#terms"
+                  className="text-gray-600 hover:text-pulse-500 transition-colors"
+                >
+                  Terms of Use
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -156,24 +177,16 @@ const LegacyFooter = () => {
           <p className="text-gray-600 text-sm mb-4 md:mb-0">
             © 2025 Trilio.ai. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 text-sm">
-            <a
-              href="#privacy"
-              className="text-gray-600 hover:text-pulse-500 transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowPrivacy(true);
-              }}
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#terms"
-              className="text-gray-600 hover:text-pulse-500 transition-colors"
-            >
-              Terms of Use
-            </a>
-          </div>
+          <a
+            href="#top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="flex items-center gap-2 text-gray-600 hover:text-pulse-500 text-sm"
+          >
+            <ArrowUp size={16} /> Back to Top
+          </a>
         </div>
       </div>
       {/* Privacy Policy Modal */}

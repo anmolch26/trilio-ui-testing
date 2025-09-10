@@ -66,9 +66,11 @@ const OptimizedPurposeSection = () => {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="pulse-chip">
-              <span>Why unified data matters</span>
-            </div>
+          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+            <span className="font-display tracking-wide">
+            Why unified data matters
+            </span>
+          </div>
           </div>
         </div>
 

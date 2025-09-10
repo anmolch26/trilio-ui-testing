@@ -32,7 +32,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/trilio-ai/about/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+                className="w-8 h-8 rounded-xl flex items-center justify-center"
               >
                 <img
                   src="https://assets.channeliq.ai/sidebar/icons8-linkedin-50.png"
@@ -45,7 +45,7 @@ const Footer = () => {
                 href="https://x.com/trilioai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+                className="w-8 h-8 rounded-xl flex items-center justify-center"
               >
                 <img
                   src="https://assets.channeliq.ai/sidebar/Twitter(X).png"
@@ -58,7 +58,7 @@ const Footer = () => {
                 href="https://www.youtube.com/@user-trilio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-white/10 transition"
+                className="w-8 h-8 rounded-xl flex items-center justify-center"
               >
                 <img
                   src="https://assets.channeliq.ai/sidebar/youtube-logo-2431.png"
