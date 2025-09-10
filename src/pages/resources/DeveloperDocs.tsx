@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
@@ -37,24 +37,6 @@ const DeveloperDocs = () => {
     useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setShowIntegrationsDropdown(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   // Handle URL-based navigation
   useEffect(() => {
@@ -234,7 +216,7 @@ metrics = client.metrics.get(
                     {sidebarSections.map((section) => (
                       <div key={section.id}>
                         {section.hasDropdown ? (
-                          <div className="relative" ref={dropdownRef}>
+                          <div>
                             <button
                               onClick={() =>
                                 setShowIntegrationsDropdown(
@@ -242,7 +224,7 @@ metrics = client.metrics.get(
                                 )
                               }
                               className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-200 ${
-                                activeSection === section.id
+                                activeSection === section.id || showIntegrationsDropdown
                                   ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
                                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                               }`}
@@ -258,14 +240,18 @@ metrics = client.metrics.get(
                               />
                             </button>
                             {showIntegrationsDropdown && (
-                              <div className="absolute left-0 right-0 top-full bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                              <div className="bg-gray-50 border-l-2 border-purple-200 ml-4">
                                 {integrations.map((integration) => (
                                   <button
                                     key={integration.id}
                                     onClick={() =>
                                       handleIntegrationClick(integration.id)
                                     }
-                                    className="w-full flex items-center px-6 py-3 text-left text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                                    className={`w-full flex items-center px-4 py-3 text-left text-sm transition-all duration-200 ${
+                                      activeSection === integration.id
+                                        ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                                    }`}
                                   >
                                     {integration.icon}
                                     <span className="ml-3">
