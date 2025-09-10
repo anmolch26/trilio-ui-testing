@@ -521,7 +521,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "3 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-100.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-100.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
         <div
@@ -544,7 +544,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "4 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-101.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-101.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -567,7 +567,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "3 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-102.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-102.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -591,7 +591,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "2 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-103.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-103.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -615,7 +615,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "4 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-104.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-104.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -638,7 +638,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "3 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-105.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-105.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -661,7 +661,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "5 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-106.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-106.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -684,7 +684,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-107.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-107.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -707,7 +707,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "5 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-108.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-108.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -730,7 +730,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-109.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-109.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -753,7 +753,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "7 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-110.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-110.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -776,7 +776,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "5 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-111.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-111.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -799,7 +799,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-112.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-112.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -822,7 +822,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "7 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-113.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-113.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -845,7 +845,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "4 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-114.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-114.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -869,7 +869,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "8 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-115.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-115.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -892,7 +892,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-116.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-116.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -915,7 +915,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "7 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-117.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-117.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -938,7 +938,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "8 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-118.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-118.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -961,7 +961,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "9 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-119.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-119.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -984,7 +984,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "10 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-120.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-120.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1007,7 +1007,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "11 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-121.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-121.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1030,7 +1030,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "9 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-122.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-122.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1053,7 +1053,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "8 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-123.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-123.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1076,7 +1076,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "10 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-124.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-124.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1099,7 +1099,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-125.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-125.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1123,7 +1123,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "12 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-126.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-126.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1146,7 +1146,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "8 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-127.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-127.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1169,7 +1169,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "6 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-128.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-128.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1192,7 +1192,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "8 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-129.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-129.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1215,7 +1215,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "7 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-130.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-130.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
@@ -1238,7 +1238,7 @@ export const generatedBlogData: Record<number, BlogPost> = {
     category: "E-commerce",
     readTime: "9 min",
     featuredImage:
-      "https://assets.channeliq.ai/trilio-landing/Blogs/id-131.jpeg",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/id-131.png",
     content: (
       <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-6 prose-h3:mb-4 prose-p:text-black prose-p:mb-6 prose-li:text-black">
         <div
