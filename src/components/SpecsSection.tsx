@@ -5,7 +5,7 @@ const SpecsSection = () => {
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Header with centered badge */}
         <div className="flex justify-center mb-8 sm:mb-16">
-          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+          <div className="inline-flex items-center px-4 py-1 rounded-full text-base  text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
             <span className="font-display tracking-wide">
               Core Capabilities
             </span>

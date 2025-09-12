@@ -417,7 +417,7 @@ const Testimonials = () => {
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
         <div className="w-full flex justify-center">
-          <div className="inline-flex items-center px-8 py-2 rounded-full text-base font-bold text- border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+          <div className="inline-flex items-center px-4 py-1 rounded-full text-base  text- border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
             <span className="font-display tracking-wide">
               Testimonials
             </span>

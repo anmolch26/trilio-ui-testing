@@ -33,11 +33,11 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "relative overflow-hidden bg-gradient-to-r from-[#01b5af] to-[#019a94] hover:from-[#019a94] hover:to-[#018a84] text-white border-0 shadow-lg hover:shadow-xl hover:shadow-[#01b5af]/30 hover:scale-105",
+      "relative overflow-hidden bg-gradient-to-r from-[#01b5af] to-[#019a94] hover:from-[#019a94] hover:to-[#018a84] text-white border-0 shadow-lg hover:shadow-xl hover:shadow-[#01b5af]/30 hover:shadow-[0_0_30px_rgba(1,181,175,0.6)] hover:shadow-[0_0_60px_rgba(1,181,175,0.4)] hover:scale-105",
     secondary:
-      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-white/80 backdrop-blur-sm text-[#047e7b] hover:border-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:scale-105 hover:bg-white",
+      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-white/80 backdrop-blur-sm text-[#047e7b] hover:border-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:shadow-[0_0_30px_rgba(1,181,175,0.6)] hover:shadow-[0_0_60px_rgba(1,181,175,0.4)] hover:scale-105 hover:bg-white",
     outline:
-      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-transparent text-[#01b5af] hover:bg-[#01b5af]/10 hover:border-[#01b5af] hover:text-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:scale-105",
+      "relative overflow-hidden border-2 border-[#01b5af]/60 bg-transparent text-[#01b5af] hover:bg-[#01b5af]/10 hover:border-[#01b5af] hover:text-[#01b5af] hover:shadow-lg hover:shadow-[#01b5af]/20 hover:shadow-[0_0_30px_rgba(1,181,175,0.6)] hover:shadow-[0_0_60px_rgba(1,181,175,0.4)] hover:scale-105",
   };
 
   const sizeClasses = {
