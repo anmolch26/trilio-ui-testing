@@ -1,0 +1,38 @@
+.ecommerce-article {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.ecommerce-article h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #111;
+}
+
+.ecommerce-article h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.75rem 0 1rem;
+  color: #222;
+  border-left: 4px solid #4f46e5;
+  padding-left: 0.75rem;
+}
+
+.ecommerce-article p {
+  margin-bottom: 1rem;
+}
+
+.ecommerce-article ul {
+  margin: 0 0 1.5rem 1.5rem;
+  list-style-type: disc;
+}
+
+.ecommerce-article li {
+  margin-bottom: 0.6rem;
+}

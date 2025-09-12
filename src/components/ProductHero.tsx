@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, LucideIcon } from "lucide-react";
+import ThemeButton from "./theme/ThemeButton";
 
 interface ProductHeroProps {
   badgeIcon: LucideIcon;
@@ -54,47 +55,24 @@ const ProductHero: React.FC<ProductHeroProps> = ({
               {description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact-form"
-                className="text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center group w-full sm:w-auto text-center"
-                style={{
-                  textDecoration: "none",
-                  background: "linear-gradient(135deg, #07beb8, #3dccc7)",
-                  boxShadow: "0 4px 15px rgba(7, 190, 184, 0.3)",
-                }}
+              <ThemeButton
+                variant="primary"
+                href="/contact-form"
+                showArrow={true}
+                className="w-full sm:w-auto text-center px-4 py-1.5 text-sm font-semibold"
               >
                 {primaryButtonText}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              {secondaryButtonLink ? (
-                <a
-                  href={secondaryButtonLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center group w-full sm:w-auto text-center"
-                  style={{
-                    textDecoration: "none",
-                    background: "linear-gradient(135deg, #07beb8, #3dccc7)",
-                    boxShadow: "0 4px 15px rgba(7, 190, 184, 0.3)",
-                  }}
-                >
-                  {secondaryButtonText}
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              ) : (
-                <Link
-                  to="/contact-form"
-                  className="text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center group w-full sm:w-auto text-center"
-                  style={{
-                    textDecoration: "none",
-                    background: "linear-gradient(135deg, #07beb8, #3dccc7)",
-                    boxShadow: "0 4px 15px rgba(7, 190, 184, 0.3)",
-                  }}
-                >
-                  {secondaryButtonText}
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              )}
+              </ThemeButton>
+              <ThemeButton
+                variant="secondary"
+                href={secondaryButtonLink || "/contact-form"}
+                showArrow={true}
+                className="w-full sm:w-auto text-center px-4 py-1.5 text-sm font-semibold"
+                target={secondaryButtonLink ? "_blank" : undefined}
+                rel={secondaryButtonLink ? "noopener noreferrer" : undefined}
+              >
+                {secondaryButtonText}
+              </ThemeButton>
             </div>
           </div>
           <div
