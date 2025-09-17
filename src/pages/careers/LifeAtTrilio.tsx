@@ -75,11 +75,6 @@ const LifeAtTrilio = () => {
       icon: "🌍",
     },
     {
-      title: "Annual Learning Stipend",
-      description: "$2,000 yearly budget for courses and conferences",
-      icon: "📚",
-    },
-    {
       title: "Wellness Days",
       description: "Additional mental health and wellness time off",
       icon: "🧘",
@@ -88,11 +83,6 @@ const LifeAtTrilio = () => {
       title: "Equity Options",
       description: "Share in Trilio's success with stock options",
       icon: "📈",
-    },
-    {
-      title: "Home Office Setup",
-      description: "$1,500 budget for your perfect workspace",
-      icon: "💻",
     },
   ];
 
