@@ -4,7 +4,7 @@ import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import TikTokLogo from "@/assests/vecteezy_tiktok-white-wordmark-logo-icon-tiktok-app-transparent_65386727.png";
 import TikTokImage from "@/assests/tik-tok.png";
-import TikTokShopImage from "@/assests/Remove background project (3).png";
+const TikTokShopImage = "https://your-s3-bucket-url/Remove background project (3).png";
 import TikTokInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 04_53_41 PM.png";
 import TikTokShopVisual from "@/assests/ChatGPT Image Jul 28, 2025, 05_14_28 PM.png";
 import TikTokSocialROI from "@/assests/ChatGPT Image Jul 28, 2025, 05_25_08 PM.png";

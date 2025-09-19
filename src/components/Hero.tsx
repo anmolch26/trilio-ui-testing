@@ -5,16 +5,17 @@ import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 import ThemeButton from "./theme/ThemeButton";
 import { useAnalytics } from "../hooks/useAnalytics";
-import Icon1 from "@/assests/Remove background project (3).png";
-import Icon2 from "@/assests/Remove background project (5).png";
-import Icon3 from "@/assests/Remove background project (6).png";
-import Icon4 from "@/assests/Remove background project (7).png";
-import Icon5 from "@/assests/Remove background project (8).png";
-import Icon6 from "@/assests/Remove background project (9).png";
-import Icon7 from "@/assests/Remove background project (10).png";
-import Icon8 from "@/assests/Remove background project (11).png";
-import Icon9 from "@/assests/Remove background project (12).png";
-import Icon10 from "@/assests/Remove background project (13).png";
+// S3 URLs for carousel images
+const Icon1 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (3).png";
+const Icon2 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (5).png";
+const Icon3 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (6).png";
+const Icon4 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (7).png";
+const Icon5 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (8).png";
+const Icon6 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (9).png";
+const Icon7 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (10).png";
+const Icon8 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (11).png";
+const Icon9 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (12).png";
+const Icon10 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (13).png";
 import AIAssistantInterface from "./AIAssistantInterface";
 import OrbitingCarousel from "./OrbitingCarousel";
 
