@@ -62,28 +62,20 @@ const DynamicBlog = () => {
             {/* Blog Header - Generic Structure */}
 
             <header className="mb-8">
-              <div className="flex items-center mb-6">
-                <div className="flex-1">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
-                    {blogPost.title}
-                  </h1>
-                </div>
-                <div className="ml-6">
-                  <img
-                    src={blogPost.authorImage}
-                    alt={blogPost.author}
-                    className="w-28 h-28 rounded-full object-cover mt-8"
-                  />
-                </div>
-              </div>
-            </header>
-            <div className="mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                {blogPost.title}
+              </h1>
               <div className="flex items-center text-sm text-gray-600 mb-4">
+                <img
+                  src={blogPost.authorImage}
+                  alt={blogPost.author}
+                  className="w-10 h-10 rounded-full object-cover mr-3"
+                />
                 <span className="font-medium">{blogPost.author}</span>
                 <span className="mx-2">•</span>
                 <span>{blogPost.date}</span>
               </div>
-            </div>
+            </header>
             <div className="mb-8">
               <img
                 src={blogPost.featuredImage}
