@@ -145,7 +145,7 @@ const Hero = () => {
               }}
             >
               Your AI Wingman for
-              <br className="hidden sm:inline" />
+              <br className="hidden sm:inline" />{" "}
               Ecommerce Growth
             </h1>
 
