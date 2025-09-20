@@ -20,7 +20,7 @@ const SpecsSection = () => {
             <div className="w-full max-w-4xl lg:flex-shrink-0 lg:-ml-16">
               <div className="relative">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/products/Dashboard13 (1).png"
+                  src="https://assets.channeliq.ai/trilio-landing/Hero_Images/Dashboard13 (1).webp"
                   alt="Trilio Dashboard - Unified ecommerce analytics platform"
                   className="w-full h-auto object-contain"
                   style={{ minHeight: "400px", maxHeight: "600px" }}
@@ -53,7 +53,7 @@ const SpecsSection = () => {
             <div className="w-full max-w-3xl lg:flex-shrink-0">
               <div className="relative">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/products/Insights2 (1).png"
+                  src="https://assets.channeliq.ai/trilio-landing/Hero_Images/Insights2 (1).webp"
                   alt="Trilio Conversational AI Wingman - Ask questions and get instant answers"
                   className="w-full h-auto object-contain"
                   style={{ minHeight: "500px", maxHeight: "600px" }}
@@ -93,7 +93,7 @@ const SpecsSection = () => {
             <div className="w-full max-w-6xl lg:flex-shrink-0 -m-24 p-0 -ml-12">
               <div className="relative">
                 <img
-                  src="https://assets.channeliq.ai/trilio-landing/products/Impact01.png"
+                  src="https://assets.channeliq.ai/trilio-landing/Hero_Images/Impact01.webp"
                   alt="Trilio Custom BI - Create your own view with easy options"
                   className="w-full h-auto object-contain"
                   style={{ minHeight: "0px", maxHeight: "800px" }}

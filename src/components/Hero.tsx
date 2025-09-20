@@ -6,16 +6,16 @@ import LottieAnimation from "./LottieAnimation";
 import ThemeButton from "./theme/ThemeButton";
 import { useAnalytics } from "../hooks/useAnalytics";
 // S3 URLs for carousel images
-const Icon1 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (3).png";
-const Icon2 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (5).png";
-const Icon3 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (6).png";
-const Icon4 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (7).png";
-const Icon5 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (8).png";
-const Icon6 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (9).png";
-const Icon7 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (10).png";
-const Icon8 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (11).png";
-const Icon9 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (12).png";
-const Icon10 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (13).png";
+const Icon1 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (3).webp";
+const Icon2 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (5).webp";
+const Icon3 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (6).webp";
+const Icon4 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (7).webp";
+const Icon5 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (8).webp";
+const Icon6 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (9).webp";
+const Icon7 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (10).webp";
+const Icon8 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (11).webp";
+const Icon9 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (12).webp";
+const Icon10 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (13).webp";
 import AIAssistantInterface from "./AIAssistantInterface";
 import OrbitingCarousel from "./OrbitingCarousel";
 

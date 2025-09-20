@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import TrilioLogoFooter from "@/assests/Remove background project (4).png";
+// Updated to use the new image URL
+const TrilioLogoFooter = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp";
 import { ArrowUp } from "lucide-react";
 
 const LegacyFooter = () => {
