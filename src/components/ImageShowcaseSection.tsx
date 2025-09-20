@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Play, Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-react";
 import SkipBackIcon from "@/assests/SkipBack.png";
-import SkipForwardIcon from "@/assests/SkipForward.png";
-import SkipBack1 from "@/assests/SkipBack1.png";
+// Updated to use the new WebP format from CDN
+const SkipForwardIcon = "https://assets.channeliq.ai/trilio-landing/Hero_Images/SkipForward.webp";
+// Updated to use the new WebP format from CDN
+const SkipBack1 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/SkipBack1.webp";
 import { useAnalytics } from "../hooks/useAnalytics";
 
 const TrilioVideo = "https://assets.channeliq.ai/trilio-landing/TRILIO.mp4";
@@ -14,6 +16,8 @@ const ImageShowcaseSection = () => {
   const [showControls, setShowControls] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playerRef = useRef<HTMLDivElement>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -278,6 +282,30 @@ const ImageShowcaseSection = () => {
     };
   }, []);
 
+  // Lazy load video when section comes into viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldLoadVideo) {
+            setShouldLoadVideo(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px' // Start loading when section is 50px away from viewport
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [shouldLoadVideo]);
+
   // Pause video when section is not in viewport
   useEffect(() => {
     const handleScroll = () => {
@@ -331,24 +359,36 @@ const ImageShowcaseSection = () => {
         <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/80">
             <div className="p-0 bg-white relative" ref={playerRef}>
-              <video
-                ref={videoRef}
-                src={TrilioVideo}
-                className="w-full h-auto"
-                playsInline
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
-                onClick={handleVideoClick}
-                onTimeUpdate={handleTimeUpdate}
-                onLoadedMetadata={handleLoadedMetadata}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onMouseMove={handleControlsMouseMove}
-              />
+              {shouldLoadVideo ? (
+                <video
+                  ref={videoRef}
+                  src={TrilioVideo}
+                  className="w-full h-auto"
+                  playsInline
+                  preload="metadata"
+                  poster=""
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onEnded={() => setIsPlaying(false)}
+                  onClick={handleVideoClick}
+                  onTimeUpdate={handleTimeUpdate}
+                  onLoadedMetadata={handleLoadedMetadata}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onMouseMove={handleControlsMouseMove}
+                  onLoadedData={() => setIsVideoLoaded(true)}
+                />
+              ) : (
+                <div className="w-full h-auto bg-gray-100 flex items-center justify-center min-h-[300px] rounded-2xl">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500 mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading video...</p>
+                  </div>
+                </div>
+              )}
 
-              {/* Play Button Overlay - Only on hover when paused */}
-              {!isPlaying && showControls && (
+              {/* Play Button Overlay - Only on hover when paused and video is loaded */}
+              {!isPlaying && showControls && shouldLoadVideo && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
                   <div className="flex items-center space-x-8 pointer-events-auto">
                     <SkipButton direction="back" onClick={handleSkipBackward} />
@@ -367,7 +407,7 @@ const ImageShowcaseSection = () => {
               )}
 
               {/* Skip Buttons Overlay - Only when playing and hovering */}
-              {isPlaying && showControls && (
+              {isPlaying && showControls && shouldLoadVideo && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex items-center space-x-8 pointer-events-auto">
                     <SkipButton direction="back" onClick={handleSkipBackward} />
@@ -394,7 +434,7 @@ const ImageShowcaseSection = () => {
               )}
 
               {/* Video Controls */}
-              {showControls && (
+              {showControls && shouldLoadVideo && (
                 <div
                   className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-300"
                   onMouseEnter={handleMouseEnter}
