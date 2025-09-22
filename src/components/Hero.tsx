@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import LottieAnimation from "./LottieAnimation";
 import ThemeButton from "./theme/ThemeButton";
 import { useAnalytics } from "../hooks/useAnalytics";
 // S3 URLs for carousel images
@@ -22,7 +21,6 @@ import OrbitingCarousel from "./OrbitingCarousel";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const [lottieData, setLottieData] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const { trackButtonClick } = useAnalytics();
 
@@ -50,14 +48,6 @@ const Hero = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    fetch("/loop-header.lottie")
-      .then((response) => response.json())
-      .then((data) => setLottieData(data))
-      .catch((error) =>
-        console.error("Error loading Lottie animation:", error)
-      );
-  }, []);
 
   useEffect(() => {
     // Skip effect on mobile
@@ -187,26 +177,14 @@ const Hero = () => {
           </div>
 
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0 flex items-center justify-center">
-            {lottieData ? (
-              <div
-                className="relative z-10 animate-fade-in"
-                style={{
-                  animationDelay: "0.9s",
-                }}
-              >
-                <LottieAnimation
-                  animationPath={lottieData}
-                  className="w-full h-auto max-w-lg mx-auto"
-                  loop={true}
-                  autoplay={true}
-                />
-              </div>
-            ) : (
-              <>
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100/40 to-gray-200/40 rounded-2xl sm:rounded-3xl -z-10 shadow-xl blur-sm"></div>
-                <AIAssistantInterface />
-              </>
-            )}
+            <div
+              className="relative z-10 animate-fade-in"
+              style={{
+                animationDelay: "0.9s",
+              }}
+            >
+              <AIAssistantInterface />
+            </div>
           </div>
         </div>
 

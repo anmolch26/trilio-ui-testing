@@ -8,13 +8,23 @@ import {
   Mic,
   Paperclip,
 } from "lucide-react";
-import mylottie from "@/assests/Lottie/Siri Animation.json";
 import Lottie from "lottie-react";
 
 const AIAssistantInterface = () => {
   const [currentText, setCurrentText] = useState("");
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [lottieData, setLottieData] = useState<any>(null);
+
+  // Fetch Lottie animation from S3
+  useEffect(() => {
+    fetch("https://assets.channeliq.ai/trilio-landing/Hero_Images/Siri%20Animation.json")
+      .then((response) => response.json())
+      .then((data) => setLottieData(data))
+      .catch((error) =>
+        console.error("Error loading Lottie animation:", error)
+      );
+  }, []);
 
   // Add custom CSS for glowing animation
   useEffect(() => {
@@ -107,12 +117,16 @@ const AIAssistantInterface = () => {
         {/* Wingman Icon */}
         <div className="flex justify-center mb-6">
           <div className="w-16 h-16 flex items-center justify-center">
-            <Lottie
-              animationData={mylottie}
-              loop={true}
-              autoplay={true}
-              style={{ width: "64px", height: "64px" }}
-            />
+            {lottieData ? (
+              <Lottie
+                animationData={lottieData}
+                loop={true}
+                autoplay={true}
+                style={{ width: "64px", height: "64px" }}
+              />
+            ) : (
+              <div className="w-16 h-16 bg-gray-600 rounded-full animate-pulse" />
+            )}
           </div>
         </div>
 
