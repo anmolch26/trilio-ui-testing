@@ -8,23 +8,13 @@ import {
   Mic,
   Paperclip,
 } from "lucide-react";
-import mylottie from "@/assests/Lottie/Siri Animation-optimized.json";
+import mylottie from "@/assests/Lottie/Siri Animation.json";
 import Lottie from "lottie-react";
 
 const AIAssistantInterface = () => {
   const [currentText, setCurrentText] = useState("");
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [shouldLoadAnimation, setShouldLoadAnimation] = useState(false);
-
-  // Lazy load animation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldLoadAnimation(true);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Add custom CSS for glowing animation
   useEffect(() => {
@@ -117,18 +107,12 @@ const AIAssistantInterface = () => {
         {/* Wingman Icon */}
         <div className="flex justify-center mb-6">
           <div className="w-16 h-16 flex items-center justify-center">
-            {shouldLoadAnimation ? (
-              <Lottie
-                animationData={mylottie}
-                loop={true}
-                autoplay={true}
-                style={{ width: "64px", height: "64px" }}
-              />
-            ) : (
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 bg-white rounded-full opacity-80"></div>
-              </div>
-            )}
+            <Lottie
+              animationData={mylottie}
+              loop={true}
+              autoplay={true}
+              style={{ width: "64px", height: "64px" }}
+            />
           </div>
         </div>
 
