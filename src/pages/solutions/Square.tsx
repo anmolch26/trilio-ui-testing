@@ -37,7 +37,7 @@ const Square = () => (
         {/* Right: Hero Image (placeholder) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/sqaure-1.png"
             alt="Square POS and Payments"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -61,7 +61,7 @@ const Square = () => (
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/square-2.png"
               alt="Square Commerce Overview"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
@@ -105,7 +105,7 @@ const Square = () => (
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/square-3.png"
             alt="How Trilio models Square data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -165,7 +165,7 @@ const Square = () => (
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/square-4.png"
             alt="Square metrics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -180,7 +180,7 @@ const Square = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/square-5.png"
             alt="Square Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}

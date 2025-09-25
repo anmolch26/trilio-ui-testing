@@ -14,16 +14,16 @@ const ShipStation = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-white/90">
-            SHIPSTATION FULFILLMENT PLATFORM
+            SHIPSTATION INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            MULTI-CARRIER SHIPPING & FULFILLMENT AUTOMATION
+            Connect your shipping data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            We connect storefronts and marketplaces to ShipStation, apply
-            automation rules, generate labels, and sync tracking, costs, and
-            status back to your channels — powering real-time shipping
-            analytics.
+            Trilio streams your ShipStation orders, shipments, and tracking data
+            to create unified fulfillment analytics. Track shipping costs,
+            delivery performance, and carrier metrics with real-time insights
+            across all channels.
           </p>
           <ThemeButton
             variant="primary"
@@ -31,14 +31,14 @@ const ShipStation = () => (
             href="/contact-form"
             className="bg-white text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-gray-100 transition-colors"
           >
-            Get in Touch
+            Connect ShipStation
           </ThemeButton>
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="ShipStation Fulfillment Automation"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/shipstation-1.png"
+            alt="ShipStation Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -46,23 +46,23 @@ const ShipStation = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Orders to On-Time Delivery: ShipStation Wins
+          What Trilio syncs from ShipStation
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Rate shop across UPS, FedEx, USPS, DHL and more. Automate service
-          selection, batch label printing, and branded tracking to lower costs
-          and improve delivery performance.
+          We backfill history and listen to webhooks in near real time. Your
+          orders, shipments, and tracking events are modeled and joined with
+          commerce data for comprehensive fulfillment analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="ShipStation Shipping Overview"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/shipstation-2.png"
+              alt="Trilio ShipStation Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -71,27 +71,27 @@ const ShipStation = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Rate shopping across carriers & services
+                  Orders, Shipments, Labels & Tracking Events
                 </span>
-                <span className="text-3xl text-[#2F9E44] font-bold">+</span>
+                <span className="text-3xl text-[#5FBF47] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Automation rules for tags, packages, and insurance
+                  Carriers, Services, Rates & Delivery Zones
                 </span>
-                <span className="text-3xl text-[#2F9E44] font-bold">+</span>
+                <span className="text-3xl text-[#5FBF47] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Batch label printing, pick/pack, scan-to-verify
+                  Packages, Dimensions, Weight & Insurance
                 </span>
-                <span className="text-3xl text-[#2F9E44] font-bold">+</span>
+                <span className="text-3xl text-[#5FBF47] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Branded tracking, notifications, and returns portal
+                  Returns, Exceptions, Costs & Performance Metrics
                 </span>
-                <span className="text-3xl text-[#2F9E44] font-bold">+</span>
+                <span className="text-3xl text-[#5FBF47] font-bold">+</span>
               </div>
             </div>
           </div>
@@ -99,14 +99,14 @@ const ShipStation = () => (
       </div>
     </section>
 
-    {/* Platform Section */}
+    {/* How we use your ShipStation data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="ShipStation Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/shipstation-3.png"
+            alt="How Trilio models ShipStation data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -114,33 +114,36 @@ const ShipStation = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Orders, Shipments, Tracking, and Costs
+            How Trilio uses your ShipStation data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            We normalize orders, items, dimensions, and zones; generate labels
-            through ShipStation; sync tracking and costs; and write back status
-            to channels like Shopify, Amazon, WooCommerce, and more.
+            We normalize ShipStation objects and connect them to your commerce
+            and customer datasets. Orders are enriched with shipping costs,
+            delivery performance, and carrier metrics for comprehensive
+            fulfillment analytics.
           </p>
           <p className="text-lg text-gray-700">
-            Power accurate landed-cost and SLA reporting with a clean data model
-            for shipments, exceptions, returns, and reimbursements.
+            From order fulfillment to delivery tracking and cost analysis, we
+            create unified metrics so operations, finance, and customer success
+            teams work from the same shipping truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Reduce Fulfillment Costs & Improve SLAs
+            Shipping metrics and KPIs out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Optimize packaging, service selection, and pick/pack flow. Track
-            promised vs. actual delivery, exception rates, and driver issues to
-            continuously improve.
+            Track shipping costs, delivery times, carrier performance, and
+            exception rates. Connect fulfillment metrics to customer satisfaction
+            and revenue impact for complete visibility into your shipping
+            operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -149,7 +152,7 @@ const ShipStation = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE AUTOMATION RULES
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -157,15 +160,15 @@ const ShipStation = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE RETURNS
+              CONNECT SHIPSTATION
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Shipping ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/shipstation-4.png"
+            alt="ShipStation metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -179,8 +182,8 @@ const ShipStation = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
-            alt="Shipping Analytics"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/shipstation-5.png"
+            alt="ShipStation Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -188,16 +191,17 @@ const ShipStation = () => (
 
         {/* Right: Text */}
         <div className="flex-1">
-          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#2F9E44]">
+          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#5FBF47]">
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Shipping & Operations Insights
+            Data-driven shipping and fulfillment insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Track on-time %, delivery time distribution, exception rate, and
-            carrier performance by zone. Monitor cost per order, surcharges, and
-            packaging efficiency to uncover savings.
+            Measure shipping performance, carrier efficiency, and delivery
+            satisfaction alongside revenue impact. Identify cost optimization
+            opportunities and delivery improvements using unified fulfillment
+            data.
           </p>
           <ThemeButton
             variant="outline"
@@ -212,7 +216,7 @@ const ShipStation = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#89D56E] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section className="bg-[#5FBF47] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -253,7 +257,7 @@ const ShipStation = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#5FBF47] rounded-2xl p-8">
+          <div className="bg-[#2F5233] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -314,7 +318,7 @@ const ShipStation = () => (
 
               <button
                 type="submit"
-                className="w-full bg-white text-black font-bold py-4 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+                className="w-full bg-[#5FBF47] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#5FBF47]/90 transition-colors"
               >
                 Submit Demo Request
               </button>

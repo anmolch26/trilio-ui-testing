@@ -14,15 +14,16 @@ const Easyship = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-white/90">
-            EASYSHIP GLOBAL SHIPPING PLATFORM
+            EASYSHIP INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            DISCOUNTED RATES, DUTIES/TAXES, AND AUTOMATION
+            Connect your global shipping data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            We connect your stores to Easyship to rate-shop couriers, automate
-            labels and customs docs, calculate duties/taxes (DDP/DDU), and sync
-            tracking and landed costs for end-to-end visibility.
+            Trilio streams your Easyship orders, shipments, and customs data to
+            create unified global shipping analytics. Track international
+            shipping costs, duties, taxes, and delivery performance with
+            real-time insights across all markets.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +31,14 @@ const Easyship = () => (
             href="/contact-form"
             className="bg-white text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-gray-100 transition-colors"
           >
-            Get in Touch
+            Connect Easyship
           </ThemeButton>
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="Easyship Global Shipping"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/easyship-1.png"
+            alt="Easyship Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +46,23 @@ const Easyship = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Checkout to Delivered: Easyship Wins
+          What Trilio syncs from Easyship
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Compare couriers on price and SLA, automate label creation, and manage
-          customs paperwork with ease. Provide branded tracking and transparent
-          landed costs to improve delivery outcomes.
+          We backfill history and listen to webhooks in near real time. Your
+          international orders, shipments, and customs events are modeled and
+          joined with commerce data for comprehensive global shipping analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="Easyship Shipping Overview"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/easyship-2.png"
+              alt="Trilio Easyship Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,27 +71,27 @@ const Easyship = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Courier comparison with discounted rates
+                  Orders, Shipments, Labels & International Tracking
                 </span>
-                <span className="text-3xl text-[#0E6BA8] font-bold">+</span>
+                <span className="text-3xl text-[#0B3A82] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Automated labels, manifests, and pickups
+                  Couriers, Rates, Services & Delivery Zones
                 </span>
-                <span className="text-3xl text-[#0E6BA8] font-bold">+</span>
+                <span className="text-3xl text-[#0B3A82] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Duties/taxes (DDP/DDU), HS codes, and documents
+                  Duties, Taxes, HS Codes & Customs Documents
                 </span>
-                <span className="text-3xl text-[#0E6BA8] font-bold">+</span>
+                <span className="text-3xl text-[#0B3A82] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Branded tracking, returns, and notifications
+                  Returns, Exceptions, Costs & Performance Data
                 </span>
-                <span className="text-3xl text-[#0E6BA8] font-bold">+</span>
+                <span className="text-3xl text-[#0B3A82] font-bold">+</span>
               </div>
             </div>
           </div>
@@ -98,14 +99,14 @@ const Easyship = () => (
       </div>
     </section>
 
-    {/* Platform Section */}
+    {/* How we use your Easyship data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="Easyship Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/easyship-3.png"
+            alt="How Trilio models Easyship data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,33 +114,36 @@ const Easyship = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Orders, Shipments, Duties, and Tracking
+            How Trilio uses your Easyship data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            Normalize orders, items, weights, and zones; generate labels via
-            Easyship; sync tracking, costs, and customs data; then write back
-            status to channels like Shopify, Amazon, and WooCommerce.
+            We normalize Easyship objects and connect them to your commerce and
+            customer datasets. International orders are enriched with duties,
+            taxes, customs data, and delivery performance for comprehensive
+            global shipping analytics.
           </p>
           <p className="text-lg text-gray-700">
-            Build accurate landed-cost reporting with a clean model for
-            shipments, exceptions, returns, and reimbursements.
+            From order fulfillment to customs clearance and delivery tracking,
+            we create unified metrics so operations, finance, and customer
+            success teams work from the same global shipping truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Reduce Shipping Costs & Improve Delivery SLAs
+            Global shipping metrics and KPIs out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Optimize service selection and packaging. Track promised vs. actual
-            delivery, exception rates, and carrier performance to drive
-            continuous improvement.
+            Track international shipping costs, duties, taxes, delivery times,
+            and customs clearance performance. Connect global fulfillment
+            metrics to customer satisfaction and revenue impact for complete
+            visibility into your worldwide operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -148,7 +152,7 @@ const Easyship = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE DUTIES/TAXES
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -156,15 +160,15 @@ const Easyship = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE AUTOMATION
+              CONNECT EASYSHIP
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Shipping ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/easyship-4.png"
+            alt="Easyship metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -178,7 +182,7 @@ const Easyship = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/easyship-5.png"
             alt="Easyship Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -187,16 +191,17 @@ const Easyship = () => (
 
         {/* Right: Text */}
         <div className="flex-1">
-          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#0E6BA8]">
+          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#0B3A82]">
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Shipping & Operations Insights
+            Data-driven global shipping and customs insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Monitor on-time %, delivery time distribution, exception rate, and
-            carrier performance by zone. Track cost per order, surcharges, and
-            packaging efficiency to uncover savings.
+            Measure international shipping performance, customs efficiency, and
+            landed cost accuracy alongside revenue impact. Identify market
+            expansion opportunities and delivery improvements using unified
+            global shipping data.
           </p>
           <ThemeButton
             variant="outline"
@@ -211,7 +216,7 @@ const Easyship = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#082A5E] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section className="bg-[#0B3A82] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -252,7 +257,7 @@ const Easyship = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#0B3A82] rounded-2xl p-8">
+          <div className="bg-[#082A5E] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -313,7 +318,7 @@ const Easyship = () => (
 
               <button
                 type="submit"
-                className="w-full bg-white text-black font-bold py-4 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+                className="w-full bg-[#0B3A82] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#0B3A82]/90 transition-colors"
               >
                 Submit Demo Request
               </button>

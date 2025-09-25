@@ -14,15 +14,16 @@ const SmileIo = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-black max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#424242]">
-            SMILE.IO LOYALTY & REFERRALS
+            SMILE.IO INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            POINTS, VIP TIERS, AND REFERRALS THAT DRIVE LTV
+            Connect your loyalty data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            We integrate Smile.io to create loyalty programs that reward
-            purchases, behaviors, and referrals. Sync points, rewards, and VIP
-            status with your store and marketing stack to grow retention.
+            Trilio streams your Smile.io loyalty program data to create unified
+            customer retention analytics. Track points, rewards, VIP tiers, and
+            referral performance with real-time insights across all customer
+            touchpoints.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +31,14 @@ const SmileIo = () => (
             href="/contact-form"
             className="bg-[#424242] text-white font-bold rounded-lg shadow-lg border-0 w-[190px] h-[48px] min-w-[190px] min-h-[48px] whitespace-nowrap hover:bg-[#2e2e2e] transition-colors"
           >
-            Get in Touch
+            Connect Smile.io
           </ThemeButton>
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="Smile.io Loyalty Programs"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/smile-1.png"
+            alt="Smile.io Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +46,23 @@ const SmileIo = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Customers to Champions: Smile.io Wins
+          What Trilio syncs from Smile.io
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Launch referral rewards, points for purchases and actions, and VIP
-          tiers that unlock perks. Trigger personalized messages when members
-          earn, redeem, or progress to the next tier.
+          We backfill history and listen to webhooks in near real time. Your
+          loyalty program data, member activities, and reward events are modeled
+          and joined with commerce data for comprehensive retention analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="Smile.io Loyalty Overview"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/smile-2.png"
+              alt="Trilio Smile.io Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,25 +71,25 @@ const SmileIo = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Points for purchases, reviews, and social actions
+                  Members, Points, Rewards & Redemption Events
                 </span>
                 <span className="text-3xl text-[#FFC419] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  VIP tiers with perks, early access, and exclusives
+                  VIP Tiers, Status Changes & Tier Benefits
                 </span>
                 <span className="text-3xl text-[#FFC419] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Referral rewards with fraud protection
+                  Referrals, Invites, Conversions & Fraud Data
                 </span>
                 <span className="text-3xl text-[#FFC419] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Branded widgets, emails, and member portals
+                  Activities, Campaigns, Engagement & Performance
                 </span>
                 <span className="text-3xl text-[#FFC419] font-bold">+</span>
               </div>
@@ -98,14 +99,14 @@ const SmileIo = () => (
       </div>
     </section>
 
-    {/* Platform Section */}
+    {/* How we use your Smile.io data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="Smile.io Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/smile-3.png"
+            alt="How Trilio models Smile.io data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,33 +114,36 @@ const SmileIo = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Members, Points, Rewards, and Redemptions
+            How Trilio uses your Smile.io data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            We sync Smile.io member data with your store, CRM, and messaging
-            tools. Trigger flows for point balance, tier changes, and rewards
-            issuance across email/SMS to keep engagement high.
+            We normalize Smile.io objects and connect them to your commerce and
+            customer datasets. Loyalty activities are enriched with purchase
+            history, customer lifetime value, and engagement data for
+            comprehensive retention analytics.
           </p>
           <p className="text-lg text-gray-700">
-            Report on points earned vs. redeemed, breakage, and revenue impact
-            by cohort, product, and channel to optimize your loyalty ROI.
+            From point earning to reward redemption and tier progression, we
+            create unified metrics so marketing, customer success, and finance
+            teams work from the same loyalty truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Increase Repeat Purchase Rate & Customer LTV
+            Loyalty and retention metrics out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Launch high-impact rewards and referral offers. Personalize perks
-            for top tiers and re-engage at-risk cohorts with targeted
-            incentives.
+            Track member engagement, point earning patterns, redemption rates,
+            and tier progression. Connect loyalty metrics to customer lifetime
+            value and revenue impact for complete visibility into your retention
+            programs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -148,7 +152,7 @@ const SmileIo = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE LOYALTY PLAYBOOKS
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -156,15 +160,15 @@ const SmileIo = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE REFERRALS
+              CONNECT SMILE.IO
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Loyalty ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/smile-4.png"
+            alt="Smile.io metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -178,8 +182,8 @@ const SmileIo = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
-            alt="Loyalty Analytics"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/smile-5.png"
+            alt="Smile.io Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -191,12 +195,13 @@ const SmileIo = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Loyalty & Referral Insights
+            Data-driven loyalty and retention insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Measure repeat purchase rate, purchase frequency, and AOV by member
-            tier. Track referral conversion and reward cost-to-revenue ratios to
-            optimize profitability.
+            Measure loyalty program performance, member engagement, and referral
+            effectiveness alongside revenue impact. Identify retention
+            opportunities and program optimizations using unified customer and
+            loyalty data.
           </p>
           <ThemeButton
             variant="outline"
@@ -318,12 +323,12 @@ const SmileIo = () => (
                 Submit Demo Request
               </button>
 
-              <p className="text-gray-200 text-xs text-center">
+              <p className="text-gray-800 text-xs text-center">
                 *By submitting your Email Address, you are agreeing to all
                 conditions of our{" "}
                 <a
                   href="/privacy-policy"
-                  className="underline hover:text-white"
+                  className="underline hover:text-black"
                 >
                   Privacy Policy
                 </a>

@@ -14,15 +14,16 @@ const Akeneo = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#EBE3F0]">
-            AKENEO PIM & PRODUCT EXPERIENCE
+            AKENEO INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            CENTRALIZE, ENRICH, AND SYNDICATE YOUR CATALOG
+            Connect your product data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            We integrate Akeneo to unify product data, attributes, and variants
-            across brands and channels. Automate enrichment, governance, and
-            channel-ready exports that accelerate time-to-list and conversion.
+            Trilio streams your Akeneo product information to create unified
+            catalog analytics. Track product completeness, enrichment workflows,
+            and syndication performance with real-time insights across all
+            channels and marketplaces.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +31,14 @@ const Akeneo = () => (
             href="/contact-form"
             className="bg-[#B295C4] text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-[#a381bd] transition-colors"
           >
-            Get in Touch
+            Connect Akeneo
           </ThemeButton>
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="Akeneo PIM & Product Experience"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-1.png"
+            alt="Akeneo Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +46,24 @@ const Akeneo = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From PIM to PX: Akeneo Success Stories
+          What Trilio syncs from Akeneo
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Standardize attributes, localize content, and publish channel-specific
-          assortments. Improve completeness and consistency while reducing
-          manual work across teams.
+          We backfill history and listen to webhooks in near real time. Your
+          product information, enrichment workflows, and syndication events are
+          modeled and joined with commerce data for comprehensive catalog
+          analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="Akeneo Product Information Management"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-2.png"
+              alt="Trilio Akeneo Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,27 +72,27 @@ const Akeneo = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Unified attributes, families, variants, and assets
+                  Products, Attributes, Families & Variant Data
                 </span>
-                <span className="text-3xl text-[#B295C4] font-bold">+</span>
+                <span className="text-3xl text-[#4F1374] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Enrichment workflows, validations, and approvals
+                  Enrichment Workflows, Validations & Approvals
                 </span>
-                <span className="text-3xl text-[#B295C4] font-bold">+</span>
+                <span className="text-3xl text-[#4F1374] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Localization, channels, and completeness scoring
+                  Assets, Media, Localization & Channel Mappings
                 </span>
-                <span className="text-3xl text-[#B295C4] font-bold">+</span>
+                <span className="text-3xl text-[#4F1374] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Syndication to Shopify, Amazon, and marketplaces
+                  Completeness Scores, Quality Metrics & Syndication
                 </span>
-                <span className="text-3xl text-[#B295C4] font-bold">+</span>
+                <span className="text-3xl text-[#4F1374] font-bold">+</span>
               </div>
             </div>
           </div>
@@ -98,14 +100,14 @@ const Akeneo = () => (
       </div>
     </section>
 
-    {/* Platform Section */}
+    {/* How we use your Akeneo data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="Akeneo Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-3.png"
+            alt="How Trilio models Akeneo data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,34 +115,36 @@ const Akeneo = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Build a Trusted Product Source of Truth
+            How Trilio uses your Akeneo data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            We model product families, map attributes, and configure validation
-            rules and workflows. Assets, media, and rich descriptions are
-            centralized for re-use across channels.
+            We normalize Akeneo objects and connect them to your commerce and
+            sales datasets. Product information is enriched with performance
+            data, inventory levels, and customer feedback for comprehensive
+            catalog analytics.
           </p>
           <p className="text-lg text-gray-700">
-            Export channel-ready catalogs with transformations per destination
-            (titles, bullets, images, compliance). Automate updates with
-            schedules and webhooks.
+            From product enrichment to channel syndication and quality scoring,
+            we create unified metrics so product, marketing, and operations teams
+            work from the same catalog truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Faster Time-to-List, Higher Conversion, Fewer Returns
+            Product and catalog metrics out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Improve content completeness and accuracy while reducing manual
-            rework. Standardized data powers superior product discovery and
-            conversion across every channel.
+            Track product completeness, enrichment velocity, quality scores, and
+            syndication performance. Connect catalog metrics to conversion rates
+            and revenue impact for complete visibility into your product
+            information management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -149,7 +153,7 @@ const Akeneo = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE ENRICHMENT
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -157,15 +161,15 @@ const Akeneo = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE SYNDICATION
+              CONNECT AKENEO
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Akeneo ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-4.png"
+            alt="Akeneo metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -179,8 +183,8 @@ const Akeneo = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
-            alt="PIM Analytics"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-5.png"
+            alt="Akeneo Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -188,16 +192,17 @@ const Akeneo = () => (
 
         {/* Right: Text */}
         <div className="flex-1">
-          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#B295C4]">
+          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#4F1374]">
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Catalog & Content Insights
+            Data-driven product and catalog insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Monitor content completeness, approval cycle time, channel
-            readiness, and error rates. Tie product content quality to
-            conversion, returns, and customer satisfaction.
+            Measure product information quality, enrichment efficiency, and
+            syndication success alongside revenue impact. Identify catalog
+            optimization opportunities and content improvements using unified
+            product and performance data.
           </p>
           <ThemeButton
             variant="outline"
@@ -314,7 +319,7 @@ const Akeneo = () => (
 
               <button
                 type="submit"
-                className="w-full bg-[#09b2ae] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#078a87] transition-colors"
+                className="w-full bg-[#B295C4] text-black font-bold py-4 px-6 rounded-lg hover:bg-[#a381bd] transition-colors"
               >
                 Submit Demo Request
               </button>

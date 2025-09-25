@@ -325,7 +325,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
+            {/* <Button
               variant="outline"
               className={cn(
                 "relative group overflow-hidden border-2 font-semibold px-4 py-1.5 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 text-shadow-sm",
@@ -343,7 +343,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
                     : "bg-gradient-to-r from-teal-500/20 to-teal-400/20"
                 )}
               ></div>
-            </Button>
+            </Button> */}
           </a>
           <Link to="/contact-form">
             <Button className="relative group overflow-hidden bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold px-4 py-1.5 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105 border-0 text-shadow-sm animated-border">

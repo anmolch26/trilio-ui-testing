@@ -37,7 +37,7 @@ const Stripe = () => (
         {/* Right: Hero Image (placeholder from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-1.png"
             alt="Stripe + Trilio Integration"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -61,7 +61,7 @@ const Stripe = () => (
           {/* Left: Image (from public) */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-2.png"
               alt="Stripe data sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
@@ -105,7 +105,7 @@ const Stripe = () => (
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-3.png"
             alt="How Trilio models Stripe"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -166,7 +166,7 @@ const Stripe = () => (
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-4.png"
             alt="Stripe metrics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -176,42 +176,7 @@ const Stripe = () => (
     </section>
 
     {/* Analytics Section */}
-    <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Left: Analytics Visual */}
-        <div className="flex-1 flex justify-center">
-          <img
-            src="/og-image-update.png"
-            alt="Revenue insights"
-            className="max-w-full h-auto rounded-2xl shadow-2xl"
-            style={{ maxHeight: "500px" }}
-          />
-        </div>
-
-        {/* Right: Text Content */}
-        <div className="flex-1">
-          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#00D4FF]">
-            ANALYTICS
-          </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-driven revenue and finance insights
-          </h2>
-          <p className="text-lg text-gray-700 mb-8">
-            Tie payment events to orders, channels, and products. Analyze MRR,
-            churn, authorization rate, chargebacks, refunds and LTV alongside
-            acquisition and retention to get a full‑funnel view.
-          </p>
-          <ThemeButton
-            variant="outline"
-            size="lg"
-            href="/contact-form"
-            className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
-          >
-            LEARN MORE
-          </ThemeButton>
-        </div>
-      </div>
-    </section>
+    
 
     {/* Contact Form Section */}
     <section className="bg-[#0A2540] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
