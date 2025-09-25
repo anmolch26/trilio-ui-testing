@@ -23,7 +23,7 @@ const BIReporting = () => {
       "Unify Amazon, Shopify, Walmart & more in one exportable report—powered by AI, no coding required.",
     primaryButtonText: "See Live Demo",
     secondaryButtonText: "Start Free Trial",
-    secondaryButtonLink: "https://staging.trilio.ai/register",
+    // secondaryButtonLink: "https://staging.trilio.ai/register",
     heroImage:
       "https://assets.channeliq.ai/trilio-landing/products/BiReport.png",
     heroImageAlt: "Multi-tab Excel export with dashboard and SKU breakdown",
@@ -134,7 +134,7 @@ const BIReporting = () => {
         title="Ready to Transform Your Reporting with AI?"
         description="Join thousands of ecommerce teams who trust Trilio for intelligent BI solutions."
         buttonText="Start Your Free Trial"
-        buttonLink="https://staging.trilio.ai/register"
+        // buttonLink="https://staging.trilio.ai/register"
       />
     </PageLayout>
   );

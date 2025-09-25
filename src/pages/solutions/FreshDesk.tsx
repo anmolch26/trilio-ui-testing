@@ -14,15 +14,16 @@ const FreshDesk = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-white/90">
-            FRESHDESK SUPPORT PLATFORM
+            FRESHDESK INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            OMNICHANNEL SUPPORT, AUTOMATIONS, AND CSAT
+            Connect your support data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            We connect Freshdesk to unify tickets, conversations, contacts, and
-            SLAs across channels. Automate workflows, deflect with knowledge,
-            and stream support data for real-time CX analytics.
+            Trilio streams your Freshdesk tickets, conversations, and customer
+            data to create unified support analytics. Track SLAs, agent
+            performance, and customer satisfaction with real-time insights
+            across all channels.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +31,14 @@ const FreshDesk = () => (
             href="/contact-form"
             className="bg-white text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-gray-100 transition-colors"
           >
-            Get in Touch
+            Connect Freshdesk
           </ThemeButton>
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="Freshdesk Support Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-1.png"
+            alt="Freshdesk Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +46,23 @@ const FreshDesk = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Tickets to Trust: Freshdesk Success Stories
+          What Trilio syncs from Freshdesk
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Unify support channels, reduce handle time with automations, and lift
-          CSAT. Track response time, resolution, and deflection with trusted
-          metrics that drive continuous improvement.
+          We backfill history and listen to webhooks in near real time. Your
+          tickets, conversations, and customer interactions are modeled and
+          joined with commerce data for comprehensive support analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="Freshdesk Success Overview"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-2.png"
+              alt="Trilio Freshdesk Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,25 +71,25 @@ const FreshDesk = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Omnichannel: Email, Chat, Messaging, Voice
+                  Tickets, Conversations, Notes & Status Changes
                 </span>
                 <span className="text-3xl text-[#25C16F] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Automations, SLAs, Skills-based routing
+                  Contacts, Companies, Agents & Groups
                 </span>
                 <span className="text-3xl text-[#25C16F] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Knowledge base, bots, and self-service
+                  SLA Policies, Time Entries & Custom Fields
                 </span>
                 <span className="text-3xl text-[#25C16F] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  CSAT/NPS, sentiment, and deflection insights
+                  Satisfaction Surveys, Products & Categories
                 </span>
                 <span className="text-3xl text-[#25C16F] font-bold">+</span>
               </div>
@@ -98,14 +99,14 @@ const FreshDesk = () => (
       </div>
     </section>
 
-    {/* Platform Section */}
+    {/* How we use your Freshdesk data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="Freshdesk Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-3.png"
+            alt="How Trilio models Freshdesk data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,32 +114,35 @@ const FreshDesk = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Tickets, Contacts, SLAs, and Knowledge
+            How Trilio uses your Freshdesk data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            We standardize ticket fields, map custom properties, and configure
-            SLAs and automations. Push knowledge and macros to reduce manual
-            work, and ensure clean analytics across teams.
+            We normalize Freshdesk objects and connect them to your commerce and
+            customer datasets. Tickets are enriched with order history, customer
+            lifetime value, and product context for comprehensive support
+            analytics.
           </p>
           <p className="text-lg text-gray-700">
-            From agent workspace to views and rules — we streamline ops so your
-            team focuses on customer outcomes, not busywork.
+            From ticket resolution to agent performance and customer satisfaction,
+            we create unified metrics so support, sales, and success teams work
+            from the same customer truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Reduce Handle Time & Increase FCR and CSAT
+            Support metrics and KPIs out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Accelerate response and resolution with automation and intelligent
-            routing. Empower agents with full context to solve faster.
+            Track first response time, resolution time, CSAT scores, agent
+            productivity, and ticket volume trends. Connect support metrics to
+            customer lifetime value and revenue impact for complete visibility.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -147,7 +151,7 @@ const FreshDesk = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE AUTOMATION
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -155,15 +159,15 @@ const FreshDesk = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE KNOWLEDGE
+              CONNECT FRESHDESK
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Freshdesk ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-4.png"
+            alt="Freshdesk metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -177,8 +181,8 @@ const FreshDesk = () => (
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
-            alt="Support Analytics"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-5.png"
+            alt="Freshdesk Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -190,12 +194,12 @@ const FreshDesk = () => (
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Support & Experience Insights
+            Data-driven support and customer insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Track volume, backlog, SLA adherence, and satisfaction across
-            segments. Identify drivers of churn and opportunities for proactive
-            outreach using leading indicators.
+            Measure support performance, customer satisfaction, and agent
+            productivity alongside revenue impact. Identify at-risk customers and
+            opportunities for proactive support using unified customer data.
           </p>
           <ThemeButton
             variant="outline"
@@ -210,7 +214,7 @@ const FreshDesk = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#0B5B4B] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section className="bg-[#25C16F] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -251,7 +255,7 @@ const FreshDesk = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#25C16F] rounded-2xl p-8">
+          <div className="bg-[#0B5B4B] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -312,7 +316,7 @@ const FreshDesk = () => (
 
               <button
                 type="submit"
-                className="w-full bg-white text-black font-bold py-4 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+                className="w-full bg-[#25C16F] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#25C16F]/90 transition-colors"
               >
                 Submit Demo Request
               </button>

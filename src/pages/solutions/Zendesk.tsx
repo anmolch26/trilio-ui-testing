@@ -14,15 +14,15 @@ const Zendesk = () => (
         {/* Left: Text Content */}
         <div className="flex-1 text-left text-white max-w-xl">
           <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#DEF991]">
-            ZENDESK SUPPORT PLATFORM
+            ZENDESK INTEGRATION
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-6">
-            AI-POWERED OMNICHANNEL SUPPORT & CX
+            Connect your support data with Trilio
           </h1>
           <p className="text-2xl mb-8 font-light leading-snug">
-            Connect tickets, conversations, and knowledge base to unify customer
-            context. Automate workflows, measure SLAs, and elevate CSAT with
-            real-time insights.
+            Trilio streams your Zendesk tickets, conversations, and customer data
+            to create unified support analytics. Track SLAs, agent performance,
+            and customer satisfaction with real-time insights across all channels.
           </p>
           <ThemeButton
             variant="primary"
@@ -30,14 +30,14 @@ const Zendesk = () => (
             href="/contact-form"
             className="bg-[#DEF991] text-black font-bold rounded-lg shadow-lg border-0 w-[165px] h-[48px] min-w-[165px] min-h-[48px] whitespace-nowrap hover:bg-[#d5f26e] transition-colors"
           >
-            Get in Touch
+            Connect Zendesk
           </ThemeButton>
         </div>
         {/* Right: Hero Image (placeholder from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
           <img
-            src="/hero-image.jpg"
-            alt="Zendesk Support & CX"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/zendesk-1.png"
+            alt="Zendesk Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -45,23 +45,23 @@ const Zendesk = () => (
       </div>
     </ThemeSection>
 
-    {/* Success Stories Section */}
+    {/* What we sync */}
     <section className="bg-white py-20 px-4 relative z-20 -mt-16 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#21005c] mb-6">
-          From Tickets to Loyalty: Zendesk Success Stories
+          What Trilio syncs from Zendesk
         </h2>
         <p className="text-lg md:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          Unify support channels, automate repetitive tasks, and deliver
-          consistent experiences at scale. Track response time, resolution, and
-          satisfaction with trusted metrics.
+          We backfill history and listen to webhooks in near real time. Your
+          tickets, conversations, and customer interactions are modeled and
+          joined with commerce data for comprehensive support analytics.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
             <img
-              src="/og-image-update.png"
-              alt="Zendesk Success Overview"
+              src="https://assets.channeliq.ai/trilio-landing/data-integrations/zendesk-2.png"
+              alt="Trilio Zendesk Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
             />
           </div>
@@ -70,27 +70,27 @@ const Zendesk = () => (
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Omnichannel: Email, Chat, Messaging, Voice
+                  Tickets, Comments, Conversations & Status Changes
                 </span>
-                <span className="text-3xl text-[#9A4497] font-bold">+</span>
+                <span className="text-3xl text-[#03363D] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Macros, Triggers, SLAs, Automations
+                  Users, Organizations, Groups & Agent Activity
                 </span>
-                <span className="text-3xl text-[#9A4497] font-bold">+</span>
+                <span className="text-3xl text-[#03363D] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between border-b pb-4">
                 <span className="font-bold text-xl text-[#21005c]">
-                  Knowledge Base, Bots, and Self-Service
+                  SLA Events, Metrics, Tags & Custom Fields
                 </span>
-                <span className="text-3xl text-[#9A4497] font-bold">+</span>
+                <span className="text-3xl text-[#03363D] font-bold">+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-xl text-[#21005c]">
-                  CSAT, NPS, and Satisfaction Prediction
+                  Satisfaction Ratings, Macros & Automations
                 </span>
-                <span className="text-3xl text-[#9A4497] font-bold">+</span>
+                <span className="text-3xl text-[#03363D] font-bold">+</span>
               </div>
             </div>
           </div>
@@ -98,14 +98,14 @@ const Zendesk = () => (
       </div>
     </section>
 
-    {/* Zendesk Platform Section */}
+    {/* How we use your Zendesk data */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/new-og-image.png"
-            alt="Zendesk Platform"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/zendesk-3.png"
+            alt="How Trilio models Zendesk data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -113,34 +113,35 @@ const Zendesk = () => (
         {/* Right: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Unify Tickets, Users, Orgs, and SLAs
+            How Trilio uses your Zendesk data
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            Centralize conversations and audit logs. Standardize ticket fields,
-            forms, and groups to enable accurate reporting, routing, and
-            workforce planning across regions.
+            We normalize Zendesk objects and connect them to your commerce and
+            customer datasets. Tickets are enriched with order history, customer
+            lifetime value, and product context for comprehensive support
+            analytics.
           </p>
           <p className="text-lg text-gray-700">
-            From agent workspaces to macros, views, and triggers — we streamline
-            operations so your team spends more time helping customers and less
-            time on manual processes.
+            From ticket resolution to agent performance and customer satisfaction,
+            we create unified metrics so support, sales, and success teams work
+            from the same customer truth.
           </p>
         </div>
       </div>
     </section>
 
-    {/* ROI Section */}
+    {/* Metrics */}
     <section className="bg-white py-20 px-4 relative z-10 -mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text */}
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Reduce Handle Time and Increase FCR & CSAT
+            Support metrics and KPIs out of the box
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Accelerate response and resolution with intelligent routing,
-            knowledge suggestions, and proactive alerts. Empower agents with the
-            full customer context at their fingertips.
+            Track first response time, resolution time, CSAT scores, agent
+            productivity, and ticket volume trends. Connect support metrics to
+            customer lifetime value and revenue impact for complete visibility.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ThemeButton
@@ -149,7 +150,7 @@ const Zendesk = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE AUTOMATION
+              SEE A LIVE DASHBOARD
             </ThemeButton>
             <ThemeButton
               variant="outline"
@@ -157,15 +158,15 @@ const Zendesk = () => (
               href="/contact-form"
               className="border-[#21005c] text-[#21005c] hover:bg-[#21005c] hover:text-black"
             >
-              EXPLORE KNOWLEDGE
+              CONNECT ZENDESK
             </ThemeButton>
           </div>
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/text-mask-image.jpg"
-            alt="Zendesk ROI"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/zendesk-4.png"
+            alt="Zendesk metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
           />
@@ -175,11 +176,11 @@ const Zendesk = () => (
 
     {/* Analytics Section */}
     <section className="bg-white py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
-      <div className="max-w-6xl mx_auto flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/og-image-update.png"
+            src="https://assets.channeliq.ai/trilio-landing/data-integrations/zendesk-5.png"
             alt="Zendesk Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
             style={{ maxHeight: "500px" }}
@@ -188,16 +189,16 @@ const Zendesk = () => (
 
         {/* Right: Text */}
         <div className="flex-1">
-          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#9A4497]">
+          <div className="uppercase tracking-widest font-bold text-sm mb-4 text-[#03363D]">
             ANALYTICS
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#21005c] mb-6">
-            Data-Driven Support & Experience Insights
+            Data-driven support and customer insights
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Track volume, backlog, SLA adherence, and satisfaction across
-            segments. Identify drivers of churn and opportunities for proactive
-            outreach using leading indicators.
+            Measure support performance, customer satisfaction, and agent
+            productivity alongside revenue impact. Identify at-risk customers and
+            opportunities for proactive support using unified customer data.
           </p>
           <ThemeButton
             variant="outline"
@@ -212,7 +213,7 @@ const Zendesk = () => (
     </section>
 
     {/* Contact Form Section */}
-    <section className="bg-[#9A4497] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
+    <section className="bg-[#03363D] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Text and Graphic */}
         <div className="flex-1 text-white">
@@ -253,10 +254,10 @@ const Zendesk = () => (
 
         {/* Right: Contact Form */}
         <div className="flex-1">
-          <div className="bg-[#03363D] rounded-2xl p-8">
+          <div className="bg-[#DEF991] rounded-2xl p-8">
             <form className="space-y-6">
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-black text-sm font-medium mb-2">
                   Full Name*
                 </label>
                 <input
@@ -267,7 +268,7 @@ const Zendesk = () => (
               </div>
 
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-black text-sm font-medium mb-2">
                   Email Address*
                 </label>
                 <input
@@ -278,7 +279,7 @@ const Zendesk = () => (
               </div>
 
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-black text-sm font-medium mb-2">
                   Company Name*
                 </label>
                 <input
@@ -289,7 +290,7 @@ const Zendesk = () => (
               </div>
 
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-black text-sm font-medium mb-2">
                   Website
                 </label>
                 <input
@@ -299,7 +300,7 @@ const Zendesk = () => (
               </div>
 
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-black text-sm font-medium mb-2">
                   Monthly E-Commerce Revenue
                 </label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black">
@@ -314,17 +315,17 @@ const Zendesk = () => (
 
               <button
                 type="submit"
-                className="w-full bg-[#DEF991] text-black font-bold py-4 px-6 rounded-lg hover:bg-[#d5f26e] transition-colors"
+                className="w-full bg-[#03363D] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#03363D]/90 transition-colors"
               >
                 Submit Demo Request
               </button>
 
-              <p className="text-gray-300 text-xs text-center">
+              <p className="text-gray-800 text-xs text-center">
                 *By submitting your Email Address, you are agreeing to all
                 conditions of our{" "}
                 <a
                   href="/privacy-policy"
-                  className="underline hover:text-white"
+                  className="underline hover:text-black"
                 >
                   Privacy Policy
                 </a>
