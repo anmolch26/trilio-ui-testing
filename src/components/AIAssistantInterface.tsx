@@ -15,13 +15,6 @@ const AIAssistantInterface = () => {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [lottieData, setLottieData] = useState<any>(null);
-  const [inputValue, setInputValue] = useState("");
-  const [messages, setMessages] = useState<{
-    role: "user" | "assistant";
-    text: string;
-    ctaUrl?: string;
-    ctaLabel?: string;
-  }[]>([]);
 
   // Fetch Lottie animation from S3
   useEffect(() => {
@@ -106,23 +99,6 @@ const AIAssistantInterface = () => {
     }
   }, [currentText, currentSentenceIndex, isDeleting, sentences]);
 
-  const handleSend = () => {
-    const trimmed = inputValue.trim();
-    if (!trimmed) return;
-    setMessages((prev) => [
-      ...prev,
-      { role: "user", text: trimmed },
-      {
-        role: "assistant",
-        text:
-          "Thanks for your message! To use Wingman, please register to continue.",
-        ctaUrl: "https://staging.trilio.ai/register",
-        ctaLabel: "Register to use Wingman",
-      },
-    ]);
-    setInputValue("");
-  };
-
   return (
     <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200/10 w-full max-w-4xl mx-auto">
       {/* Background Color */}
@@ -165,48 +141,12 @@ const AIAssistantInterface = () => {
           </p>
         </div>
 
-        {/* Messages */}
-        <div className="mt-2 mb-2 max-h-48 overflow-y-auto space-y-2">
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={
-                message.role === "user"
-                  ? "ml-auto max-w-[80%] rounded-2xl px-3 py-2 text-xs bg-blue-500/30 text-white border border-blue-400/30"
-                  : "mr-auto max-w-[80%] rounded-2xl px-3 py-2 text-xs bg-gray-800/60 text-gray-200 border border-gray-600/30"
-              }
-            >
-              {message.text}
-              {message.ctaUrl ? (
-                <div className="mt-2">
-                  <a
-                    href={message.ctaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full bg-blue-500/80 hover:bg-blue-500 px-3 py-1 text-[10px] text-white transition-colors"
-                  >
-                    {message.ctaLabel || "Learn more"}
-                  </a>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </div>
-
         {/* Message Input Area */}
         <div className="mt-auto">
           <div className="relative group">
             <input
               type="text"
               placeholder={currentText}
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleSend();
-                }
-              }}
               className="w-full bg-transparent backdrop-blur-sm rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none transition-all duration-500 focus:ring-2 focus:ring-blue-400/30 glow-animation"
               style={{
                 border: "2px solid rgba(96, 132, 255, 0.5)",
@@ -219,7 +159,7 @@ const AIAssistantInterface = () => {
               <button className="text-gray-400 hover:text-gray-300">
                 <Paperclip size={16} />
               </button>
-              <button className="text-gray-400 hover:text-gray-300" onClick={handleSend}>
+              <button className="text-gray-400 hover:text-gray-300">
                 <Send size={16} />
               </button>
             </div>
