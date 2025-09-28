@@ -19,4 +19,24 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split major vendor libs so first paint needs less JS
+          react: ["react", "react-dom", "react-router-dom"],
+          radix: [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-navigation-menu",
+            "@radix-ui/react-tooltip",
+          ],
+          charts: ["recharts"],
+          motion: ["framer-motion"],
+        },
+      },
+    },
+    assetsInlineLimit: 2048,
+  },
 }));

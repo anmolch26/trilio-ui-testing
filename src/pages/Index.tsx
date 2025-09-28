@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
 import Navbar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import OptimizedPurposeSection from "@/components/OptimizedPurposeSection";
@@ -6,15 +6,20 @@ import SpecsSection from "@/components/SpecsSection";
 import DetailsSection from "@/components/DetailsSection";
 import ImageShowcaseSection from "@/components/ImageShowcaseSection";
 import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import ValuesSection from "@/components/ValuesSection";
 import Footer from "@/components/Footer";
-import AnimatedParticles from "@/components/AnimatedParticles";
-import SpaceBackgroundAnimation from "@/components/SpaceBackgroundAnimation";
+
+const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
+const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimation"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
 
 const Index = () => {
+  const [showAnimations, setShowAnimations] = useState(false);
+  const [showTestimonials, setShowTestimonials] = useState(false);
+  const testimonialsSentinelRef = useRef<HTMLDivElement | null>(null);
   // Initialize intersection observer to detect when elements enter viewport
+  // Re-run after testimonials mount so newly added nodes are observed
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,7 +39,7 @@ const Index = () => {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [showTestimonials]);
 
   useEffect(() => {
     // This helps ensure smooth scrolling for the anchor links
@@ -59,11 +64,49 @@ const Index = () => {
     });
   }, []);
 
+  // Defer top-of-page heavy animations until idle or slight delay
+  useEffect(() => {
+    let timeoutId: number | undefined;
+    if ((window as any).requestIdleCallback) {
+      (window as any).requestIdleCallback(() => setShowAnimations(true), { timeout: 1500 });
+    } else {
+      timeoutId = window.setTimeout(() => setShowAnimations(true), 1200);
+    }
+    return () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Preload and show testimonials when near viewport
+  useEffect(() => {
+    const el = testimonialsSentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShowTestimonials(true);
+            io.disconnect();
+          }
+        });
+      },
+      { rootMargin: "600px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
       <div className="gradient-background">
-        <SpaceBackgroundAnimation />
-        <AnimatedParticles showAnimation={true} />
+        <Suspense fallback={null}>
+          {showAnimations && (
+            <>
+              <SpaceBackgroundAnimation />
+              <AnimatedParticles showAnimation={true} />
+            </>
+          )}
+        </Suspense>
         <div className="light-beam"></div>
         <div className="light-beam-2"></div>
         <div className="light-streak"></div>
@@ -78,7 +121,10 @@ const Index = () => {
         <DetailsSection />
         <ImageShowcaseSection />
         <Features />
-        <Testimonials />
+        <div ref={testimonialsSentinelRef} className="h-6" />
+        <Suspense fallback={null}>
+          {showTestimonials && <Testimonials />}
+        </Suspense>
         
       </main>
       <Newsletter />
