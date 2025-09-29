@@ -80,10 +80,10 @@ const WaitlistForm: React.FC = () => {
     setIsLoading(true);
     try {
       const payload = {
-        firstName: values.firstName,
+        full_name: values.firstName,
         email: values.email,
-        company: values.company,
-        gmv: values.gmv,
+        company_name: values.company,
+        ecommerce_revenue: values.gmv,
         type: "waitlist",
       };
 
