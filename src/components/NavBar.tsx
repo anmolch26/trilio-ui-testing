@@ -19,7 +19,6 @@ import SolutionsDropdown from "./navbar/SolutionsDropdown";
 import WhoWeHelpDropdown from "./navbar/WhoWeHelpDropdown";
 import ResourcesDropdown from "./navbar/ResourcesDropdown";
 import AboutDropdown from "./navbar/AboutDropdown";
-import EraseBgLogo from "../assests/erasebg-transformed.png";
 
 interface NavbarProps {
   largeLogo?: boolean;
@@ -235,7 +234,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
         >
           {isHomepage && !isScrolled ? (
             <img
-              src={EraseBgLogo}
+              src={"https://assets.channeliq.ai/trilio-landing/Hero_Images/erasebg-transformed.webp"}
               alt="Trilio.ai Logo"
               className={
                 largeLogo
