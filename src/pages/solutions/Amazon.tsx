@@ -2,11 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import AmazonInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import AmazonHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
-import AmazonAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import AmazonROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import AmazonInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
+import AmazonInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
+import AmazonHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.webp";
+import AmazonAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import AmazonROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import AmazonInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
 
 const Amazon = () => (
   <PageLayout backgroundClass="bg-[#FF9B2F]">

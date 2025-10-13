@@ -2,16 +2,16 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import GA4Infographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import GA4HeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
-import GA4AnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import GA4ROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import GA4InsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
+import GA4Infographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
+import GA4HeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.webp";
+import GA4AnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import GA4ROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import GA4InsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
 import GA4HeroNewImage from "@/assests/ga4 (1).jpg";
-import GA4AnalyticsNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 02_56_57 AM.png";
+import GA4AnalyticsNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 02_56_57 AM.webp";
 import GA4DataOptimizationImage from "@/assests/Ga4(1).jpg";
-import GA4ROINewImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_12_48 AM.png";
-import GA4MarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_17_37 AM.png";
+import GA4ROINewImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_12_48 AM.webp";
+import GA4MarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_17_37 AM.webp";
 
 const GA4 = () => (
   <PageLayout backgroundClass="bg-[#f06a03]">

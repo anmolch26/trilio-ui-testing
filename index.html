@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Performance hints for auth app -->
-    <link rel="preconnect" href="https://staging.trilio.ai" crossorigin />
-    <link rel="dns-prefetch" href="//staging.trilio.ai" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Optimized Font Loading - Preconnect for faster DNS/TLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load Google Fonts (moved from CSS for better performance) -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
+      rel="stylesheet"
+    />
+    
+    <!-- Performance hints for other resources -->
+    <link rel="preconnect" href="https://staging.trilio.ai" crossorigin />
+    <link rel="preconnect" href="https://assets.channeliq.ai" />
+    <link rel="dns-prefetch" href="//staging.trilio.ai" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//ddwl4m2hdecbv.cloudfront.net" />
     <title>Trilio.ai - Ecommerce Intelligence, Powered by AI</title>
     <meta
       name="description"
@@ -28,7 +42,6 @@
       property="og:description"
       content="Turn every click, visit, and ad dollar into profitable insights—instantly. Unified ecommerce analytics powered by AI."
     />
-    <meta property="og:image" content="/og-image-update.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://trilio.ai" />
 
@@ -42,7 +55,6 @@
       name="twitter:description"
       content="Transform your ecommerce data into profitable insights with AI-powered analytics and recommendations."
     />
-    <meta name="twitter:image" content="/og-image-update.png" />
 
     <!-- Favicon -->
     <link
@@ -51,12 +63,12 @@
       href="https://assets.channeliq.ai/trilio-landing/Hero_Images/cropped_circle_image.png"
     />
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 - Deferred for better performance -->
     <script
-      async
+      defer
       src="https://www.googletagmanager.com/gtag/js?id=G-HCE1YN2CNY"
     ></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);

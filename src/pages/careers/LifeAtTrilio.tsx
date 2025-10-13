@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Target, Lightbulb, Users, Shield, Zap } from "lucide-react";
 
 const LifeAtTrilio = () => {
+  const navigate = useNavigate();
   const values = [
     {
       title: "Ownership Mindset",
@@ -210,17 +212,6 @@ const LifeAtTrilio = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="w-full h-full flex items-center justify-center text-gray-500 group-hover:text-blue-600 transition-colors duration-200">
-                    <Users className="w-8 h-8" />
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -264,7 +255,10 @@ const LifeAtTrilio = () => {
             Discover open positions and become part of our mission to
             revolutionize commerce intelligence.
           </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105">
+          <Button 
+            onClick={() => navigate("/careers/open-positions")}
+            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105"
+          >
             View Open Positions
           </Button>
         </div>

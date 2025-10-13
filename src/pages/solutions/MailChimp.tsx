@@ -3,11 +3,11 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import MailChimpHeroImage from "@/assests/mailchimp (2).png";
-import MailChimpAnalyticsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_21_53 AM.png";
-import MailChimpOptimizationImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_25_26 AM.png";
-import MailChimpROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.png";
-import MailChimpInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.png";
-import MailChimpOptimizationNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.png";
+import MailChimpAnalyticsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_21_53 AM.webp";
+import MailChimpOptimizationImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_25_26 AM.webp";
+import MailChimpROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.webp";
+import MailChimpInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.webp";
+import MailChimpOptimizationNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.webp";
 
 const MailChimp = () => (
   <PageLayout backgroundClass="bg-[#ffdf1a]">

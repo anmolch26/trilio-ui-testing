@@ -2,13 +2,13 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import ShopifyInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
+import ShopifyInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
 import ShopifyHeroImage from "@/assests/converted_image.png";
-import ShopifyAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
+import ShopifyAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import ShopifyROIImage from "@/assests/0f5926d96c6f5d50716bf6d106679a5c.jpg";
-import ShopifyInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_08_09 PM.png";
-import ShopifyAnalyticsDashboard from "@/assests/ChatGPT Image Jul 29, 2025, 03_38_36 PM.png";
-import ShopifyCampaignOptimization from "@/assests/ChatGPT Image Jul 29, 2025, 03_48_33 PM.png";
+import ShopifyInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_08_09 PM.webp";
+import ShopifyAnalyticsDashboard from "@/assests/ChatGPT Image Jul 29, 2025, 03_38_36 PM.webp";
+import ShopifyCampaignOptimization from "@/assests/ChatGPT Image Jul 29, 2025, 03_48_33 PM.webp";
 
 const Shopify = () => (
   <PageLayout backgroundClass="bg-[#95BF47]">

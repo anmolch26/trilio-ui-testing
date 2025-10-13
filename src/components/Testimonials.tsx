@@ -15,7 +15,6 @@ const testimonials: TestimonialProps[] = [
     author: "",
     role: "CMO, FastGrow Brands",
     gradient: "from-blue-700 via-indigo-800 to-purple-900",
-    backgroundImage: "/background-section1.png",
   },
   {
     content:
@@ -23,7 +22,6 @@ const testimonials: TestimonialProps[] = [
     author: "",
     role: "VP of Marketing, ScaleUp Co",
     gradient: "from-indigo-900 via-purple-800 to-orange-500",
-    backgroundImage: "/background-section2.png",
   },
   {
     content:
@@ -31,7 +29,6 @@ const testimonials: TestimonialProps[] = [
     author: "",
     role: "Head of Analytics, TechCommerce",
     gradient: "from-purple-800 via-pink-700 to-red-500",
-    backgroundImage: "/background-section2.png",
   },
   {
     content:
@@ -39,7 +36,6 @@ const testimonials: TestimonialProps[] = [
     author: "",
     role: "CEO, GrowthMart",
     gradient: "from-orange-600 via-red-500 to-purple-600",
-    backgroundImage: "/background-section1.png",
   },
   {
     content:
@@ -47,7 +43,6 @@ const testimonials: TestimonialProps[] = [
     author: "",
     role: "Operations Director, RetailMax",
     gradient: "from-emerald-700 via-teal-600 to-cyan-500",
-    backgroundImage: "/background-section3.png",
   },
 ];
 
@@ -56,7 +51,7 @@ const TestimonialCard = ({
   author,
   role,
   gradient,
-  backgroundImage = "/background-section1.png",
+  backgroundImage,
   cardClass = "",
   isActive = false,
   position = "center",
