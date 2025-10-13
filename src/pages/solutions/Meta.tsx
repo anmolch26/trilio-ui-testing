@@ -2,15 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import MetaInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import MetaHeroImage from "@/assests/ChatGPT Image Aug 4, 2025, 09_04_36 PM.png";
-import MetaAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import MetaROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import MetaInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
-import MetaAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 09_22_02 PM.png";
-import MetaAnalyticsCampaignImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_16_08 AM.png";
-import MetaROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_22_50 AM.png";
-import MetaMarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_27_07 AM.png";
+import MetaInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
+import MetaHeroImage from "@/assests/ChatGPT Image Aug 4, 2025, 09_04_36 PM.webp";
+import MetaAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import MetaROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import MetaInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
+import MetaAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 09_22_02 PM.webp";
+import MetaAnalyticsCampaignImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_16_08 AM.webp";
+import MetaROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_22_50 AM.webp";
+import MetaMarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_27_07 AM.webp";
 
 const Meta = () => (
   <PageLayout backgroundClass="bg-[#1877F2]">

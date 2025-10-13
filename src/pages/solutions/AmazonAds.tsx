@@ -2,14 +2,14 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import AmazonAdsInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
+import AmazonAdsInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
 import AmazonAdsHeroImage from "@/assests/amazon-ppc.jpg";
-import AmazonAdsAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import AmazonAdsROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import AmazonAdsInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
-import AmazonAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.png";
-import AmazonAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.png";
-import AmazonAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.png";
+import AmazonAdsAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import AmazonAdsROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import AmazonAdsInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
+import AmazonAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.webp";
+import AmazonAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.webp";
+import AmazonAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
 
 const AmazonAds = () => (
   <PageLayout backgroundClass="bg-[#FF9900]">

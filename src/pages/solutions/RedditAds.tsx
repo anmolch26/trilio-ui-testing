@@ -2,16 +2,16 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RedditAdsInfographic from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.png";
+import RedditAdsInfographic from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.webp";
 import RedditAdsHeroImage from "@/assests/reddit-1-min.jpg";
-import RedditAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_21_53 AM.png";
-import RedditAdsROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.png";
-import RedditAdsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.png";
-import RedditAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.png";
-import RedditAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.png";
-import RedditAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.png";
+import RedditAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_21_53 AM.webp";
+import RedditAdsROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.webp";
+import RedditAdsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.webp";
+import RedditAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.webp";
+import RedditAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.webp";
+import RedditAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
 import RedditAdsInsightsBlogImage from "@/assests/Insights_Blog_Reddit-01.svg";
-import RedditAdsAIExpertiseNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 05_13_08 AM.png";
+import RedditAdsAIExpertiseNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 05_13_08 AM.webp";
 
 const RedditAds = () => (
   <PageLayout backgroundClass="bg-[#FF4500]">

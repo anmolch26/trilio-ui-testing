@@ -5,11 +5,11 @@ import ThemeButton from "@/components/theme/ThemeButton";
 import TikTokLogo from "@/assests/vecteezy_tiktok-white-wordmark-logo-icon-tiktok-app-transparent_65386727.png";
 import TikTokImage from "@/assests/tik-tok.png";
 const TikTokShopImage = "https://your-s3-bucket-url/Remove background project (3).png";
-import TikTokInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 04_53_41 PM.png";
-import TikTokShopVisual from "@/assests/ChatGPT Image Jul 28, 2025, 05_14_28 PM.png";
-import TikTokSocialROI from "@/assests/ChatGPT Image Jul 28, 2025, 05_25_08 PM.png";
-import TikTokHeroImage from "@/assests/ChatGPT Image Jul 28, 2025, 07_22_37 PM.png";
-import TikTokAnalytics from "@/assests/ChatGPT Image Jul 28, 2025, 08_04_45 PM.png";
+import TikTokInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 04_53_41 PM.webp";
+import TikTokShopVisual from "@/assests/ChatGPT Image Jul 28, 2025, 05_14_28 PM.webp";
+import TikTokSocialROI from "@/assests/ChatGPT Image Jul 28, 2025, 05_25_08 PM.webp";
+import TikTokHeroImage from "@/assests/ChatGPT Image Jul 28, 2025, 07_22_37 PM.webp";
+import TikTokAnalytics from "@/assests/ChatGPT Image Jul 28, 2025, 08_04_45 PM.webp";
 
 const TikTok = () => (
   <PageLayout backgroundClass="bg-[#21005c]">

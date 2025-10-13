@@ -4,10 +4,10 @@ import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 // Reusing existing images to avoid missing assets; swap with Rakuten-specific
 // images later by updating these imports.
-import RakutenInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
-import RakutenHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.png";
-import RakutenAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import RakutenROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
+import RakutenInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
+import RakutenHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.webp";
+import RakutenAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import RakutenROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
 
 const Rakuten = () => (
   <PageLayout backgroundClass="bg-[#E60012]">

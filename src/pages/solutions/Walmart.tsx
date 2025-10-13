@@ -2,14 +2,14 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import WalmartInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.png";
+import WalmartInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM.webp";
 import WalmartHeroImage from "@/assests/walmart-intelligence-banner.png";
-import WalmartAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.png";
-import WalmartROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.png";
-import WalmartInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.png";
-import WalmartAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_40_45 AM.png";
-import WalmartAnalyticsMarketplaceImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_53_31 AM.png";
-import WalmartROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_57_46 AM.png";
+import WalmartAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
+import WalmartROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import WalmartInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
+import WalmartAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_40_45 AM.webp";
+import WalmartAnalyticsMarketplaceImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_53_31 AM.webp";
+import WalmartROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_57_46 AM.webp";
 import WalmartMarketingInsightsImage from "@/assests/Walmart-product-experience.png";
 
 const Walmart = () => (
