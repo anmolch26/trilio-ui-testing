@@ -11,7 +11,7 @@ import ValuesSection from "@/components/ValuesSection";
 import Footer from "@/components/Footer";
 
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
-const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimation"));
+const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 
 const Index = () => {

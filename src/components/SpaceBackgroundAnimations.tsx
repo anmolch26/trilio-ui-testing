@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import darkSpaceAnimation from "@/assests/dark-space.json";
+import darkSpaceAnimation from "@/assests/dark-space1.json";
 
 interface SpaceBackgroundAnimationProps {
   className?: string;

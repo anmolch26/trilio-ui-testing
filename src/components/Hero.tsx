@@ -15,7 +15,7 @@ const Icon7 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove bac
 const Icon8 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (11).webp";
 const Icon9 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (12).webp";
 const Icon10 = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (13).webp";
-import AIAssistantInterface from "./AIAssistantInterface";
+import AIAssistantInterface from "./AIAssistantInterfaces";
 import OrbitingCarousel from "./OrbitingCarousel";
 
 const Hero = () => {
