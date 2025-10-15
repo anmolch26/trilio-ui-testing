@@ -18,7 +18,7 @@ const AIAssistantInterface = () => {
 
   // Fetch Lottie animation from S3
   useEffect(() => {
-    fetch("https://assets.channeliq.ai/trilio-landing/Hero_Images/Siri%20Animation.json")
+    fetch("https://assets.channeliq.ai/trilio-landing/Hero_Images/Siri_Animation_v2.json", { cache: "default" })
       .then((response) => response.json())
       .then((data) => setLottieData(data))
       .catch((error) =>
