@@ -9,7 +9,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import Lottie from "lottie-react";
-import siriAnimation from "@/assests/Lottie/Siri_Animation_v2.json";
+import siriAnimation from "@/assests/Lottie/Siri_Animation_v3.json";
 
 const AIAssistantInterface = () => {
   const [currentText, setCurrentText] = useState("");

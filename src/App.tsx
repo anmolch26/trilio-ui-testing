@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -27,7 +27,6 @@ import OpenPositions from "./pages/careers/OpenPositions";
 import LifeAtTrilio from "./pages/careers/LifeAtTrilio";
 import InterviewProcess from "./pages/careers/InterviewProcess";
 import InternshipsPrograms from "./pages/careers/InternshipsPrograms";
-import BlogInsights from "./pages/resources/BlogInsights";
 import CaseStudies from "./pages/resources/CaseStudies";
 import GuidesReports from "./pages/resources/GuidesReports";
 import HelpCenter from "./pages/resources/HelpCenter";
@@ -67,8 +66,22 @@ import CustomDashboards from "./pages/solutions/CustomDashboards";
 import DataIntegrations from "./pages/solutions/DataIntegrations";
 import OnboardingTraining from "./pages/solutions/OnboardingTraining";
 import HomeDepot from "./pages/solutions/HomeDepot";
-import Blog from "./pages/Blog";
-import DynamicBlog from "./pages/resources/DynamicBlog";
+
+// 🚀 LAZY LOAD BLOG COMPONENTS - These will NOT be in the initial bundle!
+// Blog data (11k+ lines) will only load when users visit blog pages
+const BlogInsights = lazy(() => import("./pages/resources/BlogInsights"));
+const DynamicBlog = lazy(() => import("./pages/resources/DynamicBlog"));
+const Blog = lazy(() => import("./pages/Blog"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white">
+    <div className="text-center">
+      <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mb-4"></div>
+      <p className="text-gray-600 text-lg">Loading...</p>
+    </div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -230,7 +243,15 @@ const App = () => (
               element={<InternshipsPrograms />}
             />
             {/* Resources section routes */}
-            <Route path="/resources/blog-insights" element={<BlogInsights />} />
+            {/* Blog routes wrapped in Suspense - lazy loaded for better performance */}
+            <Route 
+              path="/resources/blog-insights" 
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <BlogInsights />
+                </Suspense>
+              } 
+            />
             <Route path="/resources/case-studies" element={<CaseStudies />} />
             <Route
               path="/resources/guides-reports"
@@ -257,10 +278,14 @@ const App = () => (
             <Route path="/about" element={<Index />} />
             <Route path="/contact" element={<Index />} />
             <Route path="/careers" element={<Index />} />
-            {/* Dynamic blog route - handles all blog posts */}
+            {/* Dynamic blog route - handles all blog posts (lazy loaded) */}
             <Route
               path="/resources/blog-insights/:blogSlug"
-              element={<DynamicBlog />}
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <DynamicBlog />
+                </Suspense>
+              }
             />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
