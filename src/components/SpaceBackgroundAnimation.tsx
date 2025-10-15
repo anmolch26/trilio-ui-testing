@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Lottie from "lottie-react";
-import darkSpaceAnimation from "@/assests/dark-space.json";
 
 interface SpaceBackgroundAnimationProps {
   className?: string;
@@ -9,12 +8,29 @@ interface SpaceBackgroundAnimationProps {
 const SpaceBackgroundAnimation: React.FC<SpaceBackgroundAnimationProps> = ({
   className = "",
 }) => {
+  const [animationData, setAnimationData] = useState<any>(null);
+
+  // Fetch Lottie animation from S3
+  useEffect(() => {
+    fetch("https://assets.channeliq.ai/trilio-landing/Hero_Images/dark-space.json")
+      .then((response) => response.json())
+      .then((data) => setAnimationData(data))
+      .catch((error) =>
+        console.error("Error loading space background animation:", error)
+      );
+  }, []);
+
+  // Don't render anything until animation is loaded
+  if (!animationData) {
+    return null;
+  }
+
   return (
     <div
       className={`fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden ${className}`}
     >
       <Lottie
-        animationData={darkSpaceAnimation}
+        animationData={animationData}
         loop={true}
         autoplay={true}
         style={{
