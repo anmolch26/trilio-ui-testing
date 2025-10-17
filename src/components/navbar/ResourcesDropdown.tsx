@@ -8,6 +8,7 @@ const ResourcesDropdown = () => {
     { title: "Guides & Reports", href: "/resources/guides-reports" },
     { title: "Help Center", href: "/resources/help-center" },
     { title: "Developer Docs", href: "/resources/developer-docs" },
+    { title: "Data Dictionary", href: "/resources/data-dictionary" },
     { title: "Newsletter Signup", href: "/resources/newsletter-signup" },
   ];
 

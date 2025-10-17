@@ -1,0 +1,1518 @@
+[
+    {
+      "category": "Sales",
+      "metric_name": "Total Sales",
+      "unit": "USD",
+      "definition": "Total Sales represents the overall revenue generated from all completed orders within a selected period. It serves as a key performance indicator of business health, reflecting the combined impact of marketing, pricing, product mix, and customer demand. Monitoring Total Sales helps assess growth trends, evaluate campaign effectiveness, and guide strategic decisions across sales, finance, and operations.",
+      "formula": "Total Sales = net_sales_amount + shipping_amount + tax_amount",
+      "key_name": "total_sales",
+      "deep_link": "/metrics/total_sales",
+      "metric_metadata": {
+        "Overview": "Total Sales represents the overall revenue generated from all completed orders within a selected period.",
+        "Insights and Actions": [
+          "Revenue Growth Tracking — Identify periods of strong performance and potential slowdowns.",
+          "Product Performance Evaluation — Analyze Total Sales by product or category to spot bestsellers and underperformers.",
+          "Pricing & Discount Strategy — Sudden rises or drops indicate customer responses to pricing, promotions, or discounts.",
+          "Market Demand Insights — Seasonal spikes reveal changing customer demand patterns.",
+          "Profitability & Forecasting — Use Total Sales trends to support revenue forecasting and profit planning."
+        ],
+        "Detailed Breakdown": {
+          "Net Sales": "(Gross Sales - Returns - Discounts)",
+          "Shipping": "SUM(shipping_amount)",
+          "Taxes": "SUM(tax_amount)"
+        },
+        "Suggested Dimensions": [
+          "Channel",
+          "Campaign",
+          "Product / SKU",
+          "Collection / Category",
+          "Country / Region",
+          "Device",
+          "Customer Type (New / Returning)"
+        ],
+        "Related Metrics": [
+          "Net Sales",
+          "Gross Sales",
+          "Discount Rate",
+          "Tax",
+          "MER",
+          "ROAS"
+        ],
+        "Example Use": {
+          "prompt": "What's the total sales from yesterday?",
+          "response": "Total Sales from Yesterday - $120,450"
+        },
+        "Query": "SELECT SUM(net_sales_amount + shipping_amount + tax_amount) AS total_sales FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Net Sales",
+      "unit": "USD",
+      "definition": "Net Sales represent the actual revenue after deducting returns, refunds, and discounts from Gross Sales. It reflects the real income generated from completed transactions and provides a more accurate measure of sales performance.",
+      "formula": "Net Sales = gross_sales - discount_amount",
+      "key_name": "net_sales",
+      "deep_link": "/metrics/net_sales",
+      "metric_metadata": {
+        "Overview": "Net Sales represent the actual revenue after deducting returns, refunds, and discounts from Gross Sales.",
+        "Insights and Actions": [
+          "Profitability Tracking — Net Sales show how much revenue the business retains after adjustments.",
+          "Discount Efficiency — Identifies how discounts or returns affect real sales performance.",
+          "Customer Retention — A high return rate may signal product quality or satisfaction issues.",
+          "Sales Quality — Differentiates between inflated gross sales and sustainable net revenue.",
+          "Campaign Evaluation — Useful to measure how much revenue promotions actually retain."
+        ],
+        "Detailed Breakdown": {
+          "Gross Sales": "sum(net_sales + discount_amount)",
+          "Discounts": "sum(discount_amount)"
+        },
+        "Suggested Dimensions": [
+          "Campaign",
+          "Product / SKU",
+          "Channel",
+          "Customer Type",
+          "Region"
+        ],
+        "Related Metrics": [
+          "Gross Sales",
+          "Discount Rate",
+          "Total Sales",
+          "MER",
+          "ROAS"
+        ],
+        "Example Use": {
+          "prompt": "How much was our net sales yesterday?",
+          "response": "Net Sales from Yesterday — $115,500"
+        },
+        "Query": "SELECT SUM(net_sales_amount) AS net_sales FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+  
+    {
+      "category": "Sales",
+      "metric_name": "Gross Sales",
+      "unit": "USD",
+      "definition": "Gross Sales represents the total revenue generated from all completed orders before any deductions such as returns, discounts, or allowances. It serves as a key measure of overall sales volume and business scale, providing a clear view of top-line performance.",
+      "formula": "Gross Sales = Net Sales + Discount Amount",
+      "key_name": "gross_sales",
+      "deep_link": "/metrics/gross_sales",
+      "metric_metadata": {
+        "Overview": "Gross Sales represents the total revenue generated from all completed orders before any deductions such as returns, discounts, or allowances.",
+        "Insights and Actions": [
+          "Revenue Momentum — Tracking Gross Sales helps identify sales growth trends and the impact of marketing campaigns.",
+          "Market Expansion — High Gross Sales across new regions or channels indicate strong market adoption.",
+          "Product Demand — Useful for evaluating which products or categories generate the highest raw revenue.",
+          "Benchmarking — Acts as a baseline for comparing net sales, profit margins, and return rates.",
+          "Forecasting — Helps anticipate inventory and production needs based on gross sales trends."
+        ],
+        "Detailed Breakdown": {
+          "Net Sales": "discount_amount - gross_sales",
+          "Discount Amount": "discount_amount"
+        },
+        "Suggested Dimensions": [
+          "Channel",
+          "Campaign",
+          "Product / SKU",
+          "Category",
+          "Region",
+          "Time Period"
+        ],
+        "Related Metrics": [
+          "Net Sales",
+          "Total Sales",
+          "Discount Rate",
+          "Units Sold",
+          "AOV"
+        ],
+        "Example Use": {
+          "prompt": "What were the gross sales for last week?",
+          "response": "Gross Sales from Last Week — $180,000"
+        },
+        "Query": "SELECT SUM(net_sales_amount + discount_amount) AS gross_sales FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "MER",
+      "unit": "Ratio",
+      "definition": "Marketing Efficiency Ratio (MER) measures total revenue generated for every dollar spent on advertising. It helps gauge overall marketing effectiveness and efficiency across all channels.",
+      "formula": "MER = Total Revenue ÷ Total Marketing Spend",
+      "key_name": "mer",
+      "deep_link": "/metrics/mer",
+      "metric_metadata": {
+        "Overview": "MER measures total revenue generated for every dollar spent on advertising, indicating marketing efficiency.",
+        "Insights and Actions": [
+          "Marketing Efficiency — A higher MER indicates better performance from ad spend.",
+          "Budget Optimization — Guides decision-making on where to allocate marketing budgets.",
+          "Performance Benchmarking — Useful for comparing campaigns or periods.",
+          "Profitability Insight — Links marketing activity directly with revenue outcomes.",
+          "Trend Analysis — Identify long-term improvements or inefficiencies in marketing ROI."
+        ],
+        "Detailed Breakdown": {
+          "Total Sales": "net_sales_amount + shipping_amount + tax_amount",
+          "Ad Spend": "total marketing spend"
+        },
+        "Suggested Dimensions": [
+          "Channel",
+          "Campaign",
+          "Time Period",
+          "Device",
+          "Region"
+        ],
+        "Related Metrics": [
+          "ROAS",
+          "Ad Spend",
+          "Total Sales",
+          "Profit Margin"
+        ],
+        "Example Use": {
+          "prompt": "What was our MER for last month?",
+          "response": "MER for Last Month — 5.2"
+        },
+        "Query": "SELECT ROUND(s.ads_net_sales / NULLIF(a.spends, 0), 2) AS mer FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+  
+    
+  
+    {
+      "category": "Marketing",
+      "metric_name": "Ad Spend",
+      "unit": "USD",
+      "definition": "Total amount invested in marketing and advertising across all channels within a specific period.",
+      "formula": "SUM(spend_amount)",
+      "key_name": "ad_spend",
+      "deep_link": "/metrics/ad_spend",
+      "metric_metadata": {
+        "Overview": "Represents the total amount invested in marketing and advertising across all channels within a specific period. It’s a critical input for measuring marketing efficiency and calculating ROI.",
+        "Insights and Actions": [
+          "Track how marketing funds are being allocated and spent.",
+          "Identify which platforms deliver the highest return on spend.",
+          "Compare ad spend with metrics like sales and conversions.",
+          "Detect overspending or underutilization in campaigns.",
+          "Use historical spend trends to plan future marketing budgets."
+        ],
+        "Detailed Breakdown": {
+          "Spend Amount": "sum(spends.amount)",
+          "Time Period": "daily, weekly, or monthly"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Region", "Device", "Ad Type"],
+        "Related Metrics": ["MER", "ROAS", "Total Sales", "CPC", "CPM"],
+        "Example Use": {
+          "prompt": "How much did we spend on ads yesterday?",
+          "response": "Ad Spend from Yesterday — $24,000"
+        },
+        "Query": "SELECT SUM(spends.amount) AS ad_spend FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "ROAS",
+      "unit": "Ratio",
+      "definition": "Revenue generated per dollar spent on advertising.",
+      "formula": "Ads Revenue ÷ Advertising Spend",
+      "key_name": "roas",
+      "deep_link": "/metrics/roas",
+      "metric_metadata": {
+        "Overview": "Measures the revenue generated per dollar spent on advertising. It provides a focused view of campaign-level profitability and efficiency.",
+        "Insights and Actions": [
+          "Identifies which ads are generating profitable returns.",
+          "Helps reallocate budgets to top-performing campaigns.",
+          "Quantifies how marketing spend translates into sales.",
+          "Compare ROAS across products, platforms, or timeframes.",
+          "Helps predict returns from future ad investments."
+        ],
+        "Detailed Breakdown": {
+          "Revenue from Ads": "sum(sales_attributed_to_ads)",
+          "Ad Spend": "sum(spend_amount)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Product", "Region", "Device"],
+        "Related Metrics": ["MER", "Ad Spend", "Total Sales", "Profit Margin"],
+        "Example Use": {
+          "prompt": "What’s our ROAS for Facebook campaigns this week?",
+          "response": "ROAS for Facebook Campaigns — 4.3"
+        },
+        "Query": "SELECT SUM(COALESCE(conversions_value, 0.0)) / NULLIF(SUM(COALESCE(spend, 0.0)), 0) AS roas FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Units Sold",
+      "unit": "Units",
+      "definition": "Total quantity of individual products sold during a selected time period.",
+      "formula": "SUM(quantity)",
+      "key_name": "units_sold",
+      "deep_link": "/metrics/units_sold",
+      "metric_metadata": {
+        "Overview": "Represents product demand and helps assess sales volume independent of pricing.",
+        "Insights and Actions": [
+          "Identify which products or categories sell the most units.",
+          "Align stock levels with product demand trends.",
+          "Evaluate product or channel-level performance.",
+          "Spot spikes in unit sales tied to promotions or holidays.",
+          "Estimate total profit potential from unit trends."
+        ],
+        "Detailed Breakdown": {
+          "Quantity Sold": "sum(order_items.quantity)"
+        },
+        "Suggested Dimensions": ["Product / SKU", "Category", "Channel", "Region", "Campaign"],
+        "Related Metrics": ["Gross Sales", "Net Sales", "AOV", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "How many units did we sell last week?",
+          "response": "Units Sold Last Week — 2,450"
+        },
+        "Query": "SELECT SUM(quantity) AS units_sold FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Average Order Value (AOV)",
+      "unit": "USD",
+      "definition": "Average amount spent per transaction.",
+      "formula": "Net Sales ÷ Total Orders",
+      "key_name": "aov",
+      "deep_link": "/metrics/aov",
+      "metric_metadata": {
+        "Overview": "Measures the average amount spent per transaction. It helps assess customer purchasing behavior and pricing effectiveness.",
+        "Insights and Actions": [
+          "Tracks how much customers spend on average.",
+          "Identify tactics to increase AOV through bundles or add-ons.",
+          "Evaluate the impact of price changes on customer behavior.",
+          "Higher AOV during promotions signals successful targeting.",
+          "Helps project total sales based on order volume trends."
+        ],
+        "Detailed Breakdown": {
+          "Total Revenue": "sum(net_sales)",
+          "Orders": "count(distinct order_id)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Customer Type", "Region", "Device"],
+        "Related Metrics": ["Net Sales", "Units Sold", "Conversion Rate", "ROAS"],
+        "Example Use": {
+          "prompt": "What’s our average order value for this week?",
+          "response": "AOV for This Week — $48.75"
+        },
+        "Query": "SELECT COALESCE(SUM(net_sales_amount), 0) / NULLIF(COUNT(DISTINCT order_id), 0) AS aov FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+  
+  
+  
+    {
+      "category": "Sales",
+      "metric_name": "Discount Rate",
+      "unit": "Percentage",
+      "definition": "Percentage of revenue reduced through discounts relative to gross sales.",
+      "formula": "(Total Discount Amount ÷ Gross Sales) × 100",
+      "key_name": "discount_rate",
+      "deep_link": "/metrics/discount_rate",
+      "metric_metadata": {
+        "Overview": "Measures the percentage of revenue reduced through discounts relative to gross sales. Essential for understanding promotional impact and margin control.",
+        "Insights and Actions": [
+          "Track how discounts influence sales volume.",
+          "Identify if heavy discounts are hurting profitability.",
+          "Evaluate if discounts are driving repeat purchases.",
+          "Optimize discount levels for maximum ROI.",
+          "Compare discount rates across periods to detect overuse."
+        ],
+        "Detailed Breakdown": {
+          "Total Discounts": "sum(discount_amount)",
+          "Gross Sales": "sum(order_amount)"
+        },
+        "Suggested Dimensions": ["Campaign", "Product / SKU", "Channel", "Customer Type", "Region"],
+        "Related Metrics": ["Gross Sales", "Net Sales", "Total Sales", "AOV"],
+        "Example Use": {
+          "prompt": "What was the discount rate last month?",
+          "response": "Discount Rate for Last Month — 8.7%"
+        },
+        "Query": "SELECT SUM(discount_amount) * 100.0 / NULLIF(SUM(net_sales_amount + discount_amount), 0) AS discount_rate FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Finance",
+      "metric_name": "Tax",
+      "unit": "USD",
+      "definition": "Total amount of sales tax collected from all transactions within a defined period.",
+      "formula": "SUM(tax_amount)",
+      "key_name": "tax",
+      "deep_link": "/metrics/tax",
+      "metric_metadata": {
+        "Overview": "Represents the total amount of sales tax collected from all transactions within a defined period. Essential for compliance, financial reporting, and profitability calculations.",
+        "Insights and Actions": [
+          "Ensures accurate collection and reporting of tax obligations.",
+          "Compare tax contributions across different regions or markets.",
+          "Helps determine pre- and post-tax profitability.",
+          "Use tax data to project financial liabilities.",
+          "Detect anomalies in tax calculation or reporting."
+        ],
+        "Detailed Breakdown": {
+          "Tax Amount": "sum(taxes)"
+        },
+        "Suggested Dimensions": ["Region", "Country", "Channel", "Product", "Time Period"],
+        "Related Metrics": ["Total Sales", "Net Sales", "Duties", "Additional Fees"],
+        "Example Use": {
+          "prompt": "How much tax was collected yesterday?",
+          "response": "Tax Collected Yesterday — $6,750"
+        },
+        "Query": "SELECT COALESCE(SUM(tax_amount), 0) AS tax_amount FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Cancellation Rate",
+      "unit": "Percentage",
+      "definition": "Percentage of orders canceled after being placed.",
+      "formula": "(Canceled Orders ÷ Total Orders) × 100",
+      "key_name": "cancellation_rate",
+      "deep_link": "/metrics/cancellation_rate",
+      "metric_metadata": {
+        "Overview": "Measures the percentage of orders canceled after being placed. Indicates order fulfillment reliability, customer satisfaction, and operational efficiency.",
+        "Insights and Actions": [
+          "High cancellation rates may signal poor user experience or product issues.",
+          "Helps identify fulfillment or stock-related delays.",
+          "Frequent cancellations may distort true demand forecasts.",
+          "Useful for evaluating payment or logistics performance.",
+          "Tracks how flexible return/cancellation policies affect overall business."
+        ],
+        "Detailed Breakdown": {
+          "Total Cancellations": "count(cancelled_orders)",
+          "Total Orders": "count(all_orders)"
+        },
+        "Suggested Dimensions": ["Channel", "Product / SKU", "Region", "Campaign", "Customer Type"],
+        "Related Metrics": ["Total Orders", "Total Cancellations", "Conversion Rate", "Return Rate"],
+        "Example Use": {
+          "prompt": "What’s our cancellation rate for this week?",
+          "response": "Cancellation Rate for This Week — 3.4%"
+        },
+        "Query": "SELECT COALESCE(COUNT(DISTINCT order_id) * 100.0 / NULLIF(COUNT(DISTINCT order_id), 0), 0) AS cancellation_rate FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Total Orders",
+      "unit": "Orders",
+      "definition": "Total number of confirmed orders placed within a selected period.",
+      "formula": "Count of unique order IDs",
+      "key_name": "total_orders",
+      "deep_link": "/metrics/total_orders",
+      "metric_metadata": {
+        "Overview": "Serves as a measure of overall order volume and customer activity.",
+        "Insights and Actions": [
+          "Indicates overall market demand or traffic conversion effectiveness.",
+          "Helps forecast fulfillment workload and shipping requirements.",
+          "Links marketing activity with actual purchase volume.",
+          "Tracks changes in buying activity over time.",
+          "Reveals peaks during holidays or major promotions."
+        ],
+        "Detailed Breakdown": {
+          "Orders": "count(distinct order_id)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Product / SKU", "Region", "Device"],
+        "Related Metrics": ["Conversion Rate", "Net Sales", "Units Sold", "AOV"],
+        "Example Use": {
+          "prompt": "How many total orders did we receive yesterday?",
+          "response": "Total Orders from Yesterday — 2,150"
+        },
+        "Query": "SELECT COUNT(DISTINCT order_id) AS total_orders FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Total Cancellations",
+      "unit": "Orders",
+      "definition": "Total number of orders that were canceled before fulfillment.",
+      "formula": "Count of canceled order IDs",
+      "key_name": "total_cancellations",
+      "deep_link": "/metrics/total_cancellations",
+      "metric_metadata": {
+        "Overview": "Helps identify order management issues, customer experience gaps, and inventory mismatches.",
+        "Insights and Actions": [
+          "High cancellations could indicate stock or delivery problems.",
+          "Understand why customers change their minds post-purchase.",
+          "Evaluate the impact of cancellation rules on sales performance.",
+          "Spot spikes that align with specific products or regions.",
+          "Measure operational dependability and checkout experience."
+        ],
+        "Detailed Breakdown": {
+          "Cancelled Orders": "count(order_status = 'cancelled')"
+        },
+        "Suggested Dimensions": ["Channel", "Product / SKU", "Campaign", "Region", "Customer Type"],
+        "Related Metrics": ["Cancellation Rate", "Total Orders", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "How many cancellations occurred last week?",
+          "response": "Total Cancellations Last Week — 72"
+        },
+        "Query": "SELECT COUNT(DISTINCT CASE WHEN is_cancelled_flag = 1 THEN order_id END) AS total_cancellations FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Conversion Rate",
+      "unit": "Percentage",
+      "definition": "Percentage of website visitors or ad clicks that resulted in completed purchases.",
+      "formula": "(Total Conversions / Total Clicks) * 100",
+      "key_name": "conversion_rate",
+      "deep_link": "/metrics/conversion_rate",
+      "metric_metadata": {
+        "Overview": "A vital metric for assessing marketing effectiveness and customer journey performance.",
+        "Insights and Actions": [
+          "Higher conversion rates indicate effective targeting and ad quality.",
+          "Helps identify friction points in checkout flow or product pages.",
+          "Detects which campaigns convert best.",
+          "Reveals which items drive more completed purchases.",
+          "Conversion rate changes directly influence revenue outcomes."
+        ],
+        "Detailed Breakdown": {
+          "Conversions": "sum(conversions)",
+          "Clicks": "sum(clicks)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Device", "Region", "Product / SKU"],
+        "Related Metrics": ["Clicks", "Conversions", "ROAS", "CPC"],
+        "Example Use": {
+          "prompt": "What was our conversion rate yesterday?",
+          "response": "Conversion Rate from Yesterday — 2.8%"
+        },
+        "Query": "SELECT SUM(conversions) * 100.0 / NULLIF(SUM(clicks), 0) AS conversion_rate FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "ACOS",
+      "unit": "Percentage",
+      "definition": "Advertising Cost of Sales — percentage of ad spend relative to revenue from those ads.",
+      "formula": "(Ad Spend ÷ Conversions Value) × 100",
+      "key_name": "acos",
+      "deep_link": "/metrics/acos",
+      "metric_metadata": {
+        "Overview": "Indicates advertising efficiency and helps monitor profitability of ad campaigns.",
+        "Insights and Actions": [
+          "Lower ACOS means better ad profitability.",
+          "Ensures ad spending aligns with expected returns.",
+          "Compare efficiency across campaigns or keywords.",
+          "Monitor changes over time for optimization.",
+          "Supports defining profitable advertising thresholds."
+        ],
+        "Detailed Breakdown": {
+          "Ad Spend": "sum(spend_amount)",
+          "Ad Revenue": "sum(sales_from_ads)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Product / SKU", "Region", "Device"],
+        "Related Metrics": ["ROAS", "MER", "Ad Spend", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "What was our ACOS last month?",
+          "response": "ACOS for Last Month — 18.5%"
+        },
+        "Query": "SELECT ROUND((SUM(COALESCE(spend, 0.0)) / NULLIF(SUM(COALESCE(conversions_value, 0.0)), 0)) * 100,2) AS acos FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Cost Per Click (CPC)",
+      "unit": "USD",
+      "definition": "Average cost incurred for each ad click.",
+      "formula": "Total Spend ÷ Total Number of Clicks",
+      "key_name": "cpc",
+      "deep_link": "/metrics/cpc",
+      "metric_metadata": {
+        "Overview": "Measures cost efficiency of paid media and bid strategy.",
+        "Insights and Actions": [
+          "High CPC may indicate intense competition or poor targeting.",
+          "Maintains an optimal spend-per-click ratio.",
+          "Compare CPC across platforms and campaigns.",
+          "Allocate budget to lower-cost, high-converting ads.",
+          "Use alongside ROAS or Conversion Rate for complete ad insight."
+        ],
+        "Detailed Breakdown": {
+          "Total Ad Spend": "sum(spend_amount)",
+          "Total Clicks": "sum(clicks)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Keyword", "Region", "Device"],
+        "Related Metrics": ["Ad Spend", "Clicks", "ROAS", "ACOS"],
+        "Example Use": {
+          "prompt": "What’s our average CPC for the week?",
+          "response": "Average CPC for This Week — $0.72"
+        },
+        "Query": "SELECT ROUND(CASE WHEN SUM(clicks) > 0 THEN SUM(spend) / NULLIF(SUM(clicks), 0) ELSE 0 END, 2) AS cost_per_click FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Conversions",
+      "unit": "Count",
+      "definition": "Total number of successful outcomes (purchases, sign-ups) achieved through marketing efforts.",
+      "formula": "Total number of conversions during the selected period",
+      "key_name": "conversions",
+      "deep_link": "/metrics/conversions",
+      "metric_metadata": {
+        "Overview": "Key measure of campaign effectiveness and goal achievement.",
+        "Insights and Actions": [
+          "Measure the number of desired actions taken.",
+          "Identify which marketing sources drive the most conversions.",
+          "Core input for metrics like ROAS and Conversion Rate.",
+          "Track which touchpoints lead to conversion.",
+          "Align marketing outcomes with business KPIs."
+        ],
+        "Detailed Breakdown": {
+          "Conversions": "sum(conversions)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Device", "Product / SKU", "Region"],
+        "Related Metrics": ["Conversion Rate", "ROAS", "Clicks", "Conversion Value"],
+        "Example Use": {
+          "prompt": "How many conversions did we get yesterday?",
+          "response": "Conversions from Yesterday — 340"
+        },
+        "Query": "SELECT SUM(COALESCE(conversions, 0)) AS conversions FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+  
+  
+  
+    {
+      "category": "Marketing",
+      "metric_name": "Conversion Value",
+      "unit": "USD",
+      "definition": "Total revenue or value generated from all conversions.",
+      "formula": "SUM(conversion_value)",
+      "key_name": "conversion_value",
+      "deep_link": "/metrics/conversion_value",
+      "metric_metadata": {
+        "Overview": "Measures the monetary impact of marketing campaigns.",
+        "Insights and Actions": [
+          "Revenue Attribution — Understand total value driven by ads or marketing activities.",
+          "ROI Calculation — Helps determine ROAS, ACOS, and profitability.",
+          "Campaign Prioritization — Focus on campaigns with the highest conversion value.",
+          "Performance Analysis — Evaluate average value per conversion.",
+          "Forecasting — Predict future sales based on current conversion trends."
+        ],
+        "Detailed Breakdown": {
+          "Revenue from Conversions": "sum(conversion_value)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Product / SKU", "Device", "Region"],
+        "Related Metrics": ["ROAS", "ACOS", "Total Sales", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "What was our total conversion value this week?",
+          "response": "Conversion Value for This Week — $48,900"
+        },
+        "Query": "SELECT ROUND(COALESCE(SUM(conversions_value), 0), 2) AS conversions_value FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Clicks",
+      "unit": "Count",
+      "definition": "Number of times users interacted with your ad or link.",
+      "formula": "SUM(clicks)",
+      "key_name": "clicks",
+      "deep_link": "/metrics/clicks",
+      "metric_metadata": {
+        "Overview": "Measures audience engagement and ad reach effectiveness.",
+        "Insights and Actions": [
+          "Engagement Indicator — Higher clicks show stronger interest in ads or content.",
+          "CTR Analysis — Combine with impressions to calculate Click-Through Rate (CTR).",
+          "Ad Relevance — Identify which creatives or targeting strategies attract attention.",
+          "Performance Benchmarking — Compare across channels or time periods.",
+          "Traffic Forecasting — Helps estimate incoming site visitors from ads."
+        ],
+        "Detailed Breakdown": {
+          "Clicks": "sum(clicks)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Device", "Keyword", "Region"],
+        "Related Metrics": ["Impressions", "Conversion Rate", "CPC", "CTR"],
+        "Example Use": {
+          "prompt": "How many clicks did we get from Google Ads yesterday?",
+          "response": "Clicks from Google Ads Yesterday — 12,600"
+        },
+        "Query": "SELECT SUM(clicks) AS clicks FROM traffic WHERE event_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Impressions",
+      "unit": "Count",
+      "definition": "Total number of times an ad or listing was displayed to users.",
+      "formula": "SUM(impressions)",
+      "key_name": "impressions",
+      "deep_link": "/metrics/impressions",
+      "metric_metadata": {
+        "Overview": "Measures ad visibility and reach.",
+        "Insights and Actions": [
+          "Brand Awareness — High impressions indicate strong ad visibility.",
+          "Campaign Reach — Helps measure audience size and exposure frequency.",
+          "CTR Calculation — Combine with clicks to calculate engagement rates.",
+          "Performance Monitoring — Identify underperforming channels with low reach.",
+          "Ad Testing — Assess visibility impact of different ad creatives."
+        ],
+        "Detailed Breakdown": {
+          "Impressions": "sum(impressions)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Device", "Region", "Placement"],
+        "Related Metrics": ["Clicks", "CTR", "CPC", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "How many impressions did our campaign get last week?",
+          "response": "Impressions from Last Week — 1,250,000"
+        },
+        "Query": "SELECT SUM(impressions) AS impressions FROM traffic WHERE event_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "ASP",
+      "unit": "USD",
+      "definition": "Average revenue earned per unit sold.",
+      "formula": "Net Sales ÷ Total Units",
+      "key_name": "asp",
+      "deep_link": "/metrics/asp",
+      "metric_metadata": {
+        "Overview": "Measures product pricing effectiveness and revenue performance across SKUs or categories.",
+        "Insights and Actions": [
+          "Pricing Strategy — Track how pricing adjustments impact average selling value.",
+          "Product Mix — Identify which products contribute to a higher ASP.",
+          "Market Positioning — Evaluate premium vs. budget product performance.",
+          "Revenue Optimization — Helps forecast sales based on price changes.",
+          "Promotion Impact — Observe ASP shifts during discount campaigns."
+        ],
+        "Detailed Breakdown": {
+          "Total Revenue": "sum(net_sales)",
+          "Units Sold": "sum(quantity_sold)"
+        },
+        "Suggested Dimensions": ["Product / SKU", "Category", "Channel", "Region", "Campaign"],
+        "Related Metrics": ["AOV", "Gross Sales", "Net Sales", "Units Sold"],
+        "Example Use": {
+          "prompt": "What was our average selling price last month?",
+          "response": "ASP for Last Month — $42.30"
+        },
+        "Query": "SELECT COALESCE(SUM(net_sales_amount) / NULLIF(SUM(quantity), 0),0) AS asp FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+  
+  
+  
+    {
+      "category": "Marketing",
+      "metric_name": "CPA",
+      "unit": "USD",
+      "definition": "Average marketing cost required to acquire one customer or conversion.",
+      "formula": "Ad Spend ÷ Conversions",
+      "key_name": "cpa",
+      "deep_link": "/metrics/cpa",
+      "metric_metadata": {
+        "Overview": "Measures efficiency of advertising and lead generation efforts.",
+        "Insights and Actions": [
+          "Efficiency Check — Lower CPA indicates cost-effective marketing performance.",
+          "Budget Allocation — Helps identify which campaigns yield the best acquisition cost.",
+          "ROI Measurement — A key input for profitability analysis.",
+          "Trend Tracking — Detect shifts in customer acquisition costs over time.",
+          "Optimization Opportunities — Identify underperforming ads or audiences."
+        ],
+        "Detailed Breakdown": {
+          "Total Ad Spend": "sum(spend_amount)",
+          "Total Conversions": "sum(conversions)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Region", "Device", "Customer Type"],
+        "Related Metrics": ["ROAS", "ACOS", "Conversion Rate", "CAC"],
+        "Example Use": {
+          "prompt": "What’s our CPA for Facebook ads this week?",
+          "response": "CPA for Facebook Ads — $12.80"
+        },
+        "Query": "SELECT COALESCE(SUM(spend) / NULLIF(SUM(conversions), 0), 0) AS cpa FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "CAC",
+      "unit": "USD",
+      "definition": "Total cost of acquiring a new customer, including marketing, sales, and promotional expenses.",
+      "formula": "Ad Spend ÷ Conversions",
+      "key_name": "cac",
+      "deep_link": "/metrics/cac",
+      "metric_metadata": {
+        "Overview": "Provides a clear view of customer acquisition cost and profitability.",
+        "Insights and Actions": [
+          "Profitability Insight — Compare CAC with LTV to ensure sustainability.",
+          "Budget Efficiency — Track which channels acquire customers most affordably.",
+          "Scalability Analysis — Monitor CAC trends during growth phases.",
+          "Campaign Optimization — Detect costly or ineffective acquisition campaigns.",
+          "Strategic Benchmarking — Compare CAC across time, products, or regions."
+        ],
+        "Detailed Breakdown": {
+          "Marketing & Sales Costs": "sum(ad_spend + sales_expenses)",
+          "New Customers": "count(distinct new_customer_ids)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Region", "Customer Type"],
+        "Related Metrics": ["CPA", "MER", "LTV", "ROAS"],
+        "Example Use": {
+          "prompt": "What was our average CAC last quarter?",
+          "response": "Average CAC for Last Quarter — $45.50"
+        },
+        "Query": "SELECT COALESCE(SUM(spend) / NULLIF(SUM(conversions), 0), 0) AS cac FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Revenue",
+      "metric_name": "MRR",
+      "unit": "USD",
+      "definition": "Predictable monthly income from active subscriptions or contracts.",
+      "formula": "SUM(Monthly Subscription Value × Active Subscriptions)",
+      "key_name": "mrr",
+      "deep_link": "/metrics/mrr",
+      "metric_metadata": {
+        "Overview": "Key SaaS metric for evaluating steady revenue growth.",
+        "Insights and Actions": [
+          "Revenue Predictability — Provides visibility into monthly income trends.",
+          "Churn Impact — Track how cancellations affect recurring revenue.",
+          "Growth Tracking — Monitor new vs. lost MRR each month.",
+          "Forecasting — A core metric for financial planning.",
+          "Customer Retention — Measure the stability of recurring income."
+        ],
+        "Detailed Breakdown": {
+          "Subscription Value": "monthly_charge_per_user",
+          "Active Subscriptions": "count(active_customers)"
+        },
+        "Suggested Dimensions": ["Plan Type", "Region", "Customer Segment", "Subscription Duration"],
+        "Related Metrics": ["ARR", "Churn Rate", "Net Revenue Retention"],
+        "Example Use": {
+          "prompt": "What’s our total MRR for September?",
+          "response": "Total MRR for September — $38,200"
+        },
+        "Query": "SELECT SUM(monthly_charge_per_user * active_subscriptions) AS mrr FROM subscriptions WHERE subscription_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Revenue",
+      "metric_name": "Churn Rate",
+      "unit": "Percent",
+      "definition": "Percentage of customers or subscriptions lost over a given period.",
+      "formula": "(Customers Lost / Total Customers at Start) × 100",
+      "key_name": "churn_rate",
+      "deep_link": "/metrics/churn_rate",
+      "metric_metadata": {
+        "Overview": "Crucial for understanding customer retention and long-term revenue sustainability.",
+        "Insights and Actions": [
+          "Retention Analysis — High churn signals product dissatisfaction or pricing issues.",
+          "Customer Experience — Identify service or delivery pain points.",
+          "Revenue Impact — Track how churn affects recurring revenue.",
+          "Cohort Analysis — Study churn behavior by customer segment.",
+          "Forecasting — Predict future retention rates."
+        ],
+        "Detailed Breakdown": {
+          "Customers Lost": "count(lost_customers)",
+          "Total Starting Customers": "count(customers_start_period)"
+        },
+        "Suggested Dimensions": ["Customer Type", "Region", "Plan", "Channel"],
+        "Related Metrics": ["MRR", "Retention Rate", "CAC", "CLV"],
+        "Example Use": {
+          "prompt": "What was our customer churn rate last month?",
+          "response": "Churn Rate for Last Month — 4.6%"
+        },
+        "Query": "SELECT (COUNT(lost_customers) * 100.0 / NULLIF(COUNT(customers_start_period), 0)) AS churn_rate FROM customers WHERE period_start BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Revenue",
+      "metric_name": "Gross Profit",
+      "unit": "USD",
+      "definition": "Revenue remaining after subtracting the cost of goods sold (COGS).",
+      "formula": "Total Revenue - Cost of Goods Sold",
+      "key_name": "gross_profit",
+      "deep_link": "/metrics/gross_profit",
+      "metric_metadata": {
+        "Overview": "Fundamental indicator of business profitability.",
+        "Insights and Actions": [
+          "Profit Health — Indicates how efficiently products are produced or sourced.",
+          "Pricing Review — Compare gross profit margins across products.",
+          "Cost Management — Monitor the impact of rising COGS.",
+          "Trend Analysis — Assess long-term profitability performance.",
+          "Strategic Planning — Input for setting pricing and production goals."
+        ],
+        "Detailed Breakdown": {
+          "Revenue": "sum(net_sales)",
+          "COGS": "sum(cost_of_goods_sold)"
+        },
+        "Suggested Dimensions": ["Product / SKU", "Category", "Channel", "Region"],
+        "Related Metrics": ["Gross Margin", "Net Margin", "Total Sales"],
+        "Example Use": {
+          "prompt": "What’s our gross profit for Q3?",
+          "response": "Gross Profit for Q3 — $96,500"
+        },
+        "Query": "SELECT SUM(net_sales_amount) - SUM(cost_of_goods_sold) AS gross_profit FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Revenue",
+      "metric_name": "Gross Margin",
+      "unit": "Percent",
+      "definition": "Percentage of revenue retained after covering production costs.",
+      "formula": "(Gross Profit / Total Revenue) × 100",
+      "key_name": "gross_margin",
+      "deep_link": "/metrics/gross_margin",
+      "metric_metadata": {
+        "Overview": "Measures profitability efficiency at product or company level.",
+        "Insights and Actions": [
+          "Cost Efficiency — A low margin indicates high production or sourcing costs.",
+          "Pricing Strategy — Optimize pricing to maintain healthy margins.",
+          "Product Mix Analysis — Identify high-margin vs. low-margin products.",
+          "Trend Monitoring — Track gross margin changes over time.",
+          "Profitability Forecasting — Core input for financial projections."
+        ],
+        "Detailed Breakdown": {
+          "Gross Profit": "Total Revenue - COGS",
+          "Revenue": "sum(net_sales)"
+        },
+        "Suggested Dimensions": ["Product", "Category", "Channel", "Region"],
+        "Related Metrics": ["Gross Profit", "Net Margin", "Total Sales"],
+        "Example Use": {
+          "prompt": "What’s our current gross margin?",
+          "response": "Gross Margin — 42.8%"
+        },
+        "Query": "SELECT ((SUM(net_sales_amount) - SUM(cost_of_goods_sold)) / NULLIF(SUM(net_sales_amount),0)) * 100 AS gross_margin FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Return Rate",
+      "unit": "Percent",
+      "definition": "Percentage of sold items that customers return.",
+      "formula": "(Returned Units / Total Units Sold) × 100",
+      "key_name": "return_rate",
+      "deep_link": "/metrics/return_rate",
+      "metric_metadata": {
+        "Overview": "Reflects customer satisfaction and product quality.",
+        "Insights and Actions": [
+          "Quality Insight — High returns may indicate product or sizing issues.",
+          "Customer Experience — Monitors satisfaction and delivery accuracy.",
+          "Inventory Forecasting — Adjust future production based on returns.",
+          "Profit Impact — Returns reduce both revenue and efficiency.",
+          "Policy Evaluation — Analyze effects of return policies."
+        ],
+        "Detailed Breakdown": {
+          "Returned Units": "sum(returned_items)",
+          "Units Sold": "sum(sold_items)"
+        },
+        "Suggested Dimensions": ["Product", "Category", "Region", "Customer Type"],
+        "Related Metrics": ["Cancellation Rate", "Total Sales", "Net Sales"],
+        "Example Use": {
+          "prompt": "What’s our return rate for the past 30 days?",
+          "response": "Return Rate — 5.1%"
+        },
+        "Query": "SELECT (SUM(returned_items) * 100.0 / NULLIF(SUM(sold_items),0)) AS return_rate FROM orders WHERE order_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Returning Customer Rate",
+      "unit": "Percent",
+      "definition": "Percentage of customers who made repeat purchases within a selected time frame.",
+      "formula": "(Number of Returning Customers ÷ Total Unique Customers) × 100",
+      "key_name": "returning_customer_rate",
+      "deep_link": "/metrics/returning_customer_rate",
+      "metric_metadata": {
+        "Overview": "Strong indicator of customer loyalty and retention.",
+        "Insights and Actions": [
+          "Loyalty Tracking — Indicates brand stickiness and satisfaction.",
+          "Revenue Stability — Repeat customers often contribute to consistent income.",
+          "Retention Strategy — Evaluate loyalty programs and engagement tactics.",
+          "Customer Segmentation — Identify repeat vs. one-time buyers.",
+          "Growth Forecasting — High returning rate supports sustainable growth."
+        ],
+        "Detailed Breakdown": {
+          "Returning Customers": "count(distinct repeat_customer_ids)",
+          "Total Customers": "count(distinct customers)"
+        },
+        "Suggested Dimensions": ["Region", "Campaign", "Customer Type", "Channel"],
+        "Related Metrics": ["Churn Rate", "CAC", "LTV", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "What’s our returning customer rate this quarter?",
+          "response": "Returning Customer Rate — 29.4%"
+        },
+        "Query": "SELECT ROUND(COUNT(DISTINCT CASE WHEN user_type = 'returning_customer' THEN customer_email END) * 100.0 / NULLIF(COUNT(DISTINCT customer_email),0),4) AS returning_customer_rate FROM orders WHERE orders_date BETWEEN :start AND :end;"
+      }
+    },
+  
+  
+
+  
+    {
+      "category": "Operations",
+      "metric_name": "Order Accuracy Rate",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of orders delivered correctly without errors, returns, or missing items.",
+      "formula": "(Accurate Orders / Total Orders) * 100",
+      "key_name": "order_accuracy_rate",
+      "deep_link": "/metrics/order_accuracy_rate",
+      "metric_metadata": {
+        "Overview": "High order accuracy reduces returns, boosts satisfaction, and reflects operational efficiency.",
+        "Insights and Actions": [
+          "Operational Quality — High accuracy reduces returns and boosts satisfaction.",
+          "Fulfillment Efficiency — Identifies warehouse or delivery errors.",
+          "Customer Trust — Accurate deliveries enhance brand reputation.",
+          "Cost Control — Fewer order mistakes mean lower operational costs.",
+          "Process Optimization — Helps streamline logistics and QC."
+        ],
+        "Detailed Breakdown": {
+          "Accurate Orders": "count(correct_orders)",
+          "Total Orders": "count(all_orders)"
+        },
+        "Suggested Dimensions": ["Warehouse", "Region", "Product", "Channel"],
+        "Related Metrics": ["Return Rate", "CSAT", "Fulfillment Time"],
+        "Example Use": {
+          "prompt": "What’s our order accuracy rate for this week?",
+          "response": "Order Accuracy Rate — 98.7%"
+        }
+      }
+    },
+    {
+      "category": "Customer Experience",
+      "metric_name": "CSAT",
+      "unit": "Percentage",
+      "definition": "Measures customer satisfaction based on feedback or survey ratings.",
+      "formula": "(Number of Positive Responses / Total Responses) * 100",
+      "key_name": "csat",
+      "deep_link": "/metrics/csat",
+      "metric_metadata": {
+        "Overview": "Reflects how well a business meets customer expectations.",
+        "Insights and Actions": [
+          "Customer Experience — Gauge satisfaction after purchase or service.",
+          "Quality Control — Detect declining satisfaction trends early.",
+          "Support Efficiency — Link service interactions with customer feedback.",
+          "Retention Predictor — High CSAT often leads to better loyalty.",
+          "Continuous Improvement — Identify areas needing process refinement."
+        ],
+        "Detailed Breakdown": {
+          "Positive Responses": "count(rating >= 4)",
+          "Total Responses": "count(all_feedbacks)"
+        },
+        "Suggested Dimensions": ["Region", "Product", "Channel", "Customer Type"],
+        "Related Metrics": ["NPS", "Return Rate", "Order Accuracy Rate"],
+        "Example Use": {
+          "prompt": "What’s our current CSAT score?",
+          "response": "CSAT Score — 91%"
+        }
+      }
+    },
+    {
+      "category": "Finance",
+      "metric_name": "Chargeback Rate",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of completed transactions reversed due to disputes or fraud.",
+      "formula": "(Chargebacks / Total Transactions) * 100",
+      "key_name": "chargeback_rate",
+      "deep_link": "/metrics/chargeback_rate",
+      "metric_metadata": {
+        "Overview": "Tracks payment reliability and risk exposure.",
+        "Insights and Actions": [
+          "Risk Management — Monitor fraud and payment issue trends.",
+          "Operational Health — Identify recurring chargeback causes.",
+          "Financial Control — Track losses associated with disputes.",
+          "Compliance — Maintain acceptable chargeback thresholds.",
+          "Vendor Evaluation — Review payment processor performance."
+        ],
+        "Detailed Breakdown": {
+          "Chargebacks": "count(chargeback_transactions)",
+          "Transactions": "count(total_orders)"
+        },
+        "Suggested Dimensions": ["Payment Method", "Region", "Channel", "Device"],
+        "Related Metrics": ["Dispute Rate", "Return Rate", "Net Margin"],
+        "Example Use": {
+          "prompt": "What’s our chargeback rate this quarter?",
+          "response": "Chargeback Rate — 0.6%"
+        }
+      }
+    },
+    {
+      "category": "Finance",
+      "metric_name": "Dispute Rate",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of transactions challenged by customers for issues like non-delivery or incorrect billing.",
+      "formula": "(Disputed Orders / Total Orders) * 100",
+      "key_name": "dispute_rate",
+      "deep_link": "/metrics/dispute_rate",
+      "metric_metadata": {
+        "Overview": "Assesses customer trust and transaction quality.",
+        "Insights and Actions": [
+          "Customer Trust — High dispute rates indicate delivery or billing issues.",
+          "Support Efficiency — Tracks resolution effectiveness.",
+          "Fraud Detection — Monitor suspicious dispute patterns.",
+          "Experience Quality — Links closely to CSAT and order accuracy.",
+          "Cost Management — Disputes often lead to revenue losses."
+        ],
+        "Detailed Breakdown": {
+          "Disputed Orders": "count(disputed_transactions)",
+          "Total Orders": "count(all_orders)"
+        },
+        "Suggested Dimensions": ["Channel", "Payment Method", "Region", "Customer Type"],
+        "Related Metrics": ["Chargeback Rate", "CSAT", "Order Accuracy Rate"],
+        "Example Use": {
+          "prompt": "What’s our dispute rate this month?",
+          "response": "Dispute Rate — 1.1%"
+        }
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Impression Share",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of total available impressions your ads received compared to competitors.",
+      "formula": "(Your Impressions / Total Eligible Impressions) * 100",
+      "key_name": "impression_share",
+      "deep_link": "/metrics/impression_share",
+      "metric_metadata": {
+        "Overview": "Indicates ad visibility and competitiveness.",
+        "Insights and Actions": [
+          "Market Visibility — Higher share means better ad reach.",
+          "Competition Analysis — Understand performance against competitors.",
+          "Budget Efficiency — Low share can suggest limited bids or budgets.",
+          "Optimization Opportunity — Improve bidding and targeting strategies.",
+          "Performance Forecasting — Use as a leading indicator of traffic potential."
+        ],
+        "Detailed Breakdown": {
+          "Your Impressions": "sum(impressions)",
+          "Eligible Impressions": "total_possible_impressions"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Region", "Device"],
+        "Related Metrics": ["Impressions", "Clicks", "CTR", "CPC"],
+        "Example Use": {
+          "prompt": "What’s our Google Ads impression share this week?",
+          "response": "Impression Share — 74%"
+        }
+      }
+    },
+    {
+      "category": "Finance",
+      "metric_name": "Net Margin",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of total revenue that remains as profit after all expenses, taxes, and costs are deducted.",
+      "formula": "(Net Profit / Total Revenue) * 100",
+      "key_name": "net_margin",
+      "deep_link": "/metrics/net_margin",
+      "metric_metadata": {
+        "Overview": "Ultimate indicator of overall profitability.",
+        "Insights and Actions": [
+          "Profitability Benchmark — Reflects true financial health.",
+          "Cost Control — Identify where operational costs reduce margin.",
+          "Pricing Evaluation — Balance price vs. cost to maintain profitability.",
+          "Efficiency Tracking — Measure how well the business converts sales into profit.",
+          "Strategic Decisions — Guide reinvestment and scaling plans."
+        ],
+        "Detailed Breakdown": {
+          "Net Profit": "Total Revenue - Total Expenses",
+          "Revenue": "sum(net_sales)"
+        },
+        "Suggested Dimensions": ["Channel", "Region", "Product", "Time Period"],
+        "Related Metrics": ["Gross Margin", "Gross Profit", "Total Sales", "ROAS"],
+        "Example Use": {
+          "prompt": "What’s our net margin for Q2?",
+          "response": "Net Margin — 18.3%"
+        }
+      }
+    },
+  
+  
+    {
+      "category": "Marketing",
+      "metric_name": "Glance Views",
+      "unit": "Count",
+      "definition": "Represents the number of times a product detail page (PDP) was viewed by users.",
+      "formula": "SUM(product_page_views)",
+      "key_name": "glance_views",
+      "deep_link": "/metrics/glance_views",
+      "metric_metadata": {
+        "Overview": "Measures customer interest and serves as a top-of-funnel indicator in the buyer journey.",
+        "Insights and Actions": [
+          "Product Visibility — Higher glance views mean more customers are discovering your listings.",
+          "Interest Measurement — Reflects potential purchase intent for a product.",
+          "Optimization — Low views may indicate poor keyword ranking or weak creatives.",
+          "Campaign Impact — Correlate with ad impressions to assess listing reach.",
+          "Conversion Opportunity — Compare with conversions to measure PDP effectiveness."
+        ],
+        "Detailed Breakdown": {
+          "Glance Views": "total PDP views from organic + paid traffic"
+        },
+        "Suggested Dimensions": ["Product / SKU", "Category", "Channel", "Region", "Campaign"],
+        "Related Metrics": ["Impressions", "Clicks", "Conversions", "Conversion Rate"],
+        "Example Use": {
+          "prompt": "What were our total glance views last week?",
+          "response": "Glance Views for Last Week — 85,400"
+        }
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "TACOS",
+      "unit": "Percentage",
+      "definition": "Measures ad spend as a percentage of total sales (both organic and paid).",
+      "formula": "(Total Spend ÷ Total Ad Net Sales) × 100",
+      "key_name": "tacos",
+      "deep_link": "/metrics/tacos",
+      "metric_metadata": {
+        "Overview": "Provides a holistic view of advertising efficiency and overall profitability.",
+        "Insights and Actions": [
+          "Profitability Tracking — Lower TACOS indicates sustainable growth.",
+          "Ad Dependency — Rising TACOS may mean over-reliance on ads for sales.",
+          "Brand Health — Shows balance between organic and paid sales.",
+          "Budget Allocation — Guides optimization between ad spend and organic growth.",
+          "Strategic Planning — Key for long-term profitability forecasting."
+        ],
+        "Detailed Breakdown": {
+          "Ad Spend": "sum(ad_spend)",
+          "Total Sales": "sum(gross_sales)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Product / SKU", "Region"],
+        "Related Metrics": ["ACOS", "ROAS", "MER", "Net Margin"],
+        "Example Use": {
+          "prompt": "What was our TACOS last month?",
+          "response": "TACOS for Last Month — 12.6%"
+        },
+        "Query": "SELECT COALESCE(ROUND(((a.spends) / NULLIF((s.ads_net_sales), 0)) * 100, 2), 0.0) AS tacos FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Sales",
+      "metric_name": "Average Win Rate",
+      "unit": "Percentage",
+      "definition": "Shows the percentage of competitive opportunities or bids successfully won out of total opportunities.",
+      "formula": "(Wins / Total Opportunities) * 100",
+      "key_name": "average_win_rate",
+      "deep_link": "/metrics/average_win_rate",
+      "metric_metadata": {
+        "Overview": "Used in sales or ad auctions to evaluate competitiveness and efficiency.",
+        "Insights and Actions": [
+          "Competitiveness — High win rate shows strong market position.",
+          "Sales Performance — Evaluates conversion of leads into closed deals.",
+          "Bid Efficiency — For ads, reflects bidding strategy success.",
+          "Pipeline Health — Indicates the quality of opportunities.",
+          "Forecast Accuracy — Improves confidence in revenue projections."
+        ],
+        "Detailed Breakdown": {
+          "Wins": "count(successful_deals or won_bids)",
+          "Total Opportunities": "count(all_deals or total_bids)"
+        },
+        "Suggested Dimensions": ["Campaign", "Sales Rep", "Channel", "Product", "Region"],
+        "Related Metrics": ["CVR", "Conversion Rate", "ROAS", "ACOS"],
+        "Example Use": {
+          "prompt": "What’s our average win rate this quarter?",
+          "response": "Average Win Rate for This Quarter — 48.3%"
+        }
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "CVR",
+      "unit": "Percentage",
+      "definition": "Measures how effectively ad clicks or visits convert into completed actions, typically purchases.",
+      "formula": "(Total Conversions ÷ Total Clicks) × 100",
+      "key_name": "cvr",
+      "deep_link": "/metrics/cvr",
+      "metric_metadata": {
+        "Overview": "Indicates the effectiveness of campaigns in driving conversions.",
+        "Insights and Actions": [
+          "Ad Efficiency — Indicates how well campaigns convert traffic.",
+          "Landing Page Quality — Optimize pages to improve CVR.",
+          "Audience Relevance — High CVR reflects well-targeted audiences.",
+          "Creative Performance — Analyze which visuals or CTAs drive higher conversions.",
+          "Performance Benchmarking — Compare across channels or time."
+        ],
+        "Detailed Breakdown": {
+          "Conversions": "sum(conversions)",
+          "Clicks": "sum(clicks)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Device", "Region", "Product"],
+        "Related Metrics": ["CTR", "ROAS", "ACOS", "Conversion Value"],
+        "Example Use": {
+          "prompt": "What was our CVR for last week?",
+          "response": "CVR for Last Week — 3.7%"
+        },
+        "Query": "SELECT COALESCE(CAST(SUM(conversions) * 100.0 / NULLIF(SUM(clicks), 0) AS NUMERIC(18, 2)),0.0) AS cvr FROM spends WHERE spends_date BETWEEN :start AND :end;"
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Engagement Rate",
+      "unit": "Percentage",
+      "definition": "Measures how actively users interact with content relative to total impressions.",
+      "formula": "(Total Engagements / Total Impressions) * 100",
+      "key_name": "engagement_rate",
+      "deep_link": "/metrics/engagement_rate",
+      "metric_metadata": {
+        "Overview": "Indicates how well your content resonates with users.",
+        "Insights and Actions": [
+          "Audience Resonance — Indicates how well your content connects with users.",
+          "Content Effectiveness — Identify which posts or creatives drive engagement.",
+          "Channel Optimization — Adjust content strategy per platform performance.",
+          "Brand Strength — Reflects follower loyalty and attention.",
+          "Campaign Testing — Compare ad creatives before scaling."
+        ],
+        "Detailed Breakdown": {
+          "Engagements": "likes + comments + clicks + shares",
+          "Impressions": "sum(impressions)"
+        },
+        "Suggested Dimensions": ["Channel", "Campaign", "Post Type", "Audience Segment"],
+        "Related Metrics": ["CTR", "Click Rate", "Conversion Rate", "Reach"],
+        "Example Use": {
+          "prompt": "What’s our average engagement rate this month?",
+          "response": "Engagement Rate for This Month — 5.4%"
+        }
+      }
+    },
+    {
+      "category": "Marketing",
+      "metric_name": "Engaged Sessions",
+      "unit": "Count",
+      "definition": "Counts the number of sessions where users interacted meaningfully with your site (spent >10s, viewed multiple pages, or converted).",
+      "formula": "COUNT(session_id WHERE engagement > threshold)",
+      "key_name": "engaged_sessions",
+      "deep_link": "/metrics/engaged_sessions",
+      "metric_metadata": {
+        "Overview": "Indicates user quality and interest in your content or site.",
+        "Insights and Actions": [
+          "User Quality — Higher engaged sessions mean visitors are genuinely interested.",
+          "UX Feedback — Reveals how design affects attention span.",
+          "Traffic Source Quality — Identify which channels bring quality users.",
+          "Retention Signals — Correlates with conversion and repeat visits.",
+          "Engagement Benchmarks — Compare engagement across campaigns."
+        ],
+        "Detailed Breakdown": {
+          "Engaged Session": "session with >10s activity or >1 pageview"
+        },
+        "Suggested Dimensions": ["Channel", "Device", "Region", "Campaign"],
+        "Related Metrics": ["Engagement Rate", "Conversion Rate", "Average Session Duration"],
+        "Example Use": {
+          "prompt": "How many engaged sessions did we have yesterday?",
+          "response": "Engaged Sessions from Yesterday — 3,240"
+        }
+      }
+    },
+    
+    {
+      "category": "Email Marketing",
+      "metric_name": "Open Rate",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of delivered emails that were opened by recipients.",
+      "formula": "(Emails Opened / Emails Delivered) * 100",
+      "key_name": "open_rate",
+      "deep_link": "/metrics/open_rate",
+      "metric_metadata": {
+        "Overview": "Indicates how effectively your email subject lines and send strategy grab attention.",
+        "Insights and Actions": [
+          "Subject Line Effectiveness — Indicates if your message grabs attention.",
+          "Sender Reputation — Low rates may reflect poor domain trust.",
+          "Timing Optimization — Identify best send times.",
+          "Audience Targeting — Improve list segmentation.",
+          "Campaign Health — Foundational metric for email success."
+        ],
+        "Detailed Breakdown": {
+          "Emails Opened": "sum(opened_emails)",
+          "Emails Delivered": "sum(delivered_emails)"
+        },
+        "Suggested Dimensions": ["Campaign", "Audience Segment", "Device", "Region"],
+        "Related Metrics": ["Click Rate", "Opt-Out Rate", "Delivery Rate"],
+        "Example Use": {
+          "prompt": "What was our open rate for the last campaign?",
+          "response": "Open Rate for Last Campaign — 41.8%"
+        }
+      }
+    },
+    {
+      "category": "Email Marketing",
+      "metric_name": "Click Rate",
+      "unit": "Percentage",
+      "definition": "Measures how many recipients clicked a link in your email relative to those who opened it.",
+      "formula": "(Email Clicks / Emails Opened) * 100",
+      "key_name": "click_rate",
+      "deep_link": "/metrics/click_rate",
+      "metric_metadata": {
+        "Overview": "Shows email engagement and effectiveness of CTAs.",
+        "Insights and Actions": [
+          "Email Engagement — Measures interest in your content.",
+          "CTA Performance — Evaluate the effectiveness of links and buttons.",
+          "Content Quality — Higher rates suggest relevant and persuasive content.",
+          "Segmentation Accuracy — Aligns messages with user needs.",
+          "Campaign Optimization — Use to A/B test creative elements."
+        ],
+        "Detailed Breakdown": {
+          "Email Clicks": "sum(clicked_links)",
+          "Emails Opened": "sum(opened_emails)"
+        },
+        "Suggested Dimensions": ["Campaign", "Device", "Segment", "Region"],
+        "Related Metrics": ["Open Rate", "Conversion Rate", "CTR", "Opt-Out Rate"],
+        "Example Use": {
+          "prompt": "What’s our average click rate from last week’s emails?",
+          "response": "Click Rate from Last Week — 7.6%"
+        }
+      }
+    },
+    {
+      "category": "Website Performance",
+      "metric_name": "Order Rate",
+      "unit": "Percentage",
+      "definition": "Indicates the proportion of website sessions or visitors that resulted in completed orders.",
+      "formula": "(Orders / Sessions) * 100",
+      "key_name": "order_rate",
+      "deep_link": "/metrics/order_rate",
+      "metric_metadata": {
+        "Overview": "Measures the effectiveness of the user journey in converting visits to purchases.",
+        "Insights and Actions": [
+          "Purchase Intent — Measures effectiveness of the user journey.",
+          "Traffic Quality — Evaluate how well sessions convert.",
+          "UI Optimization — Identify checkout bottlenecks.",
+          "Campaign Evaluation — Track order rate across ad sources.",
+          "Revenue Forecasting — Helps predict sales trends."
+        ],
+        "Detailed Breakdown": {
+          "Orders": "count(completed_orders)",
+          "Sessions": "count(total_sessions)"
+        },
+        "Suggested Dimensions": ["Channel", "Device", "Campaign", "Product"],
+        "Related Metrics": ["Conversion Rate", "AOV", "Total Orders"],
+        "Example Use": {
+          "prompt": "What was our order rate for the last 7 days?",
+          "response": "Order Rate for Last 7 Days — 2.9%"
+        }
+      }
+    },
+    {
+      "category": "Email Marketing",
+      "metric_name": "Opt-Out Rate",
+      "unit": "Percentage",
+      "definition": "Shows the percentage of users who unsubscribed or opted out of communications after receiving your messages.",
+      "formula": "(Unsubscribed Users / Emails Delivered) * 100",
+      "key_name": "opt_out_rate",
+      "deep_link": "/metrics/opt_out_rate",
+      "metric_metadata": {
+        "Overview": "Reflects audience fatigue and content relevance.",
+        "Insights and Actions": [
+          "Message Fatigue — High rates indicate over-messaging.",
+          "Content Relevance — Evaluate targeting precision.",
+          "Brand Loyalty — Lower opt-outs signal stronger audience trust.",
+          "Frequency Optimization — Adjust email cadence to reduce churn.",
+          "Compliance Tracking — Helps maintain healthy sender reputation."
+        ],
+        "Detailed Breakdown": {
+          "Unsubscribed Users": "count(unsubscribers)",
+          "Emails Delivered": "sum(delivered_emails)"
+        },
+        "Suggested Dimensions": ["Campaign", "Audience Segment", "Region"],
+        "Related Metrics": ["Open Rate", "Click Rate", "Delivery Rate"],
+        "Example Use": {
+          "prompt": "What’s our opt-out rate this month?",
+          "response": "Opt-Out Rate for This Month — 0.5%"
+        }
+      }
+    },
+    {
+      "category": "Email Marketing",
+      "metric_name": "Delivery Rate",
+      "unit": "Percentage",
+      "definition": "Measures the percentage of successfully delivered emails out of total sent emails.",
+      "formula": "(Emails Delivered / Emails Sent) * 100",
+      "key_name": "delivery_rate",
+      "deep_link": "/metrics/delivery_rate",
+      "metric_metadata": {
+        "Overview": "Indicates technical health of email infrastructure and sender reputation.",
+        "Insights and Actions": [
+          "Technical Health — Reflects sender reputation and domain quality.",
+          "Bounce Monitoring — Detects email delivery failures.",
+          "List Hygiene — Maintain clean contact lists.",
+          "Infrastructure Reliability — Ensures email systems are performing well.",
+          "Campaign Consistency — Correlate with open rate and CTR for performance."
+        ],
+        "Detailed Breakdown": {
+          "Emails Sent": "total emails attempted",
+          "Emails Delivered": "successful deliveries"
+        },
+        "Suggested Dimensions": ["Campaign", "Region", "Segment"],
+        "Related Metrics": ["Open Rate", "Click Rate", "Opt-Out Rate"],
+        "Example Use": {
+          "prompt": "What was our delivery rate for the last campaign?",
+          "response": "Delivery Rate for Last Campaign — 98.9%"
+        }
+      }
+    },
+    {
+      "category": "Advertising",
+      "metric_name": "Click-Through Rate (CTR)",
+      "unit": "Percentage",
+      "definition": "Measures how often users clicked on an ad or link after seeing it.",
+      "formula": "(Clicks / Impressions) * 100",
+      "key_name": "ctr",
+      "deep_link": "/metrics/ctr",
+      "metric_metadata": {
+        "Overview": "Key engagement metric for ad and content performance.",
+        "Insights and Actions": [
+          "Ad Relevance — Indicates how appealing your ad creative and targeting are.",
+          "Creative Testing — Helps identify top-performing visuals and headlines.",
+          "Quality Score — Affects ad ranking in auctions.",
+          "Audience Targeting — Refine targeting for higher engagement.",
+          "Performance Benchmarking — Compare across devices and platforms."
+        ],
+        "Detailed Breakdown": {
+          "Clicks": "sum(clicks)",
+          "Impressions": "sum(impressions)"
+        },
+        "Suggested Dimensions": ["Campaign", "Channel", "Device", "Keyword", "Region"],
+        "Related Metrics": ["CVR", "CPC", "Engagement Rate", "Impressions"],
+        "Example Use": {
+          "prompt": "What was our average CTR for Google Ads?",
+          "response": "CTR for Google Ads — 3.2%"
+        }
+      }
+    },
+    {
+      "category": "Customer Success",
+      "metric_name": "Average Churn Risk",
+      "unit": "Percentage",
+      "definition": "Represents the average probability that customers will stop using your product or service, based on predictive or behavioral data.",
+      "formula": "SUM(Churn Probability per Customer) / Total Customers",
+      "key_name": "average_churn_risk",
+      "deep_link": "/metrics/average_churn_risk",
+      "metric_metadata": {
+        "Overview": "Helps proactively manage retention by identifying at-risk customers.",
+        "Insights and Actions": [
+          "Retention Planning — Identify at-risk customer segments.",
+          "Personalized Outreach — Trigger retention campaigns for high-risk users.",
+          "Revenue Protection — Anticipate churn impact on MRR.",
+          "Customer Success Benchmarking — Evaluate service quality.",
+          "Trend Monitoring — Track improvements after engagement programs."
+        ],
+        "Detailed Breakdown": {
+          "Churn Probability": "model-based or rule-based prediction",
+          "Total Customers": "active customers in period"
+        },
+        "Suggested Dimensions": ["Customer Segment", "Subscription Plan", "Region"],
+        "Related Metrics": ["Churn Rate", "Predicted CLV", "Retention Rate"],
+        "Example Use": {
+          "prompt": "What’s our average churn risk for this month?",
+          "response": "Average Churn Risk for This Month — 14.2%"
+        }
+      }
+    },
+    {
+      "category": "Customer Success",
+      "metric_name": "Predicted CLV",
+      "unit": "Currency",
+      "definition": "Estimates the total revenue a customer is expected to generate over their entire relationship with your business.",
+      "formula": "Average Purchase Value × Purchase Frequency × Predicted Retention Time",
+      "key_name": "predicted_clv",
+      "deep_link": "/metrics/predicted_clv",
+      "metric_metadata": {
+        "Overview": "Helps forecast long-term revenue and identify high-value customers.",
+        "Insights and Actions": [
+          "Revenue Forecasting — Predicts future cash flow from existing users.",
+          "Customer Segmentation — Identify high-value customers for loyalty programs.",
+          "Marketing ROI — Guides how much to spend on acquisition.",
+          "Retention Strategy — Optimize offers based on lifetime potential.",
+          "Business Valuation — Core for subscription and D2C models."
+        ],
+        "Detailed Breakdown": {
+          "Average Purchase Value": "total revenue / total orders",
+          "Purchase Frequency": "total orders / total customers",
+          "Predicted Retention": "model-estimated duration"
+        },
+        "Suggested Dimensions": ["Customer Segment", "Channel", "Region"],
+        "Related Metrics": ["CAC", "Churn Rate", "MRR", "Net Margin"],
+        "Example Use": {
+          "prompt": "What’s the predicted CLV for premium customers?",
+          "response": "Predicted CLV for Premium Customers — $1,240"
+        }
+      }
+    }
+  ]
+  
