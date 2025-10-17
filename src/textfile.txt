@@ -1,0 +1,2157 @@
+
+
+Total Sales
+Overview
+Total Sales represents the overall revenue generated from all completed orders within a selected period.
+ It serves as a key performance indicator of business health, reflecting the combined impact of marketing, pricing, product mix, and customer demand.
+ Monitoring Total Sales helps assess growth trends, evaluate campaign effectiveness, and guide strategic decisions across sales, finance, and operations.
+
+Formula
+Total Sales = net_sales_amount + Shipping_amount + tax_amount
+
+Insights and Actions
+Revenue Growth Tracking — Identify periods of strong performance and potential slowdowns.
+
+
+Product Performance Evaluation — Analyze Total Sales by product or category to spot bestsellers and underperformers.
+
+
+Pricing & Discount Strategy — Sudden rises or drops indicate customer responses to pricing, promotions, or discounts.
+
+
+Market Demand Insights — Seasonal spikes reveal changing customer demand patterns.
+
+
+Profitability & Forecasting — Use Total Sales trends to support revenue forecasting and profit planning.
+
+
+
+Detailed Breakdown
+Net Sales = (Gross Sales - Returns - Discounts)
+Shipping = SUM(shipping_amount)
+Taxes = SUM(tax_amount)
+
+
+
+Suggested Dimensions
+Channel
+
+
+Campaign
+
+
+Product / SKU
+
+
+Collection / Category
+
+
+Country / Region
+
+
+Device
+
+
+Customer Type (New / Returning)
+
+
+
+Related Metrics
+Net Sales
+
+
+Gross Sales
+
+
+Discount Rate
+
+
+Tax
+
+
+MER
+
+
+ROAS
+
+
+
+Example Use
+Prompt:
+What's the total sales from yesterday?
+Response:
+ Total Sales from Yesterday -  $120,450
+Query:
+SELECT SUM(net_sales_amount + Shipping_amount + tax_amount) AS total_sales
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+Net Sales
+Overview
+Net Sales represent the actual revenue after deducting returns, refunds, and discounts from Gross Sales. It reflects the real income generated from completed transactions and provides a more accurate measure of sales performance.
+Formula
+   Net Sales = discount_amount - gross_sales
+
+Insights and Actions
+Profitability Tracking — Net Sales show how much revenue the business retains after adjustments.
+
+
+Discount Efficiency — Identifies how discounts or returns affect real sales performance.
+
+
+Customer Retention — A high return rate may signal product quality or satisfaction issues.
+
+
+Sales Quality — Differentiates between inflated gross sales and sustainable net revenue.
+
+
+Campaign Evaluation — Useful to measure how much revenue promotions actually retain.
+
+
+Detailed Breakdown
+Gross Sales = sum(discount_amount) + sum(net_sales)
+
+
+Discounts = sum(discount_amount)
+
+
+Suggested Dimensions
+Campaign · Product / SKU · Channel · Customer Type · Region
+Related Metrics
+Gross Sales · Discount Rate · Total Sales · MER · ROAS
+Example Use
+Prompt: How much was our net sales yesterday?
+ Response:
+ Net Sales from Yesterday — $115,500
+Query
+SELECT SUM(net_sales_amount) As net_sales
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+Gross Sales
+Overview
+Gross Sales represents the total revenue generated from all completed orders before any deductions such as returns, discounts, or allowances. It serves as a key measure of overall sales volume and business scale, providing a clear view of top-line performance.
+Formula
+Gross Sales = Net Sales  + Discount Amount
+
+Insights and Actions
+Revenue Momentum — Tracking Gross Sales helps identify sales growth trends and the impact of marketing campaigns.
+
+
+Market Expansion — High Gross Sales across new regions or channels indicate strong market adoption.
+
+
+Product Demand — Useful for evaluating which products or categories generate the highest raw revenue.
+
+
+Benchmarking — Acts as a baseline for comparing net sales, profit margins, and return rates.
+
+
+Forecasting — Helps anticipate inventory and production needs based on gross sales trends.
+
+
+Detailed Breakdown
+Net Sales= discount_amount - gross_sales
+
+
+Discount amount = discount_amount
+
+
+Suggested Dimensions
+Channel · Campaign · Product / SKU · Category · Region · Time Period
+Related Metrics
+Net Sales · Total Sales · Discount Rate · Units Sold · AOV
+Example Use
+Prompt: What were the gross sales for last week?
+ Response:
+ Gross Sales from Last Week — $180,000
+
+
+
+
+Query
+
+SELECT SUM(net_sales_amount + discount_amount) As gross_sales
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+MER (Marketing Efficiency Ratio)
+Overview
+Marketing Efficiency Ratio (MER) measures total revenue generated for every dollar spent on advertising. It helps gauge overall marketing effectiveness and efficiency across all channels.
+Formula
+MER = Total Revenue ÷  Total Marketing Spend
+
+Insights and Actions
+Marketing Efficiency — A higher MER indicates better performance from ad spend.
+
+
+Budget Optimization — Guides decision-making on where to allocate marketing budgets.
+
+
+Performance Benchmarking — Useful for comparing campaigns or periods.
+
+
+Profitability Insight — Links marketing activity directly with revenue outcomes.
+
+
+Trend Analysis — Identify long-term improvements or inefficiencies in marketing ROI.
+
+
+Detailed Breakdown
+Total Sales = net_sales_amount + Shipping_amount + tax_amount
+
+
+Ad Spend
+
+
+Suggested Dimensions
+Channel · Campaign · Time Period · Device · Region
+Related Metrics
+ROAS · Ad Spend · Total Sales · Profit Margin
+Example Use
+Prompt: What was our MER for last month?
+ Response:
+ MER for Last Month — 5.2
+
+
+
+
+Query
+
+SELECT ROUND(s.ads_net_sales / NULLIF(a.spends) As mer
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+
+
+
+#Ad Spend
+Overview
+Ad Spend represents the total amount invested in marketing and advertising across all channels within a specific period. It’s a critical input for measuring marketing efficiency and calculating ROI.
+Formula
+Ad Spend = SUM(spend_amount)
+
+Insights and Actions
+Budget Utilization — Track how marketing funds are being allocated and spent.
+
+
+Channel ROI — Identify which platforms deliver the highest return on spend.
+
+
+Performance Analysis — Compare ad spend with metrics like sales and conversions.
+
+
+Cost Control — Detect overspending or underutilization in campaigns.
+
+
+Forecasting — Use historical spend trends to plan future marketing budgets.
+
+
+Detailed Breakdown
+Spend Amount = sum(spends.amount)
+
+
+Time Period = daily, weekly, or monthly
+
+
+Suggested Dimensions
+Channel · Campaign · Region · Device · Ad Type
+Related Metrics
+MER · ROAS · Total Sales · CPC · CPM
+Example Use
+Prompt: How much did we spend on ads yesterday?
+ Response:
+ Ad Spend from Yesterday — $24,000
+
+
+
+ROAS (Return on Ad Spend)
+Overview
+Return on Ad Spend (ROAS) measures the revenue generated per dollar spent on advertising. It provides a focused view of campaign-level profitability and efficiency.
+Formula
+ROAS = Ads Revenue ÷ Advertising Spend
+
+Insights and Actions
+Campaign Efficiency — Identifies which ads are generating profitable returns.
+
+
+Performance Optimization — Helps reallocate budgets to top-performing campaigns.
+
+
+ROI Measurement — Quantifies how marketing spend translates into sales.
+
+
+Benchmarking — Compare ROAS across products, platforms, or timeframes.
+
+
+Forecasting — Helps predict returns from future ad investments.
+
+
+Detailed Breakdown
+Revenue from Ads = sum(sales_attributed_to_ads)
+
+
+Ad Spend = sum(spend_amount)
+
+
+Suggested Dimensions
+Channel · Campaign · Product · Region · Device
+Related Metrics
+MER · Ad Spend · Total Sales · Profit Margin
+Example Use
+Prompt: What’s our ROAS for Facebook campaigns this week?
+ Response:
+ ROAS for Facebook Campaigns — 4.3
+Query
+
+SELECT SUM(COALESCE(conversions_value, 0.0)) / NULLIF(SUM(COALESCE(spend, 0.0)), 0) As roas
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+Units Sold
+Overview
+Units Sold represents the total quantity of individual products sold during a selected time period. It reflects product demand and helps assess sales volume independent of pricing.
+Formula
+Unit Sold = SUM(quantity)
+
+Insights and Actions
+Demand Tracking — Identify which products or categories sell the most units.
+
+
+Inventory Planning — Align stock levels with product demand trends.
+
+
+Performance Comparison — Evaluate product or channel-level performance.
+
+
+Seasonal Insights — Spot spikes in unit sales tied to promotions or holidays.
+
+
+Profitability Forecasting — Estimate total profit potential from unit trends.
+
+
+Detailed Breakdown
+Quantity Sold = sum(order_items.quantity)
+
+
+Suggested Dimensions
+Product / SKU · Category · Channel · Region · Campaign
+Related Metrics
+Gross Sales · Net Sales · AOV · Conversion Rate
+Example Use
+Prompt: How many units did we sell last week?
+ Response:
+ Units Sold Last Week — 2,450
+
+Query
+
+SELECT SUM(quantity) AS units_sold
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+AOV (Average Order Value)
+Overview
+Average Order Value (AOV) measures the average amount spent per transaction. It helps assess customer purchasing behavior and pricing effectiveness.
+Formula
+
+AOV = Net Sales ÷ Total Orders
+
+Insights and Actions
+Customer Spending Patterns — Tracks how much customers spend on average.
+
+
+Upselling Opportunities — Identify tactics to increase AOV through bundles or add-ons.
+
+
+Pricing Strategy — Evaluate the impact of price changes on customer behavior.
+
+
+Campaign Effectiveness — Higher AOV during promotions signals successful targeting.
+
+
+Revenue Forecasting — Helps project total sales based on order volume trends.
+
+
+Detailed Breakdown
+Total Revenue = sum(net_sales)
+
+
+Orders = count(distinct order_id)
+
+
+Suggested Dimensions
+Channel · Campaign · Customer Type · Region · Device
+Related Metrics
+Net Sales · Units Sold · Conversion Rate · ROAS
+Example Use
+Prompt: What’s our average order value for this week?
+ Response:
+ AOV for This Week — $48.75
+
+Query
+
+
+SELECT  COALESCE(SUM(net_sales_amount), 0)/ NULLIF(COUNT(DISTINCT order_id), 0) AS aov
+ FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+Discount Rate
+Overview
+Discount Rate measures the percentage of revenue reduced through discounts relative to gross sales. It’s essential for understanding promotional impact and margin control.
+Formula
+Discount Rate = (Total Discount Amount ÷ Gross Sales) × 100
+
+Insights and Actions
+Promotion Effectiveness — Track how discounts influence sales volume.
+
+
+Margin Management — Identify if heavy discounts are hurting profitability.
+
+
+Customer Behavior — Evaluate if discounts are driving repeat purchases.
+
+
+Pricing Strategy — Optimize discount levels for maximum ROI.
+
+
+Trend Analysis — Compare discount rates across periods to detect overuse.
+
+
+Detailed Breakdown
+Total Discounts = sum(discount_amount)
+
+
+Gross Sales = sum(order_amount)
+
+
+Suggested Dimensions
+Campaign · Product / SKU · Channel · Customer Type · Region
+Related Metrics
+Gross Sales · Net Sales · Total Sales · AOV
+Example Use
+Prompt: What was the discount rate last month?
+ Response:
+ Discount Rate for Last Month — 8.7%
+
+
+Query
+
+
+SELECT  SUM(discount_amount) * 100.0/ NULLIF(SUM(net_sales_amount + discount_amount), 0),0) AS discount_rate
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+Tax
+Overview
+Tax represents the total amount of sales tax collected from all transactions within a defined period. It’s essential for compliance, financial reporting, and profitability calculations.
+Formula
+TAX = SUM(tax_amount)
+
+Insights and Actions
+Compliance Monitoring — Ensures accurate collection and reporting of tax obligations.
+
+
+Regional Analysis — Compare tax contributions across different regions or markets.
+
+
+Profit Calculation — Helps determine pre- and post-tax profitability.
+
+
+Forecasting — Use tax data to project financial liabilities.
+
+
+Operational Accuracy — Detect any anomalies in tax calculation or reporting.
+
+
+Detailed Breakdown
+Tax Amount = sum(taxes)
+
+
+Suggested Dimensions
+Region · Country · Channel · Product · Time Period
+Related Metrics
+Total Sales · Net Sales · Duties · Additional Fees
+Example Use
+Prompt: How much tax was collected yesterday?
+ Response:
+ Tax Collected Yesterday — $6,750
+
+Query
+
+
+SELECT  COALESCE(SUM(tax_amount), 0) AS tax_amount
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+
+Cancellation Rate
+Overview
+Cancellation Rate measures the percentage of orders canceled after being placed. It’s a key performance metric that indicates order fulfillment reliability, customer satisfaction, and operational efficiency.
+Formula
+Cancellation Rate = (Canceled Orders ÷ Total Orders) × 100.
+
+Insights and Actions
+Customer Satisfaction — High cancellation rates may signal poor user experience or product issues.
+
+
+Operational Efficiency — Helps identify fulfillment or stock-related delays leading to cancellations.
+
+
+Demand Forecasting — Frequent cancellations may distort true demand forecasts.
+
+
+Platform Reliability — Useful for evaluating payment or logistics performance.
+
+
+Policy Impact — Tracks how flexible return/cancellation policies affect overall business.
+
+
+Detailed Breakdown
+Total Cancellations = count(cancelled_orders)
+
+
+Total Orders = count(all_orders)
+
+
+Suggested Dimensions
+Channel · Product / SKU · Region · Campaign · Customer Type
+Related Metrics
+Total Orders · Total Cancellations · Conversion Rate · Return Rate
+Example Use
+Prompt: What’s our cancellation rate for this week?
+ Response:
+ Cancellation Rate for This Week — 3.4%
+Query
+
+
+SELECT  COALESCE(COUNT(DISTINCT order_id) * 100.0 /NULLIF(COUNT(DISTINCT order_id), 0),0) AS cancellation_rate
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+Total Orders
+Overview
+Total Orders represents the total number of confirmed orders placed within a selected period, regardless of their status. It serves as a measure of overall order volume and customer activity.
+Formula
+Total Orders = Count of unique order IDs.
+
+Insights and Actions
+Demand Analysis — Indicates overall market demand or traffic conversion effectiveness.
+
+
+Operational Planning — Helps forecast fulfillment workload and shipping requirements.
+
+
+Campaign Performance — Links marketing activity with actual purchase volume.
+
+
+Customer Engagement — Tracks changes in buying activity over time.
+
+
+Seasonal Insights — Reveals peaks during holidays or major promotions.
+
+
+Detailed Breakdown
+Orders = count(distinct order_id)
+
+
+Suggested Dimensions
+Channel · Campaign · Product / SKU · Region · Device
+Related Metrics
+Conversion Rate · Net Sales · Units Sold · AOV
+Example Use
+Prompt: How many total orders did we receive yesterday?
+ Response:
+ Total Orders from Yesterday — 2,150
+Query
+
+
+SELECT  COUNT(DISTINCT order_id) AS total_orders
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+Total Cancellations
+Overview
+Total Cancellations represent the total number of orders that were canceled before fulfillment. This metric helps identify order management issues, customer experience gaps, and inventory mismatches.
+Formula
+Total Cancellations = Count of canceled order IDs.
+
+Insights and Actions
+Operational Bottlenecks — High cancellations could indicate stock or delivery problems.
+
+
+Customer Behavior — Understand why customers change their minds post-purchase.
+
+
+Policy Review — Evaluate the impact of cancellation rules on sales performance.
+
+
+Trend Monitoring — Spot spikes that align with specific products or regions.
+
+
+Service Quality — Measure operational dependability and checkout experience.
+
+
+Detailed Breakdown
+Cancelled Orders = count(order_status = 'cancelled')
+
+
+Suggested Dimensions
+Channel · Product / SKU · Campaign · Region · Customer Type
+Related Metrics
+Cancellation Rate · Total Orders · Conversion Rate
+Example Use
+Prompt: How many cancellations occurred last week?
+ Response:
+ Total Cancellations Last Week — 72
+Query
+
+
+SELECT COUNT(DISTINCT CASE WHEN is_cancelled_flag = 1 THEN order_id END) AS total_cancellations
+FROM orders
+WHERE order_date BETWEEN :start AND :end;
+
+
+
+
+
+#Conversion Rate
+Overview
+Conversion Rate measures the percentage of website visitors or ad clicks that resulted in completed purchases. It’s a vital metric for assessing marketing effectiveness and customer journey performance.
+Formula
+Conversion Rate = (Total Conversions / Total Clicks) * 100
+
+Insights and Actions
+Marketing Performance — Higher conversion rates indicate effective targeting and ad quality.
+
+
+User Experience — Helps identify friction points in checkout flow or product pages.
+
+
+Campaign Optimization — Detects which campaigns convert best.
+
+
+Product Appeal — Reveals which items drive more completed purchases.
+
+
+ROI Forecasting — Conversion rate changes directly influence revenue outcomes.
+
+
+Detailed Breakdown
+Conversions = sum(conversions)
+
+
+Clicks = sum(clicks)
+
+
+Suggested Dimensions
+Channel · Campaign · Device · Region · Product / SKU
+Related Metrics
+Clicks · Conversions · ROAS · CPC
+Example Use
+Prompt: What was our conversion rate yesterday?
+ Response:
+ Conversion Rate from Yesterday — 2.8%
+
+
+
+
+ACOS (Advertising Cost of Sales)
+Overview
+Advertising Cost of Sales (ACOS) measures the percentage of ad spend relative to the revenue generated from those ads. It’s the inverse of ROAS and indicates advertising efficiency.
+Formula
+ACOS = (Ad Spend) ÷ (conversions_value) × 100
+
+Insights and Actions
+Efficiency Check — Lower ACOS means better ad profitability.
+
+
+Budget Control — Helps ensure ad spending is aligned with expected returns.
+
+
+Campaign Comparison — Compare efficiency across campaigns or keywords.
+
+
+Trend Analysis — Monitor changes over time for optimization.
+
+
+ROI Targeting — Supports defining profitable advertising thresholds.
+
+
+Detailed Breakdown
+Ad Spend = sum(spend_amount)
+
+
+Ad Revenue = sum(sales_from_ads)
+
+
+Suggested Dimensions
+Campaign · Channel · Product / SKU · Region · Device
+Related Metrics
+ROAS · MER · Ad Spend · Conversion Rate
+Example Use
+Prompt: What was our ACOS last month?
+ Response:
+ ACOS for Last Month — 18.5%
+Query
+
+
+SELECT ROUND((SUM(COALESCE(spend, 0.0)) / NULLIF(SUM(COALESCE(conversions_value, 0.0)), 0)) * 100,2 ) AS acos
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+Cost Per Click (CPC)
+Overview
+Cost Per Click (CPC) measures the average cost incurred for each ad click. It’s essential for evaluating paid media efficiency and bid strategy.
+Formula
+Cost Per Click (CPC) = Total Spend ÷ Total Number of Clicks
+
+Insights and Actions
+Bid Optimization — High CPC may indicate intense competition or poor targeting.
+
+
+Cost Efficiency — Helps maintain an optimal spend-per-click ratio.
+
+
+Performance Tracking — Compare CPC across platforms and campaigns.
+
+
+Budget Allocation — Direct funds to lower-cost, high-converting ads.
+
+
+ROI Analysis — Use alongside ROAS or Conversion Rate for complete ad insight.
+
+
+Detailed Breakdown
+Total Ad Spend = sum(spend_amount)
+
+
+Total Clicks = sum(clicks)
+
+
+Suggested Dimensions
+Campaign · Channel · Keyword · Region · Device
+Related Metrics
+Ad Spend · Clicks · ROAS · ACOS
+Example Use
+Prompt: What’s our average CPC for the week?
+ Response:
+ Average CPC for This Week — $0.72
+Query
+
+
+SELECT ROUND(CASE WHEN SUM(clicks) > 0 THEN SUM(spend) / NULLIF(SUM(clicks), 0)ELSE 0 END, 2) AS cost_per_click
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+Conversions
+Overview
+Conversions represent the total number of successful outcomes (such as purchases or sign-ups) achieved through marketing efforts. It’s the key measure of campaign effectiveness.
+Formula
+ Conversions = Total number of conversions during the selected period
+
+Insights and Actions
+Performance Benchmarking — Measure the number of desired actions taken.
+
+
+Channel Attribution — Identify which marketing sources drive the most conversions.
+
+
+ROI Calculation — Core input for metrics like ROAS and Conversion Rate.
+
+
+Customer Journey Optimization — Track which touchpoints lead to conversion.
+
+
+Goal Tracking — Align marketing outcomes with business KPIs.
+
+
+Detailed Breakdown
+Conversions = sum(conversions)
+
+
+Suggested Dimensions
+Campaign · Channel · Device · Product / SKU · Region
+Related Metrics
+Conversion Rate · ROAS · Clicks · Conversion Value
+Example Use
+Prompt: How many conversions did we get yesterday?
+ Response:
+ Conversions from Yesterday — 340
+Query
+
+
+SELECT SUM(COALESCE(conversions, 0)) AS conversions
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+Conversion Value
+Overview
+Conversion Value represents the total revenue or value generated from all conversions. It’s used to measure the monetary impact of marketing campaigns.
+Formula
+                Conversions Value =  Sum of all conversion values
+
+Insights and Actions
+Revenue Attribution — Understand total value driven by ads or marketing activities.
+
+
+ROI Calculation — Helps determine ROAS, ACOS, and profitability.
+
+
+Campaign Prioritization — Focus on campaigns with the highest conversion value.
+
+
+Performance Analysis — Evaluate average value per conversion.
+
+
+Forecasting — Predict future sales based on current conversion trends.
+
+
+Detailed Breakdown
+Revenue from Conversions = sum(conversion_value)
+
+
+Suggested Dimensions
+Campaign · Channel · Product / SKU · Device · Region
+Related Metrics
+ROAS · ACOS · Total Sales · Conversion Rate
+Example Use
+Prompt: What was our total conversion value this week?
+ Response:
+ Conversion Value for This Week — $48,900
+Query
+
+
+  SELECT ROUND(COALESCE(SUM(conversions_value), 0), 2) AS   conversions_value
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+Clicks
+Overview
+Clicks measure the number of times users interacted with your ad or link. It reflects audience engagement and ad reach effectiveness.
+Formula
+Clicks = Sum of all clicks
+
+Insights and Actions
+Engagement Indicator — Higher clicks show stronger interest in ads or content.
+
+
+CTR Analysis — Combine with impressions to calculate Click-Through Rate (CTR).
+
+
+Ad Relevance — Identify which creatives or targeting strategies attract attention.
+
+
+Performance Benchmarking — Compare across channels or time periods.
+
+
+Traffic Forecasting — Helps estimate incoming site visitors from ads.
+
+
+Detailed Breakdown
+Clicks = sum(clicks)
+
+
+Suggested Dimensions
+Campaign · Channel · Device · Keyword · Region
+Related Metrics
+Impressions · Conversion Rate · CPC · CTR
+Example Use
+Prompt: How many clicks did we get from Google Ads yesterday?
+ Response:
+ Clicks from Google Ads Yesterday — 12,600
+Query
+
+
+  SELECT sum(clicks) as clicks
+FROM traffic
+WHERE event_date BETWEEN :start AND :end;
+
+
+
+
+Impressions
+Overview
+Impressions represent the total number of times an ad or listing was displayed to users. It’s a top-of-funnel metric for measuring ad visibility and reach.
+Formula
+Impressions = Sum of all impressions
+
+Insights and Actions
+Brand Awareness — High impressions indicate strong ad visibility.
+
+
+Campaign Reach — Helps measure audience size and exposure frequency.
+
+
+CTR Calculation — Combine with clicks to calculate engagement rates.
+
+
+Performance Monitoring — Identify underperforming channels with low reach.
+
+
+Ad Testing — Assess visibility impact of different ad creatives.
+
+
+Detailed Breakdown
+Impressions = sum(impressions)
+
+
+Suggested Dimensions
+Campaign · Channel · Device · Region · Placement
+Related Metrics
+Clicks · CTR · CPC · Conversion Rate
+Example Use
+Prompt: How many impressions did our campaign get last week?
+ Response:
+ Impressions from Last Week — 1,250,000
+Query
+
+
+SELECT sum(impressions) as impressions,
+FROM traffic
+WHERE event_date BETWEEN :start AND :end;
+
+
+
+
+ASP (Average Selling Price)
+Overview
+Average Selling Price (ASP) measures the average revenue earned per unit sold. It helps assess product pricing effectiveness and revenue performance across SKUs or categories.
+Formula
+ASP = Net Sales ÷ Total Units
+
+Insights and Actions
+Pricing Strategy — Track how pricing adjustments impact average selling value.
+
+
+Product Mix — Identify which products contribute to a higher ASP.
+
+
+Market Positioning — Evaluate premium vs. budget product performance.
+
+
+Revenue Optimization — Helps forecast sales based on price changes.
+
+
+Promotion Impact — Observe ASP shifts during discount campaigns.
+
+
+Detailed Breakdown
+Total Revenue = sum(net_sales)
+
+
+Units Sold = sum(quantity_sold)
+
+
+Suggested Dimensions
+Product / SKU · Category · Channel · Region · Campaign
+Related Metrics
+AOV · Gross Sales · Net Sales · Units Sold
+Example Use
+Prompt: What was our average selling price last month?
+ Response:
+ ASP for Last Month — $42.30
+Query
+
+
+SELECT COALESCE(SUM(net_sales_amount) / NULLIF(SUM(quantity), 0),0) AS asp
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+
+
+CPA (Cost Per Acquisition)
+Overview
+Cost Per Acquisition (CPA) measures the average marketing cost required to acquire one customer or conversion. It reflects the efficiency of advertising and lead generation efforts.
+Formula
+CPA =  Ad Spend ÷ Conversions
+
+Insights and Actions
+Efficiency Check — Lower CPA indicates cost-effective marketing performance.
+
+
+Budget Allocation — Helps identify which campaigns yield the best acquisition cost.
+
+
+ROI Measurement — A key input for profitability analysis.
+
+
+Trend Tracking — Detect shifts in customer acquisition costs over time.
+
+
+Optimization Opportunities — Identify underperforming ads or audiences.
+
+
+Detailed Breakdown
+Total Ad Spend = sum(spend_amount)
+
+
+Total Conversions = sum(conversions)
+
+
+Suggested Dimensions
+Channel · Campaign · Region · Device · Customer Type
+Related Metrics
+ROAS · ACOS · Conversion Rate · CAC
+Example Use
+Prompt: What’s our CPA for Facebook ads this week?
+ Response:
+ CPA for Facebook Ads — $12.80
+Query
+
+
+SELECT COALESCE(SUM(spend) / NULLIF(SUM(conversions), 0), 0) AS cpa
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+CAC (Customer Acquisition Cost)
+Overview
+Customer Acquisition Cost (CAC) measures the total cost of acquiring a new customer, including marketing, sales, and promotional expenses. It provides a clear view of customer profitability.
+Formula
+CAC = Ad Spend ÷ Conversions
+
+Insights and Actions
+Profitability Insight — Compare CAC with LTV (Lifetime Value) to ensure sustainability.
+
+
+Budget Efficiency — Track which channels acquire customers most affordably.
+
+
+Scalability Analysis — Monitor CAC trends during growth phases.
+
+
+Campaign Optimization — Detect costly or ineffective acquisition campaigns.
+
+
+Strategic Benchmarking — Compare CAC across time, products, or regions.
+
+
+Detailed Breakdown
+Marketing & Sales Costs = sum(ad_spend + sales_expenses)
+
+
+New Customers = count(distinct new_customer_ids)
+
+
+Suggested Dimensions
+Channel · Campaign · Region · Customer Type
+Related Metrics
+CPA · MER · LTV · ROAS
+Example Use
+Prompt: What was our average CAC last quarter?
+ Response:
+ Average CAC for Last Quarter — $45.50
+
+
+Query
+
+
+SELECT COALESCE(SUM(spend) / NULLIF(SUM(conversions), 0), 0),AS cac
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+MRR (Monthly Recurring Revenue)
+Overview
+Monthly Recurring Revenue (MRR) represents the predictable monthly income from active subscriptions or contracts. It’s a key SaaS metric for evaluating steady revenue growth.
+Formula
+MRR = SUM(Monthly Subscription Value × Active Subscriptions)
+
+Insights and Actions
+Revenue Predictability — Provides visibility into monthly income trends.
+
+
+Churn Impact — Track how cancellations affect recurring revenue.
+
+
+Growth Tracking — Monitor new vs. lost MRR each month.
+
+
+Forecasting — A core metric for financial planning.
+
+
+Customer Retention — Measure the stability of recurring income.
+
+
+Detailed Breakdown
+Subscription Value = monthly_charge_per_user
+
+
+Active Subscriptions = count(active_customers)
+
+
+Suggested Dimensions
+Plan Type · Region · Customer Segment · Subscription Duration
+Related Metrics
+ARR · Churn Rate · Net Revenue Retention
+Example Use
+Prompt: What’s our total MRR for September?
+ Response:
+ Total MRR for September — $38,200
+
+
+
+Churn Rate
+Overview
+Churn Rate measures the percentage of customers or subscriptions lost over a given period. It’s crucial for understanding customer retention and long-term revenue sustainability.
+Formula
+Churn Rate = (Customers Lost / Total Customers at Start) * 100
+
+Insights and Actions
+Retention Analysis — High churn signals product dissatisfaction or pricing issues.
+
+
+Customer Experience — Identify service or delivery pain points.
+
+
+Revenue Impact — Track how churn affects recurring revenue.
+
+
+Cohort Analysis — Study churn behavior by customer segment.
+
+
+Forecasting — Predict future retention rates.
+
+
+Detailed Breakdown
+Customers Lost = count(lost_customers)
+
+
+Total Starting Customers = count(customers_start_period)
+
+
+Suggested Dimensions
+Customer Type · Region · Plan · Channel
+Related Metrics
+MRR · Retention Rate · CAC · CLV
+Example Use
+Prompt: What was our customer churn rate last month?
+ Response:
+ Churn Rate for Last Month — 4.6%
+
+
+
+Gross Profit
+Overview
+Gross Profit represents the amount remaining after subtracting the cost of goods sold (COGS) from total revenue. It’s a fundamental indicator of business profitability.
+Formula
+Gross Profit = Total Revenue - Cost of Goods Sold
+
+Insights and Actions
+Profit Health — Indicates how efficiently products are produced or sourced.
+
+
+Pricing Review — Compare gross profit margins across products.
+
+
+Cost Management — Monitor the impact of rising COGS.
+
+
+Trend Analysis — Assess long-term profitability performance.
+
+
+Strategic Planning — Input for setting pricing and production goals.
+
+
+Detailed Breakdown
+Revenue = sum(net_sales)
+
+
+COGS = sum(cost_of_goods_sold)
+
+
+Suggested Dimensions
+Product / SKU · Category · Channel · Region
+Related Metrics
+Gross Margin · Net Margin · Total Sales
+Example Use
+Prompt: What’s our gross profit for Q3?
+ Response:
+ Gross Profit for Q3 — $96,500
+
+
+
+
+Gross Margin
+Overview
+Gross Margin represents the percentage of revenue retained after covering production costs. It measures profitability efficiency at the product or company level.
+Formula
+Gross Margin = (Gross Profit / Total Revenue) * 100
+
+Insights and Actions
+Cost Efficiency — A low margin indicates high production or sourcing costs.
+
+
+Pricing Strategy — Optimize pricing to maintain healthy margins.
+
+
+Product Mix Analysis — Identify high-margin vs. low-margin products.
+
+
+Trend Monitoring — Track gross margin changes over time.
+
+
+Profitability Forecasting — Core input for financial projections.
+
+
+Detailed Breakdown
+Gross Profit = Total Revenue - COGS
+
+
+Revenue = sum(net_sales)
+
+
+Suggested Dimensions
+Product · Category · Channel · Region
+Related Metrics
+Gross Profit · Net Margin · Total Sales
+Example Use
+Prompt: What’s our current gross margin?
+ Response:
+ Gross Margin — 42.8%
+
+
+
+Return Rate
+Overview
+Return Rate measures the percentage of sold items that customers return. It reflects customer satisfaction and product quality.
+Formula
+Return Rate = (Returned Units / Total Units Sold) * 100
+
+Insights and Actions
+Quality Insight — High returns may indicate product or sizing issues.
+
+
+Customer Experience — Monitors satisfaction and delivery accuracy.
+
+
+Inventory Forecasting — Adjust future production based on returns.
+
+
+Profit Impact — Returns reduce both revenue and efficiency.
+
+
+Policy Evaluation — Analyze effects of return policies.
+
+
+Detailed Breakdown
+Returned Units = sum(returned_items)
+
+
+Units Sold = sum(sold_items)
+
+
+Suggested Dimensions
+Product · Category · Region · Customer Type
+Related Metrics
+Cancellation Rate · Total Sales · Net Sales
+Example Use
+Prompt: What’s our return rate for the past 30 days?
+ Response:
+ Return Rate — 5.1%
+
+
+
+Returning Customer Rate
+Overview
+Returning Customer Rate measures the percentage of customers who made repeat purchases within a selected time frame. It’s a strong indicator of customer loyalty and retention.
+Formula
+ Returning Customer Rate = (Number of Returning Customers ÷ Total Unique Customers) × 100
+
+Insights and Actions
+Loyalty Tracking — Indicates brand stickiness and satisfaction.
+
+
+Revenue Stability — Repeat customers often contribute to consistent income.
+
+
+Retention Strategy — Evaluate loyalty programs and engagement tactics.
+
+
+Customer Segmentation — Identify repeat vs. one-time buyers.
+
+
+Growth Forecasting — High returning rate supports sustainable growth.
+
+
+Detailed Breakdown
+Returning Customers = count(distinct repeat_customer_ids)
+
+
+Total Customers = count(distinct customers)
+
+
+Suggested Dimensions
+Region · Campaign · Customer Type · Channel
+Related Metrics
+Churn Rate · CAC · LTV · Conversion Rate
+Example Use
+Prompt: What’s our returning customer rate this quarter?
+ Response:
+ Returning Customer Rate — 29.4%
+
+
+Query
+SELECT ROUND(COUNT(DISTINCT CASE WHEN user_type = 'returning_customer' THEN customer_email END)::decimal * 100/ NULLIF(COUNT(DISTINCT customer_email), 0),4)END AS returning_customer_rate
+FROM orders
+WHERE orders_date BETWEEN :start AND :end;
+
+
+
+Order Accuracy Rate
+Overview
+Order Accuracy Rate measures the percentage of orders delivered correctly without errors, returns, or missing items. It’s an essential operational performance metric.
+Formula
+Order Accuracy Rate = (Accurate Orders / Total Orders) * 100
+
+Insights and Actions
+Operational Quality — High accuracy reduces returns and boosts satisfaction.
+
+
+Fulfillment Efficiency — Identifies warehouse or delivery errors.
+
+
+Customer Trust — Accurate deliveries enhance brand reputation.
+
+
+Cost Control — Fewer order mistakes mean lower operational costs.
+
+
+Process Optimization — Helps streamline logistics and QC.
+
+
+Detailed Breakdown
+Accurate Orders = count(correct_orders)
+
+
+Total Orders = count(all_orders)
+
+
+Suggested Dimensions
+Warehouse · Region · Product · Channel
+Related Metrics
+Return Rate · CSAT · Fulfillment Time
+Example Use
+Prompt: What’s our order accuracy rate for this week?
+ Response:
+ Order Accuracy Rate — 98.7%
+
+
+
+CSAT (Customer Satisfaction Score)
+Overview
+CSAT measures customer satisfaction based on feedback or survey ratings. It reflects how well a business meets customer expectations.
+Formula
+CSAT = (Number of Positive Responses / Total Responses) * 100
+
+Insights and Actions
+Customer Experience — Gauge satisfaction after purchase or service.
+
+
+Quality Control — Detect declining satisfaction trends early.
+
+
+Support Efficiency — Link service interactions with customer feedback.
+
+
+Retention Predictor — High CSAT often leads to better loyalty.
+
+
+Continuous Improvement — Identify areas needing process refinement.
+
+
+Detailed Breakdown
+Positive Responses = count(rating >= 4)
+
+
+Total Responses = count(all_feedbacks)
+
+
+Suggested Dimensions
+Region · Product · Channel · Customer Type
+Related Metrics
+NPS · Return Rate · Order Accuracy Rate
+Example Use
+Prompt: What’s our current CSAT score?
+ Response:
+ CSAT Score — 91%
+
+
+
+Chargeback Rate
+Overview
+Chargeback Rate measures the percentage of completed transactions reversed due to disputes or fraud. It’s vital for tracking payment reliability and risk exposure.
+Formula
+Chargeback Rate = (Chargebacks / Total Transactions) * 100
+
+Insights and Actions
+Risk Management — Monitor fraud and payment issue trends.
+
+
+Operational Health — Identify recurring chargeback causes.
+
+
+Financial Control — Track losses associated with disputes.
+
+
+Compliance — Maintain acceptable chargeback thresholds.
+
+
+Vendor Evaluation — Review payment processor performance.
+
+
+Detailed Breakdown
+Chargebacks = count(chargeback_transactions)
+
+
+Transactions = count(total_orders)
+
+
+Suggested Dimensions
+Payment Method · Region · Channel · Device
+Related Metrics
+Dispute Rate · Return Rate · Net Margin
+Example Use
+Prompt: What’s our chargeback rate this quarter?
+ Response:
+ Chargeback Rate — 0.6%
+
+
+
+Dispute Rate
+Overview
+Dispute Rate measures the percentage of transactions challenged by customers for issues like non-delivery or incorrect billing. It helps assess customer trust and transaction quality.
+Formula
+Dispute Rate = (Disputed Orders / Total Orders) * 100
+
+Insights and Actions
+Customer Trust — High dispute rates indicate delivery or billing issues.
+
+
+Support Efficiency — Tracks resolution effectiveness.
+
+
+Fraud Detection — Monitor suspicious dispute patterns.
+
+
+Experience Quality — Links closely to CSAT and order accuracy.
+
+
+Cost Management — Disputes often lead to revenue losses.
+
+
+Detailed Breakdown
+Disputed Orders = count(disputed_transactions)
+
+
+Total Orders = count(all_orders)
+
+
+Suggested Dimensions
+Channel · Payment Method · Region · Customer Type
+Related Metrics
+Chargeback Rate · CSAT · Order Accuracy Rate
+Example Use
+Prompt: What’s our dispute rate this month?
+ Response:
+ Dispute Rate — 1.1%
+
+
+
+Impression Share
+Overview
+Impression Share measures the percentage of total available impressions your ads received compared to competitors. It indicates ad visibility and competitiveness.
+Formula
+Impression Share = (Your Impressions / Total Eligible Impressions) * 100
+
+Insights and Actions
+Market Visibility — Higher share means better ad reach.
+
+
+Competition Analysis — Understand performance against competitors.
+
+
+Budget Efficiency — Low share can suggest limited bids or budgets.
+
+
+Optimization Opportunity — Improve bidding and targeting strategies.
+
+
+Performance Forecasting — Use as a leading indicator of traffic potential.
+
+
+Detailed Breakdown
+Your Impressions = sum(impressions)
+
+
+Eligible Impressions = total_possible_impressions
+
+
+Suggested Dimensions
+Campaign · Channel · Region · Device
+Related Metrics
+Impressions · Clicks · CTR · CPC
+Example Use
+Prompt: What’s our Google Ads impression share this week?
+ Response:
+ Impression Share — 74%
+
+
+
+Net Margin
+Overview
+Net Margin measures the percentage of total revenue that remains as profit after all expenses, taxes, and costs are deducted. It’s the ultimate indicator of overall profitability.
+Formula
+Net Margin = (Net Profit / Total Revenue) * 100
+
+Insights and Actions
+Profitability Benchmark — Reflects true financial health.
+
+
+Cost Control — Identify where operational costs reduce margin.
+
+
+Pricing Evaluation — Balance price vs. cost to maintain profitability.
+
+
+Efficiency Tracking — Measure how well the business converts sales into profit.
+
+
+Strategic Decisions — Guide reinvestment and scaling plans.
+
+
+Detailed Breakdown
+Net Profit = Total Revenue - Total Expenses
+
+
+Revenue = sum(net_sales)
+
+
+Suggested Dimensions
+Channel · Region · Product · Time Period
+Related Metrics
+Gross Margin · Gross Profit · Total Sales · ROAS
+Example Use
+Prompt: What’s our net margin for Q2?
+ Response:
+ Net Margin — 18.3%
+
+
+
+Glance Views
+Overview
+Glance Views represent the number of times a product detail page (PDP) was viewed by users. It measures customer interest and serves as a top-of-funnel indicator in the buyer journey.
+Formula
+Glance Views = SUM(product_page_views)
+
+Insights and Actions
+Product Visibility — Higher glance views mean more customers are discovering your listings.
+
+
+Interest Measurement — Reflects potential purchase intent for a product.
+
+
+Optimization — Low views may indicate poor keyword ranking or weak creatives.
+
+
+Campaign Impact — Correlate with ad impressions to assess listing reach.
+
+
+Conversion Opportunity — Compare with conversions to measure PDP effectiveness.
+
+
+Detailed Breakdown
+Glance Views = total PDP views from organic + paid traffic
+
+
+Suggested Dimensions
+Product / SKU · Category · Channel · Region · Campaign
+Related Metrics
+Impressions · Clicks · Conversions · Conversion Rate
+Example Use
+Prompt: What were our total glance views last week?
+ Response:
+ Glance Views for Last Week — 85,400
+
+
+
+
+TACOS (Total Advertising Cost of Sales)
+Overview
+TACOS measures ad spend as a percentage of total sales (both organic and paid). It gives a holistic view of advertising efficiency and overall profitability.
+Formula
+TACoS = (Total Spend ÷ Total Ad Net Sales) × 100
+
+Insights and Actions
+Profitability Tracking — Lower TACOS indicates sustainable growth.
+
+
+Ad Dependency — Rising TACOS may mean over-reliance on ads for sales.
+
+
+Brand Health — Shows balance between organic and paid sales.
+
+
+Budget Allocation — Guides optimization between ad spend and organic growth.
+
+
+Strategic Planning — Key for long-term profitability forecasting.
+
+
+Detailed Breakdown
+Ad Spend = sum(ad_spend)
+
+
+Total Sales = sum(gross_sales)
+
+
+Suggested Dimensions
+Campaign · Channel · Product / SKU · Region
+Related Metrics
+ACOS · ROAS · MER · Net Margin
+Example Use
+Prompt: What was our TACOS last month?
+ Response:
+ TACOS for Last Month — 12.6%
+
+Query
+SELECT  COALESCE(ROUND(((a.spends) / NULLIF((s.ads_net_sales), 0)) * 100, 2), 0.0) AS tacos
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+
+Average Win Rate
+Overview
+Average Win Rate shows the percentage of competitive opportunities or bids successfully won out of total opportunities. It’s often used in sales or ad auctions.
+Formula
+Average Win Rate = (Wins / Total Opportunities) * 100
+
+Insights and Actions
+Competitiveness — High win rate shows strong market position.
+
+
+Sales Performance — Evaluates conversion of leads into closed deals.
+
+
+Bid Efficiency — For ads, reflects bidding strategy success.
+
+
+Pipeline Health — Indicates the quality of opportunities.
+
+
+Forecast Accuracy — Improves confidence in revenue projections.
+
+
+Detailed Breakdown
+Wins = count(successful_deals or won_bids)
+
+
+Total Opportunities = count(all_deals or total_bids)
+
+
+Suggested Dimensions
+Campaign · Sales Rep · Channel · Product · Region
+Related Metrics
+CVR · Conversion Rate · ROAS · ACOS
+Example Use
+Prompt: What’s our average win rate this quarter?
+ Response:
+ Average Win Rate for This Quarter — 48.3%
+
+
+
+
+CVR (Conversion Rate)
+Overview
+CVR (Conversion Rate) measures how effectively ad clicks or visits convert into completed actions, typically purchases.
+Formula
+
+CVR (Conversion Rate) = (Total Conversions ÷ Total Clicks) × 100
+
+Insights and Actions
+Ad Efficiency — Indicates how well campaigns convert traffic.
+
+
+Landing Page Quality — Optimize pages to improve CVR.
+
+
+Audience Relevance — High CVR reflects well-targeted audiences.
+
+
+Creative Performance — Analyze which visuals or CTAs drive higher conversions.
+
+
+Performance Benchmarking — Compare across channels or time.
+
+
+Detailed Breakdown
+Conversions = sum(conversions)
+
+
+Clicks = sum(clicks)
+
+
+Suggested Dimensions
+Campaign · Channel · Device · Region · Product
+Related Metrics
+CTR · ROAS · ACOS · Conversion Value
+Example Use
+Prompt: What was our CVR for last week?
+ Response:
+ CVR for Last Week — 3.7%
+
+Query
+
+SELECT  COALESCE(CAST(SUM(conversions) * 100.0 / NULLIF(SUM(clicks), 0) AS NUMERIC(18, 2)),0.0) AS cvr
+FROM spends
+WHERE spends_date BETWEEN :start AND :end;
+
+
+
+
+Engagement Rate
+Overview
+Engagement Rate measures how actively users interact with your content, such as clicks, likes, comments, or shares relative to total impressions.
+Formula
+Engagement Rate = (Total Engagements / Total Impressions) * 100
+
+Insights and Actions
+Audience Resonance — Indicates how well your content connects with users.
+
+
+Content Effectiveness — Identify which posts or creatives drive engagement.
+
+
+Channel Optimization — Adjust content strategy per platform performance.
+
+
+Brand Strength — Reflects follower loyalty and attention.
+
+
+Campaign Testing — Compare ad creatives before scaling.
+
+
+Detailed Breakdown
+Engagements = likes + comments + clicks + shares
+
+
+Impressions = sum(impressions)
+
+
+Suggested Dimensions
+Channel · Campaign · Post Type · Audience Segment
+Related Metrics
+CTR · Click Rate · Conversion Rate · Reach
+Example Use
+Prompt: What’s our average engagement rate this month?
+ Response:
+ Engagement Rate for This Month — 5.4%
+
+
+
+
+
+Engaged Sessions
+Overview
+Engaged Sessions count the number of sessions where users interacted meaningfully with your site (spent >10s, viewed multiple pages, or converted).
+Formula
+Engaged Sessions = COUNT(session_id WHERE engagement > threshold)
+
+Insights and Actions
+User Quality — Higher engaged sessions mean visitors are genuinely interested.
+
+
+UX Feedback — Reveals how design affects attention span.
+
+
+Traffic Source Quality — Identify which channels bring quality users.
+
+
+Retention Signals — Correlates with conversion and repeat visits.
+
+
+Engagement Benchmarks — Compare engagement across campaigns.
+
+
+Detailed Breakdown
+Engaged Session = session with >10s activity or >1 pageview
+
+
+Suggested Dimensions
+Channel · Device · Region · Campaign
+Related Metrics
+Engagement Rate · Conversion Rate · Average Session Duration
+Example Use
+Prompt: How many engaged sessions did we have yesterday?
+ Response:
+ Engaged Sessions from Yesterday — 3,240
+
+
+
+
+Open Rate
+Overview
+Open Rate measures the percentage of delivered emails that were opened by recipients.
+Formula
+Open Rate = (Emails Opened / Emails Delivered) * 100
+
+Insights and Actions
+Subject Line Effectiveness — Indicates if your message grabs attention.
+
+
+Sender Reputation — Low rates may reflect poor domain trust.
+
+
+Timing Optimization — Identify best send times.
+
+
+Audience Targeting — Improve list segmentation.
+
+
+Campaign Health — Foundational metric for email success.
+
+
+Detailed Breakdown
+Emails Opened = sum(opened_emails)
+
+
+Emails Delivered = sum(delivered_emails)
+
+
+Suggested Dimensions
+Campaign · Audience Segment · Device · Region
+Related Metrics
+Click Rate · Opt-Out Rate · Delivery Rate
+Example Use
+Prompt: What was our open rate for the last campaign?
+ Response:
+ Open Rate for Last Campaign — 41.8%
+
+
+
+Click Rate
+Overview
+Click Rate measures how many recipients clicked a link in your email relative to those who opened it.
+Formula
+Click Rate = (Email Clicks / Emails Opened) * 100
+
+Insights and Actions
+Email Engagement — Measures interest in your content.
+
+
+CTA Performance — Evaluate the effectiveness of links and buttons.
+
+
+Content Quality — Higher rates suggest relevant and persuasive content.
+
+
+Segmentation Accuracy — Aligns messages with user needs.
+
+
+Campaign Optimization — Use to A/B test creative elements.
+
+
+Detailed Breakdown
+Email Clicks = sum(clicked_links)
+
+
+Emails Opened = sum(opened_emails)
+
+
+Suggested Dimensions
+Campaign · Device · Segment · Region
+Related Metrics
+Open Rate · Conversion Rate · CTR · Opt-Out Rate
+Example Use
+Prompt: What’s our average click rate from last week’s emails?
+ Response:
+ Click Rate from Last Week — 7.6%
+
+
+
+
+Order Rate
+Overview
+Order Rate indicates the proportion of website sessions or visitors that resulted in completed orders.
+Formula
+Order Rate = (Orders / Sessions) * 100
+
+Insights and Actions
+Purchase Intent — Measures effectiveness of the user journey.
+
+
+Traffic Quality — Evaluate how well sessions convert.
+
+
+UI Optimization — Identify checkout bottlenecks.
+
+
+Campaign Evaluation — Track order rate across ad sources.
+
+
+Revenue Forecasting — Helps predict sales trends.
+
+
+Detailed Breakdown
+Orders = count(completed_orders)
+
+
+Sessions = count(total_sessions)
+
+
+Suggested Dimensions
+Channel · Device · Campaign · Product
+Related Metrics
+Conversion Rate · AOV · Total Orders
+Example Use
+Prompt: What was our order rate for the last 7 days?
+ Response:
+ Order Rate for Last 7 Days — 2.9%
+
+
+
+
+Opt-Out Rate
+Overview
+Opt-Out Rate shows the percentage of users who unsubscribed or opted out of communications after receiving your messages.
+Formula
+Opt-Out Rate = (Unsubscribed Users / Emails Delivered) * 100
+
+Insights and Actions
+Message Fatigue — High rates indicate over-messaging.
+
+
+Content Relevance — Evaluate targeting precision.
+
+
+Brand Loyalty — Lower opt-outs signal stronger audience trust.
+
+
+Frequency Optimization — Adjust email cadence to reduce churn.
+
+
+Compliance Tracking — Helps maintain healthy sender reputation.
+
+
+Detailed Breakdown
+Unsubscribed Users = count(unsubscribers)
+
+
+Emails Delivered = sum(delivered_emails)
+
+
+Suggested Dimensions
+Campaign · Audience Segment · Region
+Related Metrics
+Open Rate · Click Rate · Delivery Rate
+Example Use
+Prompt: What’s our opt-out rate this month?
+ Response:
+ Opt-Out Rate for This Month — 0.5%
+Delivery Rate
+Overview
+Delivery Rate measures the percentage of successfully delivered emails out of total sent emails.
+Formula
+Delivery Rate = (Emails Delivered / Emails Sent) * 100
+
+Insights and Actions
+Technical Health — Reflects sender reputation and domain quality.
+
+
+Bounce Monitoring — Detects email delivery failures.
+
+
+List Hygiene — Maintain clean contact lists.
+
+
+Infrastructure Reliability — Ensures email systems are performing well.
+
+
+Campaign Consistency — Correlate with open rate and CTR for performance.
+
+
+Detailed Breakdown
+Emails Sent = total emails attempted
+
+
+Emails Delivered = successful deliveries
+
+
+Suggested Dimensions
+Campaign · Region · Segment
+Related Metrics
+Open Rate · Click Rate · Opt-Out Rate
+Example Use
+Prompt: What was our delivery rate for the last campaign?
+ Response:
+ Delivery Rate for Last Campaign — 98.9%
+
+
+
+
+
+
+Click-Through Rate (CTR)
+Overview
+Click-Through Rate measures how often users clicked on an ad or link after seeing it. It’s a key engagement metric for ad and content performance.
+Formula
+CTR = (Clicks / Impressions) * 100
+
+Insights and Actions
+Ad Relevance — Indicates how appealing your ad creative and targeting are.
+
+
+Creative Testing — Helps identify top-performing visuals and headlines.
+
+
+Quality Score — Affects ad ranking in auctions.
+
+
+Audience Targeting — Refine targeting for higher engagement.
+
+
+Performance Benchmarking — Compare across devices and platforms.
+
+
+Detailed Breakdown
+Clicks = sum(clicks)
+
+
+Impressions = sum(impressions)
+
+
+Suggested Dimensions
+Campaign · Channel · Device · Keyword · Region
+Related Metrics
+CVR · CPC · Engagement Rate · Impressions
+Example Use
+Prompt: What was our average CTR for Google Ads?
+ Response:
+ CTR for Google Ads — 3.2%
+
+
+
+
+
+Average Churn Risk
+Overview
+Average Churn Risk represents the average probability that customers will stop using your product or service, based on predictive or behavioral data.
+Formula
+Average Churn Risk = (SUM(Churn Probability per Customer) / Total Customers)
+
+Insights and Actions
+Retention Planning — Identify at-risk customer segments.
+
+
+Personalized Outreach — Trigger retention campaigns for high-risk users.
+
+
+Revenue Protection — Anticipate churn impact on MRR.
+
+
+Customer Success Benchmarking — Evaluate service quality.
+
+
+Trend Monitoring — Track improvements after engagement programs.
+
+
+Detailed Breakdown
+Churn Probability = model-based or rule-based prediction
+
+
+Total Customers = active customers in period
+
+
+Suggested Dimensions
+Customer Segment · Subscription Plan · Region
+Related Metrics
+Churn Rate · Predicted CLV · Retention Rate
+Example Use
+Prompt: What’s our average churn risk for this month?
+ Response:
+ Average Churn Risk for This Month — 14.2%
+
+
+
+
+
+Predicted CLV (Customer Lifetime Value)
+Overview
+Predicted CLV estimates the total revenue a customer is expected to generate over their entire relationship with your business.
+Formula
+Predicted CLV = (Average Purchase Value × Purchase Frequency × Predicted Retention Time)
+
+Insights and Actions
+Revenue Forecasting — Predicts future cash flow from existing users.
+
+
+Customer Segmentation — Identify high-value customers for loyalty programs.
+
+
+Marketing ROI — Guides how much to spend on acquisition.
+
+
+Retention Strategy — Optimize offers based on lifetime potential.
+
+
+Business Valuation — Core for subscription and D2C models.
+
+
+Detailed Breakdown
+Average Purchase Value = total revenue / total orders
+
+
+Purchase Frequency = total orders / total customers
+
+
+Predicted Retention = model-estimated duration
+
+
+Suggested Dimensions
+Customer Segment · Channel · Region
+Related Metrics
+CAC · Churn Rate · MRR · Net Margin
+Example Use
+Prompt: What’s the predicted CLV for premium customers?
+ Response:
+ Predicted CLV for Premium Customers — $1,240
+

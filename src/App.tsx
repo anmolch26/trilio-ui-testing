@@ -51,6 +51,7 @@ const GuidesReports = lazy(() => import("./pages/resources/GuidesReports"));
 const HelpCenter = lazy(() => import("./pages/resources/HelpCenter"));
 const GettingStarted = lazy(() => import("./pages/resources/GettingStarted"));
 const DeveloperDocs = lazy(() => import("./pages/resources/DeveloperDocs"));
+const DataDictionary = lazy(() => import("./pages/resources/dataDictionary"));
 const NewsletterSignup = lazy(() => import("./pages/resources/NewsletterSignup"));
 const DynamicBlog = lazy(() => import("./pages/resources/DynamicBlog"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -275,6 +276,14 @@ const App = () => (
             <Route
               path="/resources/developer-docs"
               element={<DeveloperDocs />}
+            />
+            <Route
+              path="/resources/data-dictionary"
+              element={<DataDictionary />}
+            />
+            <Route
+              path="/resources/data-dictionary/:metricSlug"
+              element={<DataDictionary />}
             />
             <Route
               path="/resources/newsletter-signup"
