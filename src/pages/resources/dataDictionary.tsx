@@ -268,17 +268,27 @@ const MetricCard: React.FC<{
                 <div>
                   <div className="text-sm font-semibold mb-2">Response</div>
                   <div className="rounded-lg border bg-card">
-                    <div className="px-4 py-3 border-b text-sm font-medium">
-                      {metric.metaExampleResponse!.title || "Response"}
-                    </div>
-                    <div className="p-4">
-                      <div className="text-sm text-muted-foreground mb-2">
-                        {metric.metaExampleResponse!.metric || "Metric"}
-                      </div>
-                      <div className="text-3xl font-bold">
-                        {metric.metaExampleResponse!.value || ""}
-                      </div>
-                    </div>
+                    {typeof metric.metaExampleResponse === "string" ? (
+                      <div className="p-4 text-base">{metric.metaExampleResponse}</div>
+                    ) : (
+                      <>
+                        <div className="px-4 py-3 border-b text-sm font-medium">
+                          {metric.metaExampleResponse!.title || "Response"}
+                        </div>
+                        <div className="p-4">
+                          {metric.metaExampleResponse!.metric && (
+                            <div className="text-sm text-muted-foreground mb-2">
+                              {metric.metaExampleResponse!.metric}
+                            </div>
+                          )}
+                          {metric.metaExampleResponse!.value && (
+                            <div className="text-3xl font-bold">
+                              {metric.metaExampleResponse!.value}
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               )}
