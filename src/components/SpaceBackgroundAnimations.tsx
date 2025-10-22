@@ -18,7 +18,7 @@ const SpaceBackgroundAnimation: React.FC<SpaceBackgroundAnimationProps> = ({
       .catch((error) => console.error("Failed to load animation:", error));
   }, []);
 
-  // Don't render until animation is loaded
+  
   if (!animationData) return null;
 
   return (
