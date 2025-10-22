@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url><loc>https://www.trilio.ai/</loc></url>
+  <url><loc>https://www.trilio.ai/contact-form</loc></url>
+  <url><loc>https://www.trilio.ai/pricing</loc></url>
+
+  <!-- Product pages -->
+  <url><loc>https://www.trilio.ai/products/bi-reporting</loc></url>
+  <url><loc>https://www.trilio.ai/products/insights</loc></url>
+  <url><loc>https://www.trilio.ai/products/ai-agents</loc></url>
+
+  <!-- Who we help -->
+  <url><loc>https://www.trilio.ai/who-we-help/founders-ceos</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/marketing-leaders</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/performance-marketers</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/operations-managers</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/data-analysts</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/agencies-consultants</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/tech-partners</loc></url>
+  <url><loc>https://www.trilio.ai/who-we-help/waitlist</loc></url>
+
+  <!-- About pages -->
+  <url><loc>https://www.trilio.ai/about/leadership-team</loc></url>
+  <url><loc>https://www.trilio.ai/about/careers</loc></url>
+  <url><loc>https://www.trilio.ai/about/trust-center</loc></url>
+  <url><loc>https://www.trilio.ai/about/faqs</loc></url>
+
+  <!-- Careers subpages -->
+  <url><loc>https://www.trilio.ai/careers/open-positions</loc></url>
+  <url><loc>https://www.trilio.ai/careers/life-at-trilio</loc></url>
+  <url><loc>https://www.trilio.ai/careers/interview-process</loc></url>
+  <url><loc>https://www.trilio.ai/careers/internships-programs</loc></url>
+
+  <!-- Resources pages -->
+  <url><loc>https://www.trilio.ai/resources/blog-insights</loc></url>
+  <url><loc>https://www.trilio.ai/resources/case-studies</loc></url>
+  <url><loc>https://www.trilio.ai/resources/guides-reports</loc></url>
+  <url><loc>https://www.trilio.ai/resources/help-center</loc></url>
+  <url><loc>https://www.trilio.ai/resources/getting-started</loc></url>
+  <url><loc>https://www.trilio.ai/resources/developer-docs</loc></url>
+  <url><loc>https://www.trilio.ai/resources/data-dictionary</loc></url>
+  <url><loc>https://www.trilio.ai/resources/newsletter-signup</loc></url>
+
+  <!-- Solutions pages -->
+  <url><loc>https://www.trilio.ai/solutions/tiktok</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/amazon</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/shopify</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/google-ads</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/amazon-ads</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/meta</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/woocommerce</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/reddit-ads</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/tableau</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/ga4</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/walmart</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/bestbuy</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/target</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/rakuten</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/ebay</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/etsy</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/homedepot</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/mailchimp</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/klaviyo</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/stripe</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/square</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/zendesk</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/shipstation</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/smile-io</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/powerbi</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/akeneo</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/freshdesk</loc></url>
+  <url><loc>https://www.trilio.ai/solutions/easyship</loc></url>
+
   <url><loc>https://www.trilio.ai/resources/blog-insights/advanced-roas-optimization-techniques</loc></url>
   <url><loc>https://www.trilio.ai/resources/blog-insights/common-roas-mistakes-to-avoid</loc></url>
   <url><loc>https://www.trilio.ai/resources/blog-insights/the-role-of-technology-in-roas-optimization</loc></url>
