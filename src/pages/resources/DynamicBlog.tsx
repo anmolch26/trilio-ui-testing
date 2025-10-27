@@ -55,6 +55,51 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
+      {/* BlogPosting JSON-LD for rich results */}
+      {(() => {
+        const origin = typeof window !== "undefined" ? window.location.origin : "https://trilio.ai";
+        const url = `${origin}/resources/blog-insights/${blogPost.slug}`;
+        const datePublishedIso = (() => {
+          try {
+            return new Date(blogPost.date).toISOString();
+          } catch {
+            return undefined as unknown as string;
+          }
+        })();
+        const jsonLd = {
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': url,
+          },
+          headline: blogPost.title,
+          image: [blogPost.featuredImage].filter(Boolean),
+          author: {
+            '@type': 'Person',
+            name: blogPost.author,
+            image: blogPost.authorImage,
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Trilio.ai',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://assets.channeliq.ai/trilio-landing/Hero_Images/cropped_circle_image.png',
+            },
+          },
+          datePublished: datePublishedIso,
+          dateModified: datePublishedIso,
+          description: blogPost.title,
+          url,
+        };
+        return (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        );
+      })()}
       <ThemeSection background="white" padding="xl" className="pt-24">
         <div className="max-w-4xl mx-auto">
           {/* Blog Post */}
