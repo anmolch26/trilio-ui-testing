@@ -139,7 +139,7 @@ const WaitlistForm: React.FC = () => {
 
           <h1 className="section-title text-5xl md:text-7xl leading-tight opacity-0 animate-fade-in text-white pb-6" style={{ animationDelay: "0.3s" }}>
             The World's First<br />
-            End-to-End Commerce Data Platform
+            End-to-End E-commerce Analytics Platform
               </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl lg:max-w-5xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
