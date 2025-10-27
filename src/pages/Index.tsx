@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 
 // ⚡ ONLY load above-the-fold components eagerly (what user sees immediately)
 import Navbar from "@/components/NavBar";
@@ -15,12 +15,11 @@ const Newsletter = lazy(() => import("@/components/Newsletter"));
 const Footer = lazy(() => import("@/components/Footer"));
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   const [showAnimations, setShowAnimations] = useState(false);
-  const [showTestimonials, setShowTestimonials] = useState(false);
-  const testimonialsSentinelRef = useRef<HTMLDivElement | null>(null);
+  const [showTestimonials] = useState(false);
   // Initialize intersection observer to detect when elements enter viewport
   // Re-run after testimonials mount so newly added nodes are observed
   useEffect(() => {
@@ -42,7 +41,7 @@ const Index = () => {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, [showTestimonials]);
+  }, []);
 
   useEffect(() => {
     // This helps ensure smooth scrolling for the anchor links
@@ -80,24 +79,7 @@ const Index = () => {
     };
   }, []);
 
-  // Preload and show testimonials when near viewport
-  useEffect(() => {
-    const el = testimonialsSentinelRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShowTestimonials(true);
-            io.disconnect();
-          }
-        });
-      },
-      { rootMargin: "600px 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+  // Testimonials now eagerly loaded (no lazy/preload logic)
 
   return (
     <div className="min-h-screen">
@@ -129,10 +111,7 @@ const Index = () => {
           <Features />
         </Suspense>
         
-        <div ref={testimonialsSentinelRef} className="h-6" />
-        <Suspense fallback={null}>
-          {showTestimonials && <Testimonials />}
-        </Suspense>
+        <Testimonials />
         
       </main>
       
