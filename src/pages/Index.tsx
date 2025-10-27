@@ -11,7 +11,7 @@ const OptimizedPurposeSection = lazy(() => import("@/components/OptimizedPurpose
 const DetailsSection = lazy(() => import("@/components/DetailsSection"));
 const ImageShowcaseSection = lazy(() => import("@/components/ImageShowcaseSection"));
 const Features = lazy(() => import("@/components/Features"));
-const Newsletter = lazy(() => import("@/components/Newsletter"));
+import Newsletter from "@/components/Newsletter";
 const Footer = lazy(() => import("@/components/Footer"));
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
@@ -115,9 +115,9 @@ const Index = () => {
         
       </main>
       
-      {/* Lazy load footer sections */}
+      {/* Newsletter eagerly loaded, Footer remains lazy */}
+      <Newsletter />
       <Suspense fallback={<div className="h-20" />}>
-        <Newsletter />
         <Footer />
       </Suspense>
     </div>
