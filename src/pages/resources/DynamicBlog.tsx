@@ -4,6 +4,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   getBlogPostBySlug,
   getNextBlogPost,
@@ -55,6 +56,7 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
+      <RouteCanonical path={`/resources/blog-insights/${blogPost.slug}`} />
       {/* BlogPosting JSON-LD for rich results */}
       {(() => {
         const origin = typeof window !== "undefined" ? window.location.origin : "https://trilio.ai";

@@ -16,6 +16,7 @@ const Footer = lazy(() => import("@/components/Footer"));
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
 import Testimonials from "@/components/Testimonials";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Index = () => {
   const [showAnimations, setShowAnimations] = useState(false);
@@ -83,6 +84,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <RouteCanonical path="/" />
       <div className="gradient-background">
         <Suspense fallback={null}>
           {showAnimations && (
