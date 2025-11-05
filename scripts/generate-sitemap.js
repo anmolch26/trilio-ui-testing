@@ -26,14 +26,53 @@ while ((m = routeRegex.exec(appSrc)) !== null) {
   routePaths.add(p.startsWith("/") ? p : `/${p}`);
 }
 
-// Blog post slugs from generated file
-const blogDataPath = path.resolve(
-  projectRoot,
-  "src/data/generated/generatedBlogData.tsx"
-);
-const blogFile = fs.readFileSync(blogDataPath, "utf8");
-const slugMatches = [...blogFile.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
-const blogUrls = slugMatches.map(
+// Fetch blog post slugs from API
+const API_BASE = process.env.API_BASE_URL || "https://staging.trilio.ai";
+const blogSlugs = [];
+
+try {
+  console.log("Fetching blog slugs from API...");
+  const limit = 500; // Fetch in batches
+  let offset = 0;
+  let hasMore = true;
+
+  while (hasMore) {
+    const url = `${API_BASE}/api/auth/v1/blogs?limit=${limit}&offset=${offset}`;
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      console.warn(`API request failed with status ${response.status}`);
+      break;
+    }
+
+    const json = await response.json();
+    const blogs = json?.data?.blogs || [];
+    
+    if (blogs.length === 0) {
+      hasMore = false;
+    } else {
+      blogs.forEach((blog) => {
+        if (blog.slug) {
+          blogSlugs.push(blog.slug);
+        }
+      });
+      offset += limit;
+      
+      // Safety check to prevent infinite loops
+      if (offset > 10000) {
+        console.warn("Safety limit reached (10,000 blogs). Stopping fetch.");
+        break;
+      }
+    }
+  }
+  
+  console.log(`Fetched ${blogSlugs.length} blog slugs from API`);
+} catch (error) {
+  console.error("Error fetching blog slugs from API:", error.message);
+  console.log("Continuing with 0 blog URLs in sitemap");
+}
+
+const blogUrls = blogSlugs.map(
   (slug) => `${siteBase}/resources/blog-insights/${slug}`
 );
 
