@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import Navbar from "@/components/NavBar";
-import LegacyFooter from "@/components/LegacyFooter";
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/theme/PageLayout";
 import {
   Card,
@@ -11,20 +9,85 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Search, Calendar, Clock, User, Check, ChevronLeft, ChevronRight } from "lucide-react";
-import { getAllBlogPosts, BlogPost } from "@/data/blogData";
+import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 const BlogInsights = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12; // Show 12 blogs per page
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [blogPosts, setBlogPosts] = useState<Array<{
+    id: number;
+    slug: string;
+    title: string;
+    author: string;
+    category: string;
+    date: string;
+    image: string;
+    summary: string;
+  }>>([]);
 
-  const handleReadMore = () => {
-    navigate("/resources/blog-insights/blog");
+  const formatDate = (iso: string | null | undefined) => {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      });
+    } catch {
+      return "";
+    }
   };
+
+  const fetchBlogs = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const PAGE_LIMIT = 340;
+      let offset = 0;
+      let hasMore = true;
+      const all: Array<any> = [];
+      while (hasMore) {
+        const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
+        const response = await fetch(url, {
+          method: "GET",
+          headers: { "Accept": "application/json" },
+        });
+        if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+        const json = await response.json();
+        const pageBlogs = (json?.data?.blogs ?? []) as Array<any>;
+        all.push(...pageBlogs);
+        hasMore = Boolean(json?.data?.has_more);
+        offset += PAGE_LIMIT;
+        // safety: don't loop forever
+        if (offset > 1000) break;
+      }
+      const mapped = all.map((b) => ({
+        id: Number(b.id),
+        slug: String(b.slug ?? ""),
+        title: String(b.title ?? "Untitled"),
+        author: String(b.author ?? ""),
+        category: String(b.category ?? ""),
+        date: formatDate(b.published_at),
+        image: String(b.featured_image_url ?? ""),
+        summary: String(b.title ?? ""),
+      }));
+      setBlogPosts(mapped);
+    } catch (err: any) {
+      setError(err?.message || "Failed to load blogs.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchBlogs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const categories = [
     "Analytics",
@@ -67,16 +130,7 @@ const BlogInsights = () => {
     setCurrentPage(1);
   }, [selectedCategories, searchQuery]);
 
-  // Get all blogs from blogData.tsx and transform them for display
-  const allBlogPosts = getAllBlogPosts();
-
-  // Transform blog posts to use featuredImage and mark first blog as featured
-  const blogPosts = allBlogPosts.map((post) => ({
-    ...post,
-    summary: post.title, // Use title as summary for search functionality
-    image: post.featuredImage, // Map featuredImage to image for compatibility
-    featured: post.id === 1, // Mark first blog as featured
-  }));
+  // blogPosts are loaded from backend via fetch
 
   // Derived helpers for category UI
   const isAllSelected = selectedCategories.length === categories.length;
@@ -221,53 +275,67 @@ const BlogInsights = () => {
                 </div>
               </div>
 
-              {/* Blog Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {currentPosts.map((post) => (
-                  <Card
-                    key={post.id}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200"
+              {/* Blog Grid / Loading / Error */}
+              {loading ? (
+                <div className="py-16 text-center text-gray-600">Loading blogs…</div>
+              ) : error ? (
+                <div className="py-16 text-center">
+                  <p className="text-red-600 mb-4">{error}</p>
+                  <button
+                    onClick={fetchBlogs}
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
                   >
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge
-                          variant="secondary"
-                          className="bg-teal-100 text-teal-700 border-teal-200"
-                        >
-                          {post.category}
-                        </Badge>
-                        <span className="text-xs text-gray-500">
-                          {post.date}
-                        </span>
-                      </div>
-                      <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
-                        {post.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center text-sm text-gray-500">
-                          <span>by {post.author}</span>
+                    Retry
+                  </button>
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {currentPosts.map((post) => (
+                    <Card
+                      key={post.id}
+                      className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200"
+                    >
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <Badge
+                            variant="secondary"
+                            className="bg-teal-100 text-teal-700 border-teal-200"
+                          >
+                            {post.category}
+                          </Badge>
+                          <span className="text-xs text-gray-500">
+                            {post.date}
+                          </span>
                         </div>
-                        <Link
-                          to={`/resources/blog-insights/${post.slug}`}
-                          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-teal-200 bg-background hover:bg-teal-50 hover:text-accent-foreground h-9 px-3 text-teal-600"
-                        >
-                          Read More
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                        <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
+                          {post.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center text-sm text-gray-500">
+                            <span>by {post.author}</span>
+                          </div>
+                          <Link
+                            to={`/resources/blog-insights/${post.slug}`}
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-teal-200 bg-background hover:bg-teal-50 hover:text-accent-foreground h-9 px-3 text-teal-600"
+                          >
+                            Read More
+                          </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
 
               {/* Pagination */}
-              {totalPages > 1 && (
+              {!loading && !error && totalPages > 1 && (
                 <div className="flex justify-center items-center mt-12">
                   {/* Previous Button */}
                   <button

@@ -373,6 +373,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/12-essential-metrics-every-shopify-store-must-track</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/5-ways-to-use-data-to-increase-average-order-value-aov</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -380,12 +386,6 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/advanced-ai-technologies-in-ecommerce</loc>
-    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://trilio.ai/resources/blog-insights/advanced-analytics-and-integration-approaches</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -421,13 +421,37 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/advanced-analytics-techniques-for-shopify-success</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/advanced-attribution-strategies-and-techniques</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/advanced-attribution-techniques</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/advanced-automation-analytics</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/advanced-bi-techniques-technologies</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/advanced-cac-analysis-techniques</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -517,6 +541,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/advanced-shopify-plus-features-enterprise-analytics</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/advanced-shopify-profit-analytics-strategies</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -553,7 +583,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/attribution-crisis-modern-marketing</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/attribution-modeling-and-customer-journey-analysis</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/attribution-models-explained-choosing-the-right-approach</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -589,6 +631,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/best-practices-from-top-shopify-brands</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/best-practices-seasonal-forecasting</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -614,6 +662,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/cac-optimization-strategies</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/cac-vs-ltv-optimization</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -673,7 +727,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/common-attribution-pitfalls-and-solutions</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/common-cac-calculation-mistakes</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/common-cac-mistakes-and-how-to-avoid-them</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -709,6 +775,18 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/common-implementation-challenges-and-solutions</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/common-pitfalls-and-how-to-avoid-them</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/common-roas-mistakes-to-avoid</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -716,6 +794,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/common-tiktok-analytics-mistakes-to-avoid</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/comparing-leading-platforms-trilio-vs-competitors</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -763,7 +847,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/conclusion-choosing-your-roas-tracking-solution</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/conclusion-mastering-ecommerce-kpi-dashboard-software-for-success</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/conclusion-mastering-marketing-attribution-2025</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/conclusion-mastering-shopify-analytics-for-growth</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -794,6 +896,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/conclusion-multi-channel-attribution-tool</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/conclusion-path-to-analytics-excellence</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -865,7 +973,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/cost-benefit-analysis-platform-investment-roi</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/cross-device-attribution-tracking-the-complete-guide-to-understanding-your-customer-journey-in-2025</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/custom-report-creation-beyond-standard-templates</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/customer-acquisition-cost-calculator-free-tool-complete-guide</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -895,7 +1021,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/data-foundation-building-bi-infrastructure</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/data-privacy-and-compliance</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/data-privacy-and-compliance-considerations</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/data-privacy-compliance-attribution-software</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -919,6 +1063,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/ecommerce-business-intelligence-transform-data-competitive-advantage</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/ecommerce-conversion-funnel-analysis-advanced-strategies-for-maximizing-customer-journey-optimization-and-revenue-growth</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -931,13 +1081,13 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/essential-features-of-multi-channel-attribution-tools</loc>
+    <loc>https://trilio.ai/resources/blog-insights/essential-features-checklist-for-roas-tracking-software</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/essential-kpis-for-ecommerce-success</loc>
+    <loc>https://trilio.ai/resources/blog-insights/essential-features-of-multi-channel-attribution-tools</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -956,12 +1106,6 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/essential-shopify-analytics-metrics</loc>
-    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://trilio.ai/resources/blog-insights/essential-tiktok-analytics-metrics-for-shopify-success</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -991,6 +1135,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/free-interactive-cac-calculator</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/from-click-to-conversion-mapping-your-customer-journey-with-analytics</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1003,7 +1153,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/future-of-marketing-attribution</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/future-of-roas-tracking</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/future-proofing-your-integration-strategy</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/future-proofing-your-shopify-analytics</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1027,13 +1195,13 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/future-trends-and-emerging-technologies</loc>
+    <loc>https://trilio.ai/resources/blog-insights/future-trends-ai-powered-analytics-2025</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/future-trends-and-technological-advances</loc>
+    <loc>https://trilio.ai/resources/blog-insights/future-trends-and-emerging-technologies</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1070,6 +1238,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/future-trends-in-shopify-profit-analytics</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/hidden-costs-often-overlooked</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1117,12 +1291,6 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/identifying-underperforming-skus</loc>
-    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
     <loc>https://trilio.ai/resources/blog-insights/implementation-best-practice-for-kpis</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1136,6 +1304,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/implementation-framework-for-ecommerce-mmm</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/implementation-guide-getting-started-30-days</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1177,6 +1351,24 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/implementation-strategy-best-practices</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/implementation-strategy-getting-started-right</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/implementation-success-framework</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/implementing-ml-data-tools-and-infrastructure</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1195,7 +1387,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/industry-benchmarks-by-sector</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/industry-case-studies-and-best-practice-examples</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/industry-specific-cac-considerations</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/industry-specific-considerations</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1208,6 +1418,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/integration-best-practices-for-maximum-analytics-value</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/integration-with-existing-marketing-stack</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1231,6 +1447,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/key-bi-metrics-kpis-ecommerce-success</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/key-features-to-evaluate-in-dashboard-software</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1249,7 +1471,7 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/key-takeaways</loc>
+    <loc>https://trilio.ai/resources/blog-insights/leading-attribution-platforms-review-2025</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1291,6 +1513,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/marketing-attribution-software-2025-complete-guide</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/marketing-channel-performance</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1321,6 +1549,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/measuring-attribution-success</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/measuring-attribution-success-and-roi</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1328,6 +1562,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/measuring-cohort-analysis-success</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/measuring-roas-tracking-success</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1363,6 +1603,18 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/measuring-success-kpis-that-matter</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/mer-explained-ultimate-guide</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/mobile-analytics-and-accessibility</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1382,6 +1634,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/multi-platform-ecommerce-reporting-mastery-unifying-data-across-every-channel-for-maximum-growth</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/next-generation-features-ecommerce-analytics</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1423,7 +1681,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/platform-comparison-leading-ecommerce-bi-solutions</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/platform-specific-real-time-tracking-strategies</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/predictive-analytics-ecommerce-growth</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1453,7 +1723,25 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/real-time-intelligence-automated-decision-making</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/real-time-vs-delayed-reporting-why-speed-matters</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/real-world-example-seasonal-campaign-planning</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/reducing-cac-10-proven-strategies</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1477,7 +1765,31 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/roas-tracking-software-2025-complete-buyers-guide</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/roi-measurement-and-business-impact</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/roi-measurement-and-business-impact-analysis</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/roi-measurement-and-optimization</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/roi-optimization-techniques</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1507,7 +1819,7 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/setting-up-tiktok-pixel-integration-with-shopify</loc>
+    <loc>https://trilio.ai/resources/blog-insights/shopify-analytics-dashboard-complete-setup-optimization-guide-2025</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1520,6 +1832,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/shopify-profit-analytics-the-complete-guide-to-maximizing-store-profitability-in-2025</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/single-touch-vs-multi-touch-attribution-models</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1538,6 +1856,18 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/stage-by-stage-funnel-optimization-strategies</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/start-optimizing-your-cac-today</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/start-your-attribution-transformation-today</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1615,7 +1945,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/technology-requirements-setup-attribution-software</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/technology-solutions-for-cac-management</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/technology-stack-for-cac-optimization</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1729,7 +2071,13 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/tools-and-technology-integration</loc>
+    <loc>https://trilio.ai/resources/blog-insights/top-10-features-ecommerce-analytics-platform-must-have</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/top-8-roas-tracking-tools-compared</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1747,7 +2095,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/transform-your-shopify-analytics-today</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/troubleshooting-and-performance-optimization</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/troubleshooting-common-shopify-analytics-issues</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1831,6 +2191,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/understanding-roas-in-multi-channel-marketing</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/understanding-seasonality-in-retail</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -1873,13 +2239,25 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/what-is-real-time-ecommerce-analytics</loc>
+    <loc>https://trilio.ai/resources/blog-insights/what-is-an-ecommerce-analytics-platform</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/what-is-roas-in-ecommerce-ultimate-guide-return-on-ad-spend</loc>
+    <loc>https://trilio.ai/resources/blog-insights/what-is-customer-acquisition-cost</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/what-is-ecommerce-business-intelligence</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/what-is-real-time-ecommerce-analytics</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -1891,7 +2269,19 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/blog-insights/why-basic-shopify-analytics-arent-enough-for-growth</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/blog-insights/why-spreadsheet-based-reporting-is-killing-your-ecommerce-growth</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/blog-insights/why-traditional-roas-tracking-fails</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>

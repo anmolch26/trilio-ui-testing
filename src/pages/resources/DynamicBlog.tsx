@@ -5,18 +5,109 @@ import ThemeSection from "@/components/theme/ThemeSection";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import RouteCanonical from "@/components/RouteCanonical";
-import {
-  getBlogPostBySlug,
-  getNextBlogPost,
-  getPreviousBlogPost,
-} from "@/data/blogData.tsx";
+import "@/data/generated/ecommerceArticle.css";
 
 const DynamicBlog = () => {
   const { blogSlug } = useParams<{ blogSlug: string }>();
   const navigate = useNavigate();
-  const blogPost = getBlogPostBySlug(blogSlug || "");
 
-  if (!blogPost) {
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string | null>(null);
+  const [apiPost, setApiPost] = React.useState<
+    | {
+        id: number;
+        slug: string;
+        title: string;
+        author: string;
+        authorImage?: string;
+        category?: string;
+        date: string;
+        featuredImage?: string;
+        contentHtml: string;
+      }
+    | null
+  >(null);
+
+  const formatDate = (iso: string | null | undefined) => {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      });
+    } catch {
+      return "";
+    }
+  };
+
+  React.useEffect(() => {
+    let isMounted = true;
+    const fetchBySlug = async () => {
+      if (!blogSlug) return;
+      setLoading(true);
+      setError(null);
+      try {
+        const PAGE_LIMIT = 340;
+        let offset = 0;
+        let hasMore = true;
+        let found: any = null;
+        while (hasMore && !found) {
+          const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
+          const res = await fetch(url, {
+            method: "GET",
+            headers: { Accept: "application/json" },
+          });
+          if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+          const json = await res.json();
+          const list = (json?.data?.blogs ?? []) as Array<any>;
+          found = list.find((b) => String(b.slug) === String(blogSlug));
+          hasMore = Boolean(json?.data?.has_more);
+          offset += PAGE_LIMIT;
+          if (offset > 1000) break;
+        }
+        if (isMounted && found) {
+          setApiPost({
+            id: Number(found.id),
+            slug: String(found.slug ?? ""),
+            title: String(found.title ?? "Untitled"),
+            author: String(found.author ?? ""),
+            authorImage: String(found.author_image ?? ""),
+            category: String(found.category ?? ""),
+            date: formatDate(found.published_at),
+            featuredImage: String(found.featured_image_url ?? ""),
+            contentHtml: String(found.content_html ?? ""),
+          });
+        } else if (isMounted) {
+          setApiPost(null);
+        }
+      } catch (err: any) {
+        if (isMounted) setError(err?.message || "Failed to load blog.");
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+    fetchBySlug();
+    return () => {
+      isMounted = false;
+    };
+  }, [blogSlug]);
+
+  if (loading && !apiPost) {
+    return (
+      <PageLayout backgroundClass="bg-white">
+        <ThemeSection background="white" padding="xl" className="pt-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-4">Loading…</h1>
+            <p className="text-gray-600">Fetching blog post.</p>
+          </div>
+        </ThemeSection>
+      </PageLayout>
+    );
+  }
+
+  if (!apiPost && !loading) {
     return (
       <PageLayout backgroundClass="bg-white">
         <ThemeSection background="white" padding="xl" className="pt-24">
@@ -25,7 +116,7 @@ const DynamicBlog = () => {
               Blog Post Not Found
             </h1>
             <p className="text-gray-600 mb-8">
-              The blog post you're looking for doesn't exist.
+              {error ? error : "The blog post you're looking for doesn't exist."}
             </p>
             <Button
               onClick={() => navigate("/resources/blog-insights")}
@@ -39,8 +130,20 @@ const DynamicBlog = () => {
     );
   }
 
-  const previousPost = getPreviousBlogPost(blogPost.id);
-  const nextPost = getNextBlogPost(blogPost.id);
+  const blogPost = {
+    id: apiPost!.id,
+    slug: apiPost!.slug,
+    title: apiPost!.title,
+    author: apiPost!.author,
+    authorImage: apiPost!.authorImage || "",
+    date: apiPost!.date,
+    featuredImage: apiPost!.featuredImage || "",
+    content: apiPost!.contentHtml, // HTML string
+  };
+
+  // Note: Previous/Next navigation removed since API doesn't provide adjacent posts
+  const previousPost = undefined;
+  const nextPost = undefined;
 
   const goToPrevious = () => {
     if (previousPost) {
@@ -132,10 +235,17 @@ const DynamicBlog = () => {
               />
             </div>
 
-            {/* Blog Content - Only the unique content */}
-            <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
-              {blogPost.content}
-            </div>
+            {/* Blog Content - Support HTML from API or JSX from local */}
+            {typeof blogPost.content === "string" ? (
+              <div
+                className="ecommerce-article"
+                dangerouslySetInnerHTML={{ __html: blogPost.content }}
+              />
+            ) : (
+              <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
+                {blogPost.content}
+              </div>
+            )}
           </article>
 
           {/* Navigation */}
