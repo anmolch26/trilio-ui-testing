@@ -373,7 +373,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/resources/blog-insights/12-essential-metrics-every-shopify-store-must-track</loc>
+
+  <loc>https://trilio.ai/resources/blog-insights/12-essential-metrics-every-shopify-store-must-track</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -2288,9 +2289,11 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/blog-insights/workflow-from-data-to-forecast</loc>
+    <loc>https://trilio.ai/contact</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://trilio.ai/contact</loc>
@@ -2306,6 +2309,12 @@
   </url>
   <url>
     <loc>https://trilio.ai/industries</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/privacy-policy</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -287,6 +287,17 @@ const DynamicBlog = () => {
                     {blogPost.content}
                   </div>
                 )}
+
+                {/* CTA Button */}
+                <div className="cta-container mt-12 text-center">
+                  <a 
+                    href="https://trilio.ai/" 
+                    className="cta-button inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg"
+                  >
+                    Explore Trilio
+                    <span className="text-xl">→</span>
+                  </a>
+                </div>
               </div>
             </div>
           </article>
