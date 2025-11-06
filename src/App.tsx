@@ -14,6 +14,7 @@ import Index from "./pages/Index";
 import ContactForm from "./pages/ContactForm";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // Product pages
 import BIReporting from "./pages/products/BIReporting";
@@ -102,6 +103,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/contact-form" element={<ContactForm />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/products/bi-reporting" element={<BIReporting />} />
             <Route path="/products/insights" element={<Insights />} />
             <Route path="/products/ai-agents" element={<AIAgents />} />
