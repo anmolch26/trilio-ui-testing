@@ -31,7 +31,7 @@ const TrilioLogo: React.FC<TrilioLogoProps> = ({
         style={{
           filter: isOnWhiteBackground ? 'none' : 'brightness(0) invert(1)'
         }}
-      />
+       loading="lazy" decoding="async" />
     </div>
   );
 };

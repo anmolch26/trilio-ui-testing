@@ -41,7 +41,7 @@ const Rakuten = () => (
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Rakuten0.png"
             alt="AI-Powered Rakuten Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -65,7 +65,7 @@ const Rakuten = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/Rakuten1.png"
               alt="Rakuten Data to Business Results"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -109,7 +109,7 @@ const Rakuten = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Rakuten2.png"
             alt="AI-Powered Rakuten Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -170,7 +170,7 @@ const Rakuten = () => (
         </div>
         {/* Right: ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Rakuten3.png"
             alt="Rakuten ROI Growth & Advertising Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

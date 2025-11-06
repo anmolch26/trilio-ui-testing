@@ -36,7 +36,7 @@ const Akeneo = () => (
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-1.png"
             alt="Akeneo Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -61,7 +61,7 @@ const Akeneo = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-2.png"
               alt="Trilio Akeneo Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -105,7 +105,7 @@ const Akeneo = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-3.png"
             alt="How Trilio models Akeneo data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -167,7 +167,7 @@ const Akeneo = () => (
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-4.png"
             alt="Akeneo metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -182,7 +182,7 @@ const Akeneo = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/akeneo-5.png"
             alt="Akeneo Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

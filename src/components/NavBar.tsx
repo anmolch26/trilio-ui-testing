@@ -241,7 +241,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
                   ? "h-16 sm:h-18 md:h-20 lg:h-22 w-auto animate-fade-in"
                   : "h-14 sm:h-16 md:h-18 lg:h-20 w-auto animate-fade-in"
               }
-            />
+             loading="lazy" decoding="async" />
           ) : (
             <TrilioLogo
               isScrolled={isScrolled}

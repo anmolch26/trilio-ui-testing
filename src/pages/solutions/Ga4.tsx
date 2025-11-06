@@ -45,7 +45,7 @@ const GA4 = () => (
         </div>
         {/* Right: GA4 Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={GA4HeroNewImage}
             alt="AI-Powered GA4 Analytics Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -70,7 +70,7 @@ const GA4 = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={GA4AnalyticsNewImage}
               alt="GA4 Data to Business Results"
               className="rounded-2xl max-w-[300px] md:max-w-[400px] lg:max-w-[450px]"
@@ -115,7 +115,7 @@ const GA4 = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={GA4DataOptimizationImage}
             alt="AI-Powered GA4 Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -179,7 +179,7 @@ const GA4 = () => (
         </div>
         {/* Right: GA4 ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={GA4ROINewImage}
             alt="GA4 ROI Growth & Analytics Performance"
             className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-2xl shadow-2xl"
@@ -194,7 +194,7 @@ const GA4 = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={GA4MarketingInsightsImage}
             alt="AI-Powered GA4 Marketing Analytics Dashboard"
             className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-2xl shadow-2xl"

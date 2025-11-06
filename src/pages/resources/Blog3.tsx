@@ -35,7 +35,7 @@ const Blog3 = () => {
                     src="https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
                     alt="Om Rathod"
                     className="w-20 h-20 rounded-full object-cover mt-8"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
               </div>
             </header>
@@ -58,7 +58,7 @@ const Blog3 = () => {
                   src="/src/assests/WhatsApp Image 2025-08-05 at 17.52.32.jpeg"
                   alt="Platform Comparison Illustration"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mb-4">

@@ -39,7 +39,7 @@ const Etsy = () => (
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Etsy0.png"
             alt="AI-Powered Etsy Growth & Optimization"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -64,7 +64,7 @@ const Etsy = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/Etsy1.png"
               alt="Etsy Data to Business Results"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -108,7 +108,7 @@ const Etsy = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Etsy2.png"
             alt="AI-Powered Etsy Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -169,7 +169,7 @@ const Etsy = () => (
         </div>
         {/* Right: ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Etsy3.png"
             alt="Etsy ROI Growth & Advertising Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

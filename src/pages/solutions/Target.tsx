@@ -39,7 +39,7 @@ const Target = () => (
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Target0.png"
             alt="AI-Powered Target Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -63,7 +63,7 @@ const Target = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/Target1.png"
               alt="Target Data to Business Results"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -107,7 +107,7 @@ const Target = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Target2.png"
             alt="AI-Powered Target Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -168,7 +168,7 @@ const Target = () => (
         </div>
         {/* Right: ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Target3.png"
             alt="Target ROI Growth & Advertising Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

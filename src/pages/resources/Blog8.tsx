@@ -35,7 +35,7 @@ const Blog8 = () => {
                     src="https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
                     alt="Om Rathod"
                     className="w-20 h-20 rounded-full object-cover mt-8"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
               </div>
             </header>
@@ -58,7 +58,7 @@ const Blog8 = () => {
                   src="/src/assests/WhatsApp Image 2025-08-05 at 18.29.51.jpeg"
                   alt="Industry-Specific Considerations"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <h2>Case Study 1: Fashion Retailer - 40% ROAS Improvement</h2>

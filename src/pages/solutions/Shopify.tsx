@@ -42,7 +42,7 @@ const Shopify = () => (
         </div>
         {/* Right: Shopify Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={ShopifyHeroImage}
             alt="AI-Powered Shopify Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -67,7 +67,7 @@ const Shopify = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Shopify Analytics Dashboard */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={ShopifyAnalyticsDashboard}
               alt="AI-Driven Shopify Analytics Dashboard with Sales, Customers, and Predictive Insights"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -111,7 +111,7 @@ const Shopify = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Shopify Campaign Optimization Interface */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={ShopifyCampaignOptimization}
             alt="AI-Powered Shopify Campaign Optimization Interface with Performance Forecast and Budget Allocation"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -175,7 +175,7 @@ const Shopify = () => (
         </div>
         {/* Right: Shopify ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={ShopifyROIImage}
             alt="Shopify ROI Growth & Marketing Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -190,7 +190,7 @@ const Shopify = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={ShopifyInsightsImage}
             alt="AI-Powered Shopify Marketing Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

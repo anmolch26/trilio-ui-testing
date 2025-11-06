@@ -35,7 +35,7 @@ const Tableau = () => (
         </div>
         {/* Right: Hero Image (from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Tableau0.png"
             alt="AI-Powered Tableau Dashboards & Reporting"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -59,7 +59,7 @@ const Tableau = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image (from public) */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/Tableau1.jpg"
               alt="Tableau Analytics and Business Results"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -103,7 +103,7 @@ const Tableau = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Tableau2.png"
             alt="AI-Powered Tableau Data Modeling and Dashboards"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -164,7 +164,7 @@ const Tableau = () => (
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Tableau3.png"
             alt="Embedded Analytics and ROI"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -179,7 +179,7 @@ const Tableau = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Tableau4.png"
             alt="Data-Driven Tableau Insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

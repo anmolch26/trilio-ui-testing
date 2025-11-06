@@ -36,7 +36,7 @@ const Stripe = () => (
         </div>
         {/* Right: Hero Image (placeholder from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-1.png"
             alt="Stripe + Trilio Integration"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -60,7 +60,7 @@ const Stripe = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image (from public) */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-2.png"
               alt="Stripe data sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -104,7 +104,7 @@ const Stripe = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-3.png"
             alt="How Trilio models Stripe"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -165,7 +165,7 @@ const Stripe = () => (
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/stripe-4.png"
             alt="Stripe metrics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

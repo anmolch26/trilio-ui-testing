@@ -94,7 +94,7 @@ const LeadershipTeam = () => {
                     }
                     alt={leader.name}
                     className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
                 {/* Text */}
                 <div className="flex-1 flex flex-col justify-center text-center md:text-left">

@@ -367,7 +367,7 @@ const DataIntegrations = () => {
                                 {integration.logo}
                               </span>
                             ) : (
-                              <img
+                              <img loading="lazy" decoding="async"
                                 src={integration.logo}
                                 alt={integration.name + " logo"}
                                 className="h-12 w-12 object-contain drop-shadow-sm"

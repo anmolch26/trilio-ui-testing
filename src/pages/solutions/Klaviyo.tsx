@@ -35,7 +35,7 @@ const Klaviyo = () => (
         </div>
         {/* Right: Hero Image (placeholder from public) */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Klaviyo0.png"
             alt="Klaviyo Email and SMS Marketing"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -59,7 +59,7 @@ const Klaviyo = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/Klaviyo1.png"
               alt="Klaviyo Lifecycle Marketing"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -103,7 +103,7 @@ const Klaviyo = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Klaviyo2.png"
             alt="Klaviyo Segments and Flows"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -163,7 +163,7 @@ const Klaviyo = () => (
         </div>
         {/* Right: Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Klaviyo3.png"
             alt="Lifecycle ROI and Automation"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -178,7 +178,7 @@ const Klaviyo = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/Klaviyo4.png"
             alt="Klaviyo Analytics and Insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

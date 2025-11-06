@@ -36,7 +36,7 @@ const FreshDesk = () => (
         </div>
         {/* Right: Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-1.png"
             alt="Freshdesk Integration with Trilio"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -60,7 +60,7 @@ const FreshDesk = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-2.png"
               alt="Trilio Freshdesk Data Sync"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -104,7 +104,7 @@ const FreshDesk = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-3.png"
             alt="How Trilio models Freshdesk data"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -165,7 +165,7 @@ const FreshDesk = () => (
         </div>
         {/* Right: Visualization */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-4.png"
             alt="Freshdesk metrics and KPIs"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -180,7 +180,7 @@ const FreshDesk = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/data-integrations/freshdesk-5.png"
             alt="Freshdesk Analytics"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

@@ -44,7 +44,7 @@ const Meta = () => (
         </div>
         {/* Right: Meta Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={MetaHeroImage}
             alt="AI-Powered Meta Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -69,7 +69,7 @@ const Meta = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={MetaAnalyticsInsightsImage}
               alt="AI-Driven Meta Analytics & Performance Insights"
               className="rounded-2xl max-w-[300px] md:max-w-[400px] lg:max-w-[450px]"
@@ -113,7 +113,7 @@ const Meta = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Campaign Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MetaAnalyticsCampaignImage}
             alt="AI-Powered Meta Analytics & Campaign Optimization"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -178,7 +178,7 @@ const Meta = () => (
         </div>
         {/* Right: Meta ROI Boost Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MetaROIBoostImage}
             alt="Boosting Meta ROI with Creative & Advertising"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -193,7 +193,7 @@ const Meta = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Data-Driven Marketing Insights Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MetaMarketingInsightsImage}
             alt="Data-Driven Meta Marketing Insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

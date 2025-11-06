@@ -17,7 +17,7 @@ const LegacyFooter = () => {
                 src={TrilioLogoFooter}
                 alt="Trilio Logo"
                 className="w-10 h-10 object-contain mr-2"
-              />
+               loading="lazy" decoding="async" />
               <span className="text-xl font-semibold text-black">
                 Trilio.ai
               </span>

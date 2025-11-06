@@ -7,4 +7,6 @@ export { default as CTA } from './CTA';
 export { default as ContactFormComponent } from './ContactFormComponent';
 export { default as ProductHero } from './ProductHero';
 export { default as ProductCTA } from './ProductCTA';
-export { default as FeatureGrid } from './FeatureGrid'; 
+export { default as FeatureGrid } from './FeatureGrid';
+export { Breadcrumb, generateBreadcrumbJsonLd } from './Breadcrumb';
+export { BlogSidebar } from './BlogSidebar'; 
