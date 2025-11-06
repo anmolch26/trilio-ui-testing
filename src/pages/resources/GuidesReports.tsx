@@ -170,6 +170,8 @@ const GuidesReports = () => {
                     filteredResources.find((resource) => resource.featured)
                       ?.title
                   }
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-64 md:h-full object-cover"
                 />
               </div>
@@ -232,7 +234,7 @@ const GuidesReports = () => {
                     src={resource.image}
                     alt={resource.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                   loading="lazy" decoding="async" />
                   <div className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
                     {getIcon(resource.type)}
                   </div>

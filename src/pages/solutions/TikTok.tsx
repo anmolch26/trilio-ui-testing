@@ -40,7 +40,7 @@ const TikTok = () => (
         </div>
         {/* Right: TikTok Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={TikTokHeroImage}
             alt="TikTok Success and Growth"
             className="w-[400px] h-[400px] object-contain border-0"
@@ -66,7 +66,7 @@ const TikTok = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={TikTokInfographic}
               alt="TikTok Success Stories Infographic"
               className="rounded-2xl shadow-xl max-w-xs md:max-w-sm lg:max-w-md"
@@ -109,7 +109,7 @@ const TikTok = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={TikTokShopVisual}
             alt="TikTok Shop with AI Integration"
             className="rounded-2xl shadow-xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -176,7 +176,7 @@ const TikTok = () => (
         </div>
         {/* Right: TikTok Marketing Partner Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={TikTokSocialROI}
             alt="TikTok Social ROI Illustration"
             className="rounded-2xl max-w-[330px] md:max-w-[450px] lg:max-w-[400px]"
@@ -190,7 +190,7 @@ const TikTok = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={TikTokAnalytics}
             alt="TikTok Analytics and Business Results"
             className="rounded-2xl max-w-[250px] md:max-w-[300px] lg:max-w-[350px]"

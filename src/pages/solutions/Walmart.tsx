@@ -44,7 +44,7 @@ const Walmart = () => (
         </div>
         {/* Right: Walmart Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={WalmartHeroImage}
             alt="AI-Powered Walmart Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -69,7 +69,7 @@ const Walmart = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={WalmartAnalyticsInsightsImage}
               alt="AI-Driven Walmart Analytics & Performance Insights"
               className="rounded-2xl max-w-[300px] md:max-w-[400px] lg:max-w-[450px]"
@@ -113,7 +113,7 @@ const Walmart = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Marketplace Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WalmartAnalyticsMarketplaceImage}
             alt="AI-Powered Walmart Analytics & Marketplace Optimization"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -179,7 +179,7 @@ const Walmart = () => (
         </div>
         {/* Right: Walmart ROI Boost Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WalmartROIBoostImage}
             alt="Boosting Walmart ROI with Marketplace & Advertising"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -194,7 +194,7 @@ const Walmart = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Data-Driven Marketing Insights Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WalmartMarketingInsightsImage}
             alt="Data-Driven Walmart Marketing Insights"
             className="max-w-full h-auto"

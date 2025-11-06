@@ -41,7 +41,7 @@ const MailChimp = () => (
         </div>
         {/* Right: MailChimp Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={MailChimpHeroImage}
             alt="AI-Powered MailChimp Solutions"
             className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] ml-32"
@@ -66,7 +66,7 @@ const MailChimp = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={MailChimpAnalyticsImage}
               alt="AI-Powered MailChimp Analytics Dashboard"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -111,7 +111,7 @@ const MailChimp = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MailChimpOptimizationNewImage}
             alt="AI-Powered MailChimp Analytics & Email Optimization"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -175,7 +175,7 @@ const MailChimp = () => (
         </div>
         {/* Right: MailChimp ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MailChimpROIImage}
             alt="Boosting MailChimp ROI with Advanced Analytics"
             className="max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-2xl shadow-2xl"
@@ -190,7 +190,7 @@ const MailChimp = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={MailChimpInsightsImage}
             alt="Data-Driven MailChimp Email Insights"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

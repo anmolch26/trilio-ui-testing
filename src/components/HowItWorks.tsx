@@ -151,7 +151,7 @@ const HowItWorks = () => {
                   src={step.image}
                   alt={step.title}
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/70 to-transparent">
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <span className="text-pulse-400 font-medium mb-2 block">{step.number}</span>

@@ -43,7 +43,7 @@ const AmazonAds = () => (
         </div>
         {/* Right: Amazon Ads Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={AmazonAdsHeroImage}
             alt="AI-Powered Amazon Ads Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -68,7 +68,7 @@ const AmazonAds = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={AmazonAdsSuccessStoriesImage}
               alt="Amazon Ads Success Stories and Data Disruption"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -112,7 +112,7 @@ const AmazonAds = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Driven Expertise Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={AmazonAdsAIExpertiseImage}
             alt="AI-Powered Amazon Ads Advertising Expertise"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -178,7 +178,7 @@ const AmazonAds = () => (
         </div>
         {/* Right: Amazon Ads ROI Boost Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={AmazonAdsROIBoostImage}
             alt="Boosting Amazon Ads ROI with Creative & Advertising"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -193,7 +193,7 @@ const AmazonAds = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={AmazonAdsInsightsImage}
             alt="AI-Powered Amazon Ads Marketing Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

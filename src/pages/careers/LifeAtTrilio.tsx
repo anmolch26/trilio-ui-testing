@@ -167,7 +167,7 @@ const LifeAtTrilio = () => {
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-full h-full object-cover"
-                        />
+                         loading="lazy" decoding="async" />
                       </div>
                       <div>
                         <p className="text-sm text-gray-600">
@@ -196,21 +196,21 @@ const LifeAtTrilio = () => {
                   src="https://assets.channeliq.ai/trilio-landing/team-members/Abhishek+(2).jpg"
                   alt="Abhishek"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://assets.channeliq.ai/trilio-landing/team-members/Anmol.JPG"
                   alt="Anmol"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://assets.channeliq.ai/trilio-landing/team-members/Amey.jpg"
                   alt="Amey"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

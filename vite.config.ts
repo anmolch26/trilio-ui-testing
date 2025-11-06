@@ -27,6 +27,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     sourcemap: true, // Enable source maps for bundle analysis
+    cssCodeSplit: true, // Split CSS for better caching
     rollupOptions: {
       output: {
         manualChunks: {
@@ -42,8 +43,24 @@ export default defineConfig(({ mode }) => ({
           charts: ["recharts"],
           motion: ["framer-motion"],
         },
+        // Optimize asset file names for better caching
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
+          const info = assetInfo.name.split(".");
+          const ext = info[info.length - 1];
+          if (/css/i.test(ext)) {
+            return `assets/css/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
       },
     },
-    assetsInlineLimit: 2048,
+    assetsInlineLimit: 4096, // Inline smaller assets to reduce requests
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console logs in production
+      },
+    },
   },
 }));

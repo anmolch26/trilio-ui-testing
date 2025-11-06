@@ -215,7 +215,7 @@ const InterviewProcess = () => {
                       src="/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg"
                       alt="Sarah Kim"
                       className="w-full h-full object-cover"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                   <div>
                     <blockquote className="text-lg text-gray-700 italic mb-4">

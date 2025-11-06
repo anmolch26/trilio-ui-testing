@@ -35,7 +35,7 @@ const Blog9 = () => {
                     src="https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
                     alt="Om Rathod"
                     className="w-20 h-20 rounded-full object-cover mt-8"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
               </div>
             </header>
@@ -58,7 +58,7 @@ const Blog9 = () => {
                   src="/src/assests/Return-on-investment-ROI.webp"
                   alt="Cost-Benefit Analysis ROI"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <h2>Fashion and Apparel</h2>

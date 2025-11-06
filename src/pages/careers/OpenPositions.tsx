@@ -454,7 +454,7 @@ const OpenPositions = () => {
                       src="https://assets.channeliq.ai/invictus-landing/Leadership/Harika.png"
                       alt="Harika"
                       className="w-full h-full object-cover"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                   <div>
                     <blockquote className="text-lg text-gray-700 italic mb-4">

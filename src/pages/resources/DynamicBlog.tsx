@@ -5,6 +5,8 @@ import ThemeSection from "@/components/theme/ThemeSection";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import RouteCanonical from "@/components/RouteCanonical";
+import { Breadcrumb, generateBreadcrumbJsonLd } from "@/components/Breadcrumb";
+import { BlogSidebar } from "@/components/BlogSidebar";
 import "@/data/generated/ecommerceArticle.css";
 
 const DynamicBlog = () => {
@@ -205,13 +207,37 @@ const DynamicBlog = () => {
           />
         );
       })()}
+      {/* Breadcrumb JSON-LD for rich results */}
+      {(() => {
+        const origin = typeof window !== "undefined" ? window.location.origin : "https://trilio.ai";
+        const breadcrumbItems = [
+          { label: "Blog Insights", href: "/resources/blog-insights" },
+          { label: "Blog Post" },
+        ];
+        const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbItems, origin);
+        return (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+          />
+        );
+      })()}
       <ThemeSection background="white" padding="xl" className="pt-24">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
+          {/* Breadcrumb Navigation */}
+          <Breadcrumb
+            items={[
+              { label: "Blog Insights", href: "/resources/blog-insights" },
+              { label: "Blog Post" },
+            ]}
+            className="mb-6"
+          />
+          
           {/* Blog Post */}
           <article className="mb-16">
             {/* Blog Header - Generic Structure */}
 
-            <header className="mb-8">
+            <header className="mb-8 max-w-4xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 {blogPost.title}
               </h1>
@@ -226,6 +252,8 @@ const DynamicBlog = () => {
                 <span>{blogPost.date}</span>
               </div>
             </header>
+            
+            {/* Featured Image - Full Width, Above Everything */}
             <div className="mb-8">
               <img
                 src={blogPost.featuredImage}
@@ -235,17 +263,32 @@ const DynamicBlog = () => {
               />
             </div>
 
-            {/* Blog Content - Support HTML from API or JSX from local */}
-            {typeof blogPost.content === "string" ? (
-              <div
-                className="ecommerce-article"
-                dangerouslySetInnerHTML={{ __html: blogPost.content }}
-              />
-            ) : (
-              <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
-                {blogPost.content}
+            {/* Two-column layout: Sidebar on left, Content on right - Starting from text */}
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Left Sidebar - Starts aligned with content text */}
+              <aside className="lg:w-80 flex-shrink-0 lg:mt-24">
+                <div className="lg:sticky lg:top-24">
+                  <BlogSidebar 
+                    blogTitle={blogPost.title}
+                    blogUrl={`https://trilio.ai/resources/blog-insights/${blogPost.slug}`}
+                  />
+                </div>
+              </aside>
+
+              {/* Right Column - Blog Content */}
+              <div className="flex-1 min-w-0">
+                {typeof blogPost.content === "string" ? (
+                  <div
+                    className="ecommerce-article"
+                    dangerouslySetInnerHTML={{ __html: blogPost.content }}
+                  />
+                ) : (
+                  <div className="prose prose-lg max-w-none text-black prose-headings:text-black prose-headings:font-bold prose-h2:mb-4 prose-h3:mb-3 prose-p:text-black prose-p:mb-4 prose-li:text-black">
+                    {blogPost.content}
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </article>
 
           {/* Navigation */}

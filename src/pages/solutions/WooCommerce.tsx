@@ -44,7 +44,7 @@ const WooCommerce = () => (
         </div>
         {/* Right: WooCommerce Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={WooCommerceHeroImage}
             alt="AI-Powered WooCommerce Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl ml-32"
@@ -69,7 +69,7 @@ const WooCommerce = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={WooCommerceAnalyticsInsightsImage}
               alt="AI-Driven WooCommerce Analytics & Performance Insights"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -113,7 +113,7 @@ const WooCommerce = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WooCommerceNewImage}
             alt="AI-Powered WooCommerce Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -177,7 +177,7 @@ const WooCommerce = () => (
         </div>
         {/* Right: WooCommerce ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WooCommerceROINewImage}
             alt="WooCommerce ROI Growth & Store Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -192,7 +192,7 @@ const WooCommerce = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={WooCommerceInsightsNewImage}
             alt="AI-Powered WooCommerce Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

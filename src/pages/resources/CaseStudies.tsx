@@ -95,7 +95,7 @@ const CaseStudies = () => {
                       src={study.logo}
                       alt={study.company}
                       className="h-12 w-12 rounded-lg object-cover"
-                    />
+                     loading="lazy" decoding="async" />
                     <Badge variant="outline">{study.industry}</Badge>
                   </div>
                   <CardTitle className="text-xl group-hover:text-purple-600 transition-colors duration-200">

@@ -40,7 +40,7 @@ const BestBuy = () => (
         </div>
         {/* Right: Best Buy Hero Image */}
         <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/Blogs/BestBuy0.png"
             alt="AI-Powered Best Buy Marketing Solutions"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -65,7 +65,7 @@ const BestBuy = () => (
         <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
           {/* Left: Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://assets.channeliq.ai/trilio-landing/Blogs/Bestbuy1.png"
               alt="Best Buy Data to Business Results"
               className="rounded-2xl max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
@@ -109,7 +109,7 @@ const BestBuy = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: Analytics Dashboard Image */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/Blogs/BestBuy2.png"
             alt="AI-Powered Best Buy Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -173,7 +173,7 @@ const BestBuy = () => (
         </div>
         {/* Right: Best Buy ROI Infographic */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/Blogs/BestBuy4.png"
             alt="Best Buy ROI Growth & Advertising Performance"
             className="max-w-full h-auto rounded-2xl shadow-2xl"
@@ -188,7 +188,7 @@ const BestBuy = () => (
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: AI-Powered Analytics Visual */}
         <div className="flex-1 flex justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src="https://assets.channeliq.ai/trilio-landing/Blogs/BestBuy5.png"
             alt="AI-Powered Best Buy Marketing Analytics Dashboard"
             className="max-w-full h-auto rounded-2xl shadow-2xl"

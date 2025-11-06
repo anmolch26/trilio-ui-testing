@@ -8,11 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Load Google Fonts (moved from CSS for better performance) -->
+    <!-- Load Google Fonts asynchronously to avoid render blocking -->
     <link 
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
+        rel="stylesheet"
+      />
+    </noscript>
     
     <!-- Performance hints for other resources -->
     <link rel="preconnect" href="https://staging.trilio.ai" crossorigin />
@@ -123,6 +131,7 @@
     
     <!-- Ahrefs Analytics -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="qLwwPnxVx5zB3Cl+tQOdQA" async></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="X0xQWh7ytdoGoI5YcAkHlg" async></script>
   </head>
 
   <body>

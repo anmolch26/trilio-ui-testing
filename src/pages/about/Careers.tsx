@@ -269,7 +269,7 @@ const Careers = () => {
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-full h-full object-cover"
-                        />
+                         loading="lazy" decoding="async" />
                       </div>
                       <div>
                         <p className="font-semibold">{testimonial.name}</p>

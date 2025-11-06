@@ -35,7 +35,7 @@ const Blog11 = () => {
                     src="https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg"
                     alt="Om Rathod"
                     className="w-20 h-20 rounded-full object-cover mt-8"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
               </div>
             </header>
@@ -58,7 +58,7 @@ const Blog11 = () => {
                   src="/lovable-uploads/c3d810f5-fda3-4321-a497-5f5483a0ece2.png"
                   alt="Next-Generation Features"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <p className="text-xl text-gray-700 mb-8">
