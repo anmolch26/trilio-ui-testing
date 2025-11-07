@@ -73,19 +73,17 @@ const LeadershipTeam = () => {
         </div>
       </section>
 
-      {/* Leaders Horizontal Cards with Alternating Sides */}
+      {/* Leaders Cards Side by Side */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {leaders.map((leader, index) => (
               <div
                 key={leader.name || index}
-                className={`flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl p-8 gap-10 ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
+                className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-8"
               >
                 {/* Image */}
-                <div className="flex-shrink-0 w-full md:w-[380px] h-[340px] flex items-center justify-center">
+                <div className="w-[340px] h-[340px] flex items-center justify-center mb-6 overflow-hidden rounded-full">
                   <img
                     src={
                       index === 0
@@ -93,18 +91,18 @@ const LeadershipTeam = () => {
                         : "https://assets.channeliq.ai/invictus-landing/Leadership/IMG_7723_PhotoGrid (1).png"
                     }
                     alt={leader.name}
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
+                    className="w-full h-full object-cover"
                    loading="lazy" decoding="async" />
                 </div>
                 {/* Text */}
-                <div className="flex-1 flex flex-col justify-center text-center md:text-left">
-                  <h2 className="text-4xl font-extrabold text-gray-900 mb-2">
+                <div className="flex flex-col justify-center text-center">
+                  <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
                     {leader.name}
                   </h2>
-                  <h3 className="text-2xl font-semibold text-blue-600 mb-4">
+                  <h3 className="text-xl font-semibold text-blue-600 mb-4">
                     {leader.title}
                   </h3>
-                  <p className="text-lg text-gray-700">{leader.bio}</p>
+                  <p className="text-base text-gray-700">{leader.bio}</p>
                 </div>
               </div>
             ))}

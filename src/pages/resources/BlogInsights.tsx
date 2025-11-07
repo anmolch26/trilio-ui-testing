@@ -28,6 +28,16 @@ const BlogInsights = () => {
     image: string;
     summary: string;
   }>>([]);
+  const [trendingBlog, setTrendingBlog] = useState<{
+    id: number;
+    slug: string;
+    title: string;
+    author: string;
+    category: string;
+    date: string;
+    image: string;
+    summary: string;
+  } | null>(null);
 
   const formatDate = (iso: string | null | undefined) => {
     if (!iso) return "";
@@ -77,6 +87,15 @@ const BlogInsights = () => {
         summary: String(b.title ?? ""),
       }));
       setBlogPosts(mapped);
+      
+      // Find trending blog (Black Friday/Cyber Monday Preparedness)
+      const trending = mapped.find((b) => 
+        b.title.toLowerCase().includes("black friday") || 
+        b.title.toLowerCase().includes("cyber monday")
+      );
+      if (trending) {
+        setTrendingBlog(trending);
+      }
     } catch (err: any) {
       setError(err?.message || "Failed to load blogs.");
     } finally {
@@ -203,14 +222,45 @@ const BlogInsights = () => {
     <PageLayout>
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Explore What We're Thinking
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Product updates, best practices, and e-commerce strategy from the
-            Trilio team.
-          </p>
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Explore What We're Thinking
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              Product updates, best practices, and e-commerce strategy from the
+              Trilio team.
+            </p>
+          </div>
+
+          {/* Trending Blog Card */}
+          {trendingBlog && (
+            <div className="max-w-6xl mx-auto">
+              <Link to={`/resources/blog-insights/${trendingBlog.slug}`} className="block">
+                <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
+                  {/* Background Image */}
+                  <img
+                    src={trendingBlog.image}
+                    alt={trendingBlog.title}
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
+                      {trendingBlog.title}
+                    </h2>
+                    <div className="flex items-center gap-3 text-sm text-white/80">
+                      <span>{trendingBlog.date}</span>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
