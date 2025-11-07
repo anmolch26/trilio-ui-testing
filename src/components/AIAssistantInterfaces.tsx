@@ -15,6 +15,9 @@ const AIAssistantInterface = () => {
   const [currentText, setCurrentText] = useState("");
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [userMessage, setUserMessage] = useState("");
+  const [showReply, setShowReply] = useState(false);
+  const [submittedMessage, setSubmittedMessage] = useState("");
 
   // Add custom CSS for glowing animation
   useEffect(() => {
@@ -89,6 +92,35 @@ const AIAssistantInterface = () => {
     }
   }, [currentText, currentSentenceIndex, isDeleting, sentences]);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (userMessage.trim()) {
+      setSubmittedMessage(userMessage);
+      setShowReply(true);
+      setUserMessage("");
+      
+      // Hide reply after 5 seconds
+      setTimeout(() => {
+        setShowReply(false);
+        setSubmittedMessage("");
+      }, 5000);
+    }
+  };
+
+  const handleSendClick = () => {
+    if (userMessage.trim()) {
+      setSubmittedMessage(userMessage);
+      setShowReply(true);
+      setUserMessage("");
+      
+      // Hide reply after 5 seconds
+      setTimeout(() => {
+        setShowReply(false);
+        setSubmittedMessage("");
+      }, 5000);
+    }
+  };
+
   return (
     <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200/10 w-full max-w-4xl mx-auto">
       {/* Background Color */}
@@ -127,29 +159,58 @@ const AIAssistantInterface = () => {
           </p>
         </div>
 
-        {/* Message Input Area */}
-        <div className="mt-auto">
-          <div className="relative group">
-            <input
-              type="text"
-              placeholder={currentText}
-              className="w-full bg-transparent backdrop-blur-sm rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none transition-all duration-500 focus:ring-2 focus:ring-blue-400/30 glow-animation"
-              style={{
-                border: "2px solid rgba(96, 132, 255, 0.5)",
-              }}
-            />
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-              <button className="text-gray-400 hover:text-gray-300">
-                <Mic size={16} />
-              </button>
-              <button className="text-gray-400 hover:text-gray-300">
-                <Paperclip size={16} />
-              </button>
-              <button className="text-gray-400 hover:text-gray-300">
-                <Send size={16} />
-              </button>
+        {/* Chat Messages Area */}
+        {showReply && (
+          <div className="mb-4 space-y-3 flex-grow overflow-y-auto max-h-[200px]">
+            {/* User Message */}
+            <div className="flex justify-end">
+              <div className="bg-blue-600 rounded-2xl px-4 py-2 max-w-[80%]">
+                <p className="text-white text-sm">{submittedMessage}</p>
+              </div>
+            </div>
+            
+            {/* Wingman Reply */}
+            <div className="flex justify-start">
+              <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl px-4 py-2 max-w-[80%] border border-gray-600/30">
+                <p className="text-white text-sm">
+                  Your data just got a wingman. Let's turn numbers into growth! 🚀✨
+                </p>
+              </div>
             </div>
           </div>
+        )}
+
+        {/* Message Input Area */}
+        <div className="mt-auto">
+          <form onSubmit={handleSubmit}>
+            <div className="relative group">
+              <input
+                type="text"
+                value={userMessage}
+                onChange={(e) => setUserMessage(e.target.value)}
+                placeholder={currentText}
+                className="w-full bg-transparent backdrop-blur-sm rounded-2xl px-4 py-3 pr-32 text-white placeholder-gray-400 focus:outline-none transition-all duration-500 focus:ring-2 focus:ring-blue-400/30 glow-animation"
+                style={{
+                  border: "2px solid rgba(96, 132, 255, 0.5)",
+                }}
+              />
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                <button type="button" className="text-gray-400 hover:text-gray-300 transition-colors">
+                  <Mic size={16} />
+                </button>
+                <button type="button" className="text-gray-400 hover:text-gray-300 transition-colors">
+                  <Paperclip size={16} />
+                </button>
+                <button 
+                  type="submit"
+                  onClick={handleSendClick}
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
+                  <Send size={16} />
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
 
         {/* Suggested Prompts */}

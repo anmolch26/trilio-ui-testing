@@ -25,7 +25,7 @@ const BIReporting = () => {
     secondaryButtonText: "Start Free Trial",
     // secondaryButtonLink: "https://staging.trilio.ai/register",
     heroImage:
-      "https://assets.channeliq.ai/trilio-landing/products/BiReport.png",
+      "https://assets.channeliq.ai/trilio-landing/Blogs/BiReporting.png",
     heroImageAlt: "Multi-tab Excel export with dashboard and SKU breakdown",
     gradientColors: "bg-gradient-to-br from-orange-500/20 to-purple-600/20",
   };
