@@ -31,10 +31,12 @@ const PerformanceMarketers = () => {
                 Budget optimization, creative testing, and SKU‑level ROI
                 insights for performance marketers who demand precision.
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                Launch Attribution Lab
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/contact-form?type=attribution-lab">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                  Launch Attribution Lab
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="space-y-4">
@@ -202,19 +204,13 @@ const PerformanceMarketers = () => {
             attribution
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact-form">
+            <Link to="/contact-form?type=attribution-lab">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
                 Launch Attribution Lab
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button
-              variant="outline"
-              className="border-white text-black hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              Enable Auto‑Budgeting
-              <Zap className="ml-2 w-5 h-5" />
-            </Button>
+           
           </div>
         </div>
       </section>

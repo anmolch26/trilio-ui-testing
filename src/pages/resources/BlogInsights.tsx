@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import LeadershipTeam from "../about/LeadershipTeam";
+import { Navbar } from "@/components";
+import LegacyFooter from "@/components/LegacyFooter";
 
 const BlogInsights = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -87,10 +90,10 @@ const BlogInsights = () => {
         summary: String(b.title ?? ""),
       }));
       setBlogPosts(mapped);
-      
+
       // Find trending blog (Black Friday/Cyber Monday Preparedness)
-      const trending = mapped.find((b) => 
-        b.title.toLowerCase().includes("black friday") || 
+      const trending = mapped.find((b) =>
+        b.title.toLowerCase().includes("black friday") ||
         b.title.toLowerCase().includes("cyber monday")
       );
       if (trending) {
@@ -181,7 +184,7 @@ const BlogInsights = () => {
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = 5;
-    
+
     if (totalPages <= maxVisiblePages) {
       // Show all pages if total pages is less than or equal to max visible pages
       for (let i = 1; i <= totalPages; i++) {
@@ -214,57 +217,57 @@ const BlogInsights = () => {
         pageNumbers.push(totalPages);
       }
     }
-    
+
     return pageNumbers;
   };
 
   return (
-    <PageLayout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Explore What We're Thinking
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Product updates, best practices, and e-commerce strategy from the
-              Trilio team.
-            </p>
-          </div>
-
-          {/* Trending Blog Card */}
-          {trendingBlog && (
-            <div className="max-w-6xl mx-auto">
-              <Link to={`/resources/blog-insights/${trendingBlog.slug}`} className="block">
-                <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
-                  {/* Background Image */}
-                  <img
-                    src={trendingBlog.image}
-                    alt={trendingBlog.title}
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  
-                  {/* Content Overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
-                      {trendingBlog.title}
-                    </h2>
-                    <div className="flex items-center gap-3 text-sm text-white/80">
-                      <span>{trendingBlog.date}</span>
-                    </div>
-                  </div>
-                </Card>
-              </Link>
+    <div className="h-screen">
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                Explore What We're Thinking
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Product updates, best practices, and e-commerce strategy from the
+                Trilio team.
+              </p>
             </div>
-          )}
-        </div>
-      </section>
 
-      <div className="pt-12 pb-16 bg-white">
+            {/* Trending Blog Card */}
+            {trendingBlog && (
+              <div className="max-w-6xl mx-auto">
+                <Link to={`/resources/blog-insights/${trendingBlog.slug}`} className="block">
+                  <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
+                    {/* Background Image */}
+                    <img
+                      src={trendingBlog.image}
+                      alt={trendingBlog.title}
+                      className="absolute inset-0 w-full h-full object-cover object-top"
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    {/* Content Overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
+                        {trendingBlog.title}
+                      </h2>
+                      <div className="flex items-center gap-3 text-sm text-white/80">
+                        <span>{trendingBlog.date}</span>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              </div>
+            )}
+          </div>
+        </section>
+          
+        <div className="pt-12 pb-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Sidebar - Categories */}
@@ -443,8 +446,10 @@ const BlogInsights = () => {
             </div>
           </div>
         </div>
+        </div>
+        <LegacyFooter />
       </div>
-    </PageLayout>
+    </div>
   );
 };
 

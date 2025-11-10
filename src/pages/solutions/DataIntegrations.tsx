@@ -288,7 +288,7 @@ const DataIntegrations = () => {
               <ThemeButton
                 variant="primary"
                 size="sm"
-                href="/contact-form"
+                href="/integration-request"
                 showArrow
                 className="flex-shrink-0"
               >

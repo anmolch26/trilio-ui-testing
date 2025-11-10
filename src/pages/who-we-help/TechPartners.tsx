@@ -32,10 +32,12 @@ const TechPartners = () => {
                 Integration guides, partner portal, and joint go‑to‑market
                 support for technology partners building with Trilio.
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                Apply for Partner Program
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/contact-form?type=partner-program">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                  Apply for Partner Program
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="space-y-4">
@@ -242,19 +244,19 @@ const TechPartners = () => {
             Join our partner ecosystem and unlock new revenue opportunities
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact-form">
+            <Link to="/contact-form?type=partner-program">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
                 Apply for Partner Program
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button
+            {/* <Button
               variant="outline"
               className="border-white text-black hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
             >
               Join Partner Program
               <Users className="ml-2 w-5 h-5" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

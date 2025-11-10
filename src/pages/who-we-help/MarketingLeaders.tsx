@@ -31,10 +31,12 @@ const MarketingLeaders = () => {
                 ROAS, CAC & conversion funnels for Facebook, Google, Amazon &
                 Shopify—one source of truth.
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                See Marketing Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/contact-form?type=marketing-demo">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                  See Marketing Demo
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="space-y-4">
@@ -200,7 +202,7 @@ const MarketingLeaders = () => {
             See which channels really drive revenue, not just clicks
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact-form">
+            <Link to="/contact-form?type=marketing-demo">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
                 See Marketing Demo
                 <ArrowRight className="ml-2 w-5 h-5" />

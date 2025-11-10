@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 
 // Core pages
 import ContactForm from "./pages/ContactForm";
+import IntegrationRequest from "./pages/IntegrationRequest";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -102,6 +103,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/contact-form" element={<ContactForm />} />
+              <Route path="/integration-request" element={<IntegrationRequest />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/products/bi-reporting" element={<BIReporting />} />

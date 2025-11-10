@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/NavBar';
 import LegacyFooter from "@/components/LegacyFooter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -184,10 +185,12 @@ const CaseStudies = () => {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Book a demo to learn how Trilio can help you achieve similar results.
           </p>
-          <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 text-lg">
-            Book a Demo
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/contact-form?type=book-demo">
+            <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 text-lg">
+              Book a Demo
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
