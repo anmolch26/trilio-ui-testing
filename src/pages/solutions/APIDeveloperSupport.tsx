@@ -242,7 +242,7 @@ const APIDeveloperSupport = () => {
             APIs into your applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ThemeButton variant="secondary" size="lg" href="/contact-form">
+            <ThemeButton variant="secondary" size="lg" href="/resources/developer-docs">
               Access Developer Docs
             </ThemeButton>
             <ThemeButton

@@ -374,61 +374,62 @@ const DataDictionary: React.FC = () => {
     navigate(`/resources/data-dictionary/${slug}`, { replace: true });
   }, [active, metrics, navigate]);
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <div className="h-screen">
+      <div className="min-h-screen bg-white">
+        <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mt-2">Data Dictionary</h1>
-          <p className="text-xl mt-3 max-w-3xl mx-auto opacity-90">
-            Explore standardized definitions, formulas and usage guidance for key ecommerce performance metrics.
-          </p>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
+          <div className="container mx-auto px-6 text-center">
+            <h1 className="text-5xl font-bold mt-2">Data Dictionary</h1>
+            <p className="text-xl mt-3 max-w-3xl mx-auto opacity-90">
+              Explore standardized definitions, formulas and usage guidance for key ecommerce performance metrics.
+            </p>
+          </div>
+        </section>
 
-      <div className="container mx-auto px-4 sm:px-6 py-12 -mt-10">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <Sidebar items={metrics} active={active} setActive={(i) => setActive(i)} />
-          <div className="lg:w-4/5 space-y-6 -ml-2">
-            {loading ? (
-              <div className="text-sm text-muted-foreground">Loading metrics…</div>
-            ) : error ? (
-              <div className="text-sm text-red-600">{error}</div>
-            ) : metrics.length > 0 ? (
-              <MetricCard
-                key={metrics[active]?.key}
-                metric={metrics[active]}
-                allMetrics={metrics}
-                onPrev={goPrev}
-                onNext={goNext}
-                hasPrev={active > 0}
-                hasNext={active < metrics.length - 1}
-              />
-            ) : (
-              <div className="text-sm text-muted-foreground">No metrics available.</div>
-            )}
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <button
-                onClick={goPrev}
-                disabled={active === 0}
-                className="inline-flex items-center gap-1 hover:text-foreground disabled:opacity-50"
-              >
-                <ChevronLeft className="h-4 w-4" /> Previous
-              </button>
-              <button
-                onClick={goNext}
-                disabled={metrics.length === 0 || active === metrics.length - 1}
-                className="inline-flex items-center gap-1 hover:text-foreground disabled:opacity-50"
-              >
-                Next <ChevronRight className="h-4 w-4" />
-              </button>
+        <div className="container mx-auto px-4 sm:px-6 py-12 -mt-10 relative">
+          <div className="flex flex-col lg:flex-row gap-8">
+            <Sidebar items={metrics} active={active} setActive={(i) => setActive(i)} />
+            <div className="lg:w-4/5 space-y-6 -ml-2">
+              {loading ? (
+                <div className="text-sm text-muted-foreground">Loading metrics…</div>
+              ) : error ? (
+                <div className="text-sm text-red-600">{error}</div>
+              ) : metrics.length > 0 ? (
+                <MetricCard
+                  key={metrics[active]?.key}
+                  metric={metrics[active]}
+                  allMetrics={metrics}
+                  onPrev={goPrev}
+                  onNext={goNext}
+                  hasPrev={active > 0}
+                  hasNext={active < metrics.length - 1}
+                />
+              ) : (
+                <div className="text-sm text-muted-foreground">No metrics available.</div>
+              )}
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <button
+                  onClick={goPrev}
+                  disabled={active === 0}
+                  className="inline-flex items-center gap-1 hover:text-foreground disabled:opacity-50"
+                >
+                  <ChevronLeft className="h-4 w-4" /> Previous
+                </button>
+                <button
+                  onClick={goNext}
+                  disabled={metrics.length === 0 || active === metrics.length - 1}
+                  className="inline-flex items-center gap-1 hover:text-foreground disabled:opacity-50"
+                >
+                  Next <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <LegacyFooter />
+     
     </div>
   );
 };

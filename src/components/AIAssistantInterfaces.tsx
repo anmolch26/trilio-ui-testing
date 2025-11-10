@@ -173,7 +173,7 @@ const AIAssistantInterface = () => {
             <div className="flex justify-start">
               <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl px-4 py-2 max-w-[80%] border border-gray-600/30">
                 <p className="text-white text-sm">
-                  Your data just got a wingman. Let's turn numbers into growth! 🚀✨
+                  Your data just got a wingman. Let's turn numbers into growth! 🚀
                 </p>
               </div>
             </div>

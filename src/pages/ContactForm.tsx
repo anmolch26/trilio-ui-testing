@@ -17,6 +17,46 @@ const ContactForm = () => {
           title: "Request CEO Demo",
           description: "Schedule a personalized demo with our CEO to explore how Trilio can transform your business."
         };
+      case "custom-bi-demo":
+        return {
+          title: "Request a Custom BI Demo",
+          description: "Let's discuss your unique KPIs and create a custom dashboard that drives real business decisions."
+        };
+      case "customer-success":
+        return {
+          title: "Talk to a Customer Success Expert",
+          description: "Let's get your team onboarded and trained to maximize your Trilio investment."
+        };
+      case "attribution-lab":
+        return {
+          title: "Launch Attribution Lab",
+          description: "Optimize every creative, every SKU, every dollar with granular attribution insights."
+        };
+      case "partner-program":
+        return {
+          title: "Apply for Partner Program",
+          description: "Join our partner ecosystem and unlock new revenue opportunities with Trilio."
+        };
+      case "marketing-demo":
+        return {
+          title: "See Marketing Demo",
+          description: "See which channels really drive revenue, not just clicks. Unify your ad and retail analytics."
+        };
+      case "agency-demo":
+        return {
+          title: "Book Agency Demo",
+          description: "Scale your agency without the chaos. Discover professional client management tools that impress clients and save time."
+        };
+      case "book-demo":
+        return {
+          title: "Book a Demo",
+          description: "Learn how Trilio can help you achieve similar results. We'll get back to you within 24 hours."
+        };
+      case "support":
+        return {
+          title: "Contact Support",
+          description: "Our support team is here to help you succeed with Trilio. We'll get back to you within 24 hours."
+        };
       case "demo":
         return {
           title: "Request a Demo",

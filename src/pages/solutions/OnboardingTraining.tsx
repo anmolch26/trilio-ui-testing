@@ -187,16 +187,8 @@ const OnboardingTraining = () => {
             investment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ThemeButton variant="secondary" size="lg" href="/contact-form">
+            <ThemeButton variant="secondary" size="lg" href="/contact-form?type=customer-success">
               Talk to a Customer Success Expert
-            </ThemeButton>
-            <ThemeButton
-              variant="outline"
-              size="lg"
-              href="/contact-form"
-              className="border-white text-white hover:bg-white hover:text-purple-600"
-            >
-              Schedule Onboarding Call
             </ThemeButton>
           </div>
         </div>

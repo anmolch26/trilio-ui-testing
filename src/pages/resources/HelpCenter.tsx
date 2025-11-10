@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
 import {
@@ -292,10 +292,12 @@ const HelpCenter = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-purple-600 hover:bg-purple-700">
-                  Contact Support
-                  <MessageCircle className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to="/contact-form?type=support">
+                  <Button className="bg-purple-600 hover:bg-purple-700">
+                    Contact Support
+                    <MessageCircle className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
                 <Button variant="outline">
                   Schedule a Call
                   <ExternalLink className="ml-2 h-4 w-4" />
