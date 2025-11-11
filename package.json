@@ -9,9 +9,6 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "blogs:generate": "node scripts/generate-blog-data.js",
-    "blogs:validate": "node scripts/validate-blog-data.js",
-    "blogs:import": "node scripts/import-blogs.js",
     "blogs:sitemap": "node scripts/generate-sitemap.js",
     "blogs:indexes": "node scripts/update-indexes.js"
   },

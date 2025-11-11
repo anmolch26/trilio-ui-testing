@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Globe, Calendar, Award, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-import NirjarProfilePic from "@/assests/Nirjar Profile Pic.jpg";
-import OmProfilePic from "@/assests/IMG_7723_PhotoGrid (1).png";
+
 
 const LeadershipTeam = () => {
   const leaders = [
@@ -83,7 +82,7 @@ const LeadershipTeam = () => {
                 className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-8"
               >
                 {/* Image */}
-                <div className="w-[340px] h-[340px] flex items-center justify-center mb-6 overflow-hidden rounded-full">
+                <div className="w-[180px] h-[180px] flex items-center justify-center mb-6 overflow-hidden rounded-full">
                   <img
                     src={
                       index === 0

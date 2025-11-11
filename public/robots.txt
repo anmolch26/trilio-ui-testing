@@ -3,6 +3,13 @@
 User-agent: *
 Allow: /
 
+# Block compressed JavaScript files
+Disallow: /*.js.gz$
+Disallow: /*.css.gz$
+
+# Block build artifacts and source maps
+Disallow: /*.map$
+
 # If you have staging or preview paths, list them here to disallow
 # Disallow: /preview/
 

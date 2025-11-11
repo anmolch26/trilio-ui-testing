@@ -31,11 +31,13 @@ const ThemeSection: React.FC<ThemeSectionProps> = ({
   };
 
   return (
-    <section className={cn(
-      backgroundClasses[background],
-      paddingClasses[padding],
-      className
-    )}>
+    <section 
+      className={cn(
+        backgroundClasses[background],
+        paddingClasses[padding],
+        className
+      )}
+    >
       <div className="container mx-auto max-w-6xl">
         {children}
       </div>
