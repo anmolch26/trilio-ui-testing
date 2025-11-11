@@ -4,8 +4,7 @@ import React, { useEffect, useState, Suspense, lazy } from "react";
 import Navbar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 
-// 🚀 LAZY LOAD everything below-the-fold (not immediately visible)
-// This reduces initial bundle from 999 KB to ~150-200 KB!
+
 const SpecsSection = lazy(() => import("@/components/SpecsSection"));
 const OptimizedPurposeSection = lazy(() => import("@/components/OptimizedPurposeSection"));
 const DetailsSection = lazy(() => import("@/components/DetailsSection"));
@@ -21,8 +20,7 @@ import RouteCanonical from "@/components/RouteCanonical";
 const Index = () => {
   const [showAnimations, setShowAnimations] = useState(false);
   const [showTestimonials] = useState(false);
-  // Initialize intersection observer to detect when elements enter viewport
-  // Re-run after testimonials mount so newly added nodes are observed
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
