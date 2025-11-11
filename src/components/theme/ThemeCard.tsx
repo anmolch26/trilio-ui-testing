@@ -29,11 +29,11 @@ const ThemeCard: React.FC<ThemeCardProps> = ({
 
   return (
     <div className={cn(baseClasses, variantClasses[variant], className)}>
-      {icon && typeof icon === "function"
-        ? React.createElement(icon, {
+      {icon && (typeof icon === "function"
+        ? React.createElement(icon as LucideIcon, {
             className: "mb-4 mx-auto w-8 h-8 text-blue-600",
           })
-        : icon}
+        : icon)}
       <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       {children}

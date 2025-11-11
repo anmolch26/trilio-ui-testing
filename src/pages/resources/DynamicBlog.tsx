@@ -108,13 +108,21 @@ const DynamicBlog = () => {
     );
   }
 
+  // Set proper 404 status for SEO when blog not found
+  React.useEffect(() => {
+    if (!apiPost && !loading) {
+      // This helps search engines understand it's a real 404
+      document.title = "404 - Blog Post Not Found | Trilio";
+    }
+  }, [apiPost, loading]);
+
   if (!apiPost && !loading) {
     return (
       <PageLayout backgroundClass="bg-white">
         <section className="bg-white py-20 pt-24">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Blog Post Not Found
+              404 - Blog Post Not Found
             </h1>
             <p className="text-gray-600 mb-8">
               {error ? error : "The blog post you're looking for doesn't exist."}

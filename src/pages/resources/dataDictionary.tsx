@@ -429,7 +429,7 @@ const DataDictionary: React.FC = () => {
           </div>
         </div>
       </div>
-     
+     <LegacyFooter />
     </div>
   );
 };
