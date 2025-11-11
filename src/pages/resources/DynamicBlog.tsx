@@ -69,6 +69,8 @@ const DynamicBlog = () => {
           if (offset > 1000) break;
         }
         if (isMounted && found) {
+          console.log("Blog found:", found.title);
+          console.log("Content length:", found.content_html?.length || 0);
           setApiPost({
             id: Number(found.id),
             slug: String(found.slug ?? ""),
@@ -81,6 +83,7 @@ const DynamicBlog = () => {
             contentHtml: String(found.content_html ?? ""),
           });
         } else if (isMounted) {
+          console.log("Blog not found for slug:", blogSlug);
           setApiPost(null);
         }
       } catch (err: any) {
@@ -108,13 +111,7 @@ const DynamicBlog = () => {
     );
   }
 
-  // Set proper 404 status for SEO when blog not found
-  React.useEffect(() => {
-    if (!apiPost && !loading) {
-      // This helps search engines understand it's a real 404
-      document.title = "404 - Blog Post Not Found | Trilio";
-    }
-  }, [apiPost, loading]);
+  
 
   if (!apiPost && !loading) {
     return (
@@ -122,7 +119,7 @@ const DynamicBlog = () => {
         <section className="bg-white py-20 pt-24">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              404 - Blog Post Not Found
+              Blog Post Not Found
             </h1>
             <p className="text-gray-600 mb-8">
               {error ? error : "The blog post you're looking for doesn't exist."}
@@ -284,7 +281,12 @@ const DynamicBlog = () => {
 
               {/* Right Column - Blog Content */}
               <div className="flex-1 min-w-0">
-                {typeof blogPost.content === "string" ? (
+                {!blogPost.content || blogPost.content === "" ? (
+                  <div className="bg-yellow-50 border border-yellow-200 p-8 rounded-lg text-center">
+                    <p className="text-yellow-800 font-medium">No content available for this blog post.</p>
+                    <p className="text-yellow-600 text-sm mt-2">The blog content might still be in draft or hasn't been published yet.</p>
+                  </div>
+                ) : typeof blogPost.content === "string" ? (
                   <div
                     className="ecommerce-article"
                     dangerouslySetInnerHTML={{ __html: blogPost.content }}
