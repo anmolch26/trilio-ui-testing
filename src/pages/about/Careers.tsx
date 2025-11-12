@@ -111,21 +111,21 @@ const Careers = () => {
         "The pace of innovation here is incredible. Every day I'm working on problems that directly impact thousands of merchants.",
       name: "Alex Chen",
       role: "Senior Engineer",
-      image: "/lovable-uploads/a629bbe0-8e90-4b25-a313-21449a7292cd.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp",
     },
     {
       quote:
         "Trilio gave me the autonomy to build products that users genuinely love. The customer feedback loop is so tight here.",
       name: "Maria Garcia",
       role: "Product Manager",
-      image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp",
     },
     {
       quote:
         "I've never worked at a company where leadership is so accessible and genuinely cares about every team member's growth.",
       name: "James Wilson",
       role: "Sales Manager",
-      image: "/lovable-uploads/a629bbe0-8e90-4b25-a313-21449a7292cd.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp",
     },
   ];
 

@@ -26,7 +26,7 @@ const GuidesReports = () => {
         "Comprehensive analysis of industry performance metrics, conversion rates, and growth trends across 1000+ brands.",
       type: "Reports",
       tags: ["Analytics", "Benchmarks", "Industry"],
-      image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Analytics.png",
       downloadCount: "2.3K",
       featured: true,
     },
@@ -37,7 +37,7 @@ const GuidesReports = () => {
         "Step-by-step playbook for implementing multi-touch attribution and understanding your customer journey.",
       type: "Playbooks",
       tags: ["Attribution", "Marketing", "Strategy"],
-      image: "/lovable-uploads/3d1cb2ff-526f-4de5-b7ff-85618d692167.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Attribution.png",
       downloadCount: "1.8K",
     },
     {
@@ -47,7 +47,7 @@ const GuidesReports = () => {
         "Predictions and trends for artificial intelligence adoption in e-commerce over the next 18 months.",
       type: "Forecasts",
       tags: ["AI", "Future", "Technology"],
-      image: "/lovable-uploads/41f6f133-b265-45dc-a051-e55b3b3ca5bd.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/AI.png",
       downloadCount: "3.1K",
     },
     {
@@ -57,7 +57,7 @@ const GuidesReports = () => {
         "Proven strategies and tactics for scaling profitable paid advertising campaigns across all channels.",
       type: "Playbooks",
       tags: ["Performance Marketing", "Paid Ads", "ROI"],
-      image: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Marketing.png",
       downloadCount: "2.7K",
     },
     {
@@ -67,7 +67,7 @@ const GuidesReports = () => {
         "Industry benchmarks for key performance indicators across direct-to-consumer brands by category.",
       type: "Benchmarks",
       tags: ["DTC", "Metrics", "Performance"],
-      image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/Metrics.png",
       downloadCount: "1.9K",
     },
     {
@@ -77,7 +77,7 @@ const GuidesReports = () => {
         "Framework for calculating, tracking, and improving CLV across different business models.",
       type: "Playbooks",
       tags: ["CLV", "Retention", "Strategy"],
-      image: "/lovable-uploads/a629bbe0-8e90-4b25-a313-21449a7292cd.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Blogs/CLV.png",
       downloadCount: "2.2K",
     },
   ];

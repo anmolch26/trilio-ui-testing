@@ -24,7 +24,7 @@ const Insights = () => {
       "AI analyzes patterns across all channels to surface hidden opportunities and predict trends before they happen.",
     primaryButtonText: "See AI Insights",
     secondaryButtonText: "Start Free Analysis",
-    heroImage: "/src/assests/Untitled.png",
+    heroImage: "https://assets.channeliq.ai/trilio-landing/Blogs/Insights.png",
     heroImageAlt: "AI-powered insights dashboard with trend analysis",
     gradientColors: "bg-gradient-to-br from-purple-500/20 to-blue-600/20",
   };
