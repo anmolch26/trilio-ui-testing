@@ -79,15 +79,13 @@ const ProductHero: React.FC<ProductHeroProps> = ({
             className="relative opacity-0 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="hover-lift">
-              <img
-                src={heroImage}
-                alt={heroImageAlt}
-                className="w-full h-auto rounded-lg shadow-elegant"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <img
+              src={heroImage}
+              alt={heroImageAlt}
+              className="w-full h-auto"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

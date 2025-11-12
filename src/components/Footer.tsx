@@ -149,12 +149,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#terms"
+                <Link
+                  to="/terms-of-use"
                   className="text-white/70 hover:text-white transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Terms of Use
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -163,8 +164,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-3 text-white">Contact</h4>
             <div className="flex items-center gap-2 text-white/90 mb-3">
               <Mail size={18} />
-              <a href="mailto:support@trilio.ai" className="hover:text-white">
-                support@trilio.ai
+              <a href="mailto:info@trilio.ai" className="hover:text-white">
+              info@trilio.ai
               </a>
             </div>
           </div>

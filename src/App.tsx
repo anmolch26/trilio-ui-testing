@@ -16,6 +16,7 @@ import IntegrationRequest from "./pages/IntegrationRequest";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 // Product pages
 import BIReporting from "./pages/products/BIReporting";
@@ -106,6 +107,7 @@ const App = () => (
               <Route path="/integration-request" element={<IntegrationRequest />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/products/bi-reporting" element={<BIReporting />} />
             <Route path="/products/insights" element={<Insights />} />
             <Route path="/products/ai-agents" element={<AIAgents />} />

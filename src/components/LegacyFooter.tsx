@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 
 const LegacyFooter = () => {
   return (
-    <footer className="w-full bg-white pb-0 border-t border-gray-200">
+    <footer className="w-full bg-white pb-0 border-t border-gray-200 relative z-50">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -29,10 +29,10 @@ const LegacyFooter = () => {
               <p className="text-gray-600">
                 Email:{" "}
                 <a
-                  href="mailto:support@trilio.ai"
+                  href="mailto:info@trilio.ai"
                   className="text-pulse-500 hover:underline"
                 >
-                  support@trilio.ai
+                  info@trilio.ai
                 </a>
               </p>
               <div className="flex items-center space-x-3 mt-8">
@@ -157,12 +157,12 @@ const LegacyFooter = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#terms"
+                <Link
+                  to="/terms-of-use"
                   className="text-gray-600 hover:text-pulse-500 transition-colors"
                 >
                   Terms of Use
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
