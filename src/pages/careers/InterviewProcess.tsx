@@ -212,7 +212,7 @@ const InterviewProcess = () => {
                 <div className="flex items-start gap-6">
                   <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
                     <img
-                      src="/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg"
+                      src="https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp"
                       alt="Sarah Kim"
                       className="w-full h-full object-cover"
                      loading="lazy" decoding="async" />

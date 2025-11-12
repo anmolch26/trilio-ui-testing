@@ -9,11 +9,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Users, DollarSign } from 'lucide-react';
 
 const CaseStudies = () => {
+  const trilioLogo = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp";
+  
   const caseStudies = [
     {
       id: 1,
       company: "StyleCo Fashion",
-      logo: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
+      logo: trilioLogo,
       industry: "Fashion & Apparel",
       result: "35% increase in ROAS within 90 days",
       metrics: {
@@ -27,7 +29,7 @@ const CaseStudies = () => {
     {
       id: 2,
       company: "TechGear Plus",
-      logo: "/lovable-uploads/3d1cb2ff-526f-4de5-b7ff-85618d692167.png",
+      logo: trilioLogo,
       industry: "Electronics",
       result: "50% reduction in data preparation time",
       metrics: {
@@ -41,7 +43,7 @@ const CaseStudies = () => {
     {
       id: 3,
       company: "FreshMarket Organics",
-      logo: "/lovable-uploads/41f6f133-b265-45dc-a051-e55b3b3ca5bd.png",
+      logo: trilioLogo,
       industry: "Food & Beverage",
       result: "28% improvement in customer acquisition cost",
       metrics: {
@@ -55,7 +57,7 @@ const CaseStudies = () => {
     {
       id: 4,
       company: "HomeDecor Studio",
-      logo: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png",
+      logo: trilioLogo,
       industry: "Home & Garden",
       result: "2.5x faster reporting and decision-making",
       metrics: {

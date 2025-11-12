@@ -120,14 +120,14 @@ const InternshipsPrograms = () => {
       quote:
         "My internship at Trilio was incredible. I got to work on features that thousands of users interact with daily, and my mentor helped me grow both technically and professionally.",
       role: "Software Engineering Intern → Full-time SWE at Google",
-      image: "/lovable-uploads/a629bbe0-8e90-4b25-a313-21449a7292cd.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp",
     },
     {
       name: "Marcus J.",
       quote:
         "The product team gave me real ownership over user research and feature design. I learned more in 10 weeks than I did in two years of coursework.",
       role: "Product Management Intern → PM at Airbnb",
-      image: "/lovable-uploads/5ec4610f-3977-4d38-bfb3-389cf824ed85.jpg",
+      image: "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp",
     },
   ];
 

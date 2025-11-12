@@ -344,45 +344,40 @@ const BlogInsights = () => {
               ) : (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {currentPosts.map((post) => (
-                    <Card
+                    <Link
                       key={post.id}
-                      className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200"
+                      to={`/resources/blog-insights/${post.slug}`}
+                      className="block"
                     >
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-48 object-cover"
-                      />
-                      <CardHeader className="pb-3">
-                        <div className="flex items-center justify-between mb-2">
-                          <Badge
-                            variant="secondary"
-                            className="bg-teal-100 text-teal-700 border-teal-200"
-                          >
-                            {post.category}
-                          </Badge>
-                          <span className="text-xs text-gray-500">
-                            {post.date}
-                          </span>
-                        </div>
-                        <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
-                          {post.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        <div className="flex items-center justify-between">
+                      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200 cursor-pointer h-full">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover"
+                        />
+                        <CardHeader className="pb-3">
+                          <div className="flex items-center justify-between mb-2">
+                            <Badge
+                              variant="secondary"
+                              className="bg-teal-100 text-teal-700 border-teal-200"
+                            >
+                              {post.category}
+                            </Badge>
+                            <span className="text-xs text-gray-500">
+                              {post.date}
+                            </span>
+                          </div>
+                          <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
+                            {post.title}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
                           <div className="flex items-center text-sm text-gray-500">
                             <span>by {post.author}</span>
                           </div>
-                          <Link
-                            to={`/resources/blog-insights/${post.slug}`}
-                            className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-teal-200 bg-background hover:bg-teal-50 hover:text-accent-foreground h-9 px-3 text-teal-600"
-                          >
-                            Read More
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               )}
