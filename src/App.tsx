@@ -107,6 +107,7 @@ const App = () => (
               <Route path="/integration-request" element={<IntegrationRequest />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/products/bi-reporting" element={<BIReporting />} />
             <Route path="/products/insights" element={<Insights />} />
