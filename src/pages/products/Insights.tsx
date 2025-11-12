@@ -24,7 +24,7 @@ const Insights = () => {
       "AI analyzes patterns across all channels to surface hidden opportunities and predict trends before they happen.",
     primaryButtonText: "See AI Insights",
     secondaryButtonText: "Start Free Analysis",
-    heroImage: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
+    heroImage: "/src/assests/Untitled.png",
     heroImageAlt: "AI-powered insights dashboard with trend analysis",
     gradientColors: "bg-gradient-to-br from-purple-500/20 to-blue-600/20",
   };

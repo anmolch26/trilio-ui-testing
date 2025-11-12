@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
@@ -6,6 +6,9 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
+
+const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
+const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
 
 const formSchema = z.object({
   firstName: z.string().min(1, "Full name is required"),
@@ -125,6 +128,12 @@ const WaitlistForm: React.FC = () => {
       <Navbar />
       
       <main className="flex-1 animated-teal-bg flex items-center justify-center px-4 relative overflow-hidden py-24 md:py-32">
+        {/* Animated Particles and Space Background */}
+        <Suspense fallback={null}>
+          <SpaceBackgroundAnimation />
+          <AnimatedParticles showAnimation={true} />
+        </Suspense>
+        
         {/* Animated background element */}
         <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] opacity-20 blur-3xl rounded-full animate-teal-shift" style={{
           background: 'linear-gradient(135deg, #3dccc7, #68d8d6, #9ceaef, #c4fff9)'
