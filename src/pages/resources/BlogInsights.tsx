@@ -13,6 +13,7 @@ import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import LeadershipTeam from "../about/LeadershipTeam";
 import { Navbar } from "@/components";
 import LegacyFooter from "@/components/LegacyFooter";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const BlogInsights = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -223,6 +224,7 @@ const BlogInsights = () => {
 
   return (
     <div className="h-screen">
+      <RouteCanonical path="/resources/blog-insights" />
       <div className="min-h-screen bg-white">
         <Navbar />
         <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
@@ -277,10 +279,7 @@ const BlogInsights = () => {
                   Categories
                 </h2>
 
-                {/* Selected category chips hidden by request */}
-
                 <div className="space-y-2">
-                  {/* Individual categories as pill toggles */}
                   {categories.map((category) => {
                     const active = selectedCategories.includes(category);
                     return (
@@ -313,7 +312,7 @@ const BlogInsights = () => {
             </div>
 
             {/* Main Content Area */}
-            <div className="lg:w-3/4">
+            <div className="w-full">
               {/* Search Bar */}
               <div className="mb-8">
                 <div className="relative">
