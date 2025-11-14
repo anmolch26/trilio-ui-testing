@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PageLayout from "@/components/theme/PageLayout";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Clock, Calendar } from "lucide-react";
 import RouteCanonical from "@/components/RouteCanonical";
 import { Breadcrumb, generateBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import { BlogSidebar } from "@/components/BlogSidebar";
@@ -28,6 +28,19 @@ const DynamicBlog = () => {
       }
     | null
   >(null);
+  const [relatedPosts, setRelatedPosts] = React.useState<Array<{
+    id: number;
+    slug: string;
+    title: string;
+    date: string;
+    featuredImage?: string;
+    readTime?: string;
+  }>>([]);
+  const [allBlogs, setAllBlogs] = React.useState<Array<{
+    id: number;
+    slug: string;
+    title: string;
+  }>>([]);
 
   const formatDate = (iso: string | null | undefined) => {
     if (!iso) return "";
@@ -54,6 +67,7 @@ const DynamicBlog = () => {
         let offset = 0;
         let hasMore = true;
         let found: any = null;
+        let allBlogs: Array<any> = [];
         while (hasMore && !found) {
           const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
           const res = await fetch(url, {
@@ -63,6 +77,7 @@ const DynamicBlog = () => {
           if (!res.ok) throw new Error(`Request failed: ${res.status}`);
           const json = await res.json();
           const list = (json?.data?.blogs ?? []) as Array<any>;
+          allBlogs = [...allBlogs, ...list];
           found = list.find((b) => String(b.slug) === String(blogSlug));
           hasMore = Boolean(json?.data?.has_more);
           offset += PAGE_LIMIT;
@@ -82,6 +97,27 @@ const DynamicBlog = () => {
             featuredImage: String(found.featured_image_url ?? ""),
             contentHtml: String(found.content_html ?? ""),
           });
+          
+          // Store all blogs for navigation
+          const blogsList = allBlogs.map((b) => ({
+            id: Number(b.id),
+            slug: String(b.slug ?? ""),
+            title: String(b.title ?? "Untitled"),
+          }));
+          setAllBlogs(blogsList);
+          
+          // Get 3 related posts (excluding the current one)
+          const otherBlogs = allBlogs.filter((b) => String(b.slug) !== String(blogSlug));
+          const shuffled = otherBlogs.sort(() => 0.5 - Math.random());
+          const selected = shuffled.slice(0, 3).map((b) => ({
+            id: Number(b.id),
+            slug: String(b.slug ?? ""),
+            title: String(b.title ?? "Untitled"),
+            date: formatDate(b.published_at),
+            featuredImage: String(b.featured_image_url ?? ""),
+            readTime: "3 min read", // Default read time
+          }));
+          setRelatedPosts(selected);
         } else if (isMounted) {
           console.log("Blog not found for slug:", blogSlug);
           setApiPost(null);
@@ -147,9 +183,10 @@ const DynamicBlog = () => {
     content: apiPost!.contentHtml, // HTML string
   };
 
-  // Note: Previous/Next navigation removed since API doesn't provide adjacent posts
-  const previousPost = undefined;
-  const nextPost = undefined;
+  // Find previous and next posts from all blogs
+  const currentIndex = allBlogs.findIndex((b) => b.slug === blogPost.slug);
+  const previousPost = currentIndex > 0 ? allBlogs[currentIndex - 1] : undefined;
+  const nextPost = currentIndex >= 0 && currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : undefined;
 
   const goToPrevious = () => {
     if (previousPost) {
@@ -226,51 +263,75 @@ const DynamicBlog = () => {
           />
         );
       })()}
-      <section className="bg-white py-20 pl-6 md:pl-12 lg:pl-24 pr-10 pt-24">
-        <div>
-          {/* Breadcrumb Navigation */}
-          <Breadcrumb
-            items={[
-              { label: "Blog Insights", href: "/resources/blog-insights" },
-              { label: "Blog Post" },
-            ]}
-            className="mb-6"
+      {/* Hero Section with Featured Image Background */}
+      <section className="relative w-full h-[calc(100vh-64px)] min-h-[600px] overflow-hidden pt-16">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img
+            src={blogPost.featuredImage}
+            fetchPriority="high"
+            alt={blogPost.title}
+            className="w-full h-full object-cover"
           />
-          
-          {/* Blog Post */}
-          <article className="mb-16">
-            {/* Blog Header - Generic Structure */}
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
+        </div>
 
-            <header className="mb-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight mb-6">
+        {/* Hero Content - Breadcrumb, Title and Metadata */}
+        <div className="relative h-full flex flex-col justify-between">
+          {/* Breadcrumb at top - Commented out but keeping spacing */}
+          <div className="container mx-auto px-4 md:px-6 lg:px-12 pt-8">
+            {/* <Breadcrumb
+              items={[
+                { label: "Blog Insights", href: "/resources/blog-insights" },
+                { label: "Blog Post" },
+              ]}
+              className="[&_a]:text-white/80 [&_a]:hover:text-white [&_span]:text-white/60"
+            /> */}
+          </div>
+
+          {/* Title and Metadata at bottom */}
+          <div className="container mx-auto px-4 md:px-6 lg:px-12 pb-12 md:pb-16">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
                 {blogPost.title}
               </h1>
-              <div className="flex items-center text-sm text-gray-600 mb-4">
-                <img
-                  src={blogPost.authorImage}
-                  alt={blogPost.author}
-                  className="w-10 h-10 rounded-full object-cover mr-3"
-                />
-                <span className="font-medium">{blogPost.author}</span>
-                <span className="mx-2">•</span>
-                <span>{blogPost.date}</span>
+              
+              {/* Metadata */}
+              <div className="flex flex-wrap items-center gap-4 text-white/90 text-sm md:text-base">
+                <div className="flex items-center gap-2">
+                  <img
+                    src={blogPost.authorImage}
+                    alt={blogPost.author}
+                    className="w-8 h-8 rounded-full object-cover border-2 border-white/50"
+                  />
+                  <span className="font-medium">by {blogPost.author}</span>
+                </div>
+                <span className="text-white/50">|</span>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>3 min read</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>{blogPost.date}</span>
+                </div>
               </div>
-            </header>
-            
-            {/* Featured Image - Full Width, Above Everything */}
-            <div className="mb-8">
-              <img
-                src={blogPost.featuredImage}
-                fetchPriority="high"
-                alt={blogPost.title}
-                className="w-full rounded-lg shadow-lg"
-              />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="bg-white py-12 pl-4 md:pl-6 lg:pl-12 pr-10">
+        <div>
+          {/* Blog Post */}
+          <article className="mb-16">
 
             {/* Two-column layout: Sidebar on left, Content on right - Starting from text */}
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col lg:flex-row gap-0">
               {/* Left Sidebar - Starts aligned with content text */}
-              <aside className="lg:w-80 flex-shrink-0 lg:mt-24">
+              <aside className="lg:w-60 flex-shrink-0">
                 <div className="lg:sticky lg:top-24">
                   <BlogSidebar 
                     blogTitle={blogPost.title}
@@ -359,27 +420,76 @@ const DynamicBlog = () => {
           </article>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between text-gray-900 pt-8 border-t border-gray-200">
-            <Button
-              variant="outline"
-              onClick={goToPrevious}
-              disabled={!previousPost}
-              className="flex items-center space-x-2"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span>Previous</span>
-            </Button>
+          <div className="flex items-center justify-between text-gray-900 pt-8 border-t border-gray-200 gap-4">
+            {previousPost ? (
+              <Button
+                variant="outline"
+                onClick={goToPrevious}
+                className="flex items-center space-x-2 max-w-[45%] text-left"
+              >
+                <ChevronLeft className="h-4 w-4 flex-shrink-0" />
+                <span className="truncate">{previousPost.title}</span>
+              </Button>
+            ) : (
+              <div className="flex-1"></div>
+            )}
 
-            <Button
-              variant="outline"
-              onClick={goToNext}
-              disabled={!nextPost}
-              className="flex items-center space-x-2"
-            >
-              <span>Next</span>
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+            {nextPost ? (
+              <Button
+                variant="outline"
+                onClick={goToNext}
+                className="flex items-center space-x-2 max-w-[45%] text-right ml-auto"
+              >
+                <span className="truncate">{nextPost.title}</span>
+                <ChevronRight className="h-4 w-4 flex-shrink-0" />
+              </Button>
+            ) : (
+              <div className="flex-1"></div>
+            )}
           </div>
+
+          {/* You may also like Section */}
+          {relatedPosts.length > 0 && (
+            <section className="py-16 border-t border-gray-200 mt-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-teal-700 mb-2">
+                  Continue Reading
+                </h2>
+                <p className="text-gray-500 text-sm mb-3">explore more insights</p>
+                <div className="w-16 h-0.5 bg-teal-400 mx-auto"></div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {relatedPosts.map((post) => (
+                  <div
+                    key={post.id}
+                    onClick={() => navigate(`/resources/blog-insights/${post.slug}`)}
+                    className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden group"
+                  >
+                    {/* Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={post.featuredImage || "https://via.placeholder.com/400x300"}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold text-teal-700 mb-3 line-clamp-2 group-hover:text-teal-800 transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        {post.date} | {post.readTime}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </section>
     </PageLayout>

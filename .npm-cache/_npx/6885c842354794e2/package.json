@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "ttf2woff2": "^8.0.0"
+  },
+  "_npx": {
+    "packages": [
+      "ttf2woff2"
+    ]
+  }
+}

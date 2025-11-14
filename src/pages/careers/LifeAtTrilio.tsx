@@ -212,6 +212,13 @@ const LifeAtTrilio = () => {
                   className="w-full h-full object-cover"
                  loading="lazy" decoding="async" />
               </div>
+              <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <img
+                  src="https://assets.channeliq.ai/trilio-landing/team-members/Vishal11.jpg"
+                  alt="vishal"
+                  className="w-full h-full object-cover"
+                 loading="lazy" decoding="async" />
+              </div>
             </div>
           </div>
         </div>

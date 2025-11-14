@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
+import React from "react";
+import { Linkedin, Youtube } from "lucide-react";
 
 interface BlogSidebarProps {
   blogTitle?: string;
@@ -9,133 +7,51 @@ interface BlogSidebarProps {
 }
 
 export const BlogSidebar: React.FC<BlogSidebarProps> = ({ blogTitle = "", blogUrl = "" }) => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast({
-        title: "Please enter your email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      const payload = {
-        email: email,
-        type: "newsletter",
-      };
-
-      const response = await fetch(
-        "https://staging.trilio.ai/api/auth/v1/create_waitlist",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to subscribe. Please try again later.");
-      }
-
-      toast({
-        title: "Thank you for subscribing!",
-        description: "You'll receive updates about Trilio.ai soon.",
-      });
-      setEmail("");
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
-    } catch (error) {
-      console.error("Newsletter subscription error:", error);
-      toast({
-        title: "Error",
-        description:
-          error instanceof Error
-            ? error.message
-            : "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <div className="space-y-6">
-      {/* Share with your community */}
-      <div className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl p-6 text-white shadow-xl border border-teal-400/20">
-        <h3 className="text-xl font-semibold mb-5 text-center whitespace-nowrap">Follow us</h3>
-        <div className="flex gap-4 justify-center">
-          <a
-            href="https://www.linkedin.com/company/trilio-ai/about/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-all duration-200 hover:scale-110"
-            aria-label="LinkedIn"
-          >
-            <img
-              src="https://assets.channeliq.ai/sidebar/icons8-linkedin-50.png"
-              alt="LinkedIn"
-              className="w-8 h-8 object-contain"
-              loading="lazy"
-            />
-          </a>
+    <div className="bg-white py-8">
+      {/* Share this section */}
+      <div className="text-left">
+        <h3 className="text-3xl font-bold text-teal-700 mb-8">Share this</h3>
+        <div className="flex flex-col items-start gap-6">
+          {/* X (Twitter) */}
           <a
             href="https://x.com/trilioai"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all duration-200 hover:scale-110"
-            aria-label="X (Twitter)"
+            className="w-16 h-16 rounded-full border-2 border-teal-700 bg-white flex items-center justify-center hover:bg-teal-50 transition-all duration-200 hover:scale-110"
+            aria-label="Follow us on X (Twitter)"
           >
-            <img
-              src="https://assets.channeliq.ai/sidebar/Twitter(X).png"
-              alt="X (Twitter)"
-              className="w-8 h-8 object-contain"
-              loading="lazy"
-            />
+            <svg 
+              viewBox="0 0 24 24" 
+              className="w-7 h-7 fill-teal-700"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
           </a>
+
+          {/* YouTube */}
           <a
             href="https://www.youtube.com/@user-trilio"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all duration-200 hover:scale-110"
-            aria-label="YouTube"
+            className="w-16 h-16 rounded-full border-2 border-teal-700 bg-white flex items-center justify-center hover:bg-teal-50 transition-all duration-200 hover:scale-110"
+            aria-label="Follow us on YouTube"
           >
-            <img
-              src="https://assets.channeliq.ai/sidebar/youtube-logo-2431.png"
-              alt="YouTube"
-              className="w-8 h-8 object-contain"
-              loading="lazy"
-            />
+            <Youtube className="w-7 h-7 text-teal-700" strokeWidth={2} />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/company/trilio-ai/about/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full border-2 border-teal-700 bg-white flex items-center justify-center hover:bg-teal-50 transition-all duration-200 hover:scale-110"
+            aria-label="Follow us on LinkedIn"
+          >
+            <Linkedin className="w-7 h-7 text-teal-700" strokeWidth={2} />
           </a>
         </div>
-      </div>
-
-      {/* Subscribe to newsletter */}
-      <div className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl p-6 text-white shadow-xl border border-teal-400/20">
-        <h3 className="text-xl font-semibold mb-5">Subscribe to our newsletter</h3>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            type="email"
-            placeholder="Email*"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="bg-white text-gray-900 placeholder:text-gray-500 border-0 focus-visible:ring-2 focus-visible:ring-white h-12 rounded-lg"
-          />
-          <Button
-            type="submit"
-            disabled={isSubmitting || submitted}
-            className="w-full bg-white text-teal-600 hover:bg-white/95 font-bold h-12 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02]"
-          >
-            {submitted ? "Subscribed! ✓" : isSubmitting ? "Subscribing..." : "Subscribe"}
-          </Button>
-        </form>
       </div>
     </div>
   );

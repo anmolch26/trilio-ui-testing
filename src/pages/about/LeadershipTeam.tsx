@@ -58,29 +58,44 @@ const LeadershipTeam = () => {
 
 
      {/* Hero Section */}
-     <section className="pt-32 pb-20 relative overflow-hidden">
+     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
        {/* Decorative background elements */}
        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
       
-       <div className="container mx-auto px-6 relative z-10">
-         <div className="max-w-5xl mx-auto text-center">
-           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 mb-6">
-             <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-               Leadership
-             </span>
+      <div className="container mx-auto px-6 relative z-10 pt-20">
+        <div className="max-w-7xl mx-auto">
+           <div className="grid lg:grid-cols-2 gap-12 items-center">
+             {/* Left side - Text content */}
+             <div className="text-left">
+               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 mb-6">
+                 <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                   Leadership
+                 </span>
+               </div>
+               <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                 <span className="text-gray-900">Meet the Team </span>
+                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+                 Powering Trilio
+                 </span>
+                 <br />
+                
+               </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+              Our leadership team combines decades of experience in eCommerce, data science, and building world-class products that merchants love. Together, they're on a mission to empower businesses with intelligent insights that drive real growth.
+              </p>
+             </div>
+
+             {/* Right side - Team image */}
+             <div className="relative">
+               <img
+                 src="https://assets.channeliq.ai/trilio-landing/team-members/Leadership.png"
+                 alt="Trilio Leadership Team"
+                 className="w-full h-auto object-cover rounded-2xl"
+                 loading="eager"
+               />
+             </div>
            </div>
-           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-             <span className="text-gray-900">Meet the Team </span>
-             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-             Powering Trilio
-             </span>
-             <br />
-            
-           </h1>
-           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-           Our leadership team combines decades of experience in eCommerce, data science, and building world-class products that merchants love.
-           </p>
          </div>
        </div>
      </section>
