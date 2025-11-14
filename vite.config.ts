@@ -32,67 +32,18 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true, // Split CSS for better caching
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
+        manualChunks: {
           // Split major vendor libs so first paint needs less JS
-          if (id.includes('node_modules')) {
-            // React core
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'react-vendor';
-            }
-            // Radix UI components
-            if (id.includes('@radix-ui')) {
-              return 'radix-ui';
-            }
-            // Charts
-            if (id.includes('recharts')) {
-              return 'charts';
-            }
-            // Animation
-            if (id.includes('framer-motion')) {
-              return 'motion';
-            }
-            // Query/State management
-            if (id.includes('@tanstack')) {
-              return 'query';
-            }
-            // UI libraries
-            if (id.includes('lucide-react') || id.includes('sonner') || id.includes('cmdk')) {
-              return 'ui-libs';
-            }
-            // Form libraries
-            if (id.includes('react-hook-form') || id.includes('zod') || id.includes('@hookform')) {
-              return 'forms';
-            }
-            // Other vendor code
-            return 'vendor';
-          }
-          // Split by route/page for better caching
-          if (id.includes('/pages/')) {
-            const pageMatch = id.match(/\/pages\/([^/]+)/);
-            if (pageMatch) {
-              const pageName = pageMatch[1];
-              // Group solutions pages together
-              if (pageName === 'solutions') {
-                return 'solutions';
-              }
-              // Group resources pages together
-              if (pageName === 'resources') {
-                return 'resources';
-              }
-              // Group who-we-help pages together
-              if (pageName === 'who-we-help') {
-                return 'who-we-help';
-              }
-              // Group about pages together
-              if (pageName === 'about' || pageName === 'careers') {
-                return 'about';
-              }
-              // Group product pages together
-              if (pageName === 'products') {
-                return 'products';
-              }
-            }
-          }
+          react: ["react", "react-dom", "react-router-dom"],
+          radix: [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-navigation-menu",
+            "@radix-ui/react-tooltip",
+          ],
+          charts: ["recharts"],
+          motion: ["framer-motion"],
         },
         // Optimize asset file names for better caching
         assetFileNames: (assetInfo) => {
