@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Brockmann";
-  src: url("/brockmann-medium-webfont.ttf") format("truetype"),
+  src: url("/brockmann-medium-webfont.woff2") format("woff2"),
+    url("/brockmann-medium-webfont.ttf") format("truetype"),
     url("/brockmann-medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
