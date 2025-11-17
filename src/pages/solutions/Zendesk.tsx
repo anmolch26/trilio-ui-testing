@@ -10,7 +10,7 @@ const Zendesk = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-20 !bg-[#03363D]"
+      className="pt-28 !bg-[#03363D]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

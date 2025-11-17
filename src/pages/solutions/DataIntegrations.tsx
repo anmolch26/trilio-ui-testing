@@ -270,9 +270,9 @@ const DataIntegrations = () => {
   return (
     <>
       <PageLayout backgroundClass="bg-white">
-    <RouteCanonical path="/solutions/data-integrations" />
+    
         {/* Hero Section (clean) */}
-        <ThemeSection background="gradient" padding="sm" className="pt-20 pb-4">
+        <ThemeSection background="gradient" padding="sm" className="pt-36 pb-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl lg:text-6xl leading-[1.3] pb-2 overflow-visible font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
               Integrations

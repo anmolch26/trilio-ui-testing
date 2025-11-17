@@ -64,9 +64,9 @@ const CustomDashboards = () => {
 
   return (
     <PageLayout>
-      <RouteCanonical path="/solutions/custom-dashboards" />
+      
       {/* Hero Section */}
-      <ThemeSection background="gradient" padding="xl">
+      <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
           <div className="pulse-chip mx-auto mb-6">
             <span>Custom Dashboards</span>

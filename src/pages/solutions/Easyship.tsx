@@ -10,7 +10,7 @@ const Easyship = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-20 !bg-[#0B3A82]"
+      className="pt-28 !bg-[#0B3A82]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

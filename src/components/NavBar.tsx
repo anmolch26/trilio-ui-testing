@@ -33,12 +33,13 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   );
   const location = useLocation();
 
-  // Check if current route is homepage
+  // Check if current route is homepage or blog post page
   const isHomepage = location.pathname === "/";
+  const isBlogPost = location.pathname.startsWith("/resources/blog-insights/");
 
-  // For non-homepage routes, always use light theme
-  // For homepage, use dynamic behavior based on scroll
-  const shouldUseLightTheme = !isHomepage || isScrolled;
+  // For non-homepage/non-blog routes, always use light theme
+  // For homepage and blog posts, use dynamic behavior based on scroll
+  const shouldUseLightTheme = (!isHomepage && !isBlogPost) || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -212,9 +213,9 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   };
 
   const getNavbarBackground = () => {
-    // For non-homepage routes, always use solid background
-    // For homepage, keep the dynamic transparent-to-solid behavior
-    if (!isHomepage) {
+    // For non-homepage and non-blog routes, always use solid background
+    // For homepage and blog posts, keep the dynamic transparent-to-solid behavior
+    if (!isHomepage && !isBlogPost) {
       return "bg-white/60 backdrop-blur-md shadow-lg";
     }
     if (isScrolled) {
@@ -237,7 +238,7 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
           className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105 -ml-4 sm:-ml-6 md:-ml-8 lg:-ml-12 xl:-ml-14"
           aria-label="Trilio.ai"
         >
-          {isHomepage && !isScrolled ? (
+          {(isHomepage || isBlogPost) && !isScrolled ? (
             <img
               src={"https://assets.channeliq.ai/trilio-landing/Hero_Images/erasebg-transformed.webp"}
               alt="Trilio.ai Logo"

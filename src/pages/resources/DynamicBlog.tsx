@@ -137,7 +137,7 @@ const DynamicBlog = () => {
   if (loading && !apiPost) {
     return (
       <PageLayout backgroundClass="bg-white">
-        <section className="bg-white py-20 pt-20">
+        <section className="bg-white py-20 pt-36">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-2xl font-semibold text-gray-900 mb-4">Loading…</h1>
             <p className="text-gray-600">Fetching blog post.</p>
@@ -152,7 +152,7 @@ const DynamicBlog = () => {
   if (!apiPost && !loading) {
     return (
       <PageLayout backgroundClass="bg-white">
-        <section className="bg-white py-20 pt-20">
+        <section className="bg-white py-20 pt-36">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               Blog Post Not Found
@@ -202,7 +202,7 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
-      <RouteCanonical path={`/resources/blog-insights/${blogPost.slug}`} />
+     
       {/* BlogPosting JSON-LD for rich results */}
       {(() => {
         const origin = typeof window !== "undefined" ? window.location.origin : "https://trilio.ai";
