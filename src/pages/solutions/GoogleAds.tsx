@@ -13,7 +13,7 @@ const GoogleAds = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#4285F4]"
+      className="pt-20 !bg-[#4285F4]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

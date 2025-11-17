@@ -111,7 +111,7 @@ const NewsletterSignup = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
         <div className="container mx-auto px-6 text-center">
           <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Mail className="h-8 w-8 text-purple-600" />

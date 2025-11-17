@@ -212,7 +212,12 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
   };
 
   const getNavbarBackground = () => {
-    if (isScrolled || !isHomepage) {
+    // For non-homepage routes, always use solid background
+    // For homepage, keep the dynamic transparent-to-solid behavior
+    if (!isHomepage) {
+      return "bg-white/60 backdrop-blur-md shadow-lg";
+    }
+    if (isScrolled) {
       return "bg-white/60 backdrop-blur-md shadow-lg";
     }
     return "bg-transparent";
@@ -244,9 +249,9 @@ const Navbar: React.FC<NavbarProps> = ({ largeLogo = false }) => {
              loading="lazy" decoding="async" />
           ) : (
             <TrilioLogo
-              isScrolled={isScrolled}
-              isOnWhiteBackground={shouldUseLightTheme}
-              largeLogo={largeLogo}
+              isScrolled={true}
+              isOnWhiteBackground={true}
+              largeLogo={false}
               className="animate-fade-in"
             />
           )}

@@ -180,7 +180,7 @@ metrics = client.metrics.get(
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold mb-6">Trilio for Developers</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">

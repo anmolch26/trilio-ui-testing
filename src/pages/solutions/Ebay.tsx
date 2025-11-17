@@ -11,7 +11,7 @@ const Ebay = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#0064D2]"
+      className="pt-20 !bg-[#0064D2]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

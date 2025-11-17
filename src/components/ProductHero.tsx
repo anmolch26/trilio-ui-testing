@@ -29,7 +29,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
   gradientColors,
 }) => {
   return (
-    <section className="relative overflow-hidden bg-cover py-20 px-4 animated-teal-bg">
+    <section className="relative overflow-hidden bg-cover pt-20 pb-20 px-4 animated-teal-bg">
       <div
         className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] opacity-20 blur-3xl rounded-full animate-teal-shift"
         style={{

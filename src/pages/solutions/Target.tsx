@@ -12,7 +12,7 @@ const Target = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#E4002B]"
+      className="pt-20 !bg-[#E4002B]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

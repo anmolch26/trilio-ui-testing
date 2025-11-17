@@ -227,7 +227,7 @@ const BlogInsights = () => {
       <RouteCanonical path="/resources/blog-insights" />
       <div className="min-h-screen bg-white">
         <Navbar />
-        <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
+        <section className="pt-20 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <h1 className="text-5xl font-bold text-gray-900 mb-6">

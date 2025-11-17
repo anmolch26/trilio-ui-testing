@@ -8,7 +8,7 @@ const Klaviyo = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#232426]"
+      className="pt-20 !bg-[#232426]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

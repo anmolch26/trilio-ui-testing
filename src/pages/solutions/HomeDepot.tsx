@@ -11,7 +11,7 @@ const HomeDepot = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#F96302]"
+      className="pt-20 !bg-[#F96302]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

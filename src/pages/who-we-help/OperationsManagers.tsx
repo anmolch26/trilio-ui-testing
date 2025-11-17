@@ -19,7 +19,7 @@ const OperationsManagers = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section className="pt-20 pb-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

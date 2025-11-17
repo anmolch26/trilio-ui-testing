@@ -8,7 +8,7 @@ const FreshDesk = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#25C16F]"
+      className="pt-20 !bg-[#25C16F]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}
