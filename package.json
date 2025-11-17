@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run seo:links && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "blogs:sitemap": "node scripts/generate-sitemap.js",
-    "blogs:indexes": "node scripts/update-indexes.js"
+    "blogs:indexes": "node scripts/update-indexes.js",
+    "seo:links": "node scripts/generate-static-links.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
