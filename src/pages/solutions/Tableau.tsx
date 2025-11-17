@@ -10,7 +10,7 @@ const Tableau = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-20 !bg-[#00467E]"
+      className="pt-28 !bg-[#00467E]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

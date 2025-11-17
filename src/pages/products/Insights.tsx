@@ -109,10 +109,9 @@ const Insights = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <RouteCanonical path="/products/insights" />
+    <div className="min-h-screen bg-gray-50 ">
       <Navbar />
-      <main className="pt-16">
+      <main>
         <ProductHero {...heroProps} />
         <FeatureGrid
           title="AI-Powered Intelligence for Ecommerce"

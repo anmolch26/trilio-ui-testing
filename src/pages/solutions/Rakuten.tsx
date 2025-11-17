@@ -16,7 +16,7 @@ const Rakuten = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-20 !bg-[#E60012]"
+      className="pt-28 !bg-[#E60012]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

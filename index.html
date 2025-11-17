@@ -39,25 +39,7 @@
     <meta name="author" content="Trilio.ai" />
 
     <!-- Canonical URL - Static for crawlers, updated by React for dynamic routes -->
-    <link rel="canonical" href="https://trilio.ai/" id="canonical-link" />
-    <script>
-      // Update canonical immediately based on current URL (before React loads)
-      // This ensures crawlers see the correct canonical tag
-      (function() {
-        var canonical = document.getElementById('canonical-link');
-        if (canonical && window.location.href) {
-          var currentPath = window.location.pathname;
-          var baseUrl = 'https://trilio.ai';
-          
-          // Remove trailing slash except for root
-          if (currentPath !== '/' && currentPath.endsWith('/')) {
-            currentPath = currentPath.slice(0, -1);
-          }
-          
-          canonical.setAttribute('href', baseUrl + currentPath);
-        }
-      })();
-    </script>
+   
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="HxkqIryM_Zzq_6Gf4eBmHzT8RxcM87J0dRFejeUndfA" />
@@ -161,6 +143,9 @@
     <noscript>
       <h1>Trilio.ai — Ecommerce Intelligence, Powered by AI</h1>
     </noscript>
+    
+    
+    
     
     
     

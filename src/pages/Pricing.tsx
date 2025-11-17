@@ -106,7 +106,7 @@ const Pricing = () => {
     <PageLayout>
       <RouteCanonical path="/pricing" />
       {/* Hero Section */}
-      <ThemeSection background="gradient" padding="xl">
+      <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
           <div className="pulse-chip mx-auto mb-6">
             <span>Pricing</span>
