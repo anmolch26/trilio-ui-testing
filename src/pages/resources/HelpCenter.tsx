@@ -149,7 +149,7 @@ const HelpCenter = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             How Can We Help?

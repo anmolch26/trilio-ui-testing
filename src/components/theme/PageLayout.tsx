@@ -23,7 +23,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   return (
     <div className={`min-h-screen ${backgroundClass} ${className}`}>
       <Navbar />
-      <main className="relative z-10 pt-16">{children}</main>
+      <main className="relative z-10">{children}</main>
       {location.pathname === "/" ? <Footer /> : <LegacyFooter />}
     </div>
   );

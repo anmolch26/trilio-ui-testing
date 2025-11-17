@@ -137,7 +137,7 @@ const DynamicBlog = () => {
   if (loading && !apiPost) {
     return (
       <PageLayout backgroundClass="bg-white">
-        <section className="bg-white py-20 pt-24">
+        <section className="bg-white py-20 pt-20">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-2xl font-semibold text-gray-900 mb-4">Loading…</h1>
             <p className="text-gray-600">Fetching blog post.</p>
@@ -152,7 +152,7 @@ const DynamicBlog = () => {
   if (!apiPost && !loading) {
     return (
       <PageLayout backgroundClass="bg-white">
-        <section className="bg-white py-20 pt-24">
+        <section className="bg-white py-20 pt-20">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               Blog Post Not Found
@@ -264,7 +264,7 @@ const DynamicBlog = () => {
         );
       })()}
       {/* Hero Section with Featured Image Background */}
-      <section className="relative w-full h-[calc(100vh-64px)] min-h-[600px] overflow-hidden pt-16">
+      <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img

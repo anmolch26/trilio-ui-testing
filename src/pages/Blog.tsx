@@ -1510,7 +1510,7 @@ const Blog = () => {
   if (!currentPost) {
     return (
       <PageLayout backgroundClass="bg-white">
-        <ThemeSection background="white" padding="xl" className="pt-24">
+        <ThemeSection background="white" padding="xl" className="pt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               Blog Post Not Found
@@ -1529,7 +1529,7 @@ const Blog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
-      <ThemeSection background="white" padding="xl" className="pt-24">
+      <ThemeSection background="white" padding="xl" className="pt-20">
         <div className="max-w-4xl mx-auto">
           {/* Blog Post */}
           <article className="mb-16">

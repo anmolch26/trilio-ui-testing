@@ -14,7 +14,7 @@ const MailChimp = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#ffdf1a]"
+      className="pt-20 !bg-[#ffdf1a]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

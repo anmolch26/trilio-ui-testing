@@ -9,7 +9,7 @@ const GettingStarted = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
-      <div className="flex-1 mt-20">
+      <div className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
           <div className="max-w-4xl mx-auto px-6 text-center">

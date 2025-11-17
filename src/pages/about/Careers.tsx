@@ -136,7 +136,7 @@ const Careers = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">

@@ -8,7 +8,7 @@ const TermsOfUse = () => {
     <PageLayout backgroundClass="bg-white">
       <RouteCanonical path="/terms-of-use" />
 
-      <ThemeSection background="white" padding="xl" className="pt-24">
+      <ThemeSection background="white" padding="xl" className="pt-20">
         <div className="max-w-4xl mx-auto">
           {/* Page Header */}
           <div className="mb-12">

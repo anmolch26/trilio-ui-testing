@@ -13,7 +13,7 @@ const Amazon = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#FF9B2F]"
+      className="pt-20 !bg-[#FF9B2F]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

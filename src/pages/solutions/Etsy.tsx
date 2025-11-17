@@ -11,7 +11,7 @@ const Etsy = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#F16521]"
+      className="pt-20 !bg-[#F16521]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}

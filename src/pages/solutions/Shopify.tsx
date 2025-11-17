@@ -15,7 +15,7 @@ const Shopify = () => (
     <ThemeSection
       background="white"
       padding="xl"
-      className="pt-24 !bg-[#95BF47]"
+      className="pt-20 !bg-[#95BF47]"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Left: Text Content */}
