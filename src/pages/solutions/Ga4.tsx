@@ -12,9 +12,11 @@ import GA4AnalyticsNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 02_56_57 
 import GA4DataOptimizationImage from "@/assests/Ga4(1).jpg";
 import GA4ROINewImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_12_48 AM.webp";
 import GA4MarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_17_37 AM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GA4 = () => (
   <PageLayout backgroundClass="bg-[#f06a03]">
+    <RouteCanonical path="/solutions/ga4" />
     <ThemeSection
       background="white"
       padding="xl"

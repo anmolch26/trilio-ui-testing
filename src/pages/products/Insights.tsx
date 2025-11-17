@@ -14,6 +14,7 @@ import {
   Users,
   Shield,
 } from "lucide-react";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Insights = () => {
   const heroProps = {
@@ -109,6 +110,7 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteCanonical path="/products/insights" />
       <Navbar />
       <main className="pt-16">
         <ProductHero {...heroProps} />

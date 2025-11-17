@@ -7,9 +7,11 @@ import GoogleAdsHeroImage from "@/assests/google-ads-marketing.jpg";
 import GoogleAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_43_08 PM.webp";
 import GoogleAdsROIImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_55_37 PM.webp";
 import GoogleAdsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_04_47 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GoogleAds = () => (
   <PageLayout backgroundClass="bg-[#4285F4]">
+    <RouteCanonical path="/solutions/google-ads" />
     <ThemeSection
       background="white"
       padding="xl"

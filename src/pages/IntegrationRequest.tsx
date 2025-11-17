@@ -1,10 +1,12 @@
 import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import IntegrationRequestForm from "@/components/IntegrationRequestForm";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const IntegrationRequest = () => {
   return (
     <PageLayout>
+      <RouteCanonical path="/integration-request" />
       <main className="pt-16 pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">

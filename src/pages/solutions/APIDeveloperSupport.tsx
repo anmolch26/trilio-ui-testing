@@ -14,6 +14,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const APIDeveloperSupport = () => {
   const developerFeatures = [
@@ -88,6 +89,7 @@ const APIDeveloperSupport = () => {
 
   return (
     <PageLayout>
+      <RouteCanonical path="/solutions/api-developer-support" />
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl">
         <div className="text-center max-w-4xl mx-auto">

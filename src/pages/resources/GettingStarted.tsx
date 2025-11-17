@@ -2,12 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GettingStarted = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <RouteCanonical path="/resources/getting-started" />
       <Navbar />
       <div className="flex-1">
         {/* Hero Section */}

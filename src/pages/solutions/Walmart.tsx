@@ -11,9 +11,11 @@ import WalmartAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 
 import WalmartAnalyticsMarketplaceImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_53_31 AM.webp";
 import WalmartROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_57_46 AM.webp";
 import WalmartMarketingInsightsImage from "@/assests/Walmart-product-experience.png";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Walmart = () => (
   <PageLayout backgroundClass="bg-[#0071CE]">
+    <RouteCanonical path="/solutions/walmart" />
     <ThemeSection
       background="white"
       padding="xl"

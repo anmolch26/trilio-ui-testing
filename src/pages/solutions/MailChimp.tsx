@@ -8,9 +8,11 @@ import MailChimpOptimizationImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_
 import MailChimpROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.webp";
 import MailChimpInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.webp";
 import MailChimpOptimizationNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const MailChimp = () => (
   <PageLayout backgroundClass="bg-[#ffdf1a]">
+    <RouteCanonical path="/solutions/mailchimp" />
     <ThemeSection
       background="white"
       padding="xl"

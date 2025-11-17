@@ -6,6 +6,7 @@ import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
 import TikTokImage from "@/assests/TikTokImage.png";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const DataIntegrations = () => {
   const integrations = [
@@ -269,6 +270,7 @@ const DataIntegrations = () => {
   return (
     <>
       <PageLayout backgroundClass="bg-white">
+    <RouteCanonical path="/solutions/data-integrations" />
         {/* Hero Section (clean) */}
         <ThemeSection background="gradient" padding="sm" className="pt-20 pb-4">
           <div className="max-w-6xl mx-auto">

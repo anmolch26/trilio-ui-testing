@@ -4,6 +4,7 @@ import LegacyFooter from "@/components/LegacyFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import RouteCanonical from "@/components/RouteCanonical";
 
 type Metric = {
   category: string;
@@ -80,6 +81,7 @@ const DUMMY_FORMULAS: Record<string, string> = {
 const Sidebar: React.FC<{ items: Metric[]; active: number; setActive: (i: number) => void }> = ({ items, active, setActive }) => {
   return (
     <div className="lg:w-1/5 -ml-6">
+      <RouteCanonical path="/resources/data-dictionary" />
       <div className="sticky top-24">
         <Card>
           <CardHeader>

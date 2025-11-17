@@ -10,9 +10,11 @@ import TikTokShopVisual from "@/assests/ChatGPT Image Jul 28, 2025, 05_14_28 PM.
 import TikTokSocialROI from "@/assests/ChatGPT Image Jul 28, 2025, 05_25_08 PM.webp";
 import TikTokHeroImage from "@/assests/ChatGPT Image Jul 28, 2025, 07_22_37 PM.webp";
 import TikTokAnalytics from "@/assests/ChatGPT Image Jul 28, 2025, 08_04_45 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const TikTok = () => (
   <PageLayout backgroundClass="bg-[#21005c]">
+    <RouteCanonical path="/solutions/tiktok" />
     <ThemeSection
       background="white"
       padding="xl"

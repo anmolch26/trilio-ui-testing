@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const PowerBI = () => (
   <PageLayout backgroundClass="bg-[#F2C811]">
+    <RouteCanonical path="/solutions/powerbi" />
     <ThemeSection
       background="white"
       padding="xl"

@@ -12,10 +12,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LegacyFooter from "@/components/LegacyFooter";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const MarketingLeaders = () => {
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/who-we-help/marketing-leaders" />
       <Navbar />
 
       {/* Hero Section */}

@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Accordion,
   AccordionContent,
@@ -146,6 +147,7 @@ const HelpCenter = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/resources/help-center" />
       <Navbar />
 
       {/* Hero Section */}

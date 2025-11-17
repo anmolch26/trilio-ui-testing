@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Users, DollarSign } from 'lucide-react';
+import RouteCanonical from "@/components/RouteCanonical";
 
 const CaseStudies = () => {
   const trilioLogo = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp";
@@ -72,6 +73,7 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/resources/case-studies" />
       <Navbar />
       
       {/* Hero Section */}

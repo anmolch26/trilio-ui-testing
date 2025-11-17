@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const FreshDesk = () => (
   <PageLayout backgroundClass="bg-[#25C16F]">
+    <RouteCanonical path="/solutions/freshdesk" />
     <ThemeSection
       background="white"
       padding="xl"

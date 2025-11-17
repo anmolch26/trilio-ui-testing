@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, FileText, BarChart, BookOpen, Search } from "lucide-react";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GuidesReports = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -111,6 +112,7 @@ const GuidesReports = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/resources/guides-reports" />
       <Navbar />
 
       {/* Hero Section */}

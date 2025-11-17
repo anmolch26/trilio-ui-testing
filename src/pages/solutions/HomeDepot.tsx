@@ -2,12 +2,14 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 // The Home Depot brand-inspired palette
 // Primary: #F96302 (orange). Supporting deep tone: #C74E00
 
 const HomeDepot = () => (
   <PageLayout backgroundClass="bg-[#F96302]">
+    <RouteCanonical path="/solutions/homedepot" />
     <ThemeSection
       background="white"
       padding="xl"

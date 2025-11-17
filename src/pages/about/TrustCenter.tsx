@@ -4,6 +4,7 @@ import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Shield,
   Lock,
@@ -98,6 +99,7 @@ const TrustCenter = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteCanonical path="/about/trust-center" />
       <Navbar />
 
       {/* Hero Section */}
