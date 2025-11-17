@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Code,
   Copy,
@@ -177,6 +178,7 @@ metrics = client.metrics.get(
 
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/resources/developer-docs" />
       <Navbar />
 
       {/* Hero Section */}

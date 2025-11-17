@@ -13,6 +13,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const OnboardingTraining = () => {
   const included = [
@@ -74,6 +75,7 @@ const OnboardingTraining = () => {
 
   return (
     <PageLayout>
+      <RouteCanonical path="/solutions/onboarding-training" />
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl">
         <div className="text-center max-w-4xl mx-auto">

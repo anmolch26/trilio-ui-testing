@@ -10,9 +10,11 @@ import AmazonAdsInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_
 import AmazonAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.webp";
 import AmazonAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.webp";
 import AmazonAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const AmazonAds = () => (
   <PageLayout backgroundClass="bg-[#FF9900]">
+    <RouteCanonical path="/solutions/amazon-ads" />
     <ThemeSection
       background="white"
       padding="xl"

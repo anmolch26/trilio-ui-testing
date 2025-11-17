@@ -9,9 +9,11 @@ import ShopifyROIImage from "@/assests/0f5926d96c6f5d50716bf6d106679a5c.jpg";
 import ShopifyInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_08_09 PM.webp";
 import ShopifyAnalyticsDashboard from "@/assests/ChatGPT Image Jul 29, 2025, 03_38_36 PM.webp";
 import ShopifyCampaignOptimization from "@/assests/ChatGPT Image Jul 29, 2025, 03_48_33 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Shopify = () => (
   <PageLayout backgroundClass="bg-[#95BF47]">
+    <RouteCanonical path="/solutions/shopify" />
     <ThemeSection
       background="white"
       padding="xl"

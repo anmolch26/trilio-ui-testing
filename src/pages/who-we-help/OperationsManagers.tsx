@@ -12,10 +12,12 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const OperationsManagers = () => {
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/who-we-help/operations-managers" />
       <Navbar />
 
       {/* Hero Section */}

@@ -11,9 +11,11 @@ import WooCommerceAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 20
 import WooCommerceNewImage from "@/assests/woocommerce.png";
 import WooCommerceROINewImage from "@/assests/Woocommerce1.jpg";
 import WooCommerceInsightsNewImage from "@/assests/woocommerce3.png";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const WooCommerce = () => (
   <PageLayout backgroundClass="bg-[#96588A]">
+    <RouteCanonical path="/solutions/woocommerce" />
     <ThemeSection
       background="white"
       padding="xl"

@@ -7,9 +7,11 @@ import BestBuyHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.
 import BestBuyAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import BestBuyROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
 import BestBuyInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const BestBuy = () => (
   <PageLayout backgroundClass="bg-[#0046BE]">
+    <RouteCanonical path="/solutions/bestbuy" />
     <ThemeSection
       background="white"
       padding="xl"

@@ -12,10 +12,12 @@ import {
   PieChart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const FoundersCEOs = () => {
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/who-we-help/founders-ceos" />
       <Navbar />
 
       {/* Hero Section */}

@@ -12,10 +12,12 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const DataAnalysts = () => {
   return (
     <div className="min-h-screen bg-white">
+      <RouteCanonical path="/who-we-help/data-analysts" />
       <Navbar />
 
       {/* Hero Section */}

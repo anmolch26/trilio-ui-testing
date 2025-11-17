@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Akeneo = () => (
   <PageLayout backgroundClass="bg-[#4F1374]">
+    <RouteCanonical path="/solutions/akeneo" />
     <ThemeSection
       background="white"
       padding="xl"

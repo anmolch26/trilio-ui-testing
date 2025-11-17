@@ -3,6 +3,7 @@ import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Accordion,
   AccordionContent,
@@ -86,6 +87,7 @@ const InterviewProcess = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteCanonical path="/about/careers/interview-process" />
       <Navbar />
 
       {/* Hero Section */}

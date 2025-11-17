@@ -6,6 +6,7 @@ import ThemeButton from "@/components/theme/ThemeButton";
 import GMVPricingCalculator from "@/components/pricing/GMVPricingCalculator";
 import GMVRangeCards from "@/components/pricing/GMVRangeCards";
 import { cn } from "@/lib/utils";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const getPricingForGMV = (gmv) => {
   if (gmv <= 1) return { pro: 199, premium: 499 };
@@ -103,6 +104,7 @@ const Pricing = () => {
 
   return (
     <PageLayout>
+      <RouteCanonical path="/pricing" />
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl">
         <div className="text-center max-w-4xl mx-auto">

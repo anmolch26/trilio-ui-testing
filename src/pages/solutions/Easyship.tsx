@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Easyship = () => (
   <PageLayout backgroundClass="bg-[#0B3A82]">
+    <RouteCanonical path="/solutions/easyship" />
     <ThemeSection
       background="white"
       padding="xl"

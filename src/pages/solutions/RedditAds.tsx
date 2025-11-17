@@ -12,9 +12,11 @@ import RedditAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_3
 import RedditAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
 import RedditAdsInsightsBlogImage from "@/assests/Insights_Blog_Reddit-01.svg";
 import RedditAdsAIExpertiseNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 05_13_08 AM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const RedditAds = () => (
   <PageLayout backgroundClass="bg-[#FF4500]">
+    <RouteCanonical path="/solutions/reddit-ads" />
     <ThemeSection
       background="white"
       padding="xl"

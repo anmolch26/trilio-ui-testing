@@ -8,9 +8,11 @@ import RakutenInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 P
 import RakutenHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.webp";
 import RakutenAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import RakutenROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Rakuten = () => (
   <PageLayout backgroundClass="bg-[#E60012]">
+    <RouteCanonical path="/solutions/rakuten" />
     <ThemeSection
       background="white"
       padding="xl"

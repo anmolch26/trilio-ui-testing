@@ -8,10 +8,12 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Faqs = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteCanonical path="/about/faqs" />
       <Navbar />
 
       {/* Hero */}

@@ -4,6 +4,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import RouteCanonical from "@/components/RouteCanonical";
 
 // Blog post data - can be expanded with more posts
 const blogPosts = [
@@ -1510,6 +1511,7 @@ const Blog = () => {
   if (!currentPost) {
     return (
       <PageLayout backgroundClass="bg-white">
+      <RouteCanonical path="/resources/blog-insights" />
         <ThemeSection background="white" padding="xl" className="pt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">

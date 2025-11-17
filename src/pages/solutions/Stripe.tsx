@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Stripe = () => (
   <PageLayout backgroundClass="bg-[#635BFF]">
+    <RouteCanonical path="/solutions/stripe" />
     <ThemeSection
       background="white"
       padding="xl"

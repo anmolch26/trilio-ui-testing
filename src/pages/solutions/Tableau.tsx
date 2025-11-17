@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Tableau = () => (
   <PageLayout backgroundClass="bg-[#00467E]">
+    <RouteCanonical path="/solutions/tableau" />
     <ThemeSection
       background="white"
       padding="xl"

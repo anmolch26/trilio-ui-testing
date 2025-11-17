@@ -3,6 +3,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Bot,
   MessageSquare,
@@ -109,6 +110,7 @@ const AIAgents = () => {
 
   return (
     <PageLayout>
+      <RouteCanonical path="/products/ai-agents" />
       <ProductHero {...heroProps} />
 
       <FeatureGrid

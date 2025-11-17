@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Klaviyo = () => (
   <PageLayout backgroundClass="bg-[#232426]">
+    <RouteCanonical path="/solutions/klaviyo" />
     <ThemeSection
       background="white"
       padding="xl"

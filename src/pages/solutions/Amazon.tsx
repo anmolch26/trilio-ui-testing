@@ -7,9 +7,11 @@ import AmazonHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.w
 import AmazonAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import AmazonROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
 import AmazonInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Amazon = () => (
   <PageLayout backgroundClass="bg-[#FF9B2F]">
+    <RouteCanonical path="/solutions/amazon" />
     <ThemeSection
       background="white"
       padding="xl"

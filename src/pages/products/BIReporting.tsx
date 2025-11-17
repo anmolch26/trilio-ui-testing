@@ -3,6 +3,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Download,
   BarChart3,
@@ -110,6 +111,7 @@ const BIReporting = () => {
 
   return (
     <PageLayout>
+      <RouteCanonical path="/products/bi-reporting" />
       <ProductHero {...heroProps} />
 
       <FeatureGrid

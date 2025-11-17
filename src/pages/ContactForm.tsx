@@ -4,6 +4,7 @@ import Navbar from "@/components/NavBar";
 import ContactFormComponent from "@/components/ContactFormComponent";
 import Footer from "@/components/Footer";
 import PageLayout from "@/components/theme/PageLayout";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const ContactForm = () => {
   const [searchParams] = useSearchParams();

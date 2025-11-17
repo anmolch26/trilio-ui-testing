@@ -2,9 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const SmileIo = () => (
   <PageLayout backgroundClass="bg-[#FFC419]">
+    <RouteCanonical path="/solutions/smile-io" />
     <ThemeSection
       background="white"
       padding="xl"

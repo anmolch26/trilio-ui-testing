@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
@@ -125,6 +126,7 @@ const WaitlistForm: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <RouteCanonical path="/who-we-help/waitlist" />
       <Navbar />
       
       <main className="flex-1 animated-teal-bg flex items-center justify-center px-4 relative overflow-hidden py-24 md:py-32">
