@@ -43,7 +43,6 @@ export default defineConfig(({ mode }) => ({
             "@radix-ui/react-tooltip",
           ],
           charts: ["recharts"],
-          motion: ["framer-motion"],
         },
         // Optimize asset file names for better caching
         assetFileNames: (assetInfo) => {
