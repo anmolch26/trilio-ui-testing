@@ -28,21 +28,65 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: true, // Enable source maps for bundle analysis
-    cssCodeSplit: true, // Split CSS for better caching
+    sourcemap: true,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split major vendor libs so first paint needs less JS
-          react: ["react", "react-dom", "react-router-dom"],
-          radix: [
-            "@radix-ui/react-accordion",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-navigation-menu",
-            "@radix-ui/react-tooltip",
-          ],
-          charts: ["recharts"],
+        manualChunks: (id) => {
+          // Core React libs - loaded on every page
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'react-core';
+          }
+          
+          // Router - needed for navigation
+          if (id.includes('react-router-dom')) {
+            return 'router';
+          }
+          
+          // Split ALL Radix UI into separate chunk (lazy load when needed)
+          if (id.includes('@radix-ui')) {
+            return 'radix-ui';
+          }
+          
+          // React Query
+          if (id.includes('@tanstack/react-query')) {
+            return 'react-query';
+          }
+          
+          // Charts library - only needed on specific pages
+          if (id.includes('recharts')) {
+            return 'charts';
+          }
+          
+          // Form libraries - only needed on form pages
+          if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+            return 'forms';
+          }
+          
+          // Helmet for SEO
+          if (id.includes('react-helmet')) {
+            return 'helmet';
+          }
+          
+          // Animation libraries
+          if (id.includes('lottie-react')) {
+            return 'animations';
+          }
+          
+          // Date libraries
+          if (id.includes('date-fns') || id.includes('react-day-picker')) {
+            return 'date-utils';
+          }
+          
+          // Other UI libraries
+          if (id.includes('embla-carousel') || id.includes('cmdk') || id.includes('vaul')) {
+            return 'ui-extras';
+          }
+          
+          // Node modules that aren't split above
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         // Optimize asset file names for better caching
         assetFileNames: (assetInfo) => {
@@ -52,16 +96,49 @@ export default defineConfig(({ mode }) => ({
           if (/css/i.test(ext)) {
             return `assets/css/[name]-[hash][extname]`;
           }
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
           return `assets/[name]-[hash][extname]`;
         },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
-    assetsInlineLimit: 4096, // Inline smaller assets to reduce requests
+    assetsInlineLimit: 4096,
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console logs in production
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2, // Run terser twice for better compression
+      },
+      mangle: {
+        safari10: true,
+      },
+      format: {
+        comments: false, // Remove all comments
       },
     },
+    // Increase chunk size warning limit since we're splitting strategically
+    chunkSizeWarningLimit: 600,
+    // Enable CSS minification
+    cssMinify: 'lightningcss',
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+    ],
+    exclude: [
+      '@radix-ui/react-navigation-menu',
+      '@radix-ui/react-dropdown-menu',
+    ],
   },
 }));
