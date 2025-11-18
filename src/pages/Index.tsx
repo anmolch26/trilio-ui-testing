@@ -15,12 +15,11 @@ const Footer = lazy(() => import("@/components/Footer"));
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
 import Testimonials from "@/components/Testimonials";
-
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Index = () => {
   const [showAnimations, setShowAnimations] = useState(false);
-  // Defer heavy below-the-fold sections so they don't load on first paint
-  const [showBelowFoldContent, setShowBelowFoldContent] = useState(false);
+  const [showTestimonials] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,17 +78,11 @@ const Index = () => {
     };
   }, []);
 
-  // Defer below-the-fold product/feature sections slightly after initial render
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setShowBelowFoldContent(true);
-    }, 800); // ~1 second after initial render
-    return () => window.clearTimeout(timer);
-  }, []);
+  // Testimonials now eagerly loaded (no lazy/preload logic)
 
   return (
     <div className="min-h-screen">
-     
+      <RouteCanonical path="/" />
       <div className="gradient-background">
         <Suspense fallback={null}>
           {showAnimations && (
@@ -109,16 +102,14 @@ const Index = () => {
       <main className="space-y-0 relative z-10 pt-16">
         <Hero />
         
-        {/* Lazy + deferred load below-the-fold sections */}
-        {showBelowFoldContent && (
-          <Suspense fallback={<div className="h-20" />}>
-            <SpecsSection />
-            <OptimizedPurposeSection />
-            <DetailsSection />
-            <ImageShowcaseSection />
-            <Features />
-          </Suspense>
-        )}
+        {/* Lazy load below-the-fold sections */}
+        <Suspense fallback={<div className="h-20" />}>
+          <SpecsSection />
+          <OptimizedPurposeSection />
+          <DetailsSection />
+          <ImageShowcaseSection />
+          <Features />
+        </Suspense>
         
         <Testimonials />
         
