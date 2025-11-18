@@ -121,7 +121,6 @@ const BlogInsights = () => {
     "AI",
   ];
 
-  // Handle category selection
   const handleCategoryToggle = (category: string) => {
     setSelectedCategories((prev) => {
       if (prev.includes(category)) {
