@@ -4,31 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Optimized Font Loading -->
+    <!-- Optimized Font Loading - Preconnect for faster DNS/TLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload critical custom font -->
+    <!-- Load Google Fonts asynchronously to avoid render blocking -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
+        rel="stylesheet"
+      />
+    </noscript>
+    
+    <!-- Preload custom font for faster loading -->
     <link rel="preload" as="font" href="/brockmann-medium-webfont.woff2" type="font/woff2" crossorigin />
     
-    <!-- Load fonts with font-display: swap for immediate text rendering -->
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!-- DNS prefetch for analytics (don't preconnect, just resolve DNS) -->
+    <!-- Performance hints for other resources -->
+    <link rel="preconnect" href="https://staging.trilio.ai" crossorigin />
+    <link rel="preconnect" href="https://assets.channeliq.ai" />
+    <link rel="dns-prefetch" href="//staging.trilio.ai" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     <link rel="dns-prefetch" href="//ddwl4m2hdecbv.cloudfront.net" />
-    <link rel="dns-prefetch" href="//analytics.ahrefs.com" />
-    
     <title>Trilio.ai - Ecommerce Intelligence, Powered by AI</title>
     <meta
       name="description"
       content="Transform your ecommerce data into profitable insights with Trilio.ai. Unified analytics for Shopify, Amazon, and ad platforms with AI-powered recommendations."
     />
     <meta name="author" content="Trilio.ai" />
-    
+
+    <!-- Canonical URL - Static for crawlers, updated by React for dynamic routes -->
+   
+
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="HxkqIryM_Zzq_6Gf4eBmHzT8RxcM87J0dRFejeUndfA" />
 
@@ -39,105 +51,92 @@
     />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Trilio.ai - Your AI Teammate for Ecommerce Growth" />
-    <meta property="og:description" content="Turn every click, visit, and ad dollar into profitable insights—instantly. Unified ecommerce analytics powered by AI." />
+    <meta
+      property="og:title"
+      content="Trilio.ai - Your AI Teammate for Ecommerce Growth"
+    />
+    <meta
+      property="og:description"
+      content="Turn every click, visit, and ad dollar into profitable insights—instantly. Unified ecommerce analytics powered by AI."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://trilio.ai" />
     <meta property="og:image" content="https://trilio.ai/lovable-uploads/9a046283-fff2-4873-a280-f9e479a02c07.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Trilio.ai - Ecommerce Intelligence, Powered by AI" />
-    <meta name="twitter:description" content="Transform your ecommerce data into profitable insights with AI-powered analytics and recommendations." />
+    <meta
+      name="twitter:title"
+      content="Trilio.ai - Ecommerce Intelligence, Powered by AI"
+    />
+    <meta
+      name="twitter:description"
+      content="Transform your ecommerce data into profitable insights with AI-powered analytics and recommendations."
+    />
     <meta name="twitter:image" content="https://trilio.ai/lovable-uploads/9a046283-fff2-4873-a280-f9e479a02c07.png" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://assets.channeliq.ai/trilio-landing/Hero_Images/cropped_circle_image.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.channeliq.ai/trilio-landing/Hero_Images/cropped_circle_image.png"
+    />
 
-    <!-- Analytics Scripts - Deferred to after load + idle -->
-    <script>
-      // Only load analytics after page is fully interactive
-      window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadAnalytics, { timeout: 5000 });
-        } else {
-          setTimeout(loadAnalytics, 5000);
-        }
+    <!-- Google Analytics 4 - Deferred for better performance -->
+    <script
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=G-HCE1YN2CNY"
+    ></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HCE1YN2CNY", {
+        page_title: document.title,
+        page_location: window.location.href,
       });
+    </script>
 
-      function loadAnalytics() {
-        // Google Analytics 4
-        var gtagScript = document.createElement('script');
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-HCE1YN2CNY';
-        gtagScript.async = true;
-        document.head.appendChild(gtagScript);
-        
-        gtagScript.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HCE1YN2CNY', {
-            page_title: document.title,
-            page_location: window.location.href
-          });
+    <!-- Reb2b Analytics Script -->
+    <script>
+      !(function () {
+        var reb2b = (window.reb2b = window.reb2b || []);
+        if (reb2b.invoked) return;
+        reb2b.invoked = true;
+        reb2b.methods = ["identify", "collect"];
+        reb2b.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            reb2b.push(args);
+            return reb2b;
+          };
         };
-
-        // Ahrefs Analytics (Combined)
-        var ahrefsScript1 = document.createElement('script');
-        ahrefsScript1.src = 'https://analytics.ahrefs.com/analytics.js';
-        ahrefsScript1.setAttribute('data-key', 'qLwwPnxVx5zB3Cl+tQOdQA');
-        ahrefsScript1.async = true;
-        document.head.appendChild(ahrefsScript1);
-
-        var ahrefsScript2 = document.createElement('script');
-        ahrefsScript2.src = 'https://analytics.ahrefs.com/analytics.js';
-        ahrefsScript2.setAttribute('data-key', 'X0xQWh7ytdoGoI5YcAkHlg');
-        ahrefsScript2.async = true;
-        document.head.appendChild(ahrefsScript2);
-      }
-    </script>
-
-    <!-- Reb2b Analytics - Defer to idle time -->
-    <script>
-      window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadReb2b, { timeout: 5000 });
-        } else {
-          setTimeout(loadReb2b, 5000);
+        for (var i = 0; i < reb2b.methods.length; i++) {
+          var key = reb2b.methods[i];
+          reb2b[key] = reb2b.factory(key);
         }
-      });
-
-      function loadReb2b() {
-        !(function () {
-          var reb2b = (window.reb2b = window.reb2b || []);
-          if (reb2b.invoked) return;
-          reb2b.invoked = true;
-          reb2b.methods = ["identify", "collect"];
-          reb2b.factory = function (method) {
-            return function () {
-              var args = Array.prototype.slice.call(arguments);
-              args.unshift(method);
-              reb2b.push(args);
-              return reb2b;
-            };
-          };
-          for (var i = 0; i < reb2b.methods.length; i++) {
-            var key = reb2b.methods[i];
-            reb2b[key] = reb2b.factory(key);
-          }
-          reb2b.load = function (key) {
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.async = true;
-            script.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/Z6PVLHP7JK6R.js.gz";
-            var first = document.getElementsByTagName("script")[0];
-            first.parentNode.insertBefore(script, first);
-          };
-          reb2b.SNIPPET_VERSION = "1.0.1";
-          reb2b.load("Z6PVLHP7JK6R");
-        })();
-      }
+        reb2b.load = function (key) {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src =
+            "https://ddwl4m2hdecbv.cloudfront.net/b/" +
+            key +
+            "/Z6PVLHP7JK6R.js.gz";
+          var first = document.getElementsByTagName("script")[0];
+          first.parentNode.insertBefore(script, first);
+        };
+        reb2b.SNIPPET_VERSION = "1.0.1";
+        reb2b.load("Z6PVLHP7JK6R");
+      })();
     </script>
+    
+    <!-- Ahrefs Analytics -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="qLwwPnxVx5zB3Cl+tQOdQA" async></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="X0xQWh7ytdoGoI5YcAkHlg" async></script>
   </head>
 
   <body>
@@ -145,12 +144,16 @@
       <h1>Trilio.ai — Ecommerce Intelligence, Powered by AI</h1>
     </noscript>
     
-    <!-- 
-      REMOVED: 320+ static blog links that bloat the initial HTML
-      These are now handled by your sitemap.xml for SEO
-      Googlebot can crawl from sitemap - no need to burden user's browser
-    -->
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     <!-- SEO: Static links for search engine crawlers -->
@@ -572,20 +575,8 @@
     </nav>
 
     <div id="root"></div>
-    
-    <!-- Main app script -->
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- GPT Engineer script - defer to after app loads -->
-    <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var gptScript = document.createElement('script');
-          gptScript.src = 'https://cdn.gpteng.co/gptengineer.js';
-          gptScript.type = 'module';
-          document.body.appendChild(gptScript);
-        }, 3000);
-      });
-    </script>
   </body>
 </html>

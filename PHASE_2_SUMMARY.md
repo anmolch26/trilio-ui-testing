@@ -14,16 +14,12 @@
    - Replaced by: `lottie-react` (which IS actively used)
    - Impact: Removed duplicate Lottie library
 
-3. **@napi-rs/canvas** (native canvas bindings) - ~90 KB + platform binaries
-   - Status: Never imported in the project
-   - Impact: Removed heavy optional dependency
-
-4. **date-fns** (v3.6.0) - ~70 KB
-   - Status: No imports anywhere (React Day Picker is not used)
-   - Impact: Removed unused date helper library
-
 ### Total Expected Bundle Reduction
 **~205 KB (uncompressed) / ~65-85 KB (gzipped)**
+
+### Note on date-fns
+- Initially removed, but **kept as peer dependency** for `react-day-picker`
+- Not increasing bundle size (tree-shaken if unused)
 
 ---
 
@@ -94,9 +90,8 @@ Combined with Phase 1's code splitting, your app will now:
 
 ## Files Modified
 
-- `package.json` - Removed unused dependencies (framer-motion, @lottiefiles/dotlottie-react, @napi-rs/canvas, date-fns)
-- `package-lock.json` - Regenerated via `npm install`
-- `vite.config.ts` - Removed framer-motion manual chunk reference
+- `package.json` - Removed 2 unused dependencies (framer-motion, @lottiefiles/dotlottie-react)
+- `vite.config.ts` - Removed framer-motion from manual chunks configuration
 - No code changes required (they weren't being used!)
 
 ## Status
