@@ -10,10 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
-import LeadershipTeam from "../about/LeadershipTeam";
 import { Navbar } from "@/components";
 import LegacyFooter from "@/components/LegacyFooter";
-import RouteCanonical from "@/components/RouteCanonical";
+
 
 const BlogInsights = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -42,6 +41,7 @@ const BlogInsights = () => {
     image: string;
     summary: string;
   } | null>(null);
+  const [totalBlogs, setTotalBlogs] = useState<number>(0);
 
   const formatDate = (iso: string | null | undefined) => {
     if (!iso) return "";
@@ -57,30 +57,34 @@ const BlogInsights = () => {
     }
   };
 
-  const fetchBlogs = async () => {
+  const fetchBlogs = async (
+    page = 1,
+    filters = selectedCategories,
+    search = searchQuery
+  ) => {
     setLoading(true);
     setError(null);
     try {
-      const PAGE_LIMIT = 340;
-      let offset = 0;
-      let hasMore = true;
-      const all: Array<any> = [];
-      while (hasMore) {
-        const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
-        const response = await fetch(url, {
-          method: "GET",
-          headers: { "Accept": "application/json" },
-        });
-        if (!response.ok) throw new Error(`Request failed: ${response.status}`);
-        const json = await response.json();
-        const pageBlogs = (json?.data?.blogs ?? []) as Array<any>;
-        all.push(...pageBlogs);
-        hasMore = Boolean(json?.data?.has_more);
-        offset += PAGE_LIMIT;
-        // safety: don't loop forever
-        if (offset > 1000) break;
-      }
-      const mapped = all.map((b) => ({
+      const PAGE_LIMIT = blogsPerPage;
+      const offset = (page - 1) * PAGE_LIMIT;
+      // Optionally, if backend supports filters/search: add them as query params
+      const params = new URLSearchParams({
+        limit: String(PAGE_LIMIT),
+        offset: String(offset),
+        // backend filter/query props can go here if supported (category/search)
+      });
+      // TODO: Uncomment and adapt if API supports filters/search as query params
+      // if (filters.length > 0) params.append("category", filters.join(","));
+      // if (search.length > 0) params.append("search", search);
+
+      const url = `https://staging.trilio.ai/api/auth/v1/blogs?${params.toString()}`;
+      const response = await fetch(url, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      const json = await response.json();
+      const blogsArray = (json?.data?.blogs ?? []).map((b: any) => ({
         id: Number(b.id),
         slug: String(b.slug ?? ""),
         title: String(b.title ?? "Untitled"),
@@ -90,16 +94,13 @@ const BlogInsights = () => {
         image: String(b.featured_image_url ?? ""),
         summary: String(b.title ?? ""),
       }));
-      setBlogPosts(mapped);
-
-      // Find trending blog (Black Friday/Cyber Monday Preparedness)
-      const trending = mapped.find((b) =>
+      setBlogPosts(blogsArray);
+      setTotalBlogs(Number(json?.data?.total_count ?? blogsArray.length));
+      const trending = blogsArray.find((b) =>
         b.title.toLowerCase().includes("black friday") ||
         b.title.toLowerCase().includes("cyber monday")
       );
-      if (trending) {
-        setTrendingBlog(trending);
-      }
+      setTrendingBlog(trending ?? null);
     } catch (err: any) {
       setError(err?.message || "Failed to load blogs.");
     } finally {
@@ -108,9 +109,9 @@ const BlogInsights = () => {
   };
 
   React.useEffect(() => {
-    fetchBlogs();
+    fetchBlogs(currentPage, selectedCategories, searchQuery);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentPage, selectedCategories, searchQuery]);
 
   const categories = [
     "Analytics",
@@ -164,21 +165,8 @@ const BlogInsights = () => {
     return counts;
   }, [blogPosts]);
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory =
-      selectedCategories.length === 0 ||
-      selectedCategories.some((category) => post.category === category);
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.summary.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  // Pagination calculations
-  const totalPages = Math.ceil(filteredPosts.length / blogsPerPage);
-  const startIndex = (currentPage - 1) * blogsPerPage;
-  const endIndex = startIndex + blogsPerPage;
-  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(totalBlogs / blogsPerPage);
+  const currentPosts = blogPosts;
 
   // Generate page numbers for pagination
   const getPageNumbers = () => {
@@ -221,6 +209,32 @@ const BlogInsights = () => {
     return pageNumbers;
   };
 
+  const hardcodedTrendingBlog = {
+    id: 2,
+    slug: "example-black-friday-cyber-monday-preparedness",
+    title: "Black Friday/Cyber Monday Preparedness",
+    author: "Om Rathod",
+    author_image: "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+    category: "E-commerce",
+    read_time: "10 min",
+    featured_image_url: "https://assets.channeliq.ai/trilio-landing/Blogs/example.jpg",
+    published_at: "2025-01-17T00:00:00"
+  };
+
+  const formatTrendingDate = (iso: string | null | undefined) => {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      });
+    } catch {
+      return "";
+    }
+  };
+
   return (
     <div className="h-screen">
      
@@ -238,33 +252,30 @@ const BlogInsights = () => {
               </p>
             </div>
 
-            {/* Trending Blog Card */}
-            {trendingBlog && (
-              <div className="max-w-6xl mx-auto">
-                <Link to={`/resources/blog-insights/${trendingBlog.slug}`} className="block">
-                  <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
-                    {/* Background Image */}
-                    <img
-                      src={trendingBlog.image}
-                      alt={trendingBlog.title}
-                      className="absolute inset-0 w-full h-full object-cover object-top"
-                    />
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    {/* Content Overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
-                        {trendingBlog.title}
-                      </h2>
-                      <div className="flex items-center gap-3 text-sm text-white/80">
-                        <span>{trendingBlog.date}</span>
-                      </div>
+            {/* Hardcoded Trending Blog Card */}
+            <div className="max-w-6xl mx-auto mb-12">
+              <Link to={`/resources/blog-insights/${hardcodedTrendingBlog.slug}`} className="block">
+                <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
+                  {/* Background Image */}
+                  <img
+                    src={hardcodedTrendingBlog.featured_image_url}
+                    alt={hardcodedTrendingBlog.title}
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
+                      {hardcodedTrendingBlog.title}
+                    </h2>
+                    <div className="flex items-center gap-3 text-sm text-white/80">
+                      <span>{formatTrendingDate(hardcodedTrendingBlog.published_at)}</span>
                     </div>
-                  </Card>
-                </Link>
-              </div>
-            )}
+                  </div>
+                </Card>
+              </Link>
+            </div>
           </div>
         </section>
           
@@ -333,7 +344,7 @@ const BlogInsights = () => {
                 <div className="py-16 text-center">
                   <p className="text-red-600 mb-4">{error}</p>
                   <button
-                    onClick={fetchBlogs}
+                    onClick={() => fetchBlogs(currentPage, selectedCategories, searchQuery)}
                     className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
                   >
                     Retry

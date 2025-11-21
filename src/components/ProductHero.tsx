@@ -51,7 +51,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
               {title}
             </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-4 leading-relaxed">
               {description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -82,7 +82,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
             <img
               src={heroImage}
               alt={heroImageAlt}
-              className="w-full h-auto"
+              className="w-full h-auto rounded-2xl"
               loading="lazy"
               decoding="async"
             />
