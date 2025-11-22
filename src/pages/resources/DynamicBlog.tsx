@@ -66,26 +66,25 @@ const DynamicBlog = () => {
         const PAGE_LIMIT = 340;
         let offset = 0;
         let hasMore = true;
-        let found: any = null;
-        let allBlogs: Array<any> = [];
+        let found = null;
+        let allBlogs = [];
+        // Restore original: batch fetch all
         while (hasMore && !found) {
           const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
           const res = await fetch(url, {
-            method: "GET",
-            headers: { Accept: "application/json" },
+            method: 'GET',
+            headers: { Accept: 'application/json' },
           });
           if (!res.ok) throw new Error(`Request failed: ${res.status}`);
           const json = await res.json();
-          const list = (json?.data?.blogs ?? []) as Array<any>;
-          allBlogs = [...allBlogs, ...list];
-          found = list.find((b) => String(b.slug) === String(blogSlug));
+          const blogs = json?.data?.blogs ?? [];
+          allBlogs = [...allBlogs, ...blogs];
+          found = blogs.find((b) => String(b.slug) === String(blogSlug));
           hasMore = Boolean(json?.data?.has_more);
           offset += PAGE_LIMIT;
           if (offset > 1000) break;
         }
         if (isMounted && found) {
-          console.log("Blog found:", found.title);
-          console.log("Content length:", found.content_html?.length || 0);
           setApiPost({
             id: Number(found.id),
             slug: String(found.slug ?? ""),
@@ -97,16 +96,14 @@ const DynamicBlog = () => {
             featuredImage: String(found.featured_image_url ?? ""),
             contentHtml: String(found.content_html ?? ""),
           });
-          
-          // Store all blogs for navigation
+          // Re-implement allBlogs for prev/next
           const blogsList = allBlogs.map((b) => ({
             id: Number(b.id),
             slug: String(b.slug ?? ""),
             title: String(b.title ?? "Untitled"),
           }));
           setAllBlogs(blogsList);
-          
-          // Get 3 related posts (excluding the current one)
+          // Related logic, if desired
           const otherBlogs = allBlogs.filter((b) => String(b.slug) !== String(blogSlug));
           const shuffled = otherBlogs.sort(() => 0.5 - Math.random());
           const selected = shuffled.slice(0, 3).map((b) => ({
@@ -115,11 +112,10 @@ const DynamicBlog = () => {
             title: String(b.title ?? "Untitled"),
             date: formatDate(b.published_at),
             featuredImage: String(b.featured_image_url ?? ""),
-            readTime: "3 min read", // Default read time
+            readTime: "3 min read",
           }));
           setRelatedPosts(selected);
         } else if (isMounted) {
-          console.log("Blog not found for slug:", blogSlug);
           setApiPost(null);
         }
       } catch (err: any) {
