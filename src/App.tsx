@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -110,11 +110,10 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-        <RouteCanonical /> 
-          <AnalyticsWrapper>
-            <Suspense fallback={<LoadingFallback />}>
-              <Routes>
+        <RouteCanonical />
+        <AnalyticsWrapper>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/contact-form" element={<ContactForm />} />
               <Route path="/integration-request" element={<IntegrationRequest />} />
@@ -122,203 +121,202 @@ const App = () => (
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-use" element={<TermsOfUse />} />
-            <Route path="/products/bi-reporting" element={<BIReporting />} />
-            <Route path="/products/insights" element={<Insights />} />
-            <Route path="/products/ai-agents" element={<AIAgents />} />
-            <Route
-              path="/who-we-help/founders-ceos"
-              element={<FoundersCEOs />}
-            />
-            <Route
-              path="/who-we-help/marketing-leaders"
-              element={<MarketingLeaders />}
-            />
-            <Route
-              path="/who-we-help/performance-marketers"
-              element={<PerformanceMarketers />}
-            />
-            <Route
-              path="/who-we-help/operations-managers"
-              element={<OperationsManagers />}
-            />
-            <Route
-              path="/who-we-help/data-analysts"
-              element={<DataAnalysts />}
-            />
-            <Route
-              path="/who-we-help/agencies-consultants"
-              element={<AgenciesConsultants />}
-            />
-            <Route
-              path="/who-we-help/tech-partners"
-              element={<TechPartners />}
-            />
-            <Route path="/who-we-help/waitlist" element={<WaitlistForm />} />
-            {/* About section routes */}
-            <Route path="/about/leadership-team" element={<LeadershipTeam />} />
-            <Route path="/about/careers" element={<Careers />} />
-            <Route path="/about/trust-center" element={<TrustCenter />} />
-            <Route path="/about/faqs" element={<Faqs />} />
-            {/* New about/careers routes for navigation consistency */}
-            <Route
-              path="/about/careers/open-positions"
-              element={<OpenPositions />}
-            />
-            <Route
-              path="/about/careers/life-at-trilio"
-              element={<LifeAtTrilio />}
-            />
-            <Route
-              path="/about/careers/interview-process"
-              element={<InterviewProcess />}
-            />
-            <Route
-              path="/about/careers/internships-programs"
-              element={<InternshipsPrograms />}
-            />
-            {/* Solutions section routes */}
-            <Route path="/solutions/tiktok" element={<TikTok />} />
-            <Route path="/solutions/amazon" element={<Amazon />} />
-            <Route path="/solutions/shopify" element={<Shopify />} />
-            <Route path="/solutions/google-ads" element={<GoogleAds />} />
-            <Route path="/solutions/amazon-ads" element={<AmazonAds />} />
-            <Route path="/solutions/meta" element={<Meta />} />
-            <Route path="/solutions/woocommerce" element={<WooCommerce />} />
-            <Route path="/solutions/reddit-ads" element={<RedditAds />} />
-            <Route path="/solutions/tableau" element={<Tableau />} />
-            <Route path="/solutions/ga4" element={<GA4 />} />
-            <Route path="/solutions/walmart" element={<Walmart />} />
-            <Route path="/solutions/bestbuy" element={<BestBuy />} />
-            <Route path="/solutions/target" element={<Target />} />
-            <Route path="/solutions/rakuten" element={<Rakuten />} />
-            <Route path="/solutions/ebay" element={<Ebay />} />
-            <Route path="/solutions/etsy" element={<Etsy />} />
-            <Route path="/solutions/homedepot" element={<HomeDepot />} />
-            <Route path="/solutions/mailchimp" element={<MailChimp />} />
-            <Route path="/solutions/klaviyo" element={<Klaviyo />} />
-            <Route path="/solutions/stripe" element={<Stripe />} />
-            <Route path="/solutions/square" element={<Square />} />
-            <Route path="/solutions/zendesk" element={<Zendesk />} />
-            <Route path="/solutions/shipstation" element={<ShipStation />} />
-            <Route path="/solutions/smile-io" element={<SmileIo />} />
-            <Route path="/solutions/powerbi" element={<PowerBI />} />
-            <Route path="/solutions/akeneo" element={<Akeneo />} />
-            <Route path="/solutions/freshdesk" element={<FreshDesk />} />
-            <Route path="/solutions/easyship" element={<Easyship />} />
-            {/* API Developer Support routes */}
-            <Route
-              path="/solutions/api-developer-support"
-              element={<APIDeveloperSupport />}
-            />
-            <Route
-              path="/solutions/custom-dashboards"
-              element={<CustomDashboards />}
-            />
-            <Route
-              path="/solutions/data-integrations"
-              element={<DataIntegrations />}
-            />
-            <Route
-              path="/solutions/onboarding-training"
-              element={<OnboardingTraining />}
-            />
-            {/* Shopify Integration routes */}
-            <Route
-              path="/resources/shopify-integration"
-              element={<DeveloperDocs />}
-            />
-            {/* Developer Docs routes */}
-            <Route
-              path="/resources/developer-docs/shopify"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/amazon"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/google-analytics"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/google-ads"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/amazon-ads"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/meta-ads"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/developer-docs/klaviyo"
-              element={<DeveloperDocs />}
-            />
-            {/* Careers section routes (kept for backward compatibility) */}
-            <Route path="/careers/open-positions" element={<OpenPositions />} />
+              <Route path="/products/bi-reporting" element={<BIReporting />} />
+              <Route path="/products/insights" element={<Insights />} />
+              <Route path="/products/ai-agents" element={<AIAgents />} />
+              <Route
+                path="/who-we-help/founders-ceos"
+                element={<FoundersCEOs />}
+              />
+              <Route
+                path="/who-we-help/marketing-leaders"
+                element={<MarketingLeaders />}
+              />
+              <Route
+                path="/who-we-help/performance-marketers"
+                element={<PerformanceMarketers />}
+              />
+              <Route
+                path="/who-we-help/operations-managers"
+                element={<OperationsManagers />}
+              />
+              <Route
+                path="/who-we-help/data-analysts"
+                element={<DataAnalysts />}
+              />
+              <Route
+                path="/who-we-help/agencies-consultants"
+                element={<AgenciesConsultants />}
+              />
+              <Route
+                path="/who-we-help/tech-partners"
+                element={<TechPartners />}
+              />
+              <Route path="/who-we-help/waitlist" element={<WaitlistForm />} />
+              {/* About section routes */}
+              <Route path="/about/leadership-team" element={<LeadershipTeam />} />
+              <Route path="/about/careers" element={<Careers />} />
+              <Route path="/about/trust-center" element={<TrustCenter />} />
+              <Route path="/about/faqs" element={<Faqs />} />
+              {/* New about/careers routes for navigation consistency */}
+              <Route
+                path="/about/careers/open-positions"
+                element={<OpenPositions />}
+              />
+              <Route
+                path="/about/careers/life-at-trilio"
+                element={<LifeAtTrilio />}
+              />
+              <Route
+                path="/about/careers/interview-process"
+                element={<InterviewProcess />}
+              />
+              <Route
+                path="/about/careers/internships-programs"
+                element={<InternshipsPrograms />}
+              />
+              {/* Solutions section routes */}
+              <Route path="/solutions/tiktok" element={<TikTok />} />
+              <Route path="/solutions/amazon" element={<Amazon />} />
+              <Route path="/solutions/shopify" element={<Shopify />} />
+              <Route path="/solutions/google-ads" element={<GoogleAds />} />
+              <Route path="/solutions/amazon-ads" element={<AmazonAds />} />
+              <Route path="/solutions/meta" element={<Meta />} />
+              <Route path="/solutions/woocommerce" element={<WooCommerce />} />
+              <Route path="/solutions/reddit-ads" element={<RedditAds />} />
+              <Route path="/solutions/tableau" element={<Tableau />} />
+              <Route path="/solutions/ga4" element={<GA4 />} />
+              <Route path="/solutions/walmart" element={<Walmart />} />
+              <Route path="/solutions/bestbuy" element={<BestBuy />} />
+              <Route path="/solutions/target" element={<Target />} />
+              <Route path="/solutions/rakuten" element={<Rakuten />} />
+              <Route path="/solutions/ebay" element={<Ebay />} />
+              <Route path="/solutions/etsy" element={<Etsy />} />
+              <Route path="/solutions/homedepot" element={<HomeDepot />} />
+              <Route path="/solutions/mailchimp" element={<MailChimp />} />
+              <Route path="/solutions/klaviyo" element={<Klaviyo />} />
+              <Route path="/solutions/stripe" element={<Stripe />} />
+              <Route path="/solutions/square" element={<Square />} />
+              <Route path="/solutions/zendesk" element={<Zendesk />} />
+              <Route path="/solutions/shipstation" element={<ShipStation />} />
+              <Route path="/solutions/smile-io" element={<SmileIo />} />
+              <Route path="/solutions/powerbi" element={<PowerBI />} />
+              <Route path="/solutions/akeneo" element={<Akeneo />} />
+              <Route path="/solutions/freshdesk" element={<FreshDesk />} />
+              <Route path="/solutions/easyship" element={<Easyship />} />
+              {/* API Developer Support routes */}
+              <Route
+                path="/solutions/api-developer-support"
+                element={<APIDeveloperSupport />}
+              />
+              <Route
+                path="/solutions/custom-dashboards"
+                element={<CustomDashboards />}
+              />
+              <Route
+                path="/solutions/data-integrations"
+                element={<DataIntegrations />}
+              />
+              <Route
+                path="/solutions/onboarding-training"
+                element={<OnboardingTraining />}
+              />
+              {/* Shopify Integration routes */}
+              <Route
+                path="/resources/shopify-integration"
+                element={<DeveloperDocs />}
+              />
+              {/* Developer Docs routes */}
+              <Route
+                path="/resources/developer-docs/shopify"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/amazon"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/google-analytics"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/google-ads"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/amazon-ads"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/meta-ads"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/klaviyo"
+                element={<DeveloperDocs />}
+              />
+              {/* Careers section routes (kept for backward compatibility) */}
+              <Route path="/careers/open-positions" element={<OpenPositions />} />
 
-            <Route path="/careers/life-at-trilio" element={<LifeAtTrilio />} />
-            <Route
-              path="/careers/interview-process"
-              element={<InterviewProcess />}
-            />
-            <Route
-              path="/careers/internships-programs"
-              element={<InternshipsPrograms />}
-            />
-            {/* Resources section routes */}
-            {/* Blog routes - lazy loaded for better performance */}
-            <Route path="/resources/blog-insights" element={<BlogInsights />} />
-            <Route path="/resources/case-studies" element={<CaseStudies />} />
-            <Route
-              path="/resources/guides-reports"
-              element={<GuidesReports />}
-            />
-            <Route path="/resources/help-center" element={<HelpCenter />} />
-            <Route
-              path="/resources/getting-started"
-              element={<GettingStarted />}
-            />
-            <Route
-              path="/resources/developer-docs"
-              element={<DeveloperDocs />}
-            />
-            <Route
-              path="/resources/data-dictionary"
-              element={<DataDictionary />}
-            />
-            <Route
-              path="/resources/data-dictionary/:metricSlug"
-              element={<DataDictionary />}
-            />
-            <Route
-              path="/resources/newsletter-signup"
-              element={<NewsletterSignup />}
-            />
-            {/* Future routes for additional pages */}
-            <Route path="/product" element={<Index />} />
-            <Route path="/features" element={<Index />} />
-            <Route path="/use-cases" element={<Index />} />
-            <Route path="/industries" element={<Index />} />
-            <Route path="/about" element={<Index />} />
-            <Route path="/contact" element={<Index />} />
-            <Route path="/careers" element={<Index />} />
-            {/* Dynamic blog route - handles all blog posts (lazy loaded) */}
-            <Route
-              path="/resources/blog-insights/:blogSlug"
-              element={<DynamicBlog />}
-            />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </AnalyticsWrapper>
-        </BrowserRouter>
+              <Route path="/careers/life-at-trilio" element={<LifeAtTrilio />} />
+              <Route
+                path="/careers/interview-process"
+                element={<InterviewProcess />}
+              />
+              <Route
+                path="/careers/internships-programs"
+                element={<InternshipsPrograms />}
+              />
+              {/* Resources section routes */}
+              {/* Blog routes - lazy loaded for better performance */}
+              <Route path="/resources/blog-insights" element={<BlogInsights />} />
+              <Route path="/resources/case-studies" element={<CaseStudies />} />
+              <Route
+                path="/resources/guides-reports"
+                element={<GuidesReports />}
+              />
+              <Route path="/resources/help-center" element={<HelpCenter />} />
+              <Route
+                path="/resources/getting-started"
+                element={<GettingStarted />}
+              />
+              <Route
+                path="/resources/developer-docs"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/data-dictionary"
+                element={<DataDictionary />}
+              />
+              <Route
+                path="/resources/data-dictionary/:metricSlug"
+                element={<DataDictionary />}
+              />
+              <Route
+                path="/resources/newsletter-signup"
+                element={<NewsletterSignup />}
+              />
+              {/* Future routes for additional pages */}
+              <Route path="/product" element={<Index />} />
+              <Route path="/features" element={<Index />} />
+              <Route path="/use-cases" element={<Index />} />
+              <Route path="/industries" element={<Index />} />
+              <Route path="/about" element={<Index />} />
+              <Route path="/contact" element={<Index />} />
+              <Route path="/careers" element={<Index />} />
+              {/* Dynamic blog route - handles all blog posts (lazy loaded) */}
+              <Route
+                path="/resources/blog-insights/:blogSlug"
+                element={<DynamicBlog />}
+              />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </AnalyticsWrapper>
       </TooltipProvider>
     </QueryClientProvider>
-  </HelmetProvider>
+  </HelmetProvider >
 );
 
 export default App;

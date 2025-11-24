@@ -3,6 +3,7 @@ import React, { useEffect, useState, Suspense, lazy } from "react";
 // ⚡ ONLY load above-the-fold components eagerly (what user sees immediately)
 import Navbar from "@/components/NavBar";
 import Hero from "@/components/Hero";
+import Seo from "@/components/Seo";
 
 
 const SpecsSection = lazy(() => import("@/components/SpecsSection"));
@@ -20,7 +21,7 @@ import Testimonials from "@/components/Testimonials";
 const Index = () => {
   const [showAnimations, setShowAnimations] = useState(false);
   const [showTestimonials] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -82,7 +83,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-     
+      <Seo
+        title="Trilio - AI-Powered Data Analytics for E-commerce"
+        description="Trilio helps e-commerce businesses unlock growth with AI-powered data analytics, insights, and reporting."
+        canonical="/"
+        schemaMarkup={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Trilio.ai',
+          url: 'https://trilio.ai/',
+        }}
+      />
       <div className="gradient-background">
         <Suspense fallback={null}>
           {showAnimations && (
@@ -101,7 +112,7 @@ const Index = () => {
       <Navbar largeLogo={true} />
       <main className="space-y-0 relative z-10 pt-16">
         <Hero />
-        
+
         {/* Lazy load below-the-fold sections */}
         <Suspense fallback={<div className="h-20" />}>
           <SpecsSection />
@@ -110,11 +121,11 @@ const Index = () => {
           <ImageShowcaseSection />
           <Features />
         </Suspense>
-        
+
         <Testimonials />
-        
+
       </main>
-      
+
       {/* Newsletter eagerly loaded, Footer remains lazy */}
       <Newsletter />
       <Suspense fallback={<div className="h-20" />}>
