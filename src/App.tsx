@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import AnalyticsWrapper from "./components/AnalyticsWrapper";
-import RouteCanonical from "./components/RouteCanonical";
+
 
 // ⚡ ONLY load home page eagerly - it's what users see first
 import Index from "./pages/Index";
@@ -110,7 +110,6 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <RouteCanonical />
         <AnalyticsWrapper>
           <Suspense fallback={<LoadingFallback />}>
             <Routes>

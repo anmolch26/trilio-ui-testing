@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface SeoProps {
     title?: string;
@@ -23,17 +24,23 @@ const Seo: React.FC<SeoProps> = ({
     schemaMarkup
 }) => {
     const siteUrl = 'https://trilio.ai';
+    const { pathname } = useLocation();
 
     // Defaults
-    const defaultTitle = "Trilio.ai - Ecommerce Intelligence, Powered by AI";
-    const defaultDescription = "Transform your ecommerce data into profitable insights with Trilio.ai. Unified analytics for Shopify, Amazon, and ad platforms with AI-powered recommendations.";
+    // Title: Aim for 50-60 chars
+    const defaultTitle = "Trilio.ai - AI-Powered Ecommerce Analytics & BI Reporting";
+    // Description: Aim for 100-130 chars
+    const defaultDescription = "Unlock growth with Trilio.ai. Unified ecommerce analytics for Shopify & Amazon with AI-powered insights and automated reporting.";
     const defaultImage = "https://trilio.ai/lovable-uploads/9a046283-fff2-4873-a280-f9e479a02c07.png";
 
     const metaTitle = title || defaultTitle;
     const metaDescription = description || defaultDescription;
     const metaImage = image || defaultImage;
 
-    const fullCanonical = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : siteUrl;
+    const fullCanonical = canonical
+        ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`)
+        : `${siteUrl}${pathname}`;
+
     const fullImage = metaImage.startsWith('http') ? metaImage : `${siteUrl}${metaImage}`;
 
     return (
@@ -44,6 +51,7 @@ const Seo: React.FC<SeoProps> = ({
             <meta name="keywords" content={keywords} />
             <meta name="author" content={author} />
             <link rel="canonical" href={fullCanonical} />
+            <link rel="alternate" hrefLang="en" href={fullCanonical} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
