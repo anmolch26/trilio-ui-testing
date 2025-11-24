@@ -3,7 +3,19 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { visualizer } from "rollup-plugin-visualizer";
+import { createHtmlPlugin } from "vite-plugin-html";
+import ViteSitemap from 'vite-plugin-sitemap';
 import { criticalCSS } from "./vite-plugin-critical-css";
+
+const routes = [
+  { path: '/', name: 'Home' },
+  { path: '/pricing', name: 'Pricing' },
+  { path: '/contact-form', name: 'Contact' },
+  { path: '/products/ai-agents', name: 'AI Agents' },
+  { path: '/products/bi-reporting', name: 'BI Reporting' },
+  { path: '/products/insights', name: 'Insights' },
+  { path: '/about/careers', name: 'Careers' },
+];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,6 +25,11 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    ViteSitemap({
+      hostname: 'https://trilio.ai',
+      dynamicRoutes: routes.map(r => r.path),
+      generateRobotsTxt: true,
+    }),
     mode === 'development' && componentTagger(),
     mode === 'production' && criticalCSS(),
     visualizer({
@@ -20,6 +37,15 @@ export default defineConfig(({ mode }) => ({
       filename: "dist/stats.html",
       gzipSize: true,
       brotliSize: true,
+    }),
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        data: {
+          title: 'Trilio.ai - Ecommerce Intelligence, Powered by AI',
+          description: 'Transform your ecommerce data into profitable insights with Trilio.ai.',
+        },
+      },
     }),
   ].filter(Boolean),
   resolve: {
