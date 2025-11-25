@@ -16,16 +16,16 @@ const DynamicBlog = () => {
   const [error, setError] = React.useState<string | null>(null);
   const [apiPost, setApiPost] = React.useState<
     | {
-        id: number;
-        slug: string;
-        title: string;
-        author: string;
-        authorImage?: string;
-        category?: string;
-        date: string;
-        featuredImage?: string;
-        contentHtml: string;
-      }
+      id: number;
+      slug: string;
+      title: string;
+      author: string;
+      authorImage?: string;
+      category?: string;
+      date: string;
+      featuredImage?: string;
+      contentHtml: string;
+    }
     | null
   >(null);
   const [relatedPosts, setRelatedPosts] = React.useState<Array<{
@@ -63,58 +63,76 @@ const DynamicBlog = () => {
       setLoading(true);
       setError(null);
       try {
-        const PAGE_LIMIT = 340;
-        let offset = 0;
-        let hasMore = true;
-        let found = null;
-        let allBlogs = [];
-        // Restore original: batch fetch all
-        while (hasMore && !found) {
-          const url = `https://staging.trilio.ai/api/auth/v1/blogs?limit=${PAGE_LIMIT}&offset=${offset}`;
-          const res = await fetch(url, {
-            method: 'GET',
-            headers: { Accept: 'application/json' },
-          });
-          if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-          const json = await res.json();
-          const blogs = json?.data?.blogs ?? [];
-          allBlogs = [...allBlogs, ...blogs];
-          found = blogs.find((b) => String(b.slug) === String(blogSlug));
-          hasMore = Boolean(json?.data?.has_more);
-          offset += PAGE_LIMIT;
-          if (offset > 1000) break;
+        // Fetch the specific blog by slug
+        const url = `https://staging.trilio.ai/api/auth/v1/blogs/${blogSlug}`;
+        const res = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        });
+
+        if (!res.ok) {
+          if (res.status === 404) {
+            throw new Error('Blog not found');
+          }
+          throw new Error(`Request failed: ${res.status}`);
         }
-        if (isMounted && found) {
+
+        const json = await res.json();
+        const blog = json?.data; // API returns blog directly in data, not data.blog
+
+        if (isMounted && blog) {
           setApiPost({
-            id: Number(found.id),
-            slug: String(found.slug ?? ""),
-            title: String(found.title ?? "Untitled"),
-            author: String(found.author ?? ""),
-            authorImage: String(found.author_image ?? ""),
-            category: String(found.category ?? ""),
-            date: formatDate(found.published_at),
-            featuredImage: String(found.featured_image_url ?? ""),
-            contentHtml: String(found.content_html ?? ""),
+            id: Number(blog.id),
+            slug: String(blog.slug ?? ""),
+            title: String(blog.title ?? "Untitled"),
+            author: String(blog.author ?? ""),
+            authorImage: String(blog.author_image ?? ""),
+            category: String(blog.category ?? ""),
+            date: formatDate(blog.published_at),
+            featuredImage: String(blog.featured_image_url ?? ""),
+            contentHtml: String(blog.content_html ?? ""),
           });
-          // Re-implement allBlogs for prev/next
-          const blogsList = allBlogs.map((b) => ({
-            id: Number(b.id),
-            slug: String(b.slug ?? ""),
-            title: String(b.title ?? "Untitled"),
-          }));
-          setAllBlogs(blogsList);
-          // Related logic, if desired
-          const otherBlogs = allBlogs.filter((b) => String(b.slug) !== String(blogSlug));
-          const shuffled = otherBlogs.sort(() => 0.5 - Math.random());
-          const selected = shuffled.slice(0, 3).map((b) => ({
-            id: Number(b.id),
-            slug: String(b.slug ?? ""),
-            title: String(b.title ?? "Untitled"),
-            date: formatDate(b.published_at),
-            featuredImage: String(b.featured_image_url ?? ""),
-            readTime: "3 min read",
-          }));
-          setRelatedPosts(selected);
+
+          // Fetch all blogs for prev/next navigation and related posts
+          try {
+            const allBlogsUrl = `https://staging.trilio.ai/api/auth/v1/blogs?limit=1000&offset=0`;
+            const allBlogsRes = await fetch(allBlogsUrl, {
+              method: 'GET',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            });
+
+            if (allBlogsRes.ok) {
+              const allBlogsJson = await allBlogsRes.json();
+              const blogs = allBlogsJson?.data?.blogs ?? [];
+              const blogsList = blogs.map((b: any) => ({
+                id: Number(b.id),
+                slug: String(b.slug ?? ""),
+                title: String(b.title ?? "Untitled"),
+              }));
+              setAllBlogs(blogsList);
+
+              // Related posts
+              const otherBlogs = blogs.filter((b: any) => String(b.slug) !== String(blogSlug));
+              const shuffled = otherBlogs.sort(() => 0.5 - Math.random());
+              const selected = shuffled.slice(0, 3).map((b: any) => ({
+                id: Number(b.id),
+                slug: String(b.slug ?? ""),
+                title: String(b.title ?? "Untitled"),
+                date: formatDate(b.published_at),
+                featuredImage: String(b.featured_image_url ?? ""),
+                readTime: "3 min read",
+              }));
+              setRelatedPosts(selected);
+            }
+          } catch (err) {
+            console.warn('Failed to load related posts:', err);
+          }
         } else if (isMounted) {
           setApiPost(null);
         }
@@ -143,7 +161,7 @@ const DynamicBlog = () => {
     );
   }
 
-  
+
 
   if (!apiPost && !loading) {
     return (
@@ -198,7 +216,7 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
-     
+
       {/* BlogPosting JSON-LD for rich results */}
       {(() => {
         const origin = typeof window !== "undefined" ? window.location.origin : "https://trilio.ai";
@@ -292,7 +310,7 @@ const DynamicBlog = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
                 {blogPost.title}
               </h1>
-              
+
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-4 text-white/90 text-sm md:text-base">
                 <div className="flex items-center gap-2">
@@ -329,7 +347,7 @@ const DynamicBlog = () => {
               {/* Left Sidebar - Starts aligned with content text */}
               <aside className="lg:w-60 flex-shrink-0">
                 <div className="lg:sticky lg:top-24">
-                  <BlogSidebar 
+                  <BlogSidebar
                     blogTitle={blogPost.title}
                     blogUrl={`https://trilio.ai/resources/blog-insights/${blogPost.slug}`}
                   />
@@ -356,8 +374,8 @@ const DynamicBlog = () => {
 
                 {/* CTA Button */}
                 <div className="cta-container mt-12 text-center">
-                  <a 
-                    href="https://trilio.ai/" 
+                  <a
+                    href="https://trilio.ai/"
                     className="cta-button inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg"
                   >
                     Explore Trilio
@@ -381,32 +399,32 @@ const DynamicBlog = () => {
                       <h3 className="text-2xl font-bold text-gray-900">{blogPost.author}</h3>
                     </div>
                     <p className={`font-medium mb-3 ${blogPost.author.toLowerCase().includes('om') && blogPost.author.toLowerCase().includes('rathod') ? 'text-black' : 'text-gray-600'}`}>
-                      {blogPost.author.toLowerCase().includes('nirjar') || blogPost.author.toLowerCase().includes('sanghavi') 
-                        ? 'Co-founder & CEO' 
+                      {blogPost.author.toLowerCase().includes('nirjar') || blogPost.author.toLowerCase().includes('sanghavi')
+                        ? 'Co-founder & CEO'
                         : blogPost.author.toLowerCase().includes('om') && blogPost.author.toLowerCase().includes('rathod')
-                        ? 'Co-founder & CRO'
-                        : 'Content Contributor'}
+                          ? 'Co-founder & CRO'
+                          : 'Content Contributor'}
                     </p>
                     <p className={`text-base leading-relaxed mb-4 ${blogPost.author.toLowerCase().includes('om') && blogPost.author.toLowerCase().includes('rathod') ? 'text-black' : 'text-gray-600'}`}>
                       {blogPost.author.toLowerCase().includes('nirjar') || blogPost.author.toLowerCase().includes('sanghavi')
                         ? "Visionary leader with 20+ years of deep expertise in eCommerce analytics and business intelligence at companies like Samsung, Groupon, eBay, PayPal, and Chase. Nirjar founded Trilio with the mission to democratize data-driven decision making for online merchants. With background in Ecommerce, Data Science, Analytics, Nirjar brings a rare mix of technical depth and business acumen to Trilio."
                         : blogPost.author.toLowerCase().includes('om') && blogPost.author.toLowerCase().includes('rathod')
-                        ? "Revenue growth leader and co-founder driving Trilio's commercial strategy. Om has led the product vision and execution from scratch. With a strong background in SaaS sales and GTM strategy, Om bridges product innovation with real-world customer needs driving both adoption and growth."
-                        : "Content author and contributor at Trilio.ai, sharing insights on e-commerce analytics, business intelligence, and data-driven strategies to help businesses grow and optimize their performance."}
+                          ? "Revenue growth leader and co-founder driving Trilio's commercial strategy. Om has led the product vision and execution from scratch. With a strong background in SaaS sales and GTM strategy, Om bridges product innovation with real-world customer needs driving both adoption and growth."
+                          : "Content author and contributor at Trilio.ai, sharing insights on e-commerce analytics, business intelligence, and data-driven strategies to help businesses grow and optimize their performance."}
                     </p>
                     <a
                       href={blogPost.author.toLowerCase().includes('nirjar') || blogPost.author.toLowerCase().includes('sanghavi')
                         ? "https://www.linkedin.com/in/nirjar"
                         : blogPost.author.toLowerCase().includes('om') && blogPost.author.toLowerCase().includes('rathod')
-                        ? "https://www.linkedin.com/in/om-rathod-9123031a5"
-                        : "#"}
+                          ? "https://www.linkedin.com/in/om-rathod-9123031a5"
+                          : "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-500 hover:text-gray-700 transition-colors"
                       aria-label="LinkedIn"
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                       </svg>
                     </a>
                   </div>

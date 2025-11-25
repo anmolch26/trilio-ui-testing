@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import AnalyticsWrapper from "./components/AnalyticsWrapper";
+import Seo from "./components/Seo";
 
 
 // ⚡ ONLY load home page eagerly - it's what users see first
@@ -53,6 +54,11 @@ const CaseStudies = lazy(() => import("./pages/resources/CaseStudies"));
 const GuidesReports = lazy(() => import("./pages/resources/GuidesReports"));
 const HelpCenter = lazy(() => import("./pages/resources/HelpCenter"));
 const GettingStarted = lazy(() => import("./pages/resources/GettingStarted"));
+const DashboardsAnalytics = lazy(() => import("./pages/resources/help/DashboardsAnalytics"));
+const DataIntegration = lazy(() => import("./pages/resources/help/DataIntegration"));
+const BillingPlans = lazy(() => import("./pages/resources/help/BillingPlans"));
+const Troubleshooting = lazy(() => import("./pages/resources/help/Troubleshooting"));
+const ApiIntegrations = lazy(() => import("./pages/resources/help/ApiIntegrations"));
 const DeveloperDocs = lazy(() => import("./pages/resources/DeveloperDocs"));
 const DataDictionary = lazy(() => import("./pages/resources/dataDictionary"));
 const NewsletterSignup = lazy(() => import("./pages/resources/NewsletterSignup"));
@@ -106,6 +112,7 @@ const LoadingFallback = () => (
 
 const App = () => (
   <HelmetProvider>
+    <Seo />
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
@@ -251,6 +258,42 @@ const App = () => (
                 element={<DeveloperDocs />}
               />
               <Route
+                path="/resources/developer-docs/walmart"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/amazon-vendor"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/woocommerce"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/home-depot"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/best-buy"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/costco"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/reddit-ads"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/tiktok-ads"
+                element={<DeveloperDocs />}
+              />
+              <Route
+                path="/resources/developer-docs/mailchimp"
+                element={<DeveloperDocs />}
+              />
+              <Route
                 path="/resources/developer-docs/klaviyo"
                 element={<DeveloperDocs />}
               />
@@ -279,6 +322,11 @@ const App = () => (
                 path="/resources/getting-started"
                 element={<GettingStarted />}
               />
+              <Route path="/resources/help/dashboards-analytics" element={<DashboardsAnalytics />} />
+              <Route path="/resources/help/data-integration" element={<DataIntegration />} />
+              <Route path="/resources/help/billing-plans" element={<BillingPlans />} />
+              <Route path="/resources/help/troubleshooting" element={<Troubleshooting />} />
+              <Route path="/resources/help/api-integrations" element={<ApiIntegrations />} />
               <Route
                 path="/resources/developer-docs"
                 element={<DeveloperDocs />}

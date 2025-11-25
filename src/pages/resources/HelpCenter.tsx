@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -34,10 +34,19 @@ const HelpCenter = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (categoryTitle: string) => {
-    if (categoryTitle === "Getting Started") {
-      navigate("/resources/getting-started");
+    const categoryRoutes: Record<string, string> = {
+      "Getting Started": "/resources/getting-started",
+      "Dashboards & Analytics": "/resources/help/dashboards-analytics",
+      "Data Integration": "/resources/help/data-integration",
+      "Billing & Plans": "/resources/help/billing-plans",
+      "Troubleshooting": "/resources/help/troubleshooting",
+      "API & Integrations": "/resources/help/api-integrations",
+    };
+
+    const route = categoryRoutes[categoryTitle];
+    if (route) {
+      navigate(route);
     }
-    // Add other category navigation logic here as needed
   };
 
   const categories = [
@@ -147,7 +156,11 @@ const HelpCenter = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <RouteCanonical path="/resources/help-center" />
+      <Seo
+        title="Help Center - Trilio.ai Support & Documentation"
+        description="Find answers to your questions about Trilio.ai. Browse guides, tutorials, and FAQs for getting started, data integration, dashboards, and troubleshooting."
+        canonical="/resources/help-center"
+      />
       <Navbar />
 
       {/* Hero Section */}
