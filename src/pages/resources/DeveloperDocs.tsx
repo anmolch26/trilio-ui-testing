@@ -56,6 +56,24 @@ const DeveloperDocs = () => {
       setActiveSection("amazon-ads");
     } else if (path.includes("/meta-ads")) {
       setActiveSection("meta-ads");
+    } else if (path.includes("/walmart")) {
+      setActiveSection("walmart");
+    } else if (path.includes("/amazon-vendor")) {
+      setActiveSection("amazon-vendor");
+    } else if (path.includes("/woocommerce")) {
+      setActiveSection("woocommerce");
+    } else if (path.includes("/home-depot")) {
+      setActiveSection("home-depot");
+    } else if (path.includes("/best-buy")) {
+      setActiveSection("best-buy");
+    } else if (path.includes("/costco")) {
+      setActiveSection("costco");
+    } else if (path.includes("/reddit-ads")) {
+      setActiveSection("reddit-ads");
+    } else if (path.includes("/tiktok-ads")) {
+      setActiveSection("tiktok-ads");
+    } else if (path.includes("/mailchimp")) {
+      setActiveSection("mailchimp");
     }
   }, [location.pathname]);
 
@@ -133,6 +151,60 @@ const DeveloperDocs = () => {
       id: "meta-ads",
       name: "Meta Ads",
       icon: <BarChart3 className="h-4 w-4" />,
+    },
+    {
+      id: "walmart",
+      name: "Walmart",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "amazon-vendor",
+      name: "Amazon Vendor",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "woocommerce",
+      name: "WooCommerce",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "home-depot",
+      name: "Home Depot",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "best-buy",
+      name: "Best Buy",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "costco",
+      name: "Costco",
+      icon: <ShoppingCart className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "reddit-ads",
+      name: "Reddit Ads",
+      icon: <BarChart3 className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "tiktok-ads",
+      name: "TikTok Ads",
+      icon: <BarChart3 className="h-4 w-4" />,
+      comingSoon: true,
+    },
+    {
+      id: "mailchimp",
+      name: "Mailchimp",
+      icon: <Mail className="h-4 w-4" />,
+      comingSoon: true,
     },
   ];
 
@@ -225,20 +297,18 @@ metrics = client.metrics.get(
                                   !showIntegrationsDropdown
                                 )
                               }
-                              className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-200 ${
-                                activeSection === section.id || showIntegrationsDropdown
-                                  ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
-                                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                              }`}
+                              className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-200 ${activeSection === section.id || showIntegrationsDropdown
+                                ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                }`}
                             >
                               <div className="flex items-center">
                                 {section.icon}
                                 <span className="ml-3">{section.title}</span>
                               </div>
                               <ChevronDown
-                                className={`h-4 w-4 transition-transform ${
-                                  showIntegrationsDropdown ? "rotate-180" : ""
-                                }`}
+                                className={`h-4 w-4 transition-transform ${showIntegrationsDropdown ? "rotate-180" : ""
+                                  }`}
                               />
                             </button>
                             {showIntegrationsDropdown && (
@@ -249,11 +319,10 @@ metrics = client.metrics.get(
                                     onClick={() =>
                                       handleIntegrationClick(integration.id)
                                     }
-                                    className={`w-full flex items-center px-4 py-3 text-left text-sm transition-all duration-200 ${
-                                      activeSection === integration.id
-                                        ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
-                                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
-                                    }`}
+                                    className={`w-full flex items-center px-4 py-3 text-left text-sm transition-all duration-200 ${activeSection === integration.id
+                                      ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                                      : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                                      }`}
                                   >
                                     {integration.icon}
                                     <span className="ml-3">
@@ -267,11 +336,10 @@ metrics = client.metrics.get(
                         ) : (
                           <button
                             onClick={() => setActiveSection(section.id)}
-                            className={`w-full flex items-center px-4 py-3 text-left transition-all duration-200 ${
-                              activeSection === section.id
-                                ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
-                                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                            }`}
+                            className={`w-full flex items-center px-4 py-3 text-left transition-all duration-200 ${activeSection === section.id
+                              ? "bg-purple-50 text-purple-600 border-r-2 border-purple-500"
+                              : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                              }`}
                           >
                             {section.icon}
                             <span className="ml-3">{section.title}</span>
@@ -453,11 +521,10 @@ metrics = client.metrics.get(
                                 <button
                                   key={lang}
                                   onClick={() => setSelectedLanguage(lang)}
-                                  className={`px-3 py-1 text-sm rounded ${
-                                    selectedLanguage === lang
-                                      ? "bg-purple-600 text-white"
-                                      : "text-gray-400 hover:text-white"
-                                  }`}
+                                  className={`px-3 py-1 text-sm rounded ${selectedLanguage === lang
+                                    ? "bg-purple-600 text-white"
+                                    : "text-gray-400 hover:text-white"
+                                    }`}
                                 >
                                   {lang.toUpperCase()}
                                 </button>
@@ -470,7 +537,7 @@ metrics = client.metrics.get(
                               onClick={() =>
                                 copyToClipboard(
                                   codeExamples[
-                                    selectedLanguage as keyof typeof codeExamples
+                                  selectedLanguage as keyof typeof codeExamples
                                   ]
                                 )
                               }
@@ -482,7 +549,7 @@ metrics = client.metrics.get(
                             <code>
                               {
                                 codeExamples[
-                                  selectedLanguage as keyof typeof codeExamples
+                                selectedLanguage as keyof typeof codeExamples
                                 ]
                               }
                             </code>
@@ -1871,6 +1938,101 @@ metrics = client.metrics.get(
               </div>
             )}
 
+            {/* Coming Soon Integrations */}
+            {(activeSection === "walmart" || activeSection === "amazon-vendor" ||
+              activeSection === "woocommerce" || activeSection === "home-depot" ||
+              activeSection === "best-buy" || activeSection === "costco" ||
+              activeSection === "reddit-ads" || activeSection === "tiktok-ads" ||
+              activeSection === "mailchimp") && (
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      {activeSection === "walmart" && "Walmart Integration"}
+                      {activeSection === "amazon-vendor" && "Amazon Vendor Integration"}
+                      {activeSection === "woocommerce" && "WooCommerce Integration"}
+                      {activeSection === "home-depot" && "Home Depot Integration"}
+                      {activeSection === "best-buy" && "Best Buy Integration"}
+                      {activeSection === "costco" && "Costco Integration"}
+                      {activeSection === "reddit-ads" && "Reddit Ads Integration"}
+                      {activeSection === "tiktok-ads" && "TikTok Ads Integration"}
+                      {activeSection === "mailchimp" && "Mailchimp Integration"}
+                    </h2>
+                  </div>
+
+                  <Card className="border-2 border-dashed border-gray-300">
+                    <CardHeader>
+                      <CardTitle className="flex items-center text-2xl">
+                        <AlertCircle className="h-6 w-6 mr-2 text-purple-600" />
+                        Coming Soon
+                      </CardTitle>
+                      <CardDescription>
+                        We're working on comprehensive documentation for this integration
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <p className="text-gray-600">
+                          Our team is currently developing the integration guide for{" "}
+                          {activeSection === "walmart" && "Walmart"}
+                          {activeSection === "amazon-vendor" && "Amazon Vendor"}
+                          {activeSection === "woocommerce" && "WooCommerce"}
+                          {activeSection === "home-depot" && "Home Depot"}
+                          {activeSection === "best-buy" && "Best Buy"}
+                          {activeSection === "costco" && "Costco"}
+                          {activeSection === "reddit-ads" && "Reddit Ads"}
+                          {activeSection === "tiktok-ads" && "TikTok Ads"}
+                          {activeSection === "mailchimp" && "Mailchimp"}
+                          . Check back soon for:
+                        </p>
+                        <ul className="space-y-2 ml-6">
+                          <li className="flex items-center text-gray-700">
+                            <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                            Step-by-step setup instructions
+                          </li>
+                          <li className="flex items-center text-gray-700">
+                            <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                            Required API credentials
+                          </li>
+                          <li className="flex items-center text-gray-700">
+                            <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                            Data sync configuration
+                          </li>
+                          <li className="flex items-center text-gray-700">
+                            <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                            Troubleshooting tips
+                          </li>
+                        </ul>
+                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mt-4">
+                          <p className="text-sm text-blue-800">
+                            <strong>Want early access?</strong> Contact our support team to learn more about this integration.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Get Notified</CardTitle>
+                      <CardDescription>
+                        Be the first to know when this integration is available
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex gap-4">
+                        <Button className="bg-purple-600 hover:bg-purple-700">
+                          <MessageCircle className="mr-2 h-4 w-4" />
+                          Contact Support
+                        </Button>
+                        <Button variant="outline">
+                          Explore Other Integrations
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              )}
+
             {activeSection === "sdk-libraries" && (
               <div className="space-y-8">
                 <div>
@@ -1954,7 +2116,7 @@ metrics = client.metrics.get(
       </section>
 
       <LegacyFooter />
-    </div>
+    </div >
   );
 };
 
