@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Easyship = () => (
   <PageLayout backgroundClass="bg-[#0B3A82]">
-    <RouteCanonical path="/solutions/easyship" />
+    <Seo
+      title="Easyship Analytics & Global Shipping Integration | Trilio"
+      description="Optimize your global shipping with Easyship and Trilio. Track international costs, duties, and delivery performance with unified shipping analytics."
+      canonical="/solutions/easyship"
+    />
     <ThemeSection
       background="white"
       padding="xl"

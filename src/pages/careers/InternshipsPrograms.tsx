@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import RouteCanonical from "@/components/RouteCanonical";
 import {
   Code,
   Palette,
@@ -134,7 +133,6 @@ const InternshipsPrograms = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <RouteCanonical path="/about/careers/internships-programs" />
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto px-6">

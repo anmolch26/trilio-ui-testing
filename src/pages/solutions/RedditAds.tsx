@@ -12,11 +12,15 @@ import RedditAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_3
 import RedditAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
 import RedditAdsInsightsBlogImage from "@/assests/Insights_Blog_Reddit-01.svg";
 import RedditAdsAIExpertiseNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 05_13_08 AM.webp";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const RedditAds = () => (
   <PageLayout backgroundClass="bg-[#FF4500]">
-    <RouteCanonical path="/solutions/reddit-ads" />
+    <Seo
+      title="Reddit Ads Analytics & Optimization | Trilio"
+      description="Maximize Reddit Ads ROI with AI-powered analytics. Optimize community targeting, track engagement, and drive business results."
+      canonical="/solutions/reddit-ads"
+    />
     <ThemeSection
       background="white"
       padding="xl"
@@ -318,7 +322,7 @@ const RedditAds = () => (
                 </label>
                 <input
                   type="text"
-                  
+
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

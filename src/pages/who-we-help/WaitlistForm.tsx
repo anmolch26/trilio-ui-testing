@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const AnimatedParticles = lazy(() => import("@/components/AnimatedParticles"));
 const SpaceBackgroundAnimation = lazy(() => import("@/components/SpaceBackgroundAnimations"));
@@ -42,19 +42,19 @@ const WaitlistForm: React.FC = () => {
   // Function to calculate dropdown direction
   const calculateDropdownDirection = () => {
     if (!buttonRef.current) return 'down';
-    
+
     const buttonRect = buttonRef.current.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
     const dropdownHeight = 240; // Approximate height of dropdown with 6 options
-    
+
     // Check if there's enough space below
     const spaceBelow = viewportHeight - buttonRect.bottom;
-    
+
     // If not enough space below, open upward
     if (spaceBelow < dropdownHeight && buttonRect.top > dropdownHeight) {
       return 'up';
     }
-    
+
     return 'down';
   };
 
@@ -126,16 +126,20 @@ const WaitlistForm: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      
+      <Seo
+        title="Join the Trilio Waitlist | Ecommerce Analytics"
+        description="Join the waitlist for the world's first end-to-end ecommerce analytics platform. Get real-time insights that impact your bottom line."
+        canonical="/who-we-help/waitlist"
+      />
       <Navbar />
-      
+
       <main className="flex-1 animated-teal-bg flex items-center justify-center px-4 relative overflow-hidden py-24 md:py-32">
         {/* Animated Particles and Space Background */}
         <Suspense fallback={null}>
           <SpaceBackgroundAnimation />
           <AnimatedParticles showAnimation={true} />
         </Suspense>
-        
+
         {/* Animated background element */}
         <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] opacity-20 blur-3xl rounded-full animate-teal-shift" style={{
           background: 'linear-gradient(135deg, #3dccc7, #68d8d6, #9ceaef, #c4fff9)'
@@ -143,16 +147,16 @@ const WaitlistForm: React.FC = () => {
         {/* Darken teal overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/55 via-teal-800/45 to-teal-900/65 mix-blend-multiply pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-teal-950/40 via-transparent to-teal-950/40 pointer-events-none"></div>
-        
+
         <div className="max-w-6xl lg:max-w-7xl mx-auto text-center relative z-10 px-4 sm:px-6">
           {/* Badge */}
-         
+
 
           <h1 className="section-title text-5xl md:text-7xl leading-tight opacity-0 animate-fade-in text-white pb-6" style={{ animationDelay: "0.3s" }}>
             The World's First<br />
             End-to-End E-commerce Analytics Platform
-              </h1>
-          
+          </h1>
+
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl lg:max-w-5xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             Most analytics tools show you what happened. Trilio shows you what to do next. Get real-time insights that directly impact your bottom line - without drowning in dashboards.
           </p>
@@ -172,17 +176,17 @@ const WaitlistForm: React.FC = () => {
                 {...form.register("company")}
                 className="px-6 py-4 text-lg rounded-2xl border border-white/30 bg-white/10 backdrop-blur-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300"
                 required
-                    />
-                  </div>
+              />
+            </div>
 
             <input
-                            type="email"
+              type="email"
               placeholder="Email address"
               {...form.register("email")}
               className="w-full px-6 py-4 text-lg rounded-2xl border border-white/30 bg-white/10 backdrop-blur-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300"
               required
             />
-            
+
             <div className="relative" ref={dropdownRef}>
               {/* Custom Dropdown Button */}
               <button
@@ -194,10 +198,10 @@ const WaitlistForm: React.FC = () => {
                 <span className={selectedGMV ? "text-white" : "text-white/70"}>
                   {selectedGMV || "Select your GMV range"}
                 </span>
-                <svg 
-                  className={`w-4 h-4 text-white/70 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className={`w-4 h-4 text-white/70 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -206,11 +210,10 @@ const WaitlistForm: React.FC = () => {
 
               {/* Custom Dropdown Menu */}
               {isDropdownOpen && (
-                <div className={`absolute left-0 right-0 bg-gray-900 border border-white/20 rounded-lg shadow-lg z-[9999] overflow-hidden ${
-                  dropdownDirection === 'up' 
-                    ? 'bottom-full mb-1' 
+                <div className={`absolute left-0 right-0 bg-gray-900 border border-white/20 rounded-lg shadow-lg z-[9999] overflow-hidden ${dropdownDirection === 'up'
+                    ? 'bottom-full mb-1'
                     : 'top-full mt-1'
-                }`}>
+                  }`}>
                   {[
                     { value: "0-100k", label: "$0 - $100K" },
                     { value: "100k-500k", label: "$100K - $500K" },
@@ -242,17 +245,17 @@ const WaitlistForm: React.FC = () => {
                 value={selectedGMV ? form.getValues("gmv") : ""}
               />
             </div>
-            
+
             <button
-                    type="submit"
-                    disabled={isLoading}
+              type="submit"
+              disabled={isLoading}
               className="w-full px-8 py-4 bg-white text-teal-600 text-lg font-semibold rounded-2xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
-                  >
+            >
               {isLoading ? "Joining..." : "Submit"}
             </button>
-                </form>
+          </form>
 
-         
+
         </div>
       </main>
 

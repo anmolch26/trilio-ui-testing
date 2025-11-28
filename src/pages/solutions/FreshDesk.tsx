@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const FreshDesk = () => (
   <PageLayout backgroundClass="bg-[#25C16F]">
-    <RouteCanonical path="/solutions/freshdesk" />
+    <Seo
+      title="Freshdesk Analytics & Support Integration | Trilio"
+      description="Streamline your Freshdesk support operations with Trilio. Track tickets, agent performance, and customer satisfaction with real-time analytics."
+      canonical="/solutions/freshdesk"
+    />
     <ThemeSection
       background="white"
       padding="xl"

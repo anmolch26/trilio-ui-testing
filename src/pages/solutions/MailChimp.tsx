@@ -8,11 +8,15 @@ import MailChimpOptimizationImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_
 import MailChimpROIImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_31_14 AM.webp";
 import MailChimpInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_37_41 AM.webp";
 import MailChimpOptimizationNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 04_46_23 AM.webp";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const MailChimp = () => (
   <PageLayout backgroundClass="bg-[#ffdf1a]">
-    <RouteCanonical path="/solutions/mailchimp" />
+    <Seo
+      title="MailChimp Analytics & Email Marketing Solutions | Trilio"
+      description="Transform your MailChimp campaigns with AI-driven insights. Automate optimization, track performance, and scale your email marketing strategy."
+      canonical="/solutions/mailchimp"
+    />
     <ThemeSection
       background="white"
       padding="xl"
@@ -316,7 +320,7 @@ const MailChimp = () => (
                 </label>
                 <input
                   type="text"
-                  
+
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
                 />
               </div>

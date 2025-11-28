@@ -13,7 +13,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const OnboardingTraining = () => {
   const included = [
@@ -75,7 +75,12 @@ const OnboardingTraining = () => {
 
   return (
     <PageLayout>
-      
+      <Seo
+        title="Onboarding & Training Services | Trilio"
+        description="Get up and running with Trilio in days. Dedicated onboarding specialists, team workshops, and comprehensive training resources."
+        canonical="/solutions/onboarding-training"
+      />
+
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
@@ -133,8 +138,7 @@ const OnboardingTraining = () => {
                     </span>
                   </div>
                   <h3
-                    className={`font-semibold mb-2${
-                      [
+                    className={`font-semibold mb-2${[
                         "Kickoff",
                         "Data Connected",
                         "Dashboards Live",
@@ -142,7 +146,7 @@ const OnboardingTraining = () => {
                       ].includes(item.milestone)
                         ? " text-black"
                         : ""
-                    }`}
+                      }`}
                   >
                     {item.milestone}
                   </h3>

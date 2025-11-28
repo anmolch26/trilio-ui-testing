@@ -7,7 +7,12 @@ Allow: /
 # If you have staging or preview paths, list them here to disallow
 # Disallow: /preview/
 
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
+Allow: /static/
+
 Sitemap: https://trilio.ai/sitemap.xml
-Host: trilio.ai
+
 
 

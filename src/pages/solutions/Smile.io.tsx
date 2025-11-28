@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const SmileIo = () => (
   <PageLayout backgroundClass="bg-[#FFC419]">
-    <RouteCanonical path="/solutions/smile-io" />
+    <Seo
+      title="Smile.io Analytics & Loyalty Integration | Trilio"
+      description="Maximize customer retention with Smile.io and Trilio. Track loyalty points, rewards, and VIP tiers with unified customer analytics."
+      canonical="/solutions/smile-io"
+    />
     <ThemeSection
       background="white"
       padding="xl"

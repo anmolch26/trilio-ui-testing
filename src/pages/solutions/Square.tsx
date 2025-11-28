@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Square = () => (
   <PageLayout backgroundClass="bg-[#000000]">
-    <RouteCanonical path="/solutions/square" />
+    <Seo
+      title="Square Analytics & POS Integration | Trilio"
+      description="Unify your Square POS and online sales data. Stitch transactions, inventory, and customer data for seamless operations and smarter decisions."
+      canonical="/solutions/square"
+    />
     <ThemeSection
       background="white"
       padding="xl"

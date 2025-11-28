@@ -2,14 +2,18 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 // Etsy brand-inspired palette
 // Primary: #F16521 (Etsy orange). Supporting deep tone: #CC4F12
 
 const Etsy = () => (
   <PageLayout backgroundClass="bg-[#F16521]">
-    <RouteCanonical path="/solutions/etsy" />
+    <Seo
+      title="Etsy Analytics & Shop Optimization | Trilio"
+      description="Elevate your Etsy shop with AI-driven insights. Automate retail media, track performance, and grow your handmade or vintage business."
+      canonical="/solutions/etsy"
+    />
     <ThemeSection
       background="white"
       padding="xl"

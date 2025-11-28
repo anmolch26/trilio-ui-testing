@@ -2,14 +2,18 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 // eBay brand-inspired palette
 // Primary: #0064D2 (blue). Accents can include #E53238 (red), #F5AF02 (yellow), #86B817 (green)
 
 const Ebay = () => (
   <PageLayout backgroundClass="bg-[#0064D2]">
-    <RouteCanonical path="/solutions/ebay" />
+    <Seo
+      title="eBay Analytics & Retail Media Optimization | Trilio"
+      description="Unlock profitable growth on eBay with AI-powered analytics. Automate retail media, track real-time performance, and optimize your marketplace strategy."
+      canonical="/solutions/ebay"
+    />
     <ThemeSection
       background="white"
       padding="xl"

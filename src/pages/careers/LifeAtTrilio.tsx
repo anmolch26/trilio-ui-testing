@@ -5,7 +5,6 @@ import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Target, Lightbulb, Users, Shield, Zap } from "lucide-react";
-import RouteCanonical from "@/components/RouteCanonical";
 
 const LifeAtTrilio = () => {
   const navigate = useNavigate();
@@ -91,7 +90,6 @@ const LifeAtTrilio = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <RouteCanonical path="/about/careers/life-at-trilio" />
       <Navbar />
 
       {/* Hero Section */}

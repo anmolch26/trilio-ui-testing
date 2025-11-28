@@ -4,7 +4,6 @@ import LegacyFooter from "@/components/LegacyFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import RouteCanonical from "@/components/RouteCanonical";
 import {
   Shield,
   Lock,

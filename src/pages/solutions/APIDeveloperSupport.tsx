@@ -14,7 +14,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const APIDeveloperSupport = () => {
   const developerFeatures = [
@@ -89,7 +89,12 @@ const APIDeveloperSupport = () => {
 
   return (
     <PageLayout>
-      
+      <Seo
+        title="API & Developer Support | Trilio"
+        description="Build with Trilio's flexible APIs. Access documentation, SDKs, and developer support to customize your data experience."
+        canonical="/solutions/api-developer-support"
+      />
+
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
@@ -167,15 +172,14 @@ const APIDeveloperSupport = () => {
                         <useCase.icon className="w-6 h-6 text-white" />
                       </div>
                       <h3
-                        className={`text-xl font-semibold${
-                          [
+                        className={`text-xl font-semibold${[
                             "Pull Trilio KPIs into a mobile dashboard",
                             "Automate a daily Slack report",
                             "Trigger an alert in your CRM on inventory drop",
                           ].includes(useCase.title)
                             ? " text-black"
                             : ""
-                        }`}
+                          }`}
                       >
                         {useCase.title}
                       </h3>
@@ -205,8 +209,7 @@ const APIDeveloperSupport = () => {
                 className="glass-card p-6 hover-lift transition-all duration-300"
               >
                 <h3
-                  className={`text-lg font-semibold mb-2 hover:text-blue-600 transition-colors duration-200${
-                    [
+                  className={`text-lg font-semibold mb-2 hover:text-blue-600 transition-colors duration-200${[
                       "API Documentation",
                       "SDK Repositories",
                       "Rate Limits",
@@ -214,7 +217,7 @@ const APIDeveloperSupport = () => {
                     ].includes(resource.title)
                       ? " text-black"
                       : ""
-                  }`}
+                    }`}
                 >
                   {resource.title}
                 </h3>
