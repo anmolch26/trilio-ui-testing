@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Stripe = () => (
   <PageLayout backgroundClass="bg-[#635BFF]">
-    <RouteCanonical path="/solutions/stripe" />
+    <Seo
+      title="Stripe Analytics & Revenue Intelligence | Trilio"
+      description="Turn Stripe data into actionable revenue intelligence. Sync payments, subscriptions, and disputes with marketing and product data for a single source of truth."
+      canonical="/solutions/stripe"
+    />
     <ThemeSection
       background="white"
       padding="xl"
@@ -178,7 +182,7 @@ const Stripe = () => (
     </section>
 
     {/* Analytics Section */}
-    
+
 
     {/* Contact Form Section */}
     <section className="bg-[#0A2540] py-20 px-4 relative z-10 mt-8 rounded-t-3xl rounded-b-3xl">

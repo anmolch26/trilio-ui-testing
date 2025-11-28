@@ -1,13 +1,16 @@
 import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const PrivacyPolicy = () => {
   return (
     <PageLayout backgroundClass="bg-white">
-      <RouteCanonical path="/privacy-policy" />
-
+      <Seo
+        title="Privacy Policy | Trilio.ai"
+        description="Read Trilio's Privacy Policy to understand how we collect, use, and protect your data while providing ecommerce analytics services."
+        canonical="/privacy-policy"
+      />
       <ThemeSection background="white" padding="xl" className="pt-36">
         <div className="max-w-4xl mx-auto">
           {/* Page Header */}

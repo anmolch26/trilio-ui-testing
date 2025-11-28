@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Mail, CheckCircle, TrendingUp, Users, BookOpen, Calendar } from 'lucide-react';
 import LegacyFooter from '@/components/LegacyFooter';
-import RouteCanonical from "@/components/RouteCanonical";
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
@@ -83,8 +82,7 @@ const NewsletterSignup = () => {
   if (isSubscribed) {
     return (
       <div className="min-h-screen bg-white">
-      <RouteCanonical path="/resources/newsletter-signup" />
-        <Navbar />
+      <Navbar />
         
         <div className="container mx-auto px-6 py-32 text-center">
           <div className="max-w-2xl mx-auto">

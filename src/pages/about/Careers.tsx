@@ -5,7 +5,6 @@ import PageLayout from "@/components/theme/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import RouteCanonical from "@/components/RouteCanonical";
 import {
   MapPin,
   Users,
@@ -136,7 +135,6 @@ const Careers = () => {
 
   return (
     <PageLayout>
-      <RouteCanonical path="/about/careers" />
       {/* Hero Section */}
       <section className="pt-36 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto px-6">

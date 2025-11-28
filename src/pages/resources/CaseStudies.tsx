@@ -7,11 +7,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Users, DollarSign } from 'lucide-react';
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const CaseStudies = () => {
   const trilioLogo = "https://assets.channeliq.ai/trilio-landing/Hero_Images/Remove background project (4).webp";
-  
+
   const caseStudies = [
     {
       id: 1,
@@ -73,9 +73,13 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <RouteCanonical path="/resources/case-studies" />
+      <Seo
+        title="Case Studies & Success Stories | Trilio"
+        description="See how top brands use Trilio to scale efficiently. Read case studies from StyleCo, TechGear Plus, and more."
+        canonical="/resources/case-studies"
+      />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-36 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
         <div className="container mx-auto px-6 text-center">
@@ -100,7 +104,7 @@ const CaseStudies = () => {
                       src={study.logo}
                       alt={study.company}
                       className="h-12 w-12 rounded-lg object-cover"
-                     loading="lazy" decoding="async" />
+                      loading="lazy" decoding="async" />
                     <Badge variant="outline">{study.industry}</Badge>
                   </div>
                   <CardTitle className="text-xl group-hover:text-purple-600 transition-colors duration-200">
@@ -110,7 +114,7 @@ const CaseStudies = () => {
                     {study.result}
                   </CardDescription>
                 </CardHeader>
-                
+
                 <CardContent>
                   {/* Metrics */}
                   <div className="grid grid-cols-3 gap-4 mb-6">
@@ -158,7 +162,7 @@ const CaseStudies = () => {
             <h2 className="text-3xl font-bold mb-4">Proven Results Across Industries</h2>
             <p className="text-xl opacity-90">Join hundreds of brands already scaling with Trilio</p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">500+</div>

@@ -12,12 +12,16 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const DataAnalysts = () => {
   return (
     <div className="min-h-screen bg-white">
-      
+      <Seo
+        title="Self-Service Ecommerce Data Analytics | Trilio"
+        description="Explore data without complex queries. SQL-lite interface, point-and-click explorer, and instant exports for data analysts."
+        canonical="/who-we-help/data-analysts"
+      />
       <Navbar />
 
       {/* Hero Section */}

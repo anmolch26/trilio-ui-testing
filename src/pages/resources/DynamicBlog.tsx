@@ -3,9 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import PageLayout from "@/components/theme/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Clock, Calendar } from "lucide-react";
-import RouteCanonical from "@/components/RouteCanonical";
 import { Breadcrumb, generateBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import { BlogSidebar } from "@/components/BlogSidebar";
+import Seo from "@/components/Seo";
 import "@/data/generated/ecommerceArticle.css";
 
 const DynamicBlog = () => {
@@ -25,6 +25,7 @@ const DynamicBlog = () => {
       date: string;
       featuredImage?: string;
       contentHtml: string;
+      metaDescription?: string;
     }
     | null
   >(null);
@@ -94,6 +95,11 @@ const DynamicBlog = () => {
             date: formatDate(blog.published_at),
             featuredImage: String(blog.featured_image_url ?? ""),
             contentHtml: String(blog.content_html ?? ""),
+            metaDescription: blog.meta_description
+              ? String(blog.meta_description)
+              : blog.excerpt
+                ? String(blog.excerpt)
+                : (blog.content_html ? String(blog.content_html).replace(/<[^>]+>/g, '').slice(0, 160) + "..." : ""),
           });
 
           // Fetch all blogs for prev/next navigation and related posts
@@ -195,6 +201,7 @@ const DynamicBlog = () => {
     date: apiPost!.date,
     featuredImage: apiPost!.featuredImage || "",
     content: apiPost!.contentHtml, // HTML string
+    metaDescription: apiPost!.metaDescription || apiPost!.title,
   };
 
   // Find previous and next posts from all blogs
@@ -216,6 +223,14 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
+      <Seo
+        title={blogPost.title}
+        description={blogPost.metaDescription}
+        image={blogPost.featuredImage}
+        type="article"
+        author={blogPost.author}
+        canonical={`/resources/blog-insights/${blogPost.slug}`}
+      />
 
       {/* BlogPosting JSON-LD for rich results */}
       {(() => {
@@ -252,7 +267,7 @@ const DynamicBlog = () => {
           },
           datePublished: datePublishedIso,
           dateModified: datePublishedIso,
-          description: blogPost.title,
+          description: blogPost.metaDescription,
           url,
         };
         return (

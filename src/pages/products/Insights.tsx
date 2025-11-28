@@ -4,6 +4,7 @@ import LegacyFooter from "@/components/LegacyFooter";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
+import Seo from "@/components/Seo";
 import {
   Brain,
   TrendingUp,
@@ -14,7 +15,6 @@ import {
   Users,
   Shield,
 } from "lucide-react";
-import RouteCanonical from "@/components/RouteCanonical";
 
 const Insights = () => {
   const heroProps = {
@@ -110,6 +110,11 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 ">
+      <Seo
+        title="AI Insights Engine for Ecommerce | Trilio"
+        description="Uncover hidden opportunities with Trilio's AI Insights Engine. Pattern recognition, predictive analytics, and smart alerts for your ecommerce business."
+        canonical="/products/insights"
+      />
       <Navbar />
       <main>
         <ProductHero {...heroProps} />

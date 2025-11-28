@@ -6,11 +6,15 @@ import TargetInfographic from "@/assests/ChatGPT Image Jul 28, 2025, 08_50_01 PM
 import TargetHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.webp";
 import TargetAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import TargetROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Target = () => (
   <PageLayout backgroundClass="bg-[#E4002B]">
-    <RouteCanonical path="/solutions/target" />
+    <Seo
+      title="Target Retail Media & Analytics | Trilio"
+      description="Maximize Target performance with AI-driven insights. Optimize retail media campaigns, track sales data, and grow your market share."
+      canonical="/solutions/target"
+    />
     <ThemeSection
       background="white"
       padding="xl"

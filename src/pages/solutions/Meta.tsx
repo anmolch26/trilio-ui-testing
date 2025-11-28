@@ -11,11 +11,15 @@ import MetaAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 09_
 import MetaAnalyticsCampaignImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_16_08 AM.webp";
 import MetaROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_22_50 AM.webp";
 import MetaMarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_27_07 AM.webp";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Meta = () => (
   <PageLayout backgroundClass="bg-[#1877F2]">
-    <RouteCanonical path="/solutions/meta" />
+    <Seo
+      title="Meta Analytics & Marketing Solutions | Trilio"
+      description="Transform your Meta advertising with AI-powered analytics. Optimize campaigns across Facebook, Instagram, and WhatsApp for maximum ROI."
+      canonical="/solutions/meta"
+    />
     <ThemeSection
       background="white"
       padding="xl"
@@ -314,7 +318,7 @@ const Meta = () => (
                 </label>
                 <input
                   type="text"
-               
+
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

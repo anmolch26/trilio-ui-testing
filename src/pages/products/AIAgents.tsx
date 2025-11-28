@@ -3,7 +3,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 import {
   Bot,
   MessageSquare,
@@ -110,7 +110,11 @@ const AIAgents = () => {
 
   return (
     <PageLayout>
-      <RouteCanonical path="/products/ai-agents" />
+      <Seo
+        title="AI Agents for Ecommerce | Trilio"
+        description="Your AI teammate for ecommerce growth. Get instant answers, automated insights, and intelligent recommendations powered by AI."
+        canonical="/products/ai-agents"
+      />
       <ProductHero {...heroProps} />
 
       <FeatureGrid

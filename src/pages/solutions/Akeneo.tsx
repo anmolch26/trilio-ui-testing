@@ -2,11 +2,15 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 
 const Akeneo = () => (
   <PageLayout backgroundClass="bg-[#4F1374]">
-    <RouteCanonical path="/solutions/akeneo" />
+    <Seo
+      title="Akeneo Analytics & PIM Integration | Trilio"
+      description="Connect your Akeneo PIM to Trilio. Track product completeness, enrichment workflows, and syndication performance with unified catalog analytics."
+      canonical="/solutions/akeneo"
+    />
     <ThemeSection
       background="white"
       padding="xl"
