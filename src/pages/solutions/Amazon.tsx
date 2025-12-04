@@ -7,15 +7,11 @@ import AmazonHeroImage from "@/assests/ChatGPT Image Jul 29, 2025, 12_38_05 PM.w
 import AmazonAnalyticsImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_28_39 PM.webp";
 import AmazonROIImage from "@/assests/ChatGPT Image Jul 29, 2025, 01_53_14 PM.webp";
 import AmazonInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_20 PM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Amazon = () => (
   <PageLayout backgroundClass="bg-[#FF9B2F]">
-    <Seo
-      title="Amazon Analytics & Marketing Solutions | Trilio"
-      description="Transform your Amazon business with AI-driven insights. Automate PPC optimization, track real-time performance, and scale your brand."
-      canonical="/solutions/amazon"
-    />
+    <RouteCanonical path="/solutions/amazon" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -314,7 +310,7 @@ const Amazon = () => (
                 </label>
                 <input
                   type="text"
-
+                  
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

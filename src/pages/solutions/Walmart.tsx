@@ -11,15 +11,11 @@ import WalmartAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 
 import WalmartAnalyticsMarketplaceImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_53_31 AM.webp";
 import WalmartROIBoostImage from "@/assests/ChatGPT Image Aug 5, 2025, 12_57_46 AM.webp";
 import WalmartMarketingInsightsImage from "@/assests/Walmart-product-experience.png";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Walmart = () => (
   <PageLayout backgroundClass="bg-[#0071CE]">
-    <Seo
-      title="Walmart Marketplace Analytics & Optimization | Trilio"
-      description="Scale your Walmart business with AI-powered analytics. Optimize retail media, track marketplace performance, and drive measurable growth."
-      canonical="/solutions/walmart"
-    />
+    <RouteCanonical path="/solutions/walmart" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -320,7 +316,7 @@ const Walmart = () => (
                 </label>
                 <input
                   type="text"
-
+                
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

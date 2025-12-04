@@ -2,15 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Tableau = () => (
   <PageLayout backgroundClass="bg-[#00467E]">
-    <Seo
-      title="Tableau Analytics & BI Integration | Trilio"
-      description="Connect your data to Tableau with automated modeling. Build executive dashboards, govern metrics, and enable self-serve analytics."
-      canonical="/solutions/tableau"
-    />
+    <RouteCanonical path="/solutions/tableau" />
     <ThemeSection
       background="white"
       padding="xl"

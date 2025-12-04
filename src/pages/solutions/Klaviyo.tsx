@@ -2,15 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Klaviyo = () => (
   <PageLayout backgroundClass="bg-[#232426]">
-    <Seo
-      title="Klaviyo Analytics & Lifecycle Marketing | Trilio"
-      description="Unify your customer data with Klaviyo and Trilio. Automate flows, build high-intent segments, and drive revenue across email and SMS."
-      canonical="/solutions/klaviyo"
-    />
+    <RouteCanonical path="/solutions/klaviyo" />
     <ThemeSection
       background="white"
       padding="xl"

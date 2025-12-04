@@ -5,7 +5,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const CustomDashboards = () => {
   const useCases = [
@@ -64,12 +64,7 @@ const CustomDashboards = () => {
 
   return (
     <PageLayout>
-      <Seo
-        title="Custom Business Intelligence Dashboards | Trilio"
-        description="Create custom BI dashboards tailored to your business goals. Visualize your KPIs and drive data-driven decisions with Trilio."
-        canonical="/solutions/custom-dashboards"
-      />
-
+      
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
@@ -116,7 +111,8 @@ const CustomDashboards = () => {
                   <useCase.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3
-                  className={`text-xl font-semibold mb-4${[
+                  className={`text-xl font-semibold mb-4${
+                    [
                       "Sales vs. ROAS by Channel",
                       "Weekly CAC & LTV Trends",
                       "Customer Segmentation Heatmap",
@@ -124,7 +120,7 @@ const CustomDashboards = () => {
                     ].includes(useCase.title)
                       ? " text-black"
                       : ""
-                    }`}
+                  }`}
                 >
                   {useCase.title}
                 </h3>
@@ -151,7 +147,8 @@ const CustomDashboards = () => {
                   {process.step}
                 </div>
                 <h3
-                  className={`text-lg font-semibold mb-3${[
+                  className={`text-lg font-semibold mb-3${
+                    [
                       "Discovery",
                       "Mockup Review",
                       "Development",
@@ -159,7 +156,7 @@ const CustomDashboards = () => {
                     ].includes(process.title)
                       ? " text-black"
                       : ""
-                    }`}
+                  }`}
                 >
                   {process.title}
                 </h3>

@@ -12,15 +12,11 @@ import GA4AnalyticsNewImage from "@/assests/ChatGPT Image Aug 5, 2025, 02_56_57 
 import GA4DataOptimizationImage from "@/assests/Ga4(1).jpg";
 import GA4ROINewImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_12_48 AM.webp";
 import GA4MarketingInsightsImage from "@/assests/ChatGPT Image Aug 5, 2025, 03_17_37 AM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GA4 = () => (
   <PageLayout backgroundClass="bg-[#f06a03]">
-    <Seo
-      title="Google Analytics 4 (GA4) Solutions | Trilio"
-      description="Transform GA4 data into actionable insights. Automate reporting, track user journeys, and optimize marketing performance with AI."
-      canonical="/solutions/ga4"
-    />
+    <RouteCanonical path="/solutions/ga4" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -323,7 +319,7 @@ const GA4 = () => (
                 </label>
                 <input
                   type="text"
-
+                
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

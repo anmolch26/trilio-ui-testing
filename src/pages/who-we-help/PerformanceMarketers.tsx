@@ -12,16 +12,12 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const PerformanceMarketers = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Performance Marketing Analytics & Attribution | Trilio"
-        description="Maximize ROI with granular attribution. Creative testing, SKU-level ROI, and budget optimization for performance marketers."
-        canonical="/who-we-help/performance-marketers"
-      />
+     
       <Navbar />
 
       {/* Hero Section */}
@@ -216,7 +212,7 @@ const PerformanceMarketers = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-
+           
           </div>
         </div>
       </section>

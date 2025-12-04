@@ -2,15 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Zendesk = () => (
   <PageLayout backgroundClass="bg-[#03363D]">
-    <Seo
-      title="Zendesk Analytics & Support Integration | Trilio"
-      description="Connect your Zendesk support data with Trilio. Track SLAs, agent performance, and customer satisfaction with unified support analytics."
-      canonical="/solutions/zendesk"
-    />
+    <RouteCanonical path="/solutions/zendesk" />
     <ThemeSection
       background="white"
       padding="xl"

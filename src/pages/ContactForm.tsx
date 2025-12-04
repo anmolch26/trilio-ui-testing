@@ -4,7 +4,7 @@ import Navbar from "@/components/NavBar";
 import ContactFormComponent from "@/components/ContactFormComponent";
 import Footer from "@/components/Footer";
 import PageLayout from "@/components/theme/PageLayout";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const ContactForm = () => {
   const [searchParams] = useSearchParams();
@@ -80,11 +80,6 @@ const ContactForm = () => {
 
   return (
     <PageLayout>
-      <Seo
-        title="Contact Trilio | Get in Touch for Ecommerce Analytics"
-        description="Contact Trilio for questions about our AI-powered ecommerce analytics platform. Request a demo, support, or partnership inquiries."
-        canonical="/contact-form"
-      />
       <main className="pt-36 pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">

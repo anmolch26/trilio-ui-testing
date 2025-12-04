@@ -2,15 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const PowerBI = () => (
   <PageLayout backgroundClass="bg-[#F2C811]">
-    <Seo
-      title="Power BI Integration & Data Analytics | Trilio"
-      description="Connect your commerce and marketing data to Power BI. Automate reporting, build executive dashboards, and drive decisions with governed metrics."
-      canonical="/solutions/power-bi"
-    />
+    <RouteCanonical path="/solutions/powerbi" />
     <ThemeSection
       background="white"
       padding="xl"

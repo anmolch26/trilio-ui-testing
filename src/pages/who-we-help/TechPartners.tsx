@@ -13,16 +13,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LegacyFooter from "@/components/LegacyFooter";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const TechPartners = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Technology Partner Program | Trilio"
-        description="Collaborate and co-market with Trilio. Access our partner portal, API documentation, and joint go-to-market support."
-        canonical="/who-we-help/tech-partners"
-      />
+      
       <Navbar />
 
       {/* Hero Section */}
@@ -54,14 +50,15 @@ const TechPartners = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
                     <span
-                      className={`text-sm font-medium${[
+                      className={`text-sm font-medium${
+                        [
                           "API Documentation",
                           "SDK Downloads",
                           "Co-marketing Kit",
                         ].includes("API Documentation")
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       API Documentation
                     </span>
@@ -69,14 +66,15 @@ const TechPartners = () => {
                   </div>
                   <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                     <span
-                      className={`text-sm font-medium${[
+                      className={`text-sm font-medium${
+                        [
                           "API Documentation",
                           "SDK Downloads",
                           "Co-marketing Kit",
                         ].includes("SDK Downloads")
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       SDK Downloads
                     </span>
@@ -84,14 +82,15 @@ const TechPartners = () => {
                   </div>
                   <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
                     <span
-                      className={`text-sm font-medium${[
+                      className={`text-sm font-medium${
+                        [
                           "API Documentation",
                           "SDK Downloads",
                           "Co-marketing Kit",
                         ].includes("Co-marketing Kit")
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       Co-marketing Kit
                     </span>

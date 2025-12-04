@@ -10,15 +10,11 @@ import TikTokShopVisual from "@/assests/ChatGPT Image Jul 28, 2025, 05_14_28 PM.
 import TikTokSocialROI from "@/assests/ChatGPT Image Jul 28, 2025, 05_25_08 PM.webp";
 import TikTokHeroImage from "@/assests/ChatGPT Image Jul 28, 2025, 07_22_37 PM.webp";
 import TikTokAnalytics from "@/assests/ChatGPT Image Jul 28, 2025, 08_04_45 PM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const TikTok = () => (
   <PageLayout backgroundClass="bg-[#21005c]">
-    <Seo
-      title="TikTok Analytics & Marketing Solutions | Trilio"
-      description="Harness TikTok's growth with AI-powered analytics. Optimize influencer campaigns, track social ROI, and drive full-funnel performance."
-      canonical="/solutions/tiktok"
-    />
+    <RouteCanonical path="/solutions/tiktok" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -315,7 +311,7 @@ const TikTok = () => (
                 </label>
                 <input
                   type="text"
-
+                
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

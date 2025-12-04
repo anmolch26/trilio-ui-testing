@@ -1,16 +1,12 @@
 import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import IntegrationRequestForm from "@/components/IntegrationRequestForm";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const IntegrationRequest = () => {
   return (
     <PageLayout>
-      <Seo
-        title="Request Integration | Trilio Ecommerce Analytics"
-        description="Request a new integration for Trilio. Let us know which ecommerce platform or tool you want to connect with our analytics engine."
-        canonical="/integration-request"
-      />
+      <RouteCanonical path="/integration-request" />
       <main className="pt-16 pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">

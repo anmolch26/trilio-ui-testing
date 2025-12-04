@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Globe, Calendar, Award, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+import RouteCanonical from "@/components/RouteCanonical";
 
 
 
@@ -54,7 +55,8 @@ const LeadershipTeam = () => {
 
  return (
    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-      <Navbar />
+      <RouteCanonical path="/about/leadership-team" />
+     <Navbar />
 
 
      {/* Hero Section */}

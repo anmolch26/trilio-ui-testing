@@ -11,7 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components";
 import LegacyFooter from "@/components/LegacyFooter";
-import Seo from "@/components/Seo";
 
 
 const BlogInsights = () => {
@@ -237,12 +236,7 @@ const BlogInsights = () => {
 
   return (
     <div className="h-screen">
-      <Seo
-        title="Blog Insights | Trilio"
-        description="Explore product updates, best practices, and e-commerce strategy from the Trilio team."
-        canonical="/resources/blog-insights"
-      />
-
+     
       <div className="min-h-screen bg-white">
         <Navbar />
         <section className="pt-44 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
@@ -283,173 +277,178 @@ const BlogInsights = () => {
             </div>
           </div>
         </section>
-
+          
         <div className="pt-12 pb-16 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Left Sidebar - Categories */}
-              <div className="lg:w-1/4">
-                <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
-                  <h2 className="text-xl font-bold text-gray-900 mb-3">
-                    Categories
-                  </h2>
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar - Categories */}
+            <div className="lg:w-1/4">
+              <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+                <h2 className="text-xl font-bold text-gray-900 mb-3">
+                  Categories
+                </h2>
 
-                  <div className="space-y-2">
-                    {categories.map((category) => {
-                      const active = selectedCategories.includes(category);
-                      return (
-                        <button
-                          key={category}
-                          onClick={() => handleCategoryToggle(category)}
-                          className={`group w-full flex items-center justify-between px-4 py-2.5 rounded-xl border transition-all ${active
+                <div className="space-y-2">
+                  {categories.map((category) => {
+                    const active = selectedCategories.includes(category);
+                    return (
+                      <button
+                        key={category}
+                        onClick={() => handleCategoryToggle(category)}
+                        className={`group w-full flex items-center justify-between px-4 py-2.5 rounded-xl border transition-all ${
+                          active
                             ? "bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200 text-teal-900 ring-1 ring-teal-200"
                             : "bg-white border-gray-200 hover:bg-gray-50"
-                            }`}
-                          aria-pressed={active}
-                        >
-                          <span className="flex items-center gap-3">
-                            <span
-                              className={`h-2.5 w-2.5 rounded-full ${active ? "bg-teal-500" : "bg-gray-300"
-                                }`}
-                            ></span>
-                            <span className="text-gray-800 font-medium">
-                              {category}
-                            </span>
-                          </span>
-                          {active && <Check className="h-4 w-4 text-teal-600" />}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              {/* Main Content Area */}
-              <div className="w-full">
-                {/* Search Bar */}
-                <div className="mb-8">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                    <input
-                      type="text"
-                      placeholder="Search..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-black placeholder-gray-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Blog Grid / Loading / Error */}
-                {loading ? (
-                  <div className="py-16 text-center text-gray-600">Loading blogs…</div>
-                ) : error ? (
-                  <div className="py-16 text-center">
-                    <p className="text-red-600 mb-4">{error}</p>
-                    <button
-                      onClick={() => fetchBlogs(currentPage, selectedCategories, searchQuery)}
-                      className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
-                    >
-                      Retry
-                    </button>
-                  </div>
-                ) : (
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {currentPosts.map((post) => (
-                      <Link
-                        key={post.id}
-                        to={`/resources/blog-insights/${post.slug}`}
-                        className="block"
+                        }`}
+                        aria-pressed={active}
                       >
-                        <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200 cursor-pointer h-full">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-48 object-cover"
-                          />
-                          <CardHeader className="pb-3">
-                            <div className="flex items-center justify-between mb-2">
-                              <Badge
-                                variant="secondary"
-                                className="bg-teal-100 text-teal-700 border-teal-200"
-                              >
-                                {post.category}
-                              </Badge>
-                              <span className="text-xs text-gray-500">
-                                {post.date}
-                              </span>
-                            </div>
-                            <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
-                              {post.title}
-                            </CardTitle>
-                          </CardHeader>
-                          <CardContent className="pt-0">
-                            <div className="flex items-center text-sm text-gray-500">
-                              <span>by {post.author}</span>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-
-                {/* Pagination */}
-                {!loading && !error && totalPages > 1 && (
-                  <div className="flex justify-center items-center mt-12">
-                    {/* Previous Button */}
-                    <button
-                      onClick={() => handlePageChange(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 mr-4 ${currentPage === 1
-                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
-                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
-                        }`}
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-
-                    {/* Page Numbers */}
-                    <div className="flex items-center space-x-1">
-                      {getPageNumbers().map((pageNum, index) => (
-                        <React.Fragment key={index}>
-                          {pageNum === '...' ? (
-                            <div className="w-10 h-10 flex items-center justify-center text-gray-400 font-medium">
-                              ...
-                            </div>
-                          ) : (
-                            <button
-                              onClick={() => handlePageChange(pageNum as number)}
-                              className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 font-medium text-base transition-all duration-200 ${currentPage === pageNum
-                                ? "bg-white border-blue-500 text-blue-600"
-                                : "bg-white border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
-                                }`}
-                            >
-                              {pageNum}
-                            </button>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </div>
-
-                    {/* Next Button */}
-                    <button
-                      onClick={() => handlePageChange(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                      className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 ml-4 ${currentPage === totalPages
-                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
-                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
-                        }`}
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
-
-
+                        <span className="flex items-center gap-3">
+                          <span
+                            className={`h-2.5 w-2.5 rounded-full ${
+                              active ? "bg-teal-500" : "bg-gray-300"
+                            }`}
+                          ></span>
+                          <span className="text-gray-800 font-medium">
+                            {category}
+                          </span>
+                        </span>
+                        {active && <Check className="h-4 w-4 text-teal-600" />}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
+
+            {/* Main Content Area */}
+            <div className="w-full">
+              {/* Search Bar */}
+              <div className="mb-8">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-black placeholder-gray-500"
+                  />
+                </div>
+              </div>
+
+              {/* Blog Grid / Loading / Error */}
+              {loading ? (
+                <div className="py-16 text-center text-gray-600">Loading blogs…</div>
+              ) : error ? (
+                <div className="py-16 text-center">
+                  <p className="text-red-600 mb-4">{error}</p>
+                  <button
+                    onClick={() => fetchBlogs(currentPage, selectedCategories, searchQuery)}
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
+                  >
+                    Retry
+                  </button>
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {currentPosts.map((post) => (
+                    <Link
+                      key={post.id}
+                      to={`/resources/blog-insights/${post.slug}`}
+                      className="block"
+                    >
+                      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200 cursor-pointer h-full">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover"
+                        />
+                        <CardHeader className="pb-3">
+                          <div className="flex items-center justify-between mb-2">
+                            <Badge
+                              variant="secondary"
+                              className="bg-teal-100 text-teal-700 border-teal-200"
+                            >
+                              {post.category}
+                            </Badge>
+                            <span className="text-xs text-gray-500">
+                              {post.date}
+                            </span>
+                          </div>
+                          <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
+                            {post.title}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <div className="flex items-center text-sm text-gray-500">
+                            <span>by {post.author}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* Pagination */}
+              {!loading && !error && totalPages > 1 && (
+                <div className="flex justify-center items-center mt-12">
+                  {/* Previous Button */}
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 mr-4 ${
+                      currentPage === 1
+                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
+                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
+                    }`}
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+
+                  {/* Page Numbers */}
+                  <div className="flex items-center space-x-1">
+                    {getPageNumbers().map((pageNum, index) => (
+                      <React.Fragment key={index}>
+                        {pageNum === '...' ? (
+                          <div className="w-10 h-10 flex items-center justify-center text-gray-400 font-medium">
+                            ...
+                          </div>
+                        ) : (
+                          <button
+                            onClick={() => handlePageChange(pageNum as number)}
+                            className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 font-medium text-base transition-all duration-200 ${
+                              currentPage === pageNum
+                                ? "bg-white border-blue-500 text-blue-600"
+                                : "bg-white border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+                            }`}
+                          >
+                            {pageNum}
+                          </button>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 ml-4 ${
+                      currentPage === totalPages
+                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
+                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
+                    }`}
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+
+              
+            </div>
           </div>
+        </div>
         </div>
         <LegacyFooter />
       </div>

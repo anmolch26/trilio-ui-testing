@@ -9,15 +9,11 @@ import ShopifyROIImage from "@/assests/0f5926d96c6f5d50716bf6d106679a5c.jpg";
 import ShopifyInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_08_09 PM.webp";
 import ShopifyAnalyticsDashboard from "@/assests/ChatGPT Image Jul 29, 2025, 03_38_36 PM.webp";
 import ShopifyCampaignOptimization from "@/assests/ChatGPT Image Jul 29, 2025, 03_48_33 PM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const Shopify = () => (
   <PageLayout backgroundClass="bg-[#95BF47]">
-    <Seo
-      title="Shopify Analytics & Marketing Solutions | Trilio"
-      description="Scale your Shopify store with AI-powered analytics. Optimize marketing campaigns, track customer behavior, and drive measurable growth."
-      canonical="/solutions/shopify"
-    />
+    <RouteCanonical path="/solutions/shopify" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -316,7 +312,7 @@ const Shopify = () => (
                 </label>
                 <input
                   type="text"
-
+                  
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

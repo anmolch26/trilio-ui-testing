@@ -2,15 +2,11 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const ShipStation = () => (
   <PageLayout backgroundClass="bg-[#5FBF47]">
-    <Seo
-      title="ShipStation Analytics & Fulfillment Integration | Trilio"
-      description="Optimize your shipping operations with ShipStation and Trilio. Track costs, delivery performance, and carrier metrics with unified fulfillment analytics."
-      canonical="/solutions/shipstation"
-    />
+    <RouteCanonical path="/solutions/shipstation" />
     <ThemeSection
       background="white"
       padding="xl"
