@@ -5,13 +5,13 @@ import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
 import ThemeCard from "@/components/theme/ThemeCard";
-import Seo from "@/components/Seo";
 import TikTokImage from "@/assests/TikTokImage.png";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const DataIntegrations = () => {
   const integrations = [
-
-
+   
+    
     {
       name: "Shopify",
       description: "Storefront, Orders, Customers",
@@ -103,7 +103,7 @@ const DataIntegrations = () => {
       path: "/solutions/tiktok",
       categories: ["Most Popular", "Ecommerce"],
     },
-
+    
     {
       name: "eBay",
       description: "Marketplace, Retail Media, Analytics",
@@ -111,7 +111,7 @@ const DataIntegrations = () => {
       path: "/solutions/ebay",
       categories: ["Ecommerce"],
     },
-
+   
     {
       name: "WooCommerce",
       description: "Store Data, Analytics",
@@ -119,7 +119,7 @@ const DataIntegrations = () => {
       path: "/solutions/woocommerce",
       categories: ["Ecommerce"],
     },
-
+   
     {
       name: "Etsy",
       description: "Marketplace, Retail Media, Analytics",
@@ -162,7 +162,7 @@ const DataIntegrations = () => {
       path: "/solutions/square",
       categories: ["Payments"],
     },
-
+   
     {
       name: "Zendesk",
       description: "Support, CX, Help Center",
@@ -212,8 +212,8 @@ const DataIntegrations = () => {
       path: "/solutions/akeneo",
       categories: ["Analytics", "Operations"],
     },
-
-
+    
+    
   ];
 
   const categories = [
@@ -270,12 +270,7 @@ const DataIntegrations = () => {
   return (
     <>
       <PageLayout backgroundClass="bg-white">
-        <Seo
-          title="Data Integrations & Connectors | Trilio"
-          description="Connect all your commerce data with Trilio. Integrate with Shopify, Amazon, Meta, Google Ads, and 40+ other platforms."
-          canonical="/solutions/data-integrations"
-        />
-
+    
         {/* Hero Section (clean) */}
         <ThemeSection background="gradient" padding="sm" className="pt-36 pb-4">
           <div className="max-w-6xl mx-auto">
@@ -340,10 +335,11 @@ const DataIntegrations = () => {
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
-                      className={`w-full text-left px-3 py-2 rounded-md transition-colors ${selectedCategory === cat
+                      className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+                        selectedCategory === cat
                           ? "bg-gray-100 text-gray-900"
                           : "text-gray-700 hover:bg-gray-50"
-                        }`}
+                      }`}
                     >
                       {cat}
                     </button>
@@ -368,7 +364,7 @@ const DataIntegrations = () => {
                         <div className="group p-6 text-center rounded-xl border border-gray-200 bg-white transition-all duration-200 ease-out hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 hover:scale-[1.01]">
                           <div className="mb-4 flex justify-center transition-transform duration-200 ease-out group-hover:scale-110">
                             {typeof integration.logo === "string" &&
-                              integration.logo.startsWith("💰") ? (
+                            integration.logo.startsWith("💰") ? (
                               <span className="text-4xl">
                                 {integration.logo}
                               </span>

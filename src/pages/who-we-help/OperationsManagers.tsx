@@ -12,16 +12,12 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const OperationsManagers = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Ecommerce Operations & Inventory Analytics | Trilio"
-        description="Streamline workflows and inventory health. Automated reporting, stock alerts, and order monitoring for operations managers."
-        canonical="/who-we-help/operations-managers"
-      />
+      
       <Navbar />
 
       {/* Hero Section */}

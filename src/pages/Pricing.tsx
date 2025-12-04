@@ -6,7 +6,7 @@ import ThemeButton from "@/components/theme/ThemeButton";
 import GMVPricingCalculator from "@/components/pricing/GMVPricingCalculator";
 import GMVRangeCards from "@/components/pricing/GMVRangeCards";
 import { cn } from "@/lib/utils";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const getPricingForGMV = (gmv) => {
   if (gmv <= 1) return { pro: 199, premium: 499 };
@@ -104,11 +104,7 @@ const Pricing = () => {
 
   return (
     <PageLayout>
-      <Seo
-        title="Trilio Pricing | Flexible Plans for Every Business"
-        description="Flexible pricing for ecommerce businesses of all sizes. From $0 to enterprise plans. Scale with your GMV. Try Trilio free today."
-        canonical="/pricing"
-      />
+      <RouteCanonical path="/pricing" />
       {/* Hero Section */}
       <ThemeSection background="gradient" padding="xl" className="pt-36">
         <div className="text-center max-w-4xl mx-auto">
@@ -285,14 +281,14 @@ const Pricing = () => {
                   {gmv <= 1
                     ? "≤ $1M"
                     : gmv <= 5
-                      ? "$1M - $5M"
-                      : gmv <= 20
-                        ? "$5M - $20M"
-                        : gmv <= 50
-                          ? "$20M - $50M"
-                          : gmv <= 100
-                            ? "$50M - $100M"
-                            : "$100M+"}
+                    ? "$1M - $5M"
+                    : gmv <= 20
+                    ? "$5M - $20M"
+                    : gmv <= 50
+                    ? "$20M - $50M"
+                    : gmv <= 100
+                    ? "$50M - $100M"
+                    : "$100M+"}
                 </span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-gray-100">
@@ -364,14 +360,14 @@ const Pricing = () => {
                   {gmv <= 1
                     ? "≤ $1M"
                     : gmv <= 5
-                      ? "$1M - $5M"
-                      : gmv <= 20
-                        ? "$5M - $20M"
-                        : gmv <= 50
-                          ? "$20M - $50M"
-                          : gmv <= 100
-                            ? "$50M - $100M"
-                            : "$100M+"}
+                    ? "$1M - $5M"
+                    : gmv <= 20
+                    ? "$5M - $20M"
+                    : gmv <= 50
+                    ? "$20M - $50M"
+                    : gmv <= 100
+                    ? "$50M - $100M"
+                    : "$100M+"}
                 </span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-gray-100">

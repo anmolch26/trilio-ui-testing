@@ -11,15 +11,11 @@ import WooCommerceAnalyticsInsightsImage from "@/assests/ChatGPT Image Aug 5, 20
 import WooCommerceNewImage from "@/assests/woocommerce.png";
 import WooCommerceROINewImage from "@/assests/Woocommerce1.jpg";
 import WooCommerceInsightsNewImage from "@/assests/woocommerce3.png";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const WooCommerce = () => (
   <PageLayout backgroundClass="bg-[#96588A]">
-    <Seo
-      title="WooCommerce Analytics & Store Optimization | Trilio"
-      description="Scale your WooCommerce store with AI-driven insights. Automate inventory management, optimize pricing, and track real-time performance."
-      canonical="/solutions/woocommerce"
-    />
+    <RouteCanonical path="/solutions/woocommerce" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -318,7 +314,7 @@ const WooCommerce = () => (
                 </label>
                 <input
                   type="text"
-
+            
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

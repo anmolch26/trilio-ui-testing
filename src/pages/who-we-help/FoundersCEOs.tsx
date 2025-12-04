@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/NavBar";
 import LegacyFooter from "@/components/LegacyFooter";
-import Seo from "@/components/Seo";
 import {
   TrendingUp,
   DollarSign,
@@ -13,15 +12,12 @@ import {
   PieChart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const FoundersCEOs = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Ecommerce Analytics for Founders & CEOs | Trilio"
-        description="Steer your business with real-time insights. Unified P&L, burn rate, and financial forecasting for Amazon, Shopify, and WooCommerce."
-        canonical="/who-we-help/founders-ceos"
-      />
+     
       <Navbar />
 
       {/* Hero Section */}
@@ -220,7 +216,7 @@ const FoundersCEOs = () => {
         </div>
       </section>
 
-      <LegacyFooter />
+      <LegacyFooter/>
     </div>
   );
 };

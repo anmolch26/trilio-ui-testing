@@ -12,16 +12,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LegacyFooter from "@/components/LegacyFooter";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const MarketingLeaders = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Marketing Attribution & ROAS Analytics | Trilio"
-        description="Unify your ad and retail analytics. Track blended ROAS, CAC, and conversion funnels across Facebook, Google, Amazon, and Shopify."
-        canonical="/who-we-help/marketing-leaders"
-      />
+     
       <Navbar />
 
       {/* Hero Section */}

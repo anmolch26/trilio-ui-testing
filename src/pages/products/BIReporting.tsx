@@ -3,7 +3,7 @@ import PageLayout from "@/components/theme/PageLayout";
 import ProductHero from "@/components/ProductHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProductCTA from "@/components/ProductCTA";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 import {
   Download,
   BarChart3,
@@ -111,11 +111,7 @@ const BIReporting = () => {
 
   return (
     <PageLayout>
-      <Seo
-        title="BI Reporting for Ecommerce | Trilio"
-        description="Intelligent BI Dashboards for every channel. Unify Amazon, Shopify, Walmart & more in one exportable report—powered by AI."
-        canonical="/products/bi-reporting"
-      />
+      <RouteCanonical path="/products/bi-reporting" />
       <ProductHero {...heroProps} />
 
       <FeatureGrid
@@ -140,7 +136,7 @@ const BIReporting = () => {
         title="Ready to Transform Your Reporting with AI?"
         description="Join thousands of ecommerce teams who trust Trilio for intelligent BI solutions."
         buttonText="Start Your Free Trial"
-      // buttonLink="https://staging.trilio.ai/register"
+        // buttonLink="https://staging.trilio.ai/register"
       />
     </PageLayout>
   );

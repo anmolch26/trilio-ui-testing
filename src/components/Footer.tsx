@@ -165,7 +165,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 text-white/90 mb-3">
               <Mail size={18} />
               <a href="mailto:info@trilio.ai" className="hover:text-white">
-                info@trilio.ai
+              info@trilio.ai
               </a>
             </div>
           </div>

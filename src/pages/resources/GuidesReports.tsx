@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, FileText, BarChart, BookOpen, Search } from "lucide-react";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GuidesReports = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -112,11 +112,7 @@ const GuidesReports = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="E-commerce Guides & Reports | Trilio"
-        description="Download expert guides, industry reports, and benchmarks to improve your e-commerce strategy."
-        canonical="/resources/guides-reports"
-      />
+      <RouteCanonical path="/resources/guides-reports" />
       <Navbar />
 
       {/* Hero Section */}
@@ -152,8 +148,9 @@ const GuidesReports = () => {
                 variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category)}
-                className={`transition-all duration-200${selectedCategory !== category ? " text-black" : ""
-                  }`}
+                className={`transition-all duration-200${
+                  selectedCategory !== category ? " text-black" : ""
+                }`}
               >
                 {category}
               </Button>
@@ -239,7 +236,7 @@ const GuidesReports = () => {
                     src={resource.image}
                     alt={resource.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy" decoding="async" />
+                   loading="lazy" decoding="async" />
                   <div className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
                     {getIcon(resource.type)}
                   </div>

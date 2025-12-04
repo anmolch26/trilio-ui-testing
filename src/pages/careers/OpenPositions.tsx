@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import InternshipsPrograms from "./InternshipsPrograms";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const OpenPositions = () => {
   useEffect(() => {
@@ -181,6 +182,7 @@ const OpenPositions = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteCanonical path="/about/careers/open-positions" />
       <Navbar />
 
       {/* Hero Section */}

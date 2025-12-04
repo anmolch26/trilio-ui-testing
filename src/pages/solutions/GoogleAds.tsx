@@ -7,15 +7,11 @@ import GoogleAdsHeroImage from "@/assests/google-ads-marketing.jpg";
 import GoogleAdsAnalyticsImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_43_08 PM.webp";
 import GoogleAdsROIImage from "@/assests/ChatGPT Image Aug 4, 2025, 07_55_37 PM.webp";
 import GoogleAdsInsightsImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_04_47 PM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const GoogleAds = () => (
   <PageLayout backgroundClass="bg-[#4285F4]">
-    <Seo
-      title="Google Ads Analytics & Optimization | Trilio"
-      description="Maximize Google Ads ROI with AI-driven insights. Automate bid optimization, track campaign performance, and improve ad spend efficiency."
-      canonical="/solutions/google-ads"
-    />
+    <RouteCanonical path="/solutions/google-ads" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -316,7 +312,7 @@ const GoogleAds = () => (
                 </label>
                 <input
                   type="text"
-
+                  
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

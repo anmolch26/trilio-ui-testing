@@ -12,16 +12,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LegacyFooter from "@/components/LegacyFooter";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const AgenciesConsultants = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Ecommerce Analytics for Agencies & Consultants | Trilio"
-        description="Manage multi-client dashboards at scale. White-label reports, client switching, and usage billing for agencies."
-        canonical="/who-we-help/agencies-consultants"
-      />
+     
       <Navbar />
 
       {/* Hero Section */}
@@ -56,12 +52,13 @@ const AgenciesConsultants = () => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between p-2 bg-blue-50 rounded">
                     <span
-                      className={`text-sm font-medium${["RetailCorp", "EcommPlus", "ShopMaster"].includes(
-                        "RetailCorp"
-                      )
+                      className={`text-sm font-medium${
+                        ["RetailCorp", "EcommPlus", "ShopMaster"].includes(
+                          "RetailCorp"
+                        )
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       RetailCorp
                     </span>
@@ -69,12 +66,13 @@ const AgenciesConsultants = () => {
                   </div>
                   <div className="flex items-center justify-between p-2 bg-green-50 rounded">
                     <span
-                      className={`text-sm font-medium${["RetailCorp", "EcommPlus", "ShopMaster"].includes(
-                        "EcommPlus"
-                      )
+                      className={`text-sm font-medium${
+                        ["RetailCorp", "EcommPlus", "ShopMaster"].includes(
+                          "EcommPlus"
+                        )
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       EcommPlus
                     </span>
@@ -82,12 +80,13 @@ const AgenciesConsultants = () => {
                   </div>
                   <div className="flex items-center justify-between p-2 bg-yellow-50 rounded">
                     <span
-                      className={`text-sm font-medium${["RetailCorp", "EcommPlus", "ShopMaster"].includes(
-                        "ShopMaster"
-                      )
+                      className={`text-sm font-medium${
+                        ["RetailCorp", "EcommPlus", "ShopMaster"].includes(
+                          "ShopMaster"
+                        )
                           ? " text-black"
                           : ""
-                        }`}
+                      }`}
                     >
                       ShopMaster
                     </span>
@@ -262,7 +261,7 @@ const AgenciesConsultants = () => {
         </div>
       </section>
 
-      <LegacyFooter />
+      <LegacyFooter/>
     </div>
   );
 };

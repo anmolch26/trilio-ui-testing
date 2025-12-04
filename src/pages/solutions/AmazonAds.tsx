@@ -10,15 +10,11 @@ import AmazonAdsInsightsImage from "@/assests/ChatGPT Image Jul 29, 2025, 02_04_
 import AmazonAdsSuccessStoriesImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_24_48 PM.webp";
 import AmazonAdsAIExpertiseImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_34_33 PM.webp";
 import AmazonAdsROIBoostImage from "@/assests/ChatGPT Image Aug 4, 2025, 08_45_26 PM.webp";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 const AmazonAds = () => (
   <PageLayout backgroundClass="bg-[#FF9900]">
-    <Seo
-      title="Amazon Ads Analytics & Optimization | Trilio"
-      description="Optimize Amazon Ads campaigns with AI-powered analytics. Automate bid management, track ROI, and improve product targeting."
-      canonical="/solutions/amazon-ads"
-    />
+    <RouteCanonical path="/solutions/amazon-ads" />
     <ThemeSection
       background="white"
       padding="xl"
@@ -319,7 +315,7 @@ const AmazonAds = () => (
                 </label>
                 <input
                   type="text"
-
+                 
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
                 />
               </div>

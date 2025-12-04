@@ -2,18 +2,14 @@ import React from "react";
 import PageLayout from "@/components/theme/PageLayout";
 import ThemeSection from "@/components/theme/ThemeSection";
 import ThemeButton from "@/components/theme/ThemeButton";
-import Seo from "@/components/Seo";
+import RouteCanonical from "@/components/RouteCanonical";
 
 // The Home Depot brand-inspired palette
 // Primary: #F96302 (orange). Supporting deep tone: #C74E00
 
 const HomeDepot = () => (
   <PageLayout backgroundClass="bg-[#F96302]">
-    <Seo
-      title="Home Depot Retail Media & Analytics | Trilio"
-      description="Grow your Home Depot channel with AI-driven insights. Optimize retail media, improve product discovery, and drive conversion."
-      canonical="/solutions/home-depot"
-    />
+    <RouteCanonical path="/solutions/homedepot" />
     <ThemeSection
       background="white"
       padding="xl"

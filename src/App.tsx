@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import AnalyticsWrapper from "./components/AnalyticsWrapper";
-
+import Seo from "./components/Seo";
 
 
 // ⚡ ONLY load home page eagerly - it's what users see first
@@ -17,7 +17,6 @@ import Index from "./pages/Index";
 const ContactForm = lazy(() => import("./pages/ContactForm"));
 const IntegrationRequest = lazy(() => import("./pages/IntegrationRequest"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
@@ -113,6 +112,7 @@ const LoadingFallback = () => (
 
 const App = () => (
   <HelmetProvider>
+    <Seo />
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
@@ -357,7 +357,6 @@ const App = () => (
                 element={<DynamicBlog />}
               />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
