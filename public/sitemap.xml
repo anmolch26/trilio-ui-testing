@@ -2324,6 +2324,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/about/careers/life-at-trilio</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/about/careers/open-positions</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/about/faqs</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
