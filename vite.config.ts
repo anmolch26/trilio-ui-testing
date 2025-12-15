@@ -6,6 +6,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { createHtmlPlugin } from "vite-plugin-html";
 import ViteSitemap from 'vite-plugin-sitemap';
 import { criticalCSS } from "./vite-plugin-critical-css";
+import { blogMetaTagsMiddleware } from "./vite-plugin-blog-meta";
 
 const routes = [
   { path: '/', name: 'Home' },
@@ -25,6 +26,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    blogMetaTagsMiddleware(),
     ViteSitemap({
       hostname: 'https://trilio.ai',
       dynamicRoutes: routes.map(r => r.path),
