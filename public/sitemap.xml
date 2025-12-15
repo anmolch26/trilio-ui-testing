@@ -25,12 +25,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/integration-request</loc>
-    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://trilio.ai/pricing</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -271,6 +265,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/developer-docs/amazon-vendor</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/best-buy</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/costco</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/developer-docs/google-ads</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -283,7 +295,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/developer-docs/home-depot</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/developer-docs/klaviyo</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/mailchimp</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -295,7 +319,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://trilio.ai/resources/developer-docs/reddit-ads</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://trilio.ai/resources/developer-docs/shopify</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/tiktok-ads</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/walmart</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/developer-docs/woocommerce</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -314,6 +362,36 @@
   </url>
   <url>
     <loc>https://trilio.ai/resources/help-center</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/help/api-integrations</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/help/billing-plans</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/help/dashboards-analytics</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/help/data-integration</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/resources/help/troubleshooting</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -379,8 +457,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-
-  <loc>https://trilio.ai/resources/blog-insights/12-essential-metrics-every-shopify-store-must-track</loc>
+    <loc>https://trilio.ai/resources/blog-insights/12-essential-metrics-every-shopify-store-must-track</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
@@ -2300,13 +2377,43 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://trilio.ai/privacy-policy</loc>
+    <loc>https://trilio.ai/contact</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/features</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/industries</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/integration-request</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://trilio.ai/privacy</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/privacy-policy</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/product</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2322,6 +2429,30 @@
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/about</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/about/careers</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/about/careers/internships-programs</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/about/careers/interview-process</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://trilio.ai/about/careers/life-at-trilio</loc>
@@ -2349,6 +2480,24 @@
   </url>
   <url>
     <loc>https://trilio.ai/about/trust-center</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/careers</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/careers/internships-programs</loc>
+    <lastmod>2025-10-24T16:42:54.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://trilio.ai/careers/interview-process</loc>
     <lastmod>2025-10-24T16:42:54.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
