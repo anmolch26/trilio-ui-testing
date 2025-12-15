@@ -1,0 +1,52 @@
+{
+  "hash": "eed793d7",
+  "configHash": "1427891f",
+  "lockfileHash": "f661889b",
+  "browserHash": "47b9b8f5",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "f5d65c61",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "ec284e99",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "0b2ece6a",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "f22840b6",
+      "needsInterop": true
+    },
+    "react-helmet-async": {
+      "src": "../../node_modules/react-helmet-async/lib/index.esm.js",
+      "file": "react-helmet-async.js",
+      "fileHash": "ad38a368",
+      "needsInterop": false
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "09790b82",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-TP5UMK6A": {
+      "file": "chunk-TP5UMK6A.js"
+    },
+    "chunk-KIM3EXLN": {
+      "file": "chunk-KIM3EXLN.js"
+    }
+  }
+}

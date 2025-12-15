@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import PageLayout from "@/components/theme/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Clock, Calendar } from "lucide-react";
-import RouteCanonical from "@/components/RouteCanonical";
+import Seo from "@/components/Seo";
 import { Breadcrumb, generateBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import "@/data/generated/ecommerceArticle.css";
@@ -216,6 +216,14 @@ const DynamicBlog = () => {
 
   return (
     <PageLayout backgroundClass="bg-white">
+      {/* SEO meta tags with blog-specific Open Graph image */}
+      <Seo
+        title={`${blogPost.title} | Trilio.ai Blog`}
+        description={blogPost.title}
+        image={blogPost.featuredImage}
+        canonical={`/resources/blog-insights/${blogPost.slug}`}
+        type="article"
+      />
 
       {/* BlogPosting JSON-LD for rich results */}
       {(() => {
