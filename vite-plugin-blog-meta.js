@@ -2,6 +2,35 @@
  * Vite middleware to inject dynamic meta tags for blog posts
  * This allows social media crawlers (LinkedIn, Facebook, Twitter) to see blog-specific images
  */
+
+// Deterministically select blog image based on blog ID
+const BLOG_IMAGES = [
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample1.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample2.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample3.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample4.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample5.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample6.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample7.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample8.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample9.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample10.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample11.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample12.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample13.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample14.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample15.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample16.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample17.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample18.jpg',
+    'https://assets.channeliq.ai/trilio-landing/Blogs/BlogSample19.jpg',
+];
+
+function getBlogImage(blogId) {
+    const imageIndex = blogId % BLOG_IMAGES.length;
+    return BLOG_IMAGES[imageIndex];
+}
+
 export function blogMetaTagsMiddleware() {
     return {
         name: 'blog-meta-tags',
@@ -47,7 +76,7 @@ export function blogMetaTagsMiddleware() {
                     // Extract blog metadata
                     const title = `${blog.title || 'Blog Post'} | Trilio.ai Blog`;
                     const description = blog.title || 'Read this insightful blog post from Trilio.ai';
-                    const image = blog.featured_image_url || 'https://trilio.ai/lovable-uploads/9a046283-fff2-4873-a280-f9e479a02c07.png';
+                    const image = getBlogImage(Number(blog.id));
                     const blogUrl = `https://trilio.ai/resources/blog-insights/${blogSlug}`;
 
                     // Replace meta tags
