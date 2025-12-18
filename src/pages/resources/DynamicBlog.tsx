@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import { Breadcrumb, generateBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import "@/data/generated/ecommerceArticle.css";
+import { getBlogImage } from "@/utils/blogImageSelector";
 
 const DynamicBlog = () => {
   const { blogSlug } = useParams<{ blogSlug: string }>();
@@ -92,7 +93,7 @@ const DynamicBlog = () => {
             authorImage: String(blog.author_image ?? ""),
             category: String(blog.category ?? ""),
             date: formatDate(blog.published_at),
-            featuredImage: String(blog.featured_image_url ?? ""),
+            featuredImage: getBlogImage(Number(blog.id)),
             contentHtml: String(blog.content_html ?? ""),
           });
 
@@ -125,7 +126,7 @@ const DynamicBlog = () => {
                 slug: String(b.slug ?? ""),
                 title: String(b.title ?? "Untitled"),
                 date: formatDate(b.published_at),
-                featuredImage: String(b.featured_image_url ?? ""),
+                featuredImage: getBlogImage(Number(b.id)),
                 readTime: "3 min read",
               }));
               setRelatedPosts(selected);

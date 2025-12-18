@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components";
 import LegacyFooter from "@/components/LegacyFooter";
+import { getBlogImage } from "@/utils/blogImageSelector";
 
 
 const BlogInsights = () => {
@@ -20,6 +21,7 @@ const BlogInsights = () => {
   const blogsPerPage = 12; // Show 12 blogs per page
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentTrendingIndex, setCurrentTrendingIndex] = useState(0);
   const [blogPosts, setBlogPosts] = useState<Array<{
     id: number;
     slug: string;
@@ -90,7 +92,7 @@ const BlogInsights = () => {
         author: String(b.author ?? ""),
         category: String(b.category ?? ""),
         date: formatDate(b.published_at),
-        image: String(b.featured_image_url ?? ""),
+        image: getBlogImage(Number(b.id)),
         summary: String(b.title ?? ""),
       }));
       setBlogPosts(blogsArray);
@@ -208,16 +210,43 @@ const BlogInsights = () => {
     return pageNumbers;
   };
 
-  const hardcodedTrendingBlog = {
-    id: 2,
-    slug: "example-black-friday-cyber-monday-preparedness",
-    title: "Black Friday/Cyber Monday Preparedness",
-    author: "Om Rathod",
-    author_image: "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
-    category: "E-commerce",
-    read_time: "10 min",
-    featured_image_url: "https://assets.channeliq.ai/trilio-landing/Blogs/example.jpg",
-    published_at: "2025-01-17T00:00:00"
+  const trendingBlogs = [
+    {
+      id: 29,
+      slug: "case-study-30-percent-reduction-in-stockouts",
+      title: "Case Study: 30% Reduction in Stockouts",
+      author: "Nirjar Sanghavi",
+      author_image: "https://assets.channeliq.ai/invictus-landing/Leadership/nirjar.jpg",
+      category: "Case Study",
+      read_time: "8 min",
+      featured_image_url: getBlogImage(29),
+      published_at: "2025-01-15T00:00:00"
+    },
+    {
+      id: 2,
+      slug: "example-black-friday-cyber-monday-preparedness",
+      title: "Black Friday/Cyber Monday Preparedness",
+      author: "Om Rathod",
+      author_image: "https://assets.channeliq.ai/invictus-landing/Leadership/om.jpg",
+      category: "E-commerce",
+      read_time: "10 min",
+      featured_image_url: getBlogImage(2),
+      published_at: "2025-01-17T00:00:00"
+    }
+  ];
+
+  const currentTrendingBlog = trendingBlogs[currentTrendingIndex];
+
+  const handlePrevTrending = () => {
+    setCurrentTrendingIndex((prev) =>
+      prev === 0 ? trendingBlogs.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextTrending = () => {
+    setCurrentTrendingIndex((prev) =>
+      prev === trendingBlogs.length - 1 ? 0 : prev + 1
+    );
   };
 
   const formatTrendingDate = (iso: string | null | undefined) => {
@@ -236,7 +265,7 @@ const BlogInsights = () => {
 
   return (
     <div className="h-screen">
-     
+
       <div className="min-h-screen bg-white">
         <Navbar />
         <section className="pt-44 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
@@ -251,204 +280,230 @@ const BlogInsights = () => {
               </p>
             </div>
 
-            {/* Hardcoded Trending Blog Card */}
-            <div className="max-w-6xl mx-auto mb-12">
-              <Link to={`/resources/blog-insights/${hardcodedTrendingBlog.slug}`} className="block">
+            {/* Featured Blog Carousel */}
+            <div className="max-w-6xl mx-auto mb-12 relative">
+              {/* Navigation Arrows */}
+              <button
+                onClick={handlePrevTrending}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-transparent hover:bg-white/20 text-white border-2 border-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Previous blog"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              <button
+                onClick={handleNextTrending}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-transparent hover:bg-white/20 text-white border-2 border-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Next blog"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+
+              <Link to={`/resources/blog-insights/${currentTrendingBlog.slug}`} className="block">
                 <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white cursor-pointer hover:scale-[1.01] h-[400px] md:h-[450px] rounded-2xl">
                   {/* Background Image */}
                   <img
-                    src={hardcodedTrendingBlog.featured_image_url}
-                    alt={hardcodedTrendingBlog.title}
+                    src={currentTrendingBlog.featured_image_url}
+                    alt={currentTrendingBlog.title}
                     className="absolute inset-0 w-full h-full object-cover object-top"
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   {/* Content Overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl  text-white mb-4 leading-tight">
-                      {hardcodedTrendingBlog.title}
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight">
+                      {currentTrendingBlog.title}
                     </h2>
                     <div className="flex items-center gap-3 text-sm text-white/80">
-                      <span>{formatTrendingDate(hardcodedTrendingBlog.published_at)}</span>
+                      <span>{formatTrendingDate(currentTrendingBlog.published_at)}</span>
                     </div>
                   </div>
                 </Card>
               </Link>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center gap-2 mt-4">
+                {trendingBlogs.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTrendingIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${index === currentTrendingIndex
+                      ? 'w-8 bg-teal-600'
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                      }`}
+                    aria-label={`Go to blog ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
-          
-        <div className="pt-12 pb-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Sidebar - Categories */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
-                <h2 className="text-xl font-bold text-gray-900 mb-3">
-                  Categories
-                </h2>
 
-                <div className="space-y-2">
-                  {categories.map((category) => {
-                    const active = selectedCategories.includes(category);
-                    return (
-                      <button
-                        key={category}
-                        onClick={() => handleCategoryToggle(category)}
-                        className={`group w-full flex items-center justify-between px-4 py-2.5 rounded-xl border transition-all ${
-                          active
+        <div className="pt-12 pb-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Left Sidebar - Categories */}
+              <div className="lg:w-1/4">
+                <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+                  <h2 className="text-xl font-bold text-gray-900 mb-3">
+                    Categories
+                  </h2>
+
+                  <div className="space-y-2">
+                    {categories.map((category) => {
+                      const active = selectedCategories.includes(category);
+                      return (
+                        <button
+                          key={category}
+                          onClick={() => handleCategoryToggle(category)}
+                          className={`group w-full flex items-center justify-between px-4 py-2.5 rounded-xl border transition-all ${active
                             ? "bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200 text-teal-900 ring-1 ring-teal-200"
                             : "bg-white border-gray-200 hover:bg-gray-50"
-                        }`}
-                        aria-pressed={active}
-                      >
-                        <span className="flex items-center gap-3">
-                          <span
-                            className={`h-2.5 w-2.5 rounded-full ${
-                              active ? "bg-teal-500" : "bg-gray-300"
                             }`}
-                          ></span>
-                          <span className="text-gray-800 font-medium">
-                            {category}
-                          </span>
-                        </span>
-                        {active && <Check className="h-4 w-4 text-teal-600" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-            {/* Main Content Area */}
-            <div className="w-full">
-              {/* Search Bar */}
-              <div className="mb-8">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-black placeholder-gray-500"
-                  />
-                </div>
-              </div>
-
-              {/* Blog Grid / Loading / Error */}
-              {loading ? (
-                <div className="py-16 text-center text-gray-600">Loading blogs…</div>
-              ) : error ? (
-                <div className="py-16 text-center">
-                  <p className="text-red-600 mb-4">{error}</p>
-                  <button
-                    onClick={() => fetchBlogs(currentPage, selectedCategories, searchQuery)}
-                    className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
-                  >
-                    Retry
-                  </button>
-                </div>
-              ) : (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {currentPosts.map((post) => (
-                    <Link
-                      key={post.id}
-                      to={`/resources/blog-insights/${post.slug}`}
-                      className="block"
-                    >
-                      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200 cursor-pointer h-full">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-48 object-cover"
-                        />
-                        <CardHeader className="pb-3">
-                          <div className="flex items-center justify-between mb-2">
-                            <Badge
-                              variant="secondary"
-                              className="bg-teal-100 text-teal-700 border-teal-200"
-                            >
-                              {post.category}
-                            </Badge>
-                            <span className="text-xs text-gray-500">
-                              {post.date}
+                          aria-pressed={active}
+                        >
+                          <span className="flex items-center gap-3">
+                            <span
+                              className={`h-2.5 w-2.5 rounded-full ${active ? "bg-teal-500" : "bg-gray-300"
+                                }`}
+                            ></span>
+                            <span className="text-gray-800 font-medium">
+                              {category}
                             </span>
-                          </div>
-                          <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
-                            {post.title}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <div className="flex items-center text-sm text-gray-500">
-                            <span>by {post.author}</span>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  ))}
+                          </span>
+                          {active && <Check className="h-4 w-4 text-teal-600" />}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              )}
+              </div>
 
-              {/* Pagination */}
-              {!loading && !error && totalPages > 1 && (
-                <div className="flex justify-center items-center mt-12">
-                  {/* Previous Button */}
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 mr-4 ${
-                      currentPage === 1
-                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
-                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
-                    }`}
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </button>
+              {/* Main Content Area */}
+              <div className="w-full">
+                {/* Search Bar */}
+                <div className="mb-8">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-black placeholder-gray-500"
+                    />
+                  </div>
+                </div>
 
-                  {/* Page Numbers */}
-                  <div className="flex items-center space-x-1">
-                    {getPageNumbers().map((pageNum, index) => (
-                      <React.Fragment key={index}>
-                        {pageNum === '...' ? (
-                          <div className="w-10 h-10 flex items-center justify-center text-gray-400 font-medium">
-                            ...
-                          </div>
-                        ) : (
-                          <button
-                            onClick={() => handlePageChange(pageNum as number)}
-                            className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 font-medium text-base transition-all duration-200 ${
-                              currentPage === pageNum
-                                ? "bg-white border-blue-500 text-blue-600"
-                                : "bg-white border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
-                            }`}
-                          >
-                            {pageNum}
-                          </button>
-                        )}
-                      </React.Fragment>
+                {/* Blog Grid / Loading / Error */}
+                {loading ? (
+                  <div className="py-16 text-center text-gray-600">Loading blogs…</div>
+                ) : error ? (
+                  <div className="py-16 text-center">
+                    <p className="text-red-600 mb-4">{error}</p>
+                    <button
+                      onClick={() => fetchBlogs(currentPage, selectedCategories, searchQuery)}
+                      className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 h-9 px-4"
+                    >
+                      Retry
+                    </button>
+                  </div>
+                ) : (
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {currentPosts.map((post) => (
+                      <Link
+                        key={post.id}
+                        to={`/resources/blog-insights/${post.slug}`}
+                        className="block"
+                      >
+                        <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-gray-200 cursor-pointer h-full">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-48 object-cover"
+                          />
+                          <CardHeader className="pb-3">
+                            <div className="flex items-center justify-between mb-2">
+                              <Badge
+                                variant="secondary"
+                                className="bg-teal-100 text-teal-700 border-teal-200"
+                              >
+                                {post.category}
+                              </Badge>
+                              <span className="text-xs text-gray-500">
+                                {post.date}
+                              </span>
+                            </div>
+                            <CardTitle className="text-base font-semibold hover:text-teal-600 transition-colors duration-200 line-clamp-2">
+                              {post.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="pt-0">
+                            <div className="flex items-center text-sm text-gray-500">
+                              <span>by {post.author}</span>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </Link>
                     ))}
                   </div>
+                )}
 
-                  {/* Next Button */}
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 ml-4 ${
-                      currentPage === totalPages
+                {/* Pagination */}
+                {!loading && !error && totalPages > 1 && (
+                  <div className="flex justify-center items-center mt-12">
+                    {/* Previous Button */}
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 mr-4 ${currentPage === 1
                         ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
                         : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
-                    }`}
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </button>
-                </div>
-              )}
+                        }`}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
 
-              
+                    {/* Page Numbers */}
+                    <div className="flex items-center space-x-1">
+                      {getPageNumbers().map((pageNum, index) => (
+                        <React.Fragment key={index}>
+                          {pageNum === '...' ? (
+                            <div className="w-10 h-10 flex items-center justify-center text-gray-400 font-medium">
+                              ...
+                            </div>
+                          ) : (
+                            <button
+                              onClick={() => handlePageChange(pageNum as number)}
+                              className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 font-medium text-base transition-all duration-200 ${currentPage === pageNum
+                                ? "bg-white border-blue-500 text-blue-600"
+                                : "bg-white border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+                                }`}
+                            >
+                              {pageNum}
+                            </button>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </div>
+
+                    {/* Next Button */}
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className={`w-10 h-10 flex items-center justify-center rounded-lg border-2 transition-all duration-200 ml-4 ${currentPage === totalPages
+                        ? "bg-gray-200 border-gray-300 text-gray-400 cursor-not-allowed"
+                        : "bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
+                        }`}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
+
+
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <LegacyFooter />
       </div>
