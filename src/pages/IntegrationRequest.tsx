@@ -6,7 +6,7 @@ import RouteCanonical from "@/components/RouteCanonical";
 const IntegrationRequest = () => {
   return (
     <PageLayout>
-      <RouteCanonical path="/integration-request" />
+      <RouteCanonical />
       <main className="pt-16 pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ const IntegrationRequest = () => {
               </p>
             </div>
             <div className="text-black">
-              <IntegrationRequestForm />
+              <IntegrationRequestForm formType="integration-request" />
             </div>
           </div>
         </div>

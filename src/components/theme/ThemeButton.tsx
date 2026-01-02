@@ -51,7 +51,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
     variantClasses[variant],
     sizeClasses[size],
     disabled &&
-      "opacity-50 cursor-not-allowed transform-none hover:transform-none",
+    "opacity-50 cursor-not-allowed transform-none hover:transform-none",
     className
   );
 

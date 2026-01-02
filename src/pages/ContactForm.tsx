@@ -92,7 +92,10 @@ const ContactForm = () => {
               </p>
             </div>
             <div className="text-black">
-              <ContactFormComponent />
+              <ContactFormComponent
+                formType={type || 'default'}
+                formTitle={config.title}
+              />
             </div>
           </div>
         </div>

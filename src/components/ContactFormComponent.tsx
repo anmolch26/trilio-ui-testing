@@ -31,6 +31,11 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+interface ContactFormComponentProps {
+  formType?: string;
+  formTitle?: string;
+}
+
 const revenueOptions = [
   { value: "less-than-1m", label: "Less than $1M" },
   { value: "1m-10m", label: "$1M-$10M" },
@@ -39,7 +44,7 @@ const revenueOptions = [
   { value: "50m-plus", label: "$50M+" },
 ];
 
-const ContactFormComponent = () => {
+const ContactFormComponent = ({ formType, formTitle }: ContactFormComponentProps = {}) => {
   const { toast } = useToast();
   const [loading, setLoading] = React.useState(false);
 
@@ -65,6 +70,9 @@ const ContactFormComponent = () => {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
+      // Capture current page URL
+      const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+
       const payload = {
         full_name: data.fullName,
         email: data.email,
@@ -73,6 +81,8 @@ const ContactFormComponent = () => {
           ? revenueMap[data.monthlyRevenue]
           : undefined,
         website: data.website || undefined,
+        form_name: formType || 'default',
+        page_url: pageUrl,
       };
       const response = await fetch(
         "https://staging.trilio.ai/api/auth/v1/create_waitlist",

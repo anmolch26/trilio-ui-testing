@@ -58,9 +58,8 @@ const Hero = () => {
         containerRef.current.getBoundingClientRect();
       const x = (e.clientX - left) / width - 0.5;
       const y = (e.clientY - top) / height - 0.5;
-      imageRef.current.style.transform = `perspective(1000px) rotateY(${
-        x * 2.5
-      }deg) rotateX(${-y * 2.5}deg) scale3d(1.02, 1.02, 1.02)`;
+      imageRef.current.style.transform = `perspective(1000px) rotateY(${x * 2.5
+        }deg) rotateX(${-y * 2.5}deg) scale3d(1.02, 1.02, 1.02)`;
     };
     const handleMouseLeave = () => {
       if (!imageRef.current) return;
@@ -122,11 +121,11 @@ const Hero = () => {
         >
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
             <div className="mb-3 sm:mb-6">
-            <div className="inline-flex items-center px-4 py-0.5 rounded-full text-sm text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
-              <span className="font-display tracking-wide">
-                Ecommerce Intelligence
-              </span>
-            </div>
+              <div className="inline-flex items-center px-4 py-0.5 rounded-full text-sm text-white border border-white/30 backdrop-blur-xl bg-white/5 shadow-lg shadow-white/10 hover:bg-white/10 transition-all duration-300">
+                <span className="font-display tracking-wide">
+                  Ecommerce Intelligence
+                </span>
+              </div>
             </div>
 
             <h1
