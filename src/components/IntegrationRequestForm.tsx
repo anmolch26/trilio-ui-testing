@@ -23,7 +23,11 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const IntegrationRequestForm = () => {
+interface IntegrationRequestFormProps {
+  formType?: string;
+}
+
+const IntegrationRequestForm = ({ formType }: IntegrationRequestFormProps = {}) => {
   const { toast } = useToast();
   const [loading, setLoading] = React.useState(false);
 
@@ -39,12 +43,17 @@ const IntegrationRequestForm = () => {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
+      // Capture current page URL
+      const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+
       const payload = {
         name: data.name,
         email: data.email,
         message: data.message,
         type: "integration_request",
         recipient_email: "integrations@trilio.ai",
+        form_name: formType || 'integration-request',
+        page_url: pageUrl,
       };
 
       const response = await fetch(
