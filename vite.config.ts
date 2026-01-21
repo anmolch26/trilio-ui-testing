@@ -30,8 +30,11 @@ export default defineConfig(({ mode }) => ({
     ViteSitemap({
       hostname: 'https://trilio.ai',
       dynamicRoutes: routes.map(r => r.path),
-      generateRobotsTxt: true,
+      generateRobotsTxt: false, // 👈 FIX
     }),
+
+
+
     mode === 'development' && componentTagger(),
     mode === 'production' && criticalCSS(),
     visualizer({
@@ -55,7 +58,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
   build: {
+    outDir: 'dist',
     sourcemap: true, // Enable source maps for bundle analysis
     cssCodeSplit: true, // Split CSS for better caching
     rollupOptions: {
